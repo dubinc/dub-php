@@ -1,0 +1,28 @@
+configVersion: 2.0.0
+generation:
+  sdkClassName: Dub
+  maintainOpenAPIOrder: true
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  useClassNamesForArrayFields: true
+  fixes:
+    nameResolutionDec2023: true
+    parameterOrderingFeb2024: true
+    requestResponseComponentNamesFeb2024: true
+  auth:
+    oAuth2ClientCredentialsEnabled: true
+php:
+  version: 0.0.1
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Operations
+      shared: Models/Components
+      webhooks: Models/Webhooks
+  inputModelSuffix: input
+  maxMethodParams: 4
+  namespace: Dub
+  outputModelSuffix: output
+  packageName: dub/dub-php
