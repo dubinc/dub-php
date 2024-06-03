@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class RateLimitExceeded
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\RateLimitExceededError')]
     public RateLimitExceededError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\RateLimitExceededError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\RateLimitExceededError();
+    }
 }

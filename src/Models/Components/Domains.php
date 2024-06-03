@@ -13,25 +13,25 @@ class Domains
 {
     /**
      * The domain name.
-     * 
+     *
      * @var string $slug
      */
-	#[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\JMS\Serializer\Annotation\SerializedName('slug')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
-    
+
     /**
      * Whether the domain is the primary domain for the workspace.
-     * 
+     *
      * @var bool $primary
      */
-	#[\JMS\Serializer\Annotation\SerializedName('primary')]
+    #[\JMS\Serializer\Annotation\SerializedName('primary')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $primary;
-    
-	public function __construct()
-	{
-		$this->slug = "";
-		$this->primary = false;
-	}
+
+    public function __construct()
+    {
+        $this->slug = '';
+        $this->primary = false;
+    }
 }

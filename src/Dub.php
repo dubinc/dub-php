@@ -8,67 +8,53 @@ declare(strict_types=1);
 
 namespace Dub;
 
-/**
- * Dub - Dub.co API: Dub is link management infrastructure for companies to create marketing campaigns, link sharing features, and referral programs.
- * 
- * @package Dub
- * @access public
- */
+/** Dub - Dub.co API: Dub is link management infrastructure for companies to create marketing campaigns, link sharing features, and referral programs. */
 class Dub
 {
-	public const SERVERS = [
+    public const SERVERS = [
         /** Production API */
-		'https://api.dub.co',
-	];
-  	
-	public Links $links;
-	
-	public QRCodes $qrCodes;
-	
-	public Analytics $analytics;
-	
-	public Workspaces $workspaces;
-	
-	public Tags $tags;
-	
-	public Domains $domains;
-	
-	public Track $track;
-	
-	public Metatags $metatags;
-	
+        'https://api.dub.co',
+    ];
 
-	/**
-	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.
-	 * 
-	 * @return DubBuilder
-	 */
-	public static function builder(): DubBuilder
-	{
-		return new DubBuilder();
-	}
+    public Links $links;
 
-	/**
-	 * @param SDKConfiguration $sdkConfiguration
-	 */
-	public function __construct(
-		private SDKConfiguration $sdkConfiguration,
-	) {
-		
-		$this->links = new Links($this->sdkConfiguration);
-		
-		$this->qrCodes = new QRCodes($this->sdkConfiguration);
-		
-		$this->analytics = new Analytics($this->sdkConfiguration);
-		
-		$this->workspaces = new Workspaces($this->sdkConfiguration);
-		
-		$this->tags = new Tags($this->sdkConfiguration);
-		
-		$this->domains = new Domains($this->sdkConfiguration);
-		
-		$this->track = new Track($this->sdkConfiguration);
-		
-		$this->metatags = new Metatags($this->sdkConfiguration);
-	}
+    public QRCodes $qrCodes;
+
+    public Analytics $analytics;
+
+    public Workspaces $workspaces;
+
+    public Tags $tags;
+
+    public Domains $domains;
+
+    public Track $track;
+
+    public Metatags $metatags;
+
+    /**
+     * Returns a new instance of the SDK builder used to configure and create the SDK instance.
+     *
+     * @return DubBuilder
+     */
+    public static function builder(): DubBuilder
+    {
+        return new DubBuilder();
+    }
+
+    /**
+     * @param  SDKConfiguration  $sdkConfiguration
+     */
+    public function __construct(
+        private SDKConfiguration $sdkConfiguration,
+    ) {
+        $this->links = new Links($this->sdkConfiguration);
+        $this->qrCodes = new QRCodes($this->sdkConfiguration);
+        $this->analytics = new Analytics($this->sdkConfiguration);
+        $this->workspaces = new Workspaces($this->sdkConfiguration);
+        $this->tags = new Tags($this->sdkConfiguration);
+        $this->domains = new Domains($this->sdkConfiguration);
+        $this->track = new Track($this->sdkConfiguration);
+        $this->metatags = new Metatags($this->sdkConfiguration);
+    }
 }

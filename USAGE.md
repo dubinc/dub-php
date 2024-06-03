@@ -29,7 +29,7 @@ try {
     $requestBody->archived = false;
     $requestBody->publicStats = false;
     $requestBody->tagId = '<value>';
-    $requestBody->tagIds = '<value>';
+    $requestBody->tagIds = ['<value>'];
     $requestBody->tagNames = '<value>';
     $requestBody->comments = '<value>';
     $requestBody->expiresAt = '<value>';
@@ -335,7 +335,7 @@ try {
     $requestBody->archived = false;
     $requestBody->publicStats = false;
     $requestBody->tagId = '<value>';
-    $requestBody->tagIds = '<value>';
+    $requestBody->tagIds = ['<value>'];
     $requestBody->tagNames = '<value>';
     $requestBody->comments = '<value>';
     $requestBody->expiresAt = '<value>';

@@ -13,15 +13,15 @@ class TransferDomainRequestBody
 {
     /**
      * The ID of the new workspace to transfer the domain to.
-     * 
+     *
      * @var string $newWorkspaceId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('newWorkspaceId')]
+    #[\JMS\Serializer\Annotation\SerializedName('newWorkspaceId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $newWorkspaceId;
-    
-	public function __construct()
-	{
-		$this->newWorkspaceId = "";
-	}
+
+    public function __construct()
+    {
+        $this->newWorkspaceId = '';
+    }
 }

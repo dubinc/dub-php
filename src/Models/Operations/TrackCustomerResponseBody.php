@@ -9,35 +9,30 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/**
- * TrackCustomerResponseBody - A customer was tracked.
- * 
- * @package Dub\Models\Operations
- * @access public
- */
+/** TrackCustomerResponseBody - A customer was tracked. */
 class TrackCustomerResponseBody
 {
-	#[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('customerName')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('customerName')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerName;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerEmail;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerAvatar;
-    
-	public function __construct()
-	{
-		$this->customerId = "";
-		$this->customerName = "";
-		$this->customerEmail = "";
-		$this->customerAvatar = "";
-	}
+
+    public function __construct()
+    {
+        $this->customerId = '';
+        $this->customerName = '';
+        $this->customerEmail = '';
+        $this->customerAvatar = '';
+    }
 }

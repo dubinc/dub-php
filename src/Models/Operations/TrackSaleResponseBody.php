@@ -9,50 +9,45 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/**
- * TrackSaleResponseBody - A sale was tracked.
- * 
- * @package Dub\Models\Operations
- * @access public
- */
+/** TrackSaleResponseBody - A sale was tracked. */
 class TrackSaleResponseBody
 {
-	#[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('amount')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('amount')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $amount;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $paymentProcessor;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $invoiceId;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('currency')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('currency')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $currency;
-    
+
     /**
      * $metadata
-     * 
+     *
      * @var array<string, mixed> $metadata
      */
-	#[\JMS\Serializer\Annotation\SerializedName('metadata')]
+    #[\JMS\Serializer\Annotation\SerializedName('metadata')]
     #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
     public array $metadata;
-    
-	public function __construct()
-	{
-		$this->customerId = "";
-		$this->amount = 0;
-		$this->paymentProcessor = "";
-		$this->invoiceId = "";
-		$this->currency = "";
-		$this->metadata = [];
-	}
+
+    public function __construct()
+    {
+        $this->customerId = '';
+        $this->amount = 0;
+        $this->paymentProcessor = '';
+        $this->invoiceId = '';
+        $this->currency = '';
+        $this->metadata = [];
+    }
 }

@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class Forbidden
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\ForbiddenError')]
     public ForbiddenError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\ForbiddenError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\ForbiddenError();
+    }
 }

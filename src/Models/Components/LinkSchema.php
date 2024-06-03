@@ -13,387 +13,387 @@ class LinkSchema
 {
     /**
      * The unique ID of the short link.
-     * 
+     *
      * @var string $id
      */
-	#[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\JMS\Serializer\Annotation\SerializedName('id')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $id;
-    
+
     /**
      * The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
-     * 
+     *
      * @var string $domain
      */
-	#[\JMS\Serializer\Annotation\SerializedName('domain')]
+    #[\JMS\Serializer\Annotation\SerializedName('domain')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $domain;
-    
+
     /**
      * The short link slug. If not provided, a random 7-character slug will be generated.
-     * 
+     *
      * @var string $key
      */
-	#[\JMS\Serializer\Annotation\SerializedName('key')]
+    #[\JMS\Serializer\Annotation\SerializedName('key')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $key;
-    
+
     /**
      * This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
-     * 
+     *
      * @var string $externalId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('externalId')]
+    #[\JMS\Serializer\Annotation\SerializedName('externalId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $externalId;
-    
+
     /**
      * The destination URL of the short link.
-     * 
+     *
      * @var string $url
      */
-	#[\JMS\Serializer\Annotation\SerializedName('url')]
+    #[\JMS\Serializer\Annotation\SerializedName('url')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $url;
-    
+
     /**
      * [BETA] Whether to track conversions for the short link.
-     * 
+     *
      * @var bool $trackConversion
      */
-	#[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
+    #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $trackConversion;
-    
+
     /**
      * Whether the short link is archived.
-     * 
+     *
      * @var bool $archived
      */
-	#[\JMS\Serializer\Annotation\SerializedName('archived')]
+    #[\JMS\Serializer\Annotation\SerializedName('archived')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $archived;
-    
+
     /**
      * The date and time when the short link will expire in ISO-8601 format.
-     * 
+     *
      * @var string $expiresAt
      */
-	#[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
+    #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $expiresAt;
-    
+
     /**
      * The URL to redirect to when the short link has expired.
-     * 
+     *
      * @var string $expiredUrl
      */
-	#[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
+    #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $expiredUrl;
-    
+
     /**
      * The password required to access the destination URL of the short link.
-     * 
+     *
      * @var string $password
      */
-	#[\JMS\Serializer\Annotation\SerializedName('password')]
+    #[\JMS\Serializer\Annotation\SerializedName('password')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $password;
-    
+
     /**
      * Whether the short link uses Custom Social Media Cards feature.
-     * 
+     *
      * @var bool $proxy
      */
-	#[\JMS\Serializer\Annotation\SerializedName('proxy')]
+    #[\JMS\Serializer\Annotation\SerializedName('proxy')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $proxy;
-    
+
     /**
      * The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-     * 
+     *
      * @var string $title
      */
-	#[\JMS\Serializer\Annotation\SerializedName('title')]
+    #[\JMS\Serializer\Annotation\SerializedName('title')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $title;
-    
+
     /**
      * The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-     * 
+     *
      * @var string $description
      */
-	#[\JMS\Serializer\Annotation\SerializedName('description')]
+    #[\JMS\Serializer\Annotation\SerializedName('description')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $description;
-    
+
     /**
      * The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
-     * 
+     *
      * @var string $image
      */
-	#[\JMS\Serializer\Annotation\SerializedName('image')]
+    #[\JMS\Serializer\Annotation\SerializedName('image')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $image;
-    
+
     /**
      * Whether the short link uses link cloaking.
-     * 
+     *
      * @var bool $rewrite
      */
-	#[\JMS\Serializer\Annotation\SerializedName('rewrite')]
+    #[\JMS\Serializer\Annotation\SerializedName('rewrite')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $rewrite;
-    
+
     /**
      * The iOS destination URL for the short link for iOS device targeting.
-     * 
+     *
      * @var string $ios
      */
-	#[\JMS\Serializer\Annotation\SerializedName('ios')]
+    #[\JMS\Serializer\Annotation\SerializedName('ios')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $ios;
-    
+
     /**
      * The Android destination URL for the short link for Android device targeting.
-     * 
+     *
      * @var string $android
      */
-	#[\JMS\Serializer\Annotation\SerializedName('android')]
+    #[\JMS\Serializer\Annotation\SerializedName('android')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $android;
-    
+
     /**
      * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
-     * 
+     *
      * @var \Dub\Models\Components\Geo $geo
      */
-	#[\JMS\Serializer\Annotation\SerializedName('geo')]
+    #[\JMS\Serializer\Annotation\SerializedName('geo')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\Geo')]
     public Geo $geo;
-    
+
     /**
      * Whether the short link's stats are publicly accessible.
-     * 
+     *
      * @var bool $publicStats
      */
-	#[\JMS\Serializer\Annotation\SerializedName('publicStats')]
+    #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $publicStats;
-    
+
     /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
-     * 
+     *
      * @var string $tagId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-	#[\JMS\Serializer\Annotation\SerializedName('tagId')]
+    #[\JMS\Serializer\Annotation\SerializedName('tagId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $tagId;
-    
+
     /**
      * The tags assigned to the short link.
-     * 
+     *
      * @var array<\Dub\Models\Components\TagSchema> $tags
      */
-	#[\JMS\Serializer\Annotation\SerializedName('tags')]
+    #[\JMS\Serializer\Annotation\SerializedName('tags')]
     #[\JMS\Serializer\Annotation\Type('array<Dub\Models\Components\TagSchema>')]
     public array $tags;
-    
+
     /**
      * The comments for the short link.
-     * 
+     *
      * @var string $comments
      */
-	#[\JMS\Serializer\Annotation\SerializedName('comments')]
+    #[\JMS\Serializer\Annotation\SerializedName('comments')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $comments;
-    
+
     /**
      * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
-     * 
+     *
      * @var string $shortLink
      */
-	#[\JMS\Serializer\Annotation\SerializedName('shortLink')]
+    #[\JMS\Serializer\Annotation\SerializedName('shortLink')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $shortLink;
-    
+
     /**
      * The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
-     * 
+     *
      * @var string $qrCode
      */
-	#[\JMS\Serializer\Annotation\SerializedName('qrCode')]
+    #[\JMS\Serializer\Annotation\SerializedName('qrCode')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $qrCode;
-    
+
     /**
      * The UTM source of the short link.
-     * 
+     *
      * @var string $utmSource
      */
-	#[\JMS\Serializer\Annotation\SerializedName('utm_source')]
+    #[\JMS\Serializer\Annotation\SerializedName('utm_source')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmSource;
-    
+
     /**
      * The UTM medium of the short link.
-     * 
+     *
      * @var string $utmMedium
      */
-	#[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
+    #[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmMedium;
-    
+
     /**
      * The UTM campaign of the short link.
-     * 
+     *
      * @var string $utmCampaign
      */
-	#[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
+    #[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmCampaign;
-    
+
     /**
      * The UTM term of the short link.
-     * 
+     *
      * @var string $utmTerm
      */
-	#[\JMS\Serializer\Annotation\SerializedName('utm_term')]
+    #[\JMS\Serializer\Annotation\SerializedName('utm_term')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmTerm;
-    
+
     /**
      * The UTM content of the short link.
-     * 
+     *
      * @var string $utmContent
      */
-	#[\JMS\Serializer\Annotation\SerializedName('utm_content')]
+    #[\JMS\Serializer\Annotation\SerializedName('utm_content')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmContent;
-    
+
     /**
      * The user ID of the creator of the short link.
-     * 
+     *
      * @var string $userId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('userId')]
+    #[\JMS\Serializer\Annotation\SerializedName('userId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $userId;
-    
+
     /**
      * The workspace ID of the short link.
-     * 
+     *
      * @var string $workspaceId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('workspaceId')]
+    #[\JMS\Serializer\Annotation\SerializedName('workspaceId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $workspaceId;
-    
+
     /**
      * The number of clicks on the short link.
-     * 
+     *
      * @var float $clicks
      */
-	#[\JMS\Serializer\Annotation\SerializedName('clicks')]
+    #[\JMS\Serializer\Annotation\SerializedName('clicks')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $clicks;
-    
+
     /**
      * The date and time when the short link was last clicked.
-     * 
+     *
      * @var string $lastClicked
      */
-	#[\JMS\Serializer\Annotation\SerializedName('lastClicked')]
+    #[\JMS\Serializer\Annotation\SerializedName('lastClicked')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $lastClicked;
-    
+
     /**
      * [BETA]: The number of leads the short links has generated.
-     * 
+     *
      * @var float $leads
      */
-	#[\JMS\Serializer\Annotation\SerializedName('leads')]
+    #[\JMS\Serializer\Annotation\SerializedName('leads')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $leads;
-    
+
     /**
      * [BETA]: The number of sales the short links has generated.
-     * 
+     *
      * @var float $sales
      */
-	#[\JMS\Serializer\Annotation\SerializedName('sales')]
+    #[\JMS\Serializer\Annotation\SerializedName('sales')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $sales;
-    
+
     /**
      * The date and time when the short link was created.
-     * 
+     *
      * @var string $createdAt
      */
-	#[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $createdAt;
-    
+
     /**
      * The date and time when the short link was last updated.
-     * 
+     *
      * @var string $updatedAt
      */
-	#[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $updatedAt;
-    
+
     /**
      * The project ID of the short link. This field is deprecated – use `workspaceId` instead.
-     * 
+     *
      * @var string $projectId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-	#[\JMS\Serializer\Annotation\SerializedName('projectId')]
+    #[\JMS\Serializer\Annotation\SerializedName('projectId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $projectId;
-    
-	public function __construct()
-	{
-		$this->id = "";
-		$this->domain = "";
-		$this->key = "";
-		$this->externalId = "";
-		$this->url = "";
-		$this->trackConversion = false;
-		$this->archived = false;
-		$this->expiresAt = "";
-		$this->expiredUrl = "";
-		$this->password = "";
-		$this->proxy = false;
-		$this->title = "";
-		$this->description = "";
-		$this->image = "";
-		$this->rewrite = false;
-		$this->ios = "";
-		$this->android = "";
-		$this->geo = new \Dub\Models\Components\Geo();
-		$this->publicStats = false;
-		$this->tagId = "";
-		$this->tags = [];
-		$this->comments = "";
-		$this->shortLink = "";
-		$this->qrCode = "";
-		$this->utmSource = "";
-		$this->utmMedium = "";
-		$this->utmCampaign = "";
-		$this->utmTerm = "";
-		$this->utmContent = "";
-		$this->userId = "";
-		$this->workspaceId = "";
-		$this->clicks = 0;
-		$this->lastClicked = "";
-		$this->leads = 0;
-		$this->sales = 0;
-		$this->createdAt = "";
-		$this->updatedAt = "";
-		$this->projectId = "";
-	}
+
+    public function __construct()
+    {
+        $this->id = '';
+        $this->domain = '';
+        $this->key = '';
+        $this->externalId = '';
+        $this->url = '';
+        $this->trackConversion = false;
+        $this->archived = false;
+        $this->expiresAt = '';
+        $this->expiredUrl = '';
+        $this->password = '';
+        $this->proxy = false;
+        $this->title = '';
+        $this->description = '';
+        $this->image = '';
+        $this->rewrite = false;
+        $this->ios = '';
+        $this->android = '';
+        $this->geo = new \Dub\Models\Components\Geo();
+        $this->publicStats = false;
+        $this->tagId = '';
+        $this->tags = [];
+        $this->comments = '';
+        $this->shortLink = '';
+        $this->qrCode = '';
+        $this->utmSource = '';
+        $this->utmMedium = '';
+        $this->utmCampaign = '';
+        $this->utmTerm = '';
+        $this->utmContent = '';
+        $this->userId = '';
+        $this->workspaceId = '';
+        $this->clicks = 0;
+        $this->lastClicked = '';
+        $this->leads = 0;
+        $this->sales = 0;
+        $this->createdAt = '';
+        $this->updatedAt = '';
+        $this->projectId = '';
+    }
 }

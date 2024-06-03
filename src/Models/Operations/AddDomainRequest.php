@@ -8,32 +8,32 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-use \Dub\Utils\SpeakeasyMetadata;
+use Dub\Utils\SpeakeasyMetadata;
 class AddDomainRequest
 {
     /**
      * The ID of the workspace.
-     * 
+     *
      * @var ?string $workspaceId
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
     public ?string $workspaceId = null;
-    
+
     /**
      * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     * 
+     *
      * @var ?string $projectSlug
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
     public ?string $projectSlug = null;
-    
-	#[SpeakeasyMetadata('request:mediaType=application/json')]
+
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?AddDomainRequestBody $requestBody = null;
-    
-	public function __construct()
-	{
-		$this->workspaceId = null;
-		$this->projectSlug = null;
-		$this->requestBody = null;
-	}
+
+    public function __construct()
+    {
+        $this->workspaceId = null;
+        $this->projectSlug = null;
+        $this->requestBody = null;
+    }
 }

@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class Conflict
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\ConflictError')]
     public ConflictError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\ConflictError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\ConflictError();
+    }
 }

@@ -8,37 +8,37 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-use \Dub\Utils\SpeakeasyMetadata;
+use Dub\Utils\SpeakeasyMetadata;
 class DeleteLinkRequest
 {
     /**
      * The id of the link to delete. You may use either `linkId` (obtained via `/links/info` endpoint) or `externalId` prefixed with `ext_`.
-     * 
+     *
      * @var string $linkId
      */
-	#[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=linkId')]
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=linkId')]
     public string $linkId;
-    
+
     /**
      * The ID of the workspace.
-     * 
+     *
      * @var ?string $workspaceId
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
     public ?string $workspaceId = null;
-    
+
     /**
      * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     * 
+     *
      * @var ?string $projectSlug
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
     public ?string $projectSlug = null;
-    
-	public function __construct()
-	{
-		$this->linkId = "";
-		$this->workspaceId = null;
-		$this->projectSlug = null;
-	}
+
+    public function __construct()
+    {
+        $this->linkId = '';
+        $this->workspaceId = null;
+        $this->projectSlug = null;
+    }
 }

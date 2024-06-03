@@ -11,23 +11,23 @@ namespace Dub\Models\Operations;
 
 class CreateWorkspaceRequestBody
 {
-	#[\JMS\Serializer\Annotation\SerializedName('name')]
+    #[\JMS\Serializer\Annotation\SerializedName('name')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $name;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('slug')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('slug')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
-    
-	#[\JMS\Serializer\Annotation\SerializedName('domain')]
+
+    #[\JMS\Serializer\Annotation\SerializedName('domain')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $domain = null;
-    
-	public function __construct()
-	{
-		$this->name = "";
-		$this->slug = "";
-		$this->domain = null;
-	}
+
+    public function __construct()
+    {
+        $this->name = '';
+        $this->slug = '';
+        $this->domain = null;
+    }
 }

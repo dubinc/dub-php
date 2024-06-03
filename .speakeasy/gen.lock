@@ -1,19 +1,22 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 69dc05faa844a9e17f9180677089eb25
+  docChecksum: 51863c384b062f0d4c1dd02e14254615
   docVersion: 0.0.1
-  speakeasyVersion: 1.272.0
-  generationVersion: 2.312.1
-  releaseVersion: 0.0.1
-  configChecksum: 98c917f95c0cf3535a24ed9e468ebc38
+  speakeasyVersion: 1.299.4
+  generationVersion: 2.338.7
+  releaseVersion: 0.1.0
+  configChecksum: 9ae1da2763e3d490166ab727160c8339
+  repoURL: https://github.com/dubinc/dub-php.git
+  installationURL: https://github.com/dubinc/dub-php
 features:
   php:
-    core: 3.3.3
+    core: 3.3.4
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.81.6
+    globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.1
     globals: 2.82.1
     nameOverrides: 2.81.2
@@ -31,6 +34,7 @@ generatedFiles:
   - src/DubBuilder.php
   - composer.json
   - phpstan.neon
+  - pint.json
   - rector.php
   - src/Utils/EnumHandler.php
   - src/Utils/FormMetadata.php
@@ -108,13 +112,16 @@ generatedFiles:
   - src/Models/Operations/TransferDomainRequest.php
   - src/Models/Operations/TransferDomainResponse.php
   - src/Models/Operations/TrackLeadRequestBody.php
+  - src/Models/Operations/TrackLeadRequest.php
   - src/Models/Operations/TrackLeadResponseBody.php
   - src/Models/Operations/TrackLeadResponse.php
   - src/Models/Operations/PaymentProcessor.php
   - src/Models/Operations/TrackSaleRequestBody.php
+  - src/Models/Operations/TrackSaleRequest.php
   - src/Models/Operations/TrackSaleResponseBody.php
   - src/Models/Operations/TrackSaleResponse.php
   - src/Models/Operations/TrackCustomerRequestBody.php
+  - src/Models/Operations/TrackCustomerRequest.php
   - src/Models/Operations/TrackCustomerResponseBody.php
   - src/Models/Operations/TrackCustomerResponse.php
   - src/Models/Operations/GetMetatagsRequest.php
@@ -221,13 +228,16 @@ generatedFiles:
   - docs/Models/Operations/TransferDomainRequest.md
   - docs/Models/Operations/TransferDomainResponse.md
   - docs/Models/Operations/TrackLeadRequestBody.md
+  - docs/Models/Operations/TrackLeadRequest.md
   - docs/Models/Operations/TrackLeadResponseBody.md
   - docs/Models/Operations/TrackLeadResponse.md
   - docs/Models/Operations/PaymentProcessor.md
   - docs/Models/Operations/TrackSaleRequestBody.md
+  - docs/Models/Operations/TrackSaleRequest.md
   - docs/Models/Operations/TrackSaleResponseBody.md
   - docs/Models/Operations/TrackSaleResponse.md
   - docs/Models/Operations/TrackCustomerRequestBody.md
+  - docs/Models/Operations/TrackCustomerRequest.md
   - docs/Models/Operations/TrackCustomerResponseBody.md
   - docs/Models/Operations/TrackCustomerResponse.md
   - docs/Models/Operations/GetMetatagsRequest.md

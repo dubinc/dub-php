@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class InternalServerError
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\InternalServerErrorError')]
     public InternalServerErrorError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\InternalServerErrorError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\InternalServerErrorError();
+    }
 }

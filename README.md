@@ -28,7 +28,7 @@ To install the SDK first add the below to your `composer.json` file:
     "repositories": [
         {
             "type": "github",
-            "url": "<UNSET>.git"
+            "url": "https://github.com/dubinc/dub-php.git"
         }
     ],
     "require": {
@@ -79,7 +79,7 @@ try {
     $requestBody->archived = false;
     $requestBody->publicStats = false;
     $requestBody->tagId = '<value>';
-    $requestBody->tagIds = '<value>';
+    $requestBody->tagIds = ['<value>'];
     $requestBody->tagNames = '<value>';
     $requestBody->comments = '<value>';
     $requestBody->expiresAt = '<value>';
@@ -387,7 +387,7 @@ try {
     $requestBody->archived = false;
     $requestBody->publicStats = false;
     $requestBody->tagId = '<value>';
-    $requestBody->tagIds = '<value>';
+    $requestBody->tagIds = ['<value>'];
     $requestBody->tagNames = '<value>';
     $requestBody->comments = '<value>';
     $requestBody->expiresAt = '<value>';

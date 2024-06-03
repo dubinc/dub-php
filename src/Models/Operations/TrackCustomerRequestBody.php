@@ -13,48 +13,48 @@ class TrackCustomerRequestBody
 {
     /**
      * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     * 
+     *
      * @var string $customerId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
-    
+
     /**
      * Name of the customer in the client's app.
-     * 
+     *
      * @var ?string $customerName
      */
-	#[\JMS\Serializer\Annotation\SerializedName('customerName')]
+    #[\JMS\Serializer\Annotation\SerializedName('customerName')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerName = null;
-    
+
     /**
      * Email of the customer in the client's app.
-     * 
+     *
      * @var ?string $customerEmail
      */
-	#[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
+    #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerEmail = null;
-    
+
     /**
      * Avatar of the customer in the client's app.
-     * 
+     *
      * @var ?string $customerAvatar
      */
-	#[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
+    #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerAvatar = null;
-    
-	public function __construct()
-	{
-		$this->customerId = "";
-		$this->customerName = null;
-		$this->customerEmail = null;
-		$this->customerAvatar = null;
-	}
+
+    public function __construct()
+    {
+        $this->customerId = '';
+        $this->customerName = null;
+        $this->customerEmail = null;
+        $this->customerAvatar = null;
+    }
 }

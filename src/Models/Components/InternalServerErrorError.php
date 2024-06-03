@@ -13,36 +13,36 @@ class InternalServerErrorError
 {
     /**
      * A short code indicating the error code returned.
-     * 
+     *
      * @var \Dub\Models\Components\InternalServerErrorCode $code
      */
-	#[\JMS\Serializer\Annotation\SerializedName('code')]
+    #[\JMS\Serializer\Annotation\SerializedName('code')]
     #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Components\InternalServerErrorCode>')]
     public InternalServerErrorCode $code;
-    
+
     /**
      * A human readable explanation of what went wrong.
-     * 
+     *
      * @var string $message
      */
-	#[\JMS\Serializer\Annotation\SerializedName('message')]
+    #[\JMS\Serializer\Annotation\SerializedName('message')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $message;
-    
+
     /**
      * A link to our documentation with more details about this error code
-     * 
+     *
      * @var ?string $docUrl
      */
-	#[\JMS\Serializer\Annotation\SerializedName('doc_url')]
+    #[\JMS\Serializer\Annotation\SerializedName('doc_url')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $docUrl = null;
-    
-	public function __construct()
-	{
-		$this->code = \Dub\Models\Components\InternalServerErrorCode::InternalServerError;
-		$this->message = "";
-		$this->docUrl = null;
-	}
+
+    public function __construct()
+    {
+        $this->code = \Dub\Models\Components\InternalServerErrorCode::InternalServerError;
+        $this->message = '';
+        $this->docUrl = null;
+    }
 }

@@ -13,206 +13,206 @@ class WorkspaceSchema
 {
     /**
      * The unique ID of the workspace.
-     * 
+     *
      * @var string $id
      */
-	#[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\JMS\Serializer\Annotation\SerializedName('id')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $id;
-    
+
     /**
      * The name of the workspace.
-     * 
+     *
      * @var string $name
      */
-	#[\JMS\Serializer\Annotation\SerializedName('name')]
+    #[\JMS\Serializer\Annotation\SerializedName('name')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $name;
-    
+
     /**
      * The slug of the workspace.
-     * 
+     *
      * @var string $slug
      */
-	#[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\JMS\Serializer\Annotation\SerializedName('slug')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
-    
+
     /**
      * The logo of the workspace.
-     * 
+     *
      * @var string $logo
      */
-	#[\JMS\Serializer\Annotation\SerializedName('logo')]
+    #[\JMS\Serializer\Annotation\SerializedName('logo')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $logo;
-    
+
     /**
      * The usage of the workspace.
-     * 
+     *
      * @var float $usage
      */
-	#[\JMS\Serializer\Annotation\SerializedName('usage')]
+    #[\JMS\Serializer\Annotation\SerializedName('usage')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $usage;
-    
+
     /**
      * The usage limit of the workspace.
-     * 
+     *
      * @var float $usageLimit
      */
-	#[\JMS\Serializer\Annotation\SerializedName('usageLimit')]
+    #[\JMS\Serializer\Annotation\SerializedName('usageLimit')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $usageLimit;
-    
+
     /**
      * The links usage of the workspace.
-     * 
+     *
      * @var float $linksUsage
      */
-	#[\JMS\Serializer\Annotation\SerializedName('linksUsage')]
+    #[\JMS\Serializer\Annotation\SerializedName('linksUsage')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $linksUsage;
-    
+
     /**
      * The links limit of the workspace.
-     * 
+     *
      * @var float $linksLimit
      */
-	#[\JMS\Serializer\Annotation\SerializedName('linksLimit')]
+    #[\JMS\Serializer\Annotation\SerializedName('linksLimit')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $linksLimit;
-    
+
     /**
      * The domains limit of the workspace.
-     * 
+     *
      * @var float $domainsLimit
      */
-	#[\JMS\Serializer\Annotation\SerializedName('domainsLimit')]
+    #[\JMS\Serializer\Annotation\SerializedName('domainsLimit')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $domainsLimit;
-    
+
     /**
      * The tags limit of the workspace.
-     * 
+     *
      * @var float $tagsLimit
      */
-	#[\JMS\Serializer\Annotation\SerializedName('tagsLimit')]
+    #[\JMS\Serializer\Annotation\SerializedName('tagsLimit')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $tagsLimit;
-    
+
     /**
      * The users limit of the workspace.
-     * 
+     *
      * @var float $usersLimit
      */
-	#[\JMS\Serializer\Annotation\SerializedName('usersLimit')]
+    #[\JMS\Serializer\Annotation\SerializedName('usersLimit')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $usersLimit;
-    
+
     /**
      * The plan of the workspace.
-     * 
+     *
      * @var \Dub\Models\Components\Plan $plan
      */
-	#[\JMS\Serializer\Annotation\SerializedName('plan')]
+    #[\JMS\Serializer\Annotation\SerializedName('plan')]
     #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Components\Plan>')]
     public Plan $plan;
-    
+
     /**
      * The Stripe ID of the workspace.
-     * 
+     *
      * @var string $stripeId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('stripeId')]
+    #[\JMS\Serializer\Annotation\SerializedName('stripeId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $stripeId;
-    
+
     /**
      * The date and time when the billing cycle starts for the workspace.
-     * 
+     *
      * @var float $billingCycleStart
      */
-	#[\JMS\Serializer\Annotation\SerializedName('billingCycleStart')]
+    #[\JMS\Serializer\Annotation\SerializedName('billingCycleStart')]
     #[\JMS\Serializer\Annotation\Type('float')]
     public float $billingCycleStart;
-    
+
     /**
      * [BETA]: The Stripe Connect ID of the workspace.
-     * 
+     *
      * @var string $stripeConnectId
      */
-	#[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
+    #[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $stripeConnectId;
-    
+
     /**
      * The date and time when the workspace was created.
-     * 
+     *
      * @var string $createdAt
      */
-	#[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $createdAt;
-    
+
     /**
      * The role of the authenticated user in the workspace.
-     * 
+     *
      * @var array<\Dub\Models\Components\Users> $users
      */
-	#[\JMS\Serializer\Annotation\SerializedName('users')]
+    #[\JMS\Serializer\Annotation\SerializedName('users')]
     #[\JMS\Serializer\Annotation\Type('array<Dub\Models\Components\Users>')]
     public array $users;
-    
+
     /**
      * The domains of the workspace.
-     * 
+     *
      * @var array<\Dub\Models\Components\Domains> $domains
      */
-	#[\JMS\Serializer\Annotation\SerializedName('domains')]
+    #[\JMS\Serializer\Annotation\SerializedName('domains')]
     #[\JMS\Serializer\Annotation\Type('array<Dub\Models\Components\Domains>')]
     public array $domains;
-    
+
     /**
      * The invite code of the workspace.
-     * 
+     *
      * @var string $inviteCode
      */
-	#[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
+    #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $inviteCode;
-    
+
     /**
      * Whether the workspace is enrolled in the beta testing program.
-     * 
+     *
      * @var ?bool $betaTester
      */
-	#[\JMS\Serializer\Annotation\SerializedName('betaTester')]
+    #[\JMS\Serializer\Annotation\SerializedName('betaTester')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $betaTester = null;
-    
-	public function __construct()
-	{
-		$this->id = "";
-		$this->name = "";
-		$this->slug = "";
-		$this->logo = "";
-		$this->usage = 0;
-		$this->usageLimit = 0;
-		$this->linksUsage = 0;
-		$this->linksLimit = 0;
-		$this->domainsLimit = 0;
-		$this->tagsLimit = 0;
-		$this->usersLimit = 0;
-		$this->plan = \Dub\Models\Components\Plan::Free;
-		$this->stripeId = "";
-		$this->billingCycleStart = 0;
-		$this->stripeConnectId = "";
-		$this->createdAt = "";
-		$this->users = [];
-		$this->domains = [];
-		$this->inviteCode = "";
-		$this->betaTester = null;
-	}
+
+    public function __construct()
+    {
+        $this->id = '';
+        $this->name = '';
+        $this->slug = '';
+        $this->logo = '';
+        $this->usage = 0;
+        $this->usageLimit = 0;
+        $this->linksUsage = 0;
+        $this->linksLimit = 0;
+        $this->domainsLimit = 0;
+        $this->tagsLimit = 0;
+        $this->usersLimit = 0;
+        $this->plan = \Dub\Models\Components\Plan::Free;
+        $this->stripeId = '';
+        $this->billingCycleStart = 0;
+        $this->stripeConnectId = '';
+        $this->createdAt = '';
+        $this->users = [];
+        $this->domains = [];
+        $this->inviteCode = '';
+        $this->betaTester = null;
+    }
 }
