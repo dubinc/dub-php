@@ -8,14 +8,14 @@ declare(strict_types=1);
 
 namespace Dub\Models\Components;
 
-use \Dub\Utils\SpeakeasyMetadata;
+use Dub\Utils\SpeakeasyMetadata;
 class Security
 {
-	#[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
+    #[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
     public ?string $token = null;
-    
-	public function __construct()
-	{
-		$this->token = null;
-	}
+
+    public function __construct()
+    {
+        $this->token = null;
+    }
 }

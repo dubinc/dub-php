@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class InviteExpired
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\InviteExpiredError')]
     public InviteExpiredError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\InviteExpiredError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\InviteExpiredError();
+    }
 }

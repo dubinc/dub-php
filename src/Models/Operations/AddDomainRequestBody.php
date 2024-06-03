@@ -13,81 +13,81 @@ class AddDomainRequestBody
 {
     /**
      * Name of the domain.
-     * 
+     *
      * @var string $slug
      */
-	#[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\JMS\Serializer\Annotation\SerializedName('slug')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
-    
+
     /**
      * The type of redirect to use for this domain.
-     * 
+     *
      * @var ?\Dub\Models\Operations\Type $type
      */
-	#[\JMS\Serializer\Annotation\SerializedName('type')]
+    #[\JMS\Serializer\Annotation\SerializedName('type')]
     #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Operations\Type>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?Type $type = null;
-    
+
     /**
      * The page your users will get redirected to when they visit your domain.
-     * 
+     *
      * @var ?string $target
      */
-	#[\JMS\Serializer\Annotation\SerializedName('target')]
+    #[\JMS\Serializer\Annotation\SerializedName('target')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $target = null;
-    
+
     /**
      * Redirect users to a specific URL when any link under this domain has expired.
-     * 
+     *
      * @var ?string $expiredUrl
      */
-	#[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
+    #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $expiredUrl = null;
-    
+
     /**
      * Whether to archive this domain. `false` will unarchive a previously archived domain.
-     * 
+     *
      * @var ?bool $archived
      */
-	#[\JMS\Serializer\Annotation\SerializedName('archived')]
+    #[\JMS\Serializer\Annotation\SerializedName('archived')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $archived = null;
-    
+
     /**
      * Prevent search engines from indexing the domain. Defaults to `false`.
-     * 
+     *
      * @var ?bool $noindex
      */
-	#[\JMS\Serializer\Annotation\SerializedName('noindex')]
+    #[\JMS\Serializer\Annotation\SerializedName('noindex')]
     #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $noindex = null;
-    
+
     /**
      * Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
-     * 
+     *
      * @var ?string $placeholder
      */
-	#[\JMS\Serializer\Annotation\SerializedName('placeholder')]
+    #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $placeholder = null;
-    
-	public function __construct()
-	{
-		$this->slug = "";
-		$this->type = null;
-		$this->target = null;
-		$this->expiredUrl = null;
-		$this->archived = null;
-		$this->noindex = null;
-		$this->placeholder = null;
-	}
+
+    public function __construct()
+    {
+        $this->slug = '';
+        $this->type = null;
+        $this->target = null;
+        $this->expiredUrl = null;
+        $this->archived = null;
+        $this->noindex = null;
+        $this->placeholder = null;
+    }
 }

@@ -8,44 +8,49 @@ declare(strict_types=1);
 
 namespace Dub;
 
-class Track 
+class Track
 {
+    private SDKConfiguration $sdkConfiguration;
 
-	private SDKConfiguration $sdkConfiguration;
+    /**
+     * @param  SDKConfiguration  $sdkConfig
+     */
+    public function __construct(SDKConfiguration $sdkConfig)
+    {
+        $this->sdkConfiguration = $sdkConfig;
+    }
 
-	/**
-	 * @param SDKConfiguration $sdkConfig
-	 */
-	public function __construct(SDKConfiguration $sdkConfig)
-	{
-		$this->sdkConfiguration = $sdkConfig;
-	}
-	
     /**
      * Track a lead
-     * 
+     *
      * Track a lead for a short link.
-     * 
-     * @param \Dub\Models\Operations\TrackLeadRequestBody $request
+     *
+     * @param  ?string  $workspaceId
+     * @param  ?string  $projectSlug
+     * @param  ?\Dub\Models\Operations\TrackLeadRequestBody  $requestBody
      * @return \Dub\Models\Operations\TrackLeadResponse
      */
-	public function lead(
-        ?\Dub\Models\Operations\TrackLeadRequestBody $request,
-    ): \Dub\Models\Operations\TrackLeadResponse
-    {
+    public function lead(
+        ?string $workspaceId = null,
+        ?string $projectSlug = null,
+        ?\Dub\Models\Operations\TrackLeadRequestBody $requestBody = null,
+    ): \Dub\Models\Operations\TrackLeadResponse {
+        $request = new \Dub\Models\Operations\TrackLeadRequest();
+        $request->workspaceId = $workspaceId;
+        $request->projectSlug = $projectSlug;
+        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/lead');
-        
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "request", "json");
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\TrackLeadRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
+
         $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
-        
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
@@ -54,96 +59,92 @@ class Track
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
-        
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->object = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Operations\TrackLeadResponseBody', 'json');
+                $response->object = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Operations\TrackLeadResponseBody', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 400) {
+        } elseif ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->badRequest = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
+                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 401) {
+        } elseif ($httpResponse->getStatusCode() === 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unauthorized = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
+                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 403) {
+        } elseif ($httpResponse->getStatusCode() === 403) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->forbidden = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
+                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 404) {
+        } elseif ($httpResponse->getStatusCode() === 404) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->notFound = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
+                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 409) {
+        } elseif ($httpResponse->getStatusCode() === 409) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->conflict = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
+                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 410) {
+        } elseif ($httpResponse->getStatusCode() === 410) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->inviteExpired = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
+                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 422) {
+        } elseif ($httpResponse->getStatusCode() === 422) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unprocessableEntity = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
+                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 429) {
+        } elseif ($httpResponse->getStatusCode() === 429) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->rateLimitExceeded = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
+                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 500) {
+        } elseif ($httpResponse->getStatusCode() === 500) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->internalServerError = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
+                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
             }
         }
 
         return $response;
     }
-	
+
     /**
      * Track a sale
-     * 
+     *
      * Track a sale for a short link.
-     * 
-     * @param \Dub\Models\Operations\TrackSaleRequestBody $request
+     *
+     * @param  ?string  $workspaceId
+     * @param  ?string  $projectSlug
+     * @param  ?\Dub\Models\Operations\TrackSaleRequestBody  $requestBody
      * @return \Dub\Models\Operations\TrackSaleResponse
      */
-	public function sale(
-        ?\Dub\Models\Operations\TrackSaleRequestBody $request,
-    ): \Dub\Models\Operations\TrackSaleResponse
-    {
+    public function sale(
+        ?string $workspaceId = null,
+        ?string $projectSlug = null,
+        ?\Dub\Models\Operations\TrackSaleRequestBody $requestBody = null,
+    ): \Dub\Models\Operations\TrackSaleResponse {
+        $request = new \Dub\Models\Operations\TrackSaleRequest();
+        $request->workspaceId = $workspaceId;
+        $request->projectSlug = $projectSlug;
+        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/sale');
-        
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "request", "json");
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\TrackSaleRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
+
         $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
-        
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
@@ -152,96 +153,92 @@ class Track
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
-        
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->object = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Operations\TrackSaleResponseBody', 'json');
+                $response->object = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Operations\TrackSaleResponseBody', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 400) {
+        } elseif ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->badRequest = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
+                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 401) {
+        } elseif ($httpResponse->getStatusCode() === 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unauthorized = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
+                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 403) {
+        } elseif ($httpResponse->getStatusCode() === 403) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->forbidden = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
+                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 404) {
+        } elseif ($httpResponse->getStatusCode() === 404) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->notFound = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
+                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 409) {
+        } elseif ($httpResponse->getStatusCode() === 409) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->conflict = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
+                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 410) {
+        } elseif ($httpResponse->getStatusCode() === 410) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->inviteExpired = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
+                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 422) {
+        } elseif ($httpResponse->getStatusCode() === 422) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unprocessableEntity = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
+                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 429) {
+        } elseif ($httpResponse->getStatusCode() === 429) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->rateLimitExceeded = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
+                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 500) {
+        } elseif ($httpResponse->getStatusCode() === 500) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->internalServerError = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
+                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
             }
         }
 
         return $response;
     }
-	
+
     /**
      * Track a customer
-     * 
+     *
      * Track a customer for an authenticated workspace.
-     * 
-     * @param \Dub\Models\Operations\TrackCustomerRequestBody $request
+     *
+     * @param  ?string  $workspaceId
+     * @param  ?string  $projectSlug
+     * @param  ?\Dub\Models\Operations\TrackCustomerRequestBody  $requestBody
      * @return \Dub\Models\Operations\TrackCustomerResponse
      */
-	public function customer(
-        ?\Dub\Models\Operations\TrackCustomerRequestBody $request,
-    ): \Dub\Models\Operations\TrackCustomerResponse
-    {
+    public function customer(
+        ?string $workspaceId = null,
+        ?string $projectSlug = null,
+        ?\Dub\Models\Operations\TrackCustomerRequestBody $requestBody = null,
+    ): \Dub\Models\Operations\TrackCustomerResponse {
+        $request = new \Dub\Models\Operations\TrackCustomerRequest();
+        $request->workspaceId = $workspaceId;
+        $request->projectSlug = $projectSlug;
+        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/customer');
-        
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "request", "json");
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\TrackCustomerRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
+
         $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
-        
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
@@ -250,65 +247,55 @@ class Track
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
-        
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->object = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Operations\TrackCustomerResponseBody', 'json');
+                $response->object = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Operations\TrackCustomerResponseBody', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 400) {
+        } elseif ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->badRequest = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
+                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 401) {
+        } elseif ($httpResponse->getStatusCode() === 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unauthorized = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
+                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 403) {
+        } elseif ($httpResponse->getStatusCode() === 403) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->forbidden = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
+                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 404) {
+        } elseif ($httpResponse->getStatusCode() === 404) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->notFound = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
+                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 409) {
+        } elseif ($httpResponse->getStatusCode() === 409) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->conflict = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
+                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 410) {
+        } elseif ($httpResponse->getStatusCode() === 410) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->inviteExpired = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
+                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 422) {
+        } elseif ($httpResponse->getStatusCode() === 422) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unprocessableEntity = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
+                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 429) {
+        } elseif ($httpResponse->getStatusCode() === 429) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->rateLimitExceeded = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
+                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
             }
-        }
-        else if ($httpResponse->getStatusCode() === 500) {
+        } elseif ($httpResponse->getStatusCode() === 500) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->internalServerError = $serializer->deserialize((string)$httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
+                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
             }
         }
 

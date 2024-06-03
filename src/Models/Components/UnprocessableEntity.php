@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class UnprocessableEntity
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\UnprocessableEntityError')]
     public UnprocessableEntityError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\UnprocessableEntityError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\UnprocessableEntityError();
+    }
 }

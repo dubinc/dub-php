@@ -9,25 +9,20 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/**
- * DeleteDomainResponseBody - The domain was deleted.
- * 
- * @package Dub\Models\Operations
- * @access public
- */
+/** DeleteDomainResponseBody - The domain was deleted. */
 class DeleteDomainResponseBody
 {
     /**
      * The domain name.
-     * 
+     *
      * @var string $slug
      */
-	#[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\JMS\Serializer\Annotation\SerializedName('slug')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
-    
-	public function __construct()
-	{
-		$this->slug = "";
-	}
+
+    public function __construct()
+    {
+        $this->slug = '';
+    }
 }

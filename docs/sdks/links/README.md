@@ -106,7 +106,9 @@ try {
     $requestBody->archived = false;
     $requestBody->publicStats = false;
     $requestBody->tagId = '<value>';
-    $requestBody->tagIds = '<value>';
+    $requestBody->tagIds = [
+        '<value>',
+    ];
     $requestBody->tagNames = '<value>';
     $requestBody->comments = '<value>';
     $requestBody->expiresAt = '<value>';
@@ -593,7 +595,9 @@ try {
     $request->requestBody->archived = false;
     $request->requestBody->publicStats = false;
     $request->requestBody->tagId = '<value>';
-    $request->requestBody->tagIds = '<value>';
+    $request->requestBody->tagIds = [
+        '<value>',
+    ];
     $request->requestBody->tagNames = '<value>';
     $request->requestBody->comments = '<value>';
     $request->requestBody->expiresAt = '<value>';
@@ -968,7 +972,9 @@ try {
     $requestBody->archived = false;
     $requestBody->publicStats = false;
     $requestBody->tagId = '<value>';
-    $requestBody->tagIds = '<value>';
+    $requestBody->tagIds = [
+        '<value>',
+    ];
     $requestBody->tagNames = '<value>';
     $requestBody->comments = '<value>';
     $requestBody->expiresAt = '<value>';

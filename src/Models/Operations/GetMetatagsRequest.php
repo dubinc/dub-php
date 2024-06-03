@@ -8,19 +8,19 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-use \Dub\Utils\SpeakeasyMetadata;
+use Dub\Utils\SpeakeasyMetadata;
 class GetMetatagsRequest
 {
     /**
      * The URL to retrieve metatags for.
-     * 
+     *
      * @var string $url
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=url')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=url')]
     public string $url;
-    
-	public function __construct()
-	{
-		$this->url = "";
-	}
+
+    public function __construct()
+    {
+        $this->url = '';
+    }
 }

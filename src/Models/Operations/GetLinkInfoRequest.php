@@ -8,59 +8,59 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-use \Dub\Utils\SpeakeasyMetadata;
+use Dub\Utils\SpeakeasyMetadata;
 class GetLinkInfoRequest
 {
     /**
      * The ID of the workspace.
-     * 
+     *
      * @var ?string $workspaceId
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
     public ?string $workspaceId = null;
-    
+
     /**
      * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     * 
+     *
      * @var ?string $projectSlug
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
     public ?string $projectSlug = null;
-    
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=domain')]
+
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=domain')]
     public ?string $domain = null;
-    
+
     /**
      * The key of the link to retrieve. E.g. for `d.to/github`, the key is `github`.
-     * 
+     *
      * @var ?string $key
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=key')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=key')]
     public ?string $key = null;
-    
+
     /**
      * The unique ID of the short link.
-     * 
+     *
      * @var ?string $linkId
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=linkId')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=linkId')]
     public ?string $linkId = null;
-    
+
     /**
      * This is the ID of the link in the your database. Must be prefixed with `ext_` when passed as a query parameter.
-     * 
+     *
      * @var ?string $externalId
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=externalId')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=externalId')]
     public ?string $externalId = null;
-    
-	public function __construct()
-	{
-		$this->workspaceId = null;
-		$this->projectSlug = null;
-		$this->domain = null;
-		$this->key = null;
-		$this->linkId = null;
-		$this->externalId = null;
-	}
+
+    public function __construct()
+    {
+        $this->workspaceId = null;
+        $this->projectSlug = null;
+        $this->domain = null;
+        $this->key = null;
+        $this->linkId = null;
+        $this->externalId = null;
+    }
 }

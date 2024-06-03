@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class BadRequest
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\Error')]
     public Error $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\Error();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\Error();
+    }
 }

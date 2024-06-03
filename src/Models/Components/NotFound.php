@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class NotFound
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\NotFoundError')]
     public NotFoundError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\NotFoundError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\NotFoundError();
+    }
 }

@@ -11,12 +11,12 @@ namespace Dub\Models\Components;
 
 class Unauthorized
 {
-	#[\JMS\Serializer\Annotation\SerializedName('error')]
+    #[\JMS\Serializer\Annotation\SerializedName('error')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\UnauthorizedError')]
     public UnauthorizedError $error;
-    
-	public function __construct()
-	{
-		$this->error = new \Dub\Models\Components\UnauthorizedError();
-	}
+
+    public function __construct()
+    {
+        $this->error = new \Dub\Models\Components\UnauthorizedError();
+    }
 }

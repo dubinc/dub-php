@@ -1,25 +1,27 @@
-speakeasyVersion: 1.272.0
+speakeasyVersion: 1.299.4
 sources:
     dub:
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:a3c011b69b5955f7677ac27743a8592481171a0dc27d7c0dd4754997fbcde65e
-        sourceBlobDigest: sha256:7a703e32e64c7e5c8d42d313287579e0391da3d47e842f2128bb1e530e0dc6f9
+        sourceRevisionDigest: sha256:b090907154c7e7cc4875459a8fa32455cdf662e9fe284eaf91bd1f982057e57c
+        sourceBlobDigest: sha256:7773167aaf14bda82619ba61ed817c8dec1d64653ecc6af9c4851802051e53a3
         tags:
             - latest
+            - main
 targets:
     my-first-target:
         source: dub
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:a3c011b69b5955f7677ac27743a8592481171a0dc27d7c0dd4754997fbcde65e
-        sourceBlobDigest: sha256:7a703e32e64c7e5c8d42d313287579e0391da3d47e842f2128bb1e530e0dc6f9
-        outLocation: /Users/kiran/Desktop/dub-php
+        sourceRevisionDigest: sha256:b090907154c7e7cc4875459a8fa32455cdf662e9fe284eaf91bd1f982057e57c
+        sourceBlobDigest: sha256:7773167aaf14bda82619ba61ed817c8dec1d64653ecc6af9c4851802051e53a3
+        outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
+    speakeasyVersion: latest
     sources:
         dub:
             inputs:
                 - location: https://api.dub.co
-            publish:
+            registry:
                 location: registry.speakeasyapi.dev/dub/dub/dub
     targets:
         my-first-target:

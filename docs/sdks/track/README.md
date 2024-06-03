@@ -32,18 +32,18 @@ $sdk = Dub\Dub::builder()
     ->setSecurity($security)->build();
 
 try {
-        $request = new Operations\TrackLeadRequestBody();
-    $request->clickId = '<value>';
-    $request->eventName = 'Signup';
-    $request->customerId = '<value>';
-    $request->customerName = '<value>';
-    $request->customerEmail = 'Katelin24@hotmail.com';
-    $request->customerAvatar = '<value>';
-    $request->metadata = [
+        $requestBody = new Operations\TrackLeadRequestBody();
+    $requestBody->clickId = '<value>';
+    $requestBody->eventName = 'Signup';
+    $requestBody->customerId = '<value>';
+    $requestBody->customerName = '<value>';
+    $requestBody->customerEmail = 'Katelin24@hotmail.com';
+    $requestBody->customerAvatar = '<value>';
+    $requestBody->metadata = [
         'Assistant' => '<value>',
-    ];;
+    ];
 
-    $response = $sdk->track->lead($request);
+    $response = $sdk->track->lead('<value>', '<value>', $requestBody);
 
     if ($response->object !== null) {
         // handle response
@@ -57,7 +57,9 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\Dub\Models\Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
+| `projectSlug`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The slug of the project. This field is deprecated – use `workspaceId` instead.                 |
+| `requestBody`                                                                                  | [\Dub\Models\Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 
 ### Response
@@ -90,17 +92,17 @@ $sdk = Dub\Dub::builder()
     ->setSecurity($security)->build();
 
 try {
-        $request = new Operations\TrackSaleRequestBody();
-    $request->customerId = '<value>';
-    $request->amount = 996500;
-    $request->paymentProcessor = Operations\PaymentProcessor::Shopify;
-    $request->invoiceId = '<value>';
-    $request->currency = 'European Unit of Account 17(E.U.A.-17)';
-    $request->metadata = [
+        $requestBody = new Operations\TrackSaleRequestBody();
+    $requestBody->customerId = '<value>';
+    $requestBody->amount = 996500;
+    $requestBody->paymentProcessor = Operations\PaymentProcessor::Shopify;
+    $requestBody->invoiceId = '<value>';
+    $requestBody->currency = 'European Unit of Account 17(E.U.A.-17)';
+    $requestBody->metadata = [
         'Stage' => '<value>',
-    ];;
+    ];
 
-    $response = $sdk->track->sale($request);
+    $response = $sdk->track->sale('<value>', '<value>', $requestBody);
 
     if ($response->object !== null) {
         // handle response
@@ -114,7 +116,9 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\Dub\Models\Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
+| `projectSlug`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The slug of the project. This field is deprecated – use `workspaceId` instead.                 |
+| `requestBody`                                                                                  | [\Dub\Models\Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 
 ### Response
@@ -147,13 +151,13 @@ $sdk = Dub\Dub::builder()
     ->setSecurity($security)->build();
 
 try {
-        $request = new Operations\TrackCustomerRequestBody();
-    $request->customerId = '<value>';
-    $request->customerName = '<value>';
-    $request->customerEmail = 'Wilson.Smith@gmail.com';
-    $request->customerAvatar = '<value>';;
+        $requestBody = new Operations\TrackCustomerRequestBody();
+    $requestBody->customerId = '<value>';
+    $requestBody->customerName = '<value>';
+    $requestBody->customerEmail = 'Wilson.Smith@gmail.com';
+    $requestBody->customerAvatar = '<value>';
 
-    $response = $sdk->track->customer($request);
+    $response = $sdk->track->customer('<value>', '<value>', $requestBody);
 
     if ($response->object !== null) {
         // handle response
@@ -167,7 +171,9 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\Dub\Models\Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `workspaceId`                                                                                          | *string*                                                                                               | :heavy_minus_sign:                                                                                     | The ID of the workspace.                                                                               |
+| `projectSlug`                                                                                          | *string*                                                                                               | :heavy_minus_sign:                                                                                     | The slug of the project. This field is deprecated – use `workspaceId` instead.                         |
+| `requestBody`                                                                                          | [\Dub\Models\Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
 
 
 ### Response
