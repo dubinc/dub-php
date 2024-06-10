@@ -39,6 +39,16 @@ class TrackSaleRequestBody
     public PaymentProcessor $paymentProcessor;
 
     /**
+     * The name of the sale event. It can be used to track different types of event for example 'Purchase', 'Upgrade', 'Payment', etc.
+     *
+     * @var ?string $eventName
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
+    #[\JMS\Serializer\Annotation\Type('string')]
+    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    public ?string $eventName = null;
+
+    /**
      * The invoice ID of the sale.
      *
      * @var ?string $invoiceId
@@ -73,6 +83,7 @@ class TrackSaleRequestBody
         $this->customerId = '';
         $this->amount = 0;
         $this->paymentProcessor = \Dub\Models\Operations\PaymentProcessor::Stripe;
+        $this->eventName = null;
         $this->invoiceId = null;
         $this->currency = null;
         $this->metadata = null;

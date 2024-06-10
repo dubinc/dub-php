@@ -34,7 +34,7 @@ $sdk = Dub\Dub::builder()
 try {
         $requestBody = new Operations\TrackLeadRequestBody();
     $requestBody->clickId = '<value>';
-    $requestBody->eventName = 'Signup';
+    $requestBody->eventName = 'Sign up';
     $requestBody->customerId = '<value>';
     $requestBody->customerName = '<value>';
     $requestBody->customerEmail = 'Katelin24@hotmail.com';
@@ -96,6 +96,7 @@ try {
     $requestBody->customerId = '<value>';
     $requestBody->amount = 996500;
     $requestBody->paymentProcessor = Operations\PaymentProcessor::Shopify;
+    $requestBody->eventName = 'Purchase';
     $requestBody->invoiceId = '<value>';
     $requestBody->currency = 'European Unit of Account 17(E.U.A.-17)';
     $requestBody->metadata = [
