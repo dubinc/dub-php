@@ -12,6 +12,10 @@ namespace Dub\Models\Operations;
 /** TrackSaleResponseBody - A sale was tracked. */
 class TrackSaleResponseBody
 {
+    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
+    #[\JMS\Serializer\Annotation\Type('string')]
+    public string $eventName;
+
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
     #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
@@ -43,6 +47,7 @@ class TrackSaleResponseBody
 
     public function __construct()
     {
+        $this->eventName = '';
         $this->customerId = '';
         $this->amount = 0;
         $this->paymentProcessor = '';
