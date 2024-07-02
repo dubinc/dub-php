@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class CreateTagRequestBody
+class UpdateTagRequestBody
 {
     /**
      * The name of the tag to create.
@@ -24,12 +24,12 @@ class CreateTagRequestBody
     /**
      * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, pink, brown.
      *
-     * @var ?\Dub\Models\Operations\Color $color
+     * @var ?\Dub\Models\Operations\UpdateTagColor $color
      */
     #[\JMS\Serializer\Annotation\SerializedName('color')]
-    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Operations\Color>')]
+    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Operations\UpdateTagColor>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?Color $color = null;
+    public ?UpdateTagColor $color = null;
 
     /**
      * The name of the tag to create.

@@ -102,10 +102,10 @@ class GetLinksRequest
     /**
      * The page number for pagination (each page contains 100 links).
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     public function __construct()
     {

@@ -1,17 +1,17 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: ba3e83845a082a6c2321d0eeaaf9c23c
+  docChecksum: c0895b6571175adfc5c4d2c3943adf22
   docVersion: 0.0.1
-  speakeasyVersion: 1.300.1
-  generationVersion: 2.339.1
-  releaseVersion: 0.1.3
-  configChecksum: 30c740208efe09954ee8b0f65aee1e77
+  speakeasyVersion: 1.325.0
+  generationVersion: 2.356.0
+  releaseVersion: 0.1.4
+  configChecksum: cfb21a4abbfdabcc8d48a9999969d4fa
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
 features:
   php:
-    core: 3.3.5
+    core: 3.3.6
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
@@ -82,35 +82,31 @@ generatedFiles:
   - src/Models/Operations/Interval.php
   - src/Models/Operations/RetrieveAnalyticsRequest.php
   - src/Models/Operations/RetrieveAnalyticsResponse.php
-  - src/Models/Operations/GetWorkspacesResponse.php
-  - src/Models/Operations/CreateWorkspaceRequestBody.php
-  - src/Models/Operations/CreateWorkspaceResponse.php
   - src/Models/Operations/GetWorkspaceRequest.php
   - src/Models/Operations/GetWorkspaceResponse.php
+  - src/Models/Operations/UpdateWorkspaceRequest.php
+  - src/Models/Operations/UpdateWorkspaceResponse.php
   - src/Models/Operations/GetTagsRequest.php
   - src/Models/Operations/GetTagsResponse.php
   - src/Models/Operations/Color.php
   - src/Models/Operations/CreateTagRequestBody.php
   - src/Models/Operations/CreateTagRequest.php
   - src/Models/Operations/CreateTagResponse.php
+  - src/Models/Operations/UpdateTagColor.php
+  - src/Models/Operations/UpdateTagRequestBody.php
+  - src/Models/Operations/UpdateTagRequest.php
+  - src/Models/Operations/UpdateTagResponse.php
   - src/Models/Operations/ListDomainsRequest.php
   - src/Models/Operations/ListDomainsResponse.php
-  - src/Models/Operations/Type.php
-  - src/Models/Operations/AddDomainRequestBody.php
-  - src/Models/Operations/AddDomainRequest.php
-  - src/Models/Operations/AddDomainResponse.php
+  - src/Models/Operations/CreateDomainRequestBody.php
+  - src/Models/Operations/CreateDomainRequest.php
+  - src/Models/Operations/CreateDomainResponse.php
   - src/Models/Operations/DeleteDomainRequest.php
   - src/Models/Operations/DeleteDomainResponseBody.php
   - src/Models/Operations/DeleteDomainResponse.php
-  - src/Models/Operations/UpdateDomainType.php
   - src/Models/Operations/UpdateDomainRequestBody.php
   - src/Models/Operations/UpdateDomainRequest.php
   - src/Models/Operations/UpdateDomainResponse.php
-  - src/Models/Operations/SetPrimaryDomainRequest.php
-  - src/Models/Operations/SetPrimaryDomainResponse.php
-  - src/Models/Operations/TransferDomainRequestBody.php
-  - src/Models/Operations/TransferDomainRequest.php
-  - src/Models/Operations/TransferDomainResponse.php
   - src/Models/Operations/TrackLeadRequestBody.php
   - src/Models/Operations/TrackLeadRequest.php
   - src/Models/Operations/TrackLeadResponseBody.php
@@ -165,7 +161,6 @@ generatedFiles:
   - src/Models/Components/Users.php
   - src/Models/Components/Domains.php
   - src/Models/Components/WorkspaceSchema.php
-  - src/Models/Components/Type.php
   - src/Models/Components/DomainSchema.php
   - src/Models/Components/Security.php
   - docs/Models/Operations/Sort.md
@@ -198,35 +193,31 @@ generatedFiles:
   - docs/Models/Operations/Interval.md
   - docs/Models/Operations/RetrieveAnalyticsRequest.md
   - docs/Models/Operations/RetrieveAnalyticsResponse.md
-  - docs/Models/Operations/GetWorkspacesResponse.md
-  - docs/Models/Operations/CreateWorkspaceRequestBody.md
-  - docs/Models/Operations/CreateWorkspaceResponse.md
   - docs/Models/Operations/GetWorkspaceRequest.md
   - docs/Models/Operations/GetWorkspaceResponse.md
+  - docs/Models/Operations/UpdateWorkspaceRequest.md
+  - docs/Models/Operations/UpdateWorkspaceResponse.md
   - docs/Models/Operations/GetTagsRequest.md
   - docs/Models/Operations/GetTagsResponse.md
   - docs/Models/Operations/Color.md
   - docs/Models/Operations/CreateTagRequestBody.md
   - docs/Models/Operations/CreateTagRequest.md
   - docs/Models/Operations/CreateTagResponse.md
+  - docs/Models/Operations/UpdateTagColor.md
+  - docs/Models/Operations/UpdateTagRequestBody.md
+  - docs/Models/Operations/UpdateTagRequest.md
+  - docs/Models/Operations/UpdateTagResponse.md
   - docs/Models/Operations/ListDomainsRequest.md
   - docs/Models/Operations/ListDomainsResponse.md
-  - docs/Models/Operations/Type.md
-  - docs/Models/Operations/AddDomainRequestBody.md
-  - docs/Models/Operations/AddDomainRequest.md
-  - docs/Models/Operations/AddDomainResponse.md
+  - docs/Models/Operations/CreateDomainRequestBody.md
+  - docs/Models/Operations/CreateDomainRequest.md
+  - docs/Models/Operations/CreateDomainResponse.md
   - docs/Models/Operations/DeleteDomainRequest.md
   - docs/Models/Operations/DeleteDomainResponseBody.md
   - docs/Models/Operations/DeleteDomainResponse.md
-  - docs/Models/Operations/UpdateDomainType.md
   - docs/Models/Operations/UpdateDomainRequestBody.md
   - docs/Models/Operations/UpdateDomainRequest.md
   - docs/Models/Operations/UpdateDomainResponse.md
-  - docs/Models/Operations/SetPrimaryDomainRequest.md
-  - docs/Models/Operations/SetPrimaryDomainResponse.md
-  - docs/Models/Operations/TransferDomainRequestBody.md
-  - docs/Models/Operations/TransferDomainRequest.md
-  - docs/Models/Operations/TransferDomainResponse.md
   - docs/Models/Operations/TrackLeadRequestBody.md
   - docs/Models/Operations/TrackLeadRequest.md
   - docs/Models/Operations/TrackLeadResponseBody.md
@@ -281,7 +272,6 @@ generatedFiles:
   - docs/Models/Components/Users.md
   - docs/Models/Components/Domains.md
   - docs/Models/Components/WorkspaceSchema.md
-  - docs/Models/Components/Type.md
   - docs/Models/Components/DomainSchema.md
   - docs/Models/Components/Security.md
   - docs/sdks/dub/README.md

@@ -27,9 +27,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $requestBody = new Operations\TrackLeadRequestBody();
@@ -87,9 +85,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $requestBody = new Operations\TrackSaleRequestBody();
@@ -147,9 +143,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $requestBody = new Operations\TrackCustomerRequestBody();
