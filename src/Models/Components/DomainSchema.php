@@ -57,15 +57,6 @@ class DomainSchema
     public bool $archived;
 
     /**
-     * Prevent search engines from indexing the domain.
-     *
-     * @var bool $noindex
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('noindex')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
-    public bool $noindex;
-
-    /**
      * Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
      *
      * @var string $placeholder
@@ -84,31 +75,22 @@ class DomainSchema
     public string $expiredUrl;
 
     /**
-     * The page your users will get redirected to when they visit your domain.
+     * The date the domain was created.
      *
-     * @var string $target
+     * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('target')]
+    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
     #[\JMS\Serializer\Annotation\Type('string')]
-    public string $target;
+    public string $createdAt;
 
     /**
-     * The type of redirect to use for this domain.
+     * The date the domain was last updated.
      *
-     * @var \Dub\Models\Components\Type $type
+     * @var string $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Components\Type>')]
-    public Type $type;
-
-    /**
-     * The number of clicks on the domain.
-     *
-     * @var float $clicks
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    #[\JMS\Serializer\Annotation\Type('float')]
-    public float $clicks;
+    #[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\JMS\Serializer\Annotation\Type('string')]
+    public string $updatedAt;
 
     public function __construct()
     {
@@ -117,11 +99,9 @@ class DomainSchema
         $this->verified = false;
         $this->primary = false;
         $this->archived = false;
-        $this->noindex = false;
         $this->placeholder = '';
         $this->expiredUrl = '';
-        $this->target = '';
-        $this->type = \Dub\Models\Components\Type::Redirect;
-        $this->clicks = 0;
+        $this->createdAt = '';
+        $this->updatedAt = '';
     }
 }

@@ -21,16 +21,20 @@ class Workspaces
     }
 
     /**
-     * Retrieve a list of workspaces
+     * Retrieve a workspace
      *
-     * Retrieve a list of workspaces for the authenticated user.
+     * Retrieve a workspace for the authenticated user.
      *
-     * @return \Dub\Models\Operations\GetWorkspacesResponse
+     * @param  string  $idOrSlug
+     * @return \Dub\Models\Operations\GetWorkspaceResponse
      */
-    public function list(
-    ): \Dub\Models\Operations\GetWorkspacesResponse {
+    public function get(
+        string $idOrSlug,
+    ): \Dub\Models\Operations\GetWorkspaceResponse {
+        $request = new \Dub\Models\Operations\GetWorkspaceRequest();
+        $request->idOrSlug = $idOrSlug;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces');
+        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\GetWorkspaceRequest::class, $request, $this->sdkConfiguration->globals);
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
@@ -40,92 +44,7 @@ class Workspaces
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \Dub\Models\Operations\GetWorkspacesResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        if ($httpResponse->getStatusCode() === 200) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->workspaceSchemas = $serializer->deserialize((string) $httpResponse->getBody(), 'array<Dub\Models\Components\WorkspaceSchema>', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 400) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 401) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 403) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 404) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 409) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 410) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 422) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 429) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
-            }
-        } elseif ($httpResponse->getStatusCode() === 500) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
-            }
-        }
-
-        return $response;
-    }
-
-    /**
-     * Create a workspace
-     *
-     * Create a new workspace for the authenticated user.
-     *
-     * @param  \Dub\Models\Operations\CreateWorkspaceRequestBody  $request
-     * @return \Dub\Models\Operations\CreateWorkspaceResponse
-     */
-    public function create(
-        ?\Dub\Models\Operations\CreateWorkspaceRequestBody $request,
-    ): \Dub\Models\Operations\CreateWorkspaceResponse {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces');
-        $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
-        if ($body !== null) {
-            $options = array_merge_recursive($options, $body);
-        }
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-
-        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-
-        $response = new \Dub\Models\Operations\CreateWorkspaceResponse();
+        $response = new \Dub\Models\Operations\GetWorkspaceResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -185,30 +104,30 @@ class Workspaces
     }
 
     /**
-     * Retrieve a workspace
+     * Update a workspace
      *
-     * Retrieve a workspace for the authenticated user.
+     * Update a workspace by ID or slug.
      *
      * @param  string  $idOrSlug
-     * @return \Dub\Models\Operations\GetWorkspaceResponse
+     * @return \Dub\Models\Operations\UpdateWorkspaceResponse
      */
-    public function get(
+    public function update(
         string $idOrSlug,
-    ): \Dub\Models\Operations\GetWorkspaceResponse {
-        $request = new \Dub\Models\Operations\GetWorkspaceRequest();
+    ): \Dub\Models\Operations\UpdateWorkspaceResponse {
+        $request = new \Dub\Models\Operations\UpdateWorkspaceRequest();
         $request->idOrSlug = $idOrSlug;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\GetWorkspaceRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\UpdateWorkspaceRequest::class, $request, $this->sdkConfiguration->globals);
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('PATCH', $url, $options);
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \Dub\Models\Operations\GetWorkspaceResponse();
+        $response = new \Dub\Models\Operations\UpdateWorkspaceResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

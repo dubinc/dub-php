@@ -241,6 +241,16 @@ class CreateLinkRequestBody
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?\Dub\Models\Components\LinkGeoTargeting $geo = null;
 
+    /**
+     * Allow search engines to index your short link. Defaults to `false` if not provided. Learn more: https://d.to/noindex
+     *
+     * @var ?bool $doIndex
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
+    #[\JMS\Serializer\Annotation\Type('bool')]
+    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    public ?bool $doIndex = null;
+
     public function __construct()
     {
         $this->url = '';
@@ -266,5 +276,6 @@ class CreateLinkRequestBody
         $this->ios = null;
         $this->android = null;
         $this->geo = null;
+        $this->doIndex = null;
     }
 }

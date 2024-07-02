@@ -22,26 +22,6 @@ class UpdateDomainRequestBody
     public ?string $slug = null;
 
     /**
-     * The type of redirect to use for this domain.
-     *
-     * @var ?\Dub\Models\Operations\UpdateDomainType $type
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Operations\UpdateDomainType>')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?UpdateDomainType $type = null;
-
-    /**
-     * The page your users will get redirected to when they visit your domain.
-     *
-     * @var ?string $target
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('target')]
-    #[\JMS\Serializer\Annotation\Type('string')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?string $target = null;
-
-    /**
      * Redirect users to a specific URL when any link under this domain has expired.
      *
      * @var ?string $expiredUrl
@@ -62,16 +42,6 @@ class UpdateDomainRequestBody
     public ?bool $archived = null;
 
     /**
-     * Prevent search engines from indexing the domain. Defaults to `false`.
-     *
-     * @var ?bool $noindex
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('noindex')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?bool $noindex = null;
-
-    /**
      * Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
      *
      * @var ?string $placeholder
@@ -84,11 +54,8 @@ class UpdateDomainRequestBody
     public function __construct()
     {
         $this->slug = null;
-        $this->type = null;
-        $this->target = null;
         $this->expiredUrl = null;
         $this->archived = null;
-        $this->noindex = null;
         $this->placeholder = null;
     }
 }

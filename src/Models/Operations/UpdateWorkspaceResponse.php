@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class SetPrimaryDomainResponse
+class UpdateWorkspaceResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,11 +33,11 @@ class SetPrimaryDomainResponse
     public ?\Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The domain was set as primary
+     * The updated workspace.
      *
-     * @var ?\Dub\Models\Components\DomainSchema $domainSchema
+     * @var ?\Dub\Models\Components\WorkspaceSchema $workspaceSchema
      */
-    public ?\Dub\Models\Components\DomainSchema $domainSchema = null;
+    public ?\Dub\Models\Components\WorkspaceSchema $workspaceSchema = null;
 
     /**
      * The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
@@ -107,7 +107,7 @@ class SetPrimaryDomainResponse
         $this->contentType = '';
         $this->statusCode = 0;
         $this->rawResponse = null;
-        $this->domainSchema = null;
+        $this->workspaceSchema = null;
         $this->badRequest = null;
         $this->unauthorized = null;
         $this->forbidden = null;

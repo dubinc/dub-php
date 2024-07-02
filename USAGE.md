@@ -14,7 +14,6 @@ $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
     ->setSecurity($security)
     ->build();
 
@@ -293,6 +292,7 @@ try {
     $requestBody->geo->sx = '<value>';
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
+    $requestBody->doIndex = false;
 
     $response = $sdk->links->create('<value>', '<value>', $requestBody);
 
@@ -320,7 +320,6 @@ $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
     ->setSecurity($security)
     ->build();
 
@@ -599,6 +598,7 @@ try {
     $requestBody->geo->sx = '<value>';
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
+    $requestBody->doIndex = false;
 
     $response = $sdk->links->upsert('<value>', '<value>', $requestBody);
 

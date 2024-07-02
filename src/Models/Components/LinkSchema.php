@@ -147,6 +147,15 @@ class LinkSchema
     public bool $rewrite;
 
     /**
+     * Whether to allow search engines to index the short link.
+     *
+     * @var bool $doIndex
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
+    #[\JMS\Serializer\Annotation\Type('bool')]
+    public bool $doIndex;
+
+    /**
      * The iOS destination URL for the short link for iOS device targeting.
      *
      * @var string $ios
@@ -372,6 +381,7 @@ class LinkSchema
         $this->description = '';
         $this->image = '';
         $this->rewrite = false;
+        $this->doIndex = false;
         $this->ios = '';
         $this->android = '';
         $this->geo = new \Dub\Models\Components\Geo();

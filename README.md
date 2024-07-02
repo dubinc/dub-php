@@ -64,7 +64,6 @@ $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
     ->setSecurity($security)
     ->build();
 
@@ -343,6 +342,7 @@ try {
     $requestBody->geo->sx = '<value>';
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
+    $requestBody->doIndex = false;
 
     $response = $sdk->links->create('<value>', '<value>', $requestBody);
 
@@ -372,7 +372,6 @@ $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
     ->setSecurity($security)
     ->build();
 
@@ -651,6 +650,7 @@ try {
     $requestBody->geo->sx = '<value>';
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
+    $requestBody->doIndex = false;
 
     $response = $sdk->links->upsert('<value>', '<value>', $requestBody);
 
@@ -688,23 +688,21 @@ try {
 
 ### [Workspaces](docs/sdks/workspaces/README.md)
 
-* [list](docs/sdks/workspaces/README.md#list) - Retrieve a list of workspaces
-* [create](docs/sdks/workspaces/README.md#create) - Create a workspace
 * [get](docs/sdks/workspaces/README.md#get) - Retrieve a workspace
+* [update](docs/sdks/workspaces/README.md#update) - Update a workspace
 
 ### [Tags](docs/sdks/tags/README.md)
 
 * [list](docs/sdks/tags/README.md#list) - Retrieve a list of tags
 * [create](docs/sdks/tags/README.md#create) - Create a new tag
+* [update](docs/sdks/tags/README.md#update) - Update a tag
 
 ### [Domains](docs/sdks/domains/README.md)
 
 * [list](docs/sdks/domains/README.md#list) - Retrieve a list of domains
-* [add](docs/sdks/domains/README.md#add) - Add a domain
+* [create](docs/sdks/domains/README.md#create) - Create a domain
 * [delete](docs/sdks/domains/README.md#delete) - Delete a domain
 * [update](docs/sdks/domains/README.md#update) - Update a domain
-* [setPrimary](docs/sdks/domains/README.md#setprimary) - Set a domain as primary
-* [transfer](docs/sdks/domains/README.md#transfer) - Transfer a domain
 
 ### [Track](docs/sdks/track/README.md)
 
@@ -720,18 +718,18 @@ try {
 <!-- Start Global Parameters [global-parameters] -->
 ## Global Parameters
 
-Certain parameters are configured globally. These parameters must be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, These global values will be used as defaults on the operations that use them. When such operations are called, there is a place in each to override the global value, if needed.
+Certain parameters are configured globally. These parameters may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, These global values will be used as defaults on the operations that use them. When such operations are called, there is a place in each to override the global value, if needed.
 
 For example, you can set `workspaceId` to `'<value>'` at SDK initialization and then you do not have to pass the same value on calls to operations like `list`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
 ### Available Globals
 
-The following global parameters are available. The required parameters must be set when you initialize the SDK client.
+The following global parameters are available.
 
 | Name | Type | Required | Description |
 | ---- | ---- |:--------:| ----------- |
-| workspaceId | string | ✔️ | The workspaceId parameter. |
+| workspaceId | string |  | The workspaceId parameter. |
 | projectSlug | string |  | The projectSlug parameter. |
 
 
@@ -752,7 +750,6 @@ $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
     ->setSecurity($security)
     ->build();
 
@@ -767,7 +764,7 @@ try {
     $request->showArchived = false;
     $request->withTags = false;
     $request->sort = Operations\Sort::CreatedAt;
-    $request->page = 6783.17;
+    $request->page = 678317;
 
     $response = $sdk->links->list($request);
 

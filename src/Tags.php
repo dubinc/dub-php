@@ -200,4 +200,101 @@ class Tags
 
         return $response;
     }
+
+    /**
+     * Update a tag
+     *
+     * Update a tag in the workspace.
+     *
+     * @param  string  $id
+     * @param  ?string  $workspaceId
+     * @param  ?string  $projectSlug
+     * @param  ?\Dub\Models\Operations\UpdateTagRequestBody  $requestBody
+     * @return \Dub\Models\Operations\UpdateTagResponse
+     */
+    public function update(
+        string $id,
+        ?string $workspaceId = null,
+        ?string $projectSlug = null,
+        ?\Dub\Models\Operations\UpdateTagRequestBody $requestBody = null,
+    ): \Dub\Models\Operations\UpdateTagResponse {
+        $request = new \Dub\Models\Operations\UpdateTagRequest();
+        $request->id = $id;
+        $request->workspaceId = $workspaceId;
+        $request->projectSlug = $projectSlug;
+        $request->requestBody = $requestBody;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/tags/{id}', \Dub\Models\Operations\UpdateTagRequest::class, $request, $this->sdkConfiguration->globals);
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        if ($body !== null) {
+            $options = array_merge_recursive($options, $body);
+        }
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\UpdateTagRequest::class, $request, $this->sdkConfiguration->globals));
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+
+        $httpResponse = $this->sdkConfiguration->securityClient->request('PATCH', $url, $options);
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+
+        $response = new \Dub\Models\Operations\UpdateTagResponse();
+        $response->statusCode = $statusCode;
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->tagSchema = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\TagSchema', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 400) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 401) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 403) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 404) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 409) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 410) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 422) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 429) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
+            }
+        } elseif ($httpResponse->getStatusCode() === 500) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
+            }
+        }
+
+        return $response;
+    }
 }
