@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class GetWorkspacesResponse
+class CreateDomainResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,11 +33,11 @@ class GetWorkspacesResponse
     public ?\Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * A list of workspaces
+     * The domain was created.
      *
-     * @var ?array<\Dub\Models\Components\WorkspaceSchema> $workspaceSchemas
+     * @var ?\Dub\Models\Components\DomainSchema $domainSchema
      */
-    public ?array $workspaceSchemas = null;
+    public ?\Dub\Models\Components\DomainSchema $domainSchema = null;
 
     /**
      * The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
@@ -107,7 +107,7 @@ class GetWorkspacesResponse
         $this->contentType = '';
         $this->statusCode = 0;
         $this->rawResponse = null;
-        $this->workspaceSchemas = null;
+        $this->domainSchema = null;
         $this->badRequest = null;
         $this->unauthorized = null;
         $this->forbidden = null;

@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 use Dub\Utils\SpeakeasyMetadata;
-class AddDomainRequest
+class CreateDomainRequest
 {
     /**
      * The ID of the workspace.
@@ -28,7 +28,7 @@ class AddDomainRequest
     public ?string $projectSlug = null;
 
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?AddDomainRequestBody $requestBody = null;
+    public ?CreateDomainRequestBody $requestBody = null;
 
     public function __construct()
     {

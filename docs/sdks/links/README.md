@@ -32,9 +32,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $request = new Operations\GetLinksRequest();
@@ -47,7 +45,7 @@ try {
     $request->showArchived = false;
     $request->withTags = false;
     $request->sort = Operations\Sort::CreatedAt;
-    $request->page = 6783.17;;
+    $request->page = 678317;;
 
     $response = $sdk->links->list($request);
 
@@ -91,9 +89,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $requestBody = new Operations\CreateLinkRequestBody();
@@ -372,6 +368,7 @@ try {
     $requestBody->geo->sx = '<value>';
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
+    $requestBody->doIndex = false;
 
     $response = $sdk->links->create('<value>', '<value>', $requestBody);
 
@@ -417,9 +414,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $request = new Operations\GetLinksCountRequest();
@@ -475,9 +470,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $request = new Operations\GetLinkInfoRequest();
@@ -528,9 +521,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $request = new Operations\DeleteLinkRequest();
@@ -578,9 +569,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $request = new Operations\UpdateLinkRequest();
@@ -860,7 +849,8 @@ try {
     $request->requestBody->geo->rs = '<value>';
     $request->requestBody->geo->sx = '<value>';
     $request->requestBody->geo->ss = '<value>';
-    $request->requestBody->geo->xk = '<value>';;
+    $request->requestBody->geo->xk = '<value>';
+    $request->requestBody->doIndex = false;;
 
     $response = $sdk->links->update($request);
 
@@ -904,9 +894,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     
@@ -957,9 +945,7 @@ use \Dub\Models\Operations;
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setWorkspaceId('<value>')
-    ->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
         $requestBody = new Operations\UpsertLinkRequestBody();
@@ -1238,6 +1224,7 @@ try {
     $requestBody->geo->sx = '<value>';
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
+    $requestBody->doIndex = false;
 
     $response = $sdk->links->upsert('<value>', '<value>', $requestBody);
 

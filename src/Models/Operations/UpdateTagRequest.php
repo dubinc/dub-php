@@ -9,15 +9,15 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 use Dub\Utils\SpeakeasyMetadata;
-class SetPrimaryDomainRequest
+class UpdateTagRequest
 {
     /**
-     * The domain name.
+     * The ID of the tag
      *
-     * @var string $slug
+     * @var string $id
      */
-    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=slug')]
-    public string $slug;
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
+    public string $id;
 
     /**
      * The ID of the workspace.
@@ -35,10 +35,14 @@ class SetPrimaryDomainRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
     public ?string $projectSlug = null;
 
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public ?UpdateTagRequestBody $requestBody = null;
+
     public function __construct()
     {
-        $this->slug = '';
+        $this->id = '';
         $this->workspaceId = null;
         $this->projectSlug = null;
+        $this->requestBody = null;
     }
 }

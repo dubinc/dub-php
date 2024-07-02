@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class TransferDomainResponse
+class UpdateTagResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,11 +33,11 @@ class TransferDomainResponse
     public ?\Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The domain transfer initiated
+     * The updated tag.
      *
-     * @var ?\Dub\Models\Components\DomainSchema $domainSchema
+     * @var ?\Dub\Models\Components\TagSchema $tagSchema
      */
-    public ?\Dub\Models\Components\DomainSchema $domainSchema = null;
+    public ?\Dub\Models\Components\TagSchema $tagSchema = null;
 
     /**
      * The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
@@ -107,7 +107,7 @@ class TransferDomainResponse
         $this->contentType = '';
         $this->statusCode = 0;
         $this->rawResponse = null;
-        $this->domainSchema = null;
+        $this->tagSchema = null;
         $this->badRequest = null;
         $this->unauthorized = null;
         $this->forbidden = null;
