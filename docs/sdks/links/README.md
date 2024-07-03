@@ -10,6 +10,7 @@
 * [delete](#delete) - Delete a link
 * [update](#update) - Update a link
 * [createMany](#createmany) - Bulk create links
+* [updateMany](#updatemany) - Bulk update links
 * [upsert](#upsert) - Upsert a link
 
 ## list
@@ -923,6 +924,329 @@ try {
 ### Response
 
 **[?\Dub\Models\Operations\BulkCreateLinksResponse](../../Models/Operations/BulkCreateLinksResponse.md)**
+
+
+## updateMany
+
+Bulk update up to 100 links with the same data for the authenticated workspace.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use \Dub;
+use \Dub\Models\Components;
+use \Dub\Models\Operations;
+
+$security = new Components\Security();
+$security->token = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+try {
+        $request = new Operations\BulkUpdateLinksRequestBody();
+    $request->linkIds = [
+        '<value>',
+    ];
+    $request->data = new Operations\Data();
+    $request->data->url = 'https://google/com';
+    $request->data->trackConversion = false;
+    $request->data->archived = false;
+    $request->data->publicStats = false;
+    $request->data->tagId = '<value>';
+    $request->data->tagIds = [
+        '<value>',
+    ];
+    $request->data->tagNames = '<value>';
+    $request->data->comments = '<value>';
+    $request->data->expiresAt = '<value>';
+    $request->data->expiredUrl = '<value>';
+    $request->data->password = 'GWDSvXDvs2q1hzW';
+    $request->data->proxy = false;
+    $request->data->title = '<value>';
+    $request->data->description = 'Upgradable cohesive implementation';
+    $request->data->image = 'https://loremflickr.com/640/480';
+    $request->data->rewrite = false;
+    $request->data->ios = '<value>';
+    $request->data->android = '<value>';
+    $request->data->geo = new Components\LinkGeoTargeting();
+    $request->data->geo->af = '<value>';
+    $request->data->geo->al = '<value>';
+    $request->data->geo->dz = '<value>';
+    $request->data->geo->as = '<value>';
+    $request->data->geo->ad = '<value>';
+    $request->data->geo->ao = '<value>';
+    $request->data->geo->ai = '<value>';
+    $request->data->geo->aq = '<value>';
+    $request->data->geo->ag = '<value>';
+    $request->data->geo->ar = '<value>';
+    $request->data->geo->am = '<value>';
+    $request->data->geo->aw = '<value>';
+    $request->data->geo->au = '<value>';
+    $request->data->geo->at = '<value>';
+    $request->data->geo->az = '<value>';
+    $request->data->geo->bs = '<value>';
+    $request->data->geo->bh = '<value>';
+    $request->data->geo->bd = '<value>';
+    $request->data->geo->bb = '<value>';
+    $request->data->geo->by = '<value>';
+    $request->data->geo->be = '<value>';
+    $request->data->geo->bz = '<value>';
+    $request->data->geo->bj = '<value>';
+    $request->data->geo->bm = '<value>';
+    $request->data->geo->bt = '<value>';
+    $request->data->geo->bo = '<value>';
+    $request->data->geo->ba = '<value>';
+    $request->data->geo->bw = '<value>';
+    $request->data->geo->bv = '<value>';
+    $request->data->geo->br = '<value>';
+    $request->data->geo->io = '<value>';
+    $request->data->geo->bn = '<value>';
+    $request->data->geo->bg = '<value>';
+    $request->data->geo->bf = '<value>';
+    $request->data->geo->bi = '<value>';
+    $request->data->geo->kh = '<value>';
+    $request->data->geo->cm = '<value>';
+    $request->data->geo->ca = '<value>';
+    $request->data->geo->cv = '<value>';
+    $request->data->geo->ky = '<value>';
+    $request->data->geo->cf = '<value>';
+    $request->data->geo->td = '<value>';
+    $request->data->geo->cl = '<value>';
+    $request->data->geo->cn = '<value>';
+    $request->data->geo->cx = '<value>';
+    $request->data->geo->cc = '<value>';
+    $request->data->geo->co = '<value>';
+    $request->data->geo->km = '<value>';
+    $request->data->geo->cg = '<value>';
+    $request->data->geo->cd = '<value>';
+    $request->data->geo->ck = '<value>';
+    $request->data->geo->cr = '<value>';
+    $request->data->geo->ci = '<value>';
+    $request->data->geo->hr = '<value>';
+    $request->data->geo->cu = '<value>';
+    $request->data->geo->cy = '<value>';
+    $request->data->geo->cz = '<value>';
+    $request->data->geo->dk = '<value>';
+    $request->data->geo->dj = '<value>';
+    $request->data->geo->dm = '<value>';
+    $request->data->geo->do = '<value>';
+    $request->data->geo->ec = '<value>';
+    $request->data->geo->eg = '<value>';
+    $request->data->geo->sv = '<value>';
+    $request->data->geo->gq = '<value>';
+    $request->data->geo->er = '<value>';
+    $request->data->geo->ee = '<value>';
+    $request->data->geo->et = '<value>';
+    $request->data->geo->fk = '<value>';
+    $request->data->geo->fo = '<value>';
+    $request->data->geo->fj = '<value>';
+    $request->data->geo->fi = '<value>';
+    $request->data->geo->fr = '<value>';
+    $request->data->geo->gf = '<value>';
+    $request->data->geo->pf = '<value>';
+    $request->data->geo->tf = '<value>';
+    $request->data->geo->ga = '<value>';
+    $request->data->geo->gm = '<value>';
+    $request->data->geo->ge = '<value>';
+    $request->data->geo->de = '<value>';
+    $request->data->geo->gh = '<value>';
+    $request->data->geo->gi = '<value>';
+    $request->data->geo->gr = '<value>';
+    $request->data->geo->gl = '<value>';
+    $request->data->geo->gd = '<value>';
+    $request->data->geo->gp = '<value>';
+    $request->data->geo->gu = '<value>';
+    $request->data->geo->gt = '<value>';
+    $request->data->geo->gn = '<value>';
+    $request->data->geo->gw = '<value>';
+    $request->data->geo->gy = '<value>';
+    $request->data->geo->ht = '<value>';
+    $request->data->geo->hm = '<value>';
+    $request->data->geo->va = '<value>';
+    $request->data->geo->hn = '<value>';
+    $request->data->geo->hk = '<value>';
+    $request->data->geo->hu = '<value>';
+    $request->data->geo->is = '<value>';
+    $request->data->geo->in = '<value>';
+    $request->data->geo->id = '<id>';
+    $request->data->geo->ir = '<value>';
+    $request->data->geo->iq = '<value>';
+    $request->data->geo->ie = '<value>';
+    $request->data->geo->il = '<value>';
+    $request->data->geo->it = '<value>';
+    $request->data->geo->jm = '<value>';
+    $request->data->geo->jp = '<value>';
+    $request->data->geo->jo = '<value>';
+    $request->data->geo->kz = '<value>';
+    $request->data->geo->ke = '<value>';
+    $request->data->geo->ki = '<value>';
+    $request->data->geo->kp = '<value>';
+    $request->data->geo->kr = '<value>';
+    $request->data->geo->kw = '<value>';
+    $request->data->geo->kg = '<value>';
+    $request->data->geo->la = '<value>';
+    $request->data->geo->lv = '<value>';
+    $request->data->geo->lb = '<value>';
+    $request->data->geo->ls = '<value>';
+    $request->data->geo->lr = '<value>';
+    $request->data->geo->ly = '<value>';
+    $request->data->geo->li = '<value>';
+    $request->data->geo->lt = '<value>';
+    $request->data->geo->lu = '<value>';
+    $request->data->geo->mo = '<value>';
+    $request->data->geo->mg = '<value>';
+    $request->data->geo->mw = '<value>';
+    $request->data->geo->my = '<value>';
+    $request->data->geo->mv = '<value>';
+    $request->data->geo->ml = '<value>';
+    $request->data->geo->mt = '<value>';
+    $request->data->geo->mh = '<value>';
+    $request->data->geo->mq = '<value>';
+    $request->data->geo->mr = '<value>';
+    $request->data->geo->mu = '<value>';
+    $request->data->geo->yt = '<value>';
+    $request->data->geo->mx = '<value>';
+    $request->data->geo->fm = '<value>';
+    $request->data->geo->md = '<value>';
+    $request->data->geo->mc = '<value>';
+    $request->data->geo->mn = '<value>';
+    $request->data->geo->ms = '<value>';
+    $request->data->geo->ma = '<value>';
+    $request->data->geo->mz = '<value>';
+    $request->data->geo->mm = '<value>';
+    $request->data->geo->na = '<value>';
+    $request->data->geo->nr = '<value>';
+    $request->data->geo->np = '<value>';
+    $request->data->geo->nl = '<value>';
+    $request->data->geo->nc = '<value>';
+    $request->data->geo->nz = '<value>';
+    $request->data->geo->ni = '<value>';
+    $request->data->geo->ne = '<value>';
+    $request->data->geo->ng = '<value>';
+    $request->data->geo->nu = '<value>';
+    $request->data->geo->nf = '<value>';
+    $request->data->geo->mk = '<value>';
+    $request->data->geo->mp = '<value>';
+    $request->data->geo->no = '<value>';
+    $request->data->geo->om = '<value>';
+    $request->data->geo->pk = '<value>';
+    $request->data->geo->pw = '<value>';
+    $request->data->geo->ps = '<value>';
+    $request->data->geo->pa = '<value>';
+    $request->data->geo->pg = '<value>';
+    $request->data->geo->py = '<value>';
+    $request->data->geo->pe = '<value>';
+    $request->data->geo->ph = '<value>';
+    $request->data->geo->pn = '<value>';
+    $request->data->geo->pl = '<value>';
+    $request->data->geo->pt = '<value>';
+    $request->data->geo->pr = '<value>';
+    $request->data->geo->qa = '<value>';
+    $request->data->geo->re = '<value>';
+    $request->data->geo->ro = '<value>';
+    $request->data->geo->ru = '<value>';
+    $request->data->geo->rw = '<value>';
+    $request->data->geo->sh = '<value>';
+    $request->data->geo->kn = '<value>';
+    $request->data->geo->lc = '<value>';
+    $request->data->geo->pm = '<value>';
+    $request->data->geo->vc = '<value>';
+    $request->data->geo->ws = '<value>';
+    $request->data->geo->sm = '<value>';
+    $request->data->geo->st = '<value>';
+    $request->data->geo->sa = '<value>';
+    $request->data->geo->sn = '<value>';
+    $request->data->geo->sc = '<value>';
+    $request->data->geo->sl = '<value>';
+    $request->data->geo->sg = '<value>';
+    $request->data->geo->sk = '<value>';
+    $request->data->geo->si = '<value>';
+    $request->data->geo->sb = '<value>';
+    $request->data->geo->so = '<value>';
+    $request->data->geo->za = '<value>';
+    $request->data->geo->gs = '<value>';
+    $request->data->geo->es = '<value>';
+    $request->data->geo->lk = '<value>';
+    $request->data->geo->sd = '<value>';
+    $request->data->geo->sr = '<value>';
+    $request->data->geo->sj = '<value>';
+    $request->data->geo->sz = '<value>';
+    $request->data->geo->se = '<value>';
+    $request->data->geo->ch = '<value>';
+    $request->data->geo->sy = '<value>';
+    $request->data->geo->tw = '<value>';
+    $request->data->geo->tj = '<value>';
+    $request->data->geo->tz = '<value>';
+    $request->data->geo->th = '<value>';
+    $request->data->geo->tl = '<value>';
+    $request->data->geo->tg = '<value>';
+    $request->data->geo->tk = '<value>';
+    $request->data->geo->to = '<value>';
+    $request->data->geo->tt = '<value>';
+    $request->data->geo->tn = '<value>';
+    $request->data->geo->tr = '<value>';
+    $request->data->geo->tm = '<value>';
+    $request->data->geo->tc = '<value>';
+    $request->data->geo->tv = '<value>';
+    $request->data->geo->ug = '<value>';
+    $request->data->geo->ua = '<value>';
+    $request->data->geo->ae = '<value>';
+    $request->data->geo->gb = '<value>';
+    $request->data->geo->us = '<value>';
+    $request->data->geo->um = '<value>';
+    $request->data->geo->uy = '<value>';
+    $request->data->geo->uz = '<value>';
+    $request->data->geo->vu = '<value>';
+    $request->data->geo->ve = '<value>';
+    $request->data->geo->vn = '<value>';
+    $request->data->geo->vg = '<value>';
+    $request->data->geo->vi = '<value>';
+    $request->data->geo->wf = '<value>';
+    $request->data->geo->eh = '<value>';
+    $request->data->geo->ye = '<value>';
+    $request->data->geo->zm = '<value>';
+    $request->data->geo->zw = '<value>';
+    $request->data->geo->ax = '<value>';
+    $request->data->geo->bq = '<value>';
+    $request->data->geo->cw = '<value>';
+    $request->data->geo->gg = '<value>';
+    $request->data->geo->im = '<value>';
+    $request->data->geo->je = '<value>';
+    $request->data->geo->me = '<value>';
+    $request->data->geo->bl = '<value>';
+    $request->data->geo->mf = '<value>';
+    $request->data->geo->rs = '<value>';
+    $request->data->geo->sx = '<value>';
+    $request->data->geo->ss = '<value>';
+    $request->data->geo->xk = '<value>';
+    $request->data->doIndex = false;;
+
+    $response = $sdk->links->updateMany($request);
+
+    if ($response->linkSchemas !== null) {
+        // handle response
+    }
+} catch (Throwable $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [\Dub\Models\Operations\BulkUpdateLinksRequestBody](../../Models/Operations/BulkUpdateLinksRequestBody.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+
+
+### Response
+
+**[?\Dub\Models\Operations\BulkUpdateLinksResponse](../../Models/Operations/BulkUpdateLinksResponse.md)**
 
 
 ## upsert
