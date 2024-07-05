@@ -26,16 +26,13 @@ class Tags
      * Retrieve a list of tags for the authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @return \Dub\Models\Operations\GetTagsResponse
      */
     public function list(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
     ): \Dub\Models\Operations\GetTagsResponse {
         $request = new \Dub\Models\Operations\GetTagsRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags');
         $options = ['http_errors' => false];
@@ -113,18 +110,15 @@ class Tags
      * Create a new tag for the authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\CreateTagRequestBody  $requestBody
      * @return \Dub\Models\Operations\CreateTagResponse
      */
     public function create(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\CreateTagRequestBody $requestBody = null,
     ): \Dub\Models\Operations\CreateTagResponse {
         $request = new \Dub\Models\Operations\CreateTagRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags');
@@ -208,20 +202,17 @@ class Tags
      *
      * @param  string  $id
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\UpdateTagRequestBody  $requestBody
      * @return \Dub\Models\Operations\UpdateTagResponse
      */
     public function update(
         string $id,
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\UpdateTagRequestBody $requestBody = null,
     ): \Dub\Models\Operations\UpdateTagResponse {
         $request = new \Dub\Models\Operations\UpdateTagRequest();
         $request->id = $id;
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags/{id}', \Dub\Models\Operations\UpdateTagRequest::class, $request, $this->sdkConfiguration->globals);

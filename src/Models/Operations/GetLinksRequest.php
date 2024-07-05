@@ -20,14 +20,6 @@ class GetLinksRequest
     public ?string $workspaceId = null;
 
     /**
-     * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var ?string $projectSlug
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
-    public ?string $projectSlug = null;
-
-    /**
      * The domain to filter the links by. E.g. `ac.me`. If not provided, all links for the workspace will be returned.
      *
      * @var ?string $domain
@@ -110,7 +102,6 @@ class GetLinksRequest
     public function __construct()
     {
         $this->workspaceId = null;
-        $this->projectSlug = null;
         $this->domain = null;
         $this->tagId = null;
         $this->tagIds = null;

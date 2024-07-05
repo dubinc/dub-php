@@ -26,16 +26,13 @@ class Domains
      * Retrieve a list of domains associated with the authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @return \Dub\Models\Operations\ListDomainsResponse
      */
     public function list(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
     ): \Dub\Models\Operations\ListDomainsResponse {
         $request = new \Dub\Models\Operations\ListDomainsRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/domains');
         $options = ['http_errors' => false];
@@ -113,18 +110,15 @@ class Domains
      * Create a domain for the authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\CreateDomainRequestBody  $requestBody
      * @return \Dub\Models\Operations\CreateDomainResponse
      */
     public function create(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\CreateDomainRequestBody $requestBody = null,
     ): \Dub\Models\Operations\CreateDomainResponse {
         $request = new \Dub\Models\Operations\CreateDomainRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/domains');

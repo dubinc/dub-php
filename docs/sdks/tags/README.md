@@ -32,7 +32,7 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->tags->list('<value>', '<value>');
+    $response = $sdk->tags->list('<value>');
 
     if ($response->tagSchemas !== null) {
         // handle response
@@ -44,10 +44,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `workspaceId`                                                                  | *string*                                                                       | :heavy_minus_sign:                                                             | The ID of the workspace.                                                       |
-| `projectSlug`                                                                  | *string*                                                                       | :heavy_minus_sign:                                                             | The slug of the project. This field is deprecated – use `workspaceId` instead. |
+| Parameter                | Type                     | Required                 | Description              |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `workspaceId`            | *string*                 | :heavy_minus_sign:       | The ID of the workspace. |
 
 
 ### Response
@@ -83,7 +82,7 @@ try {
     $requestBody->color = Operations\Color::Blue;
     $requestBody->tag = '<value>';
 
-    $response = $sdk->tags->create('<value>', '<value>', $requestBody);
+    $response = $sdk->tags->create('<value>', $requestBody);
 
     if ($response->tagSchema !== null) {
         // handle response
@@ -98,7 +97,6 @@ try {
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
-| `projectSlug`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The slug of the project. This field is deprecated – use `workspaceId` instead.                 |
 | `requestBody`                                                                                  | [\Dub\Models\Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 
@@ -135,7 +133,7 @@ try {
     $requestBody->color = Operations\UpdateTagColor::Brown;
     $requestBody->tag = '<value>';
 
-    $response = $sdk->tags->update('<value>', '<value>', '<value>', $requestBody);
+    $response = $sdk->tags->update('<value>', '<value>', $requestBody);
 
     if ($response->tagSchema !== null) {
         // handle response
@@ -151,7 +149,6 @@ try {
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | The ID of the tag                                                                              |
 | `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
-| `projectSlug`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The slug of the project. This field is deprecated – use `workspaceId` instead.                 |
 | `requestBody`                                                                                  | [\Dub\Models\Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 

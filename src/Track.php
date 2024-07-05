@@ -26,18 +26,15 @@ class Track
      * Track a lead for a short link.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\TrackLeadRequestBody  $requestBody
      * @return \Dub\Models\Operations\TrackLeadResponse
      */
     public function lead(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\TrackLeadRequestBody $requestBody = null,
     ): \Dub\Models\Operations\TrackLeadResponse {
         $request = new \Dub\Models\Operations\TrackLeadRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/lead');
@@ -120,18 +117,15 @@ class Track
      * Track a sale for a short link.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\TrackSaleRequestBody  $requestBody
      * @return \Dub\Models\Operations\TrackSaleResponse
      */
     public function sale(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\TrackSaleRequestBody $requestBody = null,
     ): \Dub\Models\Operations\TrackSaleResponse {
         $request = new \Dub\Models\Operations\TrackSaleRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/sale');
@@ -214,18 +208,15 @@ class Track
      * Track a customer for an authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\TrackCustomerRequestBody  $requestBody
      * @return \Dub\Models\Operations\TrackCustomerResponse
      */
     public function customer(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\TrackCustomerRequestBody $requestBody = null,
     ): \Dub\Models\Operations\TrackCustomerResponse {
         $request = new \Dub\Models\Operations\TrackCustomerRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/customer');

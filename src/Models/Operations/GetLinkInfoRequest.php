@@ -19,14 +19,6 @@ class GetLinkInfoRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
     public ?string $workspaceId = null;
 
-    /**
-     * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var ?string $projectSlug
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
-    public ?string $projectSlug = null;
-
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=domain')]
     public ?string $domain = null;
 
@@ -57,7 +49,6 @@ class GetLinkInfoRequest
     public function __construct()
     {
         $this->workspaceId = null;
-        $this->projectSlug = null;
         $this->domain = null;
         $this->key = null;
         $this->linkId = null;

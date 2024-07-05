@@ -5,7 +5,7 @@
 
 * [list](#list) - Retrieve a list of links
 * [create](#create) - Create a new link
-* [count](#count) - Retrieve the number of links
+* [count](#count) - Retrieve links count
 * [get](#get) - Retrieve a link
 * [delete](#delete) - Delete a link
 * [update](#update) - Update a link
@@ -15,7 +15,7 @@
 
 ## list
 
-Retrieve a list of links for the authenticated workspace. The list will be paginated and the provided query parameters allow filtering the returned links.
+Retrieve a paginated list of links for the authenticated workspace.
 
 ### Example Usage
 
@@ -371,7 +371,7 @@ try {
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
 
-    $response = $sdk->links->create('<value>', '<value>', $requestBody);
+    $response = $sdk->links->create('<value>', $requestBody);
 
     if ($response->linkSchema !== null) {
         // handle response
@@ -386,7 +386,6 @@ try {
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `workspaceId`                                                                                    | *string*                                                                                         | :heavy_minus_sign:                                                                               | The ID of the workspace.                                                                         |
-| `projectSlug`                                                                                    | *string*                                                                                         | :heavy_minus_sign:                                                                               | The slug of the project. This field is deprecated – use `workspaceId` instead.                   |
 | `requestBody`                                                                                    | [\Dub\Models\Operations\CreateLinkRequestBody](../../Models/Operations/CreateLinkRequestBody.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
 
 
@@ -397,7 +396,7 @@ try {
 
 ## count
 
-Retrieve the number of links for the authenticated workspace. The provided query parameters allow filtering the returned links.
+Retrieve the number of links for the authenticated workspace.
 
 ### Example Usage
 
@@ -900,7 +899,7 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->links->createMany('<value>', '<value>', [
+    $response = $sdk->links->createMany('<value>', [
     new Operations\RequestBody(),
 ]);
 
@@ -917,7 +916,6 @@ try {
 | Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `workspaceId`                                                                       | *string*                                                                            | :heavy_minus_sign:                                                                  | The ID of the workspace.                                                            |
-| `projectSlug`                                                                       | *string*                                                                            | :heavy_minus_sign:                                                                  | The slug of the project. This field is deprecated – use `workspaceId` instead.      |
 | `requestBody`                                                                       | array<[\Dub\Models\Operations\RequestBody](../../Models/Operations/RequestBody.md)> | :heavy_minus_sign:                                                                  | N/A                                                                                 |
 
 
@@ -1550,7 +1548,7 @@ try {
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
 
-    $response = $sdk->links->upsert('<value>', '<value>', $requestBody);
+    $response = $sdk->links->upsert('<value>', $requestBody);
 
     if ($response->linkSchema !== null) {
         // handle response
@@ -1565,7 +1563,6 @@ try {
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `workspaceId`                                                                                    | *string*                                                                                         | :heavy_minus_sign:                                                                               | The ID of the workspace.                                                                         |
-| `projectSlug`                                                                                    | *string*                                                                                         | :heavy_minus_sign:                                                                               | The slug of the project. This field is deprecated – use `workspaceId` instead.                   |
 | `requestBody`                                                                                    | [\Dub\Models\Operations\UpsertLinkRequestBody](../../Models/Operations/UpsertLinkRequestBody.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
 
 

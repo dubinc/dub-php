@@ -344,7 +344,7 @@ try {
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
 
-    $response = $sdk->links->create('<value>', '<value>', $requestBody);
+    $response = $sdk->links->create('<value>', $requestBody);
 
     if ($response->linkSchema !== null) {
         // handle response
@@ -652,7 +652,7 @@ try {
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
 
-    $response = $sdk->links->upsert('<value>', '<value>', $requestBody);
+    $response = $sdk->links->upsert('<value>', $requestBody);
 
     if ($response->linkSchema !== null) {
         // handle response
@@ -671,7 +671,7 @@ try {
 
 * [list](docs/sdks/links/README.md#list) - Retrieve a list of links
 * [create](docs/sdks/links/README.md#create) - Create a new link
-* [count](docs/sdks/links/README.md#count) - Retrieve the number of links
+* [count](docs/sdks/links/README.md#count) - Retrieve links count
 * [get](docs/sdks/links/README.md#get) - Retrieve a link
 * [delete](docs/sdks/links/README.md#delete) - Delete a link
 * [update](docs/sdks/links/README.md#update) - Update a link

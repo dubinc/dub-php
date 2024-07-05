@@ -19,17 +19,8 @@ class ListDomainsRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
     public ?string $workspaceId = null;
 
-    /**
-     * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var ?string $projectSlug
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
-    public ?string $projectSlug = null;
-
     public function __construct()
     {
         $this->workspaceId = null;
-        $this->projectSlug = null;
     }
 }

@@ -294,7 +294,7 @@ try {
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
 
-    $response = $sdk->links->create('<value>', '<value>', $requestBody);
+    $response = $sdk->links->create('<value>', $requestBody);
 
     if ($response->linkSchema !== null) {
         // handle response
@@ -600,7 +600,7 @@ try {
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
 
-    $response = $sdk->links->upsert('<value>', '<value>', $requestBody);
+    $response = $sdk->links->upsert('<value>', $requestBody);
 
     if ($response->linkSchema !== null) {
         // handle response
