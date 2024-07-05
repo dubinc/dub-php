@@ -23,7 +23,7 @@ class Links
     /**
      * Retrieve a list of links
      *
-     * Retrieve a list of links for the authenticated workspace. The list will be paginated and the provided query parameters allow filtering the returned links.
+     * Retrieve a paginated list of links for the authenticated workspace.
      *
      * @param  \Dub\Models\Operations\GetLinksRequest  $request
      * @return \Dub\Models\Operations\GetLinksResponse
@@ -108,18 +108,15 @@ class Links
      * Create a new link for the authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\CreateLinkRequestBody  $requestBody
      * @return \Dub\Models\Operations\CreateLinkResponse
      */
     public function create(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\CreateLinkRequestBody $requestBody = null,
     ): \Dub\Models\Operations\CreateLinkResponse {
         $request = new \Dub\Models\Operations\CreateLinkRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links');
@@ -197,9 +194,9 @@ class Links
     }
 
     /**
-     * Retrieve the number of links
+     * Retrieve links count
      *
-     * Retrieve the number of links for the authenticated workspace. The provided query parameters allow filtering the returned links.
+     * Retrieve the number of links for the authenticated workspace.
      *
      * @param  \Dub\Models\Operations\GetLinksCountRequest  $request
      * @return \Dub\Models\Operations\GetLinksCountResponse
@@ -534,18 +531,15 @@ class Links
      * Bulk create up to 100 links for the authenticated workspace.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?array<\Dub\Models\Operations\RequestBody>  $requestBody
      * @return \Dub\Models\Operations\BulkCreateLinksResponse
      */
     public function createMany(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?array $requestBody = null,
     ): \Dub\Models\Operations\BulkCreateLinksResponse {
         $request = new \Dub\Models\Operations\BulkCreateLinksRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/bulk');
@@ -713,18 +707,15 @@ class Links
      * Upsert a link for the authenticated workspace by its URL. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
      *
      * @param  ?string  $workspaceId
-     * @param  ?string  $projectSlug
      * @param  ?\Dub\Models\Operations\UpsertLinkRequestBody  $requestBody
      * @return \Dub\Models\Operations\UpsertLinkResponse
      */
     public function upsert(
         ?string $workspaceId = null,
-        ?string $projectSlug = null,
         ?\Dub\Models\Operations\UpsertLinkRequestBody $requestBody = null,
     ): \Dub\Models\Operations\UpsertLinkResponse {
         $request = new \Dub\Models\Operations\UpsertLinkRequest();
         $request->workspaceId = $workspaceId;
-        $request->projectSlug = $projectSlug;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/upsert');

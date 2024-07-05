@@ -20,14 +20,6 @@ class BulkCreateLinksRequest
     public ?string $workspaceId = null;
 
     /**
-     * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var ?string $projectSlug
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
-    public ?string $projectSlug = null;
-
-    /**
      * $requestBody
      *
      * @var ?array<\Dub\Models\Operations\RequestBody> $requestBody
@@ -38,7 +30,6 @@ class BulkCreateLinksRequest
     public function __construct()
     {
         $this->workspaceId = null;
-        $this->projectSlug = null;
         $this->requestBody = null;
     }
 }

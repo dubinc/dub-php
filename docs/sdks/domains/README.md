@@ -33,7 +33,7 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->domains->list('<value>', '<value>');
+    $response = $sdk->domains->list('<value>');
 
     if ($response->domainSchemas !== null) {
         // handle response
@@ -45,10 +45,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `workspaceId`                                                                  | *string*                                                                       | :heavy_minus_sign:                                                             | The ID of the workspace.                                                       |
-| `projectSlug`                                                                  | *string*                                                                       | :heavy_minus_sign:                                                             | The slug of the project. This field is deprecated – use `workspaceId` instead. |
+| Parameter                | Type                     | Required                 | Description              |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `workspaceId`            | *string*                 | :heavy_minus_sign:       | The ID of the workspace. |
 
 
 ### Response
@@ -85,7 +84,7 @@ try {
     $requestBody->archived = false;
     $requestBody->placeholder = 'https://dub.co/help/article/what-is-dub';
 
-    $response = $sdk->domains->create('<value>', '<value>', $requestBody);
+    $response = $sdk->domains->create('<value>', $requestBody);
 
     if ($response->domainSchema !== null) {
         // handle response
@@ -100,7 +99,6 @@ try {
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `workspaceId`                                                                                        | *string*                                                                                             | :heavy_minus_sign:                                                                                   | The ID of the workspace.                                                                             |
-| `projectSlug`                                                                                        | *string*                                                                                             | :heavy_minus_sign:                                                                                   | The slug of the project. This field is deprecated – use `workspaceId` instead.                       |
 | `requestBody`                                                                                        | [\Dub\Models\Operations\CreateDomainRequestBody](../../Models/Operations/CreateDomainRequestBody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
 
 

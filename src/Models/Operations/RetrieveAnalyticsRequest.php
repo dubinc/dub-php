@@ -20,14 +20,6 @@ class RetrieveAnalyticsRequest
     public ?string $workspaceId = null;
 
     /**
-     * The slug of the project. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var ?string $projectSlug
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=projectSlug')]
-    public ?string $projectSlug = null;
-
-    /**
      * The type of event to retrieve analytics for. Defaults to 'clicks'.
      *
      * @var ?\Dub\Models\Operations\Event $event
@@ -190,7 +182,6 @@ class RetrieveAnalyticsRequest
     public function __construct()
     {
         $this->workspaceId = null;
-        $this->projectSlug = null;
         $this->event = null;
         $this->groupBy = null;
         $this->domain = null;
