@@ -10,3 +10,7 @@ targets:
     my-first-target:
         target: php
         source: dub
+        codeSamples:
+            output: codeSamples.yaml
+            registry:
+                location: registry.speakeasyapi.dev/dub/dub/code-samples-php-my-first-target
