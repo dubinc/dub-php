@@ -86,38 +86,6 @@ class DubBuilder
 
         return $this;
     }
-    /**
-     * setWorkspaceId is used to configure the workspaceId parameter for the SDK.
-     *
-     * @param  string  $workspaceId
-     * @return DubBuilder
-     */
-    public function setWorkspaceId(string $workspaceId): DubBuilder
-    {
-        if (! array_key_exists('queryParam', $this->sdkConfig->globals['parameters'])) {
-            $this->sdkConfig->globals['parameters']['queryParam'] = [];
-        }
-
-        $this->sdkConfig->globals['parameters']['queryParam']['workspaceId'] = $workspaceId;
-
-        return $this;
-    }
-    /**
-     * setProjectSlug is used to configure the projectSlug parameter for the SDK.
-     *
-     * @param  string  $projectSlug
-     * @return DubBuilder
-     */
-    public function setProjectSlug(string $projectSlug): DubBuilder
-    {
-        if (! array_key_exists('queryParam', $this->sdkConfig->globals['parameters'])) {
-            $this->sdkConfig->globals['parameters']['queryParam'] = [];
-        }
-
-        $this->sdkConfig->globals['parameters']['queryParam']['projectSlug'] = $projectSlug;
-
-        return $this;
-    }
 
     /**
      * build is used to build the SDK with any of the configured options.

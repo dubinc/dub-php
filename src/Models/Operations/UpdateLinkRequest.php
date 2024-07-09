@@ -19,21 +19,12 @@ class UpdateLinkRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=linkId')]
     public string $linkId;
 
-    /**
-     * The ID of the workspace.
-     *
-     * @var ?string $workspaceId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
-    public ?string $workspaceId = null;
-
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateLinkRequestBody $requestBody = null;
 
     public function __construct()
     {
         $this->linkId = '';
-        $this->workspaceId = null;
         $this->requestBody = null;
     }
 }

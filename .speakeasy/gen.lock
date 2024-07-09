@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: bdbe0b838757272c0b9e043ea9c5cb5f
+  docChecksum: 2dc0e57ebc2df7985435f1560ba8e4cc
   docVersion: 0.0.1
-  speakeasyVersion: 1.326.3
-  generationVersion: 2.359.6
-  releaseVersion: 0.1.6
-  configChecksum: 3f94176e4eab5b733dc40cb846a4cdfe
+  speakeasyVersion: 1.330.0
+  generationVersion: 2.361.10
+  releaseVersion: 0.2.0
+  configChecksum: c12b9682b0cc9fde11426c5c60667aac
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
 features:
@@ -18,7 +18,6 @@ features:
     globalSecurity: 2.81.6
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.1
-    globals: 2.82.1
     nameOverrides: 2.81.2
 generatedFiles:
   - src/SDKConfiguration.php
@@ -56,7 +55,6 @@ generatedFiles:
   - src/Models/Operations/GetLinksRequest.php
   - src/Models/Operations/GetLinksResponse.php
   - src/Models/Operations/CreateLinkRequestBody.php
-  - src/Models/Operations/CreateLinkRequest.php
   - src/Models/Operations/CreateLinkResponse.php
   - src/Models/Operations/GetLinksCountRequest.php
   - src/Models/Operations/GetLinksCountResponse.php
@@ -69,13 +67,11 @@ generatedFiles:
   - src/Models/Operations/UpdateLinkRequest.php
   - src/Models/Operations/UpdateLinkResponse.php
   - src/Models/Operations/RequestBody.php
-  - src/Models/Operations/BulkCreateLinksRequest.php
   - src/Models/Operations/BulkCreateLinksResponse.php
   - src/Models/Operations/Data.php
   - src/Models/Operations/BulkUpdateLinksRequestBody.php
   - src/Models/Operations/BulkUpdateLinksResponse.php
   - src/Models/Operations/UpsertLinkRequestBody.php
-  - src/Models/Operations/UpsertLinkRequest.php
   - src/Models/Operations/UpsertLinkResponse.php
   - src/Models/Operations/Level.php
   - src/Models/Operations/GetQRCodeRequest.php
@@ -87,22 +83,19 @@ generatedFiles:
   - src/Models/Operations/RetrieveAnalyticsResponse.php
   - src/Models/Operations/GetWorkspaceRequest.php
   - src/Models/Operations/GetWorkspaceResponse.php
+  - src/Models/Operations/UpdateWorkspaceRequestBody.php
   - src/Models/Operations/UpdateWorkspaceRequest.php
   - src/Models/Operations/UpdateWorkspaceResponse.php
-  - src/Models/Operations/GetTagsRequest.php
   - src/Models/Operations/GetTagsResponse.php
   - src/Models/Operations/Color.php
   - src/Models/Operations/CreateTagRequestBody.php
-  - src/Models/Operations/CreateTagRequest.php
   - src/Models/Operations/CreateTagResponse.php
   - src/Models/Operations/UpdateTagColor.php
   - src/Models/Operations/UpdateTagRequestBody.php
   - src/Models/Operations/UpdateTagRequest.php
   - src/Models/Operations/UpdateTagResponse.php
-  - src/Models/Operations/ListDomainsRequest.php
   - src/Models/Operations/ListDomainsResponse.php
   - src/Models/Operations/CreateDomainRequestBody.php
-  - src/Models/Operations/CreateDomainRequest.php
   - src/Models/Operations/CreateDomainResponse.php
   - src/Models/Operations/DeleteDomainRequest.php
   - src/Models/Operations/DeleteDomainResponseBody.php
@@ -111,16 +104,13 @@ generatedFiles:
   - src/Models/Operations/UpdateDomainRequest.php
   - src/Models/Operations/UpdateDomainResponse.php
   - src/Models/Operations/TrackLeadRequestBody.php
-  - src/Models/Operations/TrackLeadRequest.php
   - src/Models/Operations/TrackLeadResponseBody.php
   - src/Models/Operations/TrackLeadResponse.php
   - src/Models/Operations/PaymentProcessor.php
   - src/Models/Operations/TrackSaleRequestBody.php
-  - src/Models/Operations/TrackSaleRequest.php
   - src/Models/Operations/TrackSaleResponseBody.php
   - src/Models/Operations/TrackSaleResponse.php
   - src/Models/Operations/TrackCustomerRequestBody.php
-  - src/Models/Operations/TrackCustomerRequest.php
   - src/Models/Operations/TrackCustomerResponseBody.php
   - src/Models/Operations/TrackCustomerResponse.php
   - src/Models/Operations/GetMetatagsRequest.php
@@ -170,7 +160,6 @@ generatedFiles:
   - docs/Models/Operations/GetLinksRequest.md
   - docs/Models/Operations/GetLinksResponse.md
   - docs/Models/Operations/CreateLinkRequestBody.md
-  - docs/Models/Operations/CreateLinkRequest.md
   - docs/Models/Operations/CreateLinkResponse.md
   - docs/Models/Operations/GetLinksCountRequest.md
   - docs/Models/Operations/GetLinksCountResponse.md
@@ -183,13 +172,11 @@ generatedFiles:
   - docs/Models/Operations/UpdateLinkRequest.md
   - docs/Models/Operations/UpdateLinkResponse.md
   - docs/Models/Operations/RequestBody.md
-  - docs/Models/Operations/BulkCreateLinksRequest.md
   - docs/Models/Operations/BulkCreateLinksResponse.md
   - docs/Models/Operations/Data.md
   - docs/Models/Operations/BulkUpdateLinksRequestBody.md
   - docs/Models/Operations/BulkUpdateLinksResponse.md
   - docs/Models/Operations/UpsertLinkRequestBody.md
-  - docs/Models/Operations/UpsertLinkRequest.md
   - docs/Models/Operations/UpsertLinkResponse.md
   - docs/Models/Operations/Level.md
   - docs/Models/Operations/GetQRCodeRequest.md
@@ -201,22 +188,19 @@ generatedFiles:
   - docs/Models/Operations/RetrieveAnalyticsResponse.md
   - docs/Models/Operations/GetWorkspaceRequest.md
   - docs/Models/Operations/GetWorkspaceResponse.md
+  - docs/Models/Operations/UpdateWorkspaceRequestBody.md
   - docs/Models/Operations/UpdateWorkspaceRequest.md
   - docs/Models/Operations/UpdateWorkspaceResponse.md
-  - docs/Models/Operations/GetTagsRequest.md
   - docs/Models/Operations/GetTagsResponse.md
   - docs/Models/Operations/Color.md
   - docs/Models/Operations/CreateTagRequestBody.md
-  - docs/Models/Operations/CreateTagRequest.md
   - docs/Models/Operations/CreateTagResponse.md
   - docs/Models/Operations/UpdateTagColor.md
   - docs/Models/Operations/UpdateTagRequestBody.md
   - docs/Models/Operations/UpdateTagRequest.md
   - docs/Models/Operations/UpdateTagResponse.md
-  - docs/Models/Operations/ListDomainsRequest.md
   - docs/Models/Operations/ListDomainsResponse.md
   - docs/Models/Operations/CreateDomainRequestBody.md
-  - docs/Models/Operations/CreateDomainRequest.md
   - docs/Models/Operations/CreateDomainResponse.md
   - docs/Models/Operations/DeleteDomainRequest.md
   - docs/Models/Operations/DeleteDomainResponseBody.md
@@ -225,16 +209,13 @@ generatedFiles:
   - docs/Models/Operations/UpdateDomainRequest.md
   - docs/Models/Operations/UpdateDomainResponse.md
   - docs/Models/Operations/TrackLeadRequestBody.md
-  - docs/Models/Operations/TrackLeadRequest.md
   - docs/Models/Operations/TrackLeadResponseBody.md
   - docs/Models/Operations/TrackLeadResponse.md
   - docs/Models/Operations/PaymentProcessor.md
   - docs/Models/Operations/TrackSaleRequestBody.md
-  - docs/Models/Operations/TrackSaleRequest.md
   - docs/Models/Operations/TrackSaleResponseBody.md
   - docs/Models/Operations/TrackSaleResponse.md
   - docs/Models/Operations/TrackCustomerRequestBody.md
-  - docs/Models/Operations/TrackCustomerRequest.md
   - docs/Models/Operations/TrackCustomerResponseBody.md
   - docs/Models/Operations/TrackCustomerResponse.md
   - docs/Models/Operations/GetMetatagsRequest.md

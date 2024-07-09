@@ -34,7 +34,7 @@ class QRCodes
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/qr');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetQRCodeRequest::class, $request, $this->sdkConfiguration->globals));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetQRCodeRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json;q=1, image/png;q=0';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 

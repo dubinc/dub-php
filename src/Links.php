@@ -34,7 +34,7 @@ class Links
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetLinksRequest::class, $request, $this->sdkConfiguration->globals));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetLinksRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -107,25 +107,19 @@ class Links
      *
      * Create a new link for the authenticated workspace.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\CreateLinkRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\CreateLinkRequestBody  $request
      * @return \Dub\Models\Operations\CreateLinkResponse
      */
     public function create(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\CreateLinkRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\CreateLinkRequestBody $request,
     ): \Dub\Models\Operations\CreateLinkResponse {
-        $request = new \Dub\Models\Operations\CreateLinkRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\CreateLinkRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -207,7 +201,7 @@ class Links
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/count');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetLinksCountRequest::class, $request, $this->sdkConfiguration->globals));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetLinksCountRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -280,16 +274,27 @@ class Links
      *
      * Retrieve the info for a link.
      *
-     * @param  \Dub\Models\Operations\GetLinkInfoRequest  $request
+     * @param  ?string  $domain
+     * @param  ?string  $key
+     * @param  ?string  $linkId
+     * @param  ?string  $externalId
      * @return \Dub\Models\Operations\GetLinkInfoResponse
      */
     public function get(
-        ?\Dub\Models\Operations\GetLinkInfoRequest $request,
+        ?string $domain = null,
+        ?string $key = null,
+        ?string $linkId = null,
+        ?string $externalId = null,
     ): \Dub\Models\Operations\GetLinkInfoResponse {
+        $request = new \Dub\Models\Operations\GetLinkInfoRequest();
+        $request->domain = $domain;
+        $request->key = $key;
+        $request->linkId = $linkId;
+        $request->externalId = $externalId;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/info');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetLinkInfoRequest::class, $request, $this->sdkConfiguration->globals));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetLinkInfoRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -362,16 +367,17 @@ class Links
      *
      * Delete a link for the authenticated workspace.
      *
-     * @param  \Dub\Models\Operations\DeleteLinkRequest  $request
+     * @param  string  $linkId
      * @return \Dub\Models\Operations\DeleteLinkResponse
      */
     public function delete(
-        ?\Dub\Models\Operations\DeleteLinkRequest $request,
+        string $linkId,
     ): \Dub\Models\Operations\DeleteLinkResponse {
+        $request = new \Dub\Models\Operations\DeleteLinkRequest();
+        $request->linkId = $linkId;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/links/{linkId}', \Dub\Models\Operations\DeleteLinkRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/links/{linkId}', \Dub\Models\Operations\DeleteLinkRequest::class, $request);
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\DeleteLinkRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -444,20 +450,24 @@ class Links
      *
      * Update a link for the authenticated workspace. If there's no change, returns it as it is.
      *
-     * @param  \Dub\Models\Operations\UpdateLinkRequest  $request
+     * @param  string  $linkId
+     * @param  ?\Dub\Models\Operations\UpdateLinkRequestBody  $requestBody
      * @return \Dub\Models\Operations\UpdateLinkResponse
      */
     public function update(
-        ?\Dub\Models\Operations\UpdateLinkRequest $request,
+        string $linkId,
+        ?\Dub\Models\Operations\UpdateLinkRequestBody $requestBody = null,
     ): \Dub\Models\Operations\UpdateLinkResponse {
+        $request = new \Dub\Models\Operations\UpdateLinkRequest();
+        $request->linkId = $linkId;
+        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/links/{linkId}', \Dub\Models\Operations\UpdateLinkRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/links/{linkId}', \Dub\Models\Operations\UpdateLinkRequest::class, $request);
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\UpdateLinkRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -530,25 +540,19 @@ class Links
      *
      * Bulk create up to 100 links for the authenticated workspace.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?array<\Dub\Models\Operations\RequestBody>  $requestBody
+     * @param  array<\Dub\Models\Operations\RequestBody>  $request
      * @return \Dub\Models\Operations\BulkCreateLinksResponse
      */
     public function createMany(
-        ?string $workspaceId = null,
-        ?array $requestBody = null,
+        ?array $request,
     ): \Dub\Models\Operations\BulkCreateLinksResponse {
-        $request = new \Dub\Models\Operations\BulkCreateLinksRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/bulk');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\BulkCreateLinksRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -706,25 +710,19 @@ class Links
      *
      * Upsert a link for the authenticated workspace by its URL. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\UpsertLinkRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\UpsertLinkRequestBody  $request
      * @return \Dub\Models\Operations\UpsertLinkResponse
      */
     public function upsert(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\UpsertLinkRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\UpsertLinkRequestBody $request,
     ): \Dub\Models\Operations\UpsertLinkResponse {
-        $request = new \Dub\Models\Operations\UpsertLinkRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/upsert');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\UpsertLinkRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 

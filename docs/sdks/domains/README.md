@@ -23,7 +23,6 @@ require 'vendor/autoload.php';
 
 use \Dub;
 use \Dub\Models\Components;
-use \Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -31,9 +30,7 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    
-
-    $response = $sdk->domains->list('<value>');
+    $response = $sdk->domains->list();
 
     if ($response->domainSchemas !== null) {
         // handle response
@@ -42,12 +39,6 @@ try {
     // handle exception
 }
 ```
-
-### Parameters
-
-| Parameter                | Type                     | Required                 | Description              |
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-| `workspaceId`            | *string*                 | :heavy_minus_sign:       | The ID of the workspace. |
 
 
 ### Response
@@ -78,13 +69,13 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\CreateDomainRequestBody();
-    $requestBody->slug = 'acme.com';
-    $requestBody->expiredUrl = 'https://acme.com/expired';
-    $requestBody->archived = false;
-    $requestBody->placeholder = 'https://dub.co/help/article/what-is-dub';
+        $request = new Operations\CreateDomainRequestBody();
+    $request->slug = 'acme.com';
+    $request->expiredUrl = 'https://acme.com/expired';
+    $request->archived = false;
+    $request->placeholder = 'https://dub.co/help/article/what-is-dub';;
 
-    $response = $sdk->domains->create('<value>', $requestBody);
+    $response = $sdk->domains->create($request);
 
     if ($response->domainSchema !== null) {
         // handle response
@@ -98,8 +89,7 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `workspaceId`                                                                                        | *string*                                                                                             | :heavy_minus_sign:                                                                                   | The ID of the workspace.                                                                             |
-| `requestBody`                                                                                        | [\Dub\Models\Operations\CreateDomainRequestBody](../../Models/Operations/CreateDomainRequestBody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `$request`                                                                                           | [\Dub\Models\Operations\CreateDomainRequestBody](../../Models/Operations/CreateDomainRequestBody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
@@ -130,10 +120,9 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\DeleteDomainRequest();
-    $request->slug = 'acme.com';;
+    
 
-    $response = $sdk->domains->delete($request);
+    $response = $sdk->domains->delete('acme.com');
 
     if ($response->object !== null) {
         // handle response
@@ -145,9 +134,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [\Dub\Models\Operations\DeleteDomainRequest](../../Models/Operations/DeleteDomainRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `slug`             | *string*           | :heavy_check_mark: | The domain name.   | acme.com           |
 
 
 ### Response
@@ -178,15 +167,13 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\UpdateDomainRequest();
-    $request->slug = 'acme.com';
-    $request->requestBody = new Operations\UpdateDomainRequestBody();
-    $request->requestBody->slug = 'acme.com';
-    $request->requestBody->expiredUrl = 'https://acme.com/expired';
-    $request->requestBody->archived = false;
-    $request->requestBody->placeholder = 'https://dub.co/help/article/what-is-dub';;
+        $requestBody = new Operations\UpdateDomainRequestBody();
+    $requestBody->slug = 'acme.com';
+    $requestBody->expiredUrl = 'https://acme.com/expired';
+    $requestBody->archived = false;
+    $requestBody->placeholder = 'https://dub.co/help/article/what-is-dub';
 
-    $response = $sdk->domains->update($request);
+    $response = $sdk->domains->update('acme.com', $requestBody);
 
     if ($response->domainSchema !== null) {
         // handle response
@@ -198,9 +185,10 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [\Dub\Models\Operations\UpdateDomainRequest](../../Models/Operations/UpdateDomainRequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          | Example                                                                                              |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `slug`                                                                                               | *string*                                                                                             | :heavy_check_mark:                                                                                   | The domain name.                                                                                     | acme.com                                                                                             |
+| `requestBody`                                                                                        | [\Dub\Models\Operations\UpdateDomainRequestBody](../../Models/Operations/UpdateDomainRequestBody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |                                                                                                      |
 
 
 ### Response

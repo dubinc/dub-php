@@ -34,7 +34,7 @@ class Workspaces
         $request = new \Dub\Models\Operations\GetWorkspaceRequest();
         $request->idOrSlug = $idOrSlug;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\GetWorkspaceRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\GetWorkspaceRequest::class, $request);
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
@@ -109,16 +109,23 @@ class Workspaces
      * Update a workspace by ID or slug.
      *
      * @param  string  $idOrSlug
+     * @param  ?\Dub\Models\Operations\UpdateWorkspaceRequestBody  $requestBody
      * @return \Dub\Models\Operations\UpdateWorkspaceResponse
      */
     public function update(
         string $idOrSlug,
+        ?\Dub\Models\Operations\UpdateWorkspaceRequestBody $requestBody = null,
     ): \Dub\Models\Operations\UpdateWorkspaceResponse {
         $request = new \Dub\Models\Operations\UpdateWorkspaceRequest();
         $request->idOrSlug = $idOrSlug;
+        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\UpdateWorkspaceRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\UpdateWorkspaceRequest::class, $request);
         $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        if ($body !== null) {
+            $options = array_merge_recursive($options, $body);
+        }
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 

@@ -19,17 +19,8 @@ class DeleteDomainRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=slug')]
     public string $slug;
 
-    /**
-     * The ID of the workspace.
-     *
-     * @var ?string $workspaceId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
-    public ?string $workspaceId = null;
-
     public function __construct()
     {
         $this->slug = '';
-        $this->workspaceId = null;
     }
 }

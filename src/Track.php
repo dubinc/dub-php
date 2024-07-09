@@ -25,25 +25,19 @@ class Track
      *
      * Track a lead for a short link.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\TrackLeadRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\TrackLeadRequestBody  $request
      * @return \Dub\Models\Operations\TrackLeadResponse
      */
     public function lead(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\TrackLeadRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\TrackLeadRequestBody $request,
     ): \Dub\Models\Operations\TrackLeadResponse {
-        $request = new \Dub\Models\Operations\TrackLeadRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/lead');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\TrackLeadRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -116,25 +110,19 @@ class Track
      *
      * Track a sale for a short link.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\TrackSaleRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\TrackSaleRequestBody  $request
      * @return \Dub\Models\Operations\TrackSaleResponse
      */
     public function sale(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\TrackSaleRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\TrackSaleRequestBody $request,
     ): \Dub\Models\Operations\TrackSaleResponse {
-        $request = new \Dub\Models\Operations\TrackSaleRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/sale');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\TrackSaleRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -207,25 +195,19 @@ class Track
      *
      * Track a customer for an authenticated workspace.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\TrackCustomerRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\TrackCustomerRequestBody  $request
      * @return \Dub\Models\Operations\TrackCustomerResponse
      */
     public function customer(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\TrackCustomerRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\TrackCustomerRequestBody $request,
     ): \Dub\Models\Operations\TrackCustomerResponse {
-        $request = new \Dub\Models\Operations\TrackCustomerRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/customer');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\TrackCustomerRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
