@@ -14,11 +14,12 @@ class UpdateLinkRequestBody
     /**
      * The destination URL of the short link.
      *
-     * @var string $url
+     * @var ?string $url
      */
     #[\JMS\Serializer\Annotation\SerializedName('url')]
     #[\JMS\Serializer\Annotation\Type('string')]
-    public string $url;
+    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    public ?string $url = null;
 
     /**
      * The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
@@ -231,11 +232,6 @@ class UpdateLinkRequestBody
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $android = null;
 
-    /**
-     * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`.
-     *
-     * @var ?\Dub\Models\Components\LinkGeoTargeting $geo
-     */
     #[\JMS\Serializer\Annotation\SerializedName('geo')]
     #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\LinkGeoTargeting')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
@@ -253,7 +249,7 @@ class UpdateLinkRequestBody
 
     public function __construct()
     {
-        $this->url = '';
+        $this->url = null;
         $this->domain = null;
         $this->key = null;
         $this->externalId = null;

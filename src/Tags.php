@@ -25,18 +25,13 @@ class Tags
      *
      * Retrieve a list of tags for the authenticated workspace.
      *
-     * @param  ?string  $workspaceId
      * @return \Dub\Models\Operations\GetTagsResponse
      */
     public function list(
-        ?string $workspaceId = null,
     ): \Dub\Models\Operations\GetTagsResponse {
-        $request = new \Dub\Models\Operations\GetTagsRequest();
-        $request->workspaceId = $workspaceId;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetTagsRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -109,25 +104,19 @@ class Tags
      *
      * Create a new tag for the authenticated workspace.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\CreateTagRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\CreateTagRequestBody  $request
      * @return \Dub\Models\Operations\CreateTagResponse
      */
     public function create(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\CreateTagRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\CreateTagRequestBody $request,
     ): \Dub\Models\Operations\CreateTagResponse {
-        $request = new \Dub\Models\Operations\CreateTagRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\CreateTagRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -201,27 +190,23 @@ class Tags
      * Update a tag in the workspace.
      *
      * @param  string  $id
-     * @param  ?string  $workspaceId
      * @param  ?\Dub\Models\Operations\UpdateTagRequestBody  $requestBody
      * @return \Dub\Models\Operations\UpdateTagResponse
      */
     public function update(
         string $id,
-        ?string $workspaceId = null,
         ?\Dub\Models\Operations\UpdateTagRequestBody $requestBody = null,
     ): \Dub\Models\Operations\UpdateTagResponse {
         $request = new \Dub\Models\Operations\UpdateTagRequest();
         $request->id = $id;
-        $request->workspaceId = $workspaceId;
         $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/tags/{id}', \Dub\Models\Operations\UpdateTagRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/tags/{id}', \Dub\Models\Operations\UpdateTagRequest::class, $request);
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\UpdateTagRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 

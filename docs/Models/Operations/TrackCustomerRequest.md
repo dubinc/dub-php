@@ -1,9 +1,0 @@
-# TrackCustomerRequest
-
-
-## Fields
-
-| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `workspaceId`                                                                                           | *?string*                                                                                               | :heavy_minus_sign:                                                                                      | The ID of the workspace.                                                                                |
-| `requestBody`                                                                                           | [?\Dub\Models\Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

@@ -1,9 +1,0 @@
-# UpsertLinkRequest
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `workspaceId`                                                                                     | *?string*                                                                                         | :heavy_minus_sign:                                                                                | The ID of the workspace.                                                                          |
-| `requestBody`                                                                                     | [?\Dub\Models\Operations\UpsertLinkRequestBody](../../Models/Operations/UpsertLinkRequestBody.md) | :heavy_minus_sign:                                                                                | N/A                                                                                               |

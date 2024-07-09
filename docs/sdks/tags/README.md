@@ -22,7 +22,6 @@ require 'vendor/autoload.php';
 
 use \Dub;
 use \Dub\Models\Components;
-use \Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -30,9 +29,7 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    
-
-    $response = $sdk->tags->list('<value>');
+    $response = $sdk->tags->list();
 
     if ($response->tagSchemas !== null) {
         // handle response
@@ -41,12 +38,6 @@ try {
     // handle exception
 }
 ```
-
-### Parameters
-
-| Parameter                | Type                     | Required                 | Description              |
-| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
-| `workspaceId`            | *string*                 | :heavy_minus_sign:       | The ID of the workspace. |
 
 
 ### Response
@@ -77,12 +68,12 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\CreateTagRequestBody();
-    $requestBody->name = '<value>';
-    $requestBody->color = Operations\Color::Blue;
-    $requestBody->tag = '<value>';
+        $request = new Operations\CreateTagRequestBody();
+    $request->name = '<value>';
+    $request->color = Operations\Color::Blue;
+    $request->tag = '<value>';;
 
-    $response = $sdk->tags->create('<value>', $requestBody);
+    $response = $sdk->tags->create($request);
 
     if ($response->tagSchema !== null) {
         // handle response
@@ -96,8 +87,7 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
-| `requestBody`                                                                                  | [\Dub\Models\Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `$request`                                                                                     | [\Dub\Models\Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
@@ -133,7 +123,7 @@ try {
     $requestBody->color = Operations\UpdateTagColor::Brown;
     $requestBody->tag = '<value>';
 
-    $response = $sdk->tags->update('<value>', '<value>', $requestBody);
+    $response = $sdk->tags->update('<value>', $requestBody);
 
     if ($response->tagSchema !== null) {
         // handle response
@@ -147,8 +137,7 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | The ID of the tag                                                                              |
-| `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
+| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | The ID of the tag to update.                                                                   |
 | `requestBody`                                                                                  | [\Dub\Models\Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
 

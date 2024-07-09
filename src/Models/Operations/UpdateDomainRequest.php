@@ -19,21 +19,12 @@ class UpdateDomainRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=slug')]
     public string $slug;
 
-    /**
-     * The ID of the workspace.
-     *
-     * @var ?string $workspaceId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
-    public ?string $workspaceId = null;
-
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateDomainRequestBody $requestBody = null;
 
     public function __construct()
     {
         $this->slug = '';
-        $this->workspaceId = null;
         $this->requestBody = null;
     }
 }

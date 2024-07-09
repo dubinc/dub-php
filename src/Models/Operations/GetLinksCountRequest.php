@@ -12,14 +12,6 @@ use Dub\Utils\SpeakeasyMetadata;
 class GetLinksCountRequest
 {
     /**
-     * The ID of the workspace.
-     *
-     * @var ?string $workspaceId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
-    public ?string $workspaceId = null;
-
-    /**
      * The domain to filter the links by. E.g. `ac.me`. If not provided, all links for the workspace will be returned.
      *
      * @var ?string $domain
@@ -93,7 +85,6 @@ class GetLinksCountRequest
 
     public function __construct()
     {
-        $this->workspaceId = null;
         $this->domain = null;
         $this->tagId = null;
         $this->tagIds = null;

@@ -36,7 +36,7 @@ class Metatags
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/metatags');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetMetatagsRequest::class, $request, $this->sdkConfiguration->globals));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetMetatagsRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 

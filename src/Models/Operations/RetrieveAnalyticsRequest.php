@@ -12,14 +12,6 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrieveAnalyticsRequest
 {
     /**
-     * The ID of the workspace.
-     *
-     * @var ?string $workspaceId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
-    public ?string $workspaceId = null;
-
-    /**
      * The type of event to retrieve analytics for. Defaults to 'clicks'.
      *
      * @var ?\Dub\Models\Operations\Event $event
@@ -181,7 +173,6 @@ class RetrieveAnalyticsRequest
 
     public function __construct()
     {
-        $this->workspaceId = null;
         $this->event = null;
         $this->groupBy = null;
         $this->domain = null;

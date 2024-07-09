@@ -76,9 +76,11 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    
+        $requestBody = new Operations\UpdateWorkspaceRequestBody();
+    $requestBody->name = '<value>';
+    $requestBody->slug = '<value>';
 
-    $response = $sdk->workspaces->update('<value>');
+    $response = $sdk->workspaces->update('<value>', $requestBody);
 
     if ($response->workspaceSchema !== null) {
         // handle response
@@ -90,9 +92,10 @@ try {
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `idOrSlug`                       | *string*                         | :heavy_check_mark:               | The ID or slug of the workspace. |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `idOrSlug`                                                                                                 | *string*                                                                                                   | :heavy_check_mark:                                                                                         | The ID or slug of the workspace to update.                                                                 |
+| `requestBody`                                                                                              | [\Dub\Models\Operations\UpdateWorkspaceRequestBody](../../Models/Operations/UpdateWorkspaceRequestBody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
 
 
 ### Response

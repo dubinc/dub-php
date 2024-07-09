@@ -30,18 +30,18 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\TrackLeadRequestBody();
-    $requestBody->clickId = '<value>';
-    $requestBody->eventName = 'Sign up';
-    $requestBody->customerId = '<value>';
-    $requestBody->customerName = '<value>';
-    $requestBody->customerEmail = 'Katelin24@hotmail.com';
-    $requestBody->customerAvatar = '<value>';
-    $requestBody->metadata = [
+        $request = new Operations\TrackLeadRequestBody();
+    $request->clickId = '<value>';
+    $request->eventName = 'Sign up';
+    $request->customerId = '<value>';
+    $request->customerName = '<value>';
+    $request->customerEmail = 'Katelin24@hotmail.com';
+    $request->customerAvatar = '<value>';
+    $request->metadata = [
         'Assistant' => '<value>',
-    ];
+    ];;
 
-    $response = $sdk->track->lead('<value>', $requestBody);
+    $response = $sdk->track->lead($request);
 
     if ($response->object !== null) {
         // handle response
@@ -55,8 +55,7 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
-| `requestBody`                                                                                  | [\Dub\Models\Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `$request`                                                                                     | [\Dub\Models\Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
@@ -87,18 +86,18 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\TrackSaleRequestBody();
-    $requestBody->customerId = '<value>';
-    $requestBody->amount = 996500;
-    $requestBody->paymentProcessor = Operations\PaymentProcessor::Shopify;
-    $requestBody->eventName = 'Purchase';
-    $requestBody->invoiceId = '<value>';
-    $requestBody->currency = 'European Unit of Account 17(E.U.A.-17)';
-    $requestBody->metadata = [
+        $request = new Operations\TrackSaleRequestBody();
+    $request->customerId = '<value>';
+    $request->amount = 996500;
+    $request->paymentProcessor = Operations\PaymentProcessor::Shopify;
+    $request->eventName = 'Purchase';
+    $request->invoiceId = '<value>';
+    $request->currency = 'European Unit of Account 17(E.U.A.-17)';
+    $request->metadata = [
         'Stage' => '<value>',
-    ];
+    ];;
 
-    $response = $sdk->track->sale('<value>', $requestBody);
+    $response = $sdk->track->sale($request);
 
     if ($response->object !== null) {
         // handle response
@@ -112,8 +111,7 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `workspaceId`                                                                                  | *string*                                                                                       | :heavy_minus_sign:                                                                             | The ID of the workspace.                                                                       |
-| `requestBody`                                                                                  | [\Dub\Models\Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `$request`                                                                                     | [\Dub\Models\Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
@@ -144,13 +142,13 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\TrackCustomerRequestBody();
-    $requestBody->customerId = '<value>';
-    $requestBody->customerName = '<value>';
-    $requestBody->customerEmail = 'Wilson.Smith@gmail.com';
-    $requestBody->customerAvatar = '<value>';
+        $request = new Operations\TrackCustomerRequestBody();
+    $request->customerId = '<value>';
+    $request->customerName = '<value>';
+    $request->customerEmail = 'Wilson.Smith@gmail.com';
+    $request->customerAvatar = '<value>';;
 
-    $response = $sdk->track->customer('<value>', $requestBody);
+    $response = $sdk->track->customer($request);
 
     if ($response->object !== null) {
         // handle response
@@ -164,8 +162,7 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `workspaceId`                                                                                          | *string*                                                                                               | :heavy_minus_sign:                                                                                     | The ID of the workspace.                                                                               |
-| `requestBody`                                                                                          | [\Dub\Models\Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `$request`                                                                                             | [\Dub\Models\Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response

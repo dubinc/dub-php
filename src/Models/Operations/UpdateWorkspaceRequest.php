@@ -12,15 +12,19 @@ use Dub\Utils\SpeakeasyMetadata;
 class UpdateWorkspaceRequest
 {
     /**
-     * The ID or slug of the workspace.
+     * The ID or slug of the workspace to update.
      *
      * @var string $idOrSlug
      */
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=idOrSlug')]
     public string $idOrSlug;
 
+    #[SpeakeasyMetadata('request:mediaType=application/json')]
+    public ?UpdateWorkspaceRequestBody $requestBody = null;
+
     public function __construct()
     {
         $this->idOrSlug = '';
+        $this->requestBody = null;
     }
 }

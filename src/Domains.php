@@ -25,18 +25,13 @@ class Domains
      *
      * Retrieve a list of domains associated with the authenticated workspace.
      *
-     * @param  ?string  $workspaceId
      * @return \Dub\Models\Operations\ListDomainsResponse
      */
     public function list(
-        ?string $workspaceId = null,
     ): \Dub\Models\Operations\ListDomainsResponse {
-        $request = new \Dub\Models\Operations\ListDomainsRequest();
-        $request->workspaceId = $workspaceId;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/domains');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\ListDomainsRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -109,25 +104,19 @@ class Domains
      *
      * Create a domain for the authenticated workspace.
      *
-     * @param  ?string  $workspaceId
-     * @param  ?\Dub\Models\Operations\CreateDomainRequestBody  $requestBody
+     * @param  \Dub\Models\Operations\CreateDomainRequestBody  $request
      * @return \Dub\Models\Operations\CreateDomainResponse
      */
     public function create(
-        ?string $workspaceId = null,
-        ?\Dub\Models\Operations\CreateDomainRequestBody $requestBody = null,
+        ?\Dub\Models\Operations\CreateDomainRequestBody $request,
     ): \Dub\Models\Operations\CreateDomainResponse {
-        $request = new \Dub\Models\Operations\CreateDomainRequest();
-        $request->workspaceId = $workspaceId;
-        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/domains');
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\CreateDomainRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -200,16 +189,17 @@ class Domains
      *
      * Delete a domain from a workspace. It cannot be undone. This will also delete all the links associated with the domain.
      *
-     * @param  \Dub\Models\Operations\DeleteDomainRequest  $request
+     * @param  string  $slug
      * @return \Dub\Models\Operations\DeleteDomainResponse
      */
     public function delete(
-        ?\Dub\Models\Operations\DeleteDomainRequest $request,
+        string $slug,
     ): \Dub\Models\Operations\DeleteDomainResponse {
+        $request = new \Dub\Models\Operations\DeleteDomainRequest();
+        $request->slug = $slug;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/domains/{slug}', \Dub\Models\Operations\DeleteDomainRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/domains/{slug}', \Dub\Models\Operations\DeleteDomainRequest::class, $request);
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\DeleteDomainRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 
@@ -282,20 +272,24 @@ class Domains
      *
      * Update a domain for the authenticated workspace.
      *
-     * @param  \Dub\Models\Operations\UpdateDomainRequest  $request
+     * @param  string  $slug
+     * @param  ?\Dub\Models\Operations\UpdateDomainRequestBody  $requestBody
      * @return \Dub\Models\Operations\UpdateDomainResponse
      */
     public function update(
-        ?\Dub\Models\Operations\UpdateDomainRequest $request,
+        string $slug,
+        ?\Dub\Models\Operations\UpdateDomainRequestBody $requestBody = null,
     ): \Dub\Models\Operations\UpdateDomainResponse {
+        $request = new \Dub\Models\Operations\UpdateDomainRequest();
+        $request->slug = $slug;
+        $request->requestBody = $requestBody;
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/domains/{slug}', \Dub\Models\Operations\UpdateDomainRequest::class, $request, $this->sdkConfiguration->globals);
+        $url = Utils\Utils::generateUrl($baseUrl, '/domains/{slug}', \Dub\Models\Operations\UpdateDomainRequest::class, $request);
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\UpdateDomainRequest::class, $request, $this->sdkConfiguration->globals));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
 

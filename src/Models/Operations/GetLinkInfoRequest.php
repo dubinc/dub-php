@@ -11,14 +11,6 @@ namespace Dub\Models\Operations;
 use Dub\Utils\SpeakeasyMetadata;
 class GetLinkInfoRequest
 {
-    /**
-     * The ID of the workspace.
-     *
-     * @var ?string $workspaceId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=workspaceId')]
-    public ?string $workspaceId = null;
-
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=domain')]
     public ?string $domain = null;
 
@@ -48,7 +40,6 @@ class GetLinkInfoRequest
 
     public function __construct()
     {
-        $this->workspaceId = null;
         $this->domain = null;
         $this->key = null;
         $this->linkId = null;
