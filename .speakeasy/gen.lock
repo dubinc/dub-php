@@ -3,15 +3,15 @@ id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
   docChecksum: d074e83422312242c953b9123b5c20aa
   docVersion: 0.0.1
-  speakeasyVersion: 1.330.0
-  generationVersion: 2.361.10
-  releaseVersion: 0.2.1
-  configChecksum: 4410f892ca1b4eca1956663f98517d56
+  speakeasyVersion: 1.331.0
+  generationVersion: 2.365.0
+  releaseVersion: 0.2.2
+  configChecksum: c000d9afbc662d90d5d7778e1344e4d3
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
 features:
   php:
-    core: 3.3.6
+    core: 3.3.7
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
