@@ -79,3 +79,11 @@ Based on:
 - Speakeasy CLI 1.331.0 (2.365.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [php v0.2.2] .
+
+## 2024-07-15 01:09:26
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.335.0 (2.370.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [php v0.2.3] .

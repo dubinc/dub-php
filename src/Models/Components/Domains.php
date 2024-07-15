@@ -29,9 +29,19 @@ class Domains
     #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $primary;
 
+    /**
+     * Whether the domain is verified.
+     *
+     * @var bool $verified
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('verified')]
+    #[\JMS\Serializer\Annotation\Type('bool')]
+    public bool $verified;
+
     public function __construct()
     {
         $this->slug = '';
         $this->primary = false;
+        $this->verified = false;
     }
 }
