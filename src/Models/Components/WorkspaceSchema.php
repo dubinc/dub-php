@@ -183,14 +183,14 @@ class WorkspaceSchema
     public string $inviteCode;
 
     /**
-     * Whether the workspace is enrolled in the beta testing program.
+     * The feature flags of the workspace, indicating which features are enabled.
      *
-     * @var ?bool $betaTester
+     * @var ?array<string, bool> $flags
      */
-    #[\JMS\Serializer\Annotation\SerializedName('betaTester')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
+    #[\JMS\Serializer\Annotation\SerializedName('flags')]
+    #[\JMS\Serializer\Annotation\Type('array<string, bool>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?bool $betaTester = null;
+    public ?array $flags = null;
 
     public function __construct()
     {
@@ -213,6 +213,6 @@ class WorkspaceSchema
         $this->users = [];
         $this->domains = [];
         $this->inviteCode = '';
-        $this->betaTester = null;
+        $this->flags = null;
     }
 }
