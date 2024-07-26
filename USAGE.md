@@ -38,6 +38,7 @@ try {
     $request->title = '<value>';
     $request->description = 'Reverse-engineered human-resource time-frame';
     $request->image = 'https://loremflickr.com/640/480';
+    $request->video = '<value>';
     $request->rewrite = false;
     $request->ios = '<value>';
     $request->android = '<value>';
@@ -344,6 +345,7 @@ try {
     $request->title = '<value>';
     $request->description = 'Focused full-range forecast';
     $request->image = 'https://loremflickr.com/640/480';
+    $request->video = '<value>';
     $request->rewrite = false;
     $request->ios = '<value>';
     $request->android = '<value>';
