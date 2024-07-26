@@ -1,9 +1,9 @@
-speakeasyVersion: 1.335.2
+speakeasyVersion: 1.346.0
 sources:
     dub:
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:1390d5750d891299b2ec4b4c2ee3adaa24539d4522f3b7bfa470cc49625ad569
-        sourceBlobDigest: sha256:5d2d8ea1dbf23c3d13996f7c2d9c6501f26a5dc8fcdd49b839f3aa1308d196e2
+        sourceRevisionDigest: sha256:7eb38eae2254bd897ad472e3bc7bc10d5ccf1620f5fb96490f155a65ed69b967
+        sourceBlobDigest: sha256:47f6508b500783662ca2ec25b81908185e30d4d04819b92ddcb9778b1b5efe58
         tags:
             - latest
             - main
@@ -11,10 +11,10 @@ targets:
     my-first-target:
         source: dub
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:1390d5750d891299b2ec4b4c2ee3adaa24539d4522f3b7bfa470cc49625ad569
-        sourceBlobDigest: sha256:5d2d8ea1dbf23c3d13996f7c2d9c6501f26a5dc8fcdd49b839f3aa1308d196e2
+        sourceRevisionDigest: sha256:7eb38eae2254bd897ad472e3bc7bc10d5ccf1620f5fb96490f155a65ed69b967
+        sourceBlobDigest: sha256:47f6508b500783662ca2ec25b81908185e30d4d04819b92ddcb9778b1b5efe58
         codeSamplesNamespace: code-samples-php-my-first-target
-        codeSamplesRevisionDigest: sha256:a76ce6d8cdcc8ad4ea736bed28429077681fb47b770526b88cfce5ef426cfdb2
+        codeSamplesRevisionDigest: sha256:4e9a61ccd3b6d8580bb62f0829a1c72c62f6ffa4247e8a3def73660b47bd8352
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0

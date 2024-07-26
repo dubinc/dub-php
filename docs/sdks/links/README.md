@@ -115,6 +115,7 @@ try {
     $request->title = '<value>';
     $request->description = 'Reverse-engineered human-resource time-frame';
     $request->image = 'https://loremflickr.com/640/480';
+    $request->video = '<value>';
     $request->rewrite = false;
     $request->ios = '<value>';
     $request->android = '<value>';
@@ -591,6 +592,7 @@ try {
     $requestBody->title = '<value>';
     $requestBody->description = 'Front-line 24/7 implementation';
     $requestBody->image = 'https://loremflickr.com/640/480';
+    $requestBody->video = '<value>';
     $requestBody->rewrite = false;
     $requestBody->ios = '<value>';
     $requestBody->android = '<value>';
@@ -964,6 +966,7 @@ try {
     $request->data->title = '<value>';
     $request->data->description = 'Upgradable cohesive implementation';
     $request->data->image = 'https://loremflickr.com/640/480';
+    $request->data->video = '<value>';
     $request->data->rewrite = false;
     $request->data->ios = '<value>';
     $request->data->android = '<value>';
@@ -1287,6 +1290,7 @@ try {
     $request->title = '<value>';
     $request->description = 'Focused full-range forecast';
     $request->image = 'https://loremflickr.com/640/480';
+    $request->video = '<value>';
     $request->rewrite = false;
     $request->ios = '<value>';
     $request->android = '<value>';
