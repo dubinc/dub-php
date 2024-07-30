@@ -46,7 +46,8 @@ try {
     $request->showArchived = false;
     $request->withTags = false;
     $request->sort = Operations\Sort::CreatedAt;
-    $request->page = 678317;;
+    $request->page = 1;
+    $request->pageSize = 50;;
 
     $response = $sdk->links->list($request);
 
@@ -370,7 +371,12 @@ try {
     $request->geo->sx = '<value>';
     $request->geo->ss = '<value>';
     $request->geo->xk = '<value>';
-    $request->doIndex = false;;
+    $request->doIndex = false;
+    $request->utmSource = '<value>';
+    $request->utmMedium = '<value>';
+    $request->utmCampaign = '<value>';
+    $request->utmTerm = '<value>';
+    $request->utmContent = '<value>';;
 
     $response = $sdk->links->create($request);
 
@@ -848,6 +854,11 @@ try {
     $requestBody->geo->ss = '<value>';
     $requestBody->geo->xk = '<value>';
     $requestBody->doIndex = false;
+    $requestBody->utmSource = '<value>';
+    $requestBody->utmMedium = '<value>';
+    $requestBody->utmCampaign = '<value>';
+    $requestBody->utmTerm = '<value>';
+    $requestBody->utmContent = '<value>';
 
     $response = $sdk->links->update('<value>', $requestBody);
 
@@ -1221,7 +1232,12 @@ try {
     $request->data->geo->sx = '<value>';
     $request->data->geo->ss = '<value>';
     $request->data->geo->xk = '<value>';
-    $request->data->doIndex = false;;
+    $request->data->doIndex = false;
+    $request->data->utmSource = '<value>';
+    $request->data->utmMedium = '<value>';
+    $request->data->utmCampaign = '<value>';
+    $request->data->utmTerm = '<value>';
+    $request->data->utmContent = '<value>';;
 
     $response = $sdk->links->updateMany($request);
 
@@ -1545,7 +1561,12 @@ try {
     $request->geo->sx = '<value>';
     $request->geo->ss = '<value>';
     $request->geo->xk = '<value>';
-    $request->doIndex = false;;
+    $request->doIndex = false;
+    $request->utmSource = '<value>';
+    $request->utmMedium = '<value>';
+    $request->utmCampaign = '<value>';
+    $request->utmTerm = '<value>';
+    $request->utmContent = '<value>';;
 
     $response = $sdk->links->upsert($request);
 

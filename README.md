@@ -344,6 +344,11 @@ try {
     $request->geo->ss = '<value>';
     $request->geo->xk = '<value>';
     $request->doIndex = false;
+    $request->utmSource = '<value>';
+    $request->utmMedium = '<value>';
+    $request->utmCampaign = '<value>';
+    $request->utmTerm = '<value>';
+    $request->utmContent = '<value>';
 
     $response = $sdk->links->create($request);
 
@@ -653,6 +658,11 @@ try {
     $request->geo->ss = '<value>';
     $request->geo->xk = '<value>';
     $request->doIndex = false;
+    $request->utmSource = '<value>';
+    $request->utmMedium = '<value>';
+    $request->utmCampaign = '<value>';
+    $request->utmTerm = '<value>';
+    $request->utmContent = '<value>';
 
     $response = $sdk->links->upsert($request);
 

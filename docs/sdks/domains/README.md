@@ -23,6 +23,7 @@ require 'vendor/autoload.php';
 
 use \Dub;
 use \Dub\Models\Components;
+use \Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -30,7 +31,9 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $response = $sdk->domains->list();
+    
+
+    $response = $sdk->domains->list(false, '<value>', 1, 50);
 
     if ($response->domainSchemas !== null) {
         // handle response
@@ -39,6 +42,15 @@ try {
     // handle exception
 }
 ```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `archived`                                                                                | *bool*                                                                                    | :heavy_minus_sign:                                                                        | Whether to include archived domains in the response. Defaults to `false` if not provided. |                                                                                           |
+| `search`                                                                                  | *string*                                                                                  | :heavy_minus_sign:                                                                        | The search term to filter the domains by.                                                 |                                                                                           |
+| `page`                                                                                    | *float*                                                                                   | :heavy_minus_sign:                                                                        | The page number for pagination.                                                           | 1                                                                                         |
+| `pageSize`                                                                                | *float*                                                                                   | :heavy_minus_sign:                                                                        | The number of items per page.                                                             | 50                                                                                        |
 
 
 ### Response

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: abaf709df8818e2099256e8478ab3dc0
+  docChecksum: e0d1746d131c608a54c04b32762b2faa
   docVersion: 0.0.1
-  speakeasyVersion: 1.346.0
-  generationVersion: 2.379.3
-  releaseVersion: 0.2.5
-  configChecksum: bf82264259e0fa0b0b7b87a76a791189
+  speakeasyVersion: 1.348.1
+  generationVersion: 2.380.1
+  releaseVersion: 0.2.6
+  configChecksum: 083dc9718ef1b94aea4cf95727f1bf54
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
 features:
@@ -94,6 +94,7 @@ generatedFiles:
   - src/Models/Operations/UpdateTagRequestBody.php
   - src/Models/Operations/UpdateTagRequest.php
   - src/Models/Operations/UpdateTagResponse.php
+  - src/Models/Operations/ListDomainsRequest.php
   - src/Models/Operations/ListDomainsResponse.php
   - src/Models/Operations/CreateDomainRequestBody.php
   - src/Models/Operations/CreateDomainResponse.php
@@ -149,6 +150,7 @@ generatedFiles:
   - src/Models/Components/TagSchema.php
   - src/Models/Components/LinkGeoTargeting.php
   - src/Models/Components/CountryCode.php
+  - src/Models/Components/ContinentCode.php
   - src/Models/Components/Plan.php
   - src/Models/Components/Role.php
   - src/Models/Components/Users.php
@@ -199,6 +201,7 @@ generatedFiles:
   - docs/Models/Operations/UpdateTagRequestBody.md
   - docs/Models/Operations/UpdateTagRequest.md
   - docs/Models/Operations/UpdateTagResponse.md
+  - docs/Models/Operations/ListDomainsRequest.md
   - docs/Models/Operations/ListDomainsResponse.md
   - docs/Models/Operations/CreateDomainRequestBody.md
   - docs/Models/Operations/CreateDomainResponse.md
@@ -254,6 +257,7 @@ generatedFiles:
   - docs/Models/Components/TagSchema.md
   - docs/Models/Components/LinkGeoTargeting.md
   - docs/Models/Components/CountryCode.md
+  - docs/Models/Components/ContinentCode.md
   - docs/Models/Components/Plan.md
   - docs/Models/Components/Role.md
   - docs/Models/Components/Users.md
