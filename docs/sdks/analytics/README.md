@@ -39,13 +39,14 @@ try {
     $request->start = '<value>';
     $request->end = '<value>';
     $request->timezone = 'America/New_York';
-    $request->country = Components\CountryCode::Gh;
+    $request->continent = Components\ContinentCode::As;
+    $request->country = Components\CountryCode::Nz;
     $request->city = 'New York';
     $request->device = 'Desktop';
     $request->browser = 'Chrome';
     $request->os = 'Windows';
     $request->referer = 'google.com';
-    $request->url = 'https://bright-alpenhorn.name';
+    $request->url = 'http://ajar-mall.com';
     $request->tagId = '<value>';
     $request->qr = false;
     $request->root = false;;
