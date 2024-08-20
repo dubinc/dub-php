@@ -19,12 +19,20 @@ class UpdateLinkRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=linkId')]
     public string $linkId;
 
+    /**
+     *
+     * @var ?UpdateLinkRequestBody $requestBody
+     */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateLinkRequestBody $requestBody = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $linkId
+     * @param  ?UpdateLinkRequestBody  $requestBody
+     */
+    public function __construct(?string $linkId = null, ?UpdateLinkRequestBody $requestBody = null)
     {
-        $this->linkId = '';
-        $this->requestBody = null;
+        $this->linkId = $linkId;
+        $this->requestBody = $requestBody;
     }
 }

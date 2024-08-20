@@ -12,28 +12,46 @@ namespace Dub\Models\Operations;
 /** TrackSaleResponseBody - A sale was tracked. */
 class TrackSaleResponseBody
 {
+    /**
+     *
+     * @var string $eventName
+     */
     #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $eventName;
 
+    /**
+     *
+     * @var string $customerId
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
 
+    /**
+     *
+     * @var float $amount
+     */
     #[\JMS\Serializer\Annotation\SerializedName('amount')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $amount;
 
+    /**
+     *
+     * @var string $paymentProcessor
+     */
     #[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $paymentProcessor;
 
+    /**
+     *
+     * @var string $invoiceId
+     */
     #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $invoiceId;
 
+    /**
+     *
+     * @var string $currency
+     */
     #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $currency;
 
     /**
@@ -45,14 +63,23 @@ class TrackSaleResponseBody
     #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
     public array $metadata;
 
-    public function __construct()
+    /**
+     * @param  ?string  $eventName
+     * @param  ?string  $customerId
+     * @param  ?float  $amount
+     * @param  ?string  $paymentProcessor
+     * @param  ?string  $invoiceId
+     * @param  ?string  $currency
+     * @param  ?array<string, mixed>  $metadata
+     */
+    public function __construct(?string $eventName = null, ?string $customerId = null, ?float $amount = null, ?string $paymentProcessor = null, ?string $invoiceId = null, ?string $currency = null, ?array $metadata = null)
     {
-        $this->eventName = '';
-        $this->customerId = '';
-        $this->amount = 0;
-        $this->paymentProcessor = '';
-        $this->invoiceId = '';
-        $this->currency = '';
-        $this->metadata = [];
+        $this->eventName = $eventName;
+        $this->customerId = $customerId;
+        $this->amount = $amount;
+        $this->paymentProcessor = $paymentProcessor;
+        $this->invoiceId = $invoiceId;
+        $this->currency = $currency;
+        $this->metadata = $metadata;
     }
 }

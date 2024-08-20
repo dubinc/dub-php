@@ -11,19 +11,29 @@ namespace Dub\Models\Operations;
 
 class UpdateWorkspaceRequestBody
 {
+    /**
+     *
+     * @var ?string $name
+     */
     #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $name = null;
 
+    /**
+     *
+     * @var ?string $slug
+     */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $slug = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $name
+     * @param  ?string  $slug
+     */
+    public function __construct(?string $name = null, ?string $slug = null)
     {
-        $this->name = null;
-        $this->slug = null;
+        $this->name = $name;
+        $this->slug = $slug;
     }
 }

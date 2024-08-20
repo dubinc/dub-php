@@ -11,6 +11,10 @@ namespace Dub\Models\Operations;
 use Dub\Utils\SpeakeasyMetadata;
 class GetLinkInfoRequest
 {
+    /**
+     *
+     * @var ?string $domain
+     */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=domain')]
     public ?string $domain = null;
 
@@ -38,11 +42,17 @@ class GetLinkInfoRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=externalId')]
     public ?string $externalId = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $domain
+     * @param  ?string  $key
+     * @param  ?string  $linkId
+     * @param  ?string  $externalId
+     */
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null)
     {
-        $this->domain = null;
-        $this->key = null;
-        $this->linkId = null;
-        $this->externalId = null;
+        $this->domain = $domain;
+        $this->key = $key;
+        $this->linkId = $linkId;
+        $this->externalId = $externalId;
     }
 }

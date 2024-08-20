@@ -18,11 +18,13 @@ class DeleteDomainResponseBody
      * @var string $slug
      */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
 
-    public function __construct()
+    /**
+     * @param  ?string  $slug
+     */
+    public function __construct(?string $slug = null)
     {
-        $this->slug = '';
+        $this->slug = $slug;
     }
 }

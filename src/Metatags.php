@@ -8,6 +8,9 @@ declare(strict_types=1);
 
 namespace Dub;
 
+use Dub\Models\Operations;
+use JMS\Serializer\DeserializationContext;
+
 class Metatags
 {
     private SDKConfiguration $sdkConfiguration;
@@ -26,36 +29,46 @@ class Metatags
      * Retrieve the metatags for a URL.
      *
      * @param  string  $url
-     * @return \Dub\Models\Operations\GetMetatagsResponse
+     * @return Operations\GetMetatagsResponse
+     * @throws \Dub\Models\Errors\SDKException
      */
     public function get(
         string $url,
-    ): \Dub\Models\Operations\GetMetatagsResponse {
-        $request = new \Dub\Models\Operations\GetMetatagsRequest();
-        $request->url = $url;
+    ): Operations\GetMetatagsResponse {
+        $request = new Operations\GetMetatagsRequest(
+            url: $url,
+        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/metatags');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\Dub\Models\Operations\GetMetatagsRequest::class, $request, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetMetatagsRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
 
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
-
-        $response = new \Dub\Models\Operations\GetMetatagsResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        if ($httpResponse->getStatusCode() === 200) {
+        if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->object = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Operations\GetMetatagsResponseBody', 'json');
-            }
-        }
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Operations\GetMetatagsResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\GetMetatagsResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    object: $obj);
 
-        return $response;
+                return $response;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode >= 400 && $statusCode < 500 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \Dub\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
     }
 }

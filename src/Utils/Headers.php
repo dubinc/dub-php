@@ -65,10 +65,10 @@ class Headers
                     }
 
                     if ($metadata->explode) {
-                        $items[] = $fieldMetadata->name.'='.valToString($fieldValue);
+                        $items[] = $fieldMetadata->name.'='.valToString($fieldValue, $fieldMetadata->dateTimeFormat);
                     } else {
                         $items[] = $fieldMetadata->name;
-                        $items[] = valToString($fieldValue);
+                        $items[] = valToString($fieldValue, $fieldMetadata->dateTimeFormat);
                     }
                 }
 

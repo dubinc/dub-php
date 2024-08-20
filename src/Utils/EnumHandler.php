@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Utils;
 
 use JMS\Serializer\Context;
+use JMS\Serializer\Exception\NotAcceptableException;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonDeserializationVisitor;
@@ -49,6 +50,10 @@ class EnumHandler implements SubscribingHandlerInterface
             throw new \LogicException();
         }
 
-        return $type::from($data);
+        try {
+            return $type::from($data);
+        } catch (\ValueError $e) {
+            throw new NotAcceptableException($e->getMessage());
+        }
     }
 }

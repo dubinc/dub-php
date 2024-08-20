@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Dub;
 
+
+
 /** Dub - Dub.co API: Dub is link management infrastructure for companies to create marketing campaigns, link sharing features, and referral programs. */
 class Dub
 {
@@ -21,6 +23,8 @@ class Dub
     public QRCodes $qrCodes;
 
     public Analytics $analytics;
+
+    public Events $events;
 
     public Workspaces $workspaces;
 
@@ -51,6 +55,7 @@ class Dub
         $this->links = new Links($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);
         $this->analytics = new Analytics($this->sdkConfiguration);
+        $this->events = new Events($this->sdkConfiguration);
         $this->workspaces = new Workspaces($this->sdkConfiguration);
         $this->tags = new Tags($this->sdkConfiguration);
         $this->domains = new Domains($this->sdkConfiguration);

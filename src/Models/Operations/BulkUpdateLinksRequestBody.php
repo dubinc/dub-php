@@ -20,13 +20,21 @@ class BulkUpdateLinksRequestBody
     #[\JMS\Serializer\Annotation\Type('array<string>')]
     public array $linkIds;
 
+    /**
+     *
+     * @var Data $data
+     */
     #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('Dub\Models\Operations\Data')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Data')]
     public Data $data;
 
-    public function __construct()
+    /**
+     * @param  ?array<string>  $linkIds
+     * @param  ?Data  $data
+     */
+    public function __construct(?array $linkIds = null, ?Data $data = null)
     {
-        $this->linkIds = [];
-        $this->data = new \Dub\Models\Operations\Data();
+        $this->linkIds = $linkIds;
+        $this->data = $data;
     }
 }

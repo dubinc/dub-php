@@ -15,15 +15,12 @@ Retrieve a list of domains associated with the authenticated workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -31,7 +28,6 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    
 
     $response = $sdk->domains->list(false, '<value>', 1, 50);
 
@@ -42,6 +38,8 @@ try {
     // handle exception
 }
 ```
+
+
 
 ### Parameters
 
@@ -55,8 +53,21 @@ try {
 
 ### Response
 
-**[?\Dub\Models\Operations\ListDomainsResponse](../../Models/Operations/ListDomainsResponse.md)**
+**[?Operations\ListDomainsResponse](../../Models/Operations/ListDomainsResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## create
 
@@ -65,15 +76,13 @@ Create a domain for the authenticated workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -81,12 +90,12 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\CreateDomainRequestBody();
-    $request->slug = 'acme.com';
-    $request->expiredUrl = 'https://acme.com/expired';
-    $request->archived = false;
-    $request->placeholder = 'https://dub.co/help/article/what-is-dub';;
-
+    $request = new Operations\CreateDomainRequestBody(
+        slug: 'acme.com',
+        expiredUrl: 'https://acme.com/expired',
+        archived: false,
+        placeholder: 'https://dub.co/help/article/what-is-dub',
+    );
     $response = $sdk->domains->create($request);
 
     if ($response->domainSchema !== null) {
@@ -97,17 +106,32 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\Dub\Models\Operations\CreateDomainRequestBody](../../Models/Operations/CreateDomainRequestBody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `$request`                                                                               | [Operations\CreateDomainRequestBody](../../Models/Operations/CreateDomainRequestBody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\CreateDomainResponse](../../Models/Operations/CreateDomainResponse.md)**
+**[?Operations\CreateDomainResponse](../../Models/Operations/CreateDomainResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## delete
 
@@ -116,15 +140,12 @@ Delete a domain from a workspace. It cannot be undone. This will also delete all
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -132,7 +153,6 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    
 
     $response = $sdk->domains->delete('acme.com');
 
@@ -144,6 +164,8 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        | Example            |
@@ -153,8 +175,21 @@ try {
 
 ### Response
 
-**[?\Dub\Models\Operations\DeleteDomainResponse](../../Models/Operations/DeleteDomainResponse.md)**
+**[?Operations\DeleteDomainResponse](../../Models/Operations/DeleteDomainResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## update
 
@@ -163,15 +198,13 @@ Update a domain for the authenticated workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -179,12 +212,12 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\UpdateDomainRequestBody();
-    $requestBody->slug = 'acme.com';
-    $requestBody->expiredUrl = 'https://acme.com/expired';
-    $requestBody->archived = false;
-    $requestBody->placeholder = 'https://dub.co/help/article/what-is-dub';
-
+    $requestBody = new Operations\UpdateDomainRequestBody(
+        slug: 'acme.com',
+        expiredUrl: 'https://acme.com/expired',
+        archived: false,
+        placeholder: 'https://dub.co/help/article/what-is-dub',
+    );
     $response = $sdk->domains->update('acme.com', $requestBody);
 
     if ($response->domainSchema !== null) {
@@ -195,15 +228,30 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          | Example                                                                                              |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `slug`                                                                                               | *string*                                                                                             | :heavy_check_mark:                                                                                   | The domain name.                                                                                     | acme.com                                                                                             |
-| `requestBody`                                                                                        | [\Dub\Models\Operations\UpdateDomainRequestBody](../../Models/Operations/UpdateDomainRequestBody.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |                                                                                                      |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              | Example                                                                                  |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `slug`                                                                                   | *string*                                                                                 | :heavy_check_mark:                                                                       | The domain name.                                                                         | acme.com                                                                                 |
+| `requestBody`                                                                            | [Operations\UpdateDomainRequestBody](../../Models/Operations/UpdateDomainRequestBody.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |                                                                                          |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\UpdateDomainResponse](../../Models/Operations/UpdateDomainResponse.md)**
+**[?Operations\UpdateDomainResponse](../../Models/Operations/UpdateDomainResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |

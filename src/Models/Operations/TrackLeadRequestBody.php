@@ -17,7 +17,6 @@ class TrackLeadRequestBody
      * @var string $clickId
      */
     #[\JMS\Serializer\Annotation\SerializedName('clickId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $clickId;
 
     /**
@@ -26,7 +25,6 @@ class TrackLeadRequestBody
      * @var string $eventName
      */
     #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $eventName;
 
     /**
@@ -35,7 +33,6 @@ class TrackLeadRequestBody
      * @var string $customerId
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
 
     /**
@@ -44,7 +41,6 @@ class TrackLeadRequestBody
      * @var ?string $customerName
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerName = null;
 
@@ -54,7 +50,6 @@ class TrackLeadRequestBody
      * @var ?string $customerEmail
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerEmail = null;
 
@@ -64,7 +59,6 @@ class TrackLeadRequestBody
      * @var ?string $customerAvatar
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerAvatar = null;
 
@@ -78,14 +72,23 @@ class TrackLeadRequestBody
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $metadata = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $clickId
+     * @param  ?string  $eventName
+     * @param  ?string  $customerId
+     * @param  ?string  $customerName
+     * @param  ?string  $customerEmail
+     * @param  ?string  $customerAvatar
+     * @param  ?array<string, mixed>  $metadata
+     */
+    public function __construct(?string $clickId = null, ?string $eventName = null, ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null, ?array $metadata = null)
     {
-        $this->clickId = '';
-        $this->eventName = '';
-        $this->customerId = '';
-        $this->customerName = null;
-        $this->customerEmail = null;
-        $this->customerAvatar = null;
-        $this->metadata = null;
+        $this->clickId = $clickId;
+        $this->eventName = $eventName;
+        $this->customerId = $customerId;
+        $this->customerName = $customerName;
+        $this->customerEmail = $customerEmail;
+        $this->customerAvatar = $customerAvatar;
+        $this->metadata = $metadata;
     }
 }

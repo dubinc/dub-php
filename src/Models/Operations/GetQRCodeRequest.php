@@ -30,7 +30,7 @@ class GetQRCodeRequest
     /**
      * The level of error correction to use for the QR code. Defaults to `L` if not provided.
      *
-     * @var ?\Dub\Models\Operations\Level $level
+     * @var ?Level $level
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=level')]
     public ?Level $level = null;
@@ -59,13 +59,21 @@ class GetQRCodeRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeMargin')]
     public ?bool $includeMargin = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $url
+     * @param  ?float  $size
+     * @param  ?Level  $level
+     * @param  ?string  $fgColor
+     * @param  ?string  $bgColor
+     * @param  ?bool  $includeMargin
+     */
+    public function __construct(?string $url = null, ?float $size = null, ?Level $level = null, ?string $fgColor = null, ?string $bgColor = null, ?bool $includeMargin = null)
     {
-        $this->url = '';
-        $this->size = null;
-        $this->level = null;
-        $this->fgColor = null;
-        $this->bgColor = null;
-        $this->includeMargin = null;
+        $this->url = $url;
+        $this->size = $size;
+        $this->level = $level;
+        $this->fgColor = $fgColor;
+        $this->bgColor = $bgColor;
+        $this->includeMargin = $includeMargin;
     }
 }

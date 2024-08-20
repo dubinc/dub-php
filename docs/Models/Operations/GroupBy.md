@@ -1,21 +1,25 @@
 # GroupBy
 
-The parameter to group the analytics data points by. Defaults to 'count' if undefined.
+The field to group the links by.
 
 
-## Values
+## Supported Types
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Count`      | count        |
-| `Timeseries` | timeseries   |
-| `Continents` | continents   |
-| `Countries`  | countries    |
-| `Cities`     | cities       |
-| `Devices`    | devices      |
-| `Browsers`   | browsers     |
-| `Os`         | os           |
-| `Referers`   | referers     |
-| `TopLinks`   | top_links    |
-| `TopUrls`    | top_urls     |
-| `Trigger`    | trigger      |
+### `Operations\One`
+
+```php
+Operations\One $value = /* values here */
+```
+
+### `Operations\Two`
+
+```php
+Operations\Two $value = /* values here */
+```
+
+### `Operations\Three`
+
+```php
+Operations\Three $value = /* values here */
+```
+

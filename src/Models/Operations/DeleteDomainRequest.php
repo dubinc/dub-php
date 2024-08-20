@@ -19,8 +19,11 @@ class DeleteDomainRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=slug')]
     public string $slug;
 
-    public function __construct()
+    /**
+     * @param  ?string  $slug
+     */
+    public function __construct(?string $slug = null)
     {
-        $this->slug = '';
+        $this->slug = $slug;
     }
 }

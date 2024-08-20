@@ -17,7 +17,6 @@ class LinkSchema
      * @var string $id
      */
     #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $id;
 
     /**
@@ -26,7 +25,6 @@ class LinkSchema
      * @var string $domain
      */
     #[\JMS\Serializer\Annotation\SerializedName('domain')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $domain;
 
     /**
@@ -35,7 +33,6 @@ class LinkSchema
      * @var string $key
      */
     #[\JMS\Serializer\Annotation\SerializedName('key')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $key;
 
     /**
@@ -44,7 +41,6 @@ class LinkSchema
      * @var string $externalId
      */
     #[\JMS\Serializer\Annotation\SerializedName('externalId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $externalId;
 
     /**
@@ -53,7 +49,6 @@ class LinkSchema
      * @var string $url
      */
     #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $url;
 
     /**
@@ -62,7 +57,6 @@ class LinkSchema
      * @var bool $trackConversion
      */
     #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $trackConversion;
 
     /**
@@ -71,7 +65,6 @@ class LinkSchema
      * @var bool $archived
      */
     #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $archived;
 
     /**
@@ -80,7 +73,6 @@ class LinkSchema
      * @var string $expiresAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $expiresAt;
 
     /**
@@ -89,7 +81,6 @@ class LinkSchema
      * @var string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $expiredUrl;
 
     /**
@@ -98,7 +89,6 @@ class LinkSchema
      * @var string $password
      */
     #[\JMS\Serializer\Annotation\SerializedName('password')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $password;
 
     /**
@@ -107,7 +97,6 @@ class LinkSchema
      * @var bool $proxy
      */
     #[\JMS\Serializer\Annotation\SerializedName('proxy')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $proxy;
 
     /**
@@ -116,7 +105,6 @@ class LinkSchema
      * @var string $title
      */
     #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $title;
 
     /**
@@ -125,7 +113,6 @@ class LinkSchema
      * @var string $description
      */
     #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $description;
 
     /**
@@ -134,7 +121,6 @@ class LinkSchema
      * @var string $image
      */
     #[\JMS\Serializer\Annotation\SerializedName('image')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $image;
 
     /**
@@ -143,7 +129,6 @@ class LinkSchema
      * @var string $video
      */
     #[\JMS\Serializer\Annotation\SerializedName('video')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $video;
 
     /**
@@ -152,7 +137,6 @@ class LinkSchema
      * @var bool $rewrite
      */
     #[\JMS\Serializer\Annotation\SerializedName('rewrite')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $rewrite;
 
     /**
@@ -161,7 +145,6 @@ class LinkSchema
      * @var bool $doIndex
      */
     #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $doIndex;
 
     /**
@@ -170,7 +153,6 @@ class LinkSchema
      * @var string $ios
      */
     #[\JMS\Serializer\Annotation\SerializedName('ios')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $ios;
 
     /**
@@ -179,16 +161,15 @@ class LinkSchema
      * @var string $android
      */
     #[\JMS\Serializer\Annotation\SerializedName('android')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $android;
 
     /**
      * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
      *
-     * @var \Dub\Models\Components\Geo $geo
+     * @var Geo $geo
      */
     #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\Geo')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Geo')]
     public Geo $geo;
 
     /**
@@ -197,7 +178,6 @@ class LinkSchema
      * @var bool $publicStats
      */
     #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $publicStats;
 
     /**
@@ -207,16 +187,15 @@ class LinkSchema
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $tagId;
 
     /**
      * The tags assigned to the short link.
      *
-     * @var array<\Dub\Models\Components\TagSchema> $tags
+     * @var array<TagSchema> $tags
      */
     #[\JMS\Serializer\Annotation\SerializedName('tags')]
-    #[\JMS\Serializer\Annotation\Type('array<Dub\Models\Components\TagSchema>')]
+    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\TagSchema>')]
     public array $tags;
 
     /**
@@ -225,7 +204,6 @@ class LinkSchema
      * @var string $comments
      */
     #[\JMS\Serializer\Annotation\SerializedName('comments')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $comments;
 
     /**
@@ -234,7 +212,6 @@ class LinkSchema
      * @var string $shortLink
      */
     #[\JMS\Serializer\Annotation\SerializedName('shortLink')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $shortLink;
 
     /**
@@ -243,7 +220,6 @@ class LinkSchema
      * @var string $qrCode
      */
     #[\JMS\Serializer\Annotation\SerializedName('qrCode')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $qrCode;
 
     /**
@@ -252,7 +228,6 @@ class LinkSchema
      * @var string $utmSource
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_source')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmSource;
 
     /**
@@ -261,7 +236,6 @@ class LinkSchema
      * @var string $utmMedium
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmMedium;
 
     /**
@@ -270,7 +244,6 @@ class LinkSchema
      * @var string $utmCampaign
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmCampaign;
 
     /**
@@ -279,7 +252,6 @@ class LinkSchema
      * @var string $utmTerm
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_term')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmTerm;
 
     /**
@@ -288,7 +260,6 @@ class LinkSchema
      * @var string $utmContent
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_content')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $utmContent;
 
     /**
@@ -297,7 +268,6 @@ class LinkSchema
      * @var string $userId
      */
     #[\JMS\Serializer\Annotation\SerializedName('userId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $userId;
 
     /**
@@ -306,7 +276,6 @@ class LinkSchema
      * @var string $workspaceId
      */
     #[\JMS\Serializer\Annotation\SerializedName('workspaceId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $workspaceId;
 
     /**
@@ -315,7 +284,6 @@ class LinkSchema
      * @var float $clicks
      */
     #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $clicks;
 
     /**
@@ -324,7 +292,6 @@ class LinkSchema
      * @var string $lastClicked
      */
     #[\JMS\Serializer\Annotation\SerializedName('lastClicked')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $lastClicked;
 
     /**
@@ -333,7 +300,6 @@ class LinkSchema
      * @var float $leads
      */
     #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $leads;
 
     /**
@@ -342,7 +308,6 @@ class LinkSchema
      * @var float $sales
      */
     #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $sales;
 
     /**
@@ -351,7 +316,6 @@ class LinkSchema
      * @var string $createdAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $createdAt;
 
     /**
@@ -360,7 +324,6 @@ class LinkSchema
      * @var string $updatedAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $updatedAt;
 
     /**
@@ -370,50 +333,91 @@ class LinkSchema
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('projectId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $projectId;
 
-    public function __construct()
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $domain
+     * @param  ?string  $key
+     * @param  ?string  $externalId
+     * @param  ?string  $url
+     * @param  ?bool  $trackConversion
+     * @param  ?bool  $archived
+     * @param  ?string  $expiresAt
+     * @param  ?string  $expiredUrl
+     * @param  ?string  $password
+     * @param  ?bool  $proxy
+     * @param  ?string  $title
+     * @param  ?string  $description
+     * @param  ?string  $image
+     * @param  ?string  $video
+     * @param  ?bool  $rewrite
+     * @param  ?bool  $doIndex
+     * @param  ?string  $ios
+     * @param  ?string  $android
+     * @param  ?Geo  $geo
+     * @param  ?bool  $publicStats
+     * @param  ?string  $tagId
+     * @param  ?array<TagSchema>  $tags
+     * @param  ?string  $comments
+     * @param  ?string  $shortLink
+     * @param  ?string  $qrCode
+     * @param  ?string  $utmSource
+     * @param  ?string  $utmMedium
+     * @param  ?string  $utmCampaign
+     * @param  ?string  $utmTerm
+     * @param  ?string  $utmContent
+     * @param  ?string  $userId
+     * @param  ?string  $workspaceId
+     * @param  ?float  $clicks
+     * @param  ?string  $lastClicked
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?string  $createdAt
+     * @param  ?string  $updatedAt
+     * @param  ?string  $projectId
+     */
+    public function __construct(?string $id = null, ?string $domain = null, ?string $key = null, ?string $externalId = null, ?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $shortLink = null, ?string $qrCode = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $workspaceId = null, ?float $clicks = null, ?string $lastClicked = null, ?float $leads = null, ?float $sales = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $projectId = null)
     {
-        $this->id = '';
-        $this->domain = '';
-        $this->key = '';
-        $this->externalId = '';
-        $this->url = '';
-        $this->trackConversion = false;
-        $this->archived = false;
-        $this->expiresAt = '';
-        $this->expiredUrl = '';
-        $this->password = '';
-        $this->proxy = false;
-        $this->title = '';
-        $this->description = '';
-        $this->image = '';
-        $this->video = '';
-        $this->rewrite = false;
-        $this->doIndex = false;
-        $this->ios = '';
-        $this->android = '';
-        $this->geo = new \Dub\Models\Components\Geo();
-        $this->publicStats = false;
-        $this->tagId = '';
-        $this->tags = [];
-        $this->comments = '';
-        $this->shortLink = '';
-        $this->qrCode = '';
-        $this->utmSource = '';
-        $this->utmMedium = '';
-        $this->utmCampaign = '';
-        $this->utmTerm = '';
-        $this->utmContent = '';
-        $this->userId = '';
-        $this->workspaceId = '';
-        $this->clicks = 0;
-        $this->lastClicked = '';
-        $this->leads = 0;
-        $this->sales = 0;
-        $this->createdAt = '';
-        $this->updatedAt = '';
-        $this->projectId = '';
+        $this->id = $id;
+        $this->domain = $domain;
+        $this->key = $key;
+        $this->externalId = $externalId;
+        $this->url = $url;
+        $this->trackConversion = $trackConversion;
+        $this->archived = $archived;
+        $this->expiresAt = $expiresAt;
+        $this->expiredUrl = $expiredUrl;
+        $this->password = $password;
+        $this->proxy = $proxy;
+        $this->title = $title;
+        $this->description = $description;
+        $this->image = $image;
+        $this->video = $video;
+        $this->rewrite = $rewrite;
+        $this->doIndex = $doIndex;
+        $this->ios = $ios;
+        $this->android = $android;
+        $this->geo = $geo;
+        $this->publicStats = $publicStats;
+        $this->tagId = $tagId;
+        $this->tags = $tags;
+        $this->comments = $comments;
+        $this->shortLink = $shortLink;
+        $this->qrCode = $qrCode;
+        $this->utmSource = $utmSource;
+        $this->utmMedium = $utmMedium;
+        $this->utmCampaign = $utmCampaign;
+        $this->utmTerm = $utmTerm;
+        $this->utmContent = $utmContent;
+        $this->userId = $userId;
+        $this->workspaceId = $workspaceId;
+        $this->clicks = $clicks;
+        $this->lastClicked = $lastClicked;
+        $this->leads = $leads;
+        $this->sales = $sales;
+        $this->createdAt = $createdAt;
+        $this->updatedAt = $updatedAt;
+        $this->projectId = $projectId;
     }
 }

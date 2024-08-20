@@ -19,8 +19,11 @@ class DeleteLinkRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=linkId')]
     public string $linkId;
 
-    public function __construct()
+    /**
+     * @param  ?string  $linkId
+     */
+    public function __construct(?string $linkId = null)
     {
-        $this->linkId = '';
+        $this->linkId = $linkId;
     }
 }

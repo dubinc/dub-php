@@ -19,12 +19,20 @@ class UpdateWorkspaceRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=idOrSlug')]
     public string $idOrSlug;
 
+    /**
+     *
+     * @var ?UpdateWorkspaceRequestBody $requestBody
+     */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateWorkspaceRequestBody $requestBody = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $idOrSlug
+     * @param  ?UpdateWorkspaceRequestBody  $requestBody
+     */
+    public function __construct(?string $idOrSlug = null, ?UpdateWorkspaceRequestBody $requestBody = null)
     {
-        $this->idOrSlug = '';
-        $this->requestBody = null;
+        $this->idOrSlug = $idOrSlug;
+        $this->requestBody = $requestBody;
     }
 }

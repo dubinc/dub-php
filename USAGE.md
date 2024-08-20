@@ -1,305 +1,304 @@
 <!-- Start SDK Example Usage [usage] -->
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
+use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateLinkRequestBody();
-    $request->url = 'https://google.com';
-    $request->domain = 'lighthearted-kilogram.name';
-    $request->key = '<key>';
-    $request->externalId = '123456';
-    $request->prefix = '<value>';
-    $request->trackConversion = false;
-    $request->archived = false;
-    $request->publicStats = false;
-    $request->tagId = '<value>';
-    $request->tagIds = ['<value>'];
-    $request->tagNames = '<value>';
-    $request->comments = '<value>';
-    $request->expiresAt = '<value>';
-    $request->expiredUrl = '<value>';
-    $request->password = 'rHklDuL1dlrnUXo';
-    $request->proxy = false;
-    $request->title = '<value>';
-    $request->description = 'Reverse-engineered human-resource time-frame';
-    $request->image = 'https://loremflickr.com/640/480';
-    $request->video = '<value>';
-    $request->rewrite = false;
-    $request->ios = '<value>';
-    $request->android = '<value>';
-    $request->geo = new Components\LinkGeoTargeting();
-    $request->geo->af = '<value>';
-    $request->geo->al = '<value>';
-    $request->geo->dz = '<value>';
-    $request->geo->as = '<value>';
-    $request->geo->ad = '<value>';
-    $request->geo->ao = '<value>';
-    $request->geo->ai = '<value>';
-    $request->geo->aq = '<value>';
-    $request->geo->ag = '<value>';
-    $request->geo->ar = '<value>';
-    $request->geo->am = '<value>';
-    $request->geo->aw = '<value>';
-    $request->geo->au = '<value>';
-    $request->geo->at = '<value>';
-    $request->geo->az = '<value>';
-    $request->geo->bs = '<value>';
-    $request->geo->bh = '<value>';
-    $request->geo->bd = '<value>';
-    $request->geo->bb = '<value>';
-    $request->geo->by = '<value>';
-    $request->geo->be = '<value>';
-    $request->geo->bz = '<value>';
-    $request->geo->bj = '<value>';
-    $request->geo->bm = '<value>';
-    $request->geo->bt = '<value>';
-    $request->geo->bo = '<value>';
-    $request->geo->ba = '<value>';
-    $request->geo->bw = '<value>';
-    $request->geo->bv = '<value>';
-    $request->geo->br = '<value>';
-    $request->geo->io = '<value>';
-    $request->geo->bn = '<value>';
-    $request->geo->bg = '<value>';
-    $request->geo->bf = '<value>';
-    $request->geo->bi = '<value>';
-    $request->geo->kh = '<value>';
-    $request->geo->cm = '<value>';
-    $request->geo->ca = '<value>';
-    $request->geo->cv = '<value>';
-    $request->geo->ky = '<value>';
-    $request->geo->cf = '<value>';
-    $request->geo->td = '<value>';
-    $request->geo->cl = '<value>';
-    $request->geo->cn = '<value>';
-    $request->geo->cx = '<value>';
-    $request->geo->cc = '<value>';
-    $request->geo->co = '<value>';
-    $request->geo->km = '<value>';
-    $request->geo->cg = '<value>';
-    $request->geo->cd = '<value>';
-    $request->geo->ck = '<value>';
-    $request->geo->cr = '<value>';
-    $request->geo->ci = '<value>';
-    $request->geo->hr = '<value>';
-    $request->geo->cu = '<value>';
-    $request->geo->cy = '<value>';
-    $request->geo->cz = '<value>';
-    $request->geo->dk = '<value>';
-    $request->geo->dj = '<value>';
-    $request->geo->dm = '<value>';
-    $request->geo->do = '<value>';
-    $request->geo->ec = '<value>';
-    $request->geo->eg = '<value>';
-    $request->geo->sv = '<value>';
-    $request->geo->gq = '<value>';
-    $request->geo->er = '<value>';
-    $request->geo->ee = '<value>';
-    $request->geo->et = '<value>';
-    $request->geo->fk = '<value>';
-    $request->geo->fo = '<value>';
-    $request->geo->fj = '<value>';
-    $request->geo->fi = '<value>';
-    $request->geo->fr = '<value>';
-    $request->geo->gf = '<value>';
-    $request->geo->pf = '<value>';
-    $request->geo->tf = '<value>';
-    $request->geo->ga = '<value>';
-    $request->geo->gm = '<value>';
-    $request->geo->ge = '<value>';
-    $request->geo->de = '<value>';
-    $request->geo->gh = '<value>';
-    $request->geo->gi = '<value>';
-    $request->geo->gr = '<value>';
-    $request->geo->gl = '<value>';
-    $request->geo->gd = '<value>';
-    $request->geo->gp = '<value>';
-    $request->geo->gu = '<value>';
-    $request->geo->gt = '<value>';
-    $request->geo->gn = '<value>';
-    $request->geo->gw = '<value>';
-    $request->geo->gy = '<value>';
-    $request->geo->ht = '<value>';
-    $request->geo->hm = '<value>';
-    $request->geo->va = '<value>';
-    $request->geo->hn = '<value>';
-    $request->geo->hk = '<value>';
-    $request->geo->hu = '<value>';
-    $request->geo->is = '<value>';
-    $request->geo->in = '<value>';
-    $request->geo->id = '<id>';
-    $request->geo->ir = '<value>';
-    $request->geo->iq = '<value>';
-    $request->geo->ie = '<value>';
-    $request->geo->il = '<value>';
-    $request->geo->it = '<value>';
-    $request->geo->jm = '<value>';
-    $request->geo->jp = '<value>';
-    $request->geo->jo = '<value>';
-    $request->geo->kz = '<value>';
-    $request->geo->ke = '<value>';
-    $request->geo->ki = '<value>';
-    $request->geo->kp = '<value>';
-    $request->geo->kr = '<value>';
-    $request->geo->kw = '<value>';
-    $request->geo->kg = '<value>';
-    $request->geo->la = '<value>';
-    $request->geo->lv = '<value>';
-    $request->geo->lb = '<value>';
-    $request->geo->ls = '<value>';
-    $request->geo->lr = '<value>';
-    $request->geo->ly = '<value>';
-    $request->geo->li = '<value>';
-    $request->geo->lt = '<value>';
-    $request->geo->lu = '<value>';
-    $request->geo->mo = '<value>';
-    $request->geo->mg = '<value>';
-    $request->geo->mw = '<value>';
-    $request->geo->my = '<value>';
-    $request->geo->mv = '<value>';
-    $request->geo->ml = '<value>';
-    $request->geo->mt = '<value>';
-    $request->geo->mh = '<value>';
-    $request->geo->mq = '<value>';
-    $request->geo->mr = '<value>';
-    $request->geo->mu = '<value>';
-    $request->geo->yt = '<value>';
-    $request->geo->mx = '<value>';
-    $request->geo->fm = '<value>';
-    $request->geo->md = '<value>';
-    $request->geo->mc = '<value>';
-    $request->geo->mn = '<value>';
-    $request->geo->ms = '<value>';
-    $request->geo->ma = '<value>';
-    $request->geo->mz = '<value>';
-    $request->geo->mm = '<value>';
-    $request->geo->na = '<value>';
-    $request->geo->nr = '<value>';
-    $request->geo->np = '<value>';
-    $request->geo->nl = '<value>';
-    $request->geo->nc = '<value>';
-    $request->geo->nz = '<value>';
-    $request->geo->ni = '<value>';
-    $request->geo->ne = '<value>';
-    $request->geo->ng = '<value>';
-    $request->geo->nu = '<value>';
-    $request->geo->nf = '<value>';
-    $request->geo->mk = '<value>';
-    $request->geo->mp = '<value>';
-    $request->geo->no = '<value>';
-    $request->geo->om = '<value>';
-    $request->geo->pk = '<value>';
-    $request->geo->pw = '<value>';
-    $request->geo->ps = '<value>';
-    $request->geo->pa = '<value>';
-    $request->geo->pg = '<value>';
-    $request->geo->py = '<value>';
-    $request->geo->pe = '<value>';
-    $request->geo->ph = '<value>';
-    $request->geo->pn = '<value>';
-    $request->geo->pl = '<value>';
-    $request->geo->pt = '<value>';
-    $request->geo->pr = '<value>';
-    $request->geo->qa = '<value>';
-    $request->geo->re = '<value>';
-    $request->geo->ro = '<value>';
-    $request->geo->ru = '<value>';
-    $request->geo->rw = '<value>';
-    $request->geo->sh = '<value>';
-    $request->geo->kn = '<value>';
-    $request->geo->lc = '<value>';
-    $request->geo->pm = '<value>';
-    $request->geo->vc = '<value>';
-    $request->geo->ws = '<value>';
-    $request->geo->sm = '<value>';
-    $request->geo->st = '<value>';
-    $request->geo->sa = '<value>';
-    $request->geo->sn = '<value>';
-    $request->geo->sc = '<value>';
-    $request->geo->sl = '<value>';
-    $request->geo->sg = '<value>';
-    $request->geo->sk = '<value>';
-    $request->geo->si = '<value>';
-    $request->geo->sb = '<value>';
-    $request->geo->so = '<value>';
-    $request->geo->za = '<value>';
-    $request->geo->gs = '<value>';
-    $request->geo->es = '<value>';
-    $request->geo->lk = '<value>';
-    $request->geo->sd = '<value>';
-    $request->geo->sr = '<value>';
-    $request->geo->sj = '<value>';
-    $request->geo->sz = '<value>';
-    $request->geo->se = '<value>';
-    $request->geo->ch = '<value>';
-    $request->geo->sy = '<value>';
-    $request->geo->tw = '<value>';
-    $request->geo->tj = '<value>';
-    $request->geo->tz = '<value>';
-    $request->geo->th = '<value>';
-    $request->geo->tl = '<value>';
-    $request->geo->tg = '<value>';
-    $request->geo->tk = '<value>';
-    $request->geo->to = '<value>';
-    $request->geo->tt = '<value>';
-    $request->geo->tn = '<value>';
-    $request->geo->tr = '<value>';
-    $request->geo->tm = '<value>';
-    $request->geo->tc = '<value>';
-    $request->geo->tv = '<value>';
-    $request->geo->ug = '<value>';
-    $request->geo->ua = '<value>';
-    $request->geo->ae = '<value>';
-    $request->geo->gb = '<value>';
-    $request->geo->us = '<value>';
-    $request->geo->um = '<value>';
-    $request->geo->uy = '<value>';
-    $request->geo->uz = '<value>';
-    $request->geo->vu = '<value>';
-    $request->geo->ve = '<value>';
-    $request->geo->vn = '<value>';
-    $request->geo->vg = '<value>';
-    $request->geo->vi = '<value>';
-    $request->geo->wf = '<value>';
-    $request->geo->eh = '<value>';
-    $request->geo->ye = '<value>';
-    $request->geo->zm = '<value>';
-    $request->geo->zw = '<value>';
-    $request->geo->ax = '<value>';
-    $request->geo->bq = '<value>';
-    $request->geo->cw = '<value>';
-    $request->geo->gg = '<value>';
-    $request->geo->im = '<value>';
-    $request->geo->je = '<value>';
-    $request->geo->me = '<value>';
-    $request->geo->bl = '<value>';
-    $request->geo->mf = '<value>';
-    $request->geo->rs = '<value>';
-    $request->geo->sx = '<value>';
-    $request->geo->ss = '<value>';
-    $request->geo->xk = '<value>';
-    $request->doIndex = false;
-    $request->utmSource = '<value>';
-    $request->utmMedium = '<value>';
-    $request->utmCampaign = '<value>';
-    $request->utmTerm = '<value>';
-    $request->utmContent = '<value>';
-
+    $request = new Operations\CreateLinkRequestBody(
+        url: 'https://google.com',
+        domain: 'lighthearted-kilogram.name',
+        key: '<key>',
+        externalId: '123456',
+        prefix: '<value>',
+        trackConversion: false,
+        archived: false,
+        publicStats: false,
+        tagId: '<value>',
+        tagIds: [
+            '<value>',
+        ],
+        tagNames: '<value>',
+        comments: '<value>',
+        expiresAt: '<value>',
+        expiredUrl: '<value>',
+        password: 'klDuL1dlrnUXohO',
+        proxy: false,
+        title: '<value>',
+        description: 'User-friendly multi-state frame',
+        image: 'https://loremflickr.com/640/480',
+        video: '<value>',
+        rewrite: false,
+        ios: '<value>',
+        android: '<value>',
+        geo: new Components\LinkGeoTargeting(
+            af: '<value>',
+            al: '<value>',
+            dz: '<value>',
+            as: '<value>',
+            ad: '<value>',
+            ao: '<value>',
+            ai: '<value>',
+            aq: '<value>',
+            ag: '<value>',
+            ar: '<value>',
+            am: '<value>',
+            aw: '<value>',
+            au: '<value>',
+            at: '<value>',
+            az: '<value>',
+            bs: '<value>',
+            bh: '<value>',
+            bd: '<value>',
+            bb: '<value>',
+            by: '<value>',
+            be: '<value>',
+            bz: '<value>',
+            bj: '<value>',
+            bm: '<value>',
+            bt: '<value>',
+            bo: '<value>',
+            ba: '<value>',
+            bw: '<value>',
+            bv: '<value>',
+            br: '<value>',
+            io: '<value>',
+            bn: '<value>',
+            bg: '<value>',
+            bf: '<value>',
+            bi: '<value>',
+            kh: '<value>',
+            cm: '<value>',
+            ca: '<value>',
+            cv: '<value>',
+            ky: '<value>',
+            cf: '<value>',
+            td: '<value>',
+            cl: '<value>',
+            cn: '<value>',
+            cx: '<value>',
+            cc: '<value>',
+            co: '<value>',
+            km: '<value>',
+            cg: '<value>',
+            cd: '<value>',
+            ck: '<value>',
+            cr: '<value>',
+            ci: '<value>',
+            hr: '<value>',
+            cu: '<value>',
+            cy: '<value>',
+            cz: '<value>',
+            dk: '<value>',
+            dj: '<value>',
+            dm: '<value>',
+            do: '<value>',
+            ec: '<value>',
+            eg: '<value>',
+            sv: '<value>',
+            gq: '<value>',
+            er: '<value>',
+            ee: '<value>',
+            et: '<value>',
+            fk: '<value>',
+            fo: '<value>',
+            fj: '<value>',
+            fi: '<value>',
+            fr: '<value>',
+            gf: '<value>',
+            pf: '<value>',
+            tf: '<value>',
+            ga: '<value>',
+            gm: '<value>',
+            ge: '<value>',
+            de: '<value>',
+            gh: '<value>',
+            gi: '<value>',
+            gr: '<value>',
+            gl: '<value>',
+            gd: '<value>',
+            gp: '<value>',
+            gu: '<value>',
+            gt: '<value>',
+            gn: '<value>',
+            gw: '<value>',
+            gy: '<value>',
+            ht: '<value>',
+            hm: '<value>',
+            va: '<value>',
+            hn: '<value>',
+            hk: '<value>',
+            hu: '<value>',
+            is: '<value>',
+            in: '<value>',
+            id: '<id>',
+            ir: '<value>',
+            iq: '<value>',
+            ie: '<value>',
+            il: '<value>',
+            it: '<value>',
+            jm: '<value>',
+            jp: '<value>',
+            jo: '<value>',
+            kz: '<value>',
+            ke: '<value>',
+            ki: '<value>',
+            kp: '<value>',
+            kr: '<value>',
+            kw: '<value>',
+            kg: '<value>',
+            la: '<value>',
+            lv: '<value>',
+            lb: '<value>',
+            ls: '<value>',
+            lr: '<value>',
+            ly: '<value>',
+            li: '<value>',
+            lt: '<value>',
+            lu: '<value>',
+            mo: '<value>',
+            mg: '<value>',
+            mw: '<value>',
+            my: '<value>',
+            mv: '<value>',
+            ml: '<value>',
+            mt: '<value>',
+            mh: '<value>',
+            mq: '<value>',
+            mr: '<value>',
+            mu: '<value>',
+            yt: '<value>',
+            mx: '<value>',
+            fm: '<value>',
+            md: '<value>',
+            mc: '<value>',
+            mn: '<value>',
+            ms: '<value>',
+            ma: '<value>',
+            mz: '<value>',
+            mm: '<value>',
+            na: '<value>',
+            nr: '<value>',
+            np: '<value>',
+            nl: '<value>',
+            nc: '<value>',
+            nz: '<value>',
+            ni: '<value>',
+            ne: '<value>',
+            ng: '<value>',
+            nu: '<value>',
+            nf: '<value>',
+            mk: '<value>',
+            mp: '<value>',
+            no: '<value>',
+            om: '<value>',
+            pk: '<value>',
+            pw: '<value>',
+            ps: '<value>',
+            pa: '<value>',
+            pg: '<value>',
+            py: '<value>',
+            pe: '<value>',
+            ph: '<value>',
+            pn: '<value>',
+            pl: '<value>',
+            pt: '<value>',
+            pr: '<value>',
+            qa: '<value>',
+            re: '<value>',
+            ro: '<value>',
+            ru: '<value>',
+            rw: '<value>',
+            sh: '<value>',
+            kn: '<value>',
+            lc: '<value>',
+            pm: '<value>',
+            vc: '<value>',
+            ws: '<value>',
+            sm: '<value>',
+            st: '<value>',
+            sa: '<value>',
+            sn: '<value>',
+            sc: '<value>',
+            sl: '<value>',
+            sg: '<value>',
+            sk: '<value>',
+            si: '<value>',
+            sb: '<value>',
+            so: '<value>',
+            za: '<value>',
+            gs: '<value>',
+            es: '<value>',
+            lk: '<value>',
+            sd: '<value>',
+            sr: '<value>',
+            sj: '<value>',
+            sz: '<value>',
+            se: '<value>',
+            ch: '<value>',
+            sy: '<value>',
+            tw: '<value>',
+            tj: '<value>',
+            tz: '<value>',
+            th: '<value>',
+            tl: '<value>',
+            tg: '<value>',
+            tk: '<value>',
+            to: '<value>',
+            tt: '<value>',
+            tn: '<value>',
+            tr: '<value>',
+            tm: '<value>',
+            tc: '<value>',
+            tv: '<value>',
+            ug: '<value>',
+            ua: '<value>',
+            ae: '<value>',
+            gb: '<value>',
+            us: '<value>',
+            um: '<value>',
+            uy: '<value>',
+            uz: '<value>',
+            vu: '<value>',
+            ve: '<value>',
+            vn: '<value>',
+            vg: '<value>',
+            vi: '<value>',
+            wf: '<value>',
+            eh: '<value>',
+            ye: '<value>',
+            zm: '<value>',
+            zw: '<value>',
+            ax: '<value>',
+            bq: '<value>',
+            cw: '<value>',
+            gg: '<value>',
+            im: '<value>',
+            je: '<value>',
+            me: '<value>',
+            bl: '<value>',
+            mf: '<value>',
+            rs: '<value>',
+            sx: '<value>',
+            ss: '<value>',
+            xk: '<value>',
+        ),
+        doIndex: false,
+        utmSource: '<value>',
+        utmMedium: '<value>',
+        utmCampaign: '<value>',
+        utmTerm: '<value>',
+        utmContent: '<value>',
+    );
     $response = $sdk->links->create($request);
 
     if ($response->linkSchema !== null) {
@@ -308,310 +307,308 @@ try {
 } catch (Throwable $e) {
     // handle exception
 }
-
 ```
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
+use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
 
-$sdk = Dub\Dub::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpsertLinkRequestBody();
-    $request->url = 'https://google.com';
-    $request->domain = 'monthly-hometown.info';
-    $request->key = '<key>';
-    $request->externalId = '123456';
-    $request->prefix = '<value>';
-    $request->trackConversion = false;
-    $request->archived = false;
-    $request->publicStats = false;
-    $request->tagId = '<value>';
-    $request->tagIds = ['<value>'];
-    $request->tagNames = '<value>';
-    $request->comments = '<value>';
-    $request->expiresAt = '<value>';
-    $request->expiredUrl = '<value>';
-    $request->password = 'SFNg7iwZDcrQrPc';
-    $request->proxy = false;
-    $request->title = '<value>';
-    $request->description = 'Focused full-range forecast';
-    $request->image = 'https://loremflickr.com/640/480';
-    $request->video = '<value>';
-    $request->rewrite = false;
-    $request->ios = '<value>';
-    $request->android = '<value>';
-    $request->geo = new Components\LinkGeoTargeting();
-    $request->geo->af = '<value>';
-    $request->geo->al = '<value>';
-    $request->geo->dz = '<value>';
-    $request->geo->as = '<value>';
-    $request->geo->ad = '<value>';
-    $request->geo->ao = '<value>';
-    $request->geo->ai = '<value>';
-    $request->geo->aq = '<value>';
-    $request->geo->ag = '<value>';
-    $request->geo->ar = '<value>';
-    $request->geo->am = '<value>';
-    $request->geo->aw = '<value>';
-    $request->geo->au = '<value>';
-    $request->geo->at = '<value>';
-    $request->geo->az = '<value>';
-    $request->geo->bs = '<value>';
-    $request->geo->bh = '<value>';
-    $request->geo->bd = '<value>';
-    $request->geo->bb = '<value>';
-    $request->geo->by = '<value>';
-    $request->geo->be = '<value>';
-    $request->geo->bz = '<value>';
-    $request->geo->bj = '<value>';
-    $request->geo->bm = '<value>';
-    $request->geo->bt = '<value>';
-    $request->geo->bo = '<value>';
-    $request->geo->ba = '<value>';
-    $request->geo->bw = '<value>';
-    $request->geo->bv = '<value>';
-    $request->geo->br = '<value>';
-    $request->geo->io = '<value>';
-    $request->geo->bn = '<value>';
-    $request->geo->bg = '<value>';
-    $request->geo->bf = '<value>';
-    $request->geo->bi = '<value>';
-    $request->geo->kh = '<value>';
-    $request->geo->cm = '<value>';
-    $request->geo->ca = '<value>';
-    $request->geo->cv = '<value>';
-    $request->geo->ky = '<value>';
-    $request->geo->cf = '<value>';
-    $request->geo->td = '<value>';
-    $request->geo->cl = '<value>';
-    $request->geo->cn = '<value>';
-    $request->geo->cx = '<value>';
-    $request->geo->cc = '<value>';
-    $request->geo->co = '<value>';
-    $request->geo->km = '<value>';
-    $request->geo->cg = '<value>';
-    $request->geo->cd = '<value>';
-    $request->geo->ck = '<value>';
-    $request->geo->cr = '<value>';
-    $request->geo->ci = '<value>';
-    $request->geo->hr = '<value>';
-    $request->geo->cu = '<value>';
-    $request->geo->cy = '<value>';
-    $request->geo->cz = '<value>';
-    $request->geo->dk = '<value>';
-    $request->geo->dj = '<value>';
-    $request->geo->dm = '<value>';
-    $request->geo->do = '<value>';
-    $request->geo->ec = '<value>';
-    $request->geo->eg = '<value>';
-    $request->geo->sv = '<value>';
-    $request->geo->gq = '<value>';
-    $request->geo->er = '<value>';
-    $request->geo->ee = '<value>';
-    $request->geo->et = '<value>';
-    $request->geo->fk = '<value>';
-    $request->geo->fo = '<value>';
-    $request->geo->fj = '<value>';
-    $request->geo->fi = '<value>';
-    $request->geo->fr = '<value>';
-    $request->geo->gf = '<value>';
-    $request->geo->pf = '<value>';
-    $request->geo->tf = '<value>';
-    $request->geo->ga = '<value>';
-    $request->geo->gm = '<value>';
-    $request->geo->ge = '<value>';
-    $request->geo->de = '<value>';
-    $request->geo->gh = '<value>';
-    $request->geo->gi = '<value>';
-    $request->geo->gr = '<value>';
-    $request->geo->gl = '<value>';
-    $request->geo->gd = '<value>';
-    $request->geo->gp = '<value>';
-    $request->geo->gu = '<value>';
-    $request->geo->gt = '<value>';
-    $request->geo->gn = '<value>';
-    $request->geo->gw = '<value>';
-    $request->geo->gy = '<value>';
-    $request->geo->ht = '<value>';
-    $request->geo->hm = '<value>';
-    $request->geo->va = '<value>';
-    $request->geo->hn = '<value>';
-    $request->geo->hk = '<value>';
-    $request->geo->hu = '<value>';
-    $request->geo->is = '<value>';
-    $request->geo->in = '<value>';
-    $request->geo->id = '<id>';
-    $request->geo->ir = '<value>';
-    $request->geo->iq = '<value>';
-    $request->geo->ie = '<value>';
-    $request->geo->il = '<value>';
-    $request->geo->it = '<value>';
-    $request->geo->jm = '<value>';
-    $request->geo->jp = '<value>';
-    $request->geo->jo = '<value>';
-    $request->geo->kz = '<value>';
-    $request->geo->ke = '<value>';
-    $request->geo->ki = '<value>';
-    $request->geo->kp = '<value>';
-    $request->geo->kr = '<value>';
-    $request->geo->kw = '<value>';
-    $request->geo->kg = '<value>';
-    $request->geo->la = '<value>';
-    $request->geo->lv = '<value>';
-    $request->geo->lb = '<value>';
-    $request->geo->ls = '<value>';
-    $request->geo->lr = '<value>';
-    $request->geo->ly = '<value>';
-    $request->geo->li = '<value>';
-    $request->geo->lt = '<value>';
-    $request->geo->lu = '<value>';
-    $request->geo->mo = '<value>';
-    $request->geo->mg = '<value>';
-    $request->geo->mw = '<value>';
-    $request->geo->my = '<value>';
-    $request->geo->mv = '<value>';
-    $request->geo->ml = '<value>';
-    $request->geo->mt = '<value>';
-    $request->geo->mh = '<value>';
-    $request->geo->mq = '<value>';
-    $request->geo->mr = '<value>';
-    $request->geo->mu = '<value>';
-    $request->geo->yt = '<value>';
-    $request->geo->mx = '<value>';
-    $request->geo->fm = '<value>';
-    $request->geo->md = '<value>';
-    $request->geo->mc = '<value>';
-    $request->geo->mn = '<value>';
-    $request->geo->ms = '<value>';
-    $request->geo->ma = '<value>';
-    $request->geo->mz = '<value>';
-    $request->geo->mm = '<value>';
-    $request->geo->na = '<value>';
-    $request->geo->nr = '<value>';
-    $request->geo->np = '<value>';
-    $request->geo->nl = '<value>';
-    $request->geo->nc = '<value>';
-    $request->geo->nz = '<value>';
-    $request->geo->ni = '<value>';
-    $request->geo->ne = '<value>';
-    $request->geo->ng = '<value>';
-    $request->geo->nu = '<value>';
-    $request->geo->nf = '<value>';
-    $request->geo->mk = '<value>';
-    $request->geo->mp = '<value>';
-    $request->geo->no = '<value>';
-    $request->geo->om = '<value>';
-    $request->geo->pk = '<value>';
-    $request->geo->pw = '<value>';
-    $request->geo->ps = '<value>';
-    $request->geo->pa = '<value>';
-    $request->geo->pg = '<value>';
-    $request->geo->py = '<value>';
-    $request->geo->pe = '<value>';
-    $request->geo->ph = '<value>';
-    $request->geo->pn = '<value>';
-    $request->geo->pl = '<value>';
-    $request->geo->pt = '<value>';
-    $request->geo->pr = '<value>';
-    $request->geo->qa = '<value>';
-    $request->geo->re = '<value>';
-    $request->geo->ro = '<value>';
-    $request->geo->ru = '<value>';
-    $request->geo->rw = '<value>';
-    $request->geo->sh = '<value>';
-    $request->geo->kn = '<value>';
-    $request->geo->lc = '<value>';
-    $request->geo->pm = '<value>';
-    $request->geo->vc = '<value>';
-    $request->geo->ws = '<value>';
-    $request->geo->sm = '<value>';
-    $request->geo->st = '<value>';
-    $request->geo->sa = '<value>';
-    $request->geo->sn = '<value>';
-    $request->geo->sc = '<value>';
-    $request->geo->sl = '<value>';
-    $request->geo->sg = '<value>';
-    $request->geo->sk = '<value>';
-    $request->geo->si = '<value>';
-    $request->geo->sb = '<value>';
-    $request->geo->so = '<value>';
-    $request->geo->za = '<value>';
-    $request->geo->gs = '<value>';
-    $request->geo->es = '<value>';
-    $request->geo->lk = '<value>';
-    $request->geo->sd = '<value>';
-    $request->geo->sr = '<value>';
-    $request->geo->sj = '<value>';
-    $request->geo->sz = '<value>';
-    $request->geo->se = '<value>';
-    $request->geo->ch = '<value>';
-    $request->geo->sy = '<value>';
-    $request->geo->tw = '<value>';
-    $request->geo->tj = '<value>';
-    $request->geo->tz = '<value>';
-    $request->geo->th = '<value>';
-    $request->geo->tl = '<value>';
-    $request->geo->tg = '<value>';
-    $request->geo->tk = '<value>';
-    $request->geo->to = '<value>';
-    $request->geo->tt = '<value>';
-    $request->geo->tn = '<value>';
-    $request->geo->tr = '<value>';
-    $request->geo->tm = '<value>';
-    $request->geo->tc = '<value>';
-    $request->geo->tv = '<value>';
-    $request->geo->ug = '<value>';
-    $request->geo->ua = '<value>';
-    $request->geo->ae = '<value>';
-    $request->geo->gb = '<value>';
-    $request->geo->us = '<value>';
-    $request->geo->um = '<value>';
-    $request->geo->uy = '<value>';
-    $request->geo->uz = '<value>';
-    $request->geo->vu = '<value>';
-    $request->geo->ve = '<value>';
-    $request->geo->vn = '<value>';
-    $request->geo->vg = '<value>';
-    $request->geo->vi = '<value>';
-    $request->geo->wf = '<value>';
-    $request->geo->eh = '<value>';
-    $request->geo->ye = '<value>';
-    $request->geo->zm = '<value>';
-    $request->geo->zw = '<value>';
-    $request->geo->ax = '<value>';
-    $request->geo->bq = '<value>';
-    $request->geo->cw = '<value>';
-    $request->geo->gg = '<value>';
-    $request->geo->im = '<value>';
-    $request->geo->je = '<value>';
-    $request->geo->me = '<value>';
-    $request->geo->bl = '<value>';
-    $request->geo->mf = '<value>';
-    $request->geo->rs = '<value>';
-    $request->geo->sx = '<value>';
-    $request->geo->ss = '<value>';
-    $request->geo->xk = '<value>';
-    $request->doIndex = false;
-    $request->utmSource = '<value>';
-    $request->utmMedium = '<value>';
-    $request->utmCampaign = '<value>';
-    $request->utmTerm = '<value>';
-    $request->utmContent = '<value>';
-
+    $request = new Operations\UpsertLinkRequestBody(
+        url: 'https://google.com',
+        domain: 'monthly-hometown.info',
+        key: '<key>',
+        externalId: '123456',
+        prefix: '<value>',
+        trackConversion: false,
+        archived: false,
+        publicStats: false,
+        tagId: '<value>',
+        tagIds: [
+            '<value>',
+        ],
+        tagNames: '<value>',
+        comments: '<value>',
+        expiresAt: '<value>',
+        expiredUrl: '<value>',
+        password: 'Ng7iwZDcrQrPcHB',
+        proxy: false,
+        title: '<value>',
+        description: 'Organic asynchronous firmware',
+        image: 'https://loremflickr.com/640/480',
+        video: '<value>',
+        rewrite: false,
+        ios: '<value>',
+        android: '<value>',
+        geo: new Components\LinkGeoTargeting(
+            af: '<value>',
+            al: '<value>',
+            dz: '<value>',
+            as: '<value>',
+            ad: '<value>',
+            ao: '<value>',
+            ai: '<value>',
+            aq: '<value>',
+            ag: '<value>',
+            ar: '<value>',
+            am: '<value>',
+            aw: '<value>',
+            au: '<value>',
+            at: '<value>',
+            az: '<value>',
+            bs: '<value>',
+            bh: '<value>',
+            bd: '<value>',
+            bb: '<value>',
+            by: '<value>',
+            be: '<value>',
+            bz: '<value>',
+            bj: '<value>',
+            bm: '<value>',
+            bt: '<value>',
+            bo: '<value>',
+            ba: '<value>',
+            bw: '<value>',
+            bv: '<value>',
+            br: '<value>',
+            io: '<value>',
+            bn: '<value>',
+            bg: '<value>',
+            bf: '<value>',
+            bi: '<value>',
+            kh: '<value>',
+            cm: '<value>',
+            ca: '<value>',
+            cv: '<value>',
+            ky: '<value>',
+            cf: '<value>',
+            td: '<value>',
+            cl: '<value>',
+            cn: '<value>',
+            cx: '<value>',
+            cc: '<value>',
+            co: '<value>',
+            km: '<value>',
+            cg: '<value>',
+            cd: '<value>',
+            ck: '<value>',
+            cr: '<value>',
+            ci: '<value>',
+            hr: '<value>',
+            cu: '<value>',
+            cy: '<value>',
+            cz: '<value>',
+            dk: '<value>',
+            dj: '<value>',
+            dm: '<value>',
+            do: '<value>',
+            ec: '<value>',
+            eg: '<value>',
+            sv: '<value>',
+            gq: '<value>',
+            er: '<value>',
+            ee: '<value>',
+            et: '<value>',
+            fk: '<value>',
+            fo: '<value>',
+            fj: '<value>',
+            fi: '<value>',
+            fr: '<value>',
+            gf: '<value>',
+            pf: '<value>',
+            tf: '<value>',
+            ga: '<value>',
+            gm: '<value>',
+            ge: '<value>',
+            de: '<value>',
+            gh: '<value>',
+            gi: '<value>',
+            gr: '<value>',
+            gl: '<value>',
+            gd: '<value>',
+            gp: '<value>',
+            gu: '<value>',
+            gt: '<value>',
+            gn: '<value>',
+            gw: '<value>',
+            gy: '<value>',
+            ht: '<value>',
+            hm: '<value>',
+            va: '<value>',
+            hn: '<value>',
+            hk: '<value>',
+            hu: '<value>',
+            is: '<value>',
+            in: '<value>',
+            id: '<id>',
+            ir: '<value>',
+            iq: '<value>',
+            ie: '<value>',
+            il: '<value>',
+            it: '<value>',
+            jm: '<value>',
+            jp: '<value>',
+            jo: '<value>',
+            kz: '<value>',
+            ke: '<value>',
+            ki: '<value>',
+            kp: '<value>',
+            kr: '<value>',
+            kw: '<value>',
+            kg: '<value>',
+            la: '<value>',
+            lv: '<value>',
+            lb: '<value>',
+            ls: '<value>',
+            lr: '<value>',
+            ly: '<value>',
+            li: '<value>',
+            lt: '<value>',
+            lu: '<value>',
+            mo: '<value>',
+            mg: '<value>',
+            mw: '<value>',
+            my: '<value>',
+            mv: '<value>',
+            ml: '<value>',
+            mt: '<value>',
+            mh: '<value>',
+            mq: '<value>',
+            mr: '<value>',
+            mu: '<value>',
+            yt: '<value>',
+            mx: '<value>',
+            fm: '<value>',
+            md: '<value>',
+            mc: '<value>',
+            mn: '<value>',
+            ms: '<value>',
+            ma: '<value>',
+            mz: '<value>',
+            mm: '<value>',
+            na: '<value>',
+            nr: '<value>',
+            np: '<value>',
+            nl: '<value>',
+            nc: '<value>',
+            nz: '<value>',
+            ni: '<value>',
+            ne: '<value>',
+            ng: '<value>',
+            nu: '<value>',
+            nf: '<value>',
+            mk: '<value>',
+            mp: '<value>',
+            no: '<value>',
+            om: '<value>',
+            pk: '<value>',
+            pw: '<value>',
+            ps: '<value>',
+            pa: '<value>',
+            pg: '<value>',
+            py: '<value>',
+            pe: '<value>',
+            ph: '<value>',
+            pn: '<value>',
+            pl: '<value>',
+            pt: '<value>',
+            pr: '<value>',
+            qa: '<value>',
+            re: '<value>',
+            ro: '<value>',
+            ru: '<value>',
+            rw: '<value>',
+            sh: '<value>',
+            kn: '<value>',
+            lc: '<value>',
+            pm: '<value>',
+            vc: '<value>',
+            ws: '<value>',
+            sm: '<value>',
+            st: '<value>',
+            sa: '<value>',
+            sn: '<value>',
+            sc: '<value>',
+            sl: '<value>',
+            sg: '<value>',
+            sk: '<value>',
+            si: '<value>',
+            sb: '<value>',
+            so: '<value>',
+            za: '<value>',
+            gs: '<value>',
+            es: '<value>',
+            lk: '<value>',
+            sd: '<value>',
+            sr: '<value>',
+            sj: '<value>',
+            sz: '<value>',
+            se: '<value>',
+            ch: '<value>',
+            sy: '<value>',
+            tw: '<value>',
+            tj: '<value>',
+            tz: '<value>',
+            th: '<value>',
+            tl: '<value>',
+            tg: '<value>',
+            tk: '<value>',
+            to: '<value>',
+            tt: '<value>',
+            tn: '<value>',
+            tr: '<value>',
+            tm: '<value>',
+            tc: '<value>',
+            tv: '<value>',
+            ug: '<value>',
+            ua: '<value>',
+            ae: '<value>',
+            gb: '<value>',
+            us: '<value>',
+            um: '<value>',
+            uy: '<value>',
+            uz: '<value>',
+            vu: '<value>',
+            ve: '<value>',
+            vn: '<value>',
+            vg: '<value>',
+            vi: '<value>',
+            wf: '<value>',
+            eh: '<value>',
+            ye: '<value>',
+            zm: '<value>',
+            zw: '<value>',
+            ax: '<value>',
+            bq: '<value>',
+            cw: '<value>',
+            gg: '<value>',
+            im: '<value>',
+            je: '<value>',
+            me: '<value>',
+            bl: '<value>',
+            mf: '<value>',
+            rs: '<value>',
+            sx: '<value>',
+            ss: '<value>',
+            xk: '<value>',
+        ),
+        doIndex: false,
+        utmSource: '<value>',
+        utmMedium: '<value>',
+        utmCampaign: '<value>',
+        utmTerm: '<value>',
+        utmContent: '<value>',
+    );
     $response = $sdk->links->upsert($request);
 
     if ($response->linkSchema !== null) {
@@ -620,6 +617,5 @@ try {
 } catch (Throwable $e) {
     // handle exception
 }
-
 ```
 <!-- End SDK Example Usage [usage] -->

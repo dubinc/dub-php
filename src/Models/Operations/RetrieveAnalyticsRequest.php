@@ -8,13 +8,14 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
+use Dub\Models\Components;
 use Dub\Utils\SpeakeasyMetadata;
 class RetrieveAnalyticsRequest
 {
     /**
      * The type of event to retrieve analytics for. Defaults to 'clicks'.
      *
-     * @var ?\Dub\Models\Operations\Event $event
+     * @var ?Event $event
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
     public ?Event $event = null;
@@ -22,10 +23,10 @@ class RetrieveAnalyticsRequest
     /**
      * The parameter to group the analytics data points by. Defaults to 'count' if undefined.
      *
-     * @var ?\Dub\Models\Operations\GroupBy $groupBy
+     * @var ?QueryParamGroupBy $groupBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
-    public ?GroupBy $groupBy = null;
+    public ?QueryParamGroupBy $groupBy = null;
 
     /**
      * The domain to filter analytics for.
@@ -62,7 +63,7 @@ class RetrieveAnalyticsRequest
     /**
      * The interval to retrieve analytics for. Takes precedence over start and end. If undefined, defaults to 24h.
      *
-     * @var ?\Dub\Models\Operations\Interval $interval
+     * @var ?Interval $interval
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
     public ?Interval $interval = null;
@@ -94,18 +95,18 @@ class RetrieveAnalyticsRequest
     /**
      * The continent to retrieve analytics for.
      *
-     * @var ?\Dub\Models\Components\ContinentCode $continent
+     * @var ?Components\ContinentCode $continent
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=continent')]
-    public ?\Dub\Models\Components\ContinentCode $continent = null;
+    public ?Components\ContinentCode $continent = null;
 
     /**
      * The country to retrieve analytics for.
      *
-     * @var ?\Dub\Models\Components\CountryCode $country
+     * @var ?Components\CountryCode $country
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=country')]
-    public ?\Dub\Models\Components\CountryCode $country = null;
+    public ?Components\CountryCode $country = null;
 
     /**
      * The city to retrieve analytics for.
@@ -179,28 +180,51 @@ class RetrieveAnalyticsRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=root')]
     public ?bool $root = null;
 
-    public function __construct()
+    /**
+     * @param  ?Event  $event
+     * @param  ?QueryParamGroupBy  $groupBy
+     * @param  ?string  $domain
+     * @param  ?string  $key
+     * @param  ?string  $linkId
+     * @param  ?string  $externalId
+     * @param  ?Interval  $interval
+     * @param  ?string  $start
+     * @param  ?string  $end
+     * @param  ?string  $timezone
+     * @param  ?Components\ContinentCode  $continent
+     * @param  ?Components\CountryCode  $country
+     * @param  ?string  $city
+     * @param  ?string  $device
+     * @param  ?string  $browser
+     * @param  ?string  $os
+     * @param  ?string  $referer
+     * @param  ?string  $url
+     * @param  ?string  $tagId
+     * @param  ?bool  $qr
+     * @param  ?bool  $root
+     */
+    public function __construct(?Event $event = null, ?QueryParamGroupBy $groupBy = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null)
     {
-        $this->event = null;
-        $this->groupBy = null;
-        $this->domain = null;
-        $this->key = null;
-        $this->linkId = null;
-        $this->externalId = null;
-        $this->interval = null;
-        $this->start = null;
-        $this->end = null;
-        $this->timezone = null;
-        $this->continent = null;
-        $this->country = null;
-        $this->city = null;
-        $this->device = null;
-        $this->browser = null;
-        $this->os = null;
-        $this->referer = null;
-        $this->url = null;
-        $this->tagId = null;
-        $this->qr = null;
-        $this->root = null;
+        $this->event = $event;
+        $this->groupBy = $groupBy;
+        $this->domain = $domain;
+        $this->key = $key;
+        $this->linkId = $linkId;
+        $this->externalId = $externalId;
+        $this->interval = $interval;
+        $this->start = $start;
+        $this->end = $end;
+        $this->timezone = $timezone;
+        $this->continent = $continent;
+        $this->country = $country;
+        $this->city = $city;
+        $this->device = $device;
+        $this->browser = $browser;
+        $this->os = $os;
+        $this->referer = $referer;
+        $this->url = $url;
+        $this->tagId = $tagId;
+        $this->qr = $qr;
+        $this->root = $root;
     }
 }

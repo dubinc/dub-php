@@ -14,14 +14,12 @@ Retrieve a list of tags for the authenticated workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
+use Dub;
+use Dub\Models\Components;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -40,10 +38,25 @@ try {
 ```
 
 
+
+
 ### Response
 
-**[?\Dub\Models\Operations\GetTagsResponse](../../Models/Operations/GetTagsResponse.md)**
+**[?Operations\GetTagsResponse](../../Models/Operations/GetTagsResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## create
 
@@ -52,15 +65,13 @@ Create a new tag for the authenticated workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -68,11 +79,11 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\CreateTagRequestBody();
-    $request->name = '<value>';
-    $request->color = Operations\Color::Blue;
-    $request->tag = '<value>';;
-
+    $request = new Operations\CreateTagRequestBody(
+        name: '<value>',
+        color: Operations\Color::Blue,
+        tag: '<value>',
+    );
     $response = $sdk->tags->create($request);
 
     if ($response->tagSchema !== null) {
@@ -83,17 +94,32 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\Dub\Models\Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `$request`                                                                         | [Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\CreateTagResponse](../../Models/Operations/CreateTagResponse.md)**
+**[?Operations\CreateTagResponse](../../Models/Operations/CreateTagResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## update
 
@@ -102,15 +128,13 @@ Update a tag in the workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -118,11 +142,11 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $requestBody = new Operations\UpdateTagRequestBody();
-    $requestBody->name = '<value>';
-    $requestBody->color = Operations\UpdateTagColor::Brown;
-    $requestBody->tag = '<value>';
-
+    $requestBody = new Operations\UpdateTagRequestBody(
+        name: '<value>',
+        color: Operations\UpdateTagColor::Brown,
+        tag: '<value>',
+    );
     $response = $sdk->tags->update('<value>', $requestBody);
 
     if ($response->tagSchema !== null) {
@@ -133,15 +157,30 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | The ID of the tag to update.                                                                   |
-| `requestBody`                                                                                  | [\Dub\Models\Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `id`                                                                               | *string*                                                                           | :heavy_check_mark:                                                                 | The ID of the tag to update.                                                       |
+| `requestBody`                                                                      | [Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\UpdateTagResponse](../../Models/Operations/UpdateTagResponse.md)**
+**[?Operations\UpdateTagResponse](../../Models/Operations/UpdateTagResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |

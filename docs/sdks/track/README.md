@@ -14,15 +14,13 @@ Track a lead for a short link.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -30,17 +28,17 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\TrackLeadRequestBody();
-    $request->clickId = '<value>';
-    $request->eventName = 'Sign up';
-    $request->customerId = '<value>';
-    $request->customerName = '<value>';
-    $request->customerEmail = 'Katelin24@hotmail.com';
-    $request->customerAvatar = '<value>';
-    $request->metadata = [
-        'Assistant' => '<value>',
-    ];;
-
+    $request = new Operations\TrackLeadRequestBody(
+        clickId: '<value>',
+        eventName: 'Sign up',
+        customerId: '<value>',
+        customerName: '<value>',
+        customerEmail: 'Katelin24@hotmail.com',
+        customerAvatar: '<value>',
+        metadata: [
+            'Assistant' => '<value>',
+        ],
+    );
     $response = $sdk->track->lead($request);
 
     if ($response->object !== null) {
@@ -51,17 +49,32 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\Dub\Models\Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `$request`                                                                         | [Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\TrackLeadResponse](../../Models/Operations/TrackLeadResponse.md)**
+**[?Operations\TrackLeadResponse](../../Models/Operations/TrackLeadResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## sale
 
@@ -70,15 +83,13 @@ Track a sale for a short link.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -86,17 +97,17 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\TrackSaleRequestBody();
-    $request->customerId = '<value>';
-    $request->amount = 996500;
-    $request->paymentProcessor = Operations\PaymentProcessor::Shopify;
-    $request->eventName = 'Purchase';
-    $request->invoiceId = '<value>';
-    $request->currency = 'European Unit of Account 17(E.U.A.-17)';
-    $request->metadata = [
-        'Stage' => '<value>',
-    ];;
-
+    $request = new Operations\TrackSaleRequestBody(
+        customerId: '<value>',
+        amount: 996500,
+        paymentProcessor: Operations\PaymentProcessor::Shopify,
+        eventName: 'Purchase',
+        invoiceId: '<value>',
+        currency: 'European Unit of Account 17(E.U.A.-17)',
+        metadata: [
+            'Stage' => '<value>',
+        ],
+    );
     $response = $sdk->track->sale($request);
 
     if ($response->object !== null) {
@@ -107,17 +118,32 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\Dub\Models\Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `$request`                                                                         | [Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\TrackSaleResponse](../../Models/Operations/TrackSaleResponse.md)**
+**[?Operations\TrackSaleResponse](../../Models/Operations/TrackSaleResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 ## customer
 
@@ -126,15 +152,13 @@ Track a customer for an authenticated workspace.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
+use Dub\Models\Operations;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -142,12 +166,12 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-        $request = new Operations\TrackCustomerRequestBody();
-    $request->customerId = '<value>';
-    $request->customerName = '<value>';
-    $request->customerEmail = 'Wilson.Smith@gmail.com';
-    $request->customerAvatar = '<value>';;
-
+    $request = new Operations\TrackCustomerRequestBody(
+        customerId: '<value>',
+        customerName: '<value>',
+        customerEmail: 'Wilson.Smith@gmail.com',
+        customerAvatar: '<value>',
+    );
     $response = $sdk->track->customer($request);
 
     if ($response->object !== null) {
@@ -158,14 +182,29 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\Dub\Models\Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `$request`                                                                                 | [Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response
 
-**[?\Dub\Models\Operations\TrackCustomerResponse](../../Models/Operations/TrackCustomerResponse.md)**
+**[?Operations\TrackCustomerResponse](../../Models/Operations/TrackCustomerResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |

@@ -17,7 +17,6 @@ class TrackCustomerRequestBody
      * @var string $customerId
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
 
     /**
@@ -26,7 +25,6 @@ class TrackCustomerRequestBody
      * @var ?string $customerName
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerName = null;
 
@@ -36,7 +34,6 @@ class TrackCustomerRequestBody
      * @var ?string $customerEmail
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerEmail = null;
 
@@ -46,15 +43,20 @@ class TrackCustomerRequestBody
      * @var ?string $customerAvatar
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $customerAvatar = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $customerId
+     * @param  ?string  $customerName
+     * @param  ?string  $customerEmail
+     * @param  ?string  $customerAvatar
+     */
+    public function __construct(?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
-        $this->customerId = '';
-        $this->customerName = null;
-        $this->customerEmail = null;
-        $this->customerAvatar = null;
+        $this->customerId = $customerId;
+        $this->customerName = $customerName;
+        $this->customerEmail = $customerEmail;
+        $this->customerAvatar = $customerAvatar;
     }
 }

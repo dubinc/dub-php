@@ -8,6 +8,9 @@ declare(strict_types=1);
 
 namespace Dub;
 
+use Dub\Models\Operations;
+use JMS\Serializer\DeserializationContext;
+
 class Workspaces
 {
     private SDKConfiguration $sdkConfiguration;
@@ -26,81 +29,118 @@ class Workspaces
      * Retrieve a workspace for the authenticated user.
      *
      * @param  string  $idOrSlug
-     * @return \Dub\Models\Operations\GetWorkspaceResponse
+     * @return Operations\GetWorkspaceResponse
+     * @throws \Dub\Models\Errors\SDKException
      */
     public function get(
         string $idOrSlug,
-    ): \Dub\Models\Operations\GetWorkspaceResponse {
-        $request = new \Dub\Models\Operations\GetWorkspaceRequest();
-        $request->idOrSlug = $idOrSlug;
+    ): Operations\GetWorkspaceResponse {
+        $request = new Operations\GetWorkspaceRequest(
+            idOrSlug: $idOrSlug,
+        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\GetWorkspaceRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', Operations\GetWorkspaceRequest::class, $request);
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
 
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Components\WorkspaceSchema', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\GetWorkspaceResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    workspaceSchema: $obj);
 
-        $response = new \Dub\Models\Operations\GetWorkspaceResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        if ($httpResponse->getStatusCode() === 200) {
+                return $response;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->workspaceSchema = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\WorkspaceSchema', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\BadRequest', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 400) {
+        } elseif ($statusCode == 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Unauthorized', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 401) {
+        } elseif ($statusCode == 403) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Forbidden', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 403) {
+        } elseif ($statusCode == 404) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\NotFound', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 404) {
+        } elseif ($statusCode == 409) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Conflict', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 409) {
+        } elseif ($statusCode == 410) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InviteExpired', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 410) {
+        } elseif ($statusCode == 422) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\UnprocessableEntity', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 422) {
+        } elseif ($statusCode == 429) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\RateLimitExceeded', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 429) {
+        } elseif ($statusCode == 500) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InternalServerError', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 500) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
-            }
+        } elseif ($statusCode >= 400 && $statusCode < 500 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \Dub\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
-
-        return $response;
     }
 
     /**
@@ -109,18 +149,20 @@ class Workspaces
      * Update a workspace by ID or slug.
      *
      * @param  string  $idOrSlug
-     * @param  ?\Dub\Models\Operations\UpdateWorkspaceRequestBody  $requestBody
-     * @return \Dub\Models\Operations\UpdateWorkspaceResponse
+     * @param  ?Operations\UpdateWorkspaceRequestBody  $requestBody
+     * @return Operations\UpdateWorkspaceResponse
+     * @throws \Dub\Models\Errors\SDKException
      */
     public function update(
         string $idOrSlug,
-        ?\Dub\Models\Operations\UpdateWorkspaceRequestBody $requestBody = null,
-    ): \Dub\Models\Operations\UpdateWorkspaceResponse {
-        $request = new \Dub\Models\Operations\UpdateWorkspaceRequest();
-        $request->idOrSlug = $idOrSlug;
-        $request->requestBody = $requestBody;
+        ?Operations\UpdateWorkspaceRequestBody $requestBody = null,
+    ): Operations\UpdateWorkspaceResponse {
+        $request = new Operations\UpdateWorkspaceRequest(
+            idOrSlug: $idOrSlug,
+            requestBody: $requestBody,
+        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', \Dub\Models\Operations\UpdateWorkspaceRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', Operations\UpdateWorkspaceRequest::class, $request);
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
@@ -128,68 +170,103 @@ class Workspaces
         }
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
 
-        $httpResponse = $this->sdkConfiguration->securityClient->request('PATCH', $url, $options);
+
+        $httpResponse = $this->sdkConfiguration->securityClient->send($httpRequest, $options);
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
+        if ($statusCode == 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Components\WorkspaceSchema', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\UpdateWorkspaceResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    workspaceSchema: $obj);
 
-        $response = new \Dub\Models\Operations\UpdateWorkspaceResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        if ($httpResponse->getStatusCode() === 200) {
+                return $response;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif ($statusCode == 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->workspaceSchema = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\WorkspaceSchema', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\BadRequest', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 400) {
+        } elseif ($statusCode == 401) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->badRequest = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\BadRequest', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Unauthorized', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 401) {
+        } elseif ($statusCode == 403) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unauthorized = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Unauthorized', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Forbidden', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 403) {
+        } elseif ($statusCode == 404) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->forbidden = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Forbidden', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\NotFound', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 404) {
+        } elseif ($statusCode == 409) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->notFound = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\NotFound', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Conflict', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 409) {
+        } elseif ($statusCode == 410) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->conflict = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\Conflict', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InviteExpired', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 410) {
+        } elseif ($statusCode == 422) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->inviteExpired = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InviteExpired', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\UnprocessableEntity', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 422) {
+        } elseif ($statusCode == 429) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->unprocessableEntity = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\UnprocessableEntity', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\RateLimitExceeded', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 429) {
+        } elseif ($statusCode == 500) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->rateLimitExceeded = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\RateLimitExceeded', 'json');
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InternalServerError', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                throw $obj;
+            } else {
+                throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif ($httpResponse->getStatusCode() === 500) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->internalServerError = $serializer->deserialize((string) $httpResponse->getBody(), 'Dub\Models\Components\InternalServerError', 'json');
-            }
+        } elseif ($statusCode >= 400 && $statusCode < 500 || $statusCode >= 500 && $statusCode < 600) {
+            throw new \Dub\Models\Errors\SDKException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
-
-        return $response;
     }
 }
