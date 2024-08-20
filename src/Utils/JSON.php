@@ -8,8 +8,13 @@ declare(strict_types=1);
 
 namespace Dub\Utils;
 
+
+use JMS\Serializer\Handler\ArrayCollectionHandler;
 use JMS\Serializer\Handler\HandlerRegistry;
+use JMS\Serializer\Handler\IteratorHandler;
+use JMS\Serializer\Handler\StdClassHandler;
 use JMS\Serializer\SerializerBuilder;
+
 
 class JSON
 {
@@ -17,9 +22,15 @@ class JSON
     {
         return SerializerBuilder::create()->configureHandlers(
             static function (HandlerRegistry $registry): void {
+                $registry->registerSubscribingHandler(new StdClassHandler());
+                $registry->registerSubscribingHandler(new ArrayCollectionHandler());
+                $registry->registerSubscribingHandler(new IteratorHandler());
                 $registry->registerSubscribingHandler(new MixedJSONHandler());
                 $registry->registerSubscribingHandler(new EnumHandler());
+                $registry->registerSubscribingHandler(new DateTimeHandler());
+                $registry->registerSubscribingHandler(new DateHandler());
+                $registry->registerSubscribingHandler(new UnionHandler());
             },
-        )->addDefaultHandlers()->build();
+        )->setTypeParser(new PhpDocTypeParser())->build();
     }
 }

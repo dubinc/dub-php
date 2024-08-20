@@ -1,29 +1,33 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: e0d1746d131c608a54c04b32762b2faa
+  docChecksum: f10061c7787170c0db643f22823c9aa9
   docVersion: 0.0.1
-  speakeasyVersion: 1.348.1
-  generationVersion: 2.380.1
-  releaseVersion: 0.2.6
-  configChecksum: 083dc9718ef1b94aea4cf95727f1bf54
+  speakeasyVersion: 1.376.0
+  generationVersion: 2.402.5
+  releaseVersion: 0.3.0
+  configChecksum: b9212d5fc23da407ab89aa6110b52f4d
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
 features:
   php:
-    core: 3.3.10
+    core: 3.3.11
     deprecations: 2.81.1
+    errors: 0.1.0
     examples: 2.81.3
     flattening: 2.81.1
-    globalSecurity: 2.81.6
+    globalSecurity: 2.81.7
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.1
     nameOverrides: 2.81.2
+    responseFormat: 0.1.0
+    unions: 0.1.0
 generatedFiles:
   - src/SDKConfiguration.php
   - src/Links.php
   - src/QRCodes.php
   - src/Analytics.php
+  - src/Events.php
   - src/Workspaces.php
   - src/Tags.php
   - src/Domains.php
@@ -33,8 +37,13 @@ generatedFiles:
   - src/DubBuilder.php
   - composer.json
   - phpstan.neon
+  - phpunit.xml
   - pint.json
   - rector.php
+  - src/Utils/DateHandler.php
+  - src/Utils/DateTimeHandler.php
+  - src/Utils/DefaultResponse.php
+  - src/Utils/DefaultStream.php
   - src/Utils/EnumHandler.php
   - src/Utils/FormMetadata.php
   - src/Utils/Headers.php
@@ -43,6 +52,7 @@ generatedFiles:
   - src/Utils/MultipartMetadata.php
   - src/Utils/ParamsMetadata.php
   - src/Utils/PathParameters.php
+  - src/Utils/PhpDocTypeParser.php
   - src/Utils/QueryParameters.php
   - src/Utils/RequestBodies.php
   - src/Utils/RequestMetadata.php
@@ -50,12 +60,17 @@ generatedFiles:
   - src/Utils/SecurityClient.php
   - src/Utils/SecurityMetadata.php
   - src/Utils/SpeakeasyMetadata.php
+  - src/Utils/UnionHandler.php
   - src/Utils/Utils.php
+  - src/Models/Errors/SDKException.php
   - src/Models/Operations/Sort.php
   - src/Models/Operations/GetLinksRequest.php
   - src/Models/Operations/GetLinksResponse.php
   - src/Models/Operations/CreateLinkRequestBody.php
   - src/Models/Operations/CreateLinkResponse.php
+  - src/Models/Operations/Three.php
+  - src/Models/Operations/Two.php
+  - src/Models/Operations/One.php
   - src/Models/Operations/GetLinksCountRequest.php
   - src/Models/Operations/GetLinksCountResponse.php
   - src/Models/Operations/GetLinkInfoRequest.php
@@ -77,10 +92,16 @@ generatedFiles:
   - src/Models/Operations/GetQRCodeRequest.php
   - src/Models/Operations/GetQRCodeResponse.php
   - src/Models/Operations/Event.php
-  - src/Models/Operations/GroupBy.php
+  - src/Models/Operations/QueryParamGroupBy.php
   - src/Models/Operations/Interval.php
   - src/Models/Operations/RetrieveAnalyticsRequest.php
   - src/Models/Operations/RetrieveAnalyticsResponse.php
+  - src/Models/Operations/QueryParamEvent.php
+  - src/Models/Operations/QueryParamInterval.php
+  - src/Models/Operations/Order.php
+  - src/Models/Operations/SortBy.php
+  - src/Models/Operations/ListEventsRequest.php
+  - src/Models/Operations/ListEventsResponse.php
   - src/Models/Operations/GetWorkspaceRequest.php
   - src/Models/Operations/GetWorkspaceResponse.php
   - src/Models/Operations/UpdateWorkspaceRequestBody.php
@@ -117,40 +138,50 @@ generatedFiles:
   - src/Models/Operations/GetMetatagsRequest.php
   - src/Models/Operations/GetMetatagsResponseBody.php
   - src/Models/Operations/GetMetatagsResponse.php
-  - src/Models/Components/InternalServerErrorCode.php
-  - src/Models/Components/InternalServerErrorError.php
-  - src/Models/Components/InternalServerError.php
-  - src/Models/Components/RateLimitExceededCode.php
-  - src/Models/Components/RateLimitExceededError.php
-  - src/Models/Components/RateLimitExceeded.php
-  - src/Models/Components/UnprocessableEntityCode.php
-  - src/Models/Components/UnprocessableEntityError.php
-  - src/Models/Components/UnprocessableEntity.php
-  - src/Models/Components/InviteExpiredCode.php
-  - src/Models/Components/InviteExpiredError.php
-  - src/Models/Components/InviteExpired.php
-  - src/Models/Components/ConflictCode.php
-  - src/Models/Components/ConflictError.php
-  - src/Models/Components/Conflict.php
-  - src/Models/Components/NotFoundCode.php
-  - src/Models/Components/NotFoundError.php
-  - src/Models/Components/NotFound.php
-  - src/Models/Components/ForbiddenCode.php
-  - src/Models/Components/ForbiddenError.php
-  - src/Models/Components/Forbidden.php
-  - src/Models/Components/UnauthorizedCode.php
-  - src/Models/Components/UnauthorizedError.php
-  - src/Models/Components/Unauthorized.php
-  - src/Models/Components/Code.php
-  - src/Models/Components/Error.php
-  - src/Models/Components/BadRequest.php
   - src/Models/Components/Geo.php
   - src/Models/Components/LinkSchema.php
   - src/Models/Components/Color.php
   - src/Models/Components/TagSchema.php
   - src/Models/Components/LinkGeoTargeting.php
+  - src/Models/Components/ClicksCount.php
+  - src/Models/Components/ClicksTimeseries.php
+  - src/Models/Components/Country.php
+  - src/Models/Components/ClicksCountries.php
+  - src/Models/Components/ClicksCitiesCountry.php
+  - src/Models/Components/ClicksCities.php
+  - src/Models/Components/ClicksDevices.php
+  - src/Models/Components/ClicksBrowsers.php
+  - src/Models/Components/ClicksOS.php
+  - src/Models/Components/ClicksReferers.php
+  - src/Models/Components/ClicksTopLinks.php
+  - src/Models/Components/ClicksTopUrls.php
+  - src/Models/Components/LeadsCount.php
+  - src/Models/Components/LeadsTimeseries.php
+  - src/Models/Components/LeadsCountriesCountry.php
+  - src/Models/Components/LeadsCountries.php
+  - src/Models/Components/LeadsCitiesCountry.php
+  - src/Models/Components/LeadsCities.php
+  - src/Models/Components/LeadsDevices.php
+  - src/Models/Components/LeadsBrowsers.php
+  - src/Models/Components/LeadsOS.php
+  - src/Models/Components/LeadsReferers.php
+  - src/Models/Components/LeadsTopLinks.php
+  - src/Models/Components/LeadsTopUrls.php
+  - src/Models/Components/SalesCount.php
+  - src/Models/Components/SalesTimeseries.php
+  - src/Models/Components/SalesCountriesCountry.php
+  - src/Models/Components/SalesCountries.php
+  - src/Models/Components/SalesCitiesCountry.php
+  - src/Models/Components/SalesCities.php
+  - src/Models/Components/SalesDevices.php
+  - src/Models/Components/SalesBrowsers.php
+  - src/Models/Components/SalesOS.php
+  - src/Models/Components/SalesReferers.php
+  - src/Models/Components/SalesTopLinks.php
+  - src/Models/Components/SalesTopUrls.php
   - src/Models/Components/CountryCode.php
   - src/Models/Components/ContinentCode.php
+  - src/Models/Components/ClickEvents.php
   - src/Models/Components/Plan.php
   - src/Models/Components/Role.php
   - src/Models/Components/Users.php
@@ -158,11 +189,48 @@ generatedFiles:
   - src/Models/Components/WorkspaceSchema.php
   - src/Models/Components/DomainSchema.php
   - src/Models/Components/Security.php
+  - src/Models/Errors/Code.php
+  - src/Models/Errors/Error.php
+  - src/Models/Errors/BadRequest.php
+  - src/Models/Errors/UnauthorizedCode.php
+  - src/Models/Errors/UnauthorizedError.php
+  - src/Models/Errors/Unauthorized.php
+  - src/Models/Errors/ForbiddenCode.php
+  - src/Models/Errors/ForbiddenError.php
+  - src/Models/Errors/Forbidden.php
+  - src/Models/Errors/NotFoundCode.php
+  - src/Models/Errors/NotFoundError.php
+  - src/Models/Errors/NotFound.php
+  - src/Models/Errors/ConflictCode.php
+  - src/Models/Errors/ConflictError.php
+  - src/Models/Errors/Conflict.php
+  - src/Models/Errors/InviteExpiredCode.php
+  - src/Models/Errors/InviteExpiredError.php
+  - src/Models/Errors/InviteExpired.php
+  - src/Models/Errors/UnprocessableEntityCode.php
+  - src/Models/Errors/UnprocessableEntityError.php
+  - src/Models/Errors/UnprocessableEntity.php
+  - src/Models/Errors/RateLimitExceededCode.php
+  - src/Models/Errors/RateLimitExceededError.php
+  - src/Models/Errors/RateLimitExceeded.php
+  - src/Models/Errors/InternalServerErrorCode.php
+  - src/Models/Errors/InternalServerErrorError.php
+  - src/Models/Errors/InternalServerError.php
+  - docs/Models/Operations/QueryParamTagIds.md
+  - docs/Models/Operations/QueryParamTagNames.md
   - docs/Models/Operations/Sort.md
   - docs/Models/Operations/GetLinksRequest.md
   - docs/Models/Operations/GetLinksResponse.md
+  - docs/Models/Operations/TagIds.md
+  - docs/Models/Operations/TagNames.md
   - docs/Models/Operations/CreateLinkRequestBody.md
   - docs/Models/Operations/CreateLinkResponse.md
+  - docs/Models/Operations/GetLinksCountQueryParamTagIds.md
+  - docs/Models/Operations/GetLinksCountQueryParamTagNames.md
+  - docs/Models/Operations/Three.md
+  - docs/Models/Operations/Two.md
+  - docs/Models/Operations/One.md
+  - docs/Models/Operations/GroupBy.md
   - docs/Models/Operations/GetLinksCountRequest.md
   - docs/Models/Operations/GetLinksCountResponse.md
   - docs/Models/Operations/GetLinkInfoRequest.md
@@ -170,24 +238,39 @@ generatedFiles:
   - docs/Models/Operations/DeleteLinkRequest.md
   - docs/Models/Operations/DeleteLinkResponseBody.md
   - docs/Models/Operations/DeleteLinkResponse.md
+  - docs/Models/Operations/UpdateLinkTagIds.md
+  - docs/Models/Operations/UpdateLinkTagNames.md
   - docs/Models/Operations/UpdateLinkRequestBody.md
   - docs/Models/Operations/UpdateLinkRequest.md
   - docs/Models/Operations/UpdateLinkResponse.md
+  - docs/Models/Operations/BulkCreateLinksTagIds.md
+  - docs/Models/Operations/BulkCreateLinksTagNames.md
   - docs/Models/Operations/RequestBody.md
   - docs/Models/Operations/BulkCreateLinksResponse.md
+  - docs/Models/Operations/BulkUpdateLinksTagIds.md
+  - docs/Models/Operations/BulkUpdateLinksTagNames.md
   - docs/Models/Operations/Data.md
   - docs/Models/Operations/BulkUpdateLinksRequestBody.md
   - docs/Models/Operations/BulkUpdateLinksResponse.md
+  - docs/Models/Operations/UpsertLinkTagIds.md
+  - docs/Models/Operations/UpsertLinkTagNames.md
   - docs/Models/Operations/UpsertLinkRequestBody.md
   - docs/Models/Operations/UpsertLinkResponse.md
   - docs/Models/Operations/Level.md
   - docs/Models/Operations/GetQRCodeRequest.md
   - docs/Models/Operations/GetQRCodeResponse.md
   - docs/Models/Operations/Event.md
-  - docs/Models/Operations/GroupBy.md
+  - docs/Models/Operations/QueryParamGroupBy.md
   - docs/Models/Operations/Interval.md
   - docs/Models/Operations/RetrieveAnalyticsRequest.md
+  - docs/Models/Operations/RetrieveAnalyticsResponseBody.md
   - docs/Models/Operations/RetrieveAnalyticsResponse.md
+  - docs/Models/Operations/QueryParamEvent.md
+  - docs/Models/Operations/QueryParamInterval.md
+  - docs/Models/Operations/Order.md
+  - docs/Models/Operations/SortBy.md
+  - docs/Models/Operations/ListEventsRequest.md
+  - docs/Models/Operations/ListEventsResponse.md
   - docs/Models/Operations/GetWorkspaceRequest.md
   - docs/Models/Operations/GetWorkspaceResponse.md
   - docs/Models/Operations/UpdateWorkspaceRequestBody.md
@@ -224,40 +307,50 @@ generatedFiles:
   - docs/Models/Operations/GetMetatagsRequest.md
   - docs/Models/Operations/GetMetatagsResponseBody.md
   - docs/Models/Operations/GetMetatagsResponse.md
-  - docs/Models/Components/InternalServerErrorCode.md
-  - docs/Models/Components/InternalServerErrorError.md
-  - docs/Models/Components/InternalServerError.md
-  - docs/Models/Components/RateLimitExceededCode.md
-  - docs/Models/Components/RateLimitExceededError.md
-  - docs/Models/Components/RateLimitExceeded.md
-  - docs/Models/Components/UnprocessableEntityCode.md
-  - docs/Models/Components/UnprocessableEntityError.md
-  - docs/Models/Components/UnprocessableEntity.md
-  - docs/Models/Components/InviteExpiredCode.md
-  - docs/Models/Components/InviteExpiredError.md
-  - docs/Models/Components/InviteExpired.md
-  - docs/Models/Components/ConflictCode.md
-  - docs/Models/Components/ConflictError.md
-  - docs/Models/Components/Conflict.md
-  - docs/Models/Components/NotFoundCode.md
-  - docs/Models/Components/NotFoundError.md
-  - docs/Models/Components/NotFound.md
-  - docs/Models/Components/ForbiddenCode.md
-  - docs/Models/Components/ForbiddenError.md
-  - docs/Models/Components/Forbidden.md
-  - docs/Models/Components/UnauthorizedCode.md
-  - docs/Models/Components/UnauthorizedError.md
-  - docs/Models/Components/Unauthorized.md
-  - docs/Models/Components/Code.md
-  - docs/Models/Components/Error.md
-  - docs/Models/Components/BadRequest.md
   - docs/Models/Components/Geo.md
   - docs/Models/Components/LinkSchema.md
   - docs/Models/Components/Color.md
   - docs/Models/Components/TagSchema.md
   - docs/Models/Components/LinkGeoTargeting.md
+  - docs/Models/Components/ClicksCount.md
+  - docs/Models/Components/ClicksTimeseries.md
+  - docs/Models/Components/Country.md
+  - docs/Models/Components/ClicksCountries.md
+  - docs/Models/Components/ClicksCitiesCountry.md
+  - docs/Models/Components/ClicksCities.md
+  - docs/Models/Components/ClicksDevices.md
+  - docs/Models/Components/ClicksBrowsers.md
+  - docs/Models/Components/ClicksOS.md
+  - docs/Models/Components/ClicksReferers.md
+  - docs/Models/Components/ClicksTopLinks.md
+  - docs/Models/Components/ClicksTopUrls.md
+  - docs/Models/Components/LeadsCount.md
+  - docs/Models/Components/LeadsTimeseries.md
+  - docs/Models/Components/LeadsCountriesCountry.md
+  - docs/Models/Components/LeadsCountries.md
+  - docs/Models/Components/LeadsCitiesCountry.md
+  - docs/Models/Components/LeadsCities.md
+  - docs/Models/Components/LeadsDevices.md
+  - docs/Models/Components/LeadsBrowsers.md
+  - docs/Models/Components/LeadsOS.md
+  - docs/Models/Components/LeadsReferers.md
+  - docs/Models/Components/LeadsTopLinks.md
+  - docs/Models/Components/LeadsTopUrls.md
+  - docs/Models/Components/SalesCount.md
+  - docs/Models/Components/SalesTimeseries.md
+  - docs/Models/Components/SalesCountriesCountry.md
+  - docs/Models/Components/SalesCountries.md
+  - docs/Models/Components/SalesCitiesCountry.md
+  - docs/Models/Components/SalesCities.md
+  - docs/Models/Components/SalesDevices.md
+  - docs/Models/Components/SalesBrowsers.md
+  - docs/Models/Components/SalesOS.md
+  - docs/Models/Components/SalesReferers.md
+  - docs/Models/Components/SalesTopLinks.md
+  - docs/Models/Components/SalesTopUrls.md
   - docs/Models/Components/CountryCode.md
   - docs/Models/Components/ContinentCode.md
+  - docs/Models/Components/ClickEvents.md
   - docs/Models/Components/Plan.md
   - docs/Models/Components/Role.md
   - docs/Models/Components/Users.md
@@ -265,10 +358,38 @@ generatedFiles:
   - docs/Models/Components/WorkspaceSchema.md
   - docs/Models/Components/DomainSchema.md
   - docs/Models/Components/Security.md
+  - docs/Models/Errors/Code.md
+  - docs/Models/Errors/Error.md
+  - docs/Models/Errors/BadRequest.md
+  - docs/Models/Errors/UnauthorizedCode.md
+  - docs/Models/Errors/UnauthorizedError.md
+  - docs/Models/Errors/Unauthorized.md
+  - docs/Models/Errors/ForbiddenCode.md
+  - docs/Models/Errors/ForbiddenError.md
+  - docs/Models/Errors/Forbidden.md
+  - docs/Models/Errors/NotFoundCode.md
+  - docs/Models/Errors/NotFoundError.md
+  - docs/Models/Errors/NotFound.md
+  - docs/Models/Errors/ConflictCode.md
+  - docs/Models/Errors/ConflictError.md
+  - docs/Models/Errors/Conflict.md
+  - docs/Models/Errors/InviteExpiredCode.md
+  - docs/Models/Errors/InviteExpiredError.md
+  - docs/Models/Errors/InviteExpired.md
+  - docs/Models/Errors/UnprocessableEntityCode.md
+  - docs/Models/Errors/UnprocessableEntityError.md
+  - docs/Models/Errors/UnprocessableEntity.md
+  - docs/Models/Errors/RateLimitExceededCode.md
+  - docs/Models/Errors/RateLimitExceededError.md
+  - docs/Models/Errors/RateLimitExceeded.md
+  - docs/Models/Errors/InternalServerErrorCode.md
+  - docs/Models/Errors/InternalServerErrorError.md
+  - docs/Models/Errors/InternalServerError.md
   - docs/sdks/dub/README.md
   - docs/sdks/links/README.md
   - docs/sdks/qrcodes/README.md
   - docs/sdks/analytics/README.md
+  - docs/sdks/events/README.md
   - docs/sdks/workspaces/README.md
   - docs/sdks/tags/README.md
   - docs/sdks/domains/README.md

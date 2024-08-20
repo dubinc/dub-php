@@ -17,7 +17,6 @@ class TrackSaleRequestBody
      * @var string $customerId
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
 
     /**
@@ -26,16 +25,15 @@ class TrackSaleRequestBody
      * @var int $amount
      */
     #[\JMS\Serializer\Annotation\SerializedName('amount')]
-    #[\JMS\Serializer\Annotation\Type('int')]
     public int $amount;
 
     /**
      * The payment processor via which the sale was made.
      *
-     * @var \Dub\Models\Operations\PaymentProcessor $paymentProcessor
+     * @var PaymentProcessor $paymentProcessor
      */
     #[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
-    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Operations\PaymentProcessor>')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\PaymentProcessor')]
     public PaymentProcessor $paymentProcessor;
 
     /**
@@ -44,7 +42,6 @@ class TrackSaleRequestBody
      * @var ?string $eventName
      */
     #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $eventName = null;
 
@@ -54,7 +51,6 @@ class TrackSaleRequestBody
      * @var ?string $invoiceId
      */
     #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $invoiceId = null;
 
@@ -64,7 +60,6 @@ class TrackSaleRequestBody
      * @var ?string $currency
      */
     #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $currency = null;
 
@@ -78,14 +73,23 @@ class TrackSaleRequestBody
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $metadata = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $customerId
+     * @param  ?int  $amount
+     * @param  ?PaymentProcessor  $paymentProcessor
+     * @param  ?string  $eventName
+     * @param  ?string  $invoiceId
+     * @param  ?string  $currency
+     * @param  ?array<string, mixed>  $metadata
+     */
+    public function __construct(?string $customerId = null, ?int $amount = null, ?PaymentProcessor $paymentProcessor = null, ?string $eventName = null, ?string $invoiceId = null, ?string $currency = null, ?array $metadata = null)
     {
-        $this->customerId = '';
-        $this->amount = 0;
-        $this->paymentProcessor = \Dub\Models\Operations\PaymentProcessor::Stripe;
-        $this->eventName = null;
-        $this->invoiceId = null;
-        $this->currency = null;
-        $this->metadata = null;
+        $this->customerId = $customerId;
+        $this->amount = $amount;
+        $this->paymentProcessor = $paymentProcessor;
+        $this->eventName = $eventName;
+        $this->invoiceId = $invoiceId;
+        $this->currency = $currency;
+        $this->metadata = $metadata;
     }
 }

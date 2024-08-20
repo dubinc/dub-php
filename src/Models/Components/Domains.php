@@ -17,7 +17,6 @@ class Domains
      * @var string $slug
      */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
 
     /**
@@ -26,7 +25,6 @@ class Domains
      * @var bool $primary
      */
     #[\JMS\Serializer\Annotation\SerializedName('primary')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $primary;
 
     /**
@@ -35,13 +33,17 @@ class Domains
      * @var bool $verified
      */
     #[\JMS\Serializer\Annotation\SerializedName('verified')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $verified;
 
-    public function __construct()
+    /**
+     * @param  ?string  $slug
+     * @param  ?bool  $primary
+     * @param  ?bool  $verified
+     */
+    public function __construct(?string $slug = null, ?bool $primary = null, ?bool $verified = null)
     {
-        $this->slug = '';
-        $this->primary = false;
-        $this->verified = false;
+        $this->slug = $slug;
+        $this->primary = $primary;
+        $this->verified = $verified;
     }
 }

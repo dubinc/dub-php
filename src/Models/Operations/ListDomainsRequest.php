@@ -43,11 +43,17 @@ class ListDomainsRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
     public ?float $pageSize = null;
 
-    public function __construct()
+    /**
+     * @param  ?bool  $archived
+     * @param  ?string  $search
+     * @param  ?float  $page
+     * @param  ?float  $pageSize
+     */
+    public function __construct(?bool $archived = null, ?string $search = null, ?float $page = null, ?float $pageSize = null)
     {
-        $this->archived = null;
-        $this->search = null;
-        $this->page = null;
-        $this->pageSize = null;
+        $this->archived = $archived;
+        $this->search = $search;
+        $this->page = $page;
+        $this->pageSize = $pageSize;
     }
 }

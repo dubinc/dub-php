@@ -30,18 +30,18 @@ class GetLinksCountRequest
     /**
      * The tag IDs to filter the links by.
      *
-     * @var mixed $tagIds
+     * @var string|array<string>|null $tagIds
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagIds')]
-    public mixed $tagIds = null;
+    public string|array|null $tagIds = null;
 
     /**
      * The unique name of the tags assigned to the short link (case insensitive).
      *
-     * @var mixed $tagNames
+     * @var string|array<string>|null $tagNames
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagNames')]
-    public mixed $tagNames = null;
+    public string|array|null $tagNames = null;
 
     /**
      * The search term to filter the links by. The search term will be matched against the short link slug and the destination url.
@@ -78,21 +78,32 @@ class GetLinksCountRequest
     /**
      * The field to group the links by.
      *
-     * @var mixed $groupBy
+     * @var One|Two|Three|null $groupBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
-    public mixed $groupBy = null;
+    public One|Two|Three|null $groupBy = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $domain
+     * @param  ?string  $tagId
+     * @param  string|array<string>|null  $tagIds
+     * @param  string|array<string>|null  $tagNames
+     * @param  ?string  $search
+     * @param  ?string  $userId
+     * @param  ?bool  $showArchived
+     * @param  ?bool  $withTags
+     * @param  One|Two|Three|null  $groupBy
+     */
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?bool $showArchived = null, ?bool $withTags = null, One|Two|Three|null $groupBy = null)
     {
-        $this->domain = null;
-        $this->tagId = null;
-        $this->tagIds = null;
-        $this->tagNames = null;
-        $this->search = null;
-        $this->userId = null;
-        $this->showArchived = null;
-        $this->withTags = null;
-        $this->groupBy = null;
+        $this->domain = $domain;
+        $this->tagId = $tagId;
+        $this->tagIds = $tagIds;
+        $this->tagNames = $tagNames;
+        $this->search = $search;
+        $this->userId = $userId;
+        $this->showArchived = $showArchived;
+        $this->withTags = $withTags;
+        $this->groupBy = $groupBy;
     }
 }

@@ -17,7 +17,6 @@ class TagSchema
      * @var string $id
      */
     #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $id;
 
     /**
@@ -26,22 +25,26 @@ class TagSchema
      * @var string $name
      */
     #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $name;
 
     /**
      * The color of the tag.
      *
-     * @var \Dub\Models\Components\Color $color
+     * @var Color $color
      */
     #[\JMS\Serializer\Annotation\SerializedName('color')]
-    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Components\Color>')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Color')]
     public Color $color;
 
-    public function __construct()
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $name
+     * @param  ?Color  $color
+     */
+    public function __construct(?string $id = null, ?string $name = null, ?Color $color = null)
     {
-        $this->id = '';
-        $this->name = '';
-        $this->color = \Dub\Models\Components\Color::Red;
+        $this->id = $id;
+        $this->name = $name;
+        $this->color = $color;
     }
 }

@@ -79,9 +79,9 @@ class PathParameters
                     }
 
                     if ($metadata->explode) {
-                        $vals[] = sprintf('%s=%s', $fieldMetadata->name, valToString($fieldValue));
+                        $vals[] = sprintf('%s=%s', $fieldMetadata->name, valToString($fieldValue, $fieldMetadata->dateTimeFormat));
                     } else {
-                        $vals[] = sprintf('%s,%s', $fieldMetadata->name, valToString($fieldValue));
+                        $vals[] = sprintf('%s,%s', $fieldMetadata->name, valToString($fieldValue, $fieldMetadata->dateTimeFormat));
                     }
                 }
 

@@ -17,7 +17,6 @@ class CreateDomainRequestBody
      * @var string $slug
      */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
 
     /**
@@ -26,7 +25,6 @@ class CreateDomainRequestBody
      * @var ?string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $expiredUrl = null;
 
@@ -36,7 +34,6 @@ class CreateDomainRequestBody
      * @var ?bool $archived
      */
     #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $archived = null;
 
@@ -46,15 +43,20 @@ class CreateDomainRequestBody
      * @var ?string $placeholder
      */
     #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $placeholder = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $slug
+     * @param  ?string  $expiredUrl
+     * @param  ?bool  $archived
+     * @param  ?string  $placeholder
+     */
+    public function __construct(?string $slug = null, ?string $expiredUrl = null, ?bool $archived = null, ?string $placeholder = null)
     {
-        $this->slug = '';
-        $this->expiredUrl = null;
-        $this->archived = null;
-        $this->placeholder = null;
+        $this->slug = $slug;
+        $this->expiredUrl = $expiredUrl;
+        $this->archived = $archived;
+        $this->placeholder = $placeholder;
     }
 }

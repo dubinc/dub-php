@@ -12,27 +12,45 @@ namespace Dub\Models\Operations;
 /** TrackCustomerResponseBody - A customer was tracked. */
 class TrackCustomerResponseBody
 {
+    /**
+     *
+     * @var string $customerId
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
 
+    /**
+     *
+     * @var string $customerName
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerName;
 
+    /**
+     *
+     * @var string $customerEmail
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerEmail;
 
+    /**
+     *
+     * @var string $customerAvatar
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerAvatar;
 
-    public function __construct()
+    /**
+     * @param  ?string  $customerId
+     * @param  ?string  $customerName
+     * @param  ?string  $customerEmail
+     * @param  ?string  $customerAvatar
+     */
+    public function __construct(?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
-        $this->customerId = '';
-        $this->customerName = '';
-        $this->customerEmail = '';
-        $this->customerAvatar = '';
+        $this->customerId = $customerId;
+        $this->customerName = $customerName;
+        $this->customerEmail = $customerEmail;
+        $this->customerAvatar = $customerAvatar;
     }
 }

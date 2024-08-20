@@ -39,8 +39,9 @@ class DubBuilder
      */
     public function setSecurity(string $token): DubBuilder
     {
-        $security = new Models\Components\Security();
-        $security->token = $token;
+        $security = new Models\Components\Security(
+            token: $token
+        );
         $this->sdkConfig->security = $security;
 
         return $this;

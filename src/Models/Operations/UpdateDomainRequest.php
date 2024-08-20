@@ -19,12 +19,20 @@ class UpdateDomainRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=slug')]
     public string $slug;
 
+    /**
+     *
+     * @var ?UpdateDomainRequestBody $requestBody
+     */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateDomainRequestBody $requestBody = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $slug
+     * @param  ?UpdateDomainRequestBody  $requestBody
+     */
+    public function __construct(?string $slug = null, ?UpdateDomainRequestBody $requestBody = null)
     {
-        $this->slug = '';
-        $this->requestBody = null;
+        $this->slug = $slug;
+        $this->requestBody = $requestBody;
     }
 }

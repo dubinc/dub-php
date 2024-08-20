@@ -12,15 +12,12 @@ Retrieve the metatags for a URL.
 ### Example Usage
 
 ```php
-<?php
-
 declare(strict_types=1);
 
 require 'vendor/autoload.php';
 
-use \Dub;
-use \Dub\Models\Components;
-use \Dub\Models\Operations;
+use Dub;
+use Dub\Models\Components;
 
 $security = new Components\Security();
 $security->token = 'DUB_API_KEY';
@@ -28,7 +25,6 @@ $security->token = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    
 
     $response = $sdk->metatags->get('https://dub.co');
 
@@ -40,6 +36,8 @@ try {
 }
 ```
 
+
+
 ### Parameters
 
 | Parameter                         | Type                              | Required                          | Description                       | Example                           |
@@ -49,5 +47,9 @@ try {
 
 ### Response
 
-**[?\Dub\Models\Operations\GetMetatagsResponse](../../Models/Operations/GetMetatagsResponse.md)**
+**[?Operations\GetMetatagsResponse](../../Models/Operations/GetMetatagsResponse.md)**
+### Errors
 
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |

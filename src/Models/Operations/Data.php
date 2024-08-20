@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-
+use Dub\Models\Components;
 class Data
 {
     /**
@@ -17,7 +17,6 @@ class Data
      * @var ?string $url
      */
     #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $url = null;
 
@@ -27,7 +26,6 @@ class Data
      * @var ?bool $trackConversion
      */
     #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $trackConversion = null;
 
@@ -37,7 +35,6 @@ class Data
      * @var ?bool $archived
      */
     #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $archived = null;
 
@@ -47,7 +44,6 @@ class Data
      * @var ?bool $publicStats
      */
     #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $publicStats = null;
 
@@ -58,29 +54,28 @@ class Data
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $tagId = null;
 
     /**
      * The unique IDs of the tags assigned to the short link.
      *
-     * @var mixed $tagIds
+     * @var string|array<string>|null $tagIds
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagIds')]
-    #[\JMS\Serializer\Annotation\Type('mixed')]
+    #[\JMS\Serializer\Annotation\Type('string|array<string>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public mixed $tagIds = null;
+    public string|array|null $tagIds = null;
 
     /**
      * The unique name of the tags assigned to the short link (case insensitive).
      *
-     * @var mixed $tagNames
+     * @var string|array<string>|null $tagNames
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagNames')]
-    #[\JMS\Serializer\Annotation\Type('mixed')]
+    #[\JMS\Serializer\Annotation\Type('string|array<string>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public mixed $tagNames = null;
+    public string|array|null $tagNames = null;
 
     /**
      * The comments for the short link.
@@ -88,7 +83,6 @@ class Data
      * @var ?string $comments
      */
     #[\JMS\Serializer\Annotation\SerializedName('comments')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $comments = null;
 
@@ -98,7 +92,6 @@ class Data
      * @var ?string $expiresAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $expiresAt = null;
 
@@ -108,7 +101,6 @@ class Data
      * @var ?string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $expiredUrl = null;
 
@@ -118,7 +110,6 @@ class Data
      * @var ?string $password
      */
     #[\JMS\Serializer\Annotation\SerializedName('password')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $password = null;
 
@@ -128,7 +119,6 @@ class Data
      * @var ?bool $proxy
      */
     #[\JMS\Serializer\Annotation\SerializedName('proxy')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $proxy = null;
 
@@ -138,7 +128,6 @@ class Data
      * @var ?string $title
      */
     #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $title = null;
 
@@ -148,7 +137,6 @@ class Data
      * @var ?string $description
      */
     #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $description = null;
 
@@ -158,7 +146,6 @@ class Data
      * @var ?string $image
      */
     #[\JMS\Serializer\Annotation\SerializedName('image')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $image = null;
 
@@ -168,7 +155,6 @@ class Data
      * @var ?string $video
      */
     #[\JMS\Serializer\Annotation\SerializedName('video')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $video = null;
 
@@ -178,7 +164,6 @@ class Data
      * @var ?bool $rewrite
      */
     #[\JMS\Serializer\Annotation\SerializedName('rewrite')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $rewrite = null;
 
@@ -188,7 +173,6 @@ class Data
      * @var ?string $ios
      */
     #[\JMS\Serializer\Annotation\SerializedName('ios')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $ios = null;
 
@@ -198,19 +182,18 @@ class Data
      * @var ?string $android
      */
     #[\JMS\Serializer\Annotation\SerializedName('android')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $android = null;
 
     /**
      * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`.
      *
-     * @var ?\Dub\Models\Components\LinkGeoTargeting $geo
+     * @var ?Components\LinkGeoTargeting $geo
      */
     #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('Dub\Models\Components\LinkGeoTargeting')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkGeoTargeting')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?\Dub\Models\Components\LinkGeoTargeting $geo = null;
+    public ?Components\LinkGeoTargeting $geo = null;
 
     /**
      * Allow search engines to index your short link. Defaults to `false` if not provided. Learn more: https://d.to/noindex
@@ -218,7 +201,6 @@ class Data
      * @var ?bool $doIndex
      */
     #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?bool $doIndex = null;
 
@@ -228,7 +210,6 @@ class Data
      * @var ?string $utmSource
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_source')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $utmSource = null;
 
@@ -238,7 +219,6 @@ class Data
      * @var ?string $utmMedium
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $utmMedium = null;
 
@@ -248,7 +228,6 @@ class Data
      * @var ?string $utmCampaign
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $utmCampaign = null;
 
@@ -258,7 +237,6 @@ class Data
      * @var ?string $utmTerm
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_term')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $utmTerm = null;
 
@@ -268,37 +246,64 @@ class Data
      * @var ?string $utmContent
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_content')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $utmContent = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $url
+     * @param  ?bool  $trackConversion
+     * @param  ?bool  $archived
+     * @param  ?bool  $publicStats
+     * @param  ?string  $tagId
+     * @param  string|array<string>|null  $tagIds
+     * @param  string|array<string>|null  $tagNames
+     * @param  ?string  $comments
+     * @param  ?string  $expiresAt
+     * @param  ?string  $expiredUrl
+     * @param  ?string  $password
+     * @param  ?bool  $proxy
+     * @param  ?string  $title
+     * @param  ?string  $description
+     * @param  ?string  $image
+     * @param  ?string  $video
+     * @param  ?bool  $rewrite
+     * @param  ?string  $ios
+     * @param  ?string  $android
+     * @param  ?Components\LinkGeoTargeting  $geo
+     * @param  ?bool  $doIndex
+     * @param  ?string  $utmSource
+     * @param  ?string  $utmMedium
+     * @param  ?string  $utmCampaign
+     * @param  ?string  $utmTerm
+     * @param  ?string  $utmContent
+     */
+    public function __construct(?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?bool $doIndex = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null)
     {
-        $this->url = null;
-        $this->trackConversion = null;
-        $this->archived = null;
-        $this->publicStats = null;
-        $this->tagId = null;
-        $this->tagIds = null;
-        $this->tagNames = null;
-        $this->comments = null;
-        $this->expiresAt = null;
-        $this->expiredUrl = null;
-        $this->password = null;
-        $this->proxy = null;
-        $this->title = null;
-        $this->description = null;
-        $this->image = null;
-        $this->video = null;
-        $this->rewrite = null;
-        $this->ios = null;
-        $this->android = null;
-        $this->geo = null;
-        $this->doIndex = null;
-        $this->utmSource = null;
-        $this->utmMedium = null;
-        $this->utmCampaign = null;
-        $this->utmTerm = null;
-        $this->utmContent = null;
+        $this->url = $url;
+        $this->trackConversion = $trackConversion;
+        $this->archived = $archived;
+        $this->publicStats = $publicStats;
+        $this->tagId = $tagId;
+        $this->tagIds = $tagIds;
+        $this->tagNames = $tagNames;
+        $this->comments = $comments;
+        $this->expiresAt = $expiresAt;
+        $this->expiredUrl = $expiredUrl;
+        $this->password = $password;
+        $this->proxy = $proxy;
+        $this->title = $title;
+        $this->description = $description;
+        $this->image = $image;
+        $this->video = $video;
+        $this->rewrite = $rewrite;
+        $this->ios = $ios;
+        $this->android = $android;
+        $this->geo = $geo;
+        $this->doIndex = $doIndex;
+        $this->utmSource = $utmSource;
+        $this->utmMedium = $utmMedium;
+        $this->utmCampaign = $utmCampaign;
+        $this->utmTerm = $utmTerm;
+        $this->utmContent = $utmContent;
     }
 }

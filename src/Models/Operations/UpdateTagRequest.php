@@ -19,12 +19,20 @@ class UpdateTagRequest
     #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
     public string $id;
 
+    /**
+     *
+     * @var ?UpdateTagRequestBody $requestBody
+     */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateTagRequestBody $requestBody = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $id
+     * @param  ?UpdateTagRequestBody  $requestBody
+     */
+    public function __construct(?string $id = null, ?UpdateTagRequestBody $requestBody = null)
     {
-        $this->id = '';
-        $this->requestBody = null;
+        $this->id = $id;
+        $this->requestBody = $requestBody;
     }
 }

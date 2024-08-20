@@ -17,7 +17,6 @@ class WorkspaceSchema
      * @var string $id
      */
     #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $id;
 
     /**
@@ -26,7 +25,6 @@ class WorkspaceSchema
      * @var string $name
      */
     #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $name;
 
     /**
@@ -35,7 +33,6 @@ class WorkspaceSchema
      * @var string $slug
      */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
 
     /**
@@ -44,7 +41,6 @@ class WorkspaceSchema
      * @var string $logo
      */
     #[\JMS\Serializer\Annotation\SerializedName('logo')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $logo;
 
     /**
@@ -53,7 +49,6 @@ class WorkspaceSchema
      * @var float $usage
      */
     #[\JMS\Serializer\Annotation\SerializedName('usage')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $usage;
 
     /**
@@ -62,7 +57,6 @@ class WorkspaceSchema
      * @var float $usageLimit
      */
     #[\JMS\Serializer\Annotation\SerializedName('usageLimit')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $usageLimit;
 
     /**
@@ -71,7 +65,6 @@ class WorkspaceSchema
      * @var float $linksUsage
      */
     #[\JMS\Serializer\Annotation\SerializedName('linksUsage')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $linksUsage;
 
     /**
@@ -80,7 +73,6 @@ class WorkspaceSchema
      * @var float $linksLimit
      */
     #[\JMS\Serializer\Annotation\SerializedName('linksLimit')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $linksLimit;
 
     /**
@@ -89,7 +81,6 @@ class WorkspaceSchema
      * @var float $domainsLimit
      */
     #[\JMS\Serializer\Annotation\SerializedName('domainsLimit')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $domainsLimit;
 
     /**
@@ -98,7 +89,6 @@ class WorkspaceSchema
      * @var float $tagsLimit
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagsLimit')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $tagsLimit;
 
     /**
@@ -107,16 +97,15 @@ class WorkspaceSchema
      * @var float $usersLimit
      */
     #[\JMS\Serializer\Annotation\SerializedName('usersLimit')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $usersLimit;
 
     /**
      * The plan of the workspace.
      *
-     * @var \Dub\Models\Components\Plan $plan
+     * @var Plan $plan
      */
     #[\JMS\Serializer\Annotation\SerializedName('plan')]
-    #[\JMS\Serializer\Annotation\Type('enum<Dub\Models\Components\Plan>')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Plan')]
     public Plan $plan;
 
     /**
@@ -125,7 +114,6 @@ class WorkspaceSchema
      * @var string $stripeId
      */
     #[\JMS\Serializer\Annotation\SerializedName('stripeId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $stripeId;
 
     /**
@@ -134,7 +122,6 @@ class WorkspaceSchema
      * @var float $billingCycleStart
      */
     #[\JMS\Serializer\Annotation\SerializedName('billingCycleStart')]
-    #[\JMS\Serializer\Annotation\Type('float')]
     public float $billingCycleStart;
 
     /**
@@ -143,7 +130,6 @@ class WorkspaceSchema
      * @var string $stripeConnectId
      */
     #[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $stripeConnectId;
 
     /**
@@ -152,25 +138,24 @@ class WorkspaceSchema
      * @var string $createdAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $createdAt;
 
     /**
      * The role of the authenticated user in the workspace.
      *
-     * @var array<\Dub\Models\Components\Users> $users
+     * @var array<Users> $users
      */
     #[\JMS\Serializer\Annotation\SerializedName('users')]
-    #[\JMS\Serializer\Annotation\Type('array<Dub\Models\Components\Users>')]
+    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\Users>')]
     public array $users;
 
     /**
      * The domains of the workspace.
      *
-     * @var array<\Dub\Models\Components\Domains> $domains
+     * @var array<Domains> $domains
      */
     #[\JMS\Serializer\Annotation\SerializedName('domains')]
-    #[\JMS\Serializer\Annotation\Type('array<Dub\Models\Components\Domains>')]
+    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\Domains>')]
     public array $domains;
 
     /**
@@ -179,7 +164,6 @@ class WorkspaceSchema
      * @var string $inviteCode
      */
     #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $inviteCode;
 
     /**
@@ -192,27 +176,49 @@ class WorkspaceSchema
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $flags = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $name
+     * @param  ?string  $slug
+     * @param  ?string  $logo
+     * @param  ?float  $usage
+     * @param  ?float  $usageLimit
+     * @param  ?float  $linksUsage
+     * @param  ?float  $linksLimit
+     * @param  ?float  $domainsLimit
+     * @param  ?float  $tagsLimit
+     * @param  ?float  $usersLimit
+     * @param  ?Plan  $plan
+     * @param  ?string  $stripeId
+     * @param  ?float  $billingCycleStart
+     * @param  ?string  $stripeConnectId
+     * @param  ?string  $createdAt
+     * @param  ?array<Users>  $users
+     * @param  ?array<Domains>  $domains
+     * @param  ?string  $inviteCode
+     * @param  ?array<string, bool>  $flags
+     */
+    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?string $inviteCode = null, ?array $flags = null)
     {
-        $this->id = '';
-        $this->name = '';
-        $this->slug = '';
-        $this->logo = '';
-        $this->usage = 0;
-        $this->usageLimit = 0;
-        $this->linksUsage = 0;
-        $this->linksLimit = 0;
-        $this->domainsLimit = 0;
-        $this->tagsLimit = 0;
-        $this->usersLimit = 0;
-        $this->plan = \Dub\Models\Components\Plan::Free;
-        $this->stripeId = '';
-        $this->billingCycleStart = 0;
-        $this->stripeConnectId = '';
-        $this->createdAt = '';
-        $this->users = [];
-        $this->domains = [];
-        $this->inviteCode = '';
-        $this->flags = null;
+        $this->id = $id;
+        $this->name = $name;
+        $this->slug = $slug;
+        $this->logo = $logo;
+        $this->usage = $usage;
+        $this->usageLimit = $usageLimit;
+        $this->linksUsage = $linksUsage;
+        $this->linksLimit = $linksLimit;
+        $this->domainsLimit = $domainsLimit;
+        $this->tagsLimit = $tagsLimit;
+        $this->usersLimit = $usersLimit;
+        $this->plan = $plan;
+        $this->stripeId = $stripeId;
+        $this->billingCycleStart = $billingCycleStart;
+        $this->stripeConnectId = $stripeConnectId;
+        $this->createdAt = $createdAt;
+        $this->users = $users;
+        $this->domains = $domains;
+        $this->inviteCode = $inviteCode;
+        $this->flags = $flags;
     }
 }

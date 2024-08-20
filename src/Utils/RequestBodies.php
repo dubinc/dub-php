@@ -250,6 +250,7 @@ class RequestBodies
         switch (gettype($value)) {
             case 'object':
                 switch ($value::class) {
+                    case 'Brick\DateTime\LocalDate':
                     case 'DateTime':
                         $values[$metadata->name] = valToString($value, $dateTimeFormat);
                         break;

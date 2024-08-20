@@ -11,11 +11,18 @@ namespace Dub\Models\Components;
 use Dub\Utils\SpeakeasyMetadata;
 class Security
 {
+    /**
+     *
+     * @var string $token
+     */
     #[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
-    public ?string $token = null;
+    public string $token;
 
-    public function __construct()
+    /**
+     * @param  ?string  $token
+     */
+    public function __construct(?string $token = null)
     {
-        $this->token = null;
+        $this->token = $token;
     }
 }

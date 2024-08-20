@@ -17,7 +17,6 @@ class DomainSchema
      * @var string $id
      */
     #[\JMS\Serializer\Annotation\SerializedName('id')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $id;
 
     /**
@@ -26,7 +25,6 @@ class DomainSchema
      * @var string $slug
      */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $slug;
 
     /**
@@ -35,7 +33,6 @@ class DomainSchema
      * @var bool $verified
      */
     #[\JMS\Serializer\Annotation\SerializedName('verified')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $verified;
 
     /**
@@ -44,7 +41,6 @@ class DomainSchema
      * @var bool $primary
      */
     #[\JMS\Serializer\Annotation\SerializedName('primary')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $primary;
 
     /**
@@ -53,7 +49,6 @@ class DomainSchema
      * @var bool $archived
      */
     #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\Type('bool')]
     public bool $archived;
 
     /**
@@ -62,7 +57,6 @@ class DomainSchema
      * @var string $placeholder
      */
     #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $placeholder;
 
     /**
@@ -71,7 +65,6 @@ class DomainSchema
      * @var string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $expiredUrl;
 
     /**
@@ -80,7 +73,6 @@ class DomainSchema
      * @var string $createdAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $createdAt;
 
     /**
@@ -89,19 +81,29 @@ class DomainSchema
      * @var string $updatedAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $updatedAt;
 
-    public function __construct()
+    /**
+     * @param  ?string  $id
+     * @param  ?string  $slug
+     * @param  ?bool  $verified
+     * @param  ?bool  $primary
+     * @param  ?bool  $archived
+     * @param  ?string  $placeholder
+     * @param  ?string  $expiredUrl
+     * @param  ?string  $createdAt
+     * @param  ?string  $updatedAt
+     */
+    public function __construct(?string $id = null, ?string $slug = null, ?bool $verified = null, ?bool $primary = null, ?bool $archived = null, ?string $placeholder = null, ?string $expiredUrl = null, ?string $createdAt = null, ?string $updatedAt = null)
     {
-        $this->id = '';
-        $this->slug = '';
-        $this->verified = false;
-        $this->primary = false;
-        $this->archived = false;
-        $this->placeholder = '';
-        $this->expiredUrl = '';
-        $this->createdAt = '';
-        $this->updatedAt = '';
+        $this->id = $id;
+        $this->slug = $slug;
+        $this->verified = $verified;
+        $this->primary = $primary;
+        $this->archived = $archived;
+        $this->placeholder = $placeholder;
+        $this->expiredUrl = $expiredUrl;
+        $this->createdAt = $createdAt;
+        $this->updatedAt = $updatedAt;
     }
 }

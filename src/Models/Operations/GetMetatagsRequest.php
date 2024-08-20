@@ -19,8 +19,11 @@ class GetMetatagsRequest
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=url')]
     public string $url;
 
-    public function __construct()
+    /**
+     * @param  ?string  $url
+     */
+    public function __construct(?string $url = null)
     {
-        $this->url = '';
+        $this->url = $url;
     }
 }

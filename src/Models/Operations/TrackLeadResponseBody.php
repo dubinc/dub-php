@@ -12,28 +12,46 @@ namespace Dub\Models\Operations;
 /** TrackLeadResponseBody - A lead was tracked. */
 class TrackLeadResponseBody
 {
+    /**
+     *
+     * @var string $clickId
+     */
     #[\JMS\Serializer\Annotation\SerializedName('clickId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $clickId;
 
+    /**
+     *
+     * @var string $eventName
+     */
     #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $eventName;
 
+    /**
+     *
+     * @var string $customerId
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerId;
 
+    /**
+     *
+     * @var string $customerName
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerName;
 
+    /**
+     *
+     * @var string $customerEmail
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerEmail;
 
+    /**
+     *
+     * @var string $customerAvatar
+     */
     #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $customerAvatar;
 
     /**
@@ -46,14 +64,23 @@ class TrackLeadResponseBody
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $metadata = null;
 
-    public function __construct()
+    /**
+     * @param  ?string  $clickId
+     * @param  ?string  $eventName
+     * @param  ?string  $customerId
+     * @param  ?string  $customerName
+     * @param  ?string  $customerEmail
+     * @param  ?string  $customerAvatar
+     * @param  ?array<string, mixed>  $metadata
+     */
+    public function __construct(?string $clickId = null, ?string $eventName = null, ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null, ?array $metadata = null)
     {
-        $this->clickId = '';
-        $this->eventName = '';
-        $this->customerId = '';
-        $this->customerName = '';
-        $this->customerEmail = '';
-        $this->customerAvatar = '';
-        $this->metadata = null;
+        $this->clickId = $clickId;
+        $this->eventName = $eventName;
+        $this->customerId = $customerId;
+        $this->customerName = $customerName;
+        $this->customerEmail = $customerEmail;
+        $this->customerAvatar = $customerAvatar;
+        $this->metadata = $metadata;
     }
 }

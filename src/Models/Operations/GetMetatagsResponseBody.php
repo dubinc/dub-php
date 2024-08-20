@@ -18,7 +18,6 @@ class GetMetatagsResponseBody
      * @var string $title
      */
     #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $title;
 
     /**
@@ -27,7 +26,6 @@ class GetMetatagsResponseBody
      * @var string $description
      */
     #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $description;
 
     /**
@@ -36,13 +34,17 @@ class GetMetatagsResponseBody
      * @var string $image
      */
     #[\JMS\Serializer\Annotation\SerializedName('image')]
-    #[\JMS\Serializer\Annotation\Type('string')]
     public string $image;
 
-    public function __construct()
+    /**
+     * @param  ?string  $title
+     * @param  ?string  $description
+     * @param  ?string  $image
+     */
+    public function __construct(?string $title = null, ?string $description = null, ?string $image = null)
     {
-        $this->title = '';
-        $this->description = '';
-        $this->image = '';
+        $this->title = $title;
+        $this->description = $description;
+        $this->image = $image;
     }
 }
