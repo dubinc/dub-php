@@ -1,5 +1,6 @@
 # Links
 
+## Overview
 
 ### Available Operations
 
@@ -59,18 +60,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
 | `$request`                                                               | [Operations\GetLinksRequest](../../Models/Operations/GetLinksRequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
-
 ### Response
 
 **[?Operations\GetLinksResponse](../../Models/Operations/GetLinksResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -85,6 +84,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## create
 
@@ -402,18 +402,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | `$request`                                                                           | [Operations\CreateLinkRequestBody](../../Models/Operations/CreateLinkRequestBody.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
-
 ### Response
 
 **[?Operations\CreateLinkResponse](../../Models/Operations/CreateLinkResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -428,6 +426,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## count
 
@@ -475,18 +474,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `$request`                                                                         | [Operations\GetLinksCountRequest](../../Models/Operations/GetLinksCountRequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
-
 ### Response
 
 **[?Operations\GetLinksCountResponse](../../Models/Operations/GetLinksCountResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -501,6 +498,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## get
 
@@ -533,8 +531,6 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
@@ -544,10 +540,10 @@ try {
 | `linkId`                                                                                                        | *string*                                                                                                        | :heavy_minus_sign:                                                                                              | The unique ID of the short link.                                                                                | clux0rgak00011...                                                                                               |
 | `externalId`                                                                                                    | *string*                                                                                                        | :heavy_minus_sign:                                                                                              | This is the ID of the link in the your database. Must be prefixed with `ext_` when passed as a query parameter. | ext_123456                                                                                                      |
 
-
 ### Response
 
 **[?Operations\GetLinkInfoResponse](../../Models/Operations/GetLinkInfoResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -562,6 +558,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## delete
 
@@ -594,18 +591,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                                             | Type                                                                                                                                  | Required                                                                                                                              | Description                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `linkId`                                                                                                                              | *string*                                                                                                                              | :heavy_check_mark:                                                                                                                    | The id of the link to delete. You may use either `linkId` (obtained via `/links/info` endpoint) or `externalId` prefixed with `ext_`. |
 
-
 ### Response
 
 **[?Operations\DeleteLinkResponse](../../Models/Operations/DeleteLinkResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -620,6 +615,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## update
 
@@ -935,8 +931,6 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                                             | Type                                                                                                                                  | Required                                                                                                                              | Description                                                                                                                           |
@@ -944,10 +938,10 @@ try {
 | `linkId`                                                                                                                              | *string*                                                                                                                              | :heavy_check_mark:                                                                                                                    | The id of the link to update. You may use either `linkId` (obtained via `/links/info` endpoint) or `externalId` prefixed with `ext_`. |
 | `requestBody`                                                                                                                         | [Operations\UpdateLinkRequestBody](../../Models/Operations/UpdateLinkRequestBody.md)                                                  | :heavy_minus_sign:                                                                                                                    | N/A                                                                                                                                   |
 
-
 ### Response
 
 **[?Operations\UpdateLinkResponse](../../Models/Operations/UpdateLinkResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -962,6 +956,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## createMany
 
@@ -997,18 +992,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | `$request`                                 | [array](../../.md)                         | :heavy_check_mark:                         | The request object to use for the request. |
 
-
 ### Response
 
 **[?Operations\BulkCreateLinksResponse](../../Models/Operations/BulkCreateLinksResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -1023,6 +1016,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## updateMany
 
@@ -1339,18 +1333,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `$request`                                                                                     | [Operations\BulkUpdateLinksRequestBody](../../Models/Operations/BulkUpdateLinksRequestBody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
-
 ### Response
 
 **[?Operations\BulkUpdateLinksResponse](../../Models/Operations/BulkUpdateLinksResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -1365,6 +1357,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## upsert
 
@@ -1682,18 +1675,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
 | `$request`                                                                           | [Operations\UpsertLinkRequestBody](../../Models/Operations/UpsertLinkRequestBody.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
-
 ### Response
 
 **[?Operations\UpsertLinkResponse](../../Models/Operations/UpsertLinkResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

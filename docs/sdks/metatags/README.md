@@ -1,5 +1,6 @@
 # Metatags
 
+## Overview
 
 ### Available Operations
 
@@ -36,18 +37,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                         | Type                              | Required                          | Description                       | Example                           |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
 | `url`                             | *string*                          | :heavy_check_mark:                | The URL to retrieve metatags for. | https://dub.co                    |
 
-
 ### Response
 
 **[?Operations\GetMetatagsResponse](../../Models/Operations/GetMetatagsResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

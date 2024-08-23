@@ -1,5 +1,6 @@
 # Track
 
+## Overview
 
 ### Available Operations
 
@@ -49,18 +50,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `$request`                                                                         | [Operations\TrackLeadRequestBody](../../Models/Operations/TrackLeadRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
-
 ### Response
 
 **[?Operations\TrackLeadResponse](../../Models/Operations/TrackLeadResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -75,6 +74,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## sale
 
@@ -118,18 +118,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `$request`                                                                         | [Operations\TrackSaleRequestBody](../../Models/Operations/TrackSaleRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
-
 ### Response
 
 **[?Operations\TrackSaleResponse](../../Models/Operations/TrackSaleResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -144,6 +142,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## customer
 
@@ -182,18 +181,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `$request`                                                                                 | [Operations\TrackCustomerRequestBody](../../Models/Operations/TrackCustomerRequestBody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
-
 ### Response
 
 **[?Operations\TrackCustomerResponse](../../Models/Operations/TrackCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

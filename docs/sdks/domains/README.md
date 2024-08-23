@@ -1,5 +1,6 @@
 # Domains
 
+## Overview
 
 ### Available Operations
 
@@ -39,8 +40,6 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
@@ -50,10 +49,10 @@ try {
 | `page`                                                                                    | *float*                                                                                   | :heavy_minus_sign:                                                                        | The page number for pagination.                                                           | 1                                                                                         |
 | `pageSize`                                                                                | *float*                                                                                   | :heavy_minus_sign:                                                                        | The number of items per page.                                                             | 50                                                                                        |
 
-
 ### Response
 
 **[?Operations\ListDomainsResponse](../../Models/Operations/ListDomainsResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -68,6 +67,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## create
 
@@ -106,18 +106,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `$request`                                                                               | [Operations\CreateDomainRequestBody](../../Models/Operations/CreateDomainRequestBody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
-
 ### Response
 
 **[?Operations\CreateDomainResponse](../../Models/Operations/CreateDomainResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -132,6 +130,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## delete
 
@@ -164,18 +163,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
 | `slug`             | *string*           | :heavy_check_mark: | The domain name.   | acme.com           |
 
-
 ### Response
 
 **[?Operations\DeleteDomainResponse](../../Models/Operations/DeleteDomainResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -190,6 +187,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## update
 
@@ -228,8 +226,6 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              | Example                                                                                  |
@@ -237,10 +233,10 @@ try {
 | `slug`                                                                                   | *string*                                                                                 | :heavy_check_mark:                                                                       | The domain name.                                                                         | acme.com                                                                                 |
 | `requestBody`                                                                            | [Operations\UpdateDomainRequestBody](../../Models/Operations/UpdateDomainRequestBody.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |                                                                                          |
 
-
 ### Response
 
 **[?Operations\UpdateDomainResponse](../../Models/Operations/UpdateDomainResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

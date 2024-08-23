@@ -1,5 +1,6 @@
 # QRCodes
 
+## Overview
 
 ### Available Operations
 
@@ -44,18 +45,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `$request`                                                                 | [Operations\GetQRCodeRequest](../../Models/Operations/GetQRCodeRequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
-
 ### Response
 
 **[?Operations\GetQRCodeResponse](../../Models/Operations/GetQRCodeResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

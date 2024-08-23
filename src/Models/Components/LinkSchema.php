@@ -311,6 +311,14 @@ class LinkSchema
     public float $sales;
 
     /**
+     * [BETA]: The total dollar amount of sales the short links has generated (in cents).
+     *
+     * @var float $saleAmount
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
+    public float $saleAmount;
+
+    /**
      * The date and time when the short link was created.
      *
      * @var string $createdAt
@@ -373,11 +381,12 @@ class LinkSchema
      * @param  ?string  $lastClicked
      * @param  ?float  $leads
      * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      * @param  ?string  $createdAt
      * @param  ?string  $updatedAt
      * @param  ?string  $projectId
      */
-    public function __construct(?string $id = null, ?string $domain = null, ?string $key = null, ?string $externalId = null, ?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $shortLink = null, ?string $qrCode = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $workspaceId = null, ?float $clicks = null, ?string $lastClicked = null, ?float $leads = null, ?float $sales = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $projectId = null)
+    public function __construct(?string $id = null, ?string $domain = null, ?string $key = null, ?string $externalId = null, ?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $shortLink = null, ?string $qrCode = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $workspaceId = null, ?float $clicks = null, ?string $lastClicked = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $projectId = null)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -416,6 +425,7 @@ class LinkSchema
         $this->lastClicked = $lastClicked;
         $this->leads = $leads;
         $this->sales = $sales;
+        $this->saleAmount = $saleAmount;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
