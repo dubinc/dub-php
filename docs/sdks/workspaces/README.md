@@ -1,5 +1,6 @@
 # Workspaces
 
+## Overview
 
 ### Available Operations
 
@@ -37,18 +38,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 | `idOrSlug`                       | *string*                         | :heavy_check_mark:               | The ID or slug of the workspace. |
 
-
 ### Response
 
 **[?Operations\GetWorkspaceResponse](../../Models/Operations/GetWorkspaceResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -63,6 +62,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## update
 
@@ -99,8 +99,6 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -108,10 +106,10 @@ try {
 | `idOrSlug`                                                                                     | *string*                                                                                       | :heavy_check_mark:                                                                             | The ID or slug of the workspace to update.                                                     |
 | `requestBody`                                                                                  | [Operations\UpdateWorkspaceRequestBody](../../Models/Operations/UpdateWorkspaceRequestBody.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
 
-
 ### Response
 
 **[?Operations\UpdateWorkspaceResponse](../../Models/Operations/UpdateWorkspaceResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

@@ -38,7 +38,7 @@ class Links
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetLinksRequest::class, $request, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetLinksRequest::class, $request));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
@@ -277,7 +277,7 @@ class Links
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/count');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetLinksCountRequest::class, $request, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetLinksCountRequest::class, $request));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
@@ -407,7 +407,7 @@ class Links
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/links/info');
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetLinkInfoRequest::class, $request, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(Operations\GetLinkInfoRequest::class, $request));
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);

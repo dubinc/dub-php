@@ -1,5 +1,6 @@
 # Tags
 
+## Overview
 
 ### Available Operations
 
@@ -37,12 +38,10 @@ try {
 }
 ```
 
-
-
-
 ### Response
 
 **[?Operations\GetTagsResponse](../../Models/Operations/GetTagsResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -57,6 +56,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## create
 
@@ -94,18 +94,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | `$request`                                                                         | [Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
-
 ### Response
 
 **[?Operations\CreateTagResponse](../../Models/Operations/CreateTagResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
@@ -120,6 +118,7 @@ try {
 | Errors\RateLimitExceeded       | 429                            | application/json               |
 | Errors\InternalServerError     | 500                            | application/json               |
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
 
 ## update
 
@@ -157,8 +156,6 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
@@ -166,10 +163,10 @@ try {
 | `id`                                                                               | *string*                                                                           | :heavy_check_mark:                                                                 | The ID of the tag to update.                                                       |
 | `requestBody`                                                                      | [Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
 
-
 ### Response
 
 **[?Operations\UpdateTagResponse](../../Models/Operations/UpdateTagResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |

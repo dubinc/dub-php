@@ -76,6 +76,22 @@ class WorkspaceSchema
     public float $linksLimit;
 
     /**
+     * The dollar amount of tracked revenue in the current billing cycle (in cents).
+     *
+     * @var float $salesUsage
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('salesUsage')]
+    public float $salesUsage;
+
+    /**
+     * The limit of tracked revenue in the current billing cycle (in cents).
+     *
+     * @var float $salesLimit
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('salesLimit')]
+    public float $salesLimit;
+
+    /**
      * The domains limit of the workspace.
      *
      * @var float $domainsLimit
@@ -167,6 +183,14 @@ class WorkspaceSchema
     public string $inviteCode;
 
     /**
+     * Whether the workspace has conversion tracking enabled (d.to/conversions).
+     *
+     * @var bool $conversionEnabled
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('conversionEnabled')]
+    public bool $conversionEnabled;
+
+    /**
      * The feature flags of the workspace, indicating which features are enabled.
      *
      * @var ?array<string, bool> $flags
@@ -185,6 +209,8 @@ class WorkspaceSchema
      * @param  ?float  $usageLimit
      * @param  ?float  $linksUsage
      * @param  ?float  $linksLimit
+     * @param  ?float  $salesUsage
+     * @param  ?float  $salesLimit
      * @param  ?float  $domainsLimit
      * @param  ?float  $tagsLimit
      * @param  ?float  $usersLimit
@@ -196,9 +222,10 @@ class WorkspaceSchema
      * @param  ?array<Users>  $users
      * @param  ?array<Domains>  $domains
      * @param  ?string  $inviteCode
+     * @param  ?bool  $conversionEnabled
      * @param  ?array<string, bool>  $flags
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?string $inviteCode = null, ?array $flags = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $salesUsage = null, ?float $salesLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?string $inviteCode = null, ?bool $conversionEnabled = null, ?array $flags = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -208,6 +235,8 @@ class WorkspaceSchema
         $this->usageLimit = $usageLimit;
         $this->linksUsage = $linksUsage;
         $this->linksLimit = $linksLimit;
+        $this->salesUsage = $salesUsage;
+        $this->salesLimit = $salesLimit;
         $this->domainsLimit = $domainsLimit;
         $this->tagsLimit = $tagsLimit;
         $this->usersLimit = $usersLimit;
@@ -219,6 +248,7 @@ class WorkspaceSchema
         $this->users = $users;
         $this->domains = $domains;
         $this->inviteCode = $inviteCode;
+        $this->conversionEnabled = $conversionEnabled;
         $this->flags = $flags;
     }
 }

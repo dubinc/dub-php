@@ -1,5 +1,6 @@
 # Events
 
+## Overview
 
 ### Available Operations
 
@@ -62,18 +63,16 @@ try {
 }
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `$request`                                                                   | [Operations\ListEventsRequest](../../Models/Operations/ListEventsRequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
-
 ### Response
 
 **[?Operations\ListEventsResponse](../../Models/Operations/ListEventsResponse.md)**
+
 ### Errors
 
 | Error Object                   | Status Code                    | Content Type                   |
