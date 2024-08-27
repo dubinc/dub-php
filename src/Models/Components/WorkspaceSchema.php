@@ -44,6 +44,47 @@ class WorkspaceSchema
     public string $logo;
 
     /**
+     * The plan of the workspace.
+     *
+     * @var Plan $plan
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('plan')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Plan')]
+    public Plan $plan;
+
+    /**
+     * The Stripe ID of the workspace.
+     *
+     * @var string $stripeId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('stripeId')]
+    public string $stripeId;
+
+    /**
+     * The date and time when the billing cycle starts for the workspace.
+     *
+     * @var float $billingCycleStart
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('billingCycleStart')]
+    public float $billingCycleStart;
+
+    /**
+     * [BETA]: The Stripe Connect ID of the workspace.
+     *
+     * @var string $stripeConnectId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
+    public string $stripeConnectId;
+
+    /**
+     * The invite code of the workspace.
+     *
+     * @var string $inviteCode
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
+    public string $inviteCode;
+
+    /**
      * The usage of the workspace.
      *
      * @var float $usage
@@ -116,37 +157,44 @@ class WorkspaceSchema
     public float $usersLimit;
 
     /**
-     * The plan of the workspace.
+     * The AI usage of the workspace.
      *
-     * @var Plan $plan
+     * @var float $aiUsage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('plan')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Plan')]
-    public Plan $plan;
+    #[\JMS\Serializer\Annotation\SerializedName('aiUsage')]
+    public float $aiUsage;
 
     /**
-     * The Stripe ID of the workspace.
+     * The AI limit of the workspace.
      *
-     * @var string $stripeId
+     * @var float $aiLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('stripeId')]
-    public string $stripeId;
+    #[\JMS\Serializer\Annotation\SerializedName('aiLimit')]
+    public float $aiLimit;
 
     /**
-     * The date and time when the billing cycle starts for the workspace.
+     * The ID of the referral link of the workspace.
      *
-     * @var float $billingCycleStart
+     * @var string $referralLinkId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('billingCycleStart')]
-    public float $billingCycleStart;
+    #[\JMS\Serializer\Annotation\SerializedName('referralLinkId')]
+    public string $referralLinkId;
 
     /**
-     * [BETA]: The Stripe Connect ID of the workspace.
+     * The number of signups referred by the workspace.
      *
-     * @var string $stripeConnectId
+     * @var float $referredSignups
      */
-    #[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
-    public string $stripeConnectId;
+    #[\JMS\Serializer\Annotation\SerializedName('referredSignups')]
+    public float $referredSignups;
+
+    /**
+     * Whether the workspace has conversion tracking enabled (d.to/conversions).
+     *
+     * @var bool $conversionEnabled
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('conversionEnabled')]
+    public bool $conversionEnabled;
 
     /**
      * The date and time when the workspace was created.
@@ -175,22 +223,6 @@ class WorkspaceSchema
     public array $domains;
 
     /**
-     * The invite code of the workspace.
-     *
-     * @var string $inviteCode
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
-    public string $inviteCode;
-
-    /**
-     * Whether the workspace has conversion tracking enabled (d.to/conversions).
-     *
-     * @var bool $conversionEnabled
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('conversionEnabled')]
-    public bool $conversionEnabled;
-
-    /**
      * The feature flags of the workspace, indicating which features are enabled.
      *
      * @var ?array<string, bool> $flags
@@ -205,6 +237,11 @@ class WorkspaceSchema
      * @param  ?string  $name
      * @param  ?string  $slug
      * @param  ?string  $logo
+     * @param  ?Plan  $plan
+     * @param  ?string  $stripeId
+     * @param  ?float  $billingCycleStart
+     * @param  ?string  $stripeConnectId
+     * @param  ?string  $inviteCode
      * @param  ?float  $usage
      * @param  ?float  $usageLimit
      * @param  ?float  $linksUsage
@@ -214,23 +251,27 @@ class WorkspaceSchema
      * @param  ?float  $domainsLimit
      * @param  ?float  $tagsLimit
      * @param  ?float  $usersLimit
-     * @param  ?Plan  $plan
-     * @param  ?string  $stripeId
-     * @param  ?float  $billingCycleStart
-     * @param  ?string  $stripeConnectId
+     * @param  ?float  $aiUsage
+     * @param  ?float  $aiLimit
+     * @param  ?string  $referralLinkId
+     * @param  ?float  $referredSignups
+     * @param  ?bool  $conversionEnabled
      * @param  ?string  $createdAt
      * @param  ?array<Users>  $users
      * @param  ?array<Domains>  $domains
-     * @param  ?string  $inviteCode
-     * @param  ?bool  $conversionEnabled
      * @param  ?array<string, bool>  $flags
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $salesUsage = null, ?float $salesLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?string $inviteCode = null, ?bool $conversionEnabled = null, ?array $flags = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $salesUsage = null, ?float $salesLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?float $aiUsage = null, ?float $aiLimit = null, ?string $referralLinkId = null, ?float $referredSignups = null, ?bool $conversionEnabled = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?array $flags = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->slug = $slug;
         $this->logo = $logo;
+        $this->plan = $plan;
+        $this->stripeId = $stripeId;
+        $this->billingCycleStart = $billingCycleStart;
+        $this->stripeConnectId = $stripeConnectId;
+        $this->inviteCode = $inviteCode;
         $this->usage = $usage;
         $this->usageLimit = $usageLimit;
         $this->linksUsage = $linksUsage;
@@ -240,15 +281,14 @@ class WorkspaceSchema
         $this->domainsLimit = $domainsLimit;
         $this->tagsLimit = $tagsLimit;
         $this->usersLimit = $usersLimit;
-        $this->plan = $plan;
-        $this->stripeId = $stripeId;
-        $this->billingCycleStart = $billingCycleStart;
-        $this->stripeConnectId = $stripeConnectId;
+        $this->aiUsage = $aiUsage;
+        $this->aiLimit = $aiLimit;
+        $this->referralLinkId = $referralLinkId;
+        $this->referredSignups = $referredSignups;
+        $this->conversionEnabled = $conversionEnabled;
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;
-        $this->inviteCode = $inviteCode;
-        $this->conversionEnabled = $conversionEnabled;
         $this->flags = $flags;
     }
 }
