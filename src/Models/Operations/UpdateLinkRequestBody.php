@@ -99,7 +99,7 @@ class UpdateLinkRequestBody
      * @var string|array<string>|null $tagIds
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagIds')]
-    #[\JMS\Serializer\Annotation\Type('string|array<string>')]
+    #[\JMS\Serializer\Annotation\Type('string|array<string>|null')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public string|array|null $tagIds = null;
 
@@ -109,7 +109,7 @@ class UpdateLinkRequestBody
      * @var string|array<string>|null $tagNames
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagNames')]
-    #[\JMS\Serializer\Annotation\Type('string|array<string>')]
+    #[\JMS\Serializer\Annotation\Type('string|array<string>|null')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public string|array|null $tagNames = null;
 
@@ -226,7 +226,7 @@ class UpdateLinkRequestBody
      * @var ?Components\LinkGeoTargeting $geo
      */
     #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkGeoTargeting')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkGeoTargeting|null')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?Components\LinkGeoTargeting $geo = null;
 

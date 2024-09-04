@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Errors;
 
 
+use Dub\Utils;
 /** Conflict - This response is sent when a request conflicts with the current state of the server. */
 class Conflict
 {
@@ -26,5 +27,14 @@ class Conflict
     public function __construct(?ConflictError $error = null)
     {
         $this->error = $error;
+    }
+
+    public function toException(): ConflictThrowable
+    {
+        $serializer = Utils\JSON::createSerializer();
+        $message = $serializer->serialize($this, 'json');
+        $code = -1;
+
+        return new ConflictThrowable($message, (int) $code, $this);
     }
 }

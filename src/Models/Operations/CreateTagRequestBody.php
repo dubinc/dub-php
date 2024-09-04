@@ -26,7 +26,7 @@ class CreateTagRequestBody
      * @var ?Color $color
      */
     #[\JMS\Serializer\Annotation\SerializedName('color')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Color')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Color|null')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?Color $color = null;
 

@@ -228,7 +228,7 @@ class WorkspaceSchema
      * @var ?array<string, bool> $flags
      */
     #[\JMS\Serializer\Annotation\SerializedName('flags')]
-    #[\JMS\Serializer\Annotation\Type('array<string, bool>')]
+    #[\JMS\Serializer\Annotation\Type('array<string, bool>|null')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $flags = null;
 
