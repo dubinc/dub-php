@@ -5,12 +5,7 @@ A lead was tracked.
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `clickId`              | *string*               | :heavy_check_mark:     | N/A                    |
-| `eventName`            | *string*               | :heavy_check_mark:     | N/A                    |
-| `customerId`           | *string*               | :heavy_check_mark:     | N/A                    |
-| `customerName`         | *string*               | :heavy_check_mark:     | N/A                    |
-| `customerEmail`        | *string*               | :heavy_check_mark:     | N/A                    |
-| `customerAvatar`       | *string*               | :heavy_check_mark:     | N/A                    |
-| `metadata`             | array<string, *mixed*> | :heavy_minus_sign:     | N/A                    |
+| Field                                                      | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `click`                                                    | [Operations\Click](../../Models/Operations/Click.md)       | :heavy_check_mark:                                         | N/A                                                        |
+| `customer`                                                 | [Operations\Customer](../../Models/Operations/Customer.md) | :heavy_check_mark:                                         | N/A                                                        |

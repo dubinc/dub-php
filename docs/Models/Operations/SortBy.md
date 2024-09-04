@@ -6,4 +6,3 @@
 | Name        | Value       |
 | ----------- | ----------- |
 | `Timestamp` | timestamp   |
-| `Amount`    | amount      |

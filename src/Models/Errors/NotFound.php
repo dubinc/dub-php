@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Errors;
 
 
+use Dub\Utils;
 /** NotFound - The server cannot find the requested resource. */
 class NotFound
 {
@@ -26,5 +27,14 @@ class NotFound
     public function __construct(?NotFoundError $error = null)
     {
         $this->error = $error;
+    }
+
+    public function toException(): NotFoundThrowable
+    {
+        $serializer = Utils\JSON::createSerializer();
+        $message = $serializer->serialize($this, 'json');
+        $code = -1;
+
+        return new NotFoundThrowable($message, (int) $code, $this);
     }
 }

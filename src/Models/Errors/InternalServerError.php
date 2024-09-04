@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Errors;
 
 
+use Dub\Utils;
 /** InternalServerError - The server has encountered a situation it does not know how to handle. */
 class InternalServerError
 {
@@ -26,5 +27,14 @@ class InternalServerError
     public function __construct(?InternalServerErrorError $error = null)
     {
         $this->error = $error;
+    }
+
+    public function toException(): InternalServerErrorThrowable
+    {
+        $serializer = Utils\JSON::createSerializer();
+        $message = $serializer->serialize($this, 'json');
+        $code = -1;
+
+        return new InternalServerErrorThrowable($message, (int) $code, $this);
     }
 }

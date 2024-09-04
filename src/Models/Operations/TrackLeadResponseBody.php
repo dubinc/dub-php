@@ -14,73 +14,27 @@ class TrackLeadResponseBody
 {
     /**
      *
-     * @var string $clickId
+     * @var Click $click
      */
-    #[\JMS\Serializer\Annotation\SerializedName('clickId')]
-    public string $clickId;
+    #[\JMS\Serializer\Annotation\SerializedName('click')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Click')]
+    public Click $click;
 
     /**
      *
-     * @var string $eventName
+     * @var Customer $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    public string $eventName;
+    #[\JMS\Serializer\Annotation\SerializedName('customer')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Customer')]
+    public Customer $customer;
 
     /**
-     *
-     * @var string $customerId
+     * @param  ?Click  $click
+     * @param  ?Customer  $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    public string $customerId;
-
-    /**
-     *
-     * @var string $customerName
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    public string $customerName;
-
-    /**
-     *
-     * @var string $customerEmail
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    public string $customerEmail;
-
-    /**
-     *
-     * @var string $customerAvatar
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    public string $customerAvatar;
-
-    /**
-     * $metadata
-     *
-     * @var ?array<string, mixed> $metadata
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('metadata')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?array $metadata = null;
-
-    /**
-     * @param  ?string  $clickId
-     * @param  ?string  $eventName
-     * @param  ?string  $customerId
-     * @param  ?string  $customerName
-     * @param  ?string  $customerEmail
-     * @param  ?string  $customerAvatar
-     * @param  ?array<string, mixed>  $metadata
-     */
-    public function __construct(?string $clickId = null, ?string $eventName = null, ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null, ?array $metadata = null)
+    public function __construct(?Click $click = null, ?Customer $customer = null)
     {
-        $this->clickId = $clickId;
-        $this->eventName = $eventName;
-        $this->customerId = $customerId;
-        $this->customerName = $customerName;
-        $this->customerEmail = $customerEmail;
-        $this->customerAvatar = $customerAvatar;
-        $this->metadata = $metadata;
+        $this->click = $click;
+        $this->customer = $customer;
     }
 }

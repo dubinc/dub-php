@@ -35,17 +35,17 @@ class RetrieveAnalyticsResponse
     /**
      * Analytics data
      *
-     * @var Components\ClicksCount|array<Components\ClicksTimeseries>|array<Components\ClicksCountries>|array<Components\ClicksCities>|array<Components\ClicksDevices>|array<Components\ClicksBrowsers>|array<Components\ClicksOS>|array<Components\ClicksReferers>|array<Components\ClicksTopLinks>|array<Components\ClicksTopUrls>|Components\LeadsCount|array<Components\LeadsTimeseries>|array<Components\LeadsCountries>|array<Components\LeadsCities>|array<Components\LeadsDevices>|array<Components\LeadsBrowsers>|array<Components\LeadsOS>|array<Components\LeadsReferers>|array<Components\LeadsTopLinks>|array<Components\LeadsTopUrls>|Components\SalesCount|array<Components\SalesTimeseries>|array<Components\SalesCountries>|array<Components\SalesCities>|array<Components\SalesDevices>|array<Components\SalesBrowsers>|array<Components\SalesOS>|array<Components\SalesReferers>|array<Components\SalesTopLinks>|array<Components\SalesTopUrls>|null $oneOf
+     * @var Components\AnalyticsCount|array<Components\AnalyticsTimeseries>|array<Components\AnalyticsCountries>|array<Components\AnalyticsCities>|array<Components\AnalyticsDevices>|array<Components\AnalyticsBrowsers>|array<Components\AnalyticsOS>|array<Components\AnalyticsReferers>|array<Components\AnalyticsTopLinks>|array<Components\AnalyticsTopUrls>|null $oneOf
      */
-    public Components\ClicksCount|array|Components\LeadsCount|Components\SalesCount|null $oneOf = null;
+    public Components\AnalyticsCount|array|null $oneOf = null;
 
     /**
      * @param  ?string  $contentType
      * @param  ?int  $statusCode
      * @param  ?\Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  Components\ClicksCount|array<Components\ClicksTimeseries>|array<Components\ClicksCountries>|array<Components\ClicksCities>|array<Components\ClicksDevices>|array<Components\ClicksBrowsers>|array<Components\ClicksOS>|array<Components\ClicksReferers>|array<Components\ClicksTopLinks>|array<Components\ClicksTopUrls>|Components\LeadsCount|array<Components\LeadsTimeseries>|array<Components\LeadsCountries>|array<Components\LeadsCities>|array<Components\LeadsDevices>|array<Components\LeadsBrowsers>|array<Components\LeadsOS>|array<Components\LeadsReferers>|array<Components\LeadsTopLinks>|array<Components\LeadsTopUrls>|Components\SalesCount|array<Components\SalesTimeseries>|array<Components\SalesCountries>|array<Components\SalesCities>|array<Components\SalesDevices>|array<Components\SalesBrowsers>|array<Components\SalesOS>|array<Components\SalesReferers>|array<Components\SalesTopLinks>|array<Components\SalesTopUrls>|null  $oneOf
+     * @param  Components\AnalyticsCount|array<Components\AnalyticsTimeseries>|array<Components\AnalyticsCountries>|array<Components\AnalyticsCities>|array<Components\AnalyticsDevices>|array<Components\AnalyticsBrowsers>|array<Components\AnalyticsOS>|array<Components\AnalyticsReferers>|array<Components\AnalyticsTopLinks>|array<Components\AnalyticsTopUrls>|null  $oneOf
      */
-    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, Components\ClicksCount|array|Components\LeadsCount|Components\SalesCount|null $oneOf = null)
+    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, Components\AnalyticsCount|array|null $oneOf = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

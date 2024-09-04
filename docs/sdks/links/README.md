@@ -11,6 +11,7 @@
 * [delete](#delete) - Delete a link
 * [update](#update) - Update a link
 * [createMany](#createmany) - Bulk create links
+* [deleteMany](#deletemany) - Bulk delete links
 * [updateMany](#updatemany) - Bulk update links
 * [upsert](#upsert) - Upsert a link
 
@@ -1001,6 +1002,63 @@ try {
 ### Response
 
 **[?Operations\BulkCreateLinksResponse](../../Models/Operations/BulkCreateLinksResponse.md)**
+
+### Errors
+
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
+
+## deleteMany
+
+Bulk delete up to 100 links for the authenticated workspace.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Components;
+
+$security = new Components\Security();
+$security->token = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+try {
+
+    $response = $sdk->links->deleteMany('clux0rgak00011...,clux0rgak00022...');
+
+    if ($response->object !== null) {
+        // handle response
+    }
+} catch (Throwable $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       | Example                                                                                           |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `linkIds`                                                                                         | *string*                                                                                          | :heavy_check_mark:                                                                                | Comma-separated list of link IDs to delete. Maximum of 100 IDs. Non-existing IDs will be ignored. | clux0rgak00011...,clux0rgak00022...                                                               |
+
+### Response
+
+**[?Operations\BulkDeleteLinksResponse](../../Models/Operations/BulkDeleteLinksResponse.md)**
 
 ### Errors
 

@@ -26,7 +26,7 @@ class UpdateTagRequestBody
      * @var ?UpdateTagColor $color
      */
     #[\JMS\Serializer\Annotation\SerializedName('color')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateTagColor')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateTagColor|null')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?UpdateTagColor $color = null;
 

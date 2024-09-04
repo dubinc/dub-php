@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Errors;
 
 
+use Dub\Utils;
 /** UnprocessableEntity - The request was well-formed but was unable to be followed due to semantic errors. */
 class UnprocessableEntity
 {
@@ -26,5 +27,14 @@ class UnprocessableEntity
     public function __construct(?UnprocessableEntityError $error = null)
     {
         $this->error = $error;
+    }
+
+    public function toException(): UnprocessableEntityThrowable
+    {
+        $serializer = Utils\JSON::createSerializer();
+        $message = $serializer->serialize($this, 'json');
+        $code = -1;
+
+        return new UnprocessableEntityThrowable($message, (int) $code, $this);
     }
 }

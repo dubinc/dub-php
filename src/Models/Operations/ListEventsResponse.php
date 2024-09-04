@@ -35,7 +35,7 @@ class ListEventsResponse
     /**
      * A list of events
      *
-     * @var ?array<Components\ClickEvents> $clickEvents
+     * @var ?array<Components\ClickEvent> $clickEvents
      */
     public ?array $clickEvents = null;
 
@@ -43,7 +43,7 @@ class ListEventsResponse
      * @param  ?string  $contentType
      * @param  ?int  $statusCode
      * @param  ?\Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\ClickEvents>  $clickEvents
+     * @param  ?array<Components\ClickEvent>  $clickEvents
      */
     public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, ?array $clickEvents = null)
     {

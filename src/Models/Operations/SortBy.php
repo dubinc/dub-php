@@ -13,5 +13,4 @@ namespace Dub\Models\Operations;
 enum SortBy: string
 {
     case Timestamp = 'timestamp';
-    case Amount = 'amount';
 }

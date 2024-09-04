@@ -51,7 +51,7 @@ try {
         page: 9174.16,
         limit: 6355.32,
         order: Operations\Order::Desc,
-        sortBy: Operations\SortBy::Amount,
+        sortBy: Operations\SortBy::Timestamp,
     );
     $response = $sdk->events->list($request);
 

@@ -21,65 +21,29 @@ class TrackSaleResponseBody
 
     /**
      *
-     * @var string $customerId
+     * @var TrackSaleCustomer $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
-    public string $customerId;
+    #[\JMS\Serializer\Annotation\SerializedName('customer')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleCustomer')]
+    public TrackSaleCustomer $customer;
 
     /**
      *
-     * @var float $amount
+     * @var Sale $sale
      */
-    #[\JMS\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
-
-    /**
-     *
-     * @var string $paymentProcessor
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
-    public string $paymentProcessor;
-
-    /**
-     *
-     * @var string $invoiceId
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
-    public string $invoiceId;
-
-    /**
-     *
-     * @var string $currency
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    public string $currency;
-
-    /**
-     * $metadata
-     *
-     * @var array<string, mixed> $metadata
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('metadata')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    public array $metadata;
+    #[\JMS\Serializer\Annotation\SerializedName('sale')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Sale')]
+    public Sale $sale;
 
     /**
      * @param  ?string  $eventName
-     * @param  ?string  $customerId
-     * @param  ?float  $amount
-     * @param  ?string  $paymentProcessor
-     * @param  ?string  $invoiceId
-     * @param  ?string  $currency
-     * @param  ?array<string, mixed>  $metadata
+     * @param  ?TrackSaleCustomer  $customer
+     * @param  ?Sale  $sale
      */
-    public function __construct(?string $eventName = null, ?string $customerId = null, ?float $amount = null, ?string $paymentProcessor = null, ?string $invoiceId = null, ?string $currency = null, ?array $metadata = null)
+    public function __construct(?string $eventName = null, ?TrackSaleCustomer $customer = null, ?Sale $sale = null)
     {
         $this->eventName = $eventName;
-        $this->customerId = $customerId;
-        $this->amount = $amount;
-        $this->paymentProcessor = $paymentProcessor;
-        $this->invoiceId = $invoiceId;
-        $this->currency = $currency;
-        $this->metadata = $metadata;
+        $this->customer = $customer;
+        $this->sale = $sale;
     }
 }

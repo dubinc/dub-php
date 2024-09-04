@@ -63,7 +63,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\BadRequest', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -71,7 +71,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Unauthorized', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -79,7 +79,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Forbidden', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -87,7 +87,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\NotFound', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -95,7 +95,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Conflict', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -103,7 +103,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InviteExpired', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -111,7 +111,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\UnprocessableEntity', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -119,7 +119,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\RateLimitExceeded', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -127,7 +127,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InternalServerError', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -184,7 +184,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\BadRequest', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -192,7 +192,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Unauthorized', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -200,7 +200,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Forbidden', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -208,7 +208,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\NotFound', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -216,7 +216,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Conflict', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -224,7 +224,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InviteExpired', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -232,7 +232,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\UnprocessableEntity', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -240,7 +240,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\RateLimitExceeded', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -248,7 +248,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InternalServerError', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -311,7 +311,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\BadRequest', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -319,7 +319,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Unauthorized', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -327,7 +327,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Forbidden', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -335,7 +335,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\NotFound', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -343,7 +343,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\Conflict', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -351,7 +351,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InviteExpired', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -359,7 +359,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\UnprocessableEntity', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -367,7 +367,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\RateLimitExceeded', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
@@ -375,7 +375,7 @@ class Tags
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Errors\InternalServerError', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                throw $obj;
+                throw $obj->toException();
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }

@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Errors;
 
 
+use Dub\Utils;
 /** BadRequest - The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). */
 class BadRequest
 {
@@ -26,5 +27,14 @@ class BadRequest
     public function __construct(?Error $error = null)
     {
         $this->error = $error;
+    }
+
+    public function toException(): BadRequestThrowable
+    {
+        $serializer = Utils\JSON::createSerializer();
+        $message = $serializer->serialize($this, 'json');
+        $code = -1;
+
+        return new BadRequestThrowable($message, (int) $code, $this);
     }
 }
