@@ -1040,7 +1040,9 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
 
-    $response = $sdk->links->deleteMany('clux0rgak00011...,clux0rgak00022...');
+    $response = $sdk->links->deleteMany([
+        '<value>',
+    ]);
 
     if ($response->object !== null) {
         // handle response
@@ -1054,7 +1056,7 @@ try {
 
 | Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       | Example                                                                                           |
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `linkIds`                                                                                         | *string*                                                                                          | :heavy_check_mark:                                                                                | Comma-separated list of link IDs to delete. Maximum of 100 IDs. Non-existing IDs will be ignored. | clux0rgak00011...,clux0rgak00022...                                                               |
+| `linkIds`                                                                                         | array<*string*>                                                                                   | :heavy_check_mark:                                                                                | Comma-separated list of link IDs to delete. Maximum of 100 IDs. Non-existing IDs will be ignored. | [<br/>"clux0rgak00011...",<br/>"clux0rgak00022..."<br/>]                                          |
 
 ### Response
 

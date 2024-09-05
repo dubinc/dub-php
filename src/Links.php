@@ -883,12 +883,12 @@ class Links
      *
      * Bulk delete up to 100 links for the authenticated workspace.
      *
-     * @param  string  $linkIds
+     * @param  array<string>  $linkIds
      * @return Operations\BulkDeleteLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function deleteMany(
-        string $linkIds,
+        array $linkIds,
     ): Operations\BulkDeleteLinksResponse {
         $request = new Operations\BulkDeleteLinksRequest(
             linkIds: $linkIds,
