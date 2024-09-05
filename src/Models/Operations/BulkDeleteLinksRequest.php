@@ -14,15 +14,15 @@ class BulkDeleteLinksRequest
     /**
      * Comma-separated list of link IDs to delete. Maximum of 100 IDs. Non-existing IDs will be ignored.
      *
-     * @var string $linkIds
+     * @var array<string> $linkIds
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=linkIds')]
-    public string $linkIds;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=false,name=linkIds')]
+    public array $linkIds;
 
     /**
-     * @param  ?string  $linkIds
+     * @param  ?array<string>  $linkIds
      */
-    public function __construct(?string $linkIds = null)
+    public function __construct(?array $linkIds = null)
     {
         $this->linkIds = $linkIds;
     }
