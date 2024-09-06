@@ -1,8 +1,8 @@
-speakeasyVersion: 1.390.7
+speakeasyVersion: 1.391.3
 sources:
     dub:
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:8ef7d260c52b103f498f5e28e9da3d2f8a228e79964fc63ff0e3a2b47a826b02
+        sourceRevisionDigest: sha256:16e87bdd1fb20d6498abb264d495fc042847c2972184aba1f375d7b432a3001c
         sourceBlobDigest: sha256:579d05c371e5381c27e1e9283e36b9ce4665061b7e2934becbed0fb30ae7d39e
         tags:
             - latest
@@ -11,10 +11,10 @@ targets:
     my-first-target:
         source: dub
         sourceNamespace: dub
-        sourceRevisionDigest: sha256:8ef7d260c52b103f498f5e28e9da3d2f8a228e79964fc63ff0e3a2b47a826b02
+        sourceRevisionDigest: sha256:16e87bdd1fb20d6498abb264d495fc042847c2972184aba1f375d7b432a3001c
         sourceBlobDigest: sha256:579d05c371e5381c27e1e9283e36b9ce4665061b7e2934becbed0fb30ae7d39e
         codeSamplesNamespace: code-samples-php-my-first-target
-        codeSamplesRevisionDigest: sha256:d024d2a79a1853948468c8a9343bfc3485a52f090c1f5adcd9f2e14085e5a669
+        codeSamplesRevisionDigest: sha256:788723aa81010d929655020cfbd664871c5551903b5e18a7af9af7e5050d70ea
         outLocation: /github/workspace/repo
 workflow:
     workflowVersion: 1.0.0
@@ -29,6 +29,10 @@ workflow:
         my-first-target:
             target: php
             source: dub
+            publish:
+                packagist:
+                    username: dub
+                    token: $packagist_token
             codeSamples:
                 output: codeSamples.yaml
                 registry:
