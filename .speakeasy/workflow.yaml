@@ -10,6 +10,10 @@ targets:
     my-first-target:
         target: php
         source: dub
+        publish:
+            packagist:
+                username: dub
+                token: $packagist_token
         codeSamples:
             output: codeSamples.yaml
             registry:
