@@ -21,112 +21,149 @@ class ClickEvent
 
     /**
      *
-     * @var string $timestamp
+     * @var ?string $timestamp
      */
     #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
-    public string $timestamp;
+    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    public ?string $timestamp = null;
 
     /**
      *
+     * @var Click $click
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('click')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Click')]
+    public Click $click;
+
+    /**
+     *
+     * @var Link $link
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('link')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Link')]
+    public Link $link;
+
+    /**
+     * Deprecated. Use `click.id` instead.
+     *
      * @var string $clickId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('click_id')]
     public string $clickId;
 
     /**
+     * Deprecated. Use `link.id` instead.
      *
      * @var string $linkId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('link_id')]
     public string $linkId;
 
     /**
+     * Deprecated. Use `link.domain` instead.
      *
      * @var string $domain
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('domain')]
     public string $domain;
 
     /**
+     * Deprecated. Use `link.key` instead.
      *
      * @var string $key
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('key')]
     public string $key;
 
     /**
+     * Deprecated. Use `click.url` instead.
      *
      * @var string $url
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('url')]
     public string $url;
 
     /**
+     * Deprecated. Use `click.continent` instead.
      *
      * @var string $continent
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('continent')]
     public string $continent;
 
     /**
+     * Deprecated. Use `click.country` instead.
      *
      * @var string $country
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('country')]
     public string $country;
 
     /**
+     * Deprecated. Use `click.city` instead.
      *
      * @var string $city
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('city')]
     public string $city;
 
     /**
+     * Deprecated. Use `click.device` instead.
      *
      * @var string $device
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('device')]
     public string $device;
 
     /**
+     * Deprecated. Use `click.browser` instead.
      *
      * @var string $browser
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('browser')]
     public string $browser;
 
     /**
+     * Deprecated. Use `click.os` instead.
      *
      * @var string $os
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('os')]
     public string $os;
 
     /**
-     *
-     * @var string $referer
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('referer')]
-    public string $referer;
-
-    /**
-     *
-     * @var string $ip
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('ip')]
-    public string $ip;
-
-    /**
+     * Deprecated. Use `click.qr` instead.
      *
      * @var float $qr
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('qr')]
     public float $qr;
 
     /**
+     * Deprecated. Use `click.ip` instead.
+     *
+     * @var string $ip
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('ip')]
+    public string $ip;
+
+    /**
      * @param  ?Event  $event
-     * @param  ?string  $timestamp
+     * @param  ?Click  $click
+     * @param  ?Link  $link
      * @param  ?string  $clickId
      * @param  ?string  $linkId
      * @param  ?string  $domain
@@ -138,14 +175,15 @@ class ClickEvent
      * @param  ?string  $device
      * @param  ?string  $browser
      * @param  ?string  $os
-     * @param  ?string  $referer
-     * @param  ?string  $ip
      * @param  ?float  $qr
+     * @param  ?string  $ip
+     * @param  ?string  $timestamp
      */
-    public function __construct(?Event $event = null, ?string $timestamp = null, ?string $clickId = null, ?string $linkId = null, ?string $domain = null, ?string $key = null, ?string $url = null, ?string $continent = null, ?string $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $ip = null, ?float $qr = null)
+    public function __construct(?Event $event = null, ?Click $click = null, ?Link $link = null, ?string $clickId = null, ?string $linkId = null, ?string $domain = null, ?string $key = null, ?string $url = null, ?string $continent = null, ?string $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?float $qr = null, ?string $ip = null, ?string $timestamp = null)
     {
         $this->event = $event;
-        $this->timestamp = $timestamp;
+        $this->click = $click;
+        $this->link = $link;
         $this->clickId = $clickId;
         $this->linkId = $linkId;
         $this->domain = $domain;
@@ -157,8 +195,8 @@ class ClickEvent
         $this->device = $device;
         $this->browser = $browser;
         $this->os = $os;
-        $this->referer = $referer;
-        $this->ip = $ip;
         $this->qr = $qr;
+        $this->ip = $ip;
+        $this->timestamp = $timestamp;
     }
 }

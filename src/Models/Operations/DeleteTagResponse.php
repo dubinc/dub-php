@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class DeleteLinkResponse
+class DeleteTagResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,19 +33,19 @@ class DeleteLinkResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The deleted link ID.
+     * The deleted tag ID.
      *
-     * @var ?DeleteLinkResponseBody $object
+     * @var ?DeleteTagResponseBody $object
      */
-    public ?DeleteLinkResponseBody $object = null;
+    public ?DeleteTagResponseBody $object = null;
 
     /**
      * @param  ?string  $contentType
      * @param  ?int  $statusCode
      * @param  ?\Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteLinkResponseBody  $object
+     * @param  ?DeleteTagResponseBody  $object
      */
-    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, ?DeleteLinkResponseBody $object = null)
+    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, ?DeleteTagResponseBody $object = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

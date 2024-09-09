@@ -38,7 +38,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listEvents"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security();\n$security->token = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\ListEventsRequest(\n        event: Operations\\QueryParamEvent::Composite,\n        domain: 'burly-math.biz',\n        key: '<key>',\n        linkId: '<value>',\n        externalId: '<value>',\n        interval: Operations\\QueryParamInterval::Oney,\n        start: '<value>',\n        end: '<value>',\n        timezone: 'America/New_York',\n        continent: Components\\ContinentCode::As,\n        country: Components\\CountryCode::Cx,\n        city: 'New York',\n        device: 'Desktop',\n        browser: 'Chrome',\n        os: 'Windows',\n        referer: 'google.com',\n        url: 'https://elliptical-auditorium.com',\n        tagId: '<value>',\n        qr: false,\n        root: false,\n        page: 9174.16,\n        limit: 6355.32,\n        order: Operations\\Order::Desc,\n        sortBy: Operations\\SortBy::Timestamp,\n    );\n    $response = $sdk->events->list($request);\n\n    if ($response->clickEvents !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security();\n$security->token = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\ListEventsRequest(\n        event: Operations\\QueryParamEvent::Sales,\n        domain: 'burly-math.biz',\n        key: '<key>',\n        linkId: '<value>',\n        externalId: '<value>',\n        interval: Operations\\QueryParamInterval::Ytd,\n        start: '<value>',\n        end: '<value>',\n        timezone: 'America/New_York',\n        continent: Components\\ContinentCode::As,\n        country: Components\\CountryCode::Cx,\n        city: 'New York',\n        device: 'Desktop',\n        browser: 'Chrome',\n        os: 'Windows',\n        referer: 'google.com',\n        url: 'https://elliptical-auditorium.com',\n        tagId: '<value>',\n        qr: false,\n        root: false,\n        page: 9174.16,\n        limit: 6355.32,\n        order: Operations\\Order::Desc,\n        sortBy: Operations\\SortBy::Timestamp,\n    );\n    $response = $sdk->events->list($request);\n\n    if ($response->clickEvents !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
   - target: $["paths"]["/links"]["get"]
     update:
       "x-codeSamples":
@@ -123,6 +123,12 @@ actions:
         - "lang": "php"
           "label": "createTag"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security();\n$security->token = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\CreateTagRequestBody(\n        name: '<value>',\n        color: Operations\\Color::Blue,\n        tag: '<value>',\n    );\n    $response = $sdk->tags->create($request);\n\n    if ($response->tagSchema !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
+  - target: $["paths"]["/tags/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "deleteTag"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\n\n$security = new Components\\Security();\n$security->token = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n\n    $response = $sdk->tags->delete('<value>');\n\n    if ($response->object !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
   - target: $["paths"]["/tags/{id}"]["patch"]
     update:
       "x-codeSamples":

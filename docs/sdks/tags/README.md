@@ -6,6 +6,7 @@
 
 * [list](#list) - Retrieve a list of tags
 * [create](#create) - Create a new tag
+* [delete](#delete) - Delete a tag
 * [update](#update) - Update a tag
 
 ## list
@@ -103,6 +104,63 @@ try {
 ### Response
 
 **[?Operations\CreateTagResponse](../../Models/Operations/CreateTagResponse.md)**
+
+### Errors
+
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
+
+## delete
+
+Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Components;
+
+$security = new Components\Security();
+$security->token = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+try {
+
+    $response = $sdk->tags->delete('<value>');
+
+    if ($response->object !== null) {
+        // handle response
+    }
+} catch (Throwable $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `id`                         | *string*                     | :heavy_check_mark:           | The ID of the tag to delete. |
+
+### Response
+
+**[?Operations\DeleteTagResponse](../../Models/Operations/DeleteTagResponse.md)**
 
 ### Errors
 

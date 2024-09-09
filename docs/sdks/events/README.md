@@ -28,12 +28,12 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     $request = new Operations\ListEventsRequest(
-        event: Operations\QueryParamEvent::Composite,
+        event: Operations\QueryParamEvent::Sales,
         domain: 'burly-math.biz',
         key: '<key>',
         linkId: '<value>',
         externalId: '<value>',
-        interval: Operations\QueryParamInterval::Oney,
+        interval: Operations\QueryParamInterval::Ytd,
         start: '<value>',
         end: '<value>',
         timezone: 'America/New_York',

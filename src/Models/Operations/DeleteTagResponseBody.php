@@ -9,11 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** DeleteLinkResponseBody - The deleted link ID. */
-class DeleteLinkResponseBody
+/** DeleteTagResponseBody - The deleted tag ID. */
+class DeleteTagResponseBody
 {
     /**
-     * The ID of the link.
+     * The ID of the deleted tag.
      *
      * @var string $id
      */

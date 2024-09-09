@@ -53,7 +53,7 @@ class ListEventsRequest
     public ?string $externalId = null;
 
     /**
-     * The interval to retrieve analytics for. Takes precedence over start and end. If undefined, defaults to 24h.
+     * The interval to retrieve events for. Takes precedence over start and end. If undefined, defaults to 24h.
      *
      * @var ?QueryParamInterval $interval
      */

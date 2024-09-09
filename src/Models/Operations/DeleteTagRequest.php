@@ -8,16 +8,15 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-
-/** DeleteLinkResponseBody - The deleted link ID. */
-class DeleteLinkResponseBody
+use Dub\Utils\SpeakeasyMetadata;
+class DeleteTagRequest
 {
     /**
-     * The ID of the link.
+     * The ID of the tag to delete.
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
     public string $id;
 
     /**
