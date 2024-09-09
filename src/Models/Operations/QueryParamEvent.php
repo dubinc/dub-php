@@ -15,5 +15,4 @@ enum QueryParamEvent: string
     case Clicks = 'clicks';
     case Leads = 'leads';
     case Sales = 'sales';
-    case Composite = 'composite';
 }

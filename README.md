@@ -698,6 +698,7 @@ try {
 
 * [list](docs/sdks/tags/README.md#list) - Retrieve a list of tags
 * [create](docs/sdks/tags/README.md#create) - Create a new tag
+* [delete](docs/sdks/tags/README.md#delete) - Delete a tag
 * [update](docs/sdks/tags/README.md#update) - Update a tag
 
 ### [Domains](docs/sdks/domains/README.md)

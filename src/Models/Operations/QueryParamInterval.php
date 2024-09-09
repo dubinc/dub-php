@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The interval to retrieve analytics for. Takes precedence over start and end. If undefined, defaults to 24h. */
+/** The interval to retrieve events for. Takes precedence over start and end. If undefined, defaults to 24h. */
 enum QueryParamInterval: string
 {
     case TwentyFourh = '24h';
@@ -19,5 +19,4 @@ enum QueryParamInterval: string
     case Ytd = 'ytd';
     case Oney = '1y';
     case All = 'all';
-    case AllUnfiltered = 'all_unfiltered';
 }

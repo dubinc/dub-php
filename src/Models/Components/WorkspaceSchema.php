@@ -181,14 +181,6 @@ class WorkspaceSchema
     public string $referralLinkId;
 
     /**
-     * The number of signups referred by the workspace.
-     *
-     * @var float $referredSignups
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('referredSignups')]
-    public float $referredSignups;
-
-    /**
      * Whether the workspace has conversion tracking enabled (d.to/conversions).
      *
      * @var bool $conversionEnabled
@@ -254,14 +246,13 @@ class WorkspaceSchema
      * @param  ?float  $aiUsage
      * @param  ?float  $aiLimit
      * @param  ?string  $referralLinkId
-     * @param  ?float  $referredSignups
      * @param  ?bool  $conversionEnabled
      * @param  ?string  $createdAt
      * @param  ?array<Users>  $users
      * @param  ?array<Domains>  $domains
      * @param  ?array<string, bool>  $flags
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $salesUsage = null, ?float $salesLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?float $aiUsage = null, ?float $aiLimit = null, ?string $referralLinkId = null, ?float $referredSignups = null, ?bool $conversionEnabled = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?array $flags = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $slug = null, ?string $logo = null, ?Plan $plan = null, ?string $stripeId = null, ?float $billingCycleStart = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?float $usage = null, ?float $usageLimit = null, ?float $linksUsage = null, ?float $linksLimit = null, ?float $salesUsage = null, ?float $salesLimit = null, ?float $domainsLimit = null, ?float $tagsLimit = null, ?float $usersLimit = null, ?float $aiUsage = null, ?float $aiLimit = null, ?string $referralLinkId = null, ?bool $conversionEnabled = null, ?string $createdAt = null, ?array $users = null, ?array $domains = null, ?array $flags = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -284,7 +275,6 @@ class WorkspaceSchema
         $this->aiUsage = $aiUsage;
         $this->aiLimit = $aiLimit;
         $this->referralLinkId = $referralLinkId;
-        $this->referredSignups = $referredSignups;
         $this->conversionEnabled = $conversionEnabled;
         $this->createdAt = $createdAt;
         $this->users = $users;
