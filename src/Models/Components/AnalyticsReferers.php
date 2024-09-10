@@ -44,7 +44,7 @@ class AnalyticsReferers
     public float $sales;
 
     /**
-     * The total amount of sales from this referer
+     * The total amount of sales from this referer, in cents
      *
      * @var float $saleAmount
      */

@@ -36,7 +36,7 @@ class AnalyticsCount
     public float $sales;
 
     /**
-     * The total amount of sales
+     * The total amount of sales, in cents
      *
      * @var float $saleAmount
      */

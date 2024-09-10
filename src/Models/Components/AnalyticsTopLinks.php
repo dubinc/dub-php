@@ -93,7 +93,7 @@ class AnalyticsTopLinks
     public float $sales;
 
     /**
-     * The total amount of sales from this link
+     * The total amount of sales from this link, in cents
      *
      * @var float $saleAmount
      */

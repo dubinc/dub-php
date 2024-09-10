@@ -44,7 +44,7 @@ class AnalyticsBrowsers
     public float $sales;
 
     /**
-     * The total amount of sales from this browser
+     * The total amount of sales from this browser, in cents
      *
      * @var float $saleAmount
      */

@@ -261,7 +261,6 @@ class Link
     public string $utmContent;
 
     /**
-     * The user ID of the creator of the short link.
      *
      * @var string $userId
      */

@@ -44,7 +44,7 @@ class AnalyticsTopUrls
     public float $sales;
 
     /**
-     * The total amount of sales from this URL
+     * The total amount of sales from this URL, in cents
      *
      * @var float $saleAmount
      */
