@@ -15,26 +15,26 @@ class GetMetatagsResponseBody
     /**
      * The meta title tag for the URL.
      *
-     * @var string $title
+     * @var ?string $title
      */
     #[\JMS\Serializer\Annotation\SerializedName('title')]
-    public string $title;
+    public ?string $title;
 
     /**
      * The meta description tag for the URL.
      *
-     * @var string $description
+     * @var ?string $description
      */
     #[\JMS\Serializer\Annotation\SerializedName('description')]
-    public string $description;
+    public ?string $description;
 
     /**
      * The OpenGraph image for the URL.
      *
-     * @var string $image
+     * @var ?string $image
      */
     #[\JMS\Serializer\Annotation\SerializedName('image')]
-    public string $image;
+    public ?string $image;
 
     /**
      * @param  ?string  $title

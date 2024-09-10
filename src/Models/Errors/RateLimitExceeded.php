@@ -22,9 +22,9 @@ class RateLimitExceeded
     public RateLimitExceededError $error;
 
     /**
-     * @param  ?RateLimitExceededError  $error
+     * @param  RateLimitExceededError  $error
      */
-    public function __construct(?RateLimitExceededError $error = null)
+    public function __construct(RateLimitExceededError $error)
     {
         $this->error = $error;
     }

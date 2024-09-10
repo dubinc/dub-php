@@ -34,15 +34,15 @@ class InviteExpiredError
      * @var ?string $docUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('doc_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $docUrl = null;
 
     /**
-     * @param  ?InviteExpiredCode  $code
-     * @param  ?string  $message
+     * @param  InviteExpiredCode  $code
+     * @param  string  $message
      * @param  ?string  $docUrl
      */
-    public function __construct(?InviteExpiredCode $code = null, ?string $message = null, ?string $docUrl = null)
+    public function __construct(InviteExpiredCode $code, string $message, ?string $docUrl = null)
     {
         $this->code = $code;
         $this->message = $message;

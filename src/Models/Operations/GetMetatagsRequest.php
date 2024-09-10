@@ -20,9 +20,9 @@ class GetMetatagsRequest
     public string $url;
 
     /**
-     * @param  ?string  $url
+     * @param  string  $url
      */
-    public function __construct(?string $url = null)
+    public function __construct(string $url)
     {
         $this->url = $url;
     }

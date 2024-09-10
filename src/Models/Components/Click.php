@@ -79,7 +79,7 @@ class Click
      * @var ?bool $qr
      */
     #[\JMS\Serializer\Annotation\SerializedName('qr')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?bool $qr = null;
 
     /**
@@ -90,19 +90,19 @@ class Click
     public string $ip;
 
     /**
-     * @param  ?string  $id
-     * @param  ?string  $url
-     * @param  ?string  $continent
-     * @param  ?string  $country
-     * @param  ?string  $city
-     * @param  ?string  $device
-     * @param  ?string  $browser
-     * @param  ?string  $os
-     * @param  ?string  $referer
-     * @param  ?string  $ip
+     * @param  string  $id
+     * @param  string  $url
+     * @param  string  $continent
+     * @param  string  $country
+     * @param  string  $city
+     * @param  string  $device
+     * @param  string  $browser
+     * @param  string  $os
+     * @param  string  $referer
+     * @param  string  $ip
      * @param  ?bool  $qr
      */
-    public function __construct(?string $id = null, ?string $url = null, ?string $continent = null, ?string $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $ip = null, ?bool $qr = null)
+    public function __construct(string $id, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, string $referer, string $ip, ?bool $qr = null)
     {
         $this->id = $id;
         $this->url = $url;

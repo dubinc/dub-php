@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class Links
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -1240,4 +1239,5 @@ class Links
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

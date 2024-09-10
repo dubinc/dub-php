@@ -22,9 +22,9 @@ class UnprocessableEntity
     public UnprocessableEntityError $error;
 
     /**
-     * @param  ?UnprocessableEntityError  $error
+     * @param  UnprocessableEntityError  $error
      */
-    public function __construct(?UnprocessableEntityError $error = null)
+    public function __construct(UnprocessableEntityError $error)
     {
         $this->error = $error;
     }

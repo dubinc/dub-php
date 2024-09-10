@@ -52,13 +52,13 @@ class AnalyticsTimeseries
     public float $saleAmount;
 
     /**
-     * @param  ?string  $start
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  string  $start
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?string $start = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $start, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->start = $start;
         $this->clicks = $clicks;

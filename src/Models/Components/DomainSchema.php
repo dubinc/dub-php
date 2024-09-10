@@ -62,10 +62,10 @@ class DomainSchema
     /**
      * The URL to redirect to when a link under this domain has expired.
      *
-     * @var string $expiredUrl
+     * @var ?string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    public string $expiredUrl;
+    public ?string $expiredUrl;
 
     /**
      * The date the domain was created.
@@ -84,17 +84,17 @@ class DomainSchema
     public string $updatedAt;
 
     /**
-     * @param  ?string  $id
-     * @param  ?string  $slug
-     * @param  ?bool  $verified
-     * @param  ?bool  $primary
-     * @param  ?bool  $archived
-     * @param  ?string  $placeholder
+     * @param  string  $id
+     * @param  string  $slug
+     * @param  bool  $verified
+     * @param  bool  $primary
+     * @param  bool  $archived
+     * @param  string  $placeholder
+     * @param  string  $createdAt
+     * @param  string  $updatedAt
      * @param  ?string  $expiredUrl
-     * @param  ?string  $createdAt
-     * @param  ?string  $updatedAt
      */
-    public function __construct(?string $id = null, ?string $slug = null, ?bool $verified = null, ?bool $primary = null, ?bool $archived = null, ?string $placeholder = null, ?string $expiredUrl = null, ?string $createdAt = null, ?string $updatedAt = null)
+    public function __construct(string $id, string $slug, bool $verified, bool $primary, bool $archived, string $placeholder, string $createdAt, string $updatedAt, ?string $expiredUrl = null)
     {
         $this->id = $id;
         $this->slug = $slug;
@@ -102,8 +102,8 @@ class DomainSchema
         $this->primary = $primary;
         $this->archived = $archived;
         $this->placeholder = $placeholder;
-        $this->expiredUrl = $expiredUrl;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->expiredUrl = $expiredUrl;
     }
 }

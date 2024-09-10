@@ -22,9 +22,9 @@ class Unauthorized
     public UnauthorizedError $error;
 
     /**
-     * @param  ?UnauthorizedError  $error
+     * @param  UnauthorizedError  $error
      */
-    public function __construct(?UnauthorizedError $error = null)
+    public function __construct(UnauthorizedError $error)
     {
         $this->error = $error;
     }

@@ -34,15 +34,15 @@ class ForbiddenError
      * @var ?string $docUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('doc_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $docUrl = null;
 
     /**
-     * @param  ?ForbiddenCode  $code
-     * @param  ?string  $message
+     * @param  ForbiddenCode  $code
+     * @param  string  $message
      * @param  ?string  $docUrl
      */
-    public function __construct(?ForbiddenCode $code = null, ?string $message = null, ?string $docUrl = null)
+    public function __construct(ForbiddenCode $code, string $message, ?string $docUrl = null)
     {
         $this->code = $code;
         $this->message = $message;

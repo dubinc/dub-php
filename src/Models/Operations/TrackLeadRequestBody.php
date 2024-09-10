@@ -41,7 +41,7 @@ class TrackLeadRequestBody
      * @var ?string $customerName
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $customerName = null;
 
     /**
@@ -50,7 +50,7 @@ class TrackLeadRequestBody
      * @var ?string $customerEmail
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $customerEmail = null;
 
     /**
@@ -59,7 +59,7 @@ class TrackLeadRequestBody
      * @var ?string $customerAvatar
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $customerAvatar = null;
 
     /**
@@ -69,19 +69,19 @@ class TrackLeadRequestBody
      */
     #[\JMS\Serializer\Annotation\SerializedName('metadata')]
     #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?array $metadata = null;
 
     /**
-     * @param  ?string  $clickId
-     * @param  ?string  $eventName
-     * @param  ?string  $customerId
+     * @param  string  $clickId
+     * @param  string  $eventName
+     * @param  string  $customerId
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(?string $clickId = null, ?string $eventName = null, ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null, ?array $metadata = null)
+    public function __construct(string $clickId, string $eventName, string $customerId, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null, ?array $metadata = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;

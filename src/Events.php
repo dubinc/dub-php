@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class Events
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -140,4 +139,5 @@ class Events
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

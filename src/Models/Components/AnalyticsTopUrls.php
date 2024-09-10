@@ -52,13 +52,13 @@ class AnalyticsTopUrls
     public float $saleAmount;
 
     /**
-     * @param  ?string  $url
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  string  $url
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?string $url = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $url, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->url = $url;
         $this->clicks = $clicks;

@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class Metatags
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -71,4 +70,5 @@ class Metatags
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

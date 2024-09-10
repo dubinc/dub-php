@@ -22,9 +22,9 @@ class InternalServerError
     public InternalServerErrorError $error;
 
     /**
-     * @param  ?InternalServerErrorError  $error
+     * @param  InternalServerErrorError  $error
      */
-    public function __construct(?InternalServerErrorError $error = null)
+    public function __construct(InternalServerErrorError $error)
     {
         $this->error = $error;
     }

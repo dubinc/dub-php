@@ -40,12 +40,12 @@ class RetrieveAnalyticsResponse
     public Components\AnalyticsCount|array|null $oneOf = null;
 
     /**
-     * @param  ?string  $contentType
-     * @param  ?int  $statusCode
-     * @param  ?\Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  string  $contentType
+     * @param  int  $statusCode
+     * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  Components\AnalyticsCount|array<Components\AnalyticsTimeseries>|array<Components\AnalyticsCountries>|array<Components\AnalyticsCities>|array<Components\AnalyticsDevices>|array<Components\AnalyticsBrowsers>|array<Components\AnalyticsOS>|array<Components\AnalyticsReferers>|array<Components\AnalyticsTopLinks>|array<Components\AnalyticsTopUrls>|null  $oneOf
      */
-    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, Components\AnalyticsCount|array|null $oneOf = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, Components\AnalyticsCount|array|null $oneOf = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

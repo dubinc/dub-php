@@ -22,9 +22,9 @@ class NotFound
     public NotFoundError $error;
 
     /**
-     * @param  ?NotFoundError  $error
+     * @param  NotFoundError  $error
      */
-    public function __construct(?NotFoundError $error = null)
+    public function __construct(NotFoundError $error)
     {
         $this->error = $error;
     }

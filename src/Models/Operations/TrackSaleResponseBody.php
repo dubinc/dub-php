@@ -36,11 +36,11 @@ class TrackSaleResponseBody
     public Sale $sale;
 
     /**
-     * @param  ?string  $eventName
-     * @param  ?TrackSaleCustomer  $customer
-     * @param  ?Sale  $sale
+     * @param  string  $eventName
+     * @param  TrackSaleCustomer  $customer
+     * @param  Sale  $sale
      */
-    public function __construct(?string $eventName = null, ?TrackSaleCustomer $customer = null, ?Sale $sale = null)
+    public function __construct(string $eventName, TrackSaleCustomer $customer, Sale $sale)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;

@@ -21,9 +21,9 @@ class Users
     public Role $role;
 
     /**
-     * @param  ?Role  $role
+     * @param  Role  $role
      */
-    public function __construct(?Role $role = null)
+    public function __construct(Role $role)
     {
         $this->role = $role;
     }

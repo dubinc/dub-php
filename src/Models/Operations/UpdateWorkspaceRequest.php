@@ -27,10 +27,10 @@ class UpdateWorkspaceRequest
     public ?UpdateWorkspaceRequestBody $requestBody = null;
 
     /**
-     * @param  ?string  $idOrSlug
+     * @param  string  $idOrSlug
      * @param  ?UpdateWorkspaceRequestBody  $requestBody
      */
-    public function __construct(?string $idOrSlug = null, ?UpdateWorkspaceRequestBody $requestBody = null)
+    public function __construct(string $idOrSlug, ?UpdateWorkspaceRequestBody $requestBody = null)
     {
         $this->idOrSlug = $idOrSlug;
         $this->requestBody = $requestBody;

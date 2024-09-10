@@ -21,9 +21,9 @@ class BulkDeleteLinksResponseBody
     public float $deletedCount;
 
     /**
-     * @param  ?float  $deletedCount
+     * @param  float  $deletedCount
      */
-    public function __construct(?float $deletedCount = null)
+    public function __construct(float $deletedCount)
     {
         $this->deletedCount = $deletedCount;
     }

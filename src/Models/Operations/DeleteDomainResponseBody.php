@@ -21,9 +21,9 @@ class DeleteDomainResponseBody
     public string $slug;
 
     /**
-     * @param  ?string  $slug
+     * @param  string  $slug
      */
-    public function __construct(?string $slug = null)
+    public function __construct(string $slug)
     {
         $this->slug = $slug;
     }

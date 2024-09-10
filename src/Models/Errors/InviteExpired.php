@@ -22,9 +22,9 @@ class InviteExpired
     public InviteExpiredError $error;
 
     /**
-     * @param  ?InviteExpiredError  $error
+     * @param  InviteExpiredError  $error
      */
-    public function __construct(?InviteExpiredError $error = null)
+    public function __construct(InviteExpiredError $error)
     {
         $this->error = $error;
     }

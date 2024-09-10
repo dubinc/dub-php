@@ -19,9 +19,9 @@ class Security
     public string $token;
 
     /**
-     * @param  ?string  $token
+     * @param  string  $token
      */
-    public function __construct(?string $token = null)
+    public function __construct(string $token)
     {
         $this->token = $token;
     }

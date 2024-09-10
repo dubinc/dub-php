@@ -17,7 +17,7 @@ class UpdateTagRequestBody
      * @var ?string $name
      */
     #[\JMS\Serializer\Annotation\SerializedName('name')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $name = null;
 
     /**
@@ -27,7 +27,7 @@ class UpdateTagRequestBody
      */
     #[\JMS\Serializer\Annotation\SerializedName('color')]
     #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateTagColor|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?UpdateTagColor $color = null;
 
     /**
@@ -37,7 +37,7 @@ class UpdateTagRequestBody
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('tag')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tag = null;
 
     /**

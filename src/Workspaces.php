@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class Workspaces
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -269,4 +268,5 @@ class Workspaces
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

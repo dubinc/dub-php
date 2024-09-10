@@ -17,7 +17,7 @@ class UpdateDomainRequestBody
      * @var ?string $slug
      */
     #[\JMS\Serializer\Annotation\SerializedName('slug')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $slug = null;
 
     /**
@@ -26,7 +26,7 @@ class UpdateDomainRequestBody
      * @var ?string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $expiredUrl = null;
 
     /**
@@ -35,7 +35,7 @@ class UpdateDomainRequestBody
      * @var ?bool $archived
      */
     #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?bool $archived = null;
 
     /**
@@ -44,20 +44,20 @@ class UpdateDomainRequestBody
      * @var ?string $placeholder
      */
     #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $placeholder = null;
 
     /**
      * @param  ?string  $slug
-     * @param  ?string  $expiredUrl
      * @param  ?bool  $archived
+     * @param  ?string  $expiredUrl
      * @param  ?string  $placeholder
      */
-    public function __construct(?string $slug = null, ?string $expiredUrl = null, ?bool $archived = null, ?string $placeholder = null)
+    public function __construct(?string $slug = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $placeholder = null)
     {
         $this->slug = $slug;
-        $this->expiredUrl = $expiredUrl;
         $this->archived = $archived;
+        $this->expiredUrl = $expiredUrl;
         $this->placeholder = $placeholder;
     }
 }

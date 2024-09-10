@@ -92,8 +92,8 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 try {
     $request = new Operations\CreateDomainRequestBody(
         slug: 'acme.com',
-        expiredUrl: 'https://acme.com/expired',
         archived: false,
+        expiredUrl: 'https://acme.com/expired',
         placeholder: 'https://dub.co/help/article/what-is-dub',
     );
     $response = $sdk->domains->create($request);
@@ -212,8 +212,8 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 try {
     $requestBody = new Operations\UpdateDomainRequestBody(
         slug: 'acme.com',
-        expiredUrl: 'https://acme.com/expired',
         archived: false,
+        expiredUrl: 'https://acme.com/expired',
         placeholder: 'https://dub.co/help/article/what-is-dub',
     );
     $response = $sdk->domains->update('acme.com', $requestBody);

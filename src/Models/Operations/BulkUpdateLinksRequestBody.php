@@ -29,10 +29,10 @@ class BulkUpdateLinksRequestBody
     public Data $data;
 
     /**
-     * @param  ?array<string>  $linkIds
-     * @param  ?Data  $data
+     * @param  array<string>  $linkIds
+     * @param  Data  $data
      */
-    public function __construct(?array $linkIds = null, ?Data $data = null)
+    public function __construct(array $linkIds, Data $data)
     {
         $this->linkIds = $linkIds;
         $this->data = $data;

@@ -20,32 +20,32 @@ class Customer
 
     /**
      *
-     * @var string $name
+     * @var ?string $name
      */
     #[\JMS\Serializer\Annotation\SerializedName('name')]
-    public string $name;
+    public ?string $name;
 
     /**
      *
-     * @var string $email
+     * @var ?string $email
      */
     #[\JMS\Serializer\Annotation\SerializedName('email')]
-    public string $email;
+    public ?string $email;
 
     /**
      *
-     * @var string $avatar
+     * @var ?string $avatar
      */
     #[\JMS\Serializer\Annotation\SerializedName('avatar')]
-    public string $avatar;
+    public ?string $avatar;
 
     /**
-     * @param  ?string  $id
+     * @param  string  $id
      * @param  ?string  $name
      * @param  ?string  $email
      * @param  ?string  $avatar
      */
-    public function __construct(?string $id = null, ?string $name = null, ?string $email = null, ?string $avatar = null)
+    public function __construct(string $id, ?string $name = null, ?string $email = null, ?string $avatar = null)
     {
         $this->id = $id;
         $this->name = $name;

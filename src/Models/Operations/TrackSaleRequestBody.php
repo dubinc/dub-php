@@ -42,7 +42,7 @@ class TrackSaleRequestBody
      * @var ?string $eventName
      */
     #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $eventName = null;
 
     /**
@@ -51,7 +51,7 @@ class TrackSaleRequestBody
      * @var ?string $invoiceId
      */
     #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $invoiceId = null;
 
     /**
@@ -60,7 +60,7 @@ class TrackSaleRequestBody
      * @var ?string $currency
      */
     #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
 
     /**
@@ -70,26 +70,26 @@ class TrackSaleRequestBody
      */
     #[\JMS\Serializer\Annotation\SerializedName('metadata')]
     #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?array $metadata = null;
 
     /**
-     * @param  ?string  $customerId
-     * @param  ?int  $amount
-     * @param  ?PaymentProcessor  $paymentProcessor
+     * @param  string  $customerId
+     * @param  int  $amount
+     * @param  PaymentProcessor  $paymentProcessor
      * @param  ?string  $eventName
-     * @param  ?string  $invoiceId
      * @param  ?string  $currency
+     * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(?string $customerId = null, ?int $amount = null, ?PaymentProcessor $paymentProcessor = null, ?string $eventName = null, ?string $invoiceId = null, ?string $currency = null, ?array $metadata = null)
+    public function __construct(string $customerId, int $amount, PaymentProcessor $paymentProcessor, ?string $eventName = null, ?string $currency = null, ?string $invoiceId = null, ?array $metadata = null)
     {
         $this->customerId = $customerId;
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
         $this->eventName = $eventName;
-        $this->invoiceId = $invoiceId;
         $this->currency = $currency;
+        $this->invoiceId = $invoiceId;
         $this->metadata = $metadata;
     }
 }
