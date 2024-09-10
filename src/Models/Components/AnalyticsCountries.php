@@ -53,7 +53,7 @@ class AnalyticsCountries
     public float $sales;
 
     /**
-     * The total amount of sales from this country
+     * The total amount of sales from this country, in cents
      *
      * @var float $saleAmount
      */

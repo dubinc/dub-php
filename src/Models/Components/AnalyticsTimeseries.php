@@ -44,7 +44,7 @@ class AnalyticsTimeseries
     public float $sales;
 
     /**
-     * The total amount of sales in the interval
+     * The total amount of sales in the interval, in cents
      *
      * @var float $saleAmount
      */

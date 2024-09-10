@@ -44,7 +44,7 @@ class AnalyticsOS
     public float $sales;
 
     /**
-     * The total amount of sales from this OS
+     * The total amount of sales from this OS, in cents
      *
      * @var float $saleAmount
      */
