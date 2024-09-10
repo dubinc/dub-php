@@ -21,32 +21,32 @@ class TrackCustomerResponseBody
 
     /**
      *
-     * @var string $customerName
+     * @var ?string $customerName
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    public string $customerName;
+    public ?string $customerName;
 
     /**
      *
-     * @var string $customerEmail
+     * @var ?string $customerEmail
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    public string $customerEmail;
+    public ?string $customerEmail;
 
     /**
      *
-     * @var string $customerAvatar
+     * @var ?string $customerAvatar
      */
     #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    public string $customerAvatar;
+    public ?string $customerAvatar;
 
     /**
-     * @param  ?string  $customerId
+     * @param  string  $customerId
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
      */
-    public function __construct(?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
+    public function __construct(string $customerId, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->customerId = $customerId;
         $this->customerName = $customerName;

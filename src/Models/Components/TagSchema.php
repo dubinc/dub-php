@@ -37,11 +37,11 @@ class TagSchema
     public Color $color;
 
     /**
-     * @param  ?string  $id
-     * @param  ?string  $name
-     * @param  ?Color  $color
+     * @param  string  $id
+     * @param  string  $name
+     * @param  Color  $color
      */
-    public function __construct(?string $id = null, ?string $name = null, ?Color $color = null)
+    public function __construct(string $id, string $name, Color $color)
     {
         $this->id = $id;
         $this->name = $name;

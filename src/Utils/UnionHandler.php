@@ -82,10 +82,19 @@ final class UnionHandler implements SubscribingHandlerInterface
                     'params' => ['name' => $innerType, 'params' => []],
                 ];
             } else {
-                $resolvedType = [
-                    'name' => get_class($data),
-                    'params' => [],
-                ];
+                $resolvedType = null;
+                foreach ($type['params'] as $possibleType) {
+                    if ($possibleType['name'] === 'enum' && $possibleType['params'][0]['name'] === get_class($data)) {
+                        $resolvedType = $possibleType;
+                        break;
+                    }
+                }
+                if ($resolvedType === null) {
+                    $resolvedType = [
+                        'name' => get_class($data),
+                        'params' => [],
+                    ];
+                }
             }
 
             return $context->getNavigator()->accept($data, $resolvedType);

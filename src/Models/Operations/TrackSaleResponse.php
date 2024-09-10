@@ -40,12 +40,12 @@ class TrackSaleResponse
     public ?TrackSaleResponseBody $object = null;
 
     /**
-     * @param  ?string  $contentType
-     * @param  ?int  $statusCode
-     * @param  ?\Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  string  $contentType
+     * @param  int  $statusCode
+     * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?TrackSaleResponseBody  $object
      */
-    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, ?TrackSaleResponseBody $object = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?TrackSaleResponseBody $object = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

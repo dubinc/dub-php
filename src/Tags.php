@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class Tags
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -505,4 +504,5 @@ class Tags
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

@@ -22,9 +22,9 @@ class Forbidden
     public ForbiddenError $error;
 
     /**
-     * @param  ?ForbiddenError  $error
+     * @param  ForbiddenError  $error
      */
-    public function __construct(?ForbiddenError $error = null)
+    public function __construct(ForbiddenError $error)
     {
         $this->error = $error;
     }

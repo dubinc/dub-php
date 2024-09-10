@@ -27,10 +27,10 @@ class UpdateTagRequest
     public ?UpdateTagRequestBody $requestBody = null;
 
     /**
-     * @param  ?string  $id
+     * @param  string  $id
      * @param  ?UpdateTagRequestBody  $requestBody
      */
-    public function __construct(?string $id = null, ?UpdateTagRequestBody $requestBody = null)
+    public function __construct(string $id, ?UpdateTagRequestBody $requestBody = null)
     {
         $this->id = $id;
         $this->requestBody = $requestBody;

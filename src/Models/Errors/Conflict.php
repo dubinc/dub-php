@@ -22,9 +22,9 @@ class Conflict
     public ConflictError $error;
 
     /**
-     * @param  ?ConflictError  $error
+     * @param  ConflictError  $error
      */
-    public function __construct(?ConflictError $error = null)
+    public function __construct(ConflictError $error)
     {
         $this->error = $error;
     }

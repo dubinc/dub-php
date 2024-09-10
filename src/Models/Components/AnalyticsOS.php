@@ -52,13 +52,13 @@ class AnalyticsOS
     public float $saleAmount;
 
     /**
-     * @param  ?string  $os
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  string  $os
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?string $os = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $os, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->os = $os;
         $this->clicks = $clicks;

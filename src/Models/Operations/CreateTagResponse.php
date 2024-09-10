@@ -40,12 +40,12 @@ class CreateTagResponse
     public ?Components\TagSchema $tagSchema = null;
 
     /**
-     * @param  ?string  $contentType
-     * @param  ?int  $statusCode
-     * @param  ?\Psr\Http\Message\ResponseInterface  $rawResponse
+     * @param  string  $contentType
+     * @param  int  $statusCode
+     * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?Components\TagSchema  $tagSchema
      */
-    public function __construct(?string $contentType = null, ?int $statusCode = null, ?\Psr\Http\Message\ResponseInterface $rawResponse = null, ?Components\TagSchema $tagSchema = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TagSchema $tagSchema = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

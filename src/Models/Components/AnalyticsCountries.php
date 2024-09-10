@@ -61,14 +61,14 @@ class AnalyticsCountries
     public float $saleAmount;
 
     /**
-     * @param  ?Country  $country
-     * @param  ?City  $city
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  Country  $country
+     * @param  City  $city
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?Country $country = null, ?City $city = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(Country $country, City $city, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->country = $country;
         $this->city = $city;

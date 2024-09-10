@@ -29,10 +29,10 @@ class TrackLeadResponseBody
     public Customer $customer;
 
     /**
-     * @param  ?Click  $click
-     * @param  ?Customer  $customer
+     * @param  Click  $click
+     * @param  Customer  $customer
      */
-    public function __construct(?Click $click = null, ?Customer $customer = null)
+    public function __construct(Click $click, Customer $customer)
     {
         $this->click = $click;
         $this->customer = $customer;

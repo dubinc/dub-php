@@ -52,13 +52,13 @@ class AnalyticsReferers
     public float $saleAmount;
 
     /**
-     * @param  ?string  $referer
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  string  $referer
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?string $referer = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $referer, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->referer = $referer;
         $this->clicks = $clicks;

@@ -24,7 +24,7 @@ class ClickEvent
      * @var ?string $timestamp
      */
     #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $timestamp = null;
 
     /**
@@ -161,25 +161,25 @@ class ClickEvent
     public string $ip;
 
     /**
-     * @param  ?Event  $event
-     * @param  ?Click  $click
-     * @param  ?Link  $link
-     * @param  ?string  $clickId
-     * @param  ?string  $linkId
-     * @param  ?string  $domain
-     * @param  ?string  $key
-     * @param  ?string  $url
-     * @param  ?string  $continent
-     * @param  ?string  $country
-     * @param  ?string  $city
-     * @param  ?string  $device
-     * @param  ?string  $browser
-     * @param  ?string  $os
-     * @param  ?float  $qr
-     * @param  ?string  $ip
+     * @param  Event  $event
+     * @param  Click  $click
+     * @param  Link  $link
+     * @param  string  $clickId
+     * @param  string  $linkId
+     * @param  string  $domain
+     * @param  string  $key
+     * @param  string  $url
+     * @param  string  $continent
+     * @param  string  $country
+     * @param  string  $city
+     * @param  string  $device
+     * @param  string  $browser
+     * @param  string  $os
+     * @param  float  $qr
+     * @param  string  $ip
      * @param  ?string  $timestamp
      */
-    public function __construct(?Event $event = null, ?Click $click = null, ?Link $link = null, ?string $clickId = null, ?string $linkId = null, ?string $domain = null, ?string $key = null, ?string $url = null, ?string $continent = null, ?string $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?float $qr = null, ?string $ip = null, ?string $timestamp = null)
+    public function __construct(Event $event, Click $click, Link $link, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
     {
         $this->event = $event;
         $this->click = $click;

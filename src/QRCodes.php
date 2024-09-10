@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class QRCodes
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -138,4 +137,5 @@ class QRCodes
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

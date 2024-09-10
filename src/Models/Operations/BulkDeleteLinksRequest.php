@@ -20,9 +20,9 @@ class BulkDeleteLinksRequest
     public array $linkIds;
 
     /**
-     * @param  ?array<string>  $linkIds
+     * @param  array<string>  $linkIds
      */
-    public function __construct(?array $linkIds = null)
+    public function __construct(array $linkIds)
     {
         $this->linkIds = $linkIds;
     }

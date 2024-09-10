@@ -102,8 +102,8 @@ try {
         amount: 996500,
         paymentProcessor: Operations\PaymentProcessor::Shopify,
         eventName: 'Purchase',
-        invoiceId: '<value>',
         currency: 'European Unit of Account 17(E.U.A.-17)',
+        invoiceId: '<value>',
         metadata: [
             'Stage' => '<value>',
         ],

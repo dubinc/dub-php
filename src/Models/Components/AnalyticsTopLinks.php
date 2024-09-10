@@ -101,19 +101,19 @@ class AnalyticsTopLinks
     public float $saleAmount;
 
     /**
-     * @param  ?string  $link
-     * @param  ?string  $id
-     * @param  ?string  $domain
-     * @param  ?string  $key
-     * @param  ?string  $shortLink
-     * @param  ?string  $url
-     * @param  ?string  $createdAt
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  string  $link
+     * @param  string  $id
+     * @param  string  $domain
+     * @param  string  $key
+     * @param  string  $shortLink
+     * @param  string  $url
+     * @param  string  $createdAt
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?string $link = null, ?string $id = null, ?string $domain = null, ?string $key = null, ?string $shortLink = null, ?string $url = null, ?string $createdAt = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->link = $link;
         $this->id = $id;

@@ -22,9 +22,9 @@ class BadRequest
     public Error $error;
 
     /**
-     * @param  ?Error  $error
+     * @param  Error  $error
      */
-    public function __construct(?Error $error = null)
+    public function __construct(Error $error)
     {
         $this->error = $error;
     }

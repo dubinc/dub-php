@@ -34,15 +34,15 @@ class UnprocessableEntityError
      * @var ?string $docUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('doc_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $docUrl = null;
 
     /**
-     * @param  ?UnprocessableEntityCode  $code
-     * @param  ?string  $message
+     * @param  UnprocessableEntityCode  $code
+     * @param  string  $message
      * @param  ?string  $docUrl
      */
-    public function __construct(?UnprocessableEntityCode $code = null, ?string $message = null, ?string $docUrl = null)
+    public function __construct(UnprocessableEntityCode $code, string $message, ?string $docUrl = null)
     {
         $this->code = $code;
         $this->message = $message;

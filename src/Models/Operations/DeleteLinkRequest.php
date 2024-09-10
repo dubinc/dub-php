@@ -20,9 +20,9 @@ class DeleteLinkRequest
     public string $linkId;
 
     /**
-     * @param  ?string  $linkId
+     * @param  string  $linkId
      */
-    public function __construct(?string $linkId = null)
+    public function __construct(string $linkId)
     {
         $this->linkId = $linkId;
     }

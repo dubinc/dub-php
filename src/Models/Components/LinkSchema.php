@@ -38,10 +38,10 @@ class LinkSchema
     /**
      * This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
      *
-     * @var string $externalId
+     * @var ?string $externalId
      */
     #[\JMS\Serializer\Annotation\SerializedName('externalId')]
-    public string $externalId;
+    public ?string $externalId;
 
     /**
      * The destination URL of the short link.
@@ -70,26 +70,26 @@ class LinkSchema
     /**
      * The date and time when the short link will expire in ISO-8601 format.
      *
-     * @var string $expiresAt
+     * @var ?string $expiresAt
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
-    public string $expiresAt;
+    public ?string $expiresAt;
 
     /**
      * The URL to redirect to when the short link has expired.
      *
-     * @var string $expiredUrl
+     * @var ?string $expiredUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    public string $expiredUrl;
+    public ?string $expiredUrl;
 
     /**
      * The password required to access the destination URL of the short link.
      *
-     * @var string $password
+     * @var ?string $password
      */
     #[\JMS\Serializer\Annotation\SerializedName('password')]
-    public string $password;
+    public ?string $password;
 
     /**
      * Whether the short link uses Custom Social Media Cards feature.
@@ -102,34 +102,34 @@ class LinkSchema
     /**
      * The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
      *
-     * @var string $title
+     * @var ?string $title
      */
     #[\JMS\Serializer\Annotation\SerializedName('title')]
-    public string $title;
+    public ?string $title;
 
     /**
      * The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
      *
-     * @var string $description
+     * @var ?string $description
      */
     #[\JMS\Serializer\Annotation\SerializedName('description')]
-    public string $description;
+    public ?string $description;
 
     /**
      * The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
      *
-     * @var string $image
+     * @var ?string $image
      */
     #[\JMS\Serializer\Annotation\SerializedName('image')]
-    public string $image;
+    public ?string $image;
 
     /**
      * The custom link preview video (og:video). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
      *
-     * @var string $video
+     * @var ?string $video
      */
     #[\JMS\Serializer\Annotation\SerializedName('video')]
-    public string $video;
+    public ?string $video;
 
     /**
      * Whether the short link uses link cloaking.
@@ -150,27 +150,27 @@ class LinkSchema
     /**
      * The iOS destination URL for the short link for iOS device targeting.
      *
-     * @var string $ios
+     * @var ?string $ios
      */
     #[\JMS\Serializer\Annotation\SerializedName('ios')]
-    public string $ios;
+    public ?string $ios;
 
     /**
      * The Android destination URL for the short link for Android device targeting.
      *
-     * @var string $android
+     * @var ?string $android
      */
     #[\JMS\Serializer\Annotation\SerializedName('android')]
-    public string $android;
+    public ?string $android;
 
     /**
      * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
      *
-     * @var Geo $geo
+     * @var ?Geo $geo
      */
     #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Geo')]
-    public Geo $geo;
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Geo|null')]
+    public ?Geo $geo;
 
     /**
      * Whether the short link's stats are publicly accessible.
@@ -183,28 +183,28 @@ class LinkSchema
     /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
      *
-     * @var string $tagId
+     * @var ?string $tagId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('tagId')]
-    public string $tagId;
+    public ?string $tagId;
 
     /**
      * The tags assigned to the short link.
      *
-     * @var array<TagSchema> $tags
+     * @var ?array<TagSchema> $tags
      */
     #[\JMS\Serializer\Annotation\SerializedName('tags')]
-    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\TagSchema>')]
-    public array $tags;
+    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\TagSchema>|null')]
+    public ?array $tags;
 
     /**
      * The comments for the short link.
      *
-     * @var string $comments
+     * @var ?string $comments
      */
     #[\JMS\Serializer\Annotation\SerializedName('comments')]
-    public string $comments;
+    public ?string $comments;
 
     /**
      * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
@@ -225,42 +225,42 @@ class LinkSchema
     /**
      * The UTM source of the short link.
      *
-     * @var string $utmSource
+     * @var ?string $utmSource
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_source')]
-    public string $utmSource;
+    public ?string $utmSource;
 
     /**
      * The UTM medium of the short link.
      *
-     * @var string $utmMedium
+     * @var ?string $utmMedium
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
-    public string $utmMedium;
+    public ?string $utmMedium;
 
     /**
      * The UTM campaign of the short link.
      *
-     * @var string $utmCampaign
+     * @var ?string $utmCampaign
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
-    public string $utmCampaign;
+    public ?string $utmCampaign;
 
     /**
      * The UTM term of the short link.
      *
-     * @var string $utmTerm
+     * @var ?string $utmTerm
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_term')]
-    public string $utmTerm;
+    public ?string $utmTerm;
 
     /**
      * The UTM content of the short link.
      *
-     * @var string $utmContent
+     * @var ?string $utmContent
      */
     #[\JMS\Serializer\Annotation\SerializedName('utm_content')]
-    public string $utmContent;
+    public ?string $utmContent;
 
     /**
      * The user ID of the creator of the short link.
@@ -289,10 +289,10 @@ class LinkSchema
     /**
      * The date and time when the short link was last clicked.
      *
-     * @var string $lastClicked
+     * @var ?string $lastClicked
      */
     #[\JMS\Serializer\Annotation\SerializedName('lastClicked')]
-    public string $lastClicked;
+    public ?string $lastClicked;
 
     /**
      * [BETA]: The number of leads the short links has generated.
@@ -344,90 +344,90 @@ class LinkSchema
     public string $projectId;
 
     /**
-     * @param  ?string  $id
-     * @param  ?string  $domain
-     * @param  ?string  $key
+     * @param  string  $id
+     * @param  string  $domain
+     * @param  string  $key
+     * @param  string  $url
+     * @param  bool  $trackConversion
+     * @param  bool  $archived
+     * @param  bool  $proxy
+     * @param  bool  $rewrite
+     * @param  bool  $doIndex
+     * @param  bool  $publicStats
+     * @param  string  $shortLink
+     * @param  string  $qrCode
+     * @param  string  $userId
+     * @param  string  $workspaceId
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
+     * @param  string  $createdAt
+     * @param  string  $updatedAt
+     * @param  string  $projectId
      * @param  ?string  $externalId
-     * @param  ?string  $url
-     * @param  ?bool  $trackConversion
-     * @param  ?bool  $archived
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
-     * @param  ?bool  $proxy
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $image
      * @param  ?string  $video
-     * @param  ?bool  $rewrite
-     * @param  ?bool  $doIndex
      * @param  ?string  $ios
      * @param  ?string  $android
      * @param  ?Geo  $geo
-     * @param  ?bool  $publicStats
      * @param  ?string  $tagId
      * @param  ?array<TagSchema>  $tags
      * @param  ?string  $comments
-     * @param  ?string  $shortLink
-     * @param  ?string  $qrCode
      * @param  ?string  $utmSource
      * @param  ?string  $utmMedium
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
-     * @param  ?string  $userId
-     * @param  ?string  $workspaceId
-     * @param  ?float  $clicks
      * @param  ?string  $lastClicked
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
-     * @param  ?string  $createdAt
-     * @param  ?string  $updatedAt
-     * @param  ?string  $projectId
      */
-    public function __construct(?string $id = null, ?string $domain = null, ?string $key = null, ?string $externalId = null, ?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $shortLink = null, ?string $qrCode = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $workspaceId = null, ?float $clicks = null, ?string $lastClicked = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null, ?string $createdAt = null, ?string $updatedAt = null, ?string $projectId = null)
+    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, string $shortLink, string $qrCode, string $userId, string $workspaceId, float $clicks, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
-        $this->externalId = $externalId;
         $this->url = $url;
         $this->trackConversion = $trackConversion;
         $this->archived = $archived;
-        $this->expiresAt = $expiresAt;
-        $this->expiredUrl = $expiredUrl;
-        $this->password = $password;
         $this->proxy = $proxy;
-        $this->title = $title;
-        $this->description = $description;
-        $this->image = $image;
-        $this->video = $video;
         $this->rewrite = $rewrite;
         $this->doIndex = $doIndex;
-        $this->ios = $ios;
-        $this->android = $android;
-        $this->geo = $geo;
         $this->publicStats = $publicStats;
-        $this->tagId = $tagId;
-        $this->tags = $tags;
-        $this->comments = $comments;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
-        $this->utmSource = $utmSource;
-        $this->utmMedium = $utmMedium;
-        $this->utmCampaign = $utmCampaign;
-        $this->utmTerm = $utmTerm;
-        $this->utmContent = $utmContent;
         $this->userId = $userId;
         $this->workspaceId = $workspaceId;
         $this->clicks = $clicks;
-        $this->lastClicked = $lastClicked;
         $this->leads = $leads;
         $this->sales = $sales;
         $this->saleAmount = $saleAmount;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
+        $this->externalId = $externalId;
+        $this->expiresAt = $expiresAt;
+        $this->expiredUrl = $expiredUrl;
+        $this->password = $password;
+        $this->title = $title;
+        $this->description = $description;
+        $this->image = $image;
+        $this->video = $video;
+        $this->ios = $ios;
+        $this->android = $android;
+        $this->geo = $geo;
+        $this->tagId = $tagId;
+        $this->tags = $tags;
+        $this->comments = $comments;
+        $this->utmSource = $utmSource;
+        $this->utmMedium = $utmMedium;
+        $this->utmCampaign = $utmCampaign;
+        $this->utmTerm = $utmTerm;
+        $this->utmContent = $utmContent;
+        $this->lastClicked = $lastClicked;
     }
 }

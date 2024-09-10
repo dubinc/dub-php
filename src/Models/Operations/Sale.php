@@ -34,28 +34,28 @@ class Sale
 
     /**
      *
-     * @var string $invoiceId
+     * @var ?string $invoiceId
      */
     #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
-    public string $invoiceId;
+    public ?string $invoiceId;
 
     /**
      * $metadata
      *
-     * @var array<string, mixed> $metadata
+     * @var ?array<string, mixed> $metadata
      */
     #[\JMS\Serializer\Annotation\SerializedName('metadata')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    public array $metadata;
+    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $metadata;
 
     /**
-     * @param  ?float  $amount
-     * @param  ?string  $currency
-     * @param  ?string  $paymentProcessor
+     * @param  float  $amount
+     * @param  string  $currency
+     * @param  string  $paymentProcessor
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(?float $amount = null, ?string $currency = null, ?string $paymentProcessor = null, ?string $invoiceId = null, ?array $metadata = null)
+    public function __construct(float $amount, string $currency, string $paymentProcessor, ?string $invoiceId = null, ?array $metadata = null)
     {
         $this->amount = $amount;
         $this->currency = $currency;

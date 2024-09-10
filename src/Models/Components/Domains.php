@@ -36,11 +36,11 @@ class Domains
     public bool $verified;
 
     /**
-     * @param  ?string  $slug
-     * @param  ?bool  $primary
-     * @param  ?bool  $verified
+     * @param  string  $slug
+     * @param  bool  $primary
+     * @param  bool  $verified
      */
-    public function __construct(?string $slug = null, ?bool $primary = null, ?bool $verified = null)
+    public function __construct(string $slug, bool $primary, bool $verified)
     {
         $this->slug = $slug;
         $this->primary = $primary;

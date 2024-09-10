@@ -52,13 +52,13 @@ class AnalyticsBrowsers
     public float $saleAmount;
 
     /**
-     * @param  ?string  $browser
-     * @param  ?float  $clicks
-     * @param  ?float  $leads
-     * @param  ?float  $sales
-     * @param  ?float  $saleAmount
+     * @param  string  $browser
+     * @param  float  $clicks
+     * @param  float  $leads
+     * @param  float  $sales
+     * @param  float  $saleAmount
      */
-    public function __construct(?string $browser = null, ?float $clicks = null, ?float $leads = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $browser, float $clicks, float $leads, float $sales, float $saleAmount)
     {
         $this->browser = $browser;
         $this->clicks = $clicks;

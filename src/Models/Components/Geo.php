@@ -17,7 +17,7 @@ class Geo
      * @var ?string $af
      */
     #[\JMS\Serializer\Annotation\SerializedName('AF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $af = null;
 
     /**
@@ -25,7 +25,7 @@ class Geo
      * @var ?string $al
      */
     #[\JMS\Serializer\Annotation\SerializedName('AL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $al = null;
 
     /**
@@ -33,7 +33,7 @@ class Geo
      * @var ?string $dz
      */
     #[\JMS\Serializer\Annotation\SerializedName('DZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $dz = null;
 
     /**
@@ -41,7 +41,7 @@ class Geo
      * @var ?string $as
      */
     #[\JMS\Serializer\Annotation\SerializedName('AS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $as = null;
 
     /**
@@ -49,7 +49,7 @@ class Geo
      * @var ?string $ad
      */
     #[\JMS\Serializer\Annotation\SerializedName('AD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ad = null;
 
     /**
@@ -57,7 +57,7 @@ class Geo
      * @var ?string $ao
      */
     #[\JMS\Serializer\Annotation\SerializedName('AO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ao = null;
 
     /**
@@ -65,7 +65,7 @@ class Geo
      * @var ?string $ai
      */
     #[\JMS\Serializer\Annotation\SerializedName('AI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ai = null;
 
     /**
@@ -73,7 +73,7 @@ class Geo
      * @var ?string $aq
      */
     #[\JMS\Serializer\Annotation\SerializedName('AQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $aq = null;
 
     /**
@@ -81,7 +81,7 @@ class Geo
      * @var ?string $ag
      */
     #[\JMS\Serializer\Annotation\SerializedName('AG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ag = null;
 
     /**
@@ -89,7 +89,7 @@ class Geo
      * @var ?string $ar
      */
     #[\JMS\Serializer\Annotation\SerializedName('AR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ar = null;
 
     /**
@@ -97,7 +97,7 @@ class Geo
      * @var ?string $am
      */
     #[\JMS\Serializer\Annotation\SerializedName('AM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $am = null;
 
     /**
@@ -105,7 +105,7 @@ class Geo
      * @var ?string $aw
      */
     #[\JMS\Serializer\Annotation\SerializedName('AW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $aw = null;
 
     /**
@@ -113,7 +113,7 @@ class Geo
      * @var ?string $au
      */
     #[\JMS\Serializer\Annotation\SerializedName('AU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $au = null;
 
     /**
@@ -121,7 +121,7 @@ class Geo
      * @var ?string $at
      */
     #[\JMS\Serializer\Annotation\SerializedName('AT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $at = null;
 
     /**
@@ -129,7 +129,7 @@ class Geo
      * @var ?string $az
      */
     #[\JMS\Serializer\Annotation\SerializedName('AZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $az = null;
 
     /**
@@ -137,7 +137,7 @@ class Geo
      * @var ?string $bs
      */
     #[\JMS\Serializer\Annotation\SerializedName('BS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bs = null;
 
     /**
@@ -145,7 +145,7 @@ class Geo
      * @var ?string $bh
      */
     #[\JMS\Serializer\Annotation\SerializedName('BH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bh = null;
 
     /**
@@ -153,7 +153,7 @@ class Geo
      * @var ?string $bd
      */
     #[\JMS\Serializer\Annotation\SerializedName('BD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bd = null;
 
     /**
@@ -161,7 +161,7 @@ class Geo
      * @var ?string $bb
      */
     #[\JMS\Serializer\Annotation\SerializedName('BB')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bb = null;
 
     /**
@@ -169,7 +169,7 @@ class Geo
      * @var ?string $by
      */
     #[\JMS\Serializer\Annotation\SerializedName('BY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $by = null;
 
     /**
@@ -177,7 +177,7 @@ class Geo
      * @var ?string $be
      */
     #[\JMS\Serializer\Annotation\SerializedName('BE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $be = null;
 
     /**
@@ -185,7 +185,7 @@ class Geo
      * @var ?string $bz
      */
     #[\JMS\Serializer\Annotation\SerializedName('BZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bz = null;
 
     /**
@@ -193,7 +193,7 @@ class Geo
      * @var ?string $bj
      */
     #[\JMS\Serializer\Annotation\SerializedName('BJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bj = null;
 
     /**
@@ -201,7 +201,7 @@ class Geo
      * @var ?string $bm
      */
     #[\JMS\Serializer\Annotation\SerializedName('BM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bm = null;
 
     /**
@@ -209,7 +209,7 @@ class Geo
      * @var ?string $bt
      */
     #[\JMS\Serializer\Annotation\SerializedName('BT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bt = null;
 
     /**
@@ -217,7 +217,7 @@ class Geo
      * @var ?string $bo
      */
     #[\JMS\Serializer\Annotation\SerializedName('BO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bo = null;
 
     /**
@@ -225,7 +225,7 @@ class Geo
      * @var ?string $ba
      */
     #[\JMS\Serializer\Annotation\SerializedName('BA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ba = null;
 
     /**
@@ -233,7 +233,7 @@ class Geo
      * @var ?string $bw
      */
     #[\JMS\Serializer\Annotation\SerializedName('BW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bw = null;
 
     /**
@@ -241,7 +241,7 @@ class Geo
      * @var ?string $bv
      */
     #[\JMS\Serializer\Annotation\SerializedName('BV')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bv = null;
 
     /**
@@ -249,7 +249,7 @@ class Geo
      * @var ?string $br
      */
     #[\JMS\Serializer\Annotation\SerializedName('BR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $br = null;
 
     /**
@@ -257,7 +257,7 @@ class Geo
      * @var ?string $io
      */
     #[\JMS\Serializer\Annotation\SerializedName('IO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $io = null;
 
     /**
@@ -265,7 +265,7 @@ class Geo
      * @var ?string $bn
      */
     #[\JMS\Serializer\Annotation\SerializedName('BN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bn = null;
 
     /**
@@ -273,7 +273,7 @@ class Geo
      * @var ?string $bg
      */
     #[\JMS\Serializer\Annotation\SerializedName('BG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bg = null;
 
     /**
@@ -281,7 +281,7 @@ class Geo
      * @var ?string $bf
      */
     #[\JMS\Serializer\Annotation\SerializedName('BF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bf = null;
 
     /**
@@ -289,7 +289,7 @@ class Geo
      * @var ?string $bi
      */
     #[\JMS\Serializer\Annotation\SerializedName('BI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bi = null;
 
     /**
@@ -297,7 +297,7 @@ class Geo
      * @var ?string $kh
      */
     #[\JMS\Serializer\Annotation\SerializedName('KH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kh = null;
 
     /**
@@ -305,7 +305,7 @@ class Geo
      * @var ?string $cm
      */
     #[\JMS\Serializer\Annotation\SerializedName('CM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cm = null;
 
     /**
@@ -313,7 +313,7 @@ class Geo
      * @var ?string $ca
      */
     #[\JMS\Serializer\Annotation\SerializedName('CA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ca = null;
 
     /**
@@ -321,7 +321,7 @@ class Geo
      * @var ?string $cv
      */
     #[\JMS\Serializer\Annotation\SerializedName('CV')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cv = null;
 
     /**
@@ -329,7 +329,7 @@ class Geo
      * @var ?string $ky
      */
     #[\JMS\Serializer\Annotation\SerializedName('KY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ky = null;
 
     /**
@@ -337,7 +337,7 @@ class Geo
      * @var ?string $cf
      */
     #[\JMS\Serializer\Annotation\SerializedName('CF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cf = null;
 
     /**
@@ -345,7 +345,7 @@ class Geo
      * @var ?string $td
      */
     #[\JMS\Serializer\Annotation\SerializedName('TD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $td = null;
 
     /**
@@ -353,7 +353,7 @@ class Geo
      * @var ?string $cl
      */
     #[\JMS\Serializer\Annotation\SerializedName('CL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cl = null;
 
     /**
@@ -361,7 +361,7 @@ class Geo
      * @var ?string $cn
      */
     #[\JMS\Serializer\Annotation\SerializedName('CN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cn = null;
 
     /**
@@ -369,7 +369,7 @@ class Geo
      * @var ?string $cx
      */
     #[\JMS\Serializer\Annotation\SerializedName('CX')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cx = null;
 
     /**
@@ -377,7 +377,7 @@ class Geo
      * @var ?string $cc
      */
     #[\JMS\Serializer\Annotation\SerializedName('CC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cc = null;
 
     /**
@@ -385,7 +385,7 @@ class Geo
      * @var ?string $co
      */
     #[\JMS\Serializer\Annotation\SerializedName('CO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $co = null;
 
     /**
@@ -393,7 +393,7 @@ class Geo
      * @var ?string $km
      */
     #[\JMS\Serializer\Annotation\SerializedName('KM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $km = null;
 
     /**
@@ -401,7 +401,7 @@ class Geo
      * @var ?string $cg
      */
     #[\JMS\Serializer\Annotation\SerializedName('CG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cg = null;
 
     /**
@@ -409,7 +409,7 @@ class Geo
      * @var ?string $cd
      */
     #[\JMS\Serializer\Annotation\SerializedName('CD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cd = null;
 
     /**
@@ -417,7 +417,7 @@ class Geo
      * @var ?string $ck
      */
     #[\JMS\Serializer\Annotation\SerializedName('CK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ck = null;
 
     /**
@@ -425,7 +425,7 @@ class Geo
      * @var ?string $cr
      */
     #[\JMS\Serializer\Annotation\SerializedName('CR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cr = null;
 
     /**
@@ -433,7 +433,7 @@ class Geo
      * @var ?string $ci
      */
     #[\JMS\Serializer\Annotation\SerializedName('CI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ci = null;
 
     /**
@@ -441,7 +441,7 @@ class Geo
      * @var ?string $hr
      */
     #[\JMS\Serializer\Annotation\SerializedName('HR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $hr = null;
 
     /**
@@ -449,7 +449,7 @@ class Geo
      * @var ?string $cu
      */
     #[\JMS\Serializer\Annotation\SerializedName('CU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cu = null;
 
     /**
@@ -457,7 +457,7 @@ class Geo
      * @var ?string $cy
      */
     #[\JMS\Serializer\Annotation\SerializedName('CY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cy = null;
 
     /**
@@ -465,7 +465,7 @@ class Geo
      * @var ?string $cz
      */
     #[\JMS\Serializer\Annotation\SerializedName('CZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cz = null;
 
     /**
@@ -473,7 +473,7 @@ class Geo
      * @var ?string $dk
      */
     #[\JMS\Serializer\Annotation\SerializedName('DK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $dk = null;
 
     /**
@@ -481,7 +481,7 @@ class Geo
      * @var ?string $dj
      */
     #[\JMS\Serializer\Annotation\SerializedName('DJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $dj = null;
 
     /**
@@ -489,7 +489,7 @@ class Geo
      * @var ?string $dm
      */
     #[\JMS\Serializer\Annotation\SerializedName('DM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $dm = null;
 
     /**
@@ -497,7 +497,7 @@ class Geo
      * @var ?string $do
      */
     #[\JMS\Serializer\Annotation\SerializedName('DO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $do = null;
 
     /**
@@ -505,7 +505,7 @@ class Geo
      * @var ?string $ec
      */
     #[\JMS\Serializer\Annotation\SerializedName('EC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ec = null;
 
     /**
@@ -513,7 +513,7 @@ class Geo
      * @var ?string $eg
      */
     #[\JMS\Serializer\Annotation\SerializedName('EG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $eg = null;
 
     /**
@@ -521,7 +521,7 @@ class Geo
      * @var ?string $sv
      */
     #[\JMS\Serializer\Annotation\SerializedName('SV')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sv = null;
 
     /**
@@ -529,7 +529,7 @@ class Geo
      * @var ?string $gq
      */
     #[\JMS\Serializer\Annotation\SerializedName('GQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gq = null;
 
     /**
@@ -537,7 +537,7 @@ class Geo
      * @var ?string $er
      */
     #[\JMS\Serializer\Annotation\SerializedName('ER')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $er = null;
 
     /**
@@ -545,7 +545,7 @@ class Geo
      * @var ?string $ee
      */
     #[\JMS\Serializer\Annotation\SerializedName('EE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ee = null;
 
     /**
@@ -553,7 +553,7 @@ class Geo
      * @var ?string $et
      */
     #[\JMS\Serializer\Annotation\SerializedName('ET')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $et = null;
 
     /**
@@ -561,7 +561,7 @@ class Geo
      * @var ?string $fk
      */
     #[\JMS\Serializer\Annotation\SerializedName('FK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $fk = null;
 
     /**
@@ -569,7 +569,7 @@ class Geo
      * @var ?string $fo
      */
     #[\JMS\Serializer\Annotation\SerializedName('FO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $fo = null;
 
     /**
@@ -577,7 +577,7 @@ class Geo
      * @var ?string $fj
      */
     #[\JMS\Serializer\Annotation\SerializedName('FJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $fj = null;
 
     /**
@@ -585,7 +585,7 @@ class Geo
      * @var ?string $fi
      */
     #[\JMS\Serializer\Annotation\SerializedName('FI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $fi = null;
 
     /**
@@ -593,7 +593,7 @@ class Geo
      * @var ?string $fr
      */
     #[\JMS\Serializer\Annotation\SerializedName('FR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $fr = null;
 
     /**
@@ -601,7 +601,7 @@ class Geo
      * @var ?string $gf
      */
     #[\JMS\Serializer\Annotation\SerializedName('GF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gf = null;
 
     /**
@@ -609,7 +609,7 @@ class Geo
      * @var ?string $pf
      */
     #[\JMS\Serializer\Annotation\SerializedName('PF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pf = null;
 
     /**
@@ -617,7 +617,7 @@ class Geo
      * @var ?string $tf
      */
     #[\JMS\Serializer\Annotation\SerializedName('TF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tf = null;
 
     /**
@@ -625,7 +625,7 @@ class Geo
      * @var ?string $ga
      */
     #[\JMS\Serializer\Annotation\SerializedName('GA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ga = null;
 
     /**
@@ -633,7 +633,7 @@ class Geo
      * @var ?string $gm
      */
     #[\JMS\Serializer\Annotation\SerializedName('GM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gm = null;
 
     /**
@@ -641,7 +641,7 @@ class Geo
      * @var ?string $ge
      */
     #[\JMS\Serializer\Annotation\SerializedName('GE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ge = null;
 
     /**
@@ -649,7 +649,7 @@ class Geo
      * @var ?string $de
      */
     #[\JMS\Serializer\Annotation\SerializedName('DE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $de = null;
 
     /**
@@ -657,7 +657,7 @@ class Geo
      * @var ?string $gh
      */
     #[\JMS\Serializer\Annotation\SerializedName('GH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gh = null;
 
     /**
@@ -665,7 +665,7 @@ class Geo
      * @var ?string $gi
      */
     #[\JMS\Serializer\Annotation\SerializedName('GI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gi = null;
 
     /**
@@ -673,7 +673,7 @@ class Geo
      * @var ?string $gr
      */
     #[\JMS\Serializer\Annotation\SerializedName('GR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gr = null;
 
     /**
@@ -681,7 +681,7 @@ class Geo
      * @var ?string $gl
      */
     #[\JMS\Serializer\Annotation\SerializedName('GL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gl = null;
 
     /**
@@ -689,7 +689,7 @@ class Geo
      * @var ?string $gd
      */
     #[\JMS\Serializer\Annotation\SerializedName('GD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gd = null;
 
     /**
@@ -697,7 +697,7 @@ class Geo
      * @var ?string $gp
      */
     #[\JMS\Serializer\Annotation\SerializedName('GP')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gp = null;
 
     /**
@@ -705,7 +705,7 @@ class Geo
      * @var ?string $gu
      */
     #[\JMS\Serializer\Annotation\SerializedName('GU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gu = null;
 
     /**
@@ -713,7 +713,7 @@ class Geo
      * @var ?string $gt
      */
     #[\JMS\Serializer\Annotation\SerializedName('GT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gt = null;
 
     /**
@@ -721,7 +721,7 @@ class Geo
      * @var ?string $gn
      */
     #[\JMS\Serializer\Annotation\SerializedName('GN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gn = null;
 
     /**
@@ -729,7 +729,7 @@ class Geo
      * @var ?string $gw
      */
     #[\JMS\Serializer\Annotation\SerializedName('GW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gw = null;
 
     /**
@@ -737,7 +737,7 @@ class Geo
      * @var ?string $gy
      */
     #[\JMS\Serializer\Annotation\SerializedName('GY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gy = null;
 
     /**
@@ -745,7 +745,7 @@ class Geo
      * @var ?string $ht
      */
     #[\JMS\Serializer\Annotation\SerializedName('HT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ht = null;
 
     /**
@@ -753,7 +753,7 @@ class Geo
      * @var ?string $hm
      */
     #[\JMS\Serializer\Annotation\SerializedName('HM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $hm = null;
 
     /**
@@ -761,7 +761,7 @@ class Geo
      * @var ?string $va
      */
     #[\JMS\Serializer\Annotation\SerializedName('VA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $va = null;
 
     /**
@@ -769,7 +769,7 @@ class Geo
      * @var ?string $hn
      */
     #[\JMS\Serializer\Annotation\SerializedName('HN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $hn = null;
 
     /**
@@ -777,7 +777,7 @@ class Geo
      * @var ?string $hk
      */
     #[\JMS\Serializer\Annotation\SerializedName('HK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $hk = null;
 
     /**
@@ -785,7 +785,7 @@ class Geo
      * @var ?string $hu
      */
     #[\JMS\Serializer\Annotation\SerializedName('HU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $hu = null;
 
     /**
@@ -793,7 +793,7 @@ class Geo
      * @var ?string $is
      */
     #[\JMS\Serializer\Annotation\SerializedName('IS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $is = null;
 
     /**
@@ -801,7 +801,7 @@ class Geo
      * @var ?string $in
      */
     #[\JMS\Serializer\Annotation\SerializedName('IN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $in = null;
 
     /**
@@ -809,7 +809,7 @@ class Geo
      * @var ?string $id
      */
     #[\JMS\Serializer\Annotation\SerializedName('ID')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
@@ -817,7 +817,7 @@ class Geo
      * @var ?string $ir
      */
     #[\JMS\Serializer\Annotation\SerializedName('IR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ir = null;
 
     /**
@@ -825,7 +825,7 @@ class Geo
      * @var ?string $iq
      */
     #[\JMS\Serializer\Annotation\SerializedName('IQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $iq = null;
 
     /**
@@ -833,7 +833,7 @@ class Geo
      * @var ?string $ie
      */
     #[\JMS\Serializer\Annotation\SerializedName('IE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ie = null;
 
     /**
@@ -841,7 +841,7 @@ class Geo
      * @var ?string $il
      */
     #[\JMS\Serializer\Annotation\SerializedName('IL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $il = null;
 
     /**
@@ -849,7 +849,7 @@ class Geo
      * @var ?string $it
      */
     #[\JMS\Serializer\Annotation\SerializedName('IT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $it = null;
 
     /**
@@ -857,7 +857,7 @@ class Geo
      * @var ?string $jm
      */
     #[\JMS\Serializer\Annotation\SerializedName('JM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $jm = null;
 
     /**
@@ -865,7 +865,7 @@ class Geo
      * @var ?string $jp
      */
     #[\JMS\Serializer\Annotation\SerializedName('JP')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $jp = null;
 
     /**
@@ -873,7 +873,7 @@ class Geo
      * @var ?string $jo
      */
     #[\JMS\Serializer\Annotation\SerializedName('JO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $jo = null;
 
     /**
@@ -881,7 +881,7 @@ class Geo
      * @var ?string $kz
      */
     #[\JMS\Serializer\Annotation\SerializedName('KZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kz = null;
 
     /**
@@ -889,7 +889,7 @@ class Geo
      * @var ?string $ke
      */
     #[\JMS\Serializer\Annotation\SerializedName('KE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ke = null;
 
     /**
@@ -897,7 +897,7 @@ class Geo
      * @var ?string $ki
      */
     #[\JMS\Serializer\Annotation\SerializedName('KI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ki = null;
 
     /**
@@ -905,7 +905,7 @@ class Geo
      * @var ?string $kp
      */
     #[\JMS\Serializer\Annotation\SerializedName('KP')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kp = null;
 
     /**
@@ -913,7 +913,7 @@ class Geo
      * @var ?string $kr
      */
     #[\JMS\Serializer\Annotation\SerializedName('KR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kr = null;
 
     /**
@@ -921,7 +921,7 @@ class Geo
      * @var ?string $kw
      */
     #[\JMS\Serializer\Annotation\SerializedName('KW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kw = null;
 
     /**
@@ -929,7 +929,7 @@ class Geo
      * @var ?string $kg
      */
     #[\JMS\Serializer\Annotation\SerializedName('KG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kg = null;
 
     /**
@@ -937,7 +937,7 @@ class Geo
      * @var ?string $la
      */
     #[\JMS\Serializer\Annotation\SerializedName('LA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $la = null;
 
     /**
@@ -945,7 +945,7 @@ class Geo
      * @var ?string $lv
      */
     #[\JMS\Serializer\Annotation\SerializedName('LV')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lv = null;
 
     /**
@@ -953,7 +953,7 @@ class Geo
      * @var ?string $lb
      */
     #[\JMS\Serializer\Annotation\SerializedName('LB')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lb = null;
 
     /**
@@ -961,7 +961,7 @@ class Geo
      * @var ?string $ls
      */
     #[\JMS\Serializer\Annotation\SerializedName('LS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ls = null;
 
     /**
@@ -969,7 +969,7 @@ class Geo
      * @var ?string $lr
      */
     #[\JMS\Serializer\Annotation\SerializedName('LR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lr = null;
 
     /**
@@ -977,7 +977,7 @@ class Geo
      * @var ?string $ly
      */
     #[\JMS\Serializer\Annotation\SerializedName('LY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ly = null;
 
     /**
@@ -985,7 +985,7 @@ class Geo
      * @var ?string $li
      */
     #[\JMS\Serializer\Annotation\SerializedName('LI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $li = null;
 
     /**
@@ -993,7 +993,7 @@ class Geo
      * @var ?string $lt
      */
     #[\JMS\Serializer\Annotation\SerializedName('LT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lt = null;
 
     /**
@@ -1001,7 +1001,7 @@ class Geo
      * @var ?string $lu
      */
     #[\JMS\Serializer\Annotation\SerializedName('LU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lu = null;
 
     /**
@@ -1009,7 +1009,7 @@ class Geo
      * @var ?string $mo
      */
     #[\JMS\Serializer\Annotation\SerializedName('MO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mo = null;
 
     /**
@@ -1017,7 +1017,7 @@ class Geo
      * @var ?string $mg
      */
     #[\JMS\Serializer\Annotation\SerializedName('MG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mg = null;
 
     /**
@@ -1025,7 +1025,7 @@ class Geo
      * @var ?string $mw
      */
     #[\JMS\Serializer\Annotation\SerializedName('MW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mw = null;
 
     /**
@@ -1033,7 +1033,7 @@ class Geo
      * @var ?string $my
      */
     #[\JMS\Serializer\Annotation\SerializedName('MY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $my = null;
 
     /**
@@ -1041,7 +1041,7 @@ class Geo
      * @var ?string $mv
      */
     #[\JMS\Serializer\Annotation\SerializedName('MV')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mv = null;
 
     /**
@@ -1049,7 +1049,7 @@ class Geo
      * @var ?string $ml
      */
     #[\JMS\Serializer\Annotation\SerializedName('ML')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ml = null;
 
     /**
@@ -1057,7 +1057,7 @@ class Geo
      * @var ?string $mt
      */
     #[\JMS\Serializer\Annotation\SerializedName('MT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mt = null;
 
     /**
@@ -1065,7 +1065,7 @@ class Geo
      * @var ?string $mh
      */
     #[\JMS\Serializer\Annotation\SerializedName('MH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mh = null;
 
     /**
@@ -1073,7 +1073,7 @@ class Geo
      * @var ?string $mq
      */
     #[\JMS\Serializer\Annotation\SerializedName('MQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mq = null;
 
     /**
@@ -1081,7 +1081,7 @@ class Geo
      * @var ?string $mr
      */
     #[\JMS\Serializer\Annotation\SerializedName('MR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mr = null;
 
     /**
@@ -1089,7 +1089,7 @@ class Geo
      * @var ?string $mu
      */
     #[\JMS\Serializer\Annotation\SerializedName('MU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mu = null;
 
     /**
@@ -1097,7 +1097,7 @@ class Geo
      * @var ?string $yt
      */
     #[\JMS\Serializer\Annotation\SerializedName('YT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $yt = null;
 
     /**
@@ -1105,7 +1105,7 @@ class Geo
      * @var ?string $mx
      */
     #[\JMS\Serializer\Annotation\SerializedName('MX')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mx = null;
 
     /**
@@ -1113,7 +1113,7 @@ class Geo
      * @var ?string $fm
      */
     #[\JMS\Serializer\Annotation\SerializedName('FM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $fm = null;
 
     /**
@@ -1121,7 +1121,7 @@ class Geo
      * @var ?string $md
      */
     #[\JMS\Serializer\Annotation\SerializedName('MD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $md = null;
 
     /**
@@ -1129,7 +1129,7 @@ class Geo
      * @var ?string $mc
      */
     #[\JMS\Serializer\Annotation\SerializedName('MC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mc = null;
 
     /**
@@ -1137,7 +1137,7 @@ class Geo
      * @var ?string $mn
      */
     #[\JMS\Serializer\Annotation\SerializedName('MN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mn = null;
 
     /**
@@ -1145,7 +1145,7 @@ class Geo
      * @var ?string $ms
      */
     #[\JMS\Serializer\Annotation\SerializedName('MS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ms = null;
 
     /**
@@ -1153,7 +1153,7 @@ class Geo
      * @var ?string $ma
      */
     #[\JMS\Serializer\Annotation\SerializedName('MA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ma = null;
 
     /**
@@ -1161,7 +1161,7 @@ class Geo
      * @var ?string $mz
      */
     #[\JMS\Serializer\Annotation\SerializedName('MZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mz = null;
 
     /**
@@ -1169,7 +1169,7 @@ class Geo
      * @var ?string $mm
      */
     #[\JMS\Serializer\Annotation\SerializedName('MM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mm = null;
 
     /**
@@ -1177,7 +1177,7 @@ class Geo
      * @var ?string $na
      */
     #[\JMS\Serializer\Annotation\SerializedName('NA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $na = null;
 
     /**
@@ -1185,7 +1185,7 @@ class Geo
      * @var ?string $nr
      */
     #[\JMS\Serializer\Annotation\SerializedName('NR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $nr = null;
 
     /**
@@ -1193,7 +1193,7 @@ class Geo
      * @var ?string $np
      */
     #[\JMS\Serializer\Annotation\SerializedName('NP')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $np = null;
 
     /**
@@ -1201,7 +1201,7 @@ class Geo
      * @var ?string $nl
      */
     #[\JMS\Serializer\Annotation\SerializedName('NL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $nl = null;
 
     /**
@@ -1209,7 +1209,7 @@ class Geo
      * @var ?string $nc
      */
     #[\JMS\Serializer\Annotation\SerializedName('NC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $nc = null;
 
     /**
@@ -1217,7 +1217,7 @@ class Geo
      * @var ?string $nz
      */
     #[\JMS\Serializer\Annotation\SerializedName('NZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $nz = null;
 
     /**
@@ -1225,7 +1225,7 @@ class Geo
      * @var ?string $ni
      */
     #[\JMS\Serializer\Annotation\SerializedName('NI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ni = null;
 
     /**
@@ -1233,7 +1233,7 @@ class Geo
      * @var ?string $ne
      */
     #[\JMS\Serializer\Annotation\SerializedName('NE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ne = null;
 
     /**
@@ -1241,7 +1241,7 @@ class Geo
      * @var ?string $ng
      */
     #[\JMS\Serializer\Annotation\SerializedName('NG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ng = null;
 
     /**
@@ -1249,7 +1249,7 @@ class Geo
      * @var ?string $nu
      */
     #[\JMS\Serializer\Annotation\SerializedName('NU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $nu = null;
 
     /**
@@ -1257,7 +1257,7 @@ class Geo
      * @var ?string $nf
      */
     #[\JMS\Serializer\Annotation\SerializedName('NF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $nf = null;
 
     /**
@@ -1265,7 +1265,7 @@ class Geo
      * @var ?string $mk
      */
     #[\JMS\Serializer\Annotation\SerializedName('MK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mk = null;
 
     /**
@@ -1273,7 +1273,7 @@ class Geo
      * @var ?string $mp
      */
     #[\JMS\Serializer\Annotation\SerializedName('MP')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mp = null;
 
     /**
@@ -1281,7 +1281,7 @@ class Geo
      * @var ?string $no
      */
     #[\JMS\Serializer\Annotation\SerializedName('NO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $no = null;
 
     /**
@@ -1289,7 +1289,7 @@ class Geo
      * @var ?string $om
      */
     #[\JMS\Serializer\Annotation\SerializedName('OM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $om = null;
 
     /**
@@ -1297,7 +1297,7 @@ class Geo
      * @var ?string $pk
      */
     #[\JMS\Serializer\Annotation\SerializedName('PK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pk = null;
 
     /**
@@ -1305,7 +1305,7 @@ class Geo
      * @var ?string $pw
      */
     #[\JMS\Serializer\Annotation\SerializedName('PW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pw = null;
 
     /**
@@ -1313,7 +1313,7 @@ class Geo
      * @var ?string $ps
      */
     #[\JMS\Serializer\Annotation\SerializedName('PS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ps = null;
 
     /**
@@ -1321,7 +1321,7 @@ class Geo
      * @var ?string $pa
      */
     #[\JMS\Serializer\Annotation\SerializedName('PA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pa = null;
 
     /**
@@ -1329,7 +1329,7 @@ class Geo
      * @var ?string $pg
      */
     #[\JMS\Serializer\Annotation\SerializedName('PG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pg = null;
 
     /**
@@ -1337,7 +1337,7 @@ class Geo
      * @var ?string $py
      */
     #[\JMS\Serializer\Annotation\SerializedName('PY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $py = null;
 
     /**
@@ -1345,7 +1345,7 @@ class Geo
      * @var ?string $pe
      */
     #[\JMS\Serializer\Annotation\SerializedName('PE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pe = null;
 
     /**
@@ -1353,7 +1353,7 @@ class Geo
      * @var ?string $ph
      */
     #[\JMS\Serializer\Annotation\SerializedName('PH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ph = null;
 
     /**
@@ -1361,7 +1361,7 @@ class Geo
      * @var ?string $pn
      */
     #[\JMS\Serializer\Annotation\SerializedName('PN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pn = null;
 
     /**
@@ -1369,7 +1369,7 @@ class Geo
      * @var ?string $pl
      */
     #[\JMS\Serializer\Annotation\SerializedName('PL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pl = null;
 
     /**
@@ -1377,7 +1377,7 @@ class Geo
      * @var ?string $pt
      */
     #[\JMS\Serializer\Annotation\SerializedName('PT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pt = null;
 
     /**
@@ -1385,7 +1385,7 @@ class Geo
      * @var ?string $pr
      */
     #[\JMS\Serializer\Annotation\SerializedName('PR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pr = null;
 
     /**
@@ -1393,7 +1393,7 @@ class Geo
      * @var ?string $qa
      */
     #[\JMS\Serializer\Annotation\SerializedName('QA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $qa = null;
 
     /**
@@ -1401,7 +1401,7 @@ class Geo
      * @var ?string $re
      */
     #[\JMS\Serializer\Annotation\SerializedName('RE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $re = null;
 
     /**
@@ -1409,7 +1409,7 @@ class Geo
      * @var ?string $ro
      */
     #[\JMS\Serializer\Annotation\SerializedName('RO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ro = null;
 
     /**
@@ -1417,7 +1417,7 @@ class Geo
      * @var ?string $ru
      */
     #[\JMS\Serializer\Annotation\SerializedName('RU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ru = null;
 
     /**
@@ -1425,7 +1425,7 @@ class Geo
      * @var ?string $rw
      */
     #[\JMS\Serializer\Annotation\SerializedName('RW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $rw = null;
 
     /**
@@ -1433,7 +1433,7 @@ class Geo
      * @var ?string $sh
      */
     #[\JMS\Serializer\Annotation\SerializedName('SH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sh = null;
 
     /**
@@ -1441,7 +1441,7 @@ class Geo
      * @var ?string $kn
      */
     #[\JMS\Serializer\Annotation\SerializedName('KN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $kn = null;
 
     /**
@@ -1449,7 +1449,7 @@ class Geo
      * @var ?string $lc
      */
     #[\JMS\Serializer\Annotation\SerializedName('LC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lc = null;
 
     /**
@@ -1457,7 +1457,7 @@ class Geo
      * @var ?string $pm
      */
     #[\JMS\Serializer\Annotation\SerializedName('PM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $pm = null;
 
     /**
@@ -1465,7 +1465,7 @@ class Geo
      * @var ?string $vc
      */
     #[\JMS\Serializer\Annotation\SerializedName('VC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $vc = null;
 
     /**
@@ -1473,7 +1473,7 @@ class Geo
      * @var ?string $ws
      */
     #[\JMS\Serializer\Annotation\SerializedName('WS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ws = null;
 
     /**
@@ -1481,7 +1481,7 @@ class Geo
      * @var ?string $sm
      */
     #[\JMS\Serializer\Annotation\SerializedName('SM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sm = null;
 
     /**
@@ -1489,7 +1489,7 @@ class Geo
      * @var ?string $st
      */
     #[\JMS\Serializer\Annotation\SerializedName('ST')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $st = null;
 
     /**
@@ -1497,7 +1497,7 @@ class Geo
      * @var ?string $sa
      */
     #[\JMS\Serializer\Annotation\SerializedName('SA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sa = null;
 
     /**
@@ -1505,7 +1505,7 @@ class Geo
      * @var ?string $sn
      */
     #[\JMS\Serializer\Annotation\SerializedName('SN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sn = null;
 
     /**
@@ -1513,7 +1513,7 @@ class Geo
      * @var ?string $sc
      */
     #[\JMS\Serializer\Annotation\SerializedName('SC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sc = null;
 
     /**
@@ -1521,7 +1521,7 @@ class Geo
      * @var ?string $sl
      */
     #[\JMS\Serializer\Annotation\SerializedName('SL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sl = null;
 
     /**
@@ -1529,7 +1529,7 @@ class Geo
      * @var ?string $sg
      */
     #[\JMS\Serializer\Annotation\SerializedName('SG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sg = null;
 
     /**
@@ -1537,7 +1537,7 @@ class Geo
      * @var ?string $sk
      */
     #[\JMS\Serializer\Annotation\SerializedName('SK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sk = null;
 
     /**
@@ -1545,7 +1545,7 @@ class Geo
      * @var ?string $si
      */
     #[\JMS\Serializer\Annotation\SerializedName('SI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $si = null;
 
     /**
@@ -1553,7 +1553,7 @@ class Geo
      * @var ?string $sb
      */
     #[\JMS\Serializer\Annotation\SerializedName('SB')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sb = null;
 
     /**
@@ -1561,7 +1561,7 @@ class Geo
      * @var ?string $so
      */
     #[\JMS\Serializer\Annotation\SerializedName('SO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $so = null;
 
     /**
@@ -1569,7 +1569,7 @@ class Geo
      * @var ?string $za
      */
     #[\JMS\Serializer\Annotation\SerializedName('ZA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $za = null;
 
     /**
@@ -1577,7 +1577,7 @@ class Geo
      * @var ?string $gs
      */
     #[\JMS\Serializer\Annotation\SerializedName('GS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gs = null;
 
     /**
@@ -1585,7 +1585,7 @@ class Geo
      * @var ?string $es
      */
     #[\JMS\Serializer\Annotation\SerializedName('ES')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $es = null;
 
     /**
@@ -1593,7 +1593,7 @@ class Geo
      * @var ?string $lk
      */
     #[\JMS\Serializer\Annotation\SerializedName('LK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $lk = null;
 
     /**
@@ -1601,7 +1601,7 @@ class Geo
      * @var ?string $sd
      */
     #[\JMS\Serializer\Annotation\SerializedName('SD')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sd = null;
 
     /**
@@ -1609,7 +1609,7 @@ class Geo
      * @var ?string $sr
      */
     #[\JMS\Serializer\Annotation\SerializedName('SR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sr = null;
 
     /**
@@ -1617,7 +1617,7 @@ class Geo
      * @var ?string $sj
      */
     #[\JMS\Serializer\Annotation\SerializedName('SJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sj = null;
 
     /**
@@ -1625,7 +1625,7 @@ class Geo
      * @var ?string $sz
      */
     #[\JMS\Serializer\Annotation\SerializedName('SZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sz = null;
 
     /**
@@ -1633,7 +1633,7 @@ class Geo
      * @var ?string $se
      */
     #[\JMS\Serializer\Annotation\SerializedName('SE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $se = null;
 
     /**
@@ -1641,7 +1641,7 @@ class Geo
      * @var ?string $ch
      */
     #[\JMS\Serializer\Annotation\SerializedName('CH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ch = null;
 
     /**
@@ -1649,7 +1649,7 @@ class Geo
      * @var ?string $sy
      */
     #[\JMS\Serializer\Annotation\SerializedName('SY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sy = null;
 
     /**
@@ -1657,7 +1657,7 @@ class Geo
      * @var ?string $tw
      */
     #[\JMS\Serializer\Annotation\SerializedName('TW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tw = null;
 
     /**
@@ -1665,7 +1665,7 @@ class Geo
      * @var ?string $tj
      */
     #[\JMS\Serializer\Annotation\SerializedName('TJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tj = null;
 
     /**
@@ -1673,7 +1673,7 @@ class Geo
      * @var ?string $tz
      */
     #[\JMS\Serializer\Annotation\SerializedName('TZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tz = null;
 
     /**
@@ -1681,7 +1681,7 @@ class Geo
      * @var ?string $th
      */
     #[\JMS\Serializer\Annotation\SerializedName('TH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $th = null;
 
     /**
@@ -1689,7 +1689,7 @@ class Geo
      * @var ?string $tl
      */
     #[\JMS\Serializer\Annotation\SerializedName('TL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tl = null;
 
     /**
@@ -1697,7 +1697,7 @@ class Geo
      * @var ?string $tg
      */
     #[\JMS\Serializer\Annotation\SerializedName('TG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tg = null;
 
     /**
@@ -1705,7 +1705,7 @@ class Geo
      * @var ?string $tk
      */
     #[\JMS\Serializer\Annotation\SerializedName('TK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tk = null;
 
     /**
@@ -1713,7 +1713,7 @@ class Geo
      * @var ?string $to
      */
     #[\JMS\Serializer\Annotation\SerializedName('TO')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $to = null;
 
     /**
@@ -1721,7 +1721,7 @@ class Geo
      * @var ?string $tt
      */
     #[\JMS\Serializer\Annotation\SerializedName('TT')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tt = null;
 
     /**
@@ -1729,7 +1729,7 @@ class Geo
      * @var ?string $tn
      */
     #[\JMS\Serializer\Annotation\SerializedName('TN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tn = null;
 
     /**
@@ -1737,7 +1737,7 @@ class Geo
      * @var ?string $tr
      */
     #[\JMS\Serializer\Annotation\SerializedName('TR')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tr = null;
 
     /**
@@ -1745,7 +1745,7 @@ class Geo
      * @var ?string $tm
      */
     #[\JMS\Serializer\Annotation\SerializedName('TM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tm = null;
 
     /**
@@ -1753,7 +1753,7 @@ class Geo
      * @var ?string $tc
      */
     #[\JMS\Serializer\Annotation\SerializedName('TC')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tc = null;
 
     /**
@@ -1761,7 +1761,7 @@ class Geo
      * @var ?string $tv
      */
     #[\JMS\Serializer\Annotation\SerializedName('TV')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $tv = null;
 
     /**
@@ -1769,7 +1769,7 @@ class Geo
      * @var ?string $ug
      */
     #[\JMS\Serializer\Annotation\SerializedName('UG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ug = null;
 
     /**
@@ -1777,7 +1777,7 @@ class Geo
      * @var ?string $ua
      */
     #[\JMS\Serializer\Annotation\SerializedName('UA')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ua = null;
 
     /**
@@ -1785,7 +1785,7 @@ class Geo
      * @var ?string $ae
      */
     #[\JMS\Serializer\Annotation\SerializedName('AE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ae = null;
 
     /**
@@ -1793,7 +1793,7 @@ class Geo
      * @var ?string $gb
      */
     #[\JMS\Serializer\Annotation\SerializedName('GB')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gb = null;
 
     /**
@@ -1801,7 +1801,7 @@ class Geo
      * @var ?string $us
      */
     #[\JMS\Serializer\Annotation\SerializedName('US')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $us = null;
 
     /**
@@ -1809,7 +1809,7 @@ class Geo
      * @var ?string $um
      */
     #[\JMS\Serializer\Annotation\SerializedName('UM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $um = null;
 
     /**
@@ -1817,7 +1817,7 @@ class Geo
      * @var ?string $uy
      */
     #[\JMS\Serializer\Annotation\SerializedName('UY')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $uy = null;
 
     /**
@@ -1825,7 +1825,7 @@ class Geo
      * @var ?string $uz
      */
     #[\JMS\Serializer\Annotation\SerializedName('UZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $uz = null;
 
     /**
@@ -1833,7 +1833,7 @@ class Geo
      * @var ?string $vu
      */
     #[\JMS\Serializer\Annotation\SerializedName('VU')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $vu = null;
 
     /**
@@ -1841,7 +1841,7 @@ class Geo
      * @var ?string $ve
      */
     #[\JMS\Serializer\Annotation\SerializedName('VE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ve = null;
 
     /**
@@ -1849,7 +1849,7 @@ class Geo
      * @var ?string $vn
      */
     #[\JMS\Serializer\Annotation\SerializedName('VN')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $vn = null;
 
     /**
@@ -1857,7 +1857,7 @@ class Geo
      * @var ?string $vg
      */
     #[\JMS\Serializer\Annotation\SerializedName('VG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $vg = null;
 
     /**
@@ -1865,7 +1865,7 @@ class Geo
      * @var ?string $vi
      */
     #[\JMS\Serializer\Annotation\SerializedName('VI')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $vi = null;
 
     /**
@@ -1873,7 +1873,7 @@ class Geo
      * @var ?string $wf
      */
     #[\JMS\Serializer\Annotation\SerializedName('WF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $wf = null;
 
     /**
@@ -1881,7 +1881,7 @@ class Geo
      * @var ?string $eh
      */
     #[\JMS\Serializer\Annotation\SerializedName('EH')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $eh = null;
 
     /**
@@ -1889,7 +1889,7 @@ class Geo
      * @var ?string $ye
      */
     #[\JMS\Serializer\Annotation\SerializedName('YE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ye = null;
 
     /**
@@ -1897,7 +1897,7 @@ class Geo
      * @var ?string $zm
      */
     #[\JMS\Serializer\Annotation\SerializedName('ZM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $zm = null;
 
     /**
@@ -1905,7 +1905,7 @@ class Geo
      * @var ?string $zw
      */
     #[\JMS\Serializer\Annotation\SerializedName('ZW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $zw = null;
 
     /**
@@ -1913,7 +1913,7 @@ class Geo
      * @var ?string $ax
      */
     #[\JMS\Serializer\Annotation\SerializedName('AX')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ax = null;
 
     /**
@@ -1921,7 +1921,7 @@ class Geo
      * @var ?string $bq
      */
     #[\JMS\Serializer\Annotation\SerializedName('BQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bq = null;
 
     /**
@@ -1929,7 +1929,7 @@ class Geo
      * @var ?string $cw
      */
     #[\JMS\Serializer\Annotation\SerializedName('CW')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $cw = null;
 
     /**
@@ -1937,7 +1937,7 @@ class Geo
      * @var ?string $gg
      */
     #[\JMS\Serializer\Annotation\SerializedName('GG')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $gg = null;
 
     /**
@@ -1945,7 +1945,7 @@ class Geo
      * @var ?string $im
      */
     #[\JMS\Serializer\Annotation\SerializedName('IM')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $im = null;
 
     /**
@@ -1953,7 +1953,7 @@ class Geo
      * @var ?string $je
      */
     #[\JMS\Serializer\Annotation\SerializedName('JE')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $je = null;
 
     /**
@@ -1961,7 +1961,7 @@ class Geo
      * @var ?string $me
      */
     #[\JMS\Serializer\Annotation\SerializedName('ME')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $me = null;
 
     /**
@@ -1969,7 +1969,7 @@ class Geo
      * @var ?string $bl
      */
     #[\JMS\Serializer\Annotation\SerializedName('BL')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $bl = null;
 
     /**
@@ -1977,7 +1977,7 @@ class Geo
      * @var ?string $mf
      */
     #[\JMS\Serializer\Annotation\SerializedName('MF')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $mf = null;
 
     /**
@@ -1985,7 +1985,7 @@ class Geo
      * @var ?string $rs
      */
     #[\JMS\Serializer\Annotation\SerializedName('RS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $rs = null;
 
     /**
@@ -1993,7 +1993,7 @@ class Geo
      * @var ?string $sx
      */
     #[\JMS\Serializer\Annotation\SerializedName('SX')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $sx = null;
 
     /**
@@ -2001,7 +2001,7 @@ class Geo
      * @var ?string $ss
      */
     #[\JMS\Serializer\Annotation\SerializedName('SS')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $ss = null;
 
     /**
@@ -2009,7 +2009,7 @@ class Geo
      * @var ?string $xk
      */
     #[\JMS\Serializer\Annotation\SerializedName('XK')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $xk = null;
 
     /**

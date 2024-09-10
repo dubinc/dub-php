@@ -20,9 +20,9 @@ class GetWorkspaceRequest
     public string $idOrSlug;
 
     /**
-     * @param  ?string  $idOrSlug
+     * @param  string  $idOrSlug
      */
-    public function __construct(?string $idOrSlug = null)
+    public function __construct(string $idOrSlug)
     {
         $this->idOrSlug = $idOrSlug;
     }

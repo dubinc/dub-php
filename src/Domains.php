@@ -14,7 +14,6 @@ use JMS\Serializer\DeserializationContext;
 class Domains
 {
     private SDKConfiguration $sdkConfiguration;
-
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
@@ -520,4 +519,5 @@ class Domains
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+
 }

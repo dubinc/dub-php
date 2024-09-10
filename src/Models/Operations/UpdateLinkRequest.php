@@ -27,10 +27,10 @@ class UpdateLinkRequest
     public ?UpdateLinkRequestBody $requestBody = null;
 
     /**
-     * @param  ?string  $linkId
+     * @param  string  $linkId
      * @param  ?UpdateLinkRequestBody  $requestBody
      */
-    public function __construct(?string $linkId = null, ?UpdateLinkRequestBody $requestBody = null)
+    public function __construct(string $linkId, ?UpdateLinkRequestBody $requestBody = null)
     {
         $this->linkId = $linkId;
         $this->requestBody = $requestBody;

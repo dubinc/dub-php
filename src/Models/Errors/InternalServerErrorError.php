@@ -34,15 +34,15 @@ class InternalServerErrorError
      * @var ?string $docUrl
      */
     #[\JMS\Serializer\Annotation\SerializedName('doc_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?string $docUrl = null;
 
     /**
-     * @param  ?InternalServerErrorCode  $code
-     * @param  ?string  $message
+     * @param  InternalServerErrorCode  $code
+     * @param  string  $message
      * @param  ?string  $docUrl
      */
-    public function __construct(?InternalServerErrorCode $code = null, ?string $message = null, ?string $docUrl = null)
+    public function __construct(InternalServerErrorCode $code, string $message, ?string $docUrl = null)
     {
         $this->code = $code;
         $this->message = $message;
