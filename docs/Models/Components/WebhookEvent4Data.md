@@ -1,0 +1,12 @@
+# WebhookEvent4Data
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `eventName`                                                                        | *string*                                                                           | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `customer`                                                                         | [Components\WebhookEventCustomer](../../Models/Components/WebhookEventCustomer.md) | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `click`                                                                            | [Components\WebhookEvent4Click](../../Models/Components/WebhookEvent4Click.md)     | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `link`                                                                             | [Components\WebhookEvent4Link](../../Models/Components/WebhookEvent4Link.md)       | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `sale`                                                                             | [Components\Sale](../../Models/Components/Sale.md)                                 | :heavy_check_mark:                                                                 | N/A                                                                                |

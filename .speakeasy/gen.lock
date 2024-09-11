@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 2e29304d123e35c2bf5bfc8eb02ad913
+  docChecksum: ffa6151096521151b68b6e0bf18ca941
   docVersion: 0.0.1
-  speakeasyVersion: 1.395.0
+  speakeasyVersion: 1.396.2
   generationVersion: 2.415.0
-  releaseVersion: 0.5.0
-  configChecksum: 3d3961fad6b7c8a94b1b458501362386
+  releaseVersion: 0.6.0
+  configChecksum: b73d523379d239405db528248dffb07e
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -20,6 +20,7 @@ features:
     globalSecurity: 2.81.7
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.1
+    includes: 2.81.1
     nameOverrides: 2.81.2
     nullables: 1.0.0
     responseFormat: 0.1.0
@@ -48,18 +49,47 @@ generatedFiles:
   - docs/Models/Components/ContinentCode.md
   - docs/Models/Components/Country.md
   - docs/Models/Components/CountryCode.md
+  - docs/Models/Components/Customer.md
+  - docs/Models/Components/Data.md
   - docs/Models/Components/DomainSchema.md
   - docs/Models/Components/Domains.md
   - docs/Models/Components/Event.md
+  - docs/Models/Components/Event1.md
+  - docs/Models/Components/Event2.md
+  - docs/Models/Components/Event3.md
+  - docs/Models/Components/Four.md
   - docs/Models/Components/Geo.md
   - docs/Models/Components/Link.md
   - docs/Models/Components/LinkGeoTargeting.md
   - docs/Models/Components/LinkSchema.md
+  - docs/Models/Components/One.md
   - docs/Models/Components/Plan.md
   - docs/Models/Components/Role.md
+  - docs/Models/Components/Sale.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/TagSchema.md
+  - docs/Models/Components/Three.md
+  - docs/Models/Components/Two.md
   - docs/Models/Components/Users.md
+  - docs/Models/Components/WebhookEvent.md
+  - docs/Models/Components/WebhookEvent2Event.md
+  - docs/Models/Components/WebhookEvent2Geo.md
+  - docs/Models/Components/WebhookEvent3Click.md
+  - docs/Models/Components/WebhookEvent3Data.md
+  - docs/Models/Components/WebhookEvent3Event.md
+  - docs/Models/Components/WebhookEvent3Geo.md
+  - docs/Models/Components/WebhookEvent3Link.md
+  - docs/Models/Components/WebhookEvent4Click.md
+  - docs/Models/Components/WebhookEvent4Data.md
+  - docs/Models/Components/WebhookEvent4Event.md
+  - docs/Models/Components/WebhookEvent4Geo.md
+  - docs/Models/Components/WebhookEvent4Link.md
+  - docs/Models/Components/WebhookEventClick.md
+  - docs/Models/Components/WebhookEventCustomer.md
+  - docs/Models/Components/WebhookEventData.md
+  - docs/Models/Components/WebhookEventEvent.md
+  - docs/Models/Components/WebhookEventGeo.md
+  - docs/Models/Components/WebhookEventLink.md
   - docs/Models/Components/WorkspaceSchema.md
   - docs/Models/Errors/BadRequest.md
   - docs/Models/Errors/Code.md
@@ -229,18 +259,45 @@ generatedFiles:
   - src/Models/Components/ContinentCode.php
   - src/Models/Components/Country.php
   - src/Models/Components/CountryCode.php
+  - src/Models/Components/Customer.php
+  - src/Models/Components/Data.php
   - src/Models/Components/DomainSchema.php
   - src/Models/Components/Domains.php
   - src/Models/Components/Event.php
+  - src/Models/Components/Event1.php
+  - src/Models/Components/Event2.php
+  - src/Models/Components/Event3.php
+  - src/Models/Components/Four.php
   - src/Models/Components/Geo.php
   - src/Models/Components/Link.php
   - src/Models/Components/LinkGeoTargeting.php
   - src/Models/Components/LinkSchema.php
+  - src/Models/Components/One.php
   - src/Models/Components/Plan.php
   - src/Models/Components/Role.php
+  - src/Models/Components/Sale.php
   - src/Models/Components/Security.php
   - src/Models/Components/TagSchema.php
+  - src/Models/Components/Three.php
+  - src/Models/Components/Two.php
   - src/Models/Components/Users.php
+  - src/Models/Components/WebhookEvent2Event.php
+  - src/Models/Components/WebhookEvent2Geo.php
+  - src/Models/Components/WebhookEvent3Click.php
+  - src/Models/Components/WebhookEvent3Data.php
+  - src/Models/Components/WebhookEvent3Event.php
+  - src/Models/Components/WebhookEvent3Geo.php
+  - src/Models/Components/WebhookEvent3Link.php
+  - src/Models/Components/WebhookEvent4Click.php
+  - src/Models/Components/WebhookEvent4Data.php
+  - src/Models/Components/WebhookEvent4Event.php
+  - src/Models/Components/WebhookEvent4Geo.php
+  - src/Models/Components/WebhookEvent4Link.php
+  - src/Models/Components/WebhookEventClick.php
+  - src/Models/Components/WebhookEventCustomer.php
+  - src/Models/Components/WebhookEventData.php
+  - src/Models/Components/WebhookEventGeo.php
+  - src/Models/Components/WebhookEventLink.php
   - src/Models/Components/WorkspaceSchema.php
   - src/Models/Errors/BadRequest.php
   - src/Models/Errors/BadRequestThrowable.php
