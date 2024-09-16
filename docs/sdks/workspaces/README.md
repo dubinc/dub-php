@@ -21,8 +21,9 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Components;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
@@ -79,16 +80,14 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $requestBody = new Operations\UpdateWorkspaceRequestBody(
-        name: '<value>',
-        slug: '<value>',
-    );
+    $requestBody = new Operations\UpdateWorkspaceRequestBody();
     $response = $sdk->workspaces->update('<value>', $requestBody);
 
     if ($response->workspaceSchema !== null) {

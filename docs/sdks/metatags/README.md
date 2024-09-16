@@ -20,8 +20,9 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Components;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 

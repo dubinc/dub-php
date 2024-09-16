@@ -21,34 +21,20 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     $request = new Operations\RetrieveAnalyticsRequest(
-        event: Operations\Event::Leads,
-        groupBy: Operations\QueryParamGroupBy::Trigger,
-        domain: 'vacant-platter.biz',
-        key: '<key>',
-        linkId: '<value>',
-        externalId: '<value>',
-        interval: Operations\Interval::Ninetyd,
-        start: '<value>',
-        end: '<value>',
         timezone: 'America/New_York',
-        continent: Components\ContinentCode::As,
-        country: Components\CountryCode::Nz,
         city: 'New York',
         device: 'Desktop',
         browser: 'Chrome',
         os: 'Windows',
         referer: 'google.com',
-        url: 'http://ajar-mall.com',
-        tagId: '<value>',
-        qr: false,
-        root: false,
     );
     $response = $sdk->analytics->retrieve($request);
 

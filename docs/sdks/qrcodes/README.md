@@ -21,19 +21,15 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     $request = new Operations\GetQRCodeRequest(
         url: 'https://brief-micronutrient.org',
-        size: 5442.21,
-        level: Operations\Level::H,
-        fgColor: '<value>',
-        bgColor: '<value>',
-        includeMargin: false,
     );
     $response = $sdk->qrCodes->get($request);
 
