@@ -23,8 +23,9 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Components;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
@@ -74,17 +75,14 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateTagRequestBody(
-        name: '<value>',
-        color: Operations\Color::Blue,
-        tag: '<value>',
-    );
+    $request = new Operations\CreateTagRequestBody();
     $response = $sdk->tags->create($request);
 
     if ($response->tagSchema !== null) {
@@ -135,14 +133,15 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Components;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
 
-    $response = $sdk->tags->delete('<value>');
+    $response = $sdk->tags->delete('<id>');
 
     if ($response->object !== null) {
         // handle response
@@ -193,18 +192,15 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $requestBody = new Operations\UpdateTagRequestBody(
-        name: '<value>',
-        color: Operations\UpdateTagColor::Brown,
-        tag: '<value>',
-    );
-    $response = $sdk->tags->update('<value>', $requestBody);
+    $requestBody = new Operations\UpdateTagRequestBody();
+    $response = $sdk->tags->update('<id>', $requestBody);
 
     if ($response->tagSchema !== null) {
         // handle response

@@ -84,6 +84,16 @@ class DomainSchema
     public string $updatedAt;
 
     /**
+     * The registered domain record.
+     *
+     * @var ?RegisteredDomain $registeredDomain
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('registeredDomain')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\RegisteredDomain|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?RegisteredDomain $registeredDomain = null;
+
+    /**
      * @param  string  $id
      * @param  string  $slug
      * @param  bool  $verified
@@ -93,8 +103,9 @@ class DomainSchema
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $expiredUrl
+     * @param  ?RegisteredDomain  $registeredDomain
      */
-    public function __construct(string $id, string $slug, bool $verified, bool $primary, bool $archived, string $placeholder, string $createdAt, string $updatedAt, ?string $expiredUrl = null)
+    public function __construct(string $id, string $slug, bool $verified, bool $primary, bool $archived, string $placeholder, string $createdAt, string $updatedAt, ?string $expiredUrl = null, ?RegisteredDomain $registeredDomain = null)
     {
         $this->id = $id;
         $this->slug = $slug;
@@ -105,5 +116,6 @@ class DomainSchema
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->expiredUrl = $expiredUrl;
+        $this->registeredDomain = $registeredDomain;
     }
 }

@@ -21,37 +21,20 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     $request = new Operations\ListEventsRequest(
-        event: Operations\QueryParamEvent::Sales,
-        domain: 'burly-math.biz',
-        key: '<key>',
-        linkId: '<value>',
-        externalId: '<value>',
-        interval: Operations\QueryParamInterval::Ytd,
-        start: '<value>',
-        end: '<value>',
         timezone: 'America/New_York',
-        continent: Components\ContinentCode::As,
-        country: Components\CountryCode::Cx,
         city: 'New York',
         device: 'Desktop',
         browser: 'Chrome',
         os: 'Windows',
         referer: 'google.com',
-        url: 'https://elliptical-auditorium.com',
-        tagId: '<value>',
-        qr: false,
-        root: false,
-        page: 9174.16,
-        limit: 6355.32,
-        order: Operations\Order::Desc,
-        sortBy: Operations\SortBy::Timestamp,
     );
     $response = $sdk->events->list($request);
 

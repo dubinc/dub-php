@@ -23,8 +23,9 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
@@ -33,12 +34,6 @@ try {
         clickId: '<value>',
         eventName: 'Sign up',
         customerId: '<value>',
-        customerName: '<value>',
-        customerEmail: 'Katelin24@hotmail.com',
-        customerAvatar: '<value>',
-        metadata: [
-            'Assistant' => '<value>',
-        ],
     );
     $response = $sdk->track->lead($request);
 
@@ -91,8 +86,9 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
@@ -102,11 +98,6 @@ try {
         amount: 996500,
         paymentProcessor: Operations\PaymentProcessor::Shopify,
         eventName: 'Purchase',
-        currency: 'European Unit of Account 17(E.U.A.-17)',
-        invoiceId: '<value>',
-        metadata: [
-            'Stage' => '<value>',
-        ],
     );
     $response = $sdk->track->sale($request);
 
@@ -159,17 +150,15 @@ use Dub;
 use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security();
-$security->token = 'DUB_API_KEY';
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     $request = new Operations\TrackCustomerRequestBody(
         customerId: '<value>',
-        customerName: '<value>',
-        customerEmail: 'Wilson.Smith@gmail.com',
-        customerAvatar: '<value>',
     );
     $response = $sdk->track->customer($request);
 

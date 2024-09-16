@@ -189,6 +189,14 @@ class WorkspaceSchema
     public bool $conversionEnabled;
 
     /**
+     * Whether the workspace has claimed a free .link domain. (dub.link/free)
+     *
+     * @var bool $dotLinkClaimed
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('dotLinkClaimed')]
+    public bool $dotLinkClaimed;
+
+    /**
      * The date and time when the workspace was created.
      *
      * @var string $createdAt
@@ -242,6 +250,7 @@ class WorkspaceSchema
      * @param  float  $aiUsage
      * @param  float  $aiLimit
      * @param  bool  $conversionEnabled
+     * @param  bool  $dotLinkClaimed
      * @param  string  $createdAt
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
@@ -252,7 +261,7 @@ class WorkspaceSchema
      * @param  ?string  $referralLinkId
      * @param  ?array<string, bool>  $flags
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, string $createdAt, array $users, array $domains, ?string $logo = null, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $logo = null, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -271,6 +280,7 @@ class WorkspaceSchema
         $this->aiUsage = $aiUsage;
         $this->aiLimit = $aiLimit;
         $this->conversionEnabled = $conversionEnabled;
+        $this->dotLinkClaimed = $dotLinkClaimed;
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;
