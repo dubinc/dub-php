@@ -12,7 +12,7 @@ namespace Dub\Models\Operations;
 class TrackLeadRequestBody
 {
     /**
-     * The ID of the click in th Dub. You can read this value from `dclid` cookie.
+     * The ID of the click in th Dub. You can read this value from `dub_id` cookie.
      *
      * @var string $clickId
      */

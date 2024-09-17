@@ -73,14 +73,26 @@ final class UnionHandler implements SubscribingHandlerInterface
             return $this->matchSimpleType($data, $type, $context);
         } else {
             if (is_array($data)) {
-                $innerType = gettype($data[0]);
-                if ($innerType === 'object') {
-                    $innerType = get_class($data[0]);
+                if (array_is_list($data) && ! empty($data)) {
+                    $innerType = gettype($data[0]);
+                    if ($innerType === 'object') {
+                        $innerType = get_class($data[0]);
+                    }
+                    $resolvedType = [
+                        'name' => 'array',
+                        'params' => ['name' => $innerType, 'params' => []],
+                    ];
+                } else {
+                    $keyType = gettype(array_key_first($data));
+                    $valueType = gettype($data[array_key_first($data)]);
+                    $resolvedType = [
+                        'name' => 'array',
+                        'params' => [
+                            ['name' => $keyType, 'params' => []],
+                            ['name' => $valueType, 'params' => []],
+                        ],
+                    ];
                 }
-                $resolvedType = [
-                    'name' => 'array',
-                    'params' => ['name' => $innerType, 'params' => []],
-                ];
             } else {
                 $resolvedType = null;
                 foreach ($type['params'] as $possibleType) {
@@ -175,6 +187,8 @@ final class UnionHandler implements SubscribingHandlerInterface
             } catch (NonIntCastableTypeException $e) {
                 continue;
             } catch (NonFloatCastableTypeException $e) {
+                continue;
+            } catch (RuntimeException $e) {
                 continue;
             }
         }
