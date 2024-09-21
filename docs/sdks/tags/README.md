@@ -4,61 +4,10 @@
 
 ### Available Operations
 
-* [list](#list) - Retrieve a list of tags
 * [create](#create) - Create a new tag
-* [delete](#delete) - Delete a tag
+* [list](#list) - Retrieve a list of tags
 * [update](#update) - Update a tag
-
-## list
-
-Retrieve a list of tags for the authenticated workspace.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-use Dub\Models\Components;
-
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
-try {
-    $response = $sdk->tags->list();
-
-    if ($response->tagSchemas !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
-}
-```
-
-### Response
-
-**[?Operations\GetTagsResponse](../../Models/Operations/GetTagsResponse.md)**
-
-### Errors
-
-| Error Object                   | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequest              | 400                            | application/json               |
-| Errors\Unauthorized            | 401                            | application/json               |
-| Errors\Forbidden               | 403                            | application/json               |
-| Errors\NotFound                | 404                            | application/json               |
-| Errors\Conflict                | 409                            | application/json               |
-| Errors\InviteExpired           | 410                            | application/json               |
-| Errors\UnprocessableEntity     | 422                            | application/json               |
-| Errors\RateLimitExceeded       | 429                            | application/json               |
-| Errors\InternalServerError     | 500                            | application/json               |
-| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
-
+* [delete](#delete) - Delete a tag
 
 ## create
 
@@ -119,9 +68,9 @@ try {
 | Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
 
 
-## delete
+## list
 
-Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
+Retrieve a list of tags for the authenticated workspace.
 
 ### Example Usage
 
@@ -140,10 +89,9 @@ $security = new Components\Security(
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
+    $response = $sdk->tags->list();
 
-    $response = $sdk->tags->delete('<id>');
-
-    if ($response->object !== null) {
+    if ($response->tagSchemas !== null) {
         // handle response
     }
 } catch (Throwable $e) {
@@ -151,15 +99,9 @@ try {
 }
 ```
 
-### Parameters
-
-| Parameter                    | Type                         | Required                     | Description                  |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `id`                         | *string*                     | :heavy_check_mark:           | The ID of the tag to delete. |
-
 ### Response
 
-**[?Operations\DeleteTagResponse](../../Models/Operations/DeleteTagResponse.md)**
+**[?Operations\GetTagsResponse](../../Models/Operations/GetTagsResponse.md)**
 
 ### Errors
 
@@ -220,6 +162,64 @@ try {
 ### Response
 
 **[?Operations\UpdateTagResponse](../../Models/Operations/UpdateTagResponse.md)**
+
+### Errors
+
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
+
+## delete
+
+Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Components;
+
+$security = new Components\Security(
+    token: "DUB_API_KEY",
+);
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+try {
+
+    $response = $sdk->tags->delete('<id>');
+
+    if ($response->object !== null) {
+        // handle response
+    }
+} catch (Throwable $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `id`                         | *string*                     | :heavy_check_mark:           | The ID of the tag to delete. |
+
+### Response
+
+**[?Operations\DeleteTagResponse](../../Models/Operations/DeleteTagResponse.md)**
 
 ### Errors
 
