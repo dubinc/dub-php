@@ -117,10 +117,10 @@ try {
 
 ### [Domains](docs/sdks/domains/README.md)
 
-* [list](docs/sdks/domains/README.md#list) - Retrieve a list of domains
 * [create](docs/sdks/domains/README.md#create) - Create a domain
-* [delete](docs/sdks/domains/README.md#delete) - Delete a domain
+* [list](docs/sdks/domains/README.md#list) - Retrieve a list of domains
 * [update](docs/sdks/domains/README.md#update) - Update a domain
+* [delete](docs/sdks/domains/README.md#delete) - Delete a domain
 
 
 ### [Events](docs/sdks/events/README.md)
@@ -129,15 +129,15 @@ try {
 
 ### [Links](docs/sdks/links/README.md)
 
-* [list](docs/sdks/links/README.md#list) - Retrieve a list of links
 * [create](docs/sdks/links/README.md#create) - Create a new link
+* [list](docs/sdks/links/README.md#list) - Retrieve a list of links
 * [count](docs/sdks/links/README.md#count) - Retrieve links count
 * [get](docs/sdks/links/README.md#get) - Retrieve a link
-* [delete](docs/sdks/links/README.md#delete) - Delete a link
 * [update](docs/sdks/links/README.md#update) - Update a link
+* [delete](docs/sdks/links/README.md#delete) - Delete a link
 * [createMany](docs/sdks/links/README.md#createmany) - Bulk create links
-* [deleteMany](docs/sdks/links/README.md#deletemany) - Bulk delete links
 * [updateMany](docs/sdks/links/README.md#updatemany) - Bulk update links
+* [deleteMany](docs/sdks/links/README.md#deletemany) - Bulk delete links
 * [upsert](docs/sdks/links/README.md#upsert) - Upsert a link
 
 ### [Metatags](docs/sdks/metatags/README.md)
@@ -150,10 +150,10 @@ try {
 
 ### [Tags](docs/sdks/tags/README.md)
 
-* [list](docs/sdks/tags/README.md#list) - Retrieve a list of tags
 * [create](docs/sdks/tags/README.md#create) - Create a new tag
-* [delete](docs/sdks/tags/README.md#delete) - Delete a tag
+* [list](docs/sdks/tags/README.md#list) - Retrieve a list of tags
 * [update](docs/sdks/tags/README.md#update) - Update a tag
+* [delete](docs/sdks/tags/README.md#delete) - Delete a tag
 
 ### [Track](docs/sdks/track/README.md)
 

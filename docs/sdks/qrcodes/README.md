@@ -29,7 +29,7 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
     $request = new Operations\GetQRCodeRequest(
-        url: 'https://brief-micronutrient.org',
+        url: 'https://normal-making.name',
     );
     $response = $sdk->qrCodes->get($request);
 
