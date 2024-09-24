@@ -21,6 +21,7 @@ enum QueryParamGroupBy: string
     case Browsers = 'browsers';
     case Os = 'os';
     case Referers = 'referers';
+    case RefererUrls = 'referer_urls';
     case TopLinks = 'top_links';
     case TopUrls = 'top_urls';
     case Trigger = 'trigger';

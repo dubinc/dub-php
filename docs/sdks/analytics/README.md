@@ -35,6 +35,7 @@ try {
         browser: 'Chrome',
         os: 'Windows',
         referer: 'google.com',
+        refererUrl: 'https://dub.co/blog',
     );
     $response = $sdk->analytics->retrieve($request);
 

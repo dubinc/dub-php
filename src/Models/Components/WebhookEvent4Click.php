@@ -76,6 +76,13 @@ class WebhookEvent4Click
 
     /**
      *
+     * @var string $refererUrl
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('refererUrl')]
+    public string $refererUrl;
+
+    /**
+     *
      * @var ?bool $qr
      */
     #[\JMS\Serializer\Annotation\SerializedName('qr')]
@@ -99,10 +106,11 @@ class WebhookEvent4Click
      * @param  string  $browser
      * @param  string  $os
      * @param  string  $referer
+     * @param  string  $refererUrl
      * @param  string  $ip
      * @param  ?bool  $qr
      */
-    public function __construct(string $id, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, string $referer, string $ip, ?bool $qr = null)
+    public function __construct(string $id, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, string $referer, string $refererUrl, string $ip, ?bool $qr = null)
     {
         $this->id = $id;
         $this->url = $url;
@@ -113,6 +121,7 @@ class WebhookEvent4Click
         $this->browser = $browser;
         $this->os = $os;
         $this->referer = $referer;
+        $this->refererUrl = $refererUrl;
         $this->ip = $ip;
         $this->qr = $qr;
     }

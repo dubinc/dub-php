@@ -8,7 +8,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "retrieveAnalytics"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security(\n    token: \"DUB_API_KEY\",\n);\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\RetrieveAnalyticsRequest(\n        timezone: 'America/New_York',\n        city: 'New York',\n        device: 'Desktop',\n        browser: 'Chrome',\n        os: 'Windows',\n        referer: 'google.com',\n    );\n    $response = $sdk->analytics->retrieve($request);\n\n    if ($response->oneOf !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security(\n    token: \"DUB_API_KEY\",\n);\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\RetrieveAnalyticsRequest(\n        timezone: 'America/New_York',\n        city: 'New York',\n        device: 'Desktop',\n        browser: 'Chrome',\n        os: 'Windows',\n        referer: 'google.com',\n        refererUrl: 'https://dub.co/blog',\n    );\n    $response = $sdk->analytics->retrieve($request);\n\n    if ($response->oneOf !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
   - target: $["paths"]["/domains"]["get"]
     update:
       "x-codeSamples":
@@ -38,7 +38,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listEvents"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security(\n    token: \"DUB_API_KEY\",\n);\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\ListEventsRequest(\n        timezone: 'America/New_York',\n        city: 'New York',\n        device: 'Desktop',\n        browser: 'Chrome',\n        os: 'Windows',\n        referer: 'google.com',\n    );\n    $response = $sdk->events->list($request);\n\n    if ($response->clickEvents !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Components;\nuse Dub\\Models\\Operations;\n\n$security = new Components\\Security(\n    token: \"DUB_API_KEY\",\n);\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\ntry {\n    $request = new Operations\\ListEventsRequest(\n        timezone: 'America/New_York',\n        city: 'New York',\n        device: 'Desktop',\n        browser: 'Chrome',\n        os: 'Windows',\n        referer: 'google.com',\n        refererUrl: 'https://dub.co/blog',\n    );\n    $response = $sdk->events->list($request);\n\n    if ($response->clickEvents !== null) {\n        // handle response\n    }\n} catch (Throwable $e) {\n    // handle exception\n}"
   - target: $["paths"]["/links"]["get"]
     update:
       "x-codeSamples":

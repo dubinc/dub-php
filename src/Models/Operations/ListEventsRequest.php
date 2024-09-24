@@ -141,6 +141,14 @@ class ListEventsRequest
     public ?string $referer = null;
 
     /**
+     * The full referer URL to retrieve analytics for.
+     *
+     * @var ?string $refererUrl
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=refererUrl')]
+    public ?string $refererUrl = null;
+
+    /**
      * The URL to retrieve analytics for.
      *
      * @var ?string $url
@@ -217,6 +225,7 @@ class ListEventsRequest
      * @param  ?string  $browser
      * @param  ?string  $os
      * @param  ?string  $referer
+     * @param  ?string  $refererUrl
      * @param  ?string  $url
      * @param  ?string  $tagId
      * @param  ?bool  $qr
@@ -226,7 +235,7 @@ class ListEventsRequest
      * @param  ?Order  $order
      * @param  ?SortBy  $sortBy
      */
-    public function __construct(?QueryParamEvent $event = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?float $page = null, ?float $limit = null, ?Order $order = null, ?SortBy $sortBy = null)
+    public function __construct(?QueryParamEvent $event = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?float $page = null, ?float $limit = null, ?Order $order = null, ?SortBy $sortBy = null)
     {
         $this->event = $event;
         $this->domain = $domain;
@@ -244,6 +253,7 @@ class ListEventsRequest
         $this->browser = $browser;
         $this->os = $os;
         $this->referer = $referer;
+        $this->refererUrl = $refererUrl;
         $this->url = $url;
         $this->tagId = $tagId;
         $this->qr = $qr;

@@ -5,17 +5,18 @@ The parameter to group the analytics data points by. Defaults to 'count' if unde
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Count`      | count        |
-| `Timeseries` | timeseries   |
-| `Continents` | continents   |
-| `Countries`  | countries    |
-| `Cities`     | cities       |
-| `Devices`    | devices      |
-| `Browsers`   | browsers     |
-| `Os`         | os           |
-| `Referers`   | referers     |
-| `TopLinks`   | top_links    |
-| `TopUrls`    | top_urls     |
-| `Trigger`    | trigger      |
+| Name          | Value         |
+| ------------- | ------------- |
+| `Count`       | count         |
+| `Timeseries`  | timeseries    |
+| `Continents`  | continents    |
+| `Countries`   | countries     |
+| `Cities`      | cities        |
+| `Devices`     | devices       |
+| `Browsers`    | browsers      |
+| `Os`          | os            |
+| `Referers`    | referers      |
+| `RefererUrls` | referer_urls  |
+| `TopLinks`    | top_links     |
+| `TopUrls`     | top_urls      |
+| `Trigger`     | trigger       |
