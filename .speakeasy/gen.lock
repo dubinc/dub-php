@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: bf87a4d4951f97782f297e956ac66cd2
+  docChecksum: 73565d11bf5d47913d55941f5c1c5b59
   docVersion: 0.0.1
-  speakeasyVersion: 1.401.2
-  generationVersion: 2.421.3
-  releaseVersion: 0.6.3
-  configChecksum: 76b632191a82c9205ed829803d966d32
+  speakeasyVersion: 1.402.0
+  generationVersion: 2.422.6
+  releaseVersion: 0.6.4
+  configChecksum: 11a99c46190f8a94a53d93af71fc4a88
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -746,6 +746,7 @@ examples:
           browser: "Chrome"
           os: "Windows"
           referer: "google.com"
+          refererUrl: "https://dub.co/blog"
       responses:
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
@@ -777,6 +778,7 @@ examples:
           browser: "Chrome"
           os: "Windows"
           referer: "google.com"
+          refererUrl: "https://dub.co/blog"
       responses:
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
