@@ -17,7 +17,9 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 try {
     $request = new Operations\CreateLinkRequestBody(
         url: 'https://google.com',
-        tagIds: '...',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
         externalId: '123456',
     );
     $response = $sdk->links->create($request);
@@ -49,7 +51,7 @@ try {
     $request = new Operations\UpsertLinkRequestBody(
         url: 'https://google.com',
         tagIds: [
-            '<value>',
+            'clux0rgak00011...',
         ],
         externalId: '123456',
     );

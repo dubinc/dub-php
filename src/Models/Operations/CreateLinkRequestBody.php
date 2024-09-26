@@ -285,6 +285,15 @@ class CreateLinkRequestBody
     public ?string $utmContent = null;
 
     /**
+     * The referral tag of the short link. If set, this will populate or override the `ref` query parameter in the destination URL.
+     *
+     * @var ?string $ref
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('ref')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $ref = null;
+
+    /**
      * @param  string  $url
      * @param  ?string  $domain
      * @param  ?string  $key
@@ -315,8 +324,9 @@ class CreateLinkRequestBody
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
+     * @param  ?string  $ref
      */
-    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null)
+    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null)
     {
         $this->url = $url;
         $this->domain = $domain;
@@ -348,5 +358,6 @@ class CreateLinkRequestBody
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
+        $this->ref = $ref;
     }
 }
