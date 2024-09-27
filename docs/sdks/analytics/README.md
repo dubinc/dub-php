@@ -1,4 +1,5 @@
 # Analytics
+(*analytics*)
 
 ## Overview
 
@@ -18,15 +19,11 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\RetrieveAnalyticsRequest(
         timezone: 'America/New_York',
@@ -37,7 +34,9 @@ try {
         referer: 'google.com',
         refererUrl: 'https://dub.co/blog',
     );
-    $response = $sdk->analytics->retrieve($request);
+    $response = $sdk.analytics->retrieve(
+        request: $request
+    );
 
     if ($response->oneOf !== null) {
         // handle response

@@ -1,4 +1,5 @@
 # Track
+(*track*)
 
 ## Overview
 
@@ -20,22 +21,20 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\TrackLeadRequestBody(
-        clickId: '<value>',
+        clickId: '<id>',
         eventName: 'Sign up',
-        customerId: '<value>',
+        customerId: '<id>',
     );
-    $response = $sdk->track->lead($request);
+    $response = $sdk.track->lead(
+        request: $request
+    );
 
     if ($response->object !== null) {
         // handle response
@@ -83,23 +82,21 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\TrackSaleRequestBody(
-        customerId: '<value>',
+        customerId: '<id>',
         amount: 996500,
         paymentProcessor: Operations\PaymentProcessor::Paddle,
         eventName: 'Purchase',
     );
-    $response = $sdk->track->sale($request);
+    $response = $sdk.track->sale(
+        request: $request
+    );
 
     if ($response->object !== null) {
         // handle response
@@ -147,20 +144,18 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\TrackCustomerRequestBody(
-        customerId: '<value>',
+        customerId: '<id>',
     );
-    $response = $sdk->track->customer($request);
+    $response = $sdk.track->customer(
+        request: $request
+    );
 
     if ($response->object !== null) {
         // handle response

@@ -1,4 +1,5 @@
 # Domains
+(*domains*)
 
 ## Overview
 
@@ -21,15 +22,11 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\CreateDomainRequestBody(
         slug: 'acme.com',
@@ -37,7 +34,9 @@ try {
         expiredUrl: 'https://acme.com/expired',
         placeholder: 'https://dub.co/help/article/what-is-dub',
     );
-    $response = $sdk->domains->create($request);
+    $response = $sdk.domains->create(
+        request: $request
+    );
 
     if ($response->domainSchema !== null) {
         // handle response
@@ -85,17 +84,19 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
 
-    $response = $sdk->domains->list(false, '<value>', 1, 50);
+    $response = $sdk.domains->list(
+        archived: false,
+        search: '<value>',
+        page: 1,
+        pageSize: 50
+
+    );
 
     if ($response->domainSchemas !== null) {
         // handle response
@@ -146,15 +147,11 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $requestBody = new Operations\UpdateDomainRequestBody(
         slug: 'acme.com',
@@ -162,7 +159,11 @@ try {
         expiredUrl: 'https://acme.com/expired',
         placeholder: 'https://dub.co/help/article/what-is-dub',
     );
-    $response = $sdk->domains->update('acme.com', $requestBody);
+    $response = $sdk.domains->update(
+        slug: 'acme.com',
+        requestBody: $requestBody
+
+    );
 
     if ($response->domainSchema !== null) {
         // handle response
@@ -211,17 +212,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
 
-    $response = $sdk->domains->delete('acme.com');
+    $response = $sdk.domains->delete(
+        slug: 'acme.com'
+    );
 
     if ($response->object !== null) {
         // handle response

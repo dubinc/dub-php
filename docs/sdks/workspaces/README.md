@@ -1,4 +1,5 @@
 # Workspaces
+(*workspaces*)
 
 ## Overview
 
@@ -19,17 +20,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
 
-    $response = $sdk->workspaces->get('<value>');
+    $response = $sdk.workspaces->get(
+        idOrSlug: '<value>'
+    );
 
     if ($response->workspaceSchema !== null) {
         // handle response
@@ -77,18 +76,18 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $requestBody = new Operations\UpdateWorkspaceRequestBody();
-    $response = $sdk->workspaces->update('<value>', $requestBody);
+    $response = $sdk.workspaces->update(
+        idOrSlug: '<value>',
+        requestBody: $requestBody
+
+    );
 
     if ($response->workspaceSchema !== null) {
         // handle response

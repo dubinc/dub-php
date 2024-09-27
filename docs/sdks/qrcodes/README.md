@@ -1,4 +1,5 @@
 # QRCodes
+(*qrCodes*)
 
 ## Overview
 
@@ -18,20 +19,18 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\GetQRCodeRequest(
         url: 'https://normal-making.name',
     );
-    $response = $sdk->qrCodes->get($request);
+    $response = $sdk.qrCodes->get(
+        request: $request
+    );
 
     if ($response->res !== null) {
         // handle response

@@ -1,4 +1,5 @@
 # Metatags
+(*metatags*)
 
 ## Overview
 
@@ -18,17 +19,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
 
-    $response = $sdk->metatags->get('https://dub.co');
+    $response = $sdk.metatags->get(
+        url: 'https://dub.co'
+    );
 
     if ($response->object !== null) {
         // handle response
