@@ -5,15 +5,11 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\CreateLinkRequestBody(
         url: 'https://google.com',
@@ -22,7 +18,9 @@ try {
         ],
         externalId: '123456',
     );
-    $response = $sdk->links->create($request);
+    $response = $sdk.links->create(
+        request: $request
+    );
 
     if ($response->linkSchema !== null) {
         // handle response
@@ -38,15 +36,11 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\UpsertLinkRequestBody(
         url: 'https://google.com',
@@ -55,7 +49,9 @@ try {
         ],
         externalId: '123456',
     );
-    $response = $sdk->links->upsert($request);
+    $response = $sdk.links->upsert(
+        request: $request
+    );
 
     if ($response->linkSchema !== null) {
         // handle response

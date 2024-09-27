@@ -1,4 +1,5 @@
 # Tags
+(*tags*)
 
 ## Overview
 
@@ -21,18 +22,16 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $request = new Operations\CreateTagRequestBody();
-    $response = $sdk->tags->create($request);
+    $response = $sdk.tags->create(
+        request: $request
+    );
 
     if ($response->tagSchema !== null) {
         // handle response
@@ -80,16 +79,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
-    $response = $sdk->tags->list();
+    $response = $sdk.tags->list(
+
+    );
 
     if ($response->tagSchemas !== null) {
         // handle response
@@ -131,18 +128,18 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 use Dub\Models\Operations;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
     $requestBody = new Operations\UpdateTagRequestBody();
-    $response = $sdk->tags->update('<id>', $requestBody);
+    $response = $sdk.tags->update(
+        id: '<id>',
+        requestBody: $requestBody
+
+    );
 
     if ($response->tagSchema !== null) {
         // handle response
@@ -191,17 +188,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Components;
 
-$security = new Components\Security(
-    token: "DUB_API_KEY",
-);
+$security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
 try {
 
-    $response = $sdk->tags->delete('<id>');
+    $response = $sdk.tags->delete(
+        id: '<id>'
+    );
 
     if ($response->object !== null) {
         // handle response
