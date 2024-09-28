@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: b6e0f68b0350f243f5aab5565767940a
+  docChecksum: 596f43d83d9b42d6000040c93ba5018d
   docVersion: 0.0.1
-  speakeasyVersion: 1.403.3
-  generationVersion: 2.424.0
-  releaseVersion: 0.6.6
-  configChecksum: b87c0196f770c36646da5e05c86328b0
+  speakeasyVersion: 1.404.5
+  generationVersion: 2.426.2
+  releaseVersion: 0.6.7
+  configChecksum: cb77160f7624eac61ecd226acdc78be6
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
-    core: 3.4.7
+    core: 3.4.8
     deprecations: 2.81.1
-    errors: 0.1.2
+    errors: 0.1.3
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.81.7
@@ -533,7 +533,7 @@ examples:
       parameters:
         query:
           linkId: "clux0rgak00011..."
-          externalId: "ext_123456"
+          externalId: "123456"
       responses:
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}

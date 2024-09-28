@@ -12,13 +12,24 @@ namespace Dub\Models\Operations;
 class BulkUpdateLinksRequestBody
 {
     /**
-     * $linkIds
+     * The IDs of the links to update. Takes precedence over `externalIds`.
      *
-     * @var array<string> $linkIds
+     * @var ?array<string> $linkIds
      */
     #[\JMS\Serializer\Annotation\SerializedName('linkIds')]
-    #[\JMS\Serializer\Annotation\Type('array<string>')]
-    public array $linkIds;
+    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $linkIds = null;
+
+    /**
+     * The external IDs of the links to update as stored in your database.
+     *
+     * @var ?array<string> $externalIds
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('externalIds')]
+    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $externalIds = null;
 
     /**
      *
@@ -29,12 +40,14 @@ class BulkUpdateLinksRequestBody
     public Data $data;
 
     /**
-     * @param  array<string>  $linkIds
      * @param  Data  $data
+     * @param  ?array<string>  $linkIds
+     * @param  ?array<string>  $externalIds
      */
-    public function __construct(array $linkIds, Data $data)
+    public function __construct(Data $data, ?array $linkIds = null, ?array $externalIds = null)
     {
-        $this->linkIds = $linkIds;
         $this->data = $data;
+        $this->linkIds = $linkIds;
+        $this->externalIds = $externalIds;
     }
 }

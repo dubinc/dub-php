@@ -26,21 +26,19 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\TrackLeadRequestBody(
-        clickId: '<id>',
-        eventName: 'Sign up',
-        customerId: '<id>',
-    );
-    $response = $sdk.track->lead(
-        request: $request
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\TrackLeadRequestBody(
+    clickId: '<id>',
+    eventName: 'Sign up',
+    customerId: '<id>',
+);
+
+$response = $sdk->track->lead(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 
@@ -87,22 +85,20 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\TrackSaleRequestBody(
-        customerId: '<id>',
-        amount: 996500,
-        paymentProcessor: Operations\PaymentProcessor::Paddle,
-        eventName: 'Purchase',
-    );
-    $response = $sdk.track->sale(
-        request: $request
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\TrackSaleRequestBody(
+    customerId: '<id>',
+    amount: 996500,
+    paymentProcessor: Operations\PaymentProcessor::Paddle,
+    eventName: 'Purchase',
+);
+
+$response = $sdk->track->sale(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 
@@ -149,19 +145,17 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\TrackCustomerRequestBody(
-        customerId: '<id>',
-    );
-    $response = $sdk.track->customer(
-        request: $request
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\TrackCustomerRequestBody(
+    customerId: '<id>',
+);
+
+$response = $sdk->track->customer(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 

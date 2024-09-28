@@ -27,22 +27,20 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\CreateDomainRequestBody(
-        slug: 'acme.com',
-        archived: false,
-        expiredUrl: 'https://acme.com/expired',
-        placeholder: 'https://dub.co/help/article/what-is-dub',
-    );
-    $response = $sdk.domains->create(
-        request: $request
-    );
 
-    if ($response->domainSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\CreateDomainRequestBody(
+    slug: 'acme.com',
+    archived: false,
+    expiredUrl: 'https://acme.com/expired',
+    placeholder: 'https://dub.co/help/article/what-is-dub',
+);
+
+$response = $sdk->domains->create(
+    request: $request
+);
+
+if ($response->domainSchema !== null) {
+    // handle response
 }
 ```
 
@@ -88,21 +86,19 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.domains->list(
-        archived: false,
-        search: '<value>',
-        page: 1,
-        pageSize: 50
 
-    );
 
-    if ($response->domainSchemas !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$response = $sdk->domains->list(
+    archived: false,
+    search: '<value>',
+    page: 1,
+    pageSize: 50
+
+);
+
+if ($response->domainSchemas !== null) {
+    // handle response
 }
 ```
 
@@ -152,24 +148,22 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $requestBody = new Operations\UpdateDomainRequestBody(
-        slug: 'acme.com',
-        archived: false,
-        expiredUrl: 'https://acme.com/expired',
-        placeholder: 'https://dub.co/help/article/what-is-dub',
-    );
-    $response = $sdk.domains->update(
-        slug: 'acme.com',
-        requestBody: $requestBody
 
-    );
+$requestBody = new Operations\UpdateDomainRequestBody(
+    slug: 'acme.com',
+    archived: false,
+    expiredUrl: 'https://acme.com/expired',
+    placeholder: 'https://dub.co/help/article/what-is-dub',
+);
 
-    if ($response->domainSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$response = $sdk->domains->update(
+    slug: 'acme.com',
+    requestBody: $requestBody
+
+);
+
+if ($response->domainSchema !== null) {
+    // handle response
 }
 ```
 
@@ -216,17 +210,15 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.domains->delete(
-        slug: 'acme.com'
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+
+$response = $sdk->domains->delete(
+    slug: 'acme.com'
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 

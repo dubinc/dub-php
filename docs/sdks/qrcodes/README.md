@@ -24,19 +24,17 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\GetQRCodeRequest(
-        url: 'https://normal-making.name',
-    );
-    $response = $sdk.qrCodes->get(
-        request: $request
-    );
 
-    if ($response->res !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\GetQRCodeRequest(
+    url: 'https://normal-making.name',
+);
+
+$response = $sdk->qrCodes->get(
+    request: $request
+);
+
+if ($response->res !== null) {
+    // handle response
 }
 ```
 

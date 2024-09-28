@@ -33,23 +33,21 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\CreateLinkRequestBody(
-        url: 'https://google.com',
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    );
-    $response = $sdk.links->create(
-        request: $request
-    );
 
-    if ($response->linkSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\CreateLinkRequestBody(
+    url: 'https://google.com',
+    tagIds: [
+        'clux0rgak00011...',
+    ],
+    externalId: '123456',
+);
+
+$response = $sdk->links->create(
+    request: $request
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
 }
 ```
 
@@ -96,20 +94,18 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\GetLinksRequest(
-        page: 1,
-        pageSize: 50,
-    );
-    $response = $sdk.links->list(
-        request: $request
-    );
 
-    if ($response->linkSchemas !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\GetLinksRequest(
+    page: 1,
+    pageSize: 50,
+);
+
+$response = $sdk->links->list(
+    request: $request
+);
+
+if ($response->linkSchemas !== null) {
+    // handle response
 }
 ```
 
@@ -156,17 +152,15 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\GetLinksCountRequest();
-    $response = $sdk.links->count(
-        request: $request
-    );
 
-    if ($response->number !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\GetLinksCountRequest();
+
+$response = $sdk->links->count(
+    request: $request
+);
+
+if ($response->number !== null) {
+    // handle response
 }
 ```
 
@@ -212,32 +206,30 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.links->get(
-        domain: 'rural-mathematics.name',
-        key: '<key>',
-        linkId: 'clux0rgak00011...',
-        externalId: 'ext_123456'
 
-    );
 
-    if ($response->linkSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$response = $sdk->links->get(
+    domain: 'rural-mathematics.name',
+    key: '<key>',
+    linkId: 'clux0rgak00011...',
+    externalId: '123456'
+
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
 }
 ```
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `domain`                                                                                                        | *string*                                                                                                        | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |                                                                                                                 |
-| `key`                                                                                                           | *string*                                                                                                        | :heavy_minus_sign:                                                                                              | The key of the link to retrieve. E.g. for `d.to/github`, the key is `github`.                                   |                                                                                                                 |
-| `linkId`                                                                                                        | *string*                                                                                                        | :heavy_minus_sign:                                                                                              | The unique ID of the short link.                                                                                | clux0rgak00011...                                                                                               |
-| `externalId`                                                                                                    | *string*                                                                                                        | :heavy_minus_sign:                                                                                              | This is the ID of the link in the your database. Must be prefixed with `ext_` when passed as a query parameter. | ext_123456                                                                                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   | Example                                                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `domain`                                                                      | *string*                                                                      | :heavy_minus_sign:                                                            | N/A                                                                           |                                                                               |
+| `key`                                                                         | *string*                                                                      | :heavy_minus_sign:                                                            | The key of the link to retrieve. E.g. for `d.to/github`, the key is `github`. |                                                                               |
+| `linkId`                                                                      | *string*                                                                      | :heavy_minus_sign:                                                            | The unique ID of the short link.                                              | clux0rgak00011...                                                             |
+| `externalId`                                                                  | *string*                                                                      | :heavy_minus_sign:                                                            | This is the ID of the link in the your database.                              | 123456                                                                        |
 
 ### Response
 
@@ -276,25 +268,23 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $requestBody = new Operations\UpdateLinkRequestBody(
-        url: 'https://google.com',
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    );
-    $response = $sdk.links->update(
-        linkId: '<id>',
-        requestBody: $requestBody
 
-    );
+$requestBody = new Operations\UpdateLinkRequestBody(
+    url: 'https://google.com',
+    tagIds: [
+        'clux0rgak00011...',
+    ],
+    externalId: '123456',
+);
 
-    if ($response->linkSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$response = $sdk->links->update(
+    linkId: '<id>',
+    requestBody: $requestBody
+
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
 }
 ```
 
@@ -341,17 +331,15 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.links->delete(
-        linkId: '<id>'
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+
+$response = $sdk->links->delete(
+    linkId: '<id>'
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 
@@ -398,25 +386,23 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = [
-        new Operations\RequestBody(
-            url: 'https://google.com',
-            tagIds: [
-                'clux0rgak00011...',
-            ],
-            externalId: '123456',
-        ),
-    ];
-    $response = $sdk.links->createMany(
-        request: $request
-    );
 
-    if ($response->linkSchemas !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = [
+    new Operations\RequestBody(
+        url: 'https://google.com',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        externalId: '123456',
+    ),
+];
+
+$response = $sdk->links->createMany(
+    request: $request
+);
+
+if ($response->linkSchemas !== null) {
+    // handle response
 }
 ```
 
@@ -463,27 +449,22 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\BulkUpdateLinksRequestBody(
-        linkIds: [
-            '<value>',
-        ],
-        data: new Operations\Data(
-            url: 'https://google.com',
-            tagIds: [
-                'clux0rgak00011...',
-            ],
-        ),
-    );
-    $response = $sdk.links->updateMany(
-        request: $request
-    );
 
-    if ($response->linkSchemas !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\BulkUpdateLinksRequestBody(
+    data: new Operations\Data(
+        url: 'https://google.com',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+    ),
+);
+
+$response = $sdk->links->updateMany(
+    request: $request
+);
+
+if ($response->linkSchemas !== null) {
+    // handle response
 }
 ```
 
@@ -529,20 +510,18 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.links->deleteMany(
-        linkIds: [
-            'clux0rgak00011...',
-            'clux0rgak00022...',
-        ]
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+
+$response = $sdk->links->deleteMany(
+    linkIds: [
+        'clux0rgak00011...',
+        'clux0rgak00022...',
+    ]
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 
@@ -589,23 +568,21 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\UpsertLinkRequestBody(
-        url: 'https://google.com',
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    );
-    $response = $sdk.links->upsert(
-        request: $request
-    );
 
-    if ($response->linkSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\UpsertLinkRequestBody(
+    url: 'https://google.com',
+    tagIds: [
+        'clux0rgak00011...',
+    ],
+    externalId: '123456',
+);
+
+$response = $sdk->links->upsert(
+    request: $request
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
 }
 ```
 

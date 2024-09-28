@@ -23,17 +23,15 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.metatags->get(
-        url: 'https://dub.co'
-    );
 
-    if ($response->object !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+
+$response = $sdk->metatags->get(
+    url: 'https://dub.co'
+);
+
+if ($response->object !== null) {
+    // handle response
 }
 ```
 
