@@ -24,17 +24,15 @@ use Dub;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
 
-    $response = $sdk.workspaces->get(
-        idOrSlug: '<value>'
-    );
 
-    if ($response->workspaceSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+
+$response = $sdk->workspaces->get(
+    idOrSlug: '<value>'
+);
+
+if ($response->workspaceSchema !== null) {
+    // handle response
 }
 ```
 
@@ -81,19 +79,17 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $requestBody = new Operations\UpdateWorkspaceRequestBody();
-    $response = $sdk.workspaces->update(
-        idOrSlug: '<value>',
-        requestBody: $requestBody
 
-    );
+$requestBody = new Operations\UpdateWorkspaceRequestBody();
 
-    if ($response->workspaceSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$response = $sdk->workspaces->update(
+    idOrSlug: '<value>',
+    requestBody: $requestBody
+
+);
+
+if ($response->workspaceSchema !== null) {
+    // handle response
 }
 ```
 

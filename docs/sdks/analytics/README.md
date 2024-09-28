@@ -24,25 +24,23 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\RetrieveAnalyticsRequest(
-        timezone: 'America/New_York',
-        city: 'New York',
-        device: 'Desktop',
-        browser: 'Chrome',
-        os: 'Windows',
-        referer: 'google.com',
-        refererUrl: 'https://dub.co/blog',
-    );
-    $response = $sdk.analytics->retrieve(
-        request: $request
-    );
 
-    if ($response->oneOf !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\RetrieveAnalyticsRequest(
+    timezone: 'America/New_York',
+    city: 'New York',
+    device: 'Desktop',
+    browser: 'Chrome',
+    os: 'Windows',
+    referer: 'google.com',
+    refererUrl: 'https://dub.co/blog',
+);
+
+$response = $sdk->analytics->retrieve(
+    request: $request
+);
+
+if ($response->oneOf !== null) {
+    // handle response
 }
 ```
 

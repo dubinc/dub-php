@@ -19,6 +19,7 @@ Dub.co API: Dub is link management infrastructure for companies to create market
 * [SDK Installation](#sdk-installation)
 * [SDK Example Usage](#sdk-example-usage)
 * [Available Resources and Operations](#available-resources-and-operations)
+* [Error Handling](#error-handling)
 * [Server Selection](#server-selection)
 <!-- End Table of Contents [toc] -->
 
@@ -49,23 +50,21 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\CreateLinkRequestBody(
-        url: 'https://google.com',
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    );
-    $response = $sdk.links->create(
-        request: $request
-    );
 
-    if ($response->linkSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\CreateLinkRequestBody(
+    url: 'https://google.com',
+    tagIds: [
+        'clux0rgak00011...',
+    ],
+    externalId: '123456',
+);
+
+$response = $sdk->links->create(
+    request: $request
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
 }
 ```
 
@@ -82,23 +81,21 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
-try {
-    $request = new Operations\UpsertLinkRequestBody(
-        url: 'https://google.com',
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    );
-    $response = $sdk.links->upsert(
-        request: $request
-    );
 
-    if ($response->linkSchema !== null) {
-        // handle response
-    }
-} catch (Throwable $e) {
-    // handle exception
+$request = new Operations\UpsertLinkRequestBody(
+    url: 'https://google.com',
+    tagIds: [
+        'clux0rgak00011...',
+    ],
+    externalId: '123456',
+);
+
+$response = $sdk->links->upsert(
+    request: $request
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
 }
 ```
 <!-- End SDK Example Usage [usage] -->
@@ -166,6 +163,99 @@ try {
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
+
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations. All operations return a response object or throw an exception.
+
+By default an API error will raise a `Errors\SDKException` exception, which has the following properties:
+
+| Property       | Type                                    | Description           |
+|----------------|-----------------------------------------|-----------------------|
+| `$message`     | *string*                                | The error message     |
+| `$statusCode`  | *int*                                   | The HTTP status code  |
+| `$rawResponse` | *?\Psr\Http\Message\ResponseInterface*  | The raw HTTP response |
+| `$body`        | *string*                                | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create` method throws the following exceptions:
+
+| Error Object                   | Status Code                    | Content Type                   |
+| ------------------------------ | ------------------------------ | ------------------------------ |
+| Errors\BadRequest              | 400                            | application/json               |
+| Errors\Unauthorized            | 401                            | application/json               |
+| Errors\Forbidden               | 403                            | application/json               |
+| Errors\NotFound                | 404                            | application/json               |
+| Errors\Conflict                | 409                            | application/json               |
+| Errors\InviteExpired           | 410                            | application/json               |
+| Errors\UnprocessableEntity     | 422                            | application/json               |
+| Errors\RateLimitExceeded       | 429                            | application/json               |
+| Errors\InternalServerError     | 500                            | application/json               |
+| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+
+### Example
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$security = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+try {
+    $request = new Operations\CreateLinkRequestBody(
+        url: 'https://google.com',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        externalId: '123456',
+    );
+
+    $response = $sdk->links->create(
+        request: $request
+    );
+
+    if ($response->linkSchema !== null) {
+        // handle response
+    }
+} catch (Errors\BadRequestThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\UnauthorizedThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\ForbiddenThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\NotFoundThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\ConflictThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\InviteExpiredThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\UnprocessableEntityThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\RateLimitExceededThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\InternalServerErrorThrowable $e) {
+    // handle $e->$container data
+    throw $e;
+} catch (Errors\SDKException $e) {
+    // handle default exception
+    throw $e;
+}
+```
+<!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
