@@ -47,6 +47,6 @@ if ($response->object !== null) {
 
 ### Errors
 
-| Error Object                   | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\SDKException | 4XX, 5XX            | \*/\*               |

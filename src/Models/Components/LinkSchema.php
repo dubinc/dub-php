@@ -36,14 +36,6 @@ class LinkSchema
     public string $key;
 
     /**
-     * This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
-     *
-     * @var ?string $externalId
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('externalId')]
-    public ?string $externalId;
-
-    /**
      * The destination URL of the short link.
      *
      * @var string $url
@@ -58,6 +50,22 @@ class LinkSchema
      */
     #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
     public bool $trackConversion;
+
+    /**
+     * This is the ID of the link in your database that is unique across your workspace. If set, it can be used to identify the link in future API requests. Must be prefixed with 'ext_' when passed as a query parameter.
+     *
+     * @var ?string $externalId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('externalId')]
+    public ?string $externalId;
+
+    /**
+     * The identifier of the short link that is unique across your workspace. If set, it can be used to identify your short link for client-side click tracking.
+     *
+     * @var ?string $identifier
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('identifier')]
+    public ?string $identifier;
 
     /**
      * Whether the short link is archived.
@@ -366,6 +374,7 @@ class LinkSchema
      * @param  string  $updatedAt
      * @param  string  $projectId
      * @param  ?string  $externalId
+     * @param  ?string  $identifier
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
@@ -386,7 +395,7 @@ class LinkSchema
      * @param  ?string  $utmContent
      * @param  ?string  $lastClicked
      */
-    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, string $shortLink, string $qrCode, string $userId, string $workspaceId, float $clicks, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null)
+    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, string $shortLink, string $qrCode, string $userId, string $workspaceId, float $clicks, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -410,6 +419,7 @@ class LinkSchema
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
         $this->externalId = $externalId;
+        $this->identifier = $identifier;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
