@@ -180,18 +180,18 @@ By default an API error will raise a `Errors\SDKException` exception, which has 
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create` method throws the following exceptions:
 
-| Error Object                   | Status Code                    | Content Type                   |
-| ------------------------------ | ------------------------------ | ------------------------------ |
-| Errors\BadRequest              | 400                            | application/json               |
-| Errors\Unauthorized            | 401                            | application/json               |
-| Errors\Forbidden               | 403                            | application/json               |
-| Errors\NotFound                | 404                            | application/json               |
-| Errors\Conflict                | 409                            | application/json               |
-| Errors\InviteExpired           | 410                            | application/json               |
-| Errors\UnprocessableEntity     | 422                            | application/json               |
-| Errors\RateLimitExceeded       | 429                            | application/json               |
-| Errors\InternalServerError     | 500                            | application/json               |
-| Dub\Models\Errors.SDKException | 4xx-5xx                        | */*                            |
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
 ### Example
 

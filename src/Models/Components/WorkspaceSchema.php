@@ -233,6 +233,14 @@ class WorkspaceSchema
     public ?array $flags = null;
 
     /**
+     * The publishable key of the workspace.
+     *
+     * @var ?string $publishableKey
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('publishableKey')]
+    public ?string $publishableKey;
+
+    /**
      * @param  string  $id
      * @param  string  $name
      * @param  string  $slug
@@ -260,8 +268,9 @@ class WorkspaceSchema
      * @param  ?string  $inviteCode
      * @param  ?string  $referralLinkId
      * @param  ?array<string, bool>  $flags
+     * @param  ?string  $publishableKey
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $logo = null, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $logo = null, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null, ?string $publishableKey = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -290,5 +299,6 @@ class WorkspaceSchema
         $this->inviteCode = $inviteCode;
         $this->referralLinkId = $referralLinkId;
         $this->flags = $flags;
+        $this->publishableKey = $publishableKey;
     }
 }

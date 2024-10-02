@@ -36,14 +36,6 @@ class WebhookEvent4Link
     public string $key;
 
     /**
-     * This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
-     *
-     * @var ?string $externalId
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('externalId')]
-    public ?string $externalId;
-
-    /**
      *
      * @var string $url
      */
@@ -57,6 +49,22 @@ class WebhookEvent4Link
     #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
     public ?bool $trackConversion = null;
+
+    /**
+     * This is the ID of the link in your database that is unique across your workspace. If set, it can be used to identify the link in future API requests. Must be prefixed with 'ext_' when passed as a query parameter.
+     *
+     * @var ?string $externalId
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('externalId')]
+    public ?string $externalId;
+
+    /**
+     * The identifier of the short link that is unique across your workspace. If set, it can be used to identify your short link for client-side click tracking.
+     *
+     * @var ?string $identifier
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('identifier')]
+    public ?string $identifier;
 
     /**
      *
@@ -354,8 +362,9 @@ class WebhookEvent4Link
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  string  $projectId
-     * @param  ?string  $externalId
      * @param  ?bool  $trackConversion
+     * @param  ?string  $externalId
+     * @param  ?string  $identifier
      * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
@@ -380,7 +389,7 @@ class WebhookEvent4Link
      * @param  ?string  $utmContent
      * @param  ?string  $userId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, string $shortLink, string $qrCode, string $workspaceId, float $clicks, string $lastClicked, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?bool $trackConversion = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?WebhookEvent4Geo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, string $shortLink, string $qrCode, string $workspaceId, float $clicks, string $lastClicked, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?WebhookEvent4Geo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -398,8 +407,9 @@ class WebhookEvent4Link
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
-        $this->externalId = $externalId;
         $this->trackConversion = $trackConversion;
+        $this->externalId = $externalId;
+        $this->identifier = $identifier;
         $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
