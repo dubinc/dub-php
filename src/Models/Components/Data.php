@@ -172,11 +172,11 @@ class Data
     /**
      * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
      *
-     * @var ?WebhookEventGeo $geo
+     * @var ?LinkWebhookEventGeo $geo
      */
     #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\WebhookEventGeo|null')]
-    public ?WebhookEventGeo $geo;
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkWebhookEventGeo|null')]
+    public ?LinkWebhookEventGeo $geo;
 
     /**
      *
@@ -377,7 +377,7 @@ class Data
      * @param  ?bool  $doIndex
      * @param  ?string  $ios
      * @param  ?string  $android
-     * @param  ?WebhookEventGeo  $geo
+     * @param  ?LinkWebhookEventGeo  $geo
      * @param  ?bool  $publicStats
      * @param  ?string  $tagId
      * @param  ?array<TagSchema>  $tags
@@ -389,7 +389,7 @@ class Data
      * @param  ?string  $utmContent
      * @param  ?string  $userId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, string $shortLink, string $qrCode, string $workspaceId, float $clicks, string $lastClicked, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?WebhookEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, string $shortLink, string $qrCode, string $workspaceId, float $clicks, string $lastClicked, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LinkWebhookEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null)
     {
         $this->id = $id;
         $this->domain = $domain;

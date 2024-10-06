@@ -133,6 +133,14 @@ class ListEventsRequest
     public ?string $os = null;
 
     /**
+     * The trigger to retrieve analytics for. If undefined, return both QR and link clicks.
+     *
+     * @var ?QueryParamTrigger $trigger
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=trigger')]
+    public ?QueryParamTrigger $trigger = null;
+
+    /**
      * The referer to retrieve analytics for.
      *
      * @var ?string $referer
@@ -165,7 +173,7 @@ class ListEventsRequest
     public ?string $tagId = null;
 
     /**
-     * Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
+     * Deprecated. Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
      *
      * @var ?bool $qr
      */
@@ -224,6 +232,7 @@ class ListEventsRequest
      * @param  ?string  $device
      * @param  ?string  $browser
      * @param  ?string  $os
+     * @param  ?QueryParamTrigger  $trigger
      * @param  ?string  $referer
      * @param  ?string  $refererUrl
      * @param  ?string  $url
@@ -235,7 +244,7 @@ class ListEventsRequest
      * @param  ?Order  $order
      * @param  ?SortBy  $sortBy
      */
-    public function __construct(?QueryParamEvent $event = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?float $page = null, ?float $limit = null, ?Order $order = null, ?SortBy $sortBy = null)
+    public function __construct(?QueryParamEvent $event = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?float $page = null, ?float $limit = null, ?Order $order = null, ?SortBy $sortBy = null)
     {
         $this->event = $event;
         $this->domain = $domain;
@@ -252,6 +261,7 @@ class ListEventsRequest
         $this->device = $device;
         $this->browser = $browser;
         $this->os = $os;
+        $this->trigger = $trigger;
         $this->referer = $referer;
         $this->refererUrl = $refererUrl;
         $this->url = $url;

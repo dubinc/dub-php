@@ -1,0 +1,11 @@
+# LeadCreatedEventData
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `eventName`                                                                          | *string*                                                                             | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `customer`                                                                           | [Components\Customer](../../Models/Components/Customer.md)                           | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `click`                                                                              | [Components\LeadCreatedEventClick](../../Models/Components/LeadCreatedEventClick.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `link`                                                                               | [Components\LeadCreatedEventLink](../../Models/Components/LeadCreatedEventLink.md)   | :heavy_check_mark:                                                                   | N/A                                                                                  |

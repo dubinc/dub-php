@@ -1,0 +1,13 @@
+# LinkWebhookEvent
+
+Triggered when a link is created, updated, or deleted.
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `id`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `event`                                                                                            | [Components\One\|Components\Two\|Components\Three](../../Models/Components/LinkWebhookEventEvent.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `createdAt`                                                                                        | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `data`                                                                                             | [Components\Data](../../Models/Components/Data.md)                                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |

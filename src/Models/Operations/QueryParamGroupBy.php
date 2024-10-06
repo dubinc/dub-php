@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The parameter to group the analytics data points by. Defaults to 'count' if undefined. */
+/** The parameter to group the analytics data points by. Defaults to `count` if undefined. Note that `trigger` is deprecated (use `triggers` instead), but kept for backwards compatibility. */
 enum QueryParamGroupBy: string
 {
     case Count = 'count';
@@ -20,9 +20,10 @@ enum QueryParamGroupBy: string
     case Devices = 'devices';
     case Browsers = 'browsers';
     case Os = 'os';
+    case Trigger = 'trigger';
+    case Triggers = 'triggers';
     case Referers = 'referers';
     case RefererUrls = 'referer_urls';
     case TopLinks = 'top_links';
     case TopUrls = 'top_urls';
-    case Trigger = 'trigger';
 }

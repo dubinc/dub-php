@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: ababac2d9647ce276a0165b7766b1087
+  docChecksum: 5c400b20334e45bb5625715215fcbff4
   docVersion: 0.0.1
-  speakeasyVersion: 1.405.6
-  generationVersion: 2.428.1
-  releaseVersion: 0.6.8
-  configChecksum: ad5e677bb491371e97b2ca1c735e9f2e
+  speakeasyVersion: 1.409.0
+  generationVersion: 2.429.0
+  releaseVersion: 0.6.9
+  configChecksum: db1927b1f8f99ab93572ea83e625ce3b
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -54,43 +54,43 @@ generatedFiles:
   - docs/Models/Components/DomainSchema.md
   - docs/Models/Components/Domains.md
   - docs/Models/Components/Event.md
-  - docs/Models/Components/Event1.md
-  - docs/Models/Components/Event2.md
-  - docs/Models/Components/Event3.md
-  - docs/Models/Components/Four.md
   - docs/Models/Components/Geo.md
+  - docs/Models/Components/LeadCreatedEvent.md
+  - docs/Models/Components/LeadCreatedEventClick.md
+  - docs/Models/Components/LeadCreatedEventData.md
+  - docs/Models/Components/LeadCreatedEventEvent.md
+  - docs/Models/Components/LeadCreatedEventGeo.md
+  - docs/Models/Components/LeadCreatedEventLink.md
   - docs/Models/Components/Link.md
+  - docs/Models/Components/LinkClickedEvent.md
+  - docs/Models/Components/LinkClickedEventClick.md
+  - docs/Models/Components/LinkClickedEventData.md
+  - docs/Models/Components/LinkClickedEventEvent.md
+  - docs/Models/Components/LinkClickedEventGeo.md
+  - docs/Models/Components/LinkClickedEventLink.md
   - docs/Models/Components/LinkGeoTargeting.md
   - docs/Models/Components/LinkSchema.md
+  - docs/Models/Components/LinkWebhookEvent.md
+  - docs/Models/Components/LinkWebhookEventEvent.md
+  - docs/Models/Components/LinkWebhookEventGeo.md
   - docs/Models/Components/One.md
   - docs/Models/Components/Plan.md
   - docs/Models/Components/RegisteredDomain.md
   - docs/Models/Components/Role.md
   - docs/Models/Components/Sale.md
+  - docs/Models/Components/SaleCreatedEvent.md
+  - docs/Models/Components/SaleCreatedEventClick.md
+  - docs/Models/Components/SaleCreatedEventCustomer.md
+  - docs/Models/Components/SaleCreatedEventData.md
+  - docs/Models/Components/SaleCreatedEventEvent.md
+  - docs/Models/Components/SaleCreatedEventGeo.md
+  - docs/Models/Components/SaleCreatedEventLink.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/TagSchema.md
   - docs/Models/Components/Three.md
   - docs/Models/Components/Two.md
   - docs/Models/Components/Users.md
   - docs/Models/Components/WebhookEvent.md
-  - docs/Models/Components/WebhookEvent2Event.md
-  - docs/Models/Components/WebhookEvent2Geo.md
-  - docs/Models/Components/WebhookEvent3Click.md
-  - docs/Models/Components/WebhookEvent3Data.md
-  - docs/Models/Components/WebhookEvent3Event.md
-  - docs/Models/Components/WebhookEvent3Geo.md
-  - docs/Models/Components/WebhookEvent3Link.md
-  - docs/Models/Components/WebhookEvent4Click.md
-  - docs/Models/Components/WebhookEvent4Data.md
-  - docs/Models/Components/WebhookEvent4Event.md
-  - docs/Models/Components/WebhookEvent4Geo.md
-  - docs/Models/Components/WebhookEvent4Link.md
-  - docs/Models/Components/WebhookEventClick.md
-  - docs/Models/Components/WebhookEventCustomer.md
-  - docs/Models/Components/WebhookEventData.md
-  - docs/Models/Components/WebhookEventEvent.md
-  - docs/Models/Components/WebhookEventGeo.md
-  - docs/Models/Components/WebhookEventLink.md
   - docs/Models/Components/WorkspaceSchema.md
   - docs/Models/Errors/BadRequest.md
   - docs/Models/Errors/Code.md
@@ -180,6 +180,7 @@ generatedFiles:
   - docs/Models/Operations/QueryParamInterval.md
   - docs/Models/Operations/QueryParamTagIds.md
   - docs/Models/Operations/QueryParamTagNames.md
+  - docs/Models/Operations/QueryParamTrigger.md
   - docs/Models/Operations/RequestBody.md
   - docs/Models/Operations/RetrieveAnalyticsRequest.md
   - docs/Models/Operations/RetrieveAnalyticsResponse.md
@@ -200,6 +201,7 @@ generatedFiles:
   - docs/Models/Operations/TrackSaleRequestBody.md
   - docs/Models/Operations/TrackSaleResponse.md
   - docs/Models/Operations/TrackSaleResponseBody.md
+  - docs/Models/Operations/Trigger.md
   - docs/Models/Operations/Two.md
   - docs/Models/Operations/UpdateDomainRequest.md
   - docs/Models/Operations/UpdateDomainRequestBody.md
@@ -265,41 +267,41 @@ generatedFiles:
   - src/Models/Components/DomainSchema.php
   - src/Models/Components/Domains.php
   - src/Models/Components/Event.php
-  - src/Models/Components/Event1.php
-  - src/Models/Components/Event2.php
-  - src/Models/Components/Event3.php
-  - src/Models/Components/Four.php
   - src/Models/Components/Geo.php
+  - src/Models/Components/LeadCreatedEvent.php
+  - src/Models/Components/LeadCreatedEventClick.php
+  - src/Models/Components/LeadCreatedEventData.php
+  - src/Models/Components/LeadCreatedEventEvent.php
+  - src/Models/Components/LeadCreatedEventGeo.php
+  - src/Models/Components/LeadCreatedEventLink.php
   - src/Models/Components/Link.php
+  - src/Models/Components/LinkClickedEvent.php
+  - src/Models/Components/LinkClickedEventClick.php
+  - src/Models/Components/LinkClickedEventData.php
+  - src/Models/Components/LinkClickedEventEvent.php
+  - src/Models/Components/LinkClickedEventGeo.php
+  - src/Models/Components/LinkClickedEventLink.php
   - src/Models/Components/LinkGeoTargeting.php
   - src/Models/Components/LinkSchema.php
+  - src/Models/Components/LinkWebhookEvent.php
+  - src/Models/Components/LinkWebhookEventGeo.php
   - src/Models/Components/One.php
   - src/Models/Components/Plan.php
   - src/Models/Components/RegisteredDomain.php
   - src/Models/Components/Role.php
   - src/Models/Components/Sale.php
+  - src/Models/Components/SaleCreatedEvent.php
+  - src/Models/Components/SaleCreatedEventClick.php
+  - src/Models/Components/SaleCreatedEventCustomer.php
+  - src/Models/Components/SaleCreatedEventData.php
+  - src/Models/Components/SaleCreatedEventEvent.php
+  - src/Models/Components/SaleCreatedEventGeo.php
+  - src/Models/Components/SaleCreatedEventLink.php
   - src/Models/Components/Security.php
   - src/Models/Components/TagSchema.php
   - src/Models/Components/Three.php
   - src/Models/Components/Two.php
   - src/Models/Components/Users.php
-  - src/Models/Components/WebhookEvent2Event.php
-  - src/Models/Components/WebhookEvent2Geo.php
-  - src/Models/Components/WebhookEvent3Click.php
-  - src/Models/Components/WebhookEvent3Data.php
-  - src/Models/Components/WebhookEvent3Event.php
-  - src/Models/Components/WebhookEvent3Geo.php
-  - src/Models/Components/WebhookEvent3Link.php
-  - src/Models/Components/WebhookEvent4Click.php
-  - src/Models/Components/WebhookEvent4Data.php
-  - src/Models/Components/WebhookEvent4Event.php
-  - src/Models/Components/WebhookEvent4Geo.php
-  - src/Models/Components/WebhookEvent4Link.php
-  - src/Models/Components/WebhookEventClick.php
-  - src/Models/Components/WebhookEventCustomer.php
-  - src/Models/Components/WebhookEventData.php
-  - src/Models/Components/WebhookEventGeo.php
-  - src/Models/Components/WebhookEventLink.php
   - src/Models/Components/WorkspaceSchema.php
   - src/Models/Errors/BadRequest.php
   - src/Models/Errors/BadRequestThrowable.php
@@ -390,6 +392,7 @@ generatedFiles:
   - src/Models/Operations/QueryParamEvent.php
   - src/Models/Operations/QueryParamGroupBy.php
   - src/Models/Operations/QueryParamInterval.php
+  - src/Models/Operations/QueryParamTrigger.php
   - src/Models/Operations/RequestBody.php
   - src/Models/Operations/RetrieveAnalyticsRequest.php
   - src/Models/Operations/RetrieveAnalyticsResponse.php
@@ -407,6 +410,7 @@ generatedFiles:
   - src/Models/Operations/TrackSaleRequestBody.php
   - src/Models/Operations/TrackSaleResponse.php
   - src/Models/Operations/TrackSaleResponseBody.php
+  - src/Models/Operations/Trigger.php
   - src/Models/Operations/Two.php
   - src/Models/Operations/UpdateDomainRequest.php
   - src/Models/Operations/UpdateDomainRequestBody.php

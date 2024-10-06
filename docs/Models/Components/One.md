@@ -1,11 +1,8 @@
 # One
 
 
-## Fields
+## Values
 
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                  | *string*                                                                                              | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `event`                                                                                               | [Components\Event1\|Components\Event2\|Components\Event3](../../Models/Components/WebhookEventEvent.md) | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `createdAt`                                                                                           | *string*                                                                                              | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `data`                                                                                                | [Components\Data](../../Models/Components/Data.md)                                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| Name          | Value         |
+| ------------- | ------------- |
+| `LinkCreated` | link.created  |

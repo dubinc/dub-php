@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The type of event to retrieve analytics for. Defaults to 'clicks'. */
+/** The type of event to retrieve analytics for. Defaults to `clicks`. */
 enum Event: string
 {
     case Clicks = 'clicks';

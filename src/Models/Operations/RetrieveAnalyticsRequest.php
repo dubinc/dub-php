@@ -13,7 +13,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrieveAnalyticsRequest
 {
     /**
-     * The type of event to retrieve analytics for. Defaults to 'clicks'.
+     * The type of event to retrieve analytics for. Defaults to `clicks`.
      *
      * @var ?Event $event
      */
@@ -21,7 +21,7 @@ class RetrieveAnalyticsRequest
     public ?Event $event = null;
 
     /**
-     * The parameter to group the analytics data points by. Defaults to 'count' if undefined.
+     * The parameter to group the analytics data points by. Defaults to `count` if undefined. Note that `trigger` is deprecated (use `triggers` instead), but kept for backwards compatibility.
      *
      * @var ?QueryParamGroupBy $groupBy
      */
@@ -141,6 +141,14 @@ class RetrieveAnalyticsRequest
     public ?string $os = null;
 
     /**
+     * The trigger to retrieve analytics for. If undefined, return both QR and link clicks.
+     *
+     * @var ?Trigger $trigger
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=trigger')]
+    public ?Trigger $trigger = null;
+
+    /**
      * The referer to retrieve analytics for.
      *
      * @var ?string $referer
@@ -173,7 +181,7 @@ class RetrieveAnalyticsRequest
     public ?string $tagId = null;
 
     /**
-     * Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
+     * Deprecated. Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
      *
      * @var ?bool $qr
      */
@@ -205,6 +213,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $device
      * @param  ?string  $browser
      * @param  ?string  $os
+     * @param  ?Trigger  $trigger
      * @param  ?string  $referer
      * @param  ?string  $refererUrl
      * @param  ?string  $url
@@ -212,7 +221,7 @@ class RetrieveAnalyticsRequest
      * @param  ?bool  $qr
      * @param  ?bool  $root
      */
-    public function __construct(?Event $event = null, ?QueryParamGroupBy $groupBy = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null)
+    public function __construct(?Event $event = null, ?QueryParamGroupBy $groupBy = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null)
     {
         $this->event = $event;
         $this->groupBy = $groupBy;
@@ -230,6 +239,7 @@ class RetrieveAnalyticsRequest
         $this->device = $device;
         $this->browser = $browser;
         $this->os = $os;
+        $this->trigger = $trigger;
         $this->referer = $referer;
         $this->refererUrl = $refererUrl;
         $this->url = $url;
