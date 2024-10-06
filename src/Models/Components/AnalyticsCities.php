@@ -31,44 +31,48 @@ class AnalyticsCities
     /**
      * The number of clicks from this city
      *
-     * @var float $clicks
+     * @var ?float $clicks
      */
     #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    public float $clicks;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
 
     /**
      * The number of leads from this city
      *
-     * @var float $leads
+     * @var ?float $leads
      */
     #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    public float $leads;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
 
     /**
      * The number of sales from this city
      *
-     * @var float $sales
+     * @var ?float $sales
      */
     #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    public float $sales;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
 
     /**
      * The total amount of sales from this city, in cents
      *
-     * @var float $saleAmount
+     * @var ?float $saleAmount
      */
     #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    public float $saleAmount;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
 
     /**
      * @param  string  $city
      * @param  AnalyticsCitiesCountry  $country
-     * @param  float  $clicks
-     * @param  float  $leads
-     * @param  float  $sales
-     * @param  float  $saleAmount
+     * @param  ?float  $clicks
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      */
-    public function __construct(string $city, AnalyticsCitiesCountry $country, float $clicks, float $leads, float $sales, float $saleAmount)
+    public function __construct(string $city, AnalyticsCitiesCountry $country, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->city = $city;
         $this->country = $country;

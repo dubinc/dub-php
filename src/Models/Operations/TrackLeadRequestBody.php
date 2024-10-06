@@ -81,7 +81,7 @@ class TrackLeadRequestBody
      * @param  ?string  $customerAvatar
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(string $clickId, string $eventName, string $customerId, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null, ?array $metadata = null)
+    public function __construct(string $clickId, string $eventName, string $customerId, ?array $metadata = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;

@@ -14,42 +14,46 @@ class AnalyticsCount
     /**
      * The total number of clicks
      *
-     * @var float $clicks
+     * @var ?float $clicks
      */
     #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    public float $clicks;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
 
     /**
      * The total number of leads
      *
-     * @var float $leads
+     * @var ?float $leads
      */
     #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    public float $leads;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
 
     /**
      * The total number of sales
      *
-     * @var float $sales
+     * @var ?float $sales
      */
     #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    public float $sales;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
 
     /**
      * The total amount of sales, in cents
      *
-     * @var float $saleAmount
+     * @var ?float $saleAmount
      */
     #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    public float $saleAmount;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
 
     /**
-     * @param  float  $clicks
-     * @param  float  $leads
-     * @param  float  $sales
-     * @param  float  $saleAmount
+     * @param  ?float  $clicks
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      */
-    public function __construct(float $clicks, float $leads, float $sales, float $saleAmount)
+    public function __construct(?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->clicks = $clicks;
         $this->leads = $leads;

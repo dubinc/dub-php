@@ -46,10 +46,11 @@ class LinkSchema
     /**
      * [BETA] Whether to track conversions for the short link.
      *
-     * @var bool $trackConversion
+     * @var ?bool $trackConversion
      */
     #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
-    public bool $trackConversion;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $trackConversion = null;
 
     /**
      * This is the ID of the link in your database that is unique across your workspace. If set, it can be used to identify the link in future API requests. Must be prefixed with 'ext_' when passed as a query parameter.
@@ -70,10 +71,11 @@ class LinkSchema
     /**
      * Whether the short link is archived.
      *
-     * @var bool $archived
+     * @var ?bool $archived
      */
     #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    public bool $archived;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $archived = null;
 
     /**
      * The date and time when the short link will expire in ISO-8601 format.
@@ -102,10 +104,11 @@ class LinkSchema
     /**
      * Whether the short link uses Custom Social Media Cards feature.
      *
-     * @var bool $proxy
+     * @var ?bool $proxy
      */
     #[\JMS\Serializer\Annotation\SerializedName('proxy')]
-    public bool $proxy;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $proxy = null;
 
     /**
      * The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
@@ -142,18 +145,20 @@ class LinkSchema
     /**
      * Whether the short link uses link cloaking.
      *
-     * @var bool $rewrite
+     * @var ?bool $rewrite
      */
     #[\JMS\Serializer\Annotation\SerializedName('rewrite')]
-    public bool $rewrite;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $rewrite = null;
 
     /**
      * Whether to allow search engines to index the short link.
      *
-     * @var bool $doIndex
+     * @var ?bool $doIndex
      */
     #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
-    public bool $doIndex;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $doIndex = null;
 
     /**
      * The iOS destination URL for the short link for iOS device targeting.
@@ -183,10 +188,11 @@ class LinkSchema
     /**
      * Whether the short link's stats are publicly accessible.
      *
-     * @var bool $publicStats
+     * @var ?bool $publicStats
      */
     #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
-    public bool $publicStats;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $publicStats = null;
 
     /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
@@ -289,10 +295,11 @@ class LinkSchema
     /**
      * The number of clicks on the short link.
      *
-     * @var float $clicks
+     * @var ?float $clicks
      */
     #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    public float $clicks;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
 
     /**
      * The date and time when the short link was last clicked.
@@ -305,26 +312,29 @@ class LinkSchema
     /**
      * [BETA]: The number of leads the short links has generated.
      *
-     * @var float $leads
+     * @var ?float $leads
      */
     #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    public float $leads;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
 
     /**
      * [BETA]: The number of sales the short links has generated.
      *
-     * @var float $sales
+     * @var ?float $sales
      */
     #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    public float $sales;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
 
     /**
      * [BETA]: The total dollar amount of sales the short links has generated (in cents).
      *
-     * @var float $saleAmount
+     * @var ?float $saleAmount
      */
     #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    public float $saleAmount;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
 
     /**
      * The date and time when the short link was created.
@@ -356,35 +366,31 @@ class LinkSchema
      * @param  string  $domain
      * @param  string  $key
      * @param  string  $url
-     * @param  bool  $trackConversion
-     * @param  bool  $archived
-     * @param  bool  $proxy
-     * @param  bool  $rewrite
-     * @param  bool  $doIndex
-     * @param  bool  $publicStats
      * @param  string  $shortLink
      * @param  string  $qrCode
      * @param  string  $userId
      * @param  string  $workspaceId
-     * @param  float  $clicks
-     * @param  float  $leads
-     * @param  float  $sales
-     * @param  float  $saleAmount
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  string  $projectId
+     * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
      * @param  ?string  $identifier
+     * @param  ?bool  $archived
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
+     * @param  ?bool  $proxy
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $image
      * @param  ?string  $video
+     * @param  ?bool  $rewrite
+     * @param  ?bool  $doIndex
      * @param  ?string  $ios
      * @param  ?string  $android
      * @param  ?Geo  $geo
+     * @param  ?bool  $publicStats
      * @param  ?string  $tagId
      * @param  ?array<TagSchema>  $tags
      * @param  ?string  $comments
@@ -393,43 +399,43 @@ class LinkSchema
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
+     * @param  ?float  $clicks
      * @param  ?string  $lastClicked
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      */
-    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, string $shortLink, string $qrCode, string $userId, string $workspaceId, float $clicks, float $leads, float $sales, float $saleAmount, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null)
+    public function __construct(string $id, string $domain, string $key, string $url, string $shortLink, string $qrCode, string $userId, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->url = $url;
-        $this->trackConversion = $trackConversion;
-        $this->archived = $archived;
-        $this->proxy = $proxy;
-        $this->rewrite = $rewrite;
-        $this->doIndex = $doIndex;
-        $this->publicStats = $publicStats;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
         $this->userId = $userId;
         $this->workspaceId = $workspaceId;
-        $this->clicks = $clicks;
-        $this->leads = $leads;
-        $this->sales = $sales;
-        $this->saleAmount = $saleAmount;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
+        $this->trackConversion = $trackConversion;
         $this->externalId = $externalId;
         $this->identifier = $identifier;
+        $this->archived = $archived;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
+        $this->proxy = $proxy;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->video = $video;
+        $this->rewrite = $rewrite;
+        $this->doIndex = $doIndex;
         $this->ios = $ios;
         $this->android = $android;
         $this->geo = $geo;
+        $this->publicStats = $publicStats;
         $this->tagId = $tagId;
         $this->tags = $tags;
         $this->comments = $comments;
@@ -438,6 +444,10 @@ class LinkSchema
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
+        $this->clicks = $clicks;
         $this->lastClicked = $lastClicked;
+        $this->leads = $leads;
+        $this->sales = $sales;
+        $this->saleAmount = $saleAmount;
     }
 }

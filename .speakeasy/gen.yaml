@@ -12,7 +12,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
 php:
-  version: 0.6.9
+  version: 0.7.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
@@ -24,6 +24,9 @@ php:
       shared: Models/Components
       webhooks: Models/Webhooks
   inputModelSuffix: input
+  laravelServiceProvider:
+    enabled: false
+    svcName: openapi
   maxMethodParams: 4
   namespace: Dub
   outputModelSuffix: output

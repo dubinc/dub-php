@@ -14,7 +14,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listDomains"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->domains->list(\n    archived: false,\n    search: '<value>',\n    page: 1,\n    pageSize: 50\n\n);\n\nif ($response->domainSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->domains->list(\n    archived: true,\n    search: '<value>',\n    page: 1,\n    pageSize: 50\n\n);\n\nif ($response->domainSchemas !== null) {\n    // handle response\n}"
   - target: $["paths"]["/domains"]["post"]
     update:
       "x-codeSamples":

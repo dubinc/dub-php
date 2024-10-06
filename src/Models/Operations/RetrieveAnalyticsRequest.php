@@ -221,7 +221,7 @@ class RetrieveAnalyticsRequest
      * @param  ?bool  $qr
      * @param  ?bool  $root
      */
-    public function __construct(?Event $event = null, ?QueryParamGroupBy $groupBy = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->event = $event;
         $this->groupBy = $groupBy;

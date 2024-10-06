@@ -12,14 +12,15 @@ use GuzzleHttp\ClientInterface;
 
 class Utils
 {
+
     /**
-     * little function to adjust the return type from DateTime|false to DateTime|null
+     * little function to adjust the return type from DateTime|false to DateTime
      */
-    public static function parseDateTime(string $dateTimeString): ?\DateTime
+    public static function parseDateTime(string $dateTimeString): \DateTime
     {
         $val = \DateTime::createFromFormat('Y-m-d\\TH:i:s.uP', $dateTimeString);
         if ($val === false) {
-            return null;
+            throw new \InvalidArgumentException('Invalid date time string: '.$dateTimeString);
         }
 
         return $val;

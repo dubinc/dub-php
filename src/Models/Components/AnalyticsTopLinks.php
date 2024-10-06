@@ -71,34 +71,38 @@ class AnalyticsTopLinks
     /**
      * The number of clicks from this link
      *
-     * @var float $clicks
+     * @var ?float $clicks
      */
     #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    public float $clicks;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
 
     /**
      * The number of leads from this link
      *
-     * @var float $leads
+     * @var ?float $leads
      */
     #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    public float $leads;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
 
     /**
      * The number of sales from this link
      *
-     * @var float $sales
+     * @var ?float $sales
      */
     #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    public float $sales;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
 
     /**
      * The total amount of sales from this link, in cents
      *
-     * @var float $saleAmount
+     * @var ?float $saleAmount
      */
     #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    public float $saleAmount;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
 
     /**
      * @param  string  $link
@@ -108,12 +112,12 @@ class AnalyticsTopLinks
      * @param  string  $shortLink
      * @param  string  $url
      * @param  string  $createdAt
-     * @param  float  $clicks
-     * @param  float  $leads
-     * @param  float  $sales
-     * @param  float  $saleAmount
+     * @param  ?float  $clicks
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      */
-    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, float $clicks, float $leads, float $sales, float $saleAmount)
+    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->link = $link;
         $this->id = $id;

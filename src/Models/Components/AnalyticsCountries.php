@@ -22,53 +22,58 @@ class AnalyticsCountries
 
     /**
      *
-     * @var City $city
+     * @var ?City $city
      */
     #[\JMS\Serializer\Annotation\SerializedName('city')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\City')]
-    public City $city;
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\City|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?City $city = null;
 
     /**
      * The number of clicks from this country
      *
-     * @var float $clicks
+     * @var ?float $clicks
      */
     #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    public float $clicks;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
 
     /**
      * The number of leads from this country
      *
-     * @var float $leads
+     * @var ?float $leads
      */
     #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    public float $leads;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
 
     /**
      * The number of sales from this country
      *
-     * @var float $sales
+     * @var ?float $sales
      */
     #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    public float $sales;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
 
     /**
      * The total amount of sales from this country, in cents
      *
-     * @var float $saleAmount
+     * @var ?float $saleAmount
      */
     #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    public float $saleAmount;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
 
     /**
      * @param  Country  $country
-     * @param  City  $city
-     * @param  float  $clicks
-     * @param  float  $leads
-     * @param  float  $sales
-     * @param  float  $saleAmount
+     * @param  ?City  $city
+     * @param  ?float  $clicks
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      */
-    public function __construct(Country $country, City $city, float $clicks, float $leads, float $sales, float $saleAmount)
+    public function __construct(Country $country, ?City $city = City::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->country = $country;
         $this->city = $city;

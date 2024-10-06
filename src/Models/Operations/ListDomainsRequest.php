@@ -49,7 +49,7 @@ class ListDomainsRequest
      * @param  ?float  $page
      * @param  ?float  $pageSize
      */
-    public function __construct(?bool $archived = null, ?string $search = null, ?float $page = null, ?float $pageSize = null)
+    public function __construct(?string $search = null, ?bool $archived = true, ?float $page = 1, ?float $pageSize = 50)
     {
         $this->archived = $archived;
         $this->search = $search;

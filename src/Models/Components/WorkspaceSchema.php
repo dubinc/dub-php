@@ -41,7 +41,8 @@ class WorkspaceSchema
      * @var ?string $logo
      */
     #[\JMS\Serializer\Annotation\SerializedName('logo')]
-    public ?string $logo;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $logo = null;
 
     /**
      * The plan of the workspace.
@@ -262,15 +263,15 @@ class WorkspaceSchema
      * @param  string  $createdAt
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
-     * @param  ?string  $logo
      * @param  ?string  $stripeId
      * @param  ?string  $stripeConnectId
      * @param  ?string  $inviteCode
      * @param  ?string  $referralLinkId
      * @param  ?array<string, bool>  $flags
      * @param  ?string  $publishableKey
+     * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $logo = null, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null, ?string $publishableKey = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null, ?string $publishableKey = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -293,12 +294,12 @@ class WorkspaceSchema
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;
-        $this->logo = $logo;
         $this->stripeId = $stripeId;
         $this->stripeConnectId = $stripeConnectId;
         $this->inviteCode = $inviteCode;
         $this->referralLinkId = $referralLinkId;
         $this->flags = $flags;
         $this->publishableKey = $publishableKey;
+        $this->logo = $logo;
     }
 }

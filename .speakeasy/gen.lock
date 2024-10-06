@@ -1,18 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 5c400b20334e45bb5625715215fcbff4
+  docChecksum: 8620b0f24a0133906ad7b91d73cc1651
   docVersion: 0.0.1
-  speakeasyVersion: 1.409.0
-  generationVersion: 2.429.0
-  releaseVersion: 0.6.9
-  configChecksum: db1927b1f8f99ab93572ea83e625ce3b
+  speakeasyVersion: 1.410.0
+  generationVersion: 2.434.1
+  releaseVersion: 0.7.0
+  configChecksum: 007f5a8816c52013295fe822a0183d6d
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
-    core: 3.4.9
+    constsAndDefaults: 0.2.0
+    core: 3.5.0
     deprecations: 2.81.1
     errors: 0.1.4
     examples: 2.81.3
@@ -33,19 +34,23 @@ generatedFiles:
   - docs/Models/Components/AnalyticsBrowsers.md
   - docs/Models/Components/AnalyticsCities.md
   - docs/Models/Components/AnalyticsCitiesCountry.md
+  - docs/Models/Components/AnalyticsContinents.md
   - docs/Models/Components/AnalyticsCount.md
   - docs/Models/Components/AnalyticsCountries.md
   - docs/Models/Components/AnalyticsDevices.md
   - docs/Models/Components/AnalyticsOS.md
+  - docs/Models/Components/AnalyticsRefererUrls.md
   - docs/Models/Components/AnalyticsReferers.md
   - docs/Models/Components/AnalyticsTimeseries.md
   - docs/Models/Components/AnalyticsTopLinks.md
   - docs/Models/Components/AnalyticsTopUrls.md
+  - docs/Models/Components/AnalyticsTriggers.md
   - docs/Models/Components/City.md
   - docs/Models/Components/Click.md
   - docs/Models/Components/ClickEvent.md
   - docs/Models/Components/ClickEventGeo.md
   - docs/Models/Components/Color.md
+  - docs/Models/Components/Continent.md
   - docs/Models/Components/ContinentCode.md
   - docs/Models/Components/Country.md
   - docs/Models/Components/CountryCode.md
@@ -88,6 +93,7 @@ generatedFiles:
   - docs/Models/Components/Security.md
   - docs/Models/Components/TagSchema.md
   - docs/Models/Components/Three.md
+  - docs/Models/Components/Trigger.md
   - docs/Models/Components/Two.md
   - docs/Models/Components/Users.md
   - docs/Models/Components/WebhookEvent.md
@@ -246,19 +252,23 @@ generatedFiles:
   - src/Models/Components/AnalyticsBrowsers.php
   - src/Models/Components/AnalyticsCities.php
   - src/Models/Components/AnalyticsCitiesCountry.php
+  - src/Models/Components/AnalyticsContinents.php
   - src/Models/Components/AnalyticsCount.php
   - src/Models/Components/AnalyticsCountries.php
   - src/Models/Components/AnalyticsDevices.php
   - src/Models/Components/AnalyticsOS.php
+  - src/Models/Components/AnalyticsRefererUrls.php
   - src/Models/Components/AnalyticsReferers.php
   - src/Models/Components/AnalyticsTimeseries.php
   - src/Models/Components/AnalyticsTopLinks.php
   - src/Models/Components/AnalyticsTopUrls.php
+  - src/Models/Components/AnalyticsTriggers.php
   - src/Models/Components/City.php
   - src/Models/Components/Click.php
   - src/Models/Components/ClickEvent.php
   - src/Models/Components/ClickEventGeo.php
   - src/Models/Components/Color.php
+  - src/Models/Components/Continent.php
   - src/Models/Components/ContinentCode.php
   - src/Models/Components/Country.php
   - src/Models/Components/CountryCode.php
@@ -300,6 +310,7 @@ generatedFiles:
   - src/Models/Components/Security.php
   - src/Models/Components/TagSchema.php
   - src/Models/Components/Three.php
+  - src/Models/Components/Trigger.php
   - src/Models/Components/Two.php
   - src/Models/Components/Users.php
   - src/Models/Components/WorkspaceSchema.php
