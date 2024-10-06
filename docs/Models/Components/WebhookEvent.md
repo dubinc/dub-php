@@ -5,27 +5,27 @@ Webhook event schema
 
 ## Supported Types
 
-### `Components\One`
+### `Components\LinkWebhookEvent`
 
 ```php
-Components\One $value = /* values here */
+Components\LinkWebhookEvent $value = /* values here */
 ```
 
-### `Components\Two`
+### `Components\LinkClickedEvent`
 
 ```php
-Components\Two $value = /* values here */
+Components\LinkClickedEvent $value = /* values here */
 ```
 
-### `Components\Three`
+### `Components\LeadCreatedEvent`
 
 ```php
-Components\Three $value = /* values here */
+Components\LeadCreatedEvent $value = /* values here */
 ```
 
-### `Components\Four`
+### `Components\SaleCreatedEvent`
 
 ```php
-Components\Four $value = /* values here */
+Components\SaleCreatedEvent $value = /* values here */
 ```
 

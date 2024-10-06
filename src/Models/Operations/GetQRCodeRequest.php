@@ -20,6 +20,14 @@ class GetQRCodeRequest
     public string $url;
 
     /**
+     * The logo to include in the QR code. Can only be used with a paid plan on Dub.co.
+     *
+     * @var ?string $logo
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=logo')]
+    public ?string $logo = null;
+
+    /**
      * The size of the QR code in pixels. Defaults to `600` if not provided.
      *
      * @var ?float $size
@@ -52,6 +60,14 @@ class GetQRCodeRequest
     public ?string $bgColor = null;
 
     /**
+     * Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.co.
+     *
+     * @var ?bool $hideLogo
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=hideLogo')]
+    public ?bool $hideLogo = null;
+
+    /**
      * Whether to include a margin around the QR code. Defaults to `false` if not provided.
      *
      * @var ?bool $includeMargin
@@ -61,19 +77,23 @@ class GetQRCodeRequest
 
     /**
      * @param  string  $url
+     * @param  ?string  $logo
      * @param  ?float  $size
      * @param  ?Level  $level
      * @param  ?string  $fgColor
      * @param  ?string  $bgColor
+     * @param  ?bool  $hideLogo
      * @param  ?bool  $includeMargin
      */
-    public function __construct(string $url, ?float $size = null, ?Level $level = null, ?string $fgColor = null, ?string $bgColor = null, ?bool $includeMargin = null)
+    public function __construct(string $url, ?string $logo = null, ?float $size = null, ?Level $level = null, ?string $fgColor = null, ?string $bgColor = null, ?bool $hideLogo = null, ?bool $includeMargin = null)
     {
         $this->url = $url;
+        $this->logo = $logo;
         $this->size = $size;
         $this->level = $level;
         $this->fgColor = $fgColor;
         $this->bgColor = $bgColor;
+        $this->hideLogo = $hideLogo;
         $this->includeMargin = $includeMargin;
     }
 }
