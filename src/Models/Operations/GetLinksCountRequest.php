@@ -94,7 +94,7 @@ class GetLinksCountRequest
      * @param  ?bool  $withTags
      * @param  One|Two|Three|null  $groupBy
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?bool $showArchived = null, ?bool $withTags = null, One|Two|Three|null $groupBy = null)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, One|Two|Three|null $groupBy = null, ?bool $showArchived = true, ?bool $withTags = true)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;

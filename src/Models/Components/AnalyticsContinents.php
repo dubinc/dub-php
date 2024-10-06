@@ -9,18 +9,19 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-class AnalyticsTopUrls
+class AnalyticsContinents
 {
     /**
-     * The destination URL
+     * The 2-letter ISO 3166-1 code representing the continent associated with the location of the user.
      *
-     * @var string $url
+     * @var Continent $continent
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    public string $url;
+    #[\JMS\Serializer\Annotation\SerializedName('continent')]
+    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Continent')]
+    public Continent $continent;
 
     /**
-     * The number of clicks from this URL
+     * The number of clicks from this continent
      *
      * @var ?float $clicks
      */
@@ -29,7 +30,7 @@ class AnalyticsTopUrls
     public ?float $clicks = null;
 
     /**
-     * The number of leads from this URL
+     * The number of leads from this continent
      *
      * @var ?float $leads
      */
@@ -38,7 +39,7 @@ class AnalyticsTopUrls
     public ?float $leads = null;
 
     /**
-     * The number of sales from this URL
+     * The number of sales from this continent
      *
      * @var ?float $sales
      */
@@ -47,7 +48,7 @@ class AnalyticsTopUrls
     public ?float $sales = null;
 
     /**
-     * The total amount of sales from this URL, in cents
+     * The total amount of sales from this continent, in cents
      *
      * @var ?float $saleAmount
      */
@@ -56,15 +57,15 @@ class AnalyticsTopUrls
     public ?float $saleAmount = null;
 
     /**
-     * @param  string  $url
+     * @param  Continent  $continent
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      */
-    public function __construct(string $url, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(Continent $continent, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
-        $this->url = $url;
+        $this->continent = $continent;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;

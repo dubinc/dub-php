@@ -65,3 +65,21 @@ array $value = /* values here */
 array $value = /* values here */
 ```
 
+### `array`
+
+```php
+array $value = /* values here */
+```
+
+### `array`
+
+```php
+array $value = /* values here */
+```
+
+### `array`
+
+```php
+array $value = /* values here */
+```
+

@@ -244,7 +244,7 @@ class ListEventsRequest
      * @param  ?Order  $order
      * @param  ?SortBy  $sortBy
      */
-    public function __construct(?QueryParamEvent $event = null, ?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?float $page = null, ?float $limit = null, ?Order $order = null, ?SortBy $sortBy = null)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?QueryParamInterval $interval = QueryParamInterval::TwentyFourh, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?Order $order = Order::Desc, ?SortBy $sortBy = SortBy::Timestamp)
     {
         $this->event = $event;
         $this->domain = $domain;

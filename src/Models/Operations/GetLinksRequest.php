@@ -112,7 +112,7 @@ class GetLinksRequest
      * @param  ?float  $page
      * @param  ?float  $pageSize
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?bool $showArchived = null, ?bool $withTags = null, ?Sort $sort = null, ?float $page = null, ?float $pageSize = null)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?bool $showArchived = true, ?bool $withTags = true, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;

@@ -50,7 +50,7 @@ class Analytics
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Components\AnalyticsCount|array<\Dub\Models\Components\AnalyticsTimeseries>|array<\Dub\Models\Components\AnalyticsCountries>|array<\Dub\Models\Components\AnalyticsCities>|array<\Dub\Models\Components\AnalyticsDevices>|array<\Dub\Models\Components\AnalyticsBrowsers>|array<\Dub\Models\Components\AnalyticsOS>|array<\Dub\Models\Components\AnalyticsReferers>|array<\Dub\Models\Components\AnalyticsTopLinks>|array<\Dub\Models\Components\AnalyticsTopUrls>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize((string) $httpResponse->getBody(), '\Dub\Models\Components\AnalyticsCount|array<\Dub\Models\Components\AnalyticsTimeseries>|array<\Dub\Models\Components\AnalyticsContinents>|array<\Dub\Models\Components\AnalyticsCountries>|array<\Dub\Models\Components\AnalyticsCities>|array<\Dub\Models\Components\AnalyticsDevices>|array<\Dub\Models\Components\AnalyticsBrowsers>|array<\Dub\Models\Components\AnalyticsOS>|array<\Dub\Models\Components\AnalyticsTriggers>|array<\Dub\Models\Components\AnalyticsReferers>|array<\Dub\Models\Components\AnalyticsRefererUrls>|array<\Dub\Models\Components\AnalyticsTopLinks>|array<\Dub\Models\Components\AnalyticsTopUrls>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\RetrieveAnalyticsResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,

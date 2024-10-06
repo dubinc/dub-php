@@ -85,7 +85,7 @@ class GetQRCodeRequest
      * @param  ?bool  $hideLogo
      * @param  ?bool  $includeMargin
      */
-    public function __construct(string $url, ?string $logo = null, ?float $size = null, ?Level $level = null, ?string $fgColor = null, ?string $bgColor = null, ?bool $hideLogo = null, ?bool $includeMargin = null)
+    public function __construct(string $url, ?string $logo = null, ?float $size = 600, ?Level $level = Level::L, ?string $fgColor = '#000000', ?string $bgColor = '#FFFFFF', ?bool $hideLogo = true, ?bool $includeMargin = true)
     {
         $this->url = $url;
         $this->logo = $logo;

@@ -22,25 +22,27 @@ class Domains
     /**
      * Whether the domain is the primary domain for the workspace.
      *
-     * @var bool $primary
+     * @var ?bool $primary
      */
     #[\JMS\Serializer\Annotation\SerializedName('primary')]
-    public bool $primary;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $primary = null;
 
     /**
      * Whether the domain is verified.
      *
-     * @var bool $verified
+     * @var ?bool $verified
      */
     #[\JMS\Serializer\Annotation\SerializedName('verified')]
-    public bool $verified;
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?bool $verified = null;
 
     /**
      * @param  string  $slug
-     * @param  bool  $primary
-     * @param  bool  $verified
+     * @param  ?bool  $primary
+     * @param  ?bool  $verified
      */
-    public function __construct(string $slug, bool $primary, bool $verified)
+    public function __construct(string $slug, ?bool $primary = false, ?bool $verified = false)
     {
         $this->slug = $slug;
         $this->primary = $primary;

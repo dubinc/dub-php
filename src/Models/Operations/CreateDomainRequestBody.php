@@ -52,7 +52,7 @@ class CreateDomainRequestBody
      * @param  ?string  $expiredUrl
      * @param  ?string  $placeholder
      */
-    public function __construct(string $slug, ?bool $archived = null, ?string $expiredUrl = null, ?string $placeholder = null)
+    public function __construct(string $slug, ?string $expiredUrl = null, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
     {
         $this->slug = $slug;
         $this->archived = $archived;

@@ -9,18 +9,18 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-class AnalyticsTopUrls
+class AnalyticsRefererUrls
 {
     /**
-     * The destination URL
+     * The full URL of the referer. If unknown, this will be `(direct)`
      *
-     * @var string $url
+     * @var string $refererUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    public string $url;
+    #[\JMS\Serializer\Annotation\SerializedName('refererUrl')]
+    public string $refererUrl;
 
     /**
-     * The number of clicks from this URL
+     * The number of clicks from this referer to this URL
      *
      * @var ?float $clicks
      */
@@ -29,7 +29,7 @@ class AnalyticsTopUrls
     public ?float $clicks = null;
 
     /**
-     * The number of leads from this URL
+     * The number of leads from this referer to this URL
      *
      * @var ?float $leads
      */
@@ -38,7 +38,7 @@ class AnalyticsTopUrls
     public ?float $leads = null;
 
     /**
-     * The number of sales from this URL
+     * The number of sales from this referer to this URL
      *
      * @var ?float $sales
      */
@@ -47,7 +47,7 @@ class AnalyticsTopUrls
     public ?float $sales = null;
 
     /**
-     * The total amount of sales from this URL, in cents
+     * The total amount of sales from this referer to this URL, in cents
      *
      * @var ?float $saleAmount
      */
@@ -56,15 +56,15 @@ class AnalyticsTopUrls
     public ?float $saleAmount = null;
 
     /**
-     * @param  string  $url
+     * @param  string  $refererUrl
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      */
-    public function __construct(string $url, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $refererUrl, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
-        $this->url = $url;
+        $this->refererUrl = $refererUrl;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;

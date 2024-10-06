@@ -82,7 +82,7 @@ class TrackSaleRequestBody
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(string $customerId, int $amount, PaymentProcessor $paymentProcessor, ?string $eventName = null, ?string $currency = null, ?string $invoiceId = null, ?array $metadata = null)
+    public function __construct(string $customerId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $invoiceId = null)
     {
         $this->customerId = $customerId;
         $this->amount = $amount;
