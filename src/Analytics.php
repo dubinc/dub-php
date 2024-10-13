@@ -27,13 +27,12 @@ class Analytics
      *
      * Retrieve analytics for a link, a domain, or the authenticated workspace. The response type depends on the `event` and `type` query parameters.
      *
-     * @param  Operations\RetrieveAnalyticsRequest  $request
+     * @param  ?Operations\RetrieveAnalyticsRequest  $request
      * @return Operations\RetrieveAnalyticsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function retrieve(
-        ?Operations\RetrieveAnalyticsRequest $request,
-    ): Operations\RetrieveAnalyticsResponse {
+    public function retrieve(?Operations\RetrieveAnalyticsRequest $request = null): Operations\RetrieveAnalyticsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/analytics');
         $options = ['http_errors' => false];

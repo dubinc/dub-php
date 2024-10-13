@@ -31,9 +31,8 @@ class Workspaces
      * @return Operations\GetWorkspaceResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function get(
-        string $idOrSlug,
-    ): Operations\GetWorkspaceResponse {
+    public function get(string $idOrSlug): Operations\GetWorkspaceResponse
+    {
         $request = new Operations\GetWorkspaceRequest(
             idOrSlug: $idOrSlug,
         );
@@ -152,10 +151,8 @@ class Workspaces
      * @return Operations\UpdateWorkspaceResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function update(
-        string $idOrSlug,
-        ?Operations\UpdateWorkspaceRequestBody $requestBody = null,
-    ): Operations\UpdateWorkspaceResponse {
+    public function update(string $idOrSlug, ?Operations\UpdateWorkspaceRequestBody $requestBody = null): Operations\UpdateWorkspaceResponse
+    {
         $request = new Operations\UpdateWorkspaceRequest(
             idOrSlug: $idOrSlug,
             requestBody: $requestBody,

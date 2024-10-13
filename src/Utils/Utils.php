@@ -194,8 +194,12 @@ function removeSuffix(string $text, string $suffix): string
 
     return $text;
 }
-
-function valToString(mixed $val, string $dateTimeFormat = ''): string
+/**
+ * @param  mixed  $val
+ * @param  array<string, mixed>  $extras
+ * @return string
+ */
+function valToString(mixed $val, array $extras): string
 {
     switch (gettype($val)) {
         case 'string':
@@ -203,13 +207,26 @@ function valToString(mixed $val, string $dateTimeFormat = ''): string
         case 'object':
             switch (get_class($val)) {
                 case 'DateTime':
-                    if (empty($dateTimeFormat)) {
-                        $dateTimeFormat = 'Y-m-d\TH:i:s.up';
+                    $dateTimeFormat = $dateTimeFormat = 'Y-m-d\TH:i:s.up';
+                    if (array_key_exists('dateTimeFormat', $extras)) {
+                        $dateTimeFormat = $extras['dateTimeFormat'];
                     }
 
                     return $val->format($dateTimeFormat);
                 case 'Brick\DateTime\LocalDate':
                     return $val->jsonSerialize();
+                case 'Brick\Math\BigInteger':
+                    if (array_key_exists('serializeToString', $extras) && $extras['serializeToString']) {
+                        return '"'.$val->toBase(10).'"';
+                    }
+
+                    return $val->toBase(10);
+                case 'Brick\Math\BigDecimal':
+                    if (array_key_exists('serializeToString', $extras) && $extras['serializeToString']) {
+                        return '"'.$val->__toString().'"';
+                    }
+
+                    return $val->__toString();
                 default:
                     if (is_a($val, \BackedEnum::class, true)) {
                         $enumVal = $val->value;

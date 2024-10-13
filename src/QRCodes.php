@@ -31,9 +31,8 @@ class QRCodes
      * @return Operations\GetQRCodeResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function get(
-        ?Operations\GetQRCodeRequest $request,
-    ): Operations\GetQRCodeResponse {
+    public function get(Operations\GetQRCodeRequest $request): Operations\GetQRCodeResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/qr');
         $options = ['http_errors' => false];

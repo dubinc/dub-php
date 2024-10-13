@@ -31,6 +31,8 @@ class JSON
                 $registry->registerSubscribingHandler(new DateTimeHandler());
                 $registry->registerSubscribingHandler(new DateHandler());
                 $registry->registerSubscribingHandler(new UnionHandler());
+                $registry->registerSubscribingHandler(new BigIntHandler());
+                $registry->registerSubscribingHandler(new BigDecimalHandler());
             },
         )->setTypeParser(new PhpDocTypeParser()
         )->setSerializationContextFactory(function () {

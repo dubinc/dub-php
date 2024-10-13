@@ -31,9 +31,8 @@ class Metatags
      * @return Operations\GetMetatagsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function get(
-        string $url,
-    ): Operations\GetMetatagsResponse {
+    public function get(string $url): Operations\GetMetatagsResponse
+    {
         $request = new Operations\GetMetatagsRequest(
             url: $url,
         );
