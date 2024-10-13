@@ -188,6 +188,8 @@ final class UnionHandler implements SubscribingHandlerInterface
                 continue;
             } catch (NonFloatCastableTypeException $e) {
                 continue;
+            } catch (\Brick\Math\Exception\NumberFormatException $e) {
+                continue;
             } catch (RuntimeException $e) {
                 continue;
             }

@@ -27,13 +27,12 @@ class Track
      *
      * Track a lead for a short link.
      *
-     * @param  Operations\TrackLeadRequestBody  $request
+     * @param  ?Operations\TrackLeadRequestBody  $request
      * @return Operations\TrackLeadResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function lead(
-        ?Operations\TrackLeadRequestBody $request,
-    ): Operations\TrackLeadResponse {
+    public function lead(?Operations\TrackLeadRequestBody $request = null): Operations\TrackLeadResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/lead');
         $options = ['http_errors' => false];
@@ -148,13 +147,12 @@ class Track
      *
      * Track a sale for a short link.
      *
-     * @param  Operations\TrackSaleRequestBody  $request
+     * @param  ?Operations\TrackSaleRequestBody  $request
      * @return Operations\TrackSaleResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function sale(
-        ?Operations\TrackSaleRequestBody $request,
-    ): Operations\TrackSaleResponse {
+    public function sale(?Operations\TrackSaleRequestBody $request = null): Operations\TrackSaleResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/sale');
         $options = ['http_errors' => false];
@@ -269,13 +267,12 @@ class Track
      *
      * Track a customer for an authenticated workspace.
      *
-     * @param  Operations\TrackCustomerRequestBody  $request
+     * @param  ?Operations\TrackCustomerRequestBody  $request
      * @return Operations\TrackCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function customer(
-        ?Operations\TrackCustomerRequestBody $request,
-    ): Operations\TrackCustomerResponse {
+    public function customer(?Operations\TrackCustomerRequestBody $request = null): Operations\TrackCustomerResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/track/customer');
         $options = ['http_errors' => false];

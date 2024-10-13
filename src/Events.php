@@ -27,13 +27,12 @@ class Events
      *
      * Retrieve a paginated list of events for the authenticated workspace.
      *
-     * @param  Operations\ListEventsRequest  $request
+     * @param  ?Operations\ListEventsRequest  $request
      * @return Operations\ListEventsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(
-        ?Operations\ListEventsRequest $request,
-    ): Operations\ListEventsResponse {
+    public function list(?Operations\ListEventsRequest $request = null): Operations\ListEventsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/events');
         $options = ['http_errors' => false];

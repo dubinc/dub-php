@@ -27,13 +27,12 @@ class Tags
      *
      * Create a new tag for the authenticated workspace.
      *
-     * @param  Operations\CreateTagRequestBody  $request
+     * @param  ?Operations\CreateTagRequestBody  $request
      * @return Operations\CreateTagResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function create(
-        ?Operations\CreateTagRequestBody $request,
-    ): Operations\CreateTagResponse {
+    public function create(?Operations\CreateTagRequestBody $request = null): Operations\CreateTagResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags');
         $options = ['http_errors' => false];
@@ -151,8 +150,8 @@ class Tags
      * @return Operations\GetTagsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(
-    ): Operations\GetTagsResponse {
+    public function list(): Operations\GetTagsResponse
+    {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/tags');
         $options = ['http_errors' => false];
@@ -268,10 +267,8 @@ class Tags
      * @return Operations\UpdateTagResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function update(
-        string $id,
-        ?Operations\UpdateTagRequestBody $requestBody = null,
-    ): Operations\UpdateTagResponse {
+    public function update(string $id, ?Operations\UpdateTagRequestBody $requestBody = null): Operations\UpdateTagResponse
+    {
         $request = new Operations\UpdateTagRequest(
             id: $id,
             requestBody: $requestBody,
@@ -394,9 +391,8 @@ class Tags
      * @return Operations\DeleteTagResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function delete(
-        string $id,
-    ): Operations\DeleteTagResponse {
+    public function delete(string $id): Operations\DeleteTagResponse
+    {
         $request = new Operations\DeleteTagRequest(
             id: $id,
         );
