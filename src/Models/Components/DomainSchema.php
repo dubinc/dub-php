@@ -72,6 +72,14 @@ class DomainSchema
     public ?string $expiredUrl;
 
     /**
+     * The URL to redirect to when a link under this domain doesn't exist.
+     *
+     * @var ?string $notFoundUrl
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('notFoundUrl')]
+    public ?string $notFoundUrl;
+
+    /**
      * The date the domain was created.
      *
      * @var string $createdAt
@@ -94,8 +102,7 @@ class DomainSchema
      */
     #[\JMS\Serializer\Annotation\SerializedName('registeredDomain')]
     #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\RegisteredDomain|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?RegisteredDomain $registeredDomain = null;
+    public ?RegisteredDomain $registeredDomain;
 
     /**
      * @param  string  $id
@@ -107,9 +114,10 @@ class DomainSchema
      * @param  ?bool  $archived
      * @param  ?string  $placeholder
      * @param  ?string  $expiredUrl
+     * @param  ?string  $notFoundUrl
      * @param  ?RegisteredDomain  $registeredDomain
      */
-    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $expiredUrl = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
+    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
     {
         $this->id = $id;
         $this->slug = $slug;
@@ -120,6 +128,7 @@ class DomainSchema
         $this->archived = $archived;
         $this->placeholder = $placeholder;
         $this->expiredUrl = $expiredUrl;
+        $this->notFoundUrl = $notFoundUrl;
         $this->registeredDomain = $registeredDomain;
     }
 }

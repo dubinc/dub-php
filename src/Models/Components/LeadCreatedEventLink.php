@@ -205,6 +205,15 @@ class LeadCreatedEventLink
     public ?array $tags;
 
     /**
+     * The IDs of the webhooks that the short link is associated with.
+     *
+     * @var array<string> $webhookIds
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\JMS\Serializer\Annotation\Type('array<string>')]
+    public array $webhookIds;
+
+    /**
      * The comments for the short link.
      *
      * @var ?string $comments
@@ -355,6 +364,7 @@ class LeadCreatedEventLink
      * @param  string  $key
      * @param  string  $url
      * @param  string  $expiresAt
+     * @param  array<string>  $webhookIds
      * @param  string  $shortLink
      * @param  string  $qrCode
      * @param  string  $workspaceId
@@ -393,13 +403,14 @@ class LeadCreatedEventLink
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LeadCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LeadCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->url = $url;
         $this->expiresAt = $expiresAt;
+        $this->webhookIds = $webhookIds;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
         $this->workspaceId = $workspaceId;
