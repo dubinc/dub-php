@@ -68,7 +68,7 @@ class GetLinksCountRequest
     public ?bool $showArchived = null;
 
     /**
-     * Whether to include tags in the response. Defaults to `false` if not provided.
+     * DEPRECATED. Filter for links that have at least one tag assigned to them.
      *
      * @var ?bool $withTags
      */

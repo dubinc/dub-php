@@ -20,7 +20,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createDomain"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\CreateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    archived: false,\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->create(\n    request: $request\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\CreateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    notFoundUrl: 'https://acme.com/not-found',\n    archived: false,\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->create(\n    request: $request\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/domains/{slug}"]["delete"]
     update:
       "x-codeSamples":
@@ -32,7 +32,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "updateDomain"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$requestBody = new Operations\\UpdateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    archived: false,\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->update(\n    slug: 'acme.com',\n    requestBody: $requestBody\n\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$requestBody = new Operations\\UpdateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    notFoundUrl: 'https://acme.com/not-found',\n    archived: false,\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->update(\n    slug: 'acme.com',\n    requestBody: $requestBody\n\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/events"]["get"]
     update:
       "x-codeSamples":

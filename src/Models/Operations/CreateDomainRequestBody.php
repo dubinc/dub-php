@@ -29,6 +29,15 @@ class CreateDomainRequestBody
     public ?string $expiredUrl = null;
 
     /**
+     * Redirect users to a specific URL when a link under this domain doesn't exist.
+     *
+     * @var ?string $notFoundUrl
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('notFoundUrl')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?string $notFoundUrl = null;
+
+    /**
      * Whether to archive this domain. `false` will unarchive a previously archived domain.
      *
      * @var ?bool $archived
@@ -50,13 +59,15 @@ class CreateDomainRequestBody
      * @param  string  $slug
      * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
+     * @param  ?string  $notFoundUrl
      * @param  ?string  $placeholder
      */
-    public function __construct(string $slug, ?string $expiredUrl = null, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
+    public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
     {
         $this->slug = $slug;
         $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
+        $this->notFoundUrl = $notFoundUrl;
         $this->placeholder = $placeholder;
     }
 }

@@ -213,6 +213,15 @@ class LinkSchema
     public ?array $tags;
 
     /**
+     * The IDs of the webhooks that the short link is associated with.
+     *
+     * @var array<string> $webhookIds
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\JMS\Serializer\Annotation\Type('array<string>')]
+    public array $webhookIds;
+
+    /**
      * The comments for the short link.
      *
      * @var ?string $comments
@@ -366,6 +375,7 @@ class LinkSchema
      * @param  string  $domain
      * @param  string  $key
      * @param  string  $url
+     * @param  array<string>  $webhookIds
      * @param  string  $shortLink
      * @param  string  $qrCode
      * @param  string  $userId
@@ -405,12 +415,13 @@ class LinkSchema
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $shortLink, string $qrCode, string $userId, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $userId, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->url = $url;
+        $this->webhookIds = $webhookIds;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
         $this->userId = $userId;

@@ -259,6 +259,16 @@ class Data
     public ?string $ref = null;
 
     /**
+     * An array of webhook IDs to trigger when the link is clicked. These webhooks will receive click event data.
+     *
+     * @var ?array<string> $webhookIds
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
+    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    public ?array $webhookIds = null;
+
+    /**
      * @param  ?string  $url
      * @param  ?bool  $trackConversion
      * @param  ?bool  $archived
@@ -286,8 +296,9 @@ class Data
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      * @param  ?string  $ref
+     * @param  ?array<string>  $webhookIds
      */
-    public function __construct(?string $url = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
+    public function __construct(?string $url = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
     {
         $this->url = $url;
         $this->trackConversion = $trackConversion;
@@ -316,5 +327,6 @@ class Data
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
         $this->ref = $ref;
+        $this->webhookIds = $webhookIds;
     }
 }

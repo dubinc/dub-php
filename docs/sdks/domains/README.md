@@ -32,6 +32,7 @@ $request = new Operations\CreateDomainRequestBody(
     slug: 'acme.com',
     archived: false,
     expiredUrl: 'https://acme.com/expired',
+    notFoundUrl: 'https://acme.com/not-found',
     placeholder: 'https://dub.co/help/article/what-is-dub',
 );
 
@@ -151,6 +152,7 @@ $requestBody = new Operations\UpdateDomainRequestBody(
     slug: 'acme.com',
     archived: false,
     expiredUrl: 'https://acme.com/expired',
+    notFoundUrl: 'https://acme.com/not-found',
     placeholder: 'https://dub.co/help/article/what-is-dub',
 );
 
