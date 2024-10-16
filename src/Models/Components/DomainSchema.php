@@ -60,8 +60,7 @@ class DomainSchema
      * @var ?string $placeholder
      */
     #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
-    public ?string $placeholder = null;
+    public ?string $placeholder;
 
     /**
      * The URL to redirect to when a link under this domain has expired.
@@ -117,7 +116,7 @@ class DomainSchema
      * @param  ?string  $notFoundUrl
      * @param  ?RegisteredDomain  $registeredDomain
      */
-    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
+    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $placeholder = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false)
     {
         $this->id = $id;
         $this->slug = $slug;
