@@ -5,8 +5,8 @@ management:
   docVersion: 0.0.1
   speakeasyVersion: 1.418.4
   generationVersion: 2.438.3
-  releaseVersion: 0.8.2
-  configChecksum: 723d6a9311351b6a69996e0301c795f8
+  releaseVersion: 0.8.4
+  configChecksum: 1ff3777354290bd90e0d0494e686f4ad
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -32,6 +32,7 @@ generatedFiles:
   - CONTRIBUTING.md
   - USAGE.md
   - composer.json
+  - config/services.php
   - docs/Models/Components/AnalyticsBrowsers.md
   - docs/Models/Components/AnalyticsCities.md
   - docs/Models/Components/AnalyticsCitiesCountry.md
@@ -439,6 +440,7 @@ generatedFiles:
   - src/Models/Operations/UpdateWorkspaceResponse.php
   - src/Models/Operations/UpsertLinkRequestBody.php
   - src/Models/Operations/UpsertLinkResponse.php
+  - src/PackageServiceProvider.php
   - src/QRCodes.php
   - src/SDKConfiguration.php
   - src/Tags.php
