@@ -12,7 +12,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: true
 php:
-  version: 0.8.2
+  version: 0.8.4
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
@@ -25,8 +25,8 @@ php:
       webhooks: Models/Webhooks
   inputModelSuffix: input
   laravelServiceProvider:
-    enabled: false
-    svcName: openapi
+    enabled: true
+    svcName: dub
   maxMethodParams: 4
   methodArguments: infer-optional-args
   namespace: Dub
