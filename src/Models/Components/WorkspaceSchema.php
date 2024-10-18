@@ -45,6 +45,14 @@ class WorkspaceSchema
     public ?string $logo = null;
 
     /**
+     * The invite code of the workspace.
+     *
+     * @var ?string $inviteCode
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
+    public ?string $inviteCode;
+
+    /**
      * The plan of the workspace.
      *
      * @var Plan $plan
@@ -70,20 +78,20 @@ class WorkspaceSchema
     public float $billingCycleStart;
 
     /**
+     * The date and time when the payment failed for the workspace.
+     *
+     * @var ?string $paymentFailedAt
+     */
+    #[\JMS\Serializer\Annotation\SerializedName('paymentFailedAt')]
+    public ?string $paymentFailedAt;
+
+    /**
      * [BETA]: The Stripe Connect ID of the workspace.
      *
      * @var ?string $stripeConnectId
      */
     #[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
     public ?string $stripeConnectId;
-
-    /**
-     * The invite code of the workspace.
-     *
-     * @var ?string $inviteCode
-     */
-    #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
-    public ?string $inviteCode;
 
     /**
      * The usage of the workspace.
@@ -263,15 +271,16 @@ class WorkspaceSchema
      * @param  string  $createdAt
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
-     * @param  ?string  $stripeId
-     * @param  ?string  $stripeConnectId
      * @param  ?string  $inviteCode
+     * @param  ?string  $stripeId
+     * @param  ?string  $paymentFailedAt
+     * @param  ?string  $stripeConnectId
      * @param  ?string  $referralLinkId
      * @param  ?array<string, bool>  $flags
      * @param  ?string  $publishableKey
      * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $stripeId = null, ?string $stripeConnectId = null, ?string $inviteCode = null, ?string $referralLinkId = null, ?array $flags = null, ?string $publishableKey = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $referralLinkId = null, ?array $flags = null, ?string $publishableKey = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -294,9 +303,10 @@ class WorkspaceSchema
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;
-        $this->stripeId = $stripeId;
-        $this->stripeConnectId = $stripeConnectId;
         $this->inviteCode = $inviteCode;
+        $this->stripeId = $stripeId;
+        $this->paymentFailedAt = $paymentFailedAt;
+        $this->stripeConnectId = $stripeConnectId;
         $this->referralLinkId = $referralLinkId;
         $this->flags = $flags;
         $this->publishableKey = $publishableKey;
