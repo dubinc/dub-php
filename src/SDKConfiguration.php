@@ -27,11 +27,11 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '0.0.1';
 
-    public string $sdkVersion = '0.8.3';
+    public string $sdkVersion = '0.8.4';
 
-    public string $genVersion = '2.438.3';
+    public string $genVersion = '2.438.15';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.8.3 2.438.3 0.0.1 dub/dub-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.8.4 2.438.15 0.0.1 dub/dub-php';
 
     public function getServerUrl(): string
     {
