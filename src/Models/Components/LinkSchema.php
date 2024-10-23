@@ -288,10 +288,10 @@ class LinkSchema
     /**
      * The user ID of the creator of the short link.
      *
-     * @var string $userId
+     * @var ?string $userId
      */
     #[\JMS\Serializer\Annotation\SerializedName('userId')]
-    public string $userId;
+    public ?string $userId;
 
     /**
      * The workspace ID of the short link.
@@ -378,7 +378,6 @@ class LinkSchema
      * @param  array<string>  $webhookIds
      * @param  string  $shortLink
      * @param  string  $qrCode
-     * @param  string  $userId
      * @param  string  $workspaceId
      * @param  string  $createdAt
      * @param  string  $updatedAt
@@ -409,13 +408,14 @@ class LinkSchema
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
+     * @param  ?string  $userId
      * @param  ?float  $clicks
      * @param  ?string  $lastClicked
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $userId, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -424,7 +424,6 @@ class LinkSchema
         $this->webhookIds = $webhookIds;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
-        $this->userId = $userId;
         $this->workspaceId = $workspaceId;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
@@ -455,6 +454,7 @@ class LinkSchema
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
+        $this->userId = $userId;
         $this->clicks = $clicks;
         $this->lastClicked = $lastClicked;
         $this->leads = $leads;
