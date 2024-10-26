@@ -84,9 +84,10 @@ class UpdateLinkRequestBody
     public ?bool $archived = null;
 
     /**
-     * Whether the short link's stats are publicly accessible.
+     * Deprecated: Use `dashboard` instead. Whether the short link's stats are publicly accessible.
      *
      * @var ?bool $publicStats
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
     #[\JMS\Serializer\Annotation\SkipWhenNull]
