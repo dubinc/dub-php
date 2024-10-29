@@ -15,31 +15,31 @@ class LeadCreatedEventData
      *
      * @var string $eventName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
     public string $eventName;
 
     /**
      *
      * @var Customer $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customer')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Customer')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Customer')]
     public Customer $customer;
 
     /**
      *
      * @var LeadCreatedEventClick $click
      */
-    #[\JMS\Serializer\Annotation\SerializedName('click')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventClick')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventClick')]
     public LeadCreatedEventClick $click;
 
     /**
      *
      * @var LeadCreatedEventLink $link
      */
-    #[\JMS\Serializer\Annotation\SerializedName('link')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventLink')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventLink')]
     public LeadCreatedEventLink $link;
 
     /**

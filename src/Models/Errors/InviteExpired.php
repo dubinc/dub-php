@@ -17,8 +17,8 @@ class InviteExpired
      *
      * @var InviteExpiredError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\InviteExpiredError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InviteExpiredError')]
     public InviteExpiredError $error;
 
     /**

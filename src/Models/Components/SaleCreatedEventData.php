@@ -15,39 +15,39 @@ class SaleCreatedEventData
      *
      * @var string $eventName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
     public string $eventName;
 
     /**
      *
      * @var SaleCreatedEventCustomer $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customer')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventCustomer')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventCustomer')]
     public SaleCreatedEventCustomer $customer;
 
     /**
      *
      * @var SaleCreatedEventClick $click
      */
-    #[\JMS\Serializer\Annotation\SerializedName('click')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventClick')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventClick')]
     public SaleCreatedEventClick $click;
 
     /**
      *
      * @var SaleCreatedEventLink $link
      */
-    #[\JMS\Serializer\Annotation\SerializedName('link')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventLink')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventLink')]
     public SaleCreatedEventLink $link;
 
     /**
      *
      * @var Sale $sale
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sale')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
     public Sale $sale;
 
     /**

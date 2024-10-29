@@ -10,7 +10,7 @@
   "require": {
     "php": "^8.2",
     "guzzlehttp/guzzle": "^7.0",
-    "speakeasy/serializer": "^3.40.0",
+    "speakeasy/serializer": "^4.0.0",
     "brick/date-time": "^0.7.0",
     "phpdocumentor/type-resolver": "^1.8",
     "brick/math": "^0.12.1"

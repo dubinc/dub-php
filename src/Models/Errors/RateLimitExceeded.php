@@ -17,8 +17,8 @@ class RateLimitExceeded
      *
      * @var RateLimitExceededError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\RateLimitExceededError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\RateLimitExceededError')]
     public RateLimitExceededError $error;
 
     /**

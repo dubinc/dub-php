@@ -50,7 +50,7 @@ class Dub
      * @param  SDKConfiguration  $sdkConfiguration
      */
     public function __construct(
-        private SDKConfiguration $sdkConfiguration,
+        public SDKConfiguration $sdkConfiguration,
     ) {
         $this->links = new Links($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);

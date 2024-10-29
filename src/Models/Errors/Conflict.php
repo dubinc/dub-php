@@ -17,8 +17,8 @@ class Conflict
      *
      * @var ConflictError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\ConflictError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\ConflictError')]
     public ConflictError $error;
 
     /**

@@ -16,28 +16,28 @@ class TrackCustomerResponseBody
      *
      * @var string $customerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
     public string $customerId;
 
     /**
      *
      * @var ?string $customerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerName')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerName')]
     public ?string $customerName;
 
     /**
      *
      * @var ?string $customerEmail
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerEmail')]
     public ?string $customerEmail;
 
     /**
      *
      * @var ?string $customerAvatar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerAvatar')]
     public ?string $customerAvatar;
 
     /**

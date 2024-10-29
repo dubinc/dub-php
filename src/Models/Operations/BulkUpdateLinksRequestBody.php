@@ -16,9 +16,9 @@ class BulkUpdateLinksRequestBody
      *
      * @var ?array<string> $linkIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('linkIds')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('linkIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $linkIds = null;
 
     /**
@@ -26,17 +26,17 @@ class BulkUpdateLinksRequestBody
      *
      * @var ?array<string> $externalIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('externalIds')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $externalIds = null;
 
     /**
      *
      * @var Data $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Data')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Data')]
     public Data $data;
 
     /**

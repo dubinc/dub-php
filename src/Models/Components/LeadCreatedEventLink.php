@@ -16,7 +16,7 @@ class LeadCreatedEventLink
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
@@ -24,7 +24,7 @@ class LeadCreatedEventLink
      *
      * @var string $domain
      */
-    #[\JMS\Serializer\Annotation\SerializedName('domain')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('domain')]
     public string $domain;
 
     /**
@@ -32,22 +32,22 @@ class LeadCreatedEventLink
      *
      * @var string $key
      */
-    #[\JMS\Serializer\Annotation\SerializedName('key')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('key')]
     public string $key;
 
     /**
      *
      * @var string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
     public string $url;
 
     /**
      *
      * @var ?bool $trackConversion
      */
-    #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $trackConversion = null;
 
     /**
@@ -55,7 +55,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $externalId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('externalId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
     public ?string $externalId;
 
     /**
@@ -63,22 +63,22 @@ class LeadCreatedEventLink
      *
      * @var ?string $identifier
      */
-    #[\JMS\Serializer\Annotation\SerializedName('identifier')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
     public ?string $identifier;
 
     /**
      *
      * @var ?bool $archived
      */
-    #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $archived = null;
 
     /**
      *
      * @var string $expiresAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
     public string $expiresAt;
 
     /**
@@ -86,7 +86,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $expiredUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiredUrl')]
     public ?string $expiredUrl;
 
     /**
@@ -94,15 +94,15 @@ class LeadCreatedEventLink
      *
      * @var ?string $password
      */
-    #[\JMS\Serializer\Annotation\SerializedName('password')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('password')]
     public ?string $password;
 
     /**
      *
      * @var ?bool $proxy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('proxy')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $proxy = null;
 
     /**
@@ -110,7 +110,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
     public ?string $title;
 
     /**
@@ -118,7 +118,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     public ?string $description;
 
     /**
@@ -126,7 +126,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $image
      */
-    #[\JMS\Serializer\Annotation\SerializedName('image')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
     public ?string $image;
 
     /**
@@ -134,23 +134,23 @@ class LeadCreatedEventLink
      *
      * @var ?string $video
      */
-    #[\JMS\Serializer\Annotation\SerializedName('video')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('video')]
     public ?string $video;
 
     /**
      *
      * @var ?bool $rewrite
      */
-    #[\JMS\Serializer\Annotation\SerializedName('rewrite')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $rewrite = null;
 
     /**
      *
      * @var ?bool $doIndex
      */
-    #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $doIndex = null;
 
     /**
@@ -158,7 +158,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $ios
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ios')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ios')]
     public ?string $ios;
 
     /**
@@ -166,7 +166,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $android
      */
-    #[\JMS\Serializer\Annotation\SerializedName('android')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('android')]
     public ?string $android;
 
     /**
@@ -174,16 +174,16 @@ class LeadCreatedEventLink
      *
      * @var ?LeadCreatedEventGeo $geo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventGeo|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('geo')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventGeo|null')]
     public ?LeadCreatedEventGeo $geo;
 
     /**
      *
      * @var ?bool $publicStats
      */
-    #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $publicStats = null;
 
     /**
@@ -192,7 +192,7 @@ class LeadCreatedEventLink
      * @var ?string $tagId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tagId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagId')]
     public ?string $tagId;
 
     /**
@@ -200,8 +200,8 @@ class LeadCreatedEventLink
      *
      * @var ?array<TagSchema> $tags
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tags')]
-    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\TagSchema>|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\TagSchema>|null')]
     public ?array $tags;
 
     /**
@@ -209,8 +209,8 @@ class LeadCreatedEventLink
      *
      * @var array<string> $webhookIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('webhookIds')]
-    #[\JMS\Serializer\Annotation\Type('array<string>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
     public array $webhookIds;
 
     /**
@@ -218,7 +218,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $comments
      */
-    #[\JMS\Serializer\Annotation\SerializedName('comments')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('comments')]
     public ?string $comments;
 
     /**
@@ -226,7 +226,7 @@ class LeadCreatedEventLink
      *
      * @var string $shortLink
      */
-    #[\JMS\Serializer\Annotation\SerializedName('shortLink')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shortLink')]
     public string $shortLink;
 
     /**
@@ -234,7 +234,7 @@ class LeadCreatedEventLink
      *
      * @var string $qrCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('qrCode')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('qrCode')]
     public string $qrCode;
 
     /**
@@ -242,7 +242,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $utmSource
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_source')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_source')]
     public ?string $utmSource;
 
     /**
@@ -250,7 +250,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $utmMedium
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_medium')]
     public ?string $utmMedium;
 
     /**
@@ -258,7 +258,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $utmCampaign
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_campaign')]
     public ?string $utmCampaign;
 
     /**
@@ -266,7 +266,7 @@ class LeadCreatedEventLink
      *
      * @var ?string $utmTerm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_term')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_term')]
     public ?string $utmTerm;
 
     /**
@@ -274,14 +274,14 @@ class LeadCreatedEventLink
      *
      * @var ?string $utmContent
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_content')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_content')]
     public ?string $utmContent;
 
     /**
      *
      * @var ?string $userId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('userId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('userId')]
     public ?string $userId;
 
     /**
@@ -289,7 +289,7 @@ class LeadCreatedEventLink
      *
      * @var string $workspaceId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('workspaceId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('workspaceId')]
     public string $workspaceId;
 
     /**
@@ -297,15 +297,15 @@ class LeadCreatedEventLink
      *
      * @var ?float $clicks
      */
-    #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $clicks = null;
 
     /**
      *
      * @var string $lastClicked
      */
-    #[\JMS\Serializer\Annotation\SerializedName('lastClicked')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
     public string $lastClicked;
 
     /**
@@ -313,8 +313,8 @@ class LeadCreatedEventLink
      *
      * @var ?float $leads
      */
-    #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('leads')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $leads = null;
 
     /**
@@ -322,8 +322,8 @@ class LeadCreatedEventLink
      *
      * @var ?float $sales
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $sales = null;
 
     /**
@@ -331,22 +331,22 @@ class LeadCreatedEventLink
      *
      * @var ?float $saleAmount
      */
-    #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $saleAmount = null;
 
     /**
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
      *
      * @var string $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
     public string $updatedAt;
 
     /**
@@ -355,7 +355,7 @@ class LeadCreatedEventLink
      * @var string $projectId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('projectId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('projectId')]
     public string $projectId;
 
     /**

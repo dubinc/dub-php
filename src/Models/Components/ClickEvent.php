@@ -15,32 +15,32 @@ class ClickEvent
      *
      * @var Event $event
      */
-    #[\JMS\Serializer\Annotation\SerializedName('event')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Event')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Event')]
     public Event $event;
 
     /**
      *
      * @var ?string $timestamp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('timestamp')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $timestamp = null;
 
     /**
      *
      * @var Click $click
      */
-    #[\JMS\Serializer\Annotation\SerializedName('click')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Click')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Click')]
     public Click $click;
 
     /**
      *
      * @var Link $link
      */
-    #[\JMS\Serializer\Annotation\SerializedName('link')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Link')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Link')]
     public Link $link;
 
     /**
@@ -49,7 +49,7 @@ class ClickEvent
      * @var string $clickId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('click_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('click_id')]
     public string $clickId;
 
     /**
@@ -58,7 +58,7 @@ class ClickEvent
      * @var string $linkId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('link_id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link_id')]
     public string $linkId;
 
     /**
@@ -67,7 +67,7 @@ class ClickEvent
      * @var string $domain
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('domain')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('domain')]
     public string $domain;
 
     /**
@@ -76,7 +76,7 @@ class ClickEvent
      * @var string $key
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('key')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('key')]
     public string $key;
 
     /**
@@ -85,7 +85,7 @@ class ClickEvent
      * @var string $url
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
     public string $url;
 
     /**
@@ -94,7 +94,7 @@ class ClickEvent
      * @var string $continent
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('continent')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('continent')]
     public string $continent;
 
     /**
@@ -103,7 +103,7 @@ class ClickEvent
      * @var string $country
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
     public string $country;
 
     /**
@@ -112,7 +112,7 @@ class ClickEvent
      * @var string $city
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('city')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
     public string $city;
 
     /**
@@ -121,7 +121,7 @@ class ClickEvent
      * @var string $device
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('device')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('device')]
     public string $device;
 
     /**
@@ -130,7 +130,7 @@ class ClickEvent
      * @var string $browser
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('browser')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('browser')]
     public string $browser;
 
     /**
@@ -139,7 +139,7 @@ class ClickEvent
      * @var string $os
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('os')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('os')]
     public string $os;
 
     /**
@@ -148,7 +148,7 @@ class ClickEvent
      * @var float $qr
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('qr')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('qr')]
     public float $qr;
 
     /**
@@ -157,7 +157,7 @@ class ClickEvent
      * @var string $ip
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ip')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ip')]
     public string $ip;
 
     /**

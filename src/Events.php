@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub;
 
 use Dub\Models\Operations;
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 
 class Events
 {
@@ -17,7 +17,7 @@ class Events
     /**
      * @param  SDKConfiguration  $sdkConfig
      */
-    public function __construct(SDKConfiguration $sdkConfig)
+    public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
     }

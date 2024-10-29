@@ -15,85 +15,85 @@ class LinkClickedEventClick
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
      *
      * @var string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
     public string $url;
 
     /**
      *
      * @var string $continent
      */
-    #[\JMS\Serializer\Annotation\SerializedName('continent')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('continent')]
     public string $continent;
 
     /**
      *
      * @var string $country
      */
-    #[\JMS\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
     public string $country;
 
     /**
      *
      * @var string $city
      */
-    #[\JMS\Serializer\Annotation\SerializedName('city')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
     public string $city;
 
     /**
      *
      * @var string $device
      */
-    #[\JMS\Serializer\Annotation\SerializedName('device')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('device')]
     public string $device;
 
     /**
      *
      * @var string $browser
      */
-    #[\JMS\Serializer\Annotation\SerializedName('browser')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('browser')]
     public string $browser;
 
     /**
      *
      * @var string $os
      */
-    #[\JMS\Serializer\Annotation\SerializedName('os')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('os')]
     public string $os;
 
     /**
      *
      * @var string $referer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('referer')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('referer')]
     public string $referer;
 
     /**
      *
      * @var string $refererUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('refererUrl')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('refererUrl')]
     public string $refererUrl;
 
     /**
      *
      * @var ?bool $qr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('qr')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('qr')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $qr = null;
 
     /**
      *
      * @var string $ip
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ip')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ip')]
     public string $ip;
 
     /**

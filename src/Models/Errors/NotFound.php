@@ -17,8 +17,8 @@ class NotFound
      *
      * @var NotFoundError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\NotFoundError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\NotFoundError')]
     public NotFoundError $error;
 
     /**

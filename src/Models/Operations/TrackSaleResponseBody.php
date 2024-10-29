@@ -16,23 +16,23 @@ class TrackSaleResponseBody
      *
      * @var string $eventName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
     public string $eventName;
 
     /**
      *
      * @var TrackSaleCustomer $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customer')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleCustomer')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleCustomer')]
     public TrackSaleCustomer $customer;
 
     /**
      *
      * @var Sale $sale
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sale')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Sale')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale')]
     public Sale $sale;
 
     /**

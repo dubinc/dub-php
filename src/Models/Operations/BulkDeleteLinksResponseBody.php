@@ -17,7 +17,7 @@ class BulkDeleteLinksResponseBody
      *
      * @var float $deletedCount
      */
-    #[\JMS\Serializer\Annotation\SerializedName('deletedCount')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('deletedCount')]
     public float $deletedCount;
 
     /**

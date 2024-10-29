@@ -16,7 +16,7 @@ class TrackCustomerRequestBody
      *
      * @var string $customerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
     public string $customerId;
 
     /**
@@ -24,8 +24,8 @@ class TrackCustomerRequestBody
      *
      * @var ?string $customerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerName = null;
 
     /**
@@ -33,8 +33,8 @@ class TrackCustomerRequestBody
      *
      * @var ?string $customerEmail
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerEmail')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerEmail = null;
 
     /**
@@ -42,8 +42,8 @@ class TrackCustomerRequestBody
      *
      * @var ?string $customerAvatar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerAvatar')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerAvatar = null;
 
     /**

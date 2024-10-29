@@ -16,7 +16,7 @@ class TagSchema
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
@@ -24,7 +24,7 @@ class TagSchema
      *
      * @var string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     public string $name;
 
     /**
@@ -32,8 +32,8 @@ class TagSchema
      *
      * @var Color $color
      */
-    #[\JMS\Serializer\Annotation\SerializedName('color')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Color')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('color')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Color')]
     public Color $color;
 
     /**

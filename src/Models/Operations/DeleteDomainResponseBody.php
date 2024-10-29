@@ -17,7 +17,7 @@ class DeleteDomainResponseBody
      *
      * @var string $slug
      */
-    #[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
     public string $slug;
 
     /**

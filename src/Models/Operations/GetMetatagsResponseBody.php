@@ -17,7 +17,7 @@ class GetMetatagsResponseBody
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
     public ?string $title;
 
     /**
@@ -25,7 +25,7 @@ class GetMetatagsResponseBody
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     public ?string $description;
 
     /**
@@ -33,7 +33,7 @@ class GetMetatagsResponseBody
      *
      * @var ?string $image
      */
-    #[\JMS\Serializer\Annotation\SerializedName('image')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
     public ?string $image;
 
     /**

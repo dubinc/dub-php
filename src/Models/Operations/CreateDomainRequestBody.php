@@ -16,7 +16,7 @@ class CreateDomainRequestBody
      *
      * @var string $slug
      */
-    #[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
     public string $slug;
 
     /**
@@ -24,8 +24,8 @@ class CreateDomainRequestBody
      *
      * @var ?string $expiredUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiredUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $expiredUrl = null;
 
     /**
@@ -33,8 +33,8 @@ class CreateDomainRequestBody
      *
      * @var ?string $notFoundUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('notFoundUrl')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('notFoundUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $notFoundUrl = null;
 
     /**
@@ -42,8 +42,8 @@ class CreateDomainRequestBody
      *
      * @var ?bool $archived
      */
-    #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $archived = null;
 
     /**
@@ -51,8 +51,8 @@ class CreateDomainRequestBody
      *
      * @var ?string $placeholder
      */
-    #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('placeholder')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $placeholder = null;
 
     /**
@@ -62,7 +62,7 @@ class CreateDomainRequestBody
      * @param  ?string  $notFoundUrl
      * @param  ?string  $placeholder
      */
-    public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?bool $archived = false, ?string $placeholder = 'https://dub.co/help/article/what-is-dub')
+    public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?bool $archived = false)
     {
         $this->slug = $slug;
         $this->archived = $archived;

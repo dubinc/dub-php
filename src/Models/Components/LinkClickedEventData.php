@@ -15,16 +15,16 @@ class LinkClickedEventData
      *
      * @var LinkClickedEventClick $click
      */
-    #[\JMS\Serializer\Annotation\SerializedName('click')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventClick')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventClick')]
     public LinkClickedEventClick $click;
 
     /**
      *
      * @var LinkClickedEventLink $link
      */
-    #[\JMS\Serializer\Annotation\SerializedName('link')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventLink')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventLink')]
     public LinkClickedEventLink $link;
 
     /**

@@ -17,8 +17,8 @@ class InternalServerError
      *
      * @var InternalServerErrorError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\InternalServerErrorError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InternalServerErrorError')]
     public InternalServerErrorError $error;
 
     /**

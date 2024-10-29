@@ -16,30 +16,30 @@ class LinkWebhookEvent
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
      *
      * @var One|Two|Three $event
      */
-    #[\JMS\Serializer\Annotation\SerializedName('event')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\One|\Dub\Models\Components\Two|\Dub\Models\Components\Three')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\One|\Dub\Models\Components\Two|\Dub\Models\Components\Three')]
     public One|Two|Three $event;
 
     /**
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
      *
      * @var Data $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Data')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Data')]
     public Data $data;
 
     /**

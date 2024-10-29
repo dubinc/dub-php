@@ -17,7 +17,7 @@ class AnalyticsTopLinks
      * @var string $link
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     public string $link;
 
     /**
@@ -25,7 +25,7 @@ class AnalyticsTopLinks
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
@@ -33,7 +33,7 @@ class AnalyticsTopLinks
      *
      * @var string $domain
      */
-    #[\JMS\Serializer\Annotation\SerializedName('domain')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('domain')]
     public string $domain;
 
     /**
@@ -41,7 +41,7 @@ class AnalyticsTopLinks
      *
      * @var string $key
      */
-    #[\JMS\Serializer\Annotation\SerializedName('key')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('key')]
     public string $key;
 
     /**
@@ -49,7 +49,7 @@ class AnalyticsTopLinks
      *
      * @var string $shortLink
      */
-    #[\JMS\Serializer\Annotation\SerializedName('shortLink')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shortLink')]
     public string $shortLink;
 
     /**
@@ -57,7 +57,7 @@ class AnalyticsTopLinks
      *
      * @var string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
     public string $url;
 
     /**
@@ -65,7 +65,7 @@ class AnalyticsTopLinks
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
@@ -73,8 +73,8 @@ class AnalyticsTopLinks
      *
      * @var ?float $clicks
      */
-    #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $clicks = null;
 
     /**
@@ -82,8 +82,8 @@ class AnalyticsTopLinks
      *
      * @var ?float $leads
      */
-    #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('leads')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $leads = null;
 
     /**
@@ -91,8 +91,8 @@ class AnalyticsTopLinks
      *
      * @var ?float $sales
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $sales = null;
 
     /**
@@ -100,8 +100,8 @@ class AnalyticsTopLinks
      *
      * @var ?float $saleAmount
      */
-    #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $saleAmount = null;
 
     /**

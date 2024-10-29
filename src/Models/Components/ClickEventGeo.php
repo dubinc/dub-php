@@ -16,2000 +16,2000 @@ class ClickEventGeo
      *
      * @var ?string $af
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $af = null;
 
     /**
      *
      * @var ?string $al
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $al = null;
 
     /**
      *
      * @var ?string $dz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('DZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('DZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $dz = null;
 
     /**
      *
      * @var ?string $as
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $as = null;
 
     /**
      *
      * @var ?string $ad
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ad = null;
 
     /**
      *
      * @var ?string $ao
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ao = null;
 
     /**
      *
      * @var ?string $ai
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ai = null;
 
     /**
      *
      * @var ?string $aq
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AQ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $aq = null;
 
     /**
      *
      * @var ?string $ag
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ag = null;
 
     /**
      *
      * @var ?string $ar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ar = null;
 
     /**
      *
      * @var ?string $am
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $am = null;
 
     /**
      *
      * @var ?string $aw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $aw = null;
 
     /**
      *
      * @var ?string $au
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $au = null;
 
     /**
      *
      * @var ?string $at
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $at = null;
 
     /**
      *
      * @var ?string $az
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $az = null;
 
     /**
      *
      * @var ?string $bs
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bs = null;
 
     /**
      *
      * @var ?string $bh
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bh = null;
 
     /**
      *
      * @var ?string $bd
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bd = null;
 
     /**
      *
      * @var ?string $bb
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BB')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BB')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bb = null;
 
     /**
      *
      * @var ?string $by
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $by = null;
 
     /**
      *
      * @var ?string $be
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $be = null;
 
     /**
      *
      * @var ?string $bz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bz = null;
 
     /**
      *
      * @var ?string $bj
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BJ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bj = null;
 
     /**
      *
      * @var ?string $bm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bm = null;
 
     /**
      *
      * @var ?string $bt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bt = null;
 
     /**
      *
      * @var ?string $bo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bo = null;
 
     /**
      *
      * @var ?string $ba
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ba = null;
 
     /**
      *
      * @var ?string $bw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bw = null;
 
     /**
      *
      * @var ?string $bv
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BV')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BV')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bv = null;
 
     /**
      *
      * @var ?string $br
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $br = null;
 
     /**
      *
      * @var ?string $io
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $io = null;
 
     /**
      *
      * @var ?string $bn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bn = null;
 
     /**
      *
      * @var ?string $bg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bg = null;
 
     /**
      *
      * @var ?string $bf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bf = null;
 
     /**
      *
      * @var ?string $bi
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bi = null;
 
     /**
      *
      * @var ?string $kh
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kh = null;
 
     /**
      *
      * @var ?string $cm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cm = null;
 
     /**
      *
      * @var ?string $ca
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ca = null;
 
     /**
      *
      * @var ?string $cv
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CV')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CV')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cv = null;
 
     /**
      *
      * @var ?string $ky
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ky = null;
 
     /**
      *
      * @var ?string $cf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cf = null;
 
     /**
      *
      * @var ?string $td
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $td = null;
 
     /**
      *
      * @var ?string $cl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cl = null;
 
     /**
      *
      * @var ?string $cn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cn = null;
 
     /**
      *
      * @var ?string $cx
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CX')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CX')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cx = null;
 
     /**
      *
      * @var ?string $cc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cc = null;
 
     /**
      *
      * @var ?string $co
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $co = null;
 
     /**
      *
      * @var ?string $km
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $km = null;
 
     /**
      *
      * @var ?string $cg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cg = null;
 
     /**
      *
      * @var ?string $cd
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cd = null;
 
     /**
      *
      * @var ?string $ck
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ck = null;
 
     /**
      *
      * @var ?string $cr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cr = null;
 
     /**
      *
      * @var ?string $ci
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ci = null;
 
     /**
      *
      * @var ?string $hr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('HR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('HR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $hr = null;
 
     /**
      *
      * @var ?string $cu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cu = null;
 
     /**
      *
      * @var ?string $cy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cy = null;
 
     /**
      *
      * @var ?string $cz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cz = null;
 
     /**
      *
      * @var ?string $dk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('DK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('DK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $dk = null;
 
     /**
      *
      * @var ?string $dj
      */
-    #[\JMS\Serializer\Annotation\SerializedName('DJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('DJ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $dj = null;
 
     /**
      *
      * @var ?string $dm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('DM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('DM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $dm = null;
 
     /**
      *
      * @var ?string $do
      */
-    #[\JMS\Serializer\Annotation\SerializedName('DO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('DO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $do = null;
 
     /**
      *
      * @var ?string $ec
      */
-    #[\JMS\Serializer\Annotation\SerializedName('EC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('EC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ec = null;
 
     /**
      *
      * @var ?string $eg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('EG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('EG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $eg = null;
 
     /**
      *
      * @var ?string $sv
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SV')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SV')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sv = null;
 
     /**
      *
      * @var ?string $gq
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GQ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gq = null;
 
     /**
      *
      * @var ?string $er
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ER')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ER')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $er = null;
 
     /**
      *
      * @var ?string $ee
      */
-    #[\JMS\Serializer\Annotation\SerializedName('EE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('EE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ee = null;
 
     /**
      *
      * @var ?string $et
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ET')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ET')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $et = null;
 
     /**
      *
      * @var ?string $fk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('FK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('FK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $fk = null;
 
     /**
      *
      * @var ?string $fo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('FO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('FO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $fo = null;
 
     /**
      *
      * @var ?string $fj
      */
-    #[\JMS\Serializer\Annotation\SerializedName('FJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('FJ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $fj = null;
 
     /**
      *
      * @var ?string $fi
      */
-    #[\JMS\Serializer\Annotation\SerializedName('FI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('FI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $fi = null;
 
     /**
      *
      * @var ?string $fr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('FR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('FR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $fr = null;
 
     /**
      *
      * @var ?string $gf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gf = null;
 
     /**
      *
      * @var ?string $pf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pf = null;
 
     /**
      *
      * @var ?string $tf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tf = null;
 
     /**
      *
      * @var ?string $ga
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ga = null;
 
     /**
      *
      * @var ?string $gm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gm = null;
 
     /**
      *
      * @var ?string $ge
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ge = null;
 
     /**
      *
      * @var ?string $de
      */
-    #[\JMS\Serializer\Annotation\SerializedName('DE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('DE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $de = null;
 
     /**
      *
      * @var ?string $gh
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gh = null;
 
     /**
      *
      * @var ?string $gi
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gi = null;
 
     /**
      *
      * @var ?string $gr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gr = null;
 
     /**
      *
      * @var ?string $gl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gl = null;
 
     /**
      *
      * @var ?string $gd
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gd = null;
 
     /**
      *
      * @var ?string $gp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GP')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GP')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gp = null;
 
     /**
      *
      * @var ?string $gu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gu = null;
 
     /**
      *
      * @var ?string $gt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gt = null;
 
     /**
      *
      * @var ?string $gn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gn = null;
 
     /**
      *
      * @var ?string $gw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gw = null;
 
     /**
      *
      * @var ?string $gy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gy = null;
 
     /**
      *
      * @var ?string $ht
      */
-    #[\JMS\Serializer\Annotation\SerializedName('HT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('HT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ht = null;
 
     /**
      *
      * @var ?string $hm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('HM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('HM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $hm = null;
 
     /**
      *
      * @var ?string $va
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $va = null;
 
     /**
      *
      * @var ?string $hn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('HN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('HN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $hn = null;
 
     /**
      *
      * @var ?string $hk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('HK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('HK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $hk = null;
 
     /**
      *
      * @var ?string $hu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('HU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('HU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $hu = null;
 
     /**
      *
      * @var ?string $is
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $is = null;
 
     /**
      *
      * @var ?string $in
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $in = null;
 
     /**
      *
      * @var ?string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ID')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ID')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $id = null;
 
     /**
      *
      * @var ?string $ir
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ir = null;
 
     /**
      *
      * @var ?string $iq
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IQ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $iq = null;
 
     /**
      *
      * @var ?string $ie
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ie = null;
 
     /**
      *
      * @var ?string $il
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $il = null;
 
     /**
      *
      * @var ?string $it
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $it = null;
 
     /**
      *
      * @var ?string $jm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('JM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('JM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jm = null;
 
     /**
      *
      * @var ?string $jp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('JP')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('JP')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jp = null;
 
     /**
      *
      * @var ?string $jo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('JO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('JO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $jo = null;
 
     /**
      *
      * @var ?string $kz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kz = null;
 
     /**
      *
      * @var ?string $ke
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ke = null;
 
     /**
      *
      * @var ?string $ki
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ki = null;
 
     /**
      *
      * @var ?string $kp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KP')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KP')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kp = null;
 
     /**
      *
      * @var ?string $kr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kr = null;
 
     /**
      *
      * @var ?string $kw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kw = null;
 
     /**
      *
      * @var ?string $kg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kg = null;
 
     /**
      *
      * @var ?string $la
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $la = null;
 
     /**
      *
      * @var ?string $lv
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LV')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LV')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lv = null;
 
     /**
      *
      * @var ?string $lb
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LB')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LB')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lb = null;
 
     /**
      *
      * @var ?string $ls
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ls = null;
 
     /**
      *
      * @var ?string $lr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lr = null;
 
     /**
      *
      * @var ?string $ly
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ly = null;
 
     /**
      *
      * @var ?string $li
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $li = null;
 
     /**
      *
      * @var ?string $lt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lt = null;
 
     /**
      *
      * @var ?string $lu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lu = null;
 
     /**
      *
      * @var ?string $mo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mo = null;
 
     /**
      *
      * @var ?string $mg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mg = null;
 
     /**
      *
      * @var ?string $mw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mw = null;
 
     /**
      *
      * @var ?string $my
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $my = null;
 
     /**
      *
      * @var ?string $mv
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MV')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MV')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mv = null;
 
     /**
      *
      * @var ?string $ml
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ML')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ML')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ml = null;
 
     /**
      *
      * @var ?string $mt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mt = null;
 
     /**
      *
      * @var ?string $mh
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mh = null;
 
     /**
      *
      * @var ?string $mq
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MQ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mq = null;
 
     /**
      *
      * @var ?string $mr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mr = null;
 
     /**
      *
      * @var ?string $mu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mu = null;
 
     /**
      *
      * @var ?string $yt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('YT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('YT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $yt = null;
 
     /**
      *
      * @var ?string $mx
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MX')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MX')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mx = null;
 
     /**
      *
      * @var ?string $fm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('FM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('FM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $fm = null;
 
     /**
      *
      * @var ?string $md
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $md = null;
 
     /**
      *
      * @var ?string $mc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mc = null;
 
     /**
      *
      * @var ?string $mn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mn = null;
 
     /**
      *
      * @var ?string $ms
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ms = null;
 
     /**
      *
      * @var ?string $ma
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ma = null;
 
     /**
      *
      * @var ?string $mz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mz = null;
 
     /**
      *
      * @var ?string $mm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mm = null;
 
     /**
      *
      * @var ?string $na
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $na = null;
 
     /**
      *
      * @var ?string $nr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nr = null;
 
     /**
      *
      * @var ?string $np
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NP')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NP')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $np = null;
 
     /**
      *
      * @var ?string $nl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nl = null;
 
     /**
      *
      * @var ?string $nc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nc = null;
 
     /**
      *
      * @var ?string $nz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nz = null;
 
     /**
      *
      * @var ?string $ni
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ni = null;
 
     /**
      *
      * @var ?string $ne
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ne = null;
 
     /**
      *
      * @var ?string $ng
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ng = null;
 
     /**
      *
      * @var ?string $nu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nu = null;
 
     /**
      *
      * @var ?string $nf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $nf = null;
 
     /**
      *
      * @var ?string $mk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mk = null;
 
     /**
      *
      * @var ?string $mp
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MP')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MP')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mp = null;
 
     /**
      *
      * @var ?string $no
      */
-    #[\JMS\Serializer\Annotation\SerializedName('NO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('NO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $no = null;
 
     /**
      *
      * @var ?string $om
      */
-    #[\JMS\Serializer\Annotation\SerializedName('OM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('OM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $om = null;
 
     /**
      *
      * @var ?string $pk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pk = null;
 
     /**
      *
      * @var ?string $pw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pw = null;
 
     /**
      *
      * @var ?string $ps
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ps = null;
 
     /**
      *
      * @var ?string $pa
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pa = null;
 
     /**
      *
      * @var ?string $pg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pg = null;
 
     /**
      *
      * @var ?string $py
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $py = null;
 
     /**
      *
      * @var ?string $pe
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pe = null;
 
     /**
      *
      * @var ?string $ph
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ph = null;
 
     /**
      *
      * @var ?string $pn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pn = null;
 
     /**
      *
      * @var ?string $pl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pl = null;
 
     /**
      *
      * @var ?string $pt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pt = null;
 
     /**
      *
      * @var ?string $pr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pr = null;
 
     /**
      *
      * @var ?string $qa
      */
-    #[\JMS\Serializer\Annotation\SerializedName('QA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('QA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $qa = null;
 
     /**
      *
      * @var ?string $re
      */
-    #[\JMS\Serializer\Annotation\SerializedName('RE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('RE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $re = null;
 
     /**
      *
      * @var ?string $ro
      */
-    #[\JMS\Serializer\Annotation\SerializedName('RO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('RO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ro = null;
 
     /**
      *
      * @var ?string $ru
      */
-    #[\JMS\Serializer\Annotation\SerializedName('RU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('RU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ru = null;
 
     /**
      *
      * @var ?string $rw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('RW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('RW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rw = null;
 
     /**
      *
      * @var ?string $sh
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sh = null;
 
     /**
      *
      * @var ?string $kn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('KN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('KN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $kn = null;
 
     /**
      *
      * @var ?string $lc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lc = null;
 
     /**
      *
      * @var ?string $pm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('PM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('PM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $pm = null;
 
     /**
      *
      * @var ?string $vc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $vc = null;
 
     /**
      *
      * @var ?string $ws
      */
-    #[\JMS\Serializer\Annotation\SerializedName('WS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('WS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ws = null;
 
     /**
      *
      * @var ?string $sm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sm = null;
 
     /**
      *
      * @var ?string $st
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ST')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ST')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $st = null;
 
     /**
      *
      * @var ?string $sa
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sa = null;
 
     /**
      *
      * @var ?string $sn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sn = null;
 
     /**
      *
      * @var ?string $sc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sc = null;
 
     /**
      *
      * @var ?string $sl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sl = null;
 
     /**
      *
      * @var ?string $sg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sg = null;
 
     /**
      *
      * @var ?string $sk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sk = null;
 
     /**
      *
      * @var ?string $si
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $si = null;
 
     /**
      *
      * @var ?string $sb
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SB')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SB')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sb = null;
 
     /**
      *
      * @var ?string $so
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $so = null;
 
     /**
      *
      * @var ?string $za
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ZA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ZA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $za = null;
 
     /**
      *
      * @var ?string $gs
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gs = null;
 
     /**
      *
      * @var ?string $es
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ES')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ES')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $es = null;
 
     /**
      *
      * @var ?string $lk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('LK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('LK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $lk = null;
 
     /**
      *
      * @var ?string $sd
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SD')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SD')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sd = null;
 
     /**
      *
      * @var ?string $sr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sr = null;
 
     /**
      *
      * @var ?string $sj
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SJ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sj = null;
 
     /**
      *
      * @var ?string $sz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sz = null;
 
     /**
      *
      * @var ?string $se
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $se = null;
 
     /**
      *
      * @var ?string $ch
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ch = null;
 
     /**
      *
      * @var ?string $sy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sy = null;
 
     /**
      *
      * @var ?string $tw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tw = null;
 
     /**
      *
      * @var ?string $tj
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TJ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TJ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tj = null;
 
     /**
      *
      * @var ?string $tz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tz = null;
 
     /**
      *
      * @var ?string $th
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $th = null;
 
     /**
      *
      * @var ?string $tl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tl = null;
 
     /**
      *
      * @var ?string $tg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tg = null;
 
     /**
      *
      * @var ?string $tk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tk = null;
 
     /**
      *
      * @var ?string $to
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TO')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TO')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $to = null;
 
     /**
      *
      * @var ?string $tt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TT')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TT')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tt = null;
 
     /**
      *
      * @var ?string $tn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tn = null;
 
     /**
      *
      * @var ?string $tr
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TR')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TR')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tr = null;
 
     /**
      *
      * @var ?string $tm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tm = null;
 
     /**
      *
      * @var ?string $tc
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TC')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TC')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tc = null;
 
     /**
      *
      * @var ?string $tv
      */
-    #[\JMS\Serializer\Annotation\SerializedName('TV')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('TV')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tv = null;
 
     /**
      *
      * @var ?string $ug
      */
-    #[\JMS\Serializer\Annotation\SerializedName('UG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('UG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ug = null;
 
     /**
      *
      * @var ?string $ua
      */
-    #[\JMS\Serializer\Annotation\SerializedName('UA')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('UA')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ua = null;
 
     /**
      *
      * @var ?string $ae
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ae = null;
 
     /**
      *
      * @var ?string $gb
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GB')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GB')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gb = null;
 
     /**
      *
      * @var ?string $us
      */
-    #[\JMS\Serializer\Annotation\SerializedName('US')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('US')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $us = null;
 
     /**
      *
      * @var ?string $um
      */
-    #[\JMS\Serializer\Annotation\SerializedName('UM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('UM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $um = null;
 
     /**
      *
      * @var ?string $uy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('UY')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('UY')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $uy = null;
 
     /**
      *
      * @var ?string $uz
      */
-    #[\JMS\Serializer\Annotation\SerializedName('UZ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('UZ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $uz = null;
 
     /**
      *
      * @var ?string $vu
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VU')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VU')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $vu = null;
 
     /**
      *
      * @var ?string $ve
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ve = null;
 
     /**
      *
      * @var ?string $vn
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VN')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VN')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $vn = null;
 
     /**
      *
      * @var ?string $vg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $vg = null;
 
     /**
      *
      * @var ?string $vi
      */
-    #[\JMS\Serializer\Annotation\SerializedName('VI')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('VI')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $vi = null;
 
     /**
      *
      * @var ?string $wf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('WF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('WF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $wf = null;
 
     /**
      *
      * @var ?string $eh
      */
-    #[\JMS\Serializer\Annotation\SerializedName('EH')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('EH')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $eh = null;
 
     /**
      *
      * @var ?string $ye
      */
-    #[\JMS\Serializer\Annotation\SerializedName('YE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('YE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ye = null;
 
     /**
      *
      * @var ?string $zm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ZM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ZM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $zm = null;
 
     /**
      *
      * @var ?string $zw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ZW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ZW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $zw = null;
 
     /**
      *
      * @var ?string $ax
      */
-    #[\JMS\Serializer\Annotation\SerializedName('AX')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('AX')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ax = null;
 
     /**
      *
      * @var ?string $bq
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BQ')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BQ')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bq = null;
 
     /**
      *
      * @var ?string $cw
      */
-    #[\JMS\Serializer\Annotation\SerializedName('CW')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('CW')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $cw = null;
 
     /**
      *
      * @var ?string $gg
      */
-    #[\JMS\Serializer\Annotation\SerializedName('GG')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('GG')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $gg = null;
 
     /**
      *
      * @var ?string $im
      */
-    #[\JMS\Serializer\Annotation\SerializedName('IM')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('IM')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $im = null;
 
     /**
      *
      * @var ?string $je
      */
-    #[\JMS\Serializer\Annotation\SerializedName('JE')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('JE')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $je = null;
 
     /**
      *
      * @var ?string $me
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ME')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ME')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $me = null;
 
     /**
      *
      * @var ?string $bl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('BL')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('BL')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $bl = null;
 
     /**
      *
      * @var ?string $mf
      */
-    #[\JMS\Serializer\Annotation\SerializedName('MF')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('MF')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $mf = null;
 
     /**
      *
      * @var ?string $rs
      */
-    #[\JMS\Serializer\Annotation\SerializedName('RS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('RS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $rs = null;
 
     /**
      *
      * @var ?string $sx
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SX')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SX')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $sx = null;
 
     /**
      *
      * @var ?string $ss
      */
-    #[\JMS\Serializer\Annotation\SerializedName('SS')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('SS')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ss = null;
 
     /**
      *
      * @var ?string $xk
      */
-    #[\JMS\Serializer\Annotation\SerializedName('XK')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('XK')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $xk = null;
 
     /**
