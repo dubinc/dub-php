@@ -16,7 +16,7 @@ class DomainSchema
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
@@ -24,7 +24,7 @@ class DomainSchema
      *
      * @var string $slug
      */
-    #[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
     public string $slug;
 
     /**
@@ -32,8 +32,8 @@ class DomainSchema
      *
      * @var ?bool $verified
      */
-    #[\JMS\Serializer\Annotation\SerializedName('verified')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('verified')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $verified = null;
 
     /**
@@ -41,8 +41,8 @@ class DomainSchema
      *
      * @var ?bool $primary
      */
-    #[\JMS\Serializer\Annotation\SerializedName('primary')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('primary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $primary = null;
 
     /**
@@ -50,8 +50,8 @@ class DomainSchema
      *
      * @var ?bool $archived
      */
-    #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $archived = null;
 
     /**
@@ -59,7 +59,7 @@ class DomainSchema
      *
      * @var ?string $placeholder
      */
-    #[\JMS\Serializer\Annotation\SerializedName('placeholder')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('placeholder')]
     public ?string $placeholder;
 
     /**
@@ -67,7 +67,7 @@ class DomainSchema
      *
      * @var ?string $expiredUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiredUrl')]
     public ?string $expiredUrl;
 
     /**
@@ -75,7 +75,7 @@ class DomainSchema
      *
      * @var ?string $notFoundUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('notFoundUrl')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('notFoundUrl')]
     public ?string $notFoundUrl;
 
     /**
@@ -83,7 +83,7 @@ class DomainSchema
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
@@ -91,7 +91,7 @@ class DomainSchema
      *
      * @var string $updatedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
     public string $updatedAt;
 
     /**
@@ -99,8 +99,8 @@ class DomainSchema
      *
      * @var ?RegisteredDomain $registeredDomain
      */
-    #[\JMS\Serializer\Annotation\SerializedName('registeredDomain')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\RegisteredDomain|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('registeredDomain')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\RegisteredDomain|null')]
     public ?RegisteredDomain $registeredDomain;
 
     /**

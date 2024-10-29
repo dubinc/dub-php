@@ -16,7 +16,7 @@ class TrackLeadRequestBody
      *
      * @var string $clickId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('clickId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clickId')]
     public string $clickId;
 
     /**
@@ -24,7 +24,7 @@ class TrackLeadRequestBody
      *
      * @var string $eventName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
     public string $eventName;
 
     /**
@@ -32,7 +32,7 @@ class TrackLeadRequestBody
      *
      * @var string $customerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
     public string $customerId;
 
     /**
@@ -40,8 +40,8 @@ class TrackLeadRequestBody
      *
      * @var ?string $customerName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerName')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerName = null;
 
     /**
@@ -49,8 +49,8 @@ class TrackLeadRequestBody
      *
      * @var ?string $customerEmail
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerEmail')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerEmail')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerEmail = null;
 
     /**
@@ -58,8 +58,8 @@ class TrackLeadRequestBody
      *
      * @var ?string $customerAvatar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerAvatar')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerAvatar')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $customerAvatar = null;
 
     /**
@@ -67,9 +67,9 @@ class TrackLeadRequestBody
      *
      * @var ?array<string, mixed> $metadata
      */
-    #[\JMS\Serializer\Annotation\SerializedName('metadata')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $metadata = null;
 
     /**

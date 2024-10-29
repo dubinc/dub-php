@@ -16,30 +16,30 @@ class SaleCreatedEvent
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
      *
      * @var SaleCreatedEventEvent $event
      */
-    #[\JMS\Serializer\Annotation\SerializedName('event')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventEvent')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventEvent')]
     public SaleCreatedEventEvent $event;
 
     /**
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
      *
      * @var SaleCreatedEventData $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventData')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventData')]
     public SaleCreatedEventData $data;
 
     /**

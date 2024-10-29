@@ -16,16 +16,16 @@ class TrackLeadResponseBody
      *
      * @var Click $click
      */
-    #[\JMS\Serializer\Annotation\SerializedName('click')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Click')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Click')]
     public Click $click;
 
     /**
      *
      * @var Customer $customer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customer')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\Customer')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Customer')]
     public Customer $customer;
 
     /**

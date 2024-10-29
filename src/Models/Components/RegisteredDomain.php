@@ -17,7 +17,7 @@ class RegisteredDomain
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
@@ -25,7 +25,7 @@ class RegisteredDomain
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
@@ -33,7 +33,7 @@ class RegisteredDomain
      *
      * @var string $expiresAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
     public string $expiresAt;
 
     /**

@@ -16,8 +16,8 @@ class Users
      *
      * @var Role $role
      */
-    #[\JMS\Serializer\Annotation\SerializedName('role')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Role')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('role')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Role')]
     public Role $role;
 
     /**

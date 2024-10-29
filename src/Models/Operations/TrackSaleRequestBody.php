@@ -16,7 +16,7 @@ class TrackSaleRequestBody
      *
      * @var string $customerId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('customerId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
     public string $customerId;
 
     /**
@@ -24,7 +24,7 @@ class TrackSaleRequestBody
      *
      * @var int $amount
      */
-    #[\JMS\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
     public int $amount;
 
     /**
@@ -32,8 +32,8 @@ class TrackSaleRequestBody
      *
      * @var PaymentProcessor $paymentProcessor
      */
-    #[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Operations\PaymentProcessor')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\PaymentProcessor')]
     public PaymentProcessor $paymentProcessor;
 
     /**
@@ -41,8 +41,8 @@ class TrackSaleRequestBody
      *
      * @var ?string $eventName
      */
-    #[\JMS\Serializer\Annotation\SerializedName('eventName')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $eventName = null;
 
     /**
@@ -50,8 +50,8 @@ class TrackSaleRequestBody
      *
      * @var ?string $invoiceId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $invoiceId = null;
 
     /**
@@ -59,8 +59,8 @@ class TrackSaleRequestBody
      *
      * @var ?string $currency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('currency')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
 
     /**
@@ -68,9 +68,9 @@ class TrackSaleRequestBody
      *
      * @var ?array<string, mixed> $metadata
      */
-    #[\JMS\Serializer\Annotation\SerializedName('metadata')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $metadata = null;
 
     /**

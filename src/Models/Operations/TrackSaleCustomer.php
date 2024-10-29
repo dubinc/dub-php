@@ -15,28 +15,28 @@ class TrackSaleCustomer
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
      *
      * @var ?string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     public ?string $name;
 
     /**
      *
      * @var ?string $email
      */
-    #[\JMS\Serializer\Annotation\SerializedName('email')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
     public ?string $email;
 
     /**
      *
      * @var ?string $avatar
      */
-    #[\JMS\Serializer\Annotation\SerializedName('avatar')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
     public ?string $avatar;
 
     /**

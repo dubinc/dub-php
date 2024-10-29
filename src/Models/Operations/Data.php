@@ -16,8 +16,8 @@ class Data
      *
      * @var ?string $url
      */
-    #[\JMS\Serializer\Annotation\SerializedName('url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $url = null;
 
     /**
@@ -25,8 +25,8 @@ class Data
      *
      * @var ?bool $trackConversion
      */
-    #[\JMS\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $trackConversion = null;
 
     /**
@@ -34,8 +34,8 @@ class Data
      *
      * @var ?bool $archived
      */
-    #[\JMS\Serializer\Annotation\SerializedName('archived')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $archived = null;
 
     /**
@@ -44,8 +44,8 @@ class Data
      * @var ?bool $publicStats
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('publicStats')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $publicStats = null;
 
     /**
@@ -54,8 +54,8 @@ class Data
      * @var ?string $tagId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tagId')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tagId = null;
 
     /**
@@ -63,9 +63,9 @@ class Data
      *
      * @var string|array<string>|null $tagIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tagIds')]
-    #[\JMS\Serializer\Annotation\Type('string|array<string>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $tagIds = null;
 
     /**
@@ -73,9 +73,9 @@ class Data
      *
      * @var string|array<string>|null $tagNames
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tagNames')]
-    #[\JMS\Serializer\Annotation\Type('string|array<string>')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagNames')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $tagNames = null;
 
     /**
@@ -83,8 +83,8 @@ class Data
      *
      * @var ?string $comments
      */
-    #[\JMS\Serializer\Annotation\SerializedName('comments')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('comments')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $comments = null;
 
     /**
@@ -92,8 +92,8 @@ class Data
      *
      * @var ?string $expiresAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiresAt')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $expiresAt = null;
 
     /**
@@ -101,8 +101,8 @@ class Data
      *
      * @var ?string $expiredUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('expiredUrl')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiredUrl')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $expiredUrl = null;
 
     /**
@@ -110,8 +110,8 @@ class Data
      *
      * @var ?string $password
      */
-    #[\JMS\Serializer\Annotation\SerializedName('password')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('password')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $password = null;
 
     /**
@@ -119,8 +119,8 @@ class Data
      *
      * @var ?bool $proxy
      */
-    #[\JMS\Serializer\Annotation\SerializedName('proxy')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $proxy = null;
 
     /**
@@ -128,8 +128,8 @@ class Data
      *
      * @var ?string $title
      */
-    #[\JMS\Serializer\Annotation\SerializedName('title')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $title = null;
 
     /**
@@ -137,8 +137,8 @@ class Data
      *
      * @var ?string $description
      */
-    #[\JMS\Serializer\Annotation\SerializedName('description')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $description = null;
 
     /**
@@ -146,8 +146,8 @@ class Data
      *
      * @var ?string $image
      */
-    #[\JMS\Serializer\Annotation\SerializedName('image')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $image = null;
 
     /**
@@ -155,8 +155,8 @@ class Data
      *
      * @var ?string $video
      */
-    #[\JMS\Serializer\Annotation\SerializedName('video')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('video')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $video = null;
 
     /**
@@ -164,8 +164,8 @@ class Data
      *
      * @var ?bool $rewrite
      */
-    #[\JMS\Serializer\Annotation\SerializedName('rewrite')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $rewrite = null;
 
     /**
@@ -173,8 +173,8 @@ class Data
      *
      * @var ?string $ios
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ios')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ios')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ios = null;
 
     /**
@@ -182,8 +182,8 @@ class Data
      *
      * @var ?string $android
      */
-    #[\JMS\Serializer\Annotation\SerializedName('android')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('android')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $android = null;
 
     /**
@@ -191,9 +191,9 @@ class Data
      *
      * @var ?Components\LinkGeoTargeting $geo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('geo')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LinkGeoTargeting|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('geo')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkGeoTargeting|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Components\LinkGeoTargeting $geo = null;
 
     /**
@@ -201,8 +201,8 @@ class Data
      *
      * @var ?bool $doIndex
      */
-    #[\JMS\Serializer\Annotation\SerializedName('doIndex')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $doIndex = null;
 
     /**
@@ -210,8 +210,8 @@ class Data
      *
      * @var ?string $utmSource
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_source')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_source')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $utmSource = null;
 
     /**
@@ -219,8 +219,8 @@ class Data
      *
      * @var ?string $utmMedium
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_medium')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_medium')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $utmMedium = null;
 
     /**
@@ -228,8 +228,8 @@ class Data
      *
      * @var ?string $utmCampaign
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_campaign')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_campaign')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $utmCampaign = null;
 
     /**
@@ -237,8 +237,8 @@ class Data
      *
      * @var ?string $utmTerm
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_term')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_term')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $utmTerm = null;
 
     /**
@@ -246,8 +246,8 @@ class Data
      *
      * @var ?string $utmContent
      */
-    #[\JMS\Serializer\Annotation\SerializedName('utm_content')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_content')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $utmContent = null;
 
     /**
@@ -255,8 +255,8 @@ class Data
      *
      * @var ?string $ref
      */
-    #[\JMS\Serializer\Annotation\SerializedName('ref')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ref')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $ref = null;
 
     /**
@@ -264,9 +264,9 @@ class Data
      *
      * @var ?array<string> $webhookIds
      */
-    #[\JMS\Serializer\Annotation\SerializedName('webhookIds')]
-    #[\JMS\Serializer\Annotation\Type('array<string>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $webhookIds = null;
 
     /**

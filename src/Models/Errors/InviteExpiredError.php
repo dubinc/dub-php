@@ -16,8 +16,8 @@ class InviteExpiredError
      *
      * @var InviteExpiredCode $code
      */
-    #[\JMS\Serializer\Annotation\SerializedName('code')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\InviteExpiredCode')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InviteExpiredCode')]
     public InviteExpiredCode $code;
 
     /**
@@ -25,7 +25,7 @@ class InviteExpiredError
      *
      * @var string $message
      */
-    #[\JMS\Serializer\Annotation\SerializedName('message')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('message')]
     public string $message;
 
     /**
@@ -33,8 +33,8 @@ class InviteExpiredError
      *
      * @var ?string $docUrl
      */
-    #[\JMS\Serializer\Annotation\SerializedName('doc_url')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('doc_url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $docUrl = null;
 
     /**

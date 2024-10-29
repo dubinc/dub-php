@@ -16,30 +16,30 @@ class LeadCreatedEvent
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
      *
      * @var LeadCreatedEventEvent $event
      */
-    #[\JMS\Serializer\Annotation\SerializedName('event')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventEvent')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventEvent')]
     public LeadCreatedEventEvent $event;
 
     /**
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
      *
      * @var LeadCreatedEventData $data
      */
-    #[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventData')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventData')]
     public LeadCreatedEventData $data;
 
     /**

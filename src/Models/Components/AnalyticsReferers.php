@@ -16,7 +16,7 @@ class AnalyticsReferers
      *
      * @var string $referer
      */
-    #[\JMS\Serializer\Annotation\SerializedName('referer')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('referer')]
     public string $referer;
 
     /**
@@ -24,8 +24,8 @@ class AnalyticsReferers
      *
      * @var ?float $clicks
      */
-    #[\JMS\Serializer\Annotation\SerializedName('clicks')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $clicks = null;
 
     /**
@@ -33,8 +33,8 @@ class AnalyticsReferers
      *
      * @var ?float $leads
      */
-    #[\JMS\Serializer\Annotation\SerializedName('leads')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('leads')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $leads = null;
 
     /**
@@ -42,8 +42,8 @@ class AnalyticsReferers
      *
      * @var ?float $sales
      */
-    #[\JMS\Serializer\Annotation\SerializedName('sales')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $sales = null;
 
     /**
@@ -51,8 +51,8 @@ class AnalyticsReferers
      *
      * @var ?float $saleAmount
      */
-    #[\JMS\Serializer\Annotation\SerializedName('saleAmount')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $saleAmount = null;
 
     /**

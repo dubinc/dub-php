@@ -17,8 +17,8 @@ class Forbidden
      *
      * @var ForbiddenError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\ForbiddenError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\ForbiddenError')]
     public ForbiddenError $error;
 
     /**

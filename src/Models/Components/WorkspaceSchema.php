@@ -16,7 +16,7 @@ class WorkspaceSchema
      *
      * @var string $id
      */
-    #[\JMS\Serializer\Annotation\SerializedName('id')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
     public string $id;
 
     /**
@@ -24,7 +24,7 @@ class WorkspaceSchema
      *
      * @var string $name
      */
-    #[\JMS\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     public string $name;
 
     /**
@@ -32,7 +32,7 @@ class WorkspaceSchema
      *
      * @var string $slug
      */
-    #[\JMS\Serializer\Annotation\SerializedName('slug')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('slug')]
     public string $slug;
 
     /**
@@ -40,8 +40,8 @@ class WorkspaceSchema
      *
      * @var ?string $logo
      */
-    #[\JMS\Serializer\Annotation\SerializedName('logo')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $logo = null;
 
     /**
@@ -49,7 +49,7 @@ class WorkspaceSchema
      *
      * @var ?string $inviteCode
      */
-    #[\JMS\Serializer\Annotation\SerializedName('inviteCode')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('inviteCode')]
     public ?string $inviteCode;
 
     /**
@@ -57,8 +57,8 @@ class WorkspaceSchema
      *
      * @var Plan $plan
      */
-    #[\JMS\Serializer\Annotation\SerializedName('plan')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Components\Plan')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('plan')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Plan')]
     public Plan $plan;
 
     /**
@@ -66,7 +66,7 @@ class WorkspaceSchema
      *
      * @var ?string $stripeId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('stripeId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeId')]
     public ?string $stripeId;
 
     /**
@@ -74,7 +74,7 @@ class WorkspaceSchema
      *
      * @var float $billingCycleStart
      */
-    #[\JMS\Serializer\Annotation\SerializedName('billingCycleStart')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('billingCycleStart')]
     public float $billingCycleStart;
 
     /**
@@ -82,7 +82,7 @@ class WorkspaceSchema
      *
      * @var ?string $paymentFailedAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('paymentFailedAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentFailedAt')]
     public ?string $paymentFailedAt;
 
     /**
@@ -90,7 +90,7 @@ class WorkspaceSchema
      *
      * @var ?string $stripeConnectId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('stripeConnectId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeConnectId')]
     public ?string $stripeConnectId;
 
     /**
@@ -98,7 +98,7 @@ class WorkspaceSchema
      *
      * @var float $usage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('usage')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('usage')]
     public float $usage;
 
     /**
@@ -106,7 +106,7 @@ class WorkspaceSchema
      *
      * @var float $usageLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('usageLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('usageLimit')]
     public float $usageLimit;
 
     /**
@@ -114,7 +114,7 @@ class WorkspaceSchema
      *
      * @var float $linksUsage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('linksUsage')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('linksUsage')]
     public float $linksUsage;
 
     /**
@@ -122,7 +122,7 @@ class WorkspaceSchema
      *
      * @var float $linksLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('linksLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('linksLimit')]
     public float $linksLimit;
 
     /**
@@ -130,7 +130,7 @@ class WorkspaceSchema
      *
      * @var float $salesUsage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('salesUsage')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salesUsage')]
     public float $salesUsage;
 
     /**
@@ -138,7 +138,7 @@ class WorkspaceSchema
      *
      * @var float $salesLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('salesLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salesLimit')]
     public float $salesLimit;
 
     /**
@@ -146,7 +146,7 @@ class WorkspaceSchema
      *
      * @var float $domainsLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('domainsLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('domainsLimit')]
     public float $domainsLimit;
 
     /**
@@ -154,7 +154,7 @@ class WorkspaceSchema
      *
      * @var float $tagsLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('tagsLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagsLimit')]
     public float $tagsLimit;
 
     /**
@@ -162,7 +162,7 @@ class WorkspaceSchema
      *
      * @var float $usersLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('usersLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('usersLimit')]
     public float $usersLimit;
 
     /**
@@ -170,7 +170,7 @@ class WorkspaceSchema
      *
      * @var float $aiUsage
      */
-    #[\JMS\Serializer\Annotation\SerializedName('aiUsage')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('aiUsage')]
     public float $aiUsage;
 
     /**
@@ -178,7 +178,7 @@ class WorkspaceSchema
      *
      * @var float $aiLimit
      */
-    #[\JMS\Serializer\Annotation\SerializedName('aiLimit')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('aiLimit')]
     public float $aiLimit;
 
     /**
@@ -186,7 +186,7 @@ class WorkspaceSchema
      *
      * @var ?string $referralLinkId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('referralLinkId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('referralLinkId')]
     public ?string $referralLinkId;
 
     /**
@@ -194,7 +194,7 @@ class WorkspaceSchema
      *
      * @var bool $conversionEnabled
      */
-    #[\JMS\Serializer\Annotation\SerializedName('conversionEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('conversionEnabled')]
     public bool $conversionEnabled;
 
     /**
@@ -202,7 +202,7 @@ class WorkspaceSchema
      *
      * @var bool $dotLinkClaimed
      */
-    #[\JMS\Serializer\Annotation\SerializedName('dotLinkClaimed')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('dotLinkClaimed')]
     public bool $dotLinkClaimed;
 
     /**
@@ -210,7 +210,7 @@ class WorkspaceSchema
      *
      * @var string $createdAt
      */
-    #[\JMS\Serializer\Annotation\SerializedName('createdAt')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
 
     /**
@@ -218,8 +218,8 @@ class WorkspaceSchema
      *
      * @var array<Users> $users
      */
-    #[\JMS\Serializer\Annotation\SerializedName('users')]
-    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\Users>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('users')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Users>')]
     public array $users;
 
     /**
@@ -227,8 +227,8 @@ class WorkspaceSchema
      *
      * @var array<Domains> $domains
      */
-    #[\JMS\Serializer\Annotation\SerializedName('domains')]
-    #[\JMS\Serializer\Annotation\Type('array<\Dub\Models\Components\Domains>')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('domains')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Domains>')]
     public array $domains;
 
     /**
@@ -236,9 +236,9 @@ class WorkspaceSchema
      *
      * @var ?array<string, bool> $flags
      */
-    #[\JMS\Serializer\Annotation\SerializedName('flags')]
-    #[\JMS\Serializer\Annotation\Type('array<string, bool>|null')]
-    #[\JMS\Serializer\Annotation\SkipWhenNull]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('flags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, bool>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $flags = null;
 
     /**
@@ -246,7 +246,7 @@ class WorkspaceSchema
      *
      * @var ?string $publishableKey
      */
-    #[\JMS\Serializer\Annotation\SerializedName('publishableKey')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publishableKey')]
     public ?string $publishableKey;
 
     /**

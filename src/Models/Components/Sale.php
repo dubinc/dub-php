@@ -15,28 +15,28 @@ class Sale
      *
      * @var float $amount
      */
-    #[\JMS\Serializer\Annotation\SerializedName('amount')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
     public float $amount;
 
     /**
      *
      * @var string $currency
      */
-    #[\JMS\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     public string $currency;
 
     /**
      *
      * @var string $paymentProcessor
      */
-    #[\JMS\Serializer\Annotation\SerializedName('paymentProcessor')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
     public string $paymentProcessor;
 
     /**
      *
      * @var ?string $invoiceId
      */
-    #[\JMS\Serializer\Annotation\SerializedName('invoiceId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
     public ?string $invoiceId;
 
     /**

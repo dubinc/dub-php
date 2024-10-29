@@ -17,8 +17,8 @@ class Unauthorized
      *
      * @var UnauthorizedError $error
      */
-    #[\JMS\Serializer\Annotation\SerializedName('error')]
-    #[\JMS\Serializer\Annotation\Type('\Dub\Models\Errors\UnauthorizedError')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\UnauthorizedError')]
     public UnauthorizedError $error;
 
     /**
