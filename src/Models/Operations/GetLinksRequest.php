@@ -20,7 +20,7 @@ class GetLinksRequest
     public ?string $domain = null;
 
     /**
-     * The tag ID to filter the links by. This field is deprecated – use `tagIds` instead.
+     * Deprecated. Use `tagIds` instead. The tag ID to filter the links by.
      *
      * @var ?string $tagId
      */

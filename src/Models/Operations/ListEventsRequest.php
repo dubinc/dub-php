@@ -165,12 +165,20 @@ class ListEventsRequest
     public ?string $url = null;
 
     /**
-     * The tag ID to retrieve analytics for.
+     * Deprecated. Use `tagIds` instead. The tag ID to retrieve analytics for.
      *
      * @var ?string $tagId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagId')]
     public ?string $tagId = null;
+
+    /**
+     * The tag IDs to retrieve analytics for.
+     *
+     * @var string|array<string>|null $tagIds
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagIds')]
+    public string|array|null $tagIds = null;
 
     /**
      * Deprecated. Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
@@ -237,6 +245,7 @@ class ListEventsRequest
      * @param  ?string  $refererUrl
      * @param  ?string  $url
      * @param  ?string  $tagId
+     * @param  string|array<string>|null  $tagIds
      * @param  ?bool  $qr
      * @param  ?bool  $root
      * @param  ?float  $page
@@ -244,7 +253,7 @@ class ListEventsRequest
      * @param  ?Order  $order
      * @param  ?SortBy  $sortBy
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?QueryParamInterval $interval = QueryParamInterval::TwentyFourh, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?Order $order = Order::Desc, ?SortBy $sortBy = SortBy::Timestamp)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?QueryParamInterval $interval = QueryParamInterval::TwentyFourh, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?Order $order = Order::Desc, ?SortBy $sortBy = SortBy::Timestamp)
     {
         $this->event = $event;
         $this->domain = $domain;
@@ -266,6 +275,7 @@ class ListEventsRequest
         $this->refererUrl = $refererUrl;
         $this->url = $url;
         $this->tagId = $tagId;
+        $this->tagIds = $tagIds;
         $this->qr = $qr;
         $this->root = $root;
         $this->page = $page;

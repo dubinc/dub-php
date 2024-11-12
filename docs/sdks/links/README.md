@@ -404,7 +404,7 @@ if ($response->linkSchemas !== null) {
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `$request`                                 | [array](../../.md)                         | :heavy_check_mark:                         | The request object to use for the request. |
+| `$request`                                 | [array<Operations\RequestBody>](../../.md) | :heavy_check_mark:                         | The request object to use for the request. |
 
 ### Response
 

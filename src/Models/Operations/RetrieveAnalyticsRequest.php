@@ -173,12 +173,20 @@ class RetrieveAnalyticsRequest
     public ?string $url = null;
 
     /**
-     * The tag ID to retrieve analytics for.
+     * Deprecated. Use `tagIds` instead. The tag ID to retrieve analytics for.
      *
      * @var ?string $tagId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagId')]
     public ?string $tagId = null;
+
+    /**
+     * The tag IDs to retrieve analytics for.
+     *
+     * @var string|array<string>|null $tagIds
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagIds')]
+    public string|array|null $tagIds = null;
 
     /**
      * Deprecated. Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
@@ -218,10 +226,11 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $refererUrl
      * @param  ?string  $url
      * @param  ?string  $tagId
+     * @param  string|array<string>|null  $tagIds
      * @param  ?bool  $qr
      * @param  ?bool  $root
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->event = $event;
         $this->groupBy = $groupBy;
@@ -244,6 +253,7 @@ class RetrieveAnalyticsRequest
         $this->refererUrl = $refererUrl;
         $this->url = $url;
         $this->tagId = $tagId;
+        $this->tagIds = $tagIds;
         $this->qr = $qr;
         $this->root = $root;
     }

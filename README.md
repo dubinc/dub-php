@@ -180,18 +180,18 @@ By default an API error will raise a `Errors\SDKException` exception, which has 
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create` method throws the following exceptions:
 
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+| Error Type                 | Status Code | Content Type     |
+| -------------------------- | ----------- | ---------------- |
+| Errors\BadRequest          | 400         | application/json |
+| Errors\Unauthorized        | 401         | application/json |
+| Errors\Forbidden           | 403         | application/json |
+| Errors\NotFound            | 404         | application/json |
+| Errors\Conflict            | 409         | application/json |
+| Errors\InviteExpired       | 410         | application/json |
+| Errors\UnprocessableEntity | 422         | application/json |
+| Errors\RateLimitExceeded   | 429         | application/json |
+| Errors\InternalServerError | 500         | application/json |
+| Errors\SDKException        | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
@@ -260,22 +260,39 @@ try {
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.dub.co` | None |
-
-
-
-
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+The default server can also be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$security = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()
+    ->setServerURL("https://api.dub.co")
+    ->setSecurity($security)->build();
+
+$request = new Operations\CreateLinkRequestBody(
+    url: 'https://google.com',
+    tagIds: [
+        'clux0rgak00011...',
+    ],
+    externalId: '123456',
+);
+
+$response = $sdk->links->create(
+    request: $request
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
+}
+```
 <!-- End Server Selection [server] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

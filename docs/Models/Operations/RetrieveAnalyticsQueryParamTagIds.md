@@ -1,6 +1,6 @@
-# QueryParamTagNames
+# RetrieveAnalyticsQueryParamTagIds
 
-The unique name of the tags assigned to the short link (case insensitive).
+The tag IDs to retrieve analytics for.
 
 
 ## Supported Types

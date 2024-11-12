@@ -11,9 +11,11 @@ generation:
     requestResponseComponentNamesFeb2024: true
   auth:
     oAuth2ClientCredentialsEnabled: true
+    oAuth2PasswordEnabled: false
 php:
-  version: 0.9.0
+  version: 0.10.0
   clientServerStatusCodesAsErrors: true
+  defaultErrorName: SDKException
   flattenGlobalSecurity: true
   imports:
     option: openapi

@@ -11,9 +11,9 @@ The unique IDs of the tags assigned to the short link.
 string $value = /* values here */
 ```
 
-### `array`
+### `array<string>`
 
 ```php
-array $value = /* values here */
+array<string> $value = /* values here */
 ```
 
