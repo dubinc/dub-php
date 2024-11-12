@@ -11,9 +11,9 @@ The unique name of the tags assigned to the short link (case insensitive).
 string $value = /* values here */
 ```
 
-### `array`
+### `array<string>`
 
 ```php
-array $value = /* values here */
+array<string> $value = /* values here */
 ```
 

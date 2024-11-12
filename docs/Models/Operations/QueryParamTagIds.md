@@ -11,9 +11,9 @@ The tag IDs to filter the links by.
 string $value = /* values here */
 ```
 
-### `array`
+### `array<string>`
 
 ```php
-array $value = /* values here */
+array<string> $value = /* values here */
 ```
 

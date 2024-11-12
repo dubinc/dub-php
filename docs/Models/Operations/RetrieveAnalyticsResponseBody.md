@@ -11,75 +11,75 @@ Analytics data
 Components\AnalyticsCount $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsTimeseries>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsTimeseries> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsContinents>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsContinents> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsCountries>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsCountries> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsCities>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsCities> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsDevices>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsDevices> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsBrowsers>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsBrowsers> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsOS>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsOS> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsTriggers>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsTriggers> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsReferers>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsReferers> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsRefererUrls>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsRefererUrls> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsTopLinks>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsTopLinks> $value = /* values here */
 ```
 
-### `array`
+### `array<Components\AnalyticsTopUrls>`
 
 ```php
-array $value = /* values here */
+array<Components\AnalyticsTopUrls> $value = /* values here */
 ```
 
