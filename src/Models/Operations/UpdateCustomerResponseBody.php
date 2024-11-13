@@ -6,10 +6,11 @@
 
 declare(strict_types=1);
 
-namespace Dub\Models\Components;
+namespace Dub\Models\Operations;
 
 
-class SaleCreatedEventCustomer
+/** UpdateCustomerResponseBody - The customer was updated. */
+class UpdateCustomerResponseBody
 {
     /**
      * The unique identifier of the customer in Dub.

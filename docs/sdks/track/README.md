@@ -7,7 +7,7 @@
 
 * [lead](#lead) - Track a lead
 * [sale](#sale) - Track a sale
-* [customer](#customer) - Track a customer
+* [~~customer~~](#customer) - Track a customer :warning: **Deprecated**
 
 ## lead
 
@@ -30,7 +30,6 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 $request = new Operations\TrackLeadRequestBody(
     clickId: '<id>',
     eventName: 'Sign up',
-    customerId: '<id>',
 );
 
 $response = $sdk->track->lead(
@@ -86,7 +85,6 @@ $security = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 $request = new Operations\TrackSaleRequestBody(
-    customerId: '<id>',
     amount: 996500,
     paymentProcessor: Operations\PaymentProcessor::Paddle,
     eventName: 'Purchase',
@@ -126,9 +124,11 @@ if ($response->object !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
-## customer
+## ~~customer~~
 
 Track a customer for an authenticated workspace.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

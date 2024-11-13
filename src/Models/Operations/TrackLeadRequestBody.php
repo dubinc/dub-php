@@ -30,10 +30,21 @@ class TrackLeadRequestBody
     /**
      * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
      *
-     * @var string $customerId
+     * @var ?string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalId = null;
+
+    /**
+     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+     *
+     * @var ?string $customerId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
-    public string $customerId;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customerId = null;
 
     /**
      * Name of the customer in the client's app.
@@ -75,16 +86,18 @@ class TrackLeadRequestBody
     /**
      * @param  string  $clickId
      * @param  string  $eventName
-     * @param  string  $customerId
+     * @param  ?string  $externalId
+     * @param  ?string  $customerId
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(string $clickId, string $eventName, string $customerId, ?array $metadata = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
+    public function __construct(string $clickId, string $eventName, ?array $metadata = null, ?string $externalId = '', ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;
+        $this->externalId = $externalId;
         $this->customerId = $customerId;
         $this->customerName = $customerName;
         $this->customerEmail = $customerEmail;

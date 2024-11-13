@@ -1,4 +1,6 @@
-# Customer
+# UpdateCustomerResponseBody
+
+The customer was updated.
 
 
 ## Fields

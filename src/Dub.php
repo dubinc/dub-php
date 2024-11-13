@@ -20,19 +20,21 @@ class Dub
 
     public Links $links;
 
-    public QRCodes $qrCodes;
-
     public Analytics $analytics;
 
     public Events $events;
-
-    public Workspaces $workspaces;
 
     public Tags $tags;
 
     public Domains $domains;
 
     public Track $track;
+
+    public Customers $customers;
+
+    public Workspaces $workspaces;
+
+    public QRCodes $qrCodes;
 
     public Metatags $metatags;
 
@@ -53,13 +55,14 @@ class Dub
         public SDKConfiguration $sdkConfiguration,
     ) {
         $this->links = new Links($this->sdkConfiguration);
-        $this->qrCodes = new QRCodes($this->sdkConfiguration);
         $this->analytics = new Analytics($this->sdkConfiguration);
         $this->events = new Events($this->sdkConfiguration);
-        $this->workspaces = new Workspaces($this->sdkConfiguration);
         $this->tags = new Tags($this->sdkConfiguration);
         $this->domains = new Domains($this->sdkConfiguration);
         $this->track = new Track($this->sdkConfiguration);
+        $this->customers = new Customers($this->sdkConfiguration);
+        $this->workspaces = new Workspaces($this->sdkConfiguration);
+        $this->qrCodes = new QRCodes($this->sdkConfiguration);
         $this->metatags = new Metatags($this->sdkConfiguration);
     }
 }

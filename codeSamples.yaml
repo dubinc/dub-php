@@ -9,6 +9,36 @@ actions:
         - "lang": "php"
           "label": "retrieveAnalytics"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\RetrieveAnalyticsRequest(\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n);\n\n$response = $sdk->analytics->retrieve(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/customers"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "getCustomers"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->list(\n\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/customers"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "createCustomer"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\CreateCustomerRequestBody(\n    externalId: '<id>',\n);\n\n$response = $sdk->customers->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/customers/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "deleteCustomer"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->delete(\n    id: '<id>'\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/customers/{id}"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "getCustomer"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->get(\n    id: '<id>'\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/customers/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "updateCustomer"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$requestBody = new Operations\\UpdateCustomerRequestBody();\n\n$response = $sdk->customers->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/domains"]["get"]
     update:
       "x-codeSamples":
@@ -135,24 +165,18 @@ actions:
         - "lang": "php"
           "label": "updateTag"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$requestBody = new Operations\\UpdateTagRequestBody();\n\n$response = $sdk->tags->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->tagSchema !== null) {\n    // handle response\n}"
-  - target: $["paths"]["/track/customer"]["post"]
-    update:
-      "x-codeSamples":
-        - "lang": "php"
-          "label": "trackCustomer"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\TrackCustomerRequestBody(\n    customerId: '<id>',\n);\n\n$response = $sdk->track->customer(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/lead"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "trackLead"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\TrackLeadRequestBody(\n    clickId: '<id>',\n    eventName: 'Sign up',\n    customerId: '<id>',\n);\n\n$response = $sdk->track->lead(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\TrackLeadRequestBody(\n    clickId: '<id>',\n    eventName: 'Sign up',\n);\n\n$response = $sdk->track->lead(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/sale"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "trackSale"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    customerId: '<id>',\n    amount: 996500,\n    paymentProcessor: Operations\\PaymentProcessor::Paddle,\n    eventName: 'Purchase',\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    amount: 996500,\n    paymentProcessor: Operations\\PaymentProcessor::Paddle,\n    eventName: 'Purchase',\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/workspaces/{idOrSlug}"]["get"]
     update:
       "x-codeSamples":

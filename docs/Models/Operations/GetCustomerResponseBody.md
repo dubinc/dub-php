@@ -1,4 +1,6 @@
-# Customer
+# GetCustomerResponseBody
+
+The customer object.
 
 
 ## Fields

@@ -110,6 +110,14 @@ if ($response->linkSchema !== null) {
 
 * [retrieve](docs/sdks/analytics/README.md#retrieve) - Retrieve analytics for a link, a domain, or the authenticated workspace.
 
+### [customers](docs/sdks/customers/README.md)
+
+* [list](docs/sdks/customers/README.md#list) - Get a list of customers
+* [create](docs/sdks/customers/README.md#create) - Create a customer
+* [get](docs/sdks/customers/README.md#get) - Get a customer
+* [update](docs/sdks/customers/README.md#update) - Update a customer
+* [delete](docs/sdks/customers/README.md#delete) - Delete a customer
+
 ### [domains](docs/sdks/domains/README.md)
 
 * [create](docs/sdks/domains/README.md#create) - Create a domain
@@ -154,7 +162,7 @@ if ($response->linkSchema !== null) {
 
 * [lead](docs/sdks/track/README.md#lead) - Track a lead
 * [sale](docs/sdks/track/README.md#sale) - Track a sale
-* [customer](docs/sdks/track/README.md#customer) - Track a customer
+* [~~customer~~](docs/sdks/track/README.md#customer) - Track a customer :warning: **Deprecated**
 
 ### [workspaces](docs/sdks/workspaces/README.md)
 
