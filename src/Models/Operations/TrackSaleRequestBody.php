@@ -14,10 +14,21 @@ class TrackSaleRequestBody
     /**
      * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
      *
-     * @var string $customerId
+     * @var ?string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalId = null;
+
+    /**
+     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+     *
+     * @var ?string $customerId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
-    public string $customerId;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customerId = null;
 
     /**
      * The amount of the sale. Should be passed in cents.
@@ -74,21 +85,23 @@ class TrackSaleRequestBody
     public ?array $metadata = null;
 
     /**
-     * @param  string  $customerId
      * @param  int  $amount
      * @param  PaymentProcessor  $paymentProcessor
+     * @param  ?string  $externalId
      * @param  ?string  $eventName
      * @param  ?string  $currency
+     * @param  ?string  $customerId
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
      */
-    public function __construct(string $customerId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $invoiceId = null)
+    public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $externalId = '', ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $customerId = null, ?string $invoiceId = null)
     {
-        $this->customerId = $customerId;
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
+        $this->externalId = $externalId;
         $this->eventName = $eventName;
         $this->currency = $currency;
+        $this->customerId = $customerId;
         $this->invoiceId = $invoiceId;
         $this->metadata = $metadata;
     }

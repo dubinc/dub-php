@@ -6,10 +6,11 @@
 
 declare(strict_types=1);
 
-namespace Dub\Models\Components;
+namespace Dub\Models\Operations;
 
 
-class SaleCreatedEventCustomer
+/** GetCustomerResponseBody - The customer object. */
+class GetCustomerResponseBody
 {
     /**
      * The unique identifier of the customer in Dub.

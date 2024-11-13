@@ -12,6 +12,7 @@ namespace Dub\Models\Components;
 class Customer
 {
     /**
+     * The unique identifier of the customer in Dub.
      *
      * @var string $id
      */
@@ -19,36 +20,61 @@ class Customer
     public string $id;
 
     /**
+     * Unique identifier for the customer in the client's app.
      *
-     * @var ?string $name
+     * @var string $externalId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public ?string $name;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
 
     /**
+     * Name of the customer.
+     *
+     * @var string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    public string $name;
+
+    /**
+     * Email of the customer.
      *
      * @var ?string $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    public ?string $email;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
 
     /**
+     * Avatar URL of the customer.
      *
      * @var ?string $avatar
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
-    public ?string $avatar;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $avatar = null;
+
+    /**
+     * The date the customer was created.
+     *
+     * @var string $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
+    public string $createdAt;
 
     /**
      * @param  string  $id
-     * @param  ?string  $name
+     * @param  string  $externalId
+     * @param  string  $name
+     * @param  string  $createdAt
      * @param  ?string  $email
      * @param  ?string  $avatar
      */
-    public function __construct(string $id, ?string $name = null, ?string $email = null, ?string $avatar = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null)
     {
         $this->id = $id;
+        $this->externalId = $externalId;
         $this->name = $name;
+        $this->createdAt = $createdAt;
         $this->email = $email;
         $this->avatar = $avatar;
     }

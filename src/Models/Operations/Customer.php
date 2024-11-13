@@ -13,13 +13,6 @@ class Customer
 {
     /**
      *
-     * @var string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
-
-    /**
-     *
      * @var ?string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
@@ -40,16 +33,23 @@ class Customer
     public ?string $avatar;
 
     /**
-     * @param  string  $id
+     *
+     * @var ?string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public ?string $externalId;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $email
      * @param  ?string  $avatar
+     * @param  ?string  $externalId
      */
-    public function __construct(string $id, ?string $name = null, ?string $email = null, ?string $avatar = null)
+    public function __construct(?string $name = null, ?string $email = null, ?string $avatar = null, ?string $externalId = null)
     {
-        $this->id = $id;
         $this->name = $name;
         $this->email = $email;
         $this->avatar = $avatar;
+        $this->externalId = $externalId;
     }
 }
