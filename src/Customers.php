@@ -23,9 +23,9 @@ class Customers
     }
 
     /**
-     * Get a list of customers
+     * Retrieve a list of customers
      *
-     * Get a list of customers for the authenticated workspace.
+     * Retrieve a list of customers for the authenticated workspace.
      *
      * @return Operations\GetCustomersResponse
      * @throws \Dub\Models\Errors\SDKException
@@ -258,9 +258,9 @@ class Customers
     }
 
     /**
-     * Get a customer
+     * Retrieve a customer
      *
-     * Get a customer by ID for the authenticated workspace.
+     * Retrieve a customer by ID for the authenticated workspace.
      *
      * @param  string  $id
      * @return Operations\GetCustomerResponse
