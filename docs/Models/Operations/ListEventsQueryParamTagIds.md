@@ -8,12 +8,18 @@ The tag IDs to retrieve analytics for.
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
-### `array<string>`
+### `array`
 
 ```php
-array<string> $value = /* values here */
+/**
+* @var array<string>
+*/
+array $value = /* values here */
 ```
 
