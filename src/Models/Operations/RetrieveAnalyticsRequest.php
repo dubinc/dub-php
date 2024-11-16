@@ -61,7 +61,7 @@ class RetrieveAnalyticsRequest
     public ?string $externalId = null;
 
     /**
-     * The interval to retrieve analytics for. Takes precedence over start and end. If undefined, defaults to 24h.
+     * The interval to retrieve analytics for. If undefined, defaults to 24h.
      *
      * @var ?Interval $interval
      */
@@ -69,7 +69,7 @@ class RetrieveAnalyticsRequest
     public ?Interval $interval = null;
 
     /**
-     * The start date and time when to retrieve analytics from.
+     * The start date and time when to retrieve analytics from. Takes precedence over `interval`.
      *
      * @var ?string $start
      */
@@ -77,7 +77,7 @@ class RetrieveAnalyticsRequest
     public ?string $start = null;
 
     /**
-     * The end date and time when to retrieve analytics from. If not provided, defaults to the current date.
+     * The end date and time when to retrieve analytics from. If not provided, defaults to the current date. Takes precedence over `interval`.
      *
      * @var ?string $end
      */

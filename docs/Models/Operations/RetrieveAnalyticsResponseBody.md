@@ -8,78 +8,117 @@ Analytics data
 ### `Components\AnalyticsCount`
 
 ```php
+/**
+* @var Components\AnalyticsCount
+*/
 Components\AnalyticsCount $value = /* values here */
 ```
 
-### `array<Components\AnalyticsTimeseries>`
+### `array`
 
 ```php
-array<Components\AnalyticsTimeseries> $value = /* values here */
+/**
+* @var array<Components\AnalyticsTimeseries>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsContinents>`
+### `array`
 
 ```php
-array<Components\AnalyticsContinents> $value = /* values here */
+/**
+* @var array<Components\AnalyticsContinents>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsCountries>`
+### `array`
 
 ```php
-array<Components\AnalyticsCountries> $value = /* values here */
+/**
+* @var array<Components\AnalyticsCountries>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsCities>`
+### `array`
 
 ```php
-array<Components\AnalyticsCities> $value = /* values here */
+/**
+* @var array<Components\AnalyticsCities>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsDevices>`
+### `array`
 
 ```php
-array<Components\AnalyticsDevices> $value = /* values here */
+/**
+* @var array<Components\AnalyticsDevices>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsBrowsers>`
+### `array`
 
 ```php
-array<Components\AnalyticsBrowsers> $value = /* values here */
+/**
+* @var array<Components\AnalyticsBrowsers>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsOS>`
+### `array`
 
 ```php
-array<Components\AnalyticsOS> $value = /* values here */
+/**
+* @var array<Components\AnalyticsOS>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsTriggers>`
+### `array`
 
 ```php
-array<Components\AnalyticsTriggers> $value = /* values here */
+/**
+* @var array<Components\AnalyticsTriggers>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsReferers>`
+### `array`
 
 ```php
-array<Components\AnalyticsReferers> $value = /* values here */
+/**
+* @var array<Components\AnalyticsReferers>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsRefererUrls>`
+### `array`
 
 ```php
-array<Components\AnalyticsRefererUrls> $value = /* values here */
+/**
+* @var array<Components\AnalyticsRefererUrls>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsTopLinks>`
+### `array`
 
 ```php
-array<Components\AnalyticsTopLinks> $value = /* values here */
+/**
+* @var array<Components\AnalyticsTopLinks>
+*/
+array $value = /* values here */
 ```
 
-### `array<Components\AnalyticsTopUrls>`
+### `array`
 
 ```php
-array<Components\AnalyticsTopUrls> $value = /* values here */
+/**
+* @var array<Components\AnalyticsTopUrls>
+*/
+array $value = /* values here */
 ```
 

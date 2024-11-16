@@ -61,7 +61,7 @@ class ListEventsRequest
     public ?QueryParamInterval $interval = null;
 
     /**
-     * The start date and time when to retrieve analytics from.
+     * The start date and time when to retrieve analytics from. Takes precedence over `interval`.
      *
      * @var ?string $start
      */
@@ -69,7 +69,7 @@ class ListEventsRequest
     public ?string $start = null;
 
     /**
-     * The end date and time when to retrieve analytics from. If not provided, defaults to the current date.
+     * The end date and time when to retrieve analytics from. If not provided, defaults to the current date. Takes precedence over `interval`.
      *
      * @var ?string $end
      */

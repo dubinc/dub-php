@@ -8,12 +8,18 @@ The unique IDs of the tags assigned to the short link.
 ### `string`
 
 ```php
+/**
+* @var string
+*/
 string $value = /* values here */
 ```
 
-### `array<string>`
+### `array`
 
 ```php
-array<string> $value = /* values here */
+/**
+* @var array<string>
+*/
+array $value = /* values here */
 ```
 
