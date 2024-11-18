@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 8b1b9eb49f7d9c9e3b923b7d3311eb0b
+  docChecksum: 7e21e030ff50b3a00a18582d1f0f2b5c
   docVersion: 0.0.1
   speakeasyVersion: 1.440.1
   generationVersion: 2.460.1
-  releaseVersion: 0.10.3
-  configChecksum: 93f431997437477a9b510659faf92c79
+  releaseVersion: 0.10.4
+  configChecksum: 9bb1897ce9a38ae12430a4d60e447fd2
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
