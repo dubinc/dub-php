@@ -359,6 +359,14 @@ class SaleCreatedEventLink
     public string $projectId;
 
     /**
+     * The ID of the program the short link is associated with.
+     *
+     * @var ?string $programId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    public ?string $programId;
+
+    /**
      * @param  string  $id
      * @param  string  $domain
      * @param  string  $key
@@ -402,8 +410,9 @@ class SaleCreatedEventLink
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @param  ?string  $programId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?SaleCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?SaleCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $programId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -448,5 +457,6 @@ class SaleCreatedEventLink
         $this->leads = $leads;
         $this->sales = $sales;
         $this->saleAmount = $saleAmount;
+        $this->programId = $programId;
     }
 }
