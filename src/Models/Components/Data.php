@@ -82,7 +82,6 @@ class Data
     public string $expiresAt;
 
     /**
-     * The URL to redirect to when the short link has expired.
      *
      * @var ?string $expiredUrl
      */
