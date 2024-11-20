@@ -431,3 +431,13 @@ Based on:
 - [php v0.10.5] .
 ### Releases
 - [Composer v0.10.5] https://packagist.org/packages/dub/dub-php#v0.10.5 - .
+
+## 2024-11-20 00:19:56
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.441.0 (2.460.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [php v0.10.6] .
+### Releases
+- [Composer v0.10.6] https://packagist.org/packages/dub/dub-php#v0.10.6 - .
