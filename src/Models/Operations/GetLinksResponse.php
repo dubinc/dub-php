@@ -40,6 +40,10 @@ class GetLinksResponse
     public ?array $linkSchemas = null;
 
     /**
+     * @var \Closure(string): ?GetLinksResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -51,5 +55,18 @@ class GetLinksResponse
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->linkSchemas = $linkSchemas;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?GetLinksResponse
+     */
+    public function __call($name, $args): ?GetLinksResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

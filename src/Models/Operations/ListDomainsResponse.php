@@ -40,6 +40,10 @@ class ListDomainsResponse
     public ?array $domainSchemas = null;
 
     /**
+     * @var \Closure(string): ?ListDomainsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -51,5 +55,18 @@ class ListDomainsResponse
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->domainSchemas = $domainSchemas;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?ListDomainsResponse
+     */
+    public function __call($name, $args): ?ListDomainsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

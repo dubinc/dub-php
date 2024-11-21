@@ -68,7 +68,15 @@ class GetQRCodeRequest
     public ?bool $hideLogo = null;
 
     /**
-     * Whether to include a margin around the QR code. Defaults to `false` if not provided.
+     * The size of the margin around the QR code. Defaults to 2 if not provided.
+     *
+     * @var ?float $margin
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=margin')]
+    public ?float $margin = null;
+
+    /**
+     * DEPRECATED: Margin is included by default. Use the `margin` prop to customize the margin size.
      *
      * @var ?bool $includeMargin
      */
@@ -83,9 +91,10 @@ class GetQRCodeRequest
      * @param  ?string  $fgColor
      * @param  ?string  $bgColor
      * @param  ?bool  $hideLogo
+     * @param  ?float  $margin
      * @param  ?bool  $includeMargin
      */
-    public function __construct(string $url, ?string $logo = null, ?float $size = 600, ?Level $level = Level::L, ?string $fgColor = '#000000', ?string $bgColor = '#FFFFFF', ?bool $hideLogo = true, ?bool $includeMargin = true)
+    public function __construct(string $url, ?string $logo = null, ?float $size = 600, ?Level $level = Level::L, ?string $fgColor = '#000000', ?string $bgColor = '#FFFFFF', ?bool $hideLogo = true, ?float $margin = 2, ?bool $includeMargin = true)
     {
         $this->url = $url;
         $this->logo = $logo;
@@ -94,6 +103,7 @@ class GetQRCodeRequest
         $this->fgColor = $fgColor;
         $this->bgColor = $bgColor;
         $this->hideLogo = $hideLogo;
+        $this->margin = $margin;
         $this->includeMargin = $includeMargin;
     }
 }

@@ -9,6 +9,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.2",
+    "galbar/jsonpath": "^3.0",
     "guzzlehttp/guzzle": "^7.0",
     "speakeasy/serializer": "^4.0.0",
     "brick/date-time": "^0.7.0",
@@ -27,7 +28,8 @@
   "config": {
     "optimize-autoloader": true,
     "classmap-authoritative": true,
-    "sort-packages": true
+    "sort-packages": true,
+    "process-timeout": 60
   },
   "scripts": {
     "test": [
