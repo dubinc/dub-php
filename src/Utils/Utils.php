@@ -141,12 +141,19 @@ class Utils
      * @param  array<string,array<string,array<string,string>>>|null  $globals
      * @return array<string,mixed>
      */
-    public static function getQueryParams(string $type, mixed $queryParams, ?array $globals = null): array
+    public static function getQueryParams(string $type, mixed $queryParams, ?string $urlOverride, ?array $globals = null): array
     {
         $qp = new QueryParameters();
         $globals ??= [];
 
-        $query = $qp->parseQueryParams($type, $queryParams, $globals);
+        $parsedUrl = [];
+        if ($urlOverride != null) {
+            $splitUrl = explode('?', $urlOverride);
+            if (count($splitUrl) > 1) {
+                $parsedUrl = self::proper_parse_str($splitUrl[1]);
+            }
+        }
+        $query = $qp->parseQueryParams($type, $queryParams, $parsedUrl, $globals);
 
         if ($query === null) {
             return [];
@@ -173,6 +180,39 @@ class Utils
         return [
             'headers' => $headers,
         ];
+    }
+
+    /**
+     * The builtin php parse_str function does not
+     * properly implement query param parsing (specifically it doesn't handle
+     * multiple values from the same key)  This function is a bit more correct
+     * @param  string  $str
+     * @return array<string,mixed>
+     */
+    public static function proper_parse_str($str)
+    {
+        $arr = [];
+
+        $pairs = explode('&', $str);
+
+        foreach ($pairs as $i) {
+            [$name,$value] = explode('=', $i, 2);
+
+            // if name already exists
+            if (isset($arr[$name])) {
+                // stick multiple values into an array
+                if (is_array($arr[$name])) {
+                    $arr[$name][] = $value;
+                } else {
+                    $arr[$name] = [$arr[$name], $value];
+                }
+            } else {
+                // else treat as scalar
+                $arr[$name] = $value;
+            }
+        }
+
+        return $arr;
     }
 }
 
@@ -242,6 +282,7 @@ function valToString(mixed $val, array $extras): string
         default:
             return var_export($val, true);
     }
+
 }
 
 /**
