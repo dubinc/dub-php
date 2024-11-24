@@ -27,13 +27,6 @@ class SaleCreatedEventClick
 
     /**
      *
-     * @var string $continent
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('continent')]
-    public string $continent;
-
-    /**
-     *
      * @var string $country
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
@@ -45,6 +38,20 @@ class SaleCreatedEventClick
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
     public string $city;
+
+    /**
+     *
+     * @var string $region
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('region')]
+    public string $region;
+
+    /**
+     *
+     * @var string $continent
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('continent')]
+    public string $continent;
 
     /**
      *
@@ -99,9 +106,10 @@ class SaleCreatedEventClick
     /**
      * @param  string  $id
      * @param  string  $url
-     * @param  string  $continent
      * @param  string  $country
      * @param  string  $city
+     * @param  string  $region
+     * @param  string  $continent
      * @param  string  $device
      * @param  string  $browser
      * @param  string  $os
@@ -110,13 +118,14 @@ class SaleCreatedEventClick
      * @param  string  $ip
      * @param  ?bool  $qr
      */
-    public function __construct(string $id, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, string $referer, string $refererUrl, string $ip, ?bool $qr = null)
+    public function __construct(string $id, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, string $ip, ?bool $qr = null)
     {
         $this->id = $id;
         $this->url = $url;
-        $this->continent = $continent;
         $this->country = $country;
         $this->city = $city;
+        $this->region = $region;
+        $this->continent = $continent;
         $this->device = $device;
         $this->browser = $browser;
         $this->os = $os;
