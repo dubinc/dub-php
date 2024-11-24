@@ -15,6 +15,7 @@ enum QueryParamGroupBy: string
     case Count = 'count';
     case Timeseries = 'timeseries';
     case Continents = 'continents';
+    case Regions = 'regions';
     case Countries = 'countries';
     case Cities = 'cities';
     case Devices = 'devices';

@@ -93,14 +93,6 @@ class RetrieveAnalyticsRequest
     public ?string $timezone = null;
 
     /**
-     * The continent to retrieve analytics for.
-     *
-     * @var ?Components\ContinentCode $continent
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=continent')]
-    public ?Components\ContinentCode $continent = null;
-
-    /**
      * The country to retrieve analytics for.
      *
      * @var ?Components\CountryCode $country
@@ -115,6 +107,22 @@ class RetrieveAnalyticsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=city')]
     public ?string $city = null;
+
+    /**
+     * The ISO 3166-2 region code to retrieve analytics for.
+     *
+     * @var ?string $region
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=region')]
+    public ?string $region = null;
+
+    /**
+     * The continent to retrieve analytics for.
+     *
+     * @var ?Components\ContinentCode $continent
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=continent')]
+    public ?Components\ContinentCode $continent = null;
 
     /**
      * The device to retrieve analytics for.
@@ -215,9 +223,10 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
-     * @param  ?Components\ContinentCode  $continent
      * @param  ?Components\CountryCode  $country
      * @param  ?string  $city
+     * @param  ?string  $region
+     * @param  ?Components\ContinentCode  $continent
      * @param  ?string  $device
      * @param  ?string  $browser
      * @param  ?string  $os
@@ -230,7 +239,7 @@ class RetrieveAnalyticsRequest
      * @param  ?bool  $qr
      * @param  ?bool  $root
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\ContinentCode $continent = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->event = $event;
         $this->groupBy = $groupBy;
@@ -242,9 +251,10 @@ class RetrieveAnalyticsRequest
         $this->start = $start;
         $this->end = $end;
         $this->timezone = $timezone;
-        $this->continent = $continent;
         $this->country = $country;
         $this->city = $city;
+        $this->region = $region;
+        $this->continent = $continent;
         $this->device = $device;
         $this->browser = $browser;
         $this->os = $os;

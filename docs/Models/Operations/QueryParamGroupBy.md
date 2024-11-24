@@ -10,6 +10,7 @@ The parameter to group the analytics data points by. Defaults to `count` if unde
 | `Count`       | count         |
 | `Timeseries`  | timeseries    |
 | `Continents`  | continents    |
+| `Regions`     | regions       |
 | `Countries`   | countries     |
 | `Cities`      | cities        |
 | `Devices`     | devices       |
