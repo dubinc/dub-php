@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: be72cffee97b5924a429380aa231ccb8
+  docChecksum: eae1ba18bcf69b50e7b53142f6625750
   docVersion: 0.0.1
-  speakeasyVersion: 1.444.1
-  generationVersion: 2.461.4
-  releaseVersion: 0.11.1
-  configChecksum: 4864891efab517609cf9db1a1a70cefe
+  speakeasyVersion: 1.448.0
+  generationVersion: 2.466.0
+  releaseVersion: 0.11.2
+  configChecksum: 8024022e99885c5fa2749e7bfabad08f
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.2
+    core: 3.7.3
     deprecations: 2.81.1
     errors: 0.3.0
     examples: 2.81.3
@@ -1315,3 +1315,4 @@ examples:
           application/json: {"error": {"code": "rate_limit_exceeded", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#rate-limit_exceeded"}}
         "500":
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
+generatedTests: {}

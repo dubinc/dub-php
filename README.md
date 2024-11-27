@@ -282,7 +282,7 @@ use Dub\Models\Operations;
 $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()
-    ->setServerURL("https://api.dub.co")
+    ->setServerURL('https://api.dub.co')
     ->setSecurity($security)->build();
 
 $request = new Operations\CreateLinkRequestBody(
