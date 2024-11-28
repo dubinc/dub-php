@@ -165,6 +165,12 @@ actions:
         - "lang": "php"
           "label": "updateTag"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$requestBody = new Operations\\UpdateTagRequestBody();\n\n$response = $sdk->tags->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->tagSchema !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/tokens/embed"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "createEmbedToken"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\CreateEmbedTokenRequestBody(\n    linkId: '<id>',\n);\n\n$response = $sdk->embedTokens->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/lead"]["post"]
     update:
       "x-codeSamples":
