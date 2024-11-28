@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: eae1ba18bcf69b50e7b53142f6625750
+  docChecksum: 756dac9e9f7f9954fef9635bbe0c7ca8
   docVersion: 0.0.1
-  speakeasyVersion: 1.448.0
-  generationVersion: 2.466.0
-  releaseVersion: 0.11.2
-  configChecksum: 8024022e99885c5fa2749e7bfabad08f
+  speakeasyVersion: 1.448.2
+  generationVersion: 2.467.4
+  releaseVersion: 0.11.3
+  configChecksum: b1d9b3dab8d52f76a08456424dc44949
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -144,6 +144,9 @@ generatedFiles:
   - docs/Models/Operations/CreateCustomerResponseBody.md
   - docs/Models/Operations/CreateDomainRequestBody.md
   - docs/Models/Operations/CreateDomainResponse.md
+  - docs/Models/Operations/CreateEmbedTokenRequestBody.md
+  - docs/Models/Operations/CreateEmbedTokenResponse.md
+  - docs/Models/Operations/CreateEmbedTokenResponseBody.md
   - docs/Models/Operations/CreateLinkRequestBody.md
   - docs/Models/Operations/CreateLinkResponse.md
   - docs/Models/Operations/CreateTagRequestBody.md
@@ -251,6 +254,7 @@ generatedFiles:
   - docs/sdks/customers/README.md
   - docs/sdks/domains/README.md
   - docs/sdks/dub/README.md
+  - docs/sdks/embedtokens/README.md
   - docs/sdks/events/README.md
   - docs/sdks/links/README.md
   - docs/sdks/metatags/README.md
@@ -267,6 +271,7 @@ generatedFiles:
   - src/Domains.php
   - src/Dub.php
   - src/DubBuilder.php
+  - src/EmbedTokens.php
   - src/Events.php
   - src/Links.php
   - src/Metatags.php
@@ -385,6 +390,9 @@ generatedFiles:
   - src/Models/Operations/CreateCustomerResponseBody.php
   - src/Models/Operations/CreateDomainRequestBody.php
   - src/Models/Operations/CreateDomainResponse.php
+  - src/Models/Operations/CreateEmbedTokenRequestBody.php
+  - src/Models/Operations/CreateEmbedTokenResponse.php
+  - src/Models/Operations/CreateEmbedTokenResponseBody.php
   - src/Models/Operations/CreateLinkRequestBody.php
   - src/Models/Operations/CreateLinkResponse.php
   - src/Models/Operations/CreateTagRequestBody.php
@@ -1297,6 +1305,29 @@ examples:
       responses:
         "200":
           application/json: {"id": "<id>"}
+        "400":
+          application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
+        "401":
+          application/json: {"error": {"code": "unauthorized", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unauthorized"}}
+        "403":
+          application/json: {"error": {"code": "forbidden", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#forbidden"}}
+        "404":
+          application/json: {"error": {"code": "not_found", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#not-found"}}
+        "409":
+          application/json: {"error": {"code": "conflict", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#conflict"}}
+        "410":
+          application/json: {"error": {"code": "invite_expired", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#invite-expired"}}
+        "422":
+          application/json: {"error": {"code": "unprocessable_entity", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unprocessable-entity"}}
+        "429":
+          application/json: {"error": {"code": "rate_limit_exceeded", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#rate-limit_exceeded"}}
+        "500":
+          application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
+  createEmbedToken:
+    speakeasy-default-create-embed-token:
+      responses:
+        "201":
+          application/json: {"publicToken": "<value>", "expires": "<value>"}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
