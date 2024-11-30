@@ -28,12 +28,22 @@ class UpdateWorkspaceRequestBody
     public ?string $slug = null;
 
     /**
+     *
+     * @var ?string $logo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $logo = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $slug
+     * @param  ?string  $logo
      */
-    public function __construct(?string $name = null, ?string $slug = null)
+    public function __construct(?string $name = null, ?string $slug = null, ?string $logo = null)
     {
         $this->name = $name;
         $this->slug = $slug;
+        $this->logo = $logo;
     }
 }

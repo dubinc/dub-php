@@ -79,6 +79,14 @@ class DomainSchema
     public ?string $notFoundUrl;
 
     /**
+     * The logo of the domain.
+     *
+     * @var ?string $logo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    public ?string $logo;
+
+    /**
      * The date the domain was created.
      *
      * @var string $createdAt
@@ -114,9 +122,10 @@ class DomainSchema
      * @param  ?string  $placeholder
      * @param  ?string  $expiredUrl
      * @param  ?string  $notFoundUrl
+     * @param  ?string  $logo
      * @param  ?RegisteredDomain  $registeredDomain
      */
-    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $placeholder = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false)
+    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $placeholder = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $logo = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false)
     {
         $this->id = $id;
         $this->slug = $slug;
@@ -128,6 +137,7 @@ class DomainSchema
         $this->placeholder = $placeholder;
         $this->expiredUrl = $expiredUrl;
         $this->notFoundUrl = $notFoundUrl;
+        $this->logo = $logo;
         $this->registeredDomain = $registeredDomain;
     }
 }

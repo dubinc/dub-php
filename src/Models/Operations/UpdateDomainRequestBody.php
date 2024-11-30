@@ -57,18 +57,29 @@ class UpdateDomainRequestBody
     public ?string $placeholder = null;
 
     /**
+     * The logo of the domain.
+     *
+     * @var ?string $logo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $logo = null;
+
+    /**
      * @param  ?string  $slug
      * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
      * @param  ?string  $notFoundUrl
      * @param  ?string  $placeholder
+     * @param  ?string  $logo
      */
-    public function __construct(?string $slug = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?bool $archived = false)
+    public function __construct(?string $slug = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?string $logo = null, ?bool $archived = false)
     {
         $this->slug = $slug;
         $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
         $this->notFoundUrl = $notFoundUrl;
         $this->placeholder = $placeholder;
+        $this->logo = $logo;
     }
 }
