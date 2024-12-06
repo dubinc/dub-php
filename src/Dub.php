@@ -67,5 +67,7 @@ class Dub
         $this->embedTokens = new EmbedTokens($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);
         $this->metatags = new Metatags($this->sdkConfiguration);
+        $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
+
     }
 }

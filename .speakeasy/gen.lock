@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: ebeafbab98f36580b94fa4a78ab949c3
+  docChecksum: da455826be171d9d1ff0d376f0695b24
   docVersion: 0.0.1
-  speakeasyVersion: 1.448.2
-  generationVersion: 2.467.4
-  releaseVersion: 0.11.4
-  configChecksum: d3f345e68c310c8a86cf9438f15617de
+  speakeasyVersion: 1.453.0
+  generationVersion: 2.472.1
+  releaseVersion: 0.11.5
+  configChecksum: 7d70fbd2bde72316f690523b5ea79cd3
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -273,6 +273,19 @@ generatedFiles:
   - src/DubBuilder.php
   - src/EmbedTokens.php
   - src/Events.php
+  - src/Hooks/AfterErrorContext.php
+  - src/Hooks/AfterErrorHook.php
+  - src/Hooks/AfterSuccessContext.php
+  - src/Hooks/AfterSuccessHook.php
+  - src/Hooks/BeforeRequestContext.php
+  - src/Hooks/BeforeRequestHook.php
+  - src/Hooks/ErrorResponseContext.php
+  - src/Hooks/FailEarlyException.php
+  - src/Hooks/HookContext.php
+  - src/Hooks/Hooks.php
+  - src/Hooks/SDKHooks.php
+  - src/Hooks/SDKInitHook.php
+  - src/Hooks/SDKRequestContext.php
   - src/Links.php
   - src/Metatags.php
   - src/Models/Components/AnalyticsBrowsers.php
@@ -869,7 +882,7 @@ examples:
           idOrSlug: "<value>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": "<value>", "inviteCode": "<value>", "plan": "business extra", "stripeId": "<value>", "billingCycleStart": "900.65", "paymentFailedAt": "<value>", "stripeConnectId": "<value>", "usage": "5588.34", "usageLimit": "8441.99", "linksUsage": "5442.21", "linksLimit": "8306.36", "salesUsage": "5212.35", "salesLimit": "785.92", "domainsLimit": "9699.61", "tagsLimit": "8661.61", "usersLimit": "4580.49", "aiUsage": "7352.87", "aiLimit": "4508.24", "referralLinkId": "<value>", "conversionEnabled": true, "dotLinkClaimed": true, "createdAt": "<value>", "users": [], "domains": [], "publishableKey": "<value>", "bankAccountName": "<value>", "partialAccountNumber": "<value>", "routingNumber": "<value>", "bankAccountVerified": false}
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": "<value>", "inviteCode": "<value>", "plan": "business extra", "stripeId": "<value>", "billingCycleStart": "900.65", "paymentFailedAt": "<value>", "stripeConnectId": "<value>", "usage": "5588.34", "usageLimit": "8441.99", "linksUsage": "5442.21", "linksLimit": "8306.36", "salesUsage": "5212.35", "salesLimit": "785.92", "domainsLimit": "9699.61", "tagsLimit": "8661.61", "usersLimit": "4580.49", "aiUsage": "7352.87", "aiLimit": "4508.24", "conversionEnabled": true, "dotLinkClaimed": true, "createdAt": "<value>", "users": [], "domains": [], "publishableKey": "<value>", "bankAccountName": "<value>", "partialAccountNumber": "<value>", "routingNumber": "<value>", "bankAccountVerified": false}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -895,7 +908,7 @@ examples:
           idOrSlug: "<value>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": "<value>", "inviteCode": "<value>", "plan": "enterprise", "stripeId": "<value>", "billingCycleStart": "245.55", "paymentFailedAt": "<value>", "stripeConnectId": "<value>", "usage": "5971.29", "usageLimit": "156.52", "linksUsage": "3446.2", "linksLimit": "7084.55", "salesUsage": "9914.64", "salesLimit": "2703.24", "domainsLimit": "6276.9", "tagsLimit": "6841.99", "usersLimit": "4888.52", "aiUsage": "4430.76", "aiLimit": "9840.08", "referralLinkId": "<value>", "conversionEnabled": false, "dotLinkClaimed": false, "createdAt": "<value>", "users": [], "domains": [], "publishableKey": "<value>", "bankAccountName": "<value>", "partialAccountNumber": "<value>", "routingNumber": "<value>", "bankAccountVerified": false}
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": "<value>", "inviteCode": "<value>", "plan": "enterprise", "stripeId": "<value>", "billingCycleStart": "245.55", "paymentFailedAt": "<value>", "stripeConnectId": "<value>", "usage": "5971.29", "usageLimit": "156.52", "linksUsage": "3446.2", "linksLimit": "7084.55", "salesUsage": "9914.64", "salesLimit": "2703.24", "domainsLimit": "6276.9", "tagsLimit": "6841.99", "usersLimit": "4888.52", "aiUsage": "4430.76", "aiLimit": "9840.08", "conversionEnabled": false, "dotLinkClaimed": false, "createdAt": "<value>", "users": [], "domains": [], "publishableKey": "<value>", "bankAccountName": "<value>", "partialAccountNumber": "<value>", "routingNumber": "<value>", "bankAccountVerified": false}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":

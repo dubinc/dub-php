@@ -26,7 +26,7 @@ class DubBuilder
      */
     public function setClient(\GuzzleHttp\ClientInterface $client): DubBuilder
     {
-        $this->sdkConfig->defaultClient = $client;
+        $this->sdkConfig->client = $client;
 
         return $this;
     }
@@ -95,16 +95,13 @@ class DubBuilder
      */
     public function build(): Dub
     {
-        if ($this->sdkConfig->defaultClient === null) {
-            $this->sdkConfig->defaultClient = new \GuzzleHttp\Client([
+        if ($this->sdkConfig->client === null) {
+            $this->sdkConfig->client = new \GuzzleHttp\Client([
                 'timeout' => 60,
             ]);
         }
         if ($this->sdkConfig->hasSecurity()) {
-            $this->sdkConfig->securityClient = Utils\Utils::configureSecurityClient($this->sdkConfig->defaultClient, $this->sdkConfig->getSecurity());
-        }
-        if ($this->sdkConfig->securityClient === null) {
-            $this->sdkConfig->securityClient = $this->sdkConfig->defaultClient;
+            $this->sdkConfig->client = Utils\Utils::configureSecurityClient($this->sdkConfig->client, $this->sdkConfig->getSecurity());
         }
 
         return new Dub($this->sdkConfig);
