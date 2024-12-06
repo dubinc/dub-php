@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Utils;
 
 use GuzzleHttp\ClientInterface;
+use Psr\Http\Message\RequestInterface;
 
 class Utils
 {
@@ -159,9 +160,7 @@ class Utils
             return [];
         }
 
-        return [
-            'query' => $query,
-        ];
+        return $query;
     }
 
     /**
@@ -193,6 +192,10 @@ class Utils
     {
         $arr = [];
 
+        if (empty($str)) {
+            return $arr;
+        }
+
         $pairs = explode('&', $str);
 
         foreach ($pairs as $i) {
@@ -214,6 +217,40 @@ class Utils
 
         return $arr;
     }
+
+    /**
+     * convertHeadersToOptions will convert the headers from a request to options for a client.
+     *
+     * @param  RequestInterface  $request
+     * @param  array<string,mixed>  $options
+     * @return array<string, string>
+     */
+    public static function convertHeadersToOptions(RequestInterface $request, array $options): array
+    {
+        $headers = $request->getHeaders();
+        foreach ($request->getHeaders() as $name => $values) {
+            $options['headers'][$name] = $values;
+        }
+
+        return $options;
+    }
+
+    /**
+     * removeHeaders will remove all headers from a request
+     * 
+     * @param  RequestInterface  $request
+     * @return RequestInterface
+     */
+    public static function removeHeaders(RequestInterface $request): RequestInterface
+    {
+        $headers = $request->getHeaders();
+        foreach ($request->getHeaders() as $name => $values) {
+            $request = $request->withoutHeader($name);
+        }
+
+        return $request;
+    }
+
 }
 
 function removePrefix(string $text, string $prefix): string

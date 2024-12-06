@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Dub\Utils;
 
+use Psr\Http\Message\RequestInterface;
 use ReflectionProperty;
 
 class QueryParameters
@@ -17,9 +18,9 @@ class QueryParameters
      * @param  mixed  $queryParams
      * @param  array<string,string>  $urlOverride
      * @param  array<string,array<string,array<string,string>>>|null  $globals
-     * @return ?string
+     * @return array<string, string>
      */
-    public function parseQueryParams(string $type, mixed $queryParams, array $urlOverride, ?array $globals = null): ?string
+    public function parseQueryParams(string $type, mixed $queryParams, array $urlOverride, ?array $globals = null): array
     {
         $parts = [];
 
@@ -58,9 +59,8 @@ class QueryParameters
         }
 
         $parts = array_merge($parts, $urlOverride);
-        $result = self::recursivelyBuildQueryString($parts);
 
-        return empty($parts) ? null : $result;
+        return $parts;
     }
 
     /**
@@ -285,5 +285,22 @@ class QueryParameters
         }
 
         return $metadata;
+    }
+
+    /**
+     * @param  RequestInterface  $httpRequest
+     * @param  array<string, mixed>  $queryParams
+     * @return string
+     */
+    public static function standardizeQueryParams(RequestInterface $httpRequest, array $queryParams): string
+    {
+        $uri = $httpRequest->getUri();
+        $query = $uri->getQuery();
+        $requestQueryParams = Utils::proper_parse_str($query);
+
+        $allParams = array_merge($queryParams, $requestQueryParams);
+        $uri = $uri->withQuery(QueryParameters::recursivelyBuildQueryString($allParams));
+
+        return $uri->getQuery();
     }
 }

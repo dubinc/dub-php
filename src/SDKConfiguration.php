@@ -8,17 +8,16 @@ declare(strict_types=1);
 
 namespace Dub;
 
+
 class SDKConfiguration
 {
-    public ?\GuzzleHttp\ClientInterface $defaultClient = null;
+    public ?\GuzzleHttp\ClientInterface $client = null;
 
-    public ?\GuzzleHttp\ClientInterface $securityClient = null;
-
+    public Hooks\SDKHooks $hooks;
     public ?Models\Components\Security $security = null;
 
     /** @var pure-Closure(): string */
     public ?\Closure $securitySource = null;
-
     public string $serverUrl = '';
 
     public int $serverIndex = 0;
@@ -27,11 +26,16 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '0.0.1';
 
-    public string $sdkVersion = '0.11.4';
+    public string $sdkVersion = '0.11.5';
 
-    public string $genVersion = '2.467.4';
+    public string $genVersion = '2.472.1';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.11.4 2.467.4 0.0.1 dub/dub-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.11.5 2.472.1 0.0.1 dub/dub-php';
+
+    public function __construct()
+    {
+        $this->hooks = new Hooks\SDKHooks();
+    }
 
     public function getServerUrl(): string
     {
@@ -80,4 +84,23 @@ class SDKConfiguration
 
     }
 
+    public function getTemplatedServerUrl(): string
+    {
+        if ($this->serverUrl) {
+            return Utils\Utils::templateUrl($this->serverUrl.trim('/'), []);
+        }
+
+        return Utils\Utils::templateUrl($this->getServerUrl(), []);
+    }
+
+    public function initHooks(\GuzzleHttp\ClientInterface $client): \GuzzleHttp\ClientInterface
+    {
+        $preHooksUrl = $this->getTemplatedServerUrl();
+        $ret = $this->hooks->sdkInit($preHooksUrl, $client);
+        if ($preHooksUrl != $ret->url) {
+            $this->serverUrl = $ret->url;
+        }
+
+        return $ret->client;
+    }
 }

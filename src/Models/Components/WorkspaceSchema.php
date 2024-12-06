@@ -182,14 +182,6 @@ class WorkspaceSchema
     public float $aiLimit;
 
     /**
-     * The ID of the referral link of the workspace.
-     *
-     * @var ?string $referralLinkId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('referralLinkId')]
-    public ?string $referralLinkId;
-
-    /**
      * Whether the workspace has conversion tracking enabled (d.to/conversions).
      *
      * @var bool $conversionEnabled
@@ -308,7 +300,6 @@ class WorkspaceSchema
      * @param  ?string  $stripeId
      * @param  ?string  $paymentFailedAt
      * @param  ?string  $stripeConnectId
-     * @param  ?string  $referralLinkId
      * @param  ?array<string, bool>  $flags
      * @param  ?string  $publishableKey
      * @param  ?string  $bankAccountName
@@ -316,7 +307,7 @@ class WorkspaceSchema
      * @param  ?string  $routingNumber
      * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, bool $bankAccountVerified, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $referralLinkId = null, ?array $flags = null, ?string $publishableKey = null, ?string $bankAccountName = null, ?string $partialAccountNumber = null, ?string $routingNumber = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, bool $bankAccountVerified, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?string $publishableKey = null, ?string $bankAccountName = null, ?string $partialAccountNumber = null, ?string $routingNumber = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -344,7 +335,6 @@ class WorkspaceSchema
         $this->stripeId = $stripeId;
         $this->paymentFailedAt = $paymentFailedAt;
         $this->stripeConnectId = $stripeConnectId;
-        $this->referralLinkId = $referralLinkId;
         $this->flags = $flags;
         $this->publishableKey = $publishableKey;
         $this->bankAccountName = $bankAccountName;
