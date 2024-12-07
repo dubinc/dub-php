@@ -234,14 +234,6 @@ class WorkspaceSchema
     public ?array $flags = null;
 
     /**
-     * The publishable key of the workspace.
-     *
-     * @var ?string $publishableKey
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('publishableKey')]
-    public ?string $publishableKey;
-
-    /**
      * [BETA – Dub Partners]: The name of the connected bank account.
      *
      * @var ?string $bankAccountName
@@ -301,13 +293,12 @@ class WorkspaceSchema
      * @param  ?string  $paymentFailedAt
      * @param  ?string  $stripeConnectId
      * @param  ?array<string, bool>  $flags
-     * @param  ?string  $publishableKey
      * @param  ?string  $bankAccountName
      * @param  ?string  $partialAccountNumber
      * @param  ?string  $routingNumber
      * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, bool $bankAccountVerified, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?string $publishableKey = null, ?string $bankAccountName = null, ?string $partialAccountNumber = null, ?string $routingNumber = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, bool $bankAccountVerified, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?string $bankAccountName = null, ?string $partialAccountNumber = null, ?string $routingNumber = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -336,7 +327,6 @@ class WorkspaceSchema
         $this->paymentFailedAt = $paymentFailedAt;
         $this->stripeConnectId = $stripeConnectId;
         $this->flags = $flags;
-        $this->publishableKey = $publishableKey;
         $this->bankAccountName = $bankAccountName;
         $this->partialAccountNumber = $partialAccountNumber;
         $this->routingNumber = $routingNumber;
