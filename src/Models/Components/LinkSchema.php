@@ -61,14 +61,6 @@ class LinkSchema
     public ?string $externalId;
 
     /**
-     * The identifier of the short link that is unique across your workspace. If set, it can be used to identify your short link for client-side click tracking.
-     *
-     * @var ?string $identifier
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
-    public ?string $identifier;
-
-    /**
      * Whether the short link is archived.
      *
      * @var ?bool $archived
@@ -392,7 +384,6 @@ class LinkSchema
      * @param  string  $projectId
      * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
-     * @param  ?string  $identifier
      * @param  ?bool  $archived
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
@@ -424,7 +415,7 @@ class LinkSchema
      * @param  ?float  $saleAmount
      * @param  ?string  $programId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $identifier = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $programId = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $programId = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -439,7 +430,6 @@ class LinkSchema
         $this->projectId = $projectId;
         $this->trackConversion = $trackConversion;
         $this->externalId = $externalId;
-        $this->identifier = $identifier;
         $this->archived = $archived;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
