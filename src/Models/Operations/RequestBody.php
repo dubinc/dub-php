@@ -65,15 +65,6 @@ class RequestBody
     public ?bool $trackConversion = null;
 
     /**
-     * The identifier of the short link that is unique across your workspace. If set, it can be used to identify your short link for client-side click tracking.
-     *
-     * @var ?string $identifier
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $identifier = null;
-
-    /**
      * Whether the short link is archived.
      *
      * @var ?bool $archived
@@ -336,7 +327,6 @@ class RequestBody
      * @param  ?bool  $rewrite
      * @param  ?bool  $doIndex
      * @param  ?string  $externalId
-     * @param  ?string  $identifier
      * @param  ?string  $tagId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
@@ -358,7 +348,7 @@ class RequestBody
      * @param  ?string  $programId
      * @param  ?array<string>  $webhookIds
      */
-    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $externalId = null, ?string $identifier = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
+    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $externalId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
     {
         $this->url = $url;
         $this->domain = $domain;
@@ -373,7 +363,6 @@ class RequestBody
         $this->rewrite = $rewrite;
         $this->doIndex = $doIndex;
         $this->externalId = $externalId;
-        $this->identifier = $identifier;
         $this->tagId = $tagId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;

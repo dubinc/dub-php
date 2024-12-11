@@ -59,14 +59,6 @@ class LeadCreatedEventLink
     public ?string $externalId;
 
     /**
-     * The identifier of the short link that is unique across your workspace. If set, it can be used to identify your short link for client-side click tracking.
-     *
-     * @var ?string $identifier
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('identifier')]
-    public ?string $identifier;
-
-    /**
      *
      * @var ?bool $archived
      */
@@ -381,7 +373,6 @@ class LeadCreatedEventLink
      * @param  string  $projectId
      * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
-     * @param  ?string  $identifier
      * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
@@ -411,7 +402,7 @@ class LeadCreatedEventLink
      * @param  ?float  $saleAmount
      * @param  ?string  $programId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $identifier = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LeadCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $programId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LeadCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $programId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -428,7 +419,6 @@ class LeadCreatedEventLink
         $this->projectId = $projectId;
         $this->trackConversion = $trackConversion;
         $this->externalId = $externalId;
-        $this->identifier = $identifier;
         $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
