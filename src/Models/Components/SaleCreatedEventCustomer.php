@@ -36,6 +36,14 @@ class SaleCreatedEventCustomer
     public string $name;
 
     /**
+     * The date the customer was created.
+     *
+     * @var string $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
+    public string $createdAt;
+
+    /**
      * Email of the customer.
      *
      * @var ?string $email
@@ -52,14 +60,6 @@ class SaleCreatedEventCustomer
     #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $avatar = null;
-
-    /**
-     * The date the customer was created.
-     *
-     * @var string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
-    public string $createdAt;
 
     /**
      * @param  string  $id

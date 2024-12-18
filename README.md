@@ -20,6 +20,7 @@ Dub.co API: Dub is link management infrastructure for companies to create market
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Available Resources and Operations](#available-resources-and-operations)
+  * [Pagination](#pagination)
   * [Error Handling](#error-handling)
   * [Server Selection](#server-selection)
 * [Development](#development)
@@ -117,18 +118,18 @@ if ($response->linkSchema !== null) {
 
 ### [customers](docs/sdks/customers/README.md)
 
-* [list](docs/sdks/customers/README.md#list) - Retrieve a list of customers
 * [create](docs/sdks/customers/README.md#create) - Create a customer
-* [get](docs/sdks/customers/README.md#get) - Retrieve a customer
-* [update](docs/sdks/customers/README.md#update) - Update a customer
 * [delete](docs/sdks/customers/README.md#delete) - Delete a customer
+* [get](docs/sdks/customers/README.md#get) - Retrieve a customer
+* [list](docs/sdks/customers/README.md#list) - Retrieve a list of customers
+* [update](docs/sdks/customers/README.md#update) - Update a customer
 
 ### [domains](docs/sdks/domains/README.md)
 
 * [create](docs/sdks/domains/README.md#create) - Create a domain
+* [delete](docs/sdks/domains/README.md#delete) - Delete a domain
 * [list](docs/sdks/domains/README.md#list) - Retrieve a list of domains
 * [update](docs/sdks/domains/README.md#update) - Update a domain
-* [delete](docs/sdks/domains/README.md#delete) - Delete a domain
 
 
 ### [embedTokens](docs/sdks/embedtokens/README.md)
@@ -141,15 +142,15 @@ if ($response->linkSchema !== null) {
 
 ### [links](docs/sdks/links/README.md)
 
+* [createMany](docs/sdks/links/README.md#createmany) - Bulk create links
+* [deleteMany](docs/sdks/links/README.md#deletemany) - Bulk delete links
+* [updateMany](docs/sdks/links/README.md#updatemany) - Bulk update links
 * [create](docs/sdks/links/README.md#create) - Create a new link
+* [delete](docs/sdks/links/README.md#delete) - Delete a link
+* [get](docs/sdks/links/README.md#get) - Retrieve a link
 * [list](docs/sdks/links/README.md#list) - Retrieve a list of links
 * [count](docs/sdks/links/README.md#count) - Retrieve links count
-* [get](docs/sdks/links/README.md#get) - Retrieve a link
 * [update](docs/sdks/links/README.md#update) - Update a link
-* [delete](docs/sdks/links/README.md#delete) - Delete a link
-* [createMany](docs/sdks/links/README.md#createmany) - Bulk create links
-* [updateMany](docs/sdks/links/README.md#updatemany) - Bulk update links
-* [deleteMany](docs/sdks/links/README.md#deletemany) - Bulk delete links
 * [upsert](docs/sdks/links/README.md#upsert) - Upsert a link
 
 ### [metatags](docs/sdks/metatags/README.md)
@@ -163,15 +164,15 @@ if ($response->linkSchema !== null) {
 ### [tags](docs/sdks/tags/README.md)
 
 * [create](docs/sdks/tags/README.md#create) - Create a new tag
+* [delete](docs/sdks/tags/README.md#delete) - Delete a tag
 * [list](docs/sdks/tags/README.md#list) - Retrieve a list of tags
 * [update](docs/sdks/tags/README.md#update) - Update a tag
-* [delete](docs/sdks/tags/README.md#delete) - Delete a tag
 
 ### [track](docs/sdks/track/README.md)
 
+* [~~customer~~](docs/sdks/track/README.md#customer) - Track a customer :warning: **Deprecated**
 * [lead](docs/sdks/track/README.md#lead) - Track a lead
 * [sale](docs/sdks/track/README.md#sale) - Track a sale
-* [~~customer~~](docs/sdks/track/README.md#customer) - Track a customer :warning: **Deprecated**
 
 ### [workspaces](docs/sdks/workspaces/README.md)
 
@@ -180,6 +181,43 @@ if ($response->linkSchema !== null) {
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
+
+<!-- Start Pagination [pagination] -->
+## Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned object will be a `Generator` instead of an individual response.
+
+Working with generators is as simple as iterating over the responses in a `foreach` loop, and you can see an example below:
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$security = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+$request = new Operations\GetLinksRequest(
+    page: 1,
+    pageSize: 50,
+);
+
+$responses = $sdk->links->list(
+    request: $request
+);
+
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+}
+```
+<!-- End Pagination [pagination] -->
 
 <!-- Start Error Handling [errors] -->
 ## Error Handling
@@ -195,7 +233,7 @@ By default an API error will raise a `Errors\SDKException` exception, which has 
 | `$rawResponse` | *?\Psr\Http\Message\ResponseInterface*  | The raw HTTP response |
 | `$body`        | *string*                                | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create` method throws the following exceptions:
+When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `createMany` method throws the following exceptions:
 
 | Error Type                 | Status Code | Content Type     |
 | -------------------------- | ----------- | ---------------- |
@@ -225,19 +263,21 @@ $security = 'DUB_API_KEY';
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateLinkRequestBody(
-        url: 'https://google.com',
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    );
+    $request = [
+        new Operations\RequestBody(
+            url: 'https://google.com',
+            tagIds: [
+                'clux0rgak00011...',
+            ],
+            externalId: '123456',
+        ),
+    ];
 
-    $response = $sdk->links->create(
+    $response = $sdk->links->createMany(
         request: $request
     );
 
-    if ($response->linkSchema !== null) {
+    if ($response->linkSchemas !== null) {
         // handle response
     }
 } catch (Errors\BadRequestThrowable $e) {
@@ -294,19 +334,21 @@ $sdk = Dub\Dub::builder()
     ->setServerURL('https://api.dub.co')
     ->setSecurity($security)->build();
 
-$request = new Operations\CreateLinkRequestBody(
-    url: 'https://google.com',
-    tagIds: [
-        'clux0rgak00011...',
-    ],
-    externalId: '123456',
-);
+$request = [
+    new Operations\RequestBody(
+        url: 'https://google.com',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        externalId: '123456',
+    ),
+];
 
-$response = $sdk->links->create(
+$response = $sdk->links->createMany(
     request: $request
 );
 
-if ($response->linkSchema !== null) {
+if ($response->linkSchemas !== null) {
     // handle response
 }
 ```

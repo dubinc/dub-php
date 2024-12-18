@@ -13,22 +13,6 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrieveAnalyticsRequest
 {
     /**
-     * The type of event to retrieve analytics for. Defaults to `clicks`.
-     *
-     * @var ?Event $event
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
-    public ?Event $event = null;
-
-    /**
-     * The parameter to group the analytics data points by. Defaults to `count` if undefined. Note that `trigger` is deprecated (use `triggers` instead), but kept for backwards compatibility.
-     *
-     * @var ?QueryParamGroupBy $groupBy
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
-    public ?QueryParamGroupBy $groupBy = null;
-
-    /**
      * The domain to filter analytics for.
      *
      * @var ?string $domain
@@ -83,14 +67,6 @@ class RetrieveAnalyticsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=end')]
     public ?string $end = null;
-
-    /**
-     * The IANA time zone code for aligning timeseries granularity (e.g. America/New_York). Defaults to UTC.
-     *
-     * @var ?string $timezone
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=timezone')]
-    public ?string $timezone = null;
 
     /**
      * The country to retrieve analytics for.
@@ -213,6 +189,30 @@ class RetrieveAnalyticsRequest
     public ?bool $root = null;
 
     /**
+     * The type of event to retrieve analytics for. Defaults to `clicks`.
+     *
+     * @var ?Event $event
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
+    public ?Event $event = null;
+
+    /**
+     * The parameter to group the analytics data points by. Defaults to `count` if undefined. Note that `trigger` is deprecated (use `triggers` instead), but kept for backwards compatibility.
+     *
+     * @var ?QueryParamGroupBy $groupBy
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
+    public ?QueryParamGroupBy $groupBy = null;
+
+    /**
+     * The IANA time zone code for aligning timeseries granularity (e.g. America/New_York). Defaults to UTC.
+     *
+     * @var ?string $timezone
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=timezone')]
+    public ?string $timezone = null;
+
+    /**
      * @param  ?Event  $event
      * @param  ?QueryParamGroupBy  $groupBy
      * @param  ?string  $domain
@@ -241,8 +241,6 @@ class RetrieveAnalyticsRequest
      */
     public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
-        $this->event = $event;
-        $this->groupBy = $groupBy;
         $this->domain = $domain;
         $this->key = $key;
         $this->linkId = $linkId;
@@ -250,7 +248,6 @@ class RetrieveAnalyticsRequest
         $this->interval = $interval;
         $this->start = $start;
         $this->end = $end;
-        $this->timezone = $timezone;
         $this->country = $country;
         $this->city = $city;
         $this->region = $region;
@@ -266,5 +263,8 @@ class RetrieveAnalyticsRequest
         $this->tagIds = $tagIds;
         $this->qr = $qr;
         $this->root = $root;
+        $this->event = $event;
+        $this->groupBy = $groupBy;
+        $this->timezone = $timezone;
     }
 }

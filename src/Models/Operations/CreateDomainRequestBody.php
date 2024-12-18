@@ -38,15 +38,6 @@ class CreateDomainRequestBody
     public ?string $notFoundUrl = null;
 
     /**
-     * Whether to archive this domain. `false` will unarchive a previously archived domain.
-     *
-     * @var ?bool $archived
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $archived = null;
-
-    /**
      * Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
      *
      * @var ?string $placeholder
@@ -65,6 +56,15 @@ class CreateDomainRequestBody
     public ?string $logo = null;
 
     /**
+     * Whether to archive this domain. `false` will unarchive a previously archived domain.
+     *
+     * @var ?bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $archived = null;
+
+    /**
      * @param  string  $slug
      * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
@@ -75,10 +75,10 @@ class CreateDomainRequestBody
     public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?string $logo = null, ?bool $archived = false)
     {
         $this->slug = $slug;
-        $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
         $this->notFoundUrl = $notFoundUrl;
         $this->placeholder = $placeholder;
         $this->logo = $logo;
+        $this->archived = $archived;
     }
 }

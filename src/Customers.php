@@ -44,23 +44,28 @@ class Customers
     }
 
     /**
-     * Retrieve a list of customers
+     * Create a customer
      *
-     * Retrieve a list of customers for the authenticated workspace.
+     * Create a customer for the authenticated workspace.
      *
-     * @return Operations\GetCustomersResponse
+     * @param  ?Operations\CreateCustomerRequestBody  $request
+     * @return Operations\CreateCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(): Operations\GetCustomersResponse
+    public function create(?Operations\CreateCustomerRequestBody $request = null): Operations\CreateCustomerResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
         $urlOverride = null;
         $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
+        if ($body !== null) {
+            $options = array_merge_recursive($options, $body);
+        }
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext('getCustomers', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $hookContext = new HookContext('createCustomer', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $options = Utils\Utils::convertHeadersToOptions($httpRequest, $options);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -81,18 +86,18 @@ class Customers
                 $httpResponse = $res;
             }
         }
-        if ($statusCode == 200) {
+        if ($statusCode == 201) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Operations\ResponseBody>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\GetCustomersResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\CreateCustomerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CreateCustomerResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    responseBodies: $obj);
+                    object: $obj);
 
                 return $response;
             } else {
@@ -205,28 +210,27 @@ class Customers
     }
 
     /**
-     * Create a customer
+     * Delete a customer
      *
-     * Create a customer for the authenticated workspace.
+     * Delete a customer from a workspace.
      *
-     * @param  ?Operations\CreateCustomerRequestBody  $request
-     * @return Operations\CreateCustomerResponse
+     * @param  string  $id
+     * @return Operations\DeleteCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function create(?Operations\CreateCustomerRequestBody $request = null): Operations\CreateCustomerResponse
+    public function delete(string $id): Operations\DeleteCustomerResponse
     {
+        $request = new Operations\DeleteCustomerRequest(
+            id: $id,
+        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers');
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', Operations\DeleteCustomerRequest::class, $request);
         $urlOverride = null;
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
-        if ($body !== null) {
-            $options = array_merge_recursive($options, $body);
-        }
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext('createCustomer', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
+        $hookContext = new HookContext('deleteCustomer', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $options = Utils\Utils::convertHeadersToOptions($httpRequest, $options);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -247,14 +251,14 @@ class Customers
                 $httpResponse = $res;
             }
         }
-        if ($statusCode == 201) {
+        if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\CreateCustomerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\CreateCustomerResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\DeleteCustomerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\DeleteCustomerResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
@@ -536,33 +540,23 @@ class Customers
     }
 
     /**
-     * Update a customer
+     * Retrieve a list of customers
      *
-     * Update a customer for the authenticated workspace.
+     * Retrieve a list of customers for the authenticated workspace.
      *
-     * @param  string  $id
-     * @param  ?Operations\UpdateCustomerRequestBody  $requestBody
-     * @return Operations\UpdateCustomerResponse
+     * @return Operations\GetCustomersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function update(string $id, ?Operations\UpdateCustomerRequestBody $requestBody = null): Operations\UpdateCustomerResponse
+    public function list(): Operations\GetCustomersResponse
     {
-        $request = new Operations\UpdateCustomerRequest(
-            id: $id,
-            requestBody: $requestBody,
-        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', Operations\UpdateCustomerRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers');
         $urlOverride = null;
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
-        if ($body !== null) {
-            $options = array_merge_recursive($options, $body);
-        }
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
-        $hookContext = new HookContext('updateCustomer', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
+        $hookContext = new HookContext('getCustomers', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $options = Utils\Utils::convertHeadersToOptions($httpRequest, $options);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -589,12 +583,12 @@ class Customers
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\UpdateCustomerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\UpdateCustomerResponse(
+                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Operations\ResponseBody>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\GetCustomersResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    object: $obj);
+                    responseBodies: $obj);
 
                 return $response;
             } else {
@@ -707,27 +701,33 @@ class Customers
     }
 
     /**
-     * Delete a customer
+     * Update a customer
      *
-     * Delete a customer from a workspace.
+     * Update a customer for the authenticated workspace.
      *
      * @param  string  $id
-     * @return Operations\DeleteCustomerResponse
+     * @param  ?Operations\UpdateCustomerRequestBody  $requestBody
+     * @return Operations\UpdateCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function delete(string $id): Operations\DeleteCustomerResponse
+    public function update(string $id, ?Operations\UpdateCustomerRequestBody $requestBody = null): Operations\UpdateCustomerResponse
     {
-        $request = new Operations\DeleteCustomerRequest(
+        $request = new Operations\UpdateCustomerRequest(
             id: $id,
+            requestBody: $requestBody,
         );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', Operations\DeleteCustomerRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', Operations\UpdateCustomerRequest::class, $request);
         $urlOverride = null;
         $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        if ($body !== null) {
+            $options = array_merge_recursive($options, $body);
+        }
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        $httpRequest = new \GuzzleHttp\Psr7\Request('DELETE', $url);
-        $hookContext = new HookContext('deleteCustomer', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
+        $hookContext = new HookContext('updateCustomer', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $options = Utils\Utils::convertHeadersToOptions($httpRequest, $options);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -754,8 +754,8 @@ class Customers
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\DeleteCustomerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\DeleteCustomerResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\UpdateCustomerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\UpdateCustomerResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,

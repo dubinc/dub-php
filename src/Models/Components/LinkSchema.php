@@ -44,13 +44,62 @@ class LinkSchema
     public string $url;
 
     /**
-     * [BETA] Whether to track conversions for the short link.
+     * The IDs of the webhooks that the short link is associated with.
      *
-     * @var ?bool $trackConversion
+     * @var array<string> $webhookIds
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $trackConversion = null;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
+    public array $webhookIds;
+
+    /**
+     * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
+     *
+     * @var string $shortLink
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shortLink')]
+    public string $shortLink;
+
+    /**
+     * The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
+     *
+     * @var string $qrCode
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('qrCode')]
+    public string $qrCode;
+
+    /**
+     * The workspace ID of the short link.
+     *
+     * @var string $workspaceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('workspaceId')]
+    public string $workspaceId;
+
+    /**
+     * The date and time when the short link was created.
+     *
+     * @var string $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
+    public string $createdAt;
+
+    /**
+     * The date and time when the short link was last updated.
+     *
+     * @var string $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
+    public string $updatedAt;
+
+    /**
+     * The project ID of the short link. This field is deprecated – use `workspaceId` instead.
+     *
+     * @var string $projectId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('projectId')]
+    public string $projectId;
 
     /**
      * This is the ID of the link in your database that is unique across your workspace. If set, it can be used to identify the link in future API requests. Must be prefixed with 'ext_' when passed as a query parameter.
@@ -59,15 +108,6 @@ class LinkSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
     public ?string $externalId;
-
-    /**
-     * Whether the short link is archived.
-     *
-     * @var ?bool $archived
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $archived = null;
 
     /**
      * The date and time when the short link will expire in ISO-8601 format.
@@ -92,15 +132,6 @@ class LinkSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('password')]
     public ?string $password;
-
-    /**
-     * Whether the short link uses Custom Social Media Cards feature.
-     *
-     * @var ?bool $proxy
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $proxy = null;
 
     /**
      * The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
@@ -135,24 +166,6 @@ class LinkSchema
     public ?string $video;
 
     /**
-     * Whether the short link uses link cloaking.
-     *
-     * @var ?bool $rewrite
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $rewrite = null;
-
-    /**
-     * Whether to allow search engines to index the short link.
-     *
-     * @var ?bool $doIndex
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $doIndex = null;
-
-    /**
      * The iOS destination URL for the short link for iOS device targeting.
      *
      * @var ?string $ios
@@ -178,15 +191,6 @@ class LinkSchema
     public ?Geo $geo;
 
     /**
-     * Whether the short link's stats are publicly accessible.
-     *
-     * @var ?bool $publicStats
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $publicStats = null;
-
-    /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
      *
      * @var ?string $tagId
@@ -205,37 +209,12 @@ class LinkSchema
     public ?array $tags;
 
     /**
-     * The IDs of the webhooks that the short link is associated with.
-     *
-     * @var array<string> $webhookIds
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
-    public array $webhookIds;
-
-    /**
      * The comments for the short link.
      *
      * @var ?string $comments
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('comments')]
     public ?string $comments;
-
-    /**
-     * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
-     *
-     * @var string $shortLink
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('shortLink')]
-    public string $shortLink;
-
-    /**
-     * The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
-     *
-     * @var string $qrCode
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('qrCode')]
-    public string $qrCode;
 
     /**
      * The UTM source of the short link.
@@ -286,12 +265,74 @@ class LinkSchema
     public ?string $userId;
 
     /**
-     * The workspace ID of the short link.
+     * The date and time when the short link was last clicked.
      *
-     * @var string $workspaceId
+     * @var ?string $lastClicked
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('workspaceId')]
-    public string $workspaceId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
+    public ?string $lastClicked;
+
+    /**
+     * The ID of the program the short link is associated with.
+     *
+     * @var ?string $programId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    public ?string $programId;
+
+    /**
+     * [BETA] Whether to track conversions for the short link.
+     *
+     * @var ?bool $trackConversion
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $trackConversion = null;
+
+    /**
+     * Whether the short link is archived.
+     *
+     * @var ?bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $archived = null;
+
+    /**
+     * Whether the short link uses Custom Social Media Cards feature.
+     *
+     * @var ?bool $proxy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $proxy = null;
+
+    /**
+     * Whether the short link uses link cloaking.
+     *
+     * @var ?bool $rewrite
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $rewrite = null;
+
+    /**
+     * Whether to allow search engines to index the short link.
+     *
+     * @var ?bool $doIndex
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $doIndex = null;
+
+    /**
+     * Whether the short link's stats are publicly accessible.
+     *
+     * @var ?bool $publicStats
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $publicStats = null;
 
     /**
      * The number of clicks on the short link.
@@ -301,14 +342,6 @@ class LinkSchema
     #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $clicks = null;
-
-    /**
-     * The date and time when the short link was last clicked.
-     *
-     * @var ?string $lastClicked
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
-    public ?string $lastClicked;
 
     /**
      * [BETA]: The number of leads the short links has generated.
@@ -336,39 +369,6 @@ class LinkSchema
     #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $saleAmount = null;
-
-    /**
-     * The date and time when the short link was created.
-     *
-     * @var string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
-    public string $createdAt;
-
-    /**
-     * The date and time when the short link was last updated.
-     *
-     * @var string $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
-    public string $updatedAt;
-
-    /**
-     * The project ID of the short link. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var string $projectId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('projectId')]
-    public string $projectId;
-
-    /**
-     * The ID of the program the short link is associated with.
-     *
-     * @var ?string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public ?string $programId;
 
     /**
      * @param  string  $id
@@ -428,23 +428,17 @@ class LinkSchema
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
-        $this->trackConversion = $trackConversion;
         $this->externalId = $externalId;
-        $this->archived = $archived;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
-        $this->proxy = $proxy;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->video = $video;
-        $this->rewrite = $rewrite;
-        $this->doIndex = $doIndex;
         $this->ios = $ios;
         $this->android = $android;
         $this->geo = $geo;
-        $this->publicStats = $publicStats;
         $this->tagId = $tagId;
         $this->tags = $tags;
         $this->comments = $comments;
@@ -454,11 +448,17 @@ class LinkSchema
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
         $this->userId = $userId;
-        $this->clicks = $clicks;
         $this->lastClicked = $lastClicked;
+        $this->programId = $programId;
+        $this->trackConversion = $trackConversion;
+        $this->archived = $archived;
+        $this->proxy = $proxy;
+        $this->rewrite = $rewrite;
+        $this->doIndex = $doIndex;
+        $this->publicStats = $publicStats;
+        $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;
         $this->saleAmount = $saleAmount;
-        $this->programId = $programId;
     }
 }

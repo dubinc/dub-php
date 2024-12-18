@@ -6,9 +6,9 @@
 ### Available Operations
 
 * [create](#create) - Create a domain
+* [delete](#delete) - Delete a domain
 * [list](#list) - Retrieve a list of domains
 * [update](#update) - Update a domain
-* [delete](#delete) - Delete a domain
 
 ## create
 
@@ -70,6 +70,59 @@ if ($response->domainSchema !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
+## delete
+
+Delete a domain from a workspace. It cannot be undone. This will also delete all the links associated with the domain.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$security = 'DUB_API_KEY';
+
+$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+
+
+
+$response = $sdk->domains->delete(
+    slug: 'acme.com'
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `slug`             | *string*           | :heavy_check_mark: | The domain name.   | acme.com           |
+
+### Response
+
+**[?Operations\DeleteDomainResponse](../../Models/Operations/DeleteDomainResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
 ## list
 
 Retrieve a list of domains associated with the authenticated workspace.
@@ -89,7 +142,7 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 
 
-$response = $sdk->domains->list(
+$responses = $sdk->domains->list(
     archived: true,
     search: '<value>',
     page: 1,
@@ -97,8 +150,11 @@ $response = $sdk->domains->list(
 
 );
 
-if ($response->domainSchemas !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 
@@ -177,59 +233,6 @@ if ($response->domainSchema !== null) {
 ### Response
 
 **[?Operations\UpdateDomainResponse](../../Models/Operations/UpdateDomainResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
-## delete
-
-Delete a domain from a workspace. It cannot be undone. This will also delete all the links associated with the domain.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
-
-
-
-$response = $sdk->domains->delete(
-    slug: 'acme.com'
-);
-
-if ($response->object !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter          | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `slug`             | *string*           | :heavy_check_mark: | The domain name.   | acme.com           |
-
-### Response
-
-**[?Operations\DeleteDomainResponse](../../Models/Operations/DeleteDomainResponse.md)**
 
 ### Errors
 
