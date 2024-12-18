@@ -35,4 +35,17 @@ class HookContext
         $this->oauth2Scopes = $oauth2Scopes;
         $this->securitySource = $securitySource;
     }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return mixed
+     */
+    public function __call($name, $args): mixed
+    {
+        if ($name === 'securitySource') {
+            return call_user_func_array($this->securitySource, $args);
+        }
+
+        return null;
+    }
 }

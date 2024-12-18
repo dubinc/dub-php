@@ -28,6 +28,16 @@ class TrackLeadRequestBody
     public string $eventName;
 
     /**
+     * Additional metadata to be stored with the lead event
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $metadata = null;
+
+    /**
      * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
      *
      * @var ?string $externalId
@@ -74,16 +84,6 @@ class TrackLeadRequestBody
     public ?string $customerAvatar = null;
 
     /**
-     * Additional metadata to be stored with the lead event
-     *
-     * @var ?array<string, mixed> $metadata
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
-
-    /**
      * @param  string  $clickId
      * @param  string  $eventName
      * @param  ?string  $externalId
@@ -97,11 +97,11 @@ class TrackLeadRequestBody
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;
+        $this->metadata = $metadata;
         $this->externalId = $externalId;
         $this->customerId = $customerId;
         $this->customerName = $customerName;
         $this->customerEmail = $customerEmail;
         $this->customerAvatar = $customerAvatar;
-        $this->metadata = $metadata;
     }
 }

@@ -12,6 +12,14 @@ namespace Dub\Models\Operations;
 class CreateCustomerRequestBody
 {
     /**
+     * Unique identifier for the customer in the client's app.
+     *
+     * @var string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
+
+    /**
      * Email of the customer in the client's app.
      *
      * @var ?string $email
@@ -37,14 +45,6 @@ class CreateCustomerRequestBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $avatar = null;
-
-    /**
-     * Unique identifier for the customer in the client's app.
-     *
-     * @var string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    public string $externalId;
 
     /**
      * @param  string  $externalId

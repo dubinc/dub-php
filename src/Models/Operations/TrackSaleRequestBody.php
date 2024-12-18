@@ -12,25 +12,6 @@ namespace Dub\Models\Operations;
 class TrackSaleRequestBody
 {
     /**
-     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     *
-     * @var ?string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalId = null;
-
-    /**
-     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     *
-     * @var ?string $customerId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerId = null;
-
-    /**
      * The amount of the sale. Should be passed in cents.
      *
      * @var int $amount
@@ -48,6 +29,25 @@ class TrackSaleRequestBody
     public PaymentProcessor $paymentProcessor;
 
     /**
+     * Additional metadata to be stored with the sale event.
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $metadata = null;
+
+    /**
+     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+     *
+     * @var ?string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $externalId = null;
+
+    /**
      * The name of the sale event. It can be used to track different types of event for example 'Purchase', 'Upgrade', 'Payment', etc.
      *
      * @var ?string $eventName
@@ -55,15 +55,6 @@ class TrackSaleRequestBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $eventName = null;
-
-    /**
-     * The invoice ID of the sale.
-     *
-     * @var ?string $invoiceId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $invoiceId = null;
 
     /**
      * The currency of the sale. Accepts ISO 4217 currency codes.
@@ -75,14 +66,23 @@ class TrackSaleRequestBody
     public ?string $currency = null;
 
     /**
-     * Additional metadata to be stored with the sale event.
+     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
      *
-     * @var ?array<string, mixed> $metadata
+     * @var ?string $customerId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
+    public ?string $customerId = null;
+
+    /**
+     * The invoice ID of the sale.
+     *
+     * @var ?string $invoiceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $invoiceId = null;
 
     /**
      * @param  int  $amount
@@ -98,11 +98,11 @@ class TrackSaleRequestBody
     {
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
+        $this->metadata = $metadata;
         $this->externalId = $externalId;
         $this->eventName = $eventName;
         $this->currency = $currency;
         $this->customerId = $customerId;
         $this->invoiceId = $invoiceId;
-        $this->metadata = $metadata;
     }
 }

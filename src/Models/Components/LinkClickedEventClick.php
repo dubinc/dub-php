@@ -90,18 +90,18 @@ class LinkClickedEventClick
 
     /**
      *
+     * @var string $ip
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ip')]
+    public string $ip;
+
+    /**
+     *
      * @var ?bool $qr
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('qr')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $qr = null;
-
-    /**
-     *
-     * @var string $ip
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('ip')]
-    public string $ip;
 
     /**
      * @param  string  $id

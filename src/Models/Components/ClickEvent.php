@@ -21,14 +21,6 @@ class ClickEvent
 
     /**
      *
-     * @var ?string $timestamp
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $timestamp = null;
-
-    /**
-     *
      * @var Click $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
@@ -159,6 +151,14 @@ class ClickEvent
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ip')]
     public string $ip;
+
+    /**
+     *
+     * @var ?string $timestamp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $timestamp = null;
 
     /**
      * @param  Event  $event

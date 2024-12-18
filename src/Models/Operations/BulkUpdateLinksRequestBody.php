@@ -12,6 +12,14 @@ namespace Dub\Models\Operations;
 class BulkUpdateLinksRequestBody
 {
     /**
+     *
+     * @var Data $data
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Data')]
+    public Data $data;
+
+    /**
      * The IDs of the links to update. Takes precedence over `externalIds`.
      *
      * @var ?array<string> $linkIds
@@ -30,14 +38,6 @@ class BulkUpdateLinksRequestBody
     #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $externalIds = null;
-
-    /**
-     *
-     * @var Data $data
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Data')]
-    public Data $data;
 
     /**
      * @param  Data  $data

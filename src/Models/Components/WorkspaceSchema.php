@@ -36,23 +36,6 @@ class WorkspaceSchema
     public string $slug;
 
     /**
-     * The logo of the workspace.
-     *
-     * @var ?string $logo
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $logo = null;
-
-    /**
-     * The invite code of the workspace.
-     *
-     * @var ?string $inviteCode
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('inviteCode')]
-    public ?string $inviteCode;
-
-    /**
      * The plan of the workspace.
      *
      * @var Plan $plan
@@ -62,36 +45,12 @@ class WorkspaceSchema
     public Plan $plan;
 
     /**
-     * The Stripe ID of the workspace.
-     *
-     * @var ?string $stripeId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeId')]
-    public ?string $stripeId;
-
-    /**
      * The date and time when the billing cycle starts for the workspace.
      *
      * @var float $billingCycleStart
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billingCycleStart')]
     public float $billingCycleStart;
-
-    /**
-     * The date and time when the payment failed for the workspace.
-     *
-     * @var ?string $paymentFailedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentFailedAt')]
-    public ?string $paymentFailedAt;
-
-    /**
-     * [BETA – Dub Conversions]: The Stripe Connect ID of the workspace.
-     *
-     * @var ?string $stripeConnectId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeConnectId')]
-    public ?string $stripeConnectId;
 
     /**
      * The usage of the workspace.
@@ -224,6 +183,46 @@ class WorkspaceSchema
     public array $domains;
 
     /**
+     * The invite code of the workspace.
+     *
+     * @var ?string $inviteCode
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('inviteCode')]
+    public ?string $inviteCode;
+
+    /**
+     * The Stripe ID of the workspace.
+     *
+     * @var ?string $stripeId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeId')]
+    public ?string $stripeId;
+
+    /**
+     * The date and time when the payment failed for the workspace.
+     *
+     * @var ?string $paymentFailedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentFailedAt')]
+    public ?string $paymentFailedAt;
+
+    /**
+     * [BETA – Dub Conversions]: The Stripe Connect ID of the workspace.
+     *
+     * @var ?string $stripeConnectId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeConnectId')]
+    public ?string $stripeConnectId;
+
+    /**
+     * [BETA – Dub Partners]: The ID of the payment method for partner payouts.
+     *
+     * @var ?string $payoutMethodId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutMethodId')]
+    public ?string $payoutMethodId;
+
+    /**
      * The feature flags of the workspace, indicating which features are enabled.
      *
      * @var ?array<string, bool> $flags
@@ -234,36 +233,13 @@ class WorkspaceSchema
     public ?array $flags = null;
 
     /**
-     * [BETA – Dub Partners]: The name of the connected bank account.
+     * The logo of the workspace.
      *
-     * @var ?string $bankAccountName
+     * @var ?string $logo
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bankAccountName')]
-    public ?string $bankAccountName;
-
-    /**
-     * [BETA – Dub Partners]: The partial account number of the bank account.
-     *
-     * @var ?string $partialAccountNumber
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partialAccountNumber')]
-    public ?string $partialAccountNumber;
-
-    /**
-     * [BETA – Dub Partners]: The routing number of the bank account.
-     *
-     * @var ?string $routingNumber
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('routingNumber')]
-    public ?string $routingNumber;
-
-    /**
-     * [BETA – Dub Partners]: Whether the bank account is verified.
-     *
-     * @var bool $bankAccountVerified
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bankAccountVerified')]
-    public bool $bankAccountVerified;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $logo = null;
 
     /**
      * @param  string  $id
@@ -287,18 +263,15 @@ class WorkspaceSchema
      * @param  string  $createdAt
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
-     * @param  bool  $bankAccountVerified
      * @param  ?string  $inviteCode
      * @param  ?string  $stripeId
      * @param  ?string  $paymentFailedAt
      * @param  ?string  $stripeConnectId
+     * @param  ?string  $payoutMethodId
      * @param  ?array<string, bool>  $flags
-     * @param  ?string  $bankAccountName
-     * @param  ?string  $partialAccountNumber
-     * @param  ?string  $routingNumber
      * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, bool $bankAccountVerified, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?string $bankAccountName = null, ?string $partialAccountNumber = null, ?string $routingNumber = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $payoutMethodId = null, ?array $flags = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -321,15 +294,12 @@ class WorkspaceSchema
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;
-        $this->bankAccountVerified = $bankAccountVerified;
         $this->inviteCode = $inviteCode;
         $this->stripeId = $stripeId;
         $this->paymentFailedAt = $paymentFailedAt;
         $this->stripeConnectId = $stripeConnectId;
+        $this->payoutMethodId = $payoutMethodId;
         $this->flags = $flags;
-        $this->bankAccountName = $bankAccountName;
-        $this->partialAccountNumber = $partialAccountNumber;
-        $this->routingNumber = $routingNumber;
         $this->logo = $logo;
     }
 }

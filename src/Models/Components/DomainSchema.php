@@ -28,31 +28,20 @@ class DomainSchema
     public string $slug;
 
     /**
-     * Whether the domain is verified.
+     * The date the domain was created.
      *
-     * @var ?bool $verified
+     * @var string $createdAt
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('verified')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $verified = null;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
+    public string $createdAt;
 
     /**
-     * Whether the domain is the primary domain for the workspace.
+     * The date the domain was last updated.
      *
-     * @var ?bool $primary
+     * @var string $updatedAt
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('primary')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $primary = null;
-
-    /**
-     * Whether the domain is archived.
-     *
-     * @var ?bool $archived
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $archived = null;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
+    public string $updatedAt;
 
     /**
      * Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
@@ -87,22 +76,6 @@ class DomainSchema
     public ?string $logo;
 
     /**
-     * The date the domain was created.
-     *
-     * @var string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
-    public string $createdAt;
-
-    /**
-     * The date the domain was last updated.
-     *
-     * @var string $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
-    public string $updatedAt;
-
-    /**
      * The registered domain record.
      *
      * @var ?RegisteredDomain $registeredDomain
@@ -110,6 +83,33 @@ class DomainSchema
     #[\Speakeasy\Serializer\Annotation\SerializedName('registeredDomain')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\RegisteredDomain|null')]
     public ?RegisteredDomain $registeredDomain;
+
+    /**
+     * Whether the domain is verified.
+     *
+     * @var ?bool $verified
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('verified')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $verified = null;
+
+    /**
+     * Whether the domain is the primary domain for the workspace.
+     *
+     * @var ?bool $primary
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('primary')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $primary = null;
+
+    /**
+     * Whether the domain is archived.
+     *
+     * @var ?bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $archived = null;
 
     /**
      * @param  string  $id
@@ -131,13 +131,13 @@ class DomainSchema
         $this->slug = $slug;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
-        $this->verified = $verified;
-        $this->primary = $primary;
-        $this->archived = $archived;
         $this->placeholder = $placeholder;
         $this->expiredUrl = $expiredUrl;
         $this->notFoundUrl = $notFoundUrl;
         $this->logo = $logo;
         $this->registeredDomain = $registeredDomain;
+        $this->verified = $verified;
+        $this->primary = $primary;
+        $this->archived = $archived;
     }
 }

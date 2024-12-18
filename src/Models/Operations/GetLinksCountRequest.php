@@ -60,6 +60,14 @@ class GetLinksCountRequest
     public ?string $userId = null;
 
     /**
+     * The field to group the links by.
+     *
+     * @var One|Two|Three|null $groupBy
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
+    public One|Two|Three|null $groupBy = null;
+
+    /**
      * Whether to include archived links in the response. Defaults to `false` if not provided.
      *
      * @var ?bool $showArchived
@@ -74,14 +82,6 @@ class GetLinksCountRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=withTags')]
     public ?bool $withTags = null;
-
-    /**
-     * The field to group the links by.
-     *
-     * @var One|Two|Three|null $groupBy
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
-    public One|Two|Three|null $groupBy = null;
 
     /**
      * @param  ?string  $domain
@@ -102,8 +102,8 @@ class GetLinksCountRequest
         $this->tagNames = $tagNames;
         $this->search = $search;
         $this->userId = $userId;
+        $this->groupBy = $groupBy;
         $this->showArchived = $showArchived;
         $this->withTags = $withTags;
-        $this->groupBy = $groupBy;
     }
 }

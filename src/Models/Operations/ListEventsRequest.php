@@ -13,14 +13,6 @@ use Dub\Utils\SpeakeasyMetadata;
 class ListEventsRequest
 {
     /**
-     * The type of event to retrieve analytics for. Defaults to 'clicks'.
-     *
-     * @var ?QueryParamEvent $event
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
-    public ?QueryParamEvent $event = null;
-
-    /**
      * The domain to filter analytics for.
      *
      * @var ?string $domain
@@ -53,14 +45,6 @@ class ListEventsRequest
     public ?string $externalId = null;
 
     /**
-     * The interval to retrieve events for. Takes precedence over start and end. If undefined, defaults to 24h.
-     *
-     * @var ?QueryParamInterval $interval
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
-    public ?QueryParamInterval $interval = null;
-
-    /**
      * The start date and time when to retrieve analytics from. Takes precedence over `interval`.
      *
      * @var ?string $start
@@ -75,14 +59,6 @@ class ListEventsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=end')]
     public ?string $end = null;
-
-    /**
-     * The IANA time zone code for aligning timeseries granularity (e.g. America/New_York). Defaults to UTC.
-     *
-     * @var ?string $timezone
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=timezone')]
-    public ?string $timezone = null;
 
     /**
      * The country to retrieve analytics for.
@@ -205,6 +181,30 @@ class ListEventsRequest
     public ?bool $root = null;
 
     /**
+     * The type of event to retrieve analytics for. Defaults to 'clicks'.
+     *
+     * @var ?QueryParamEvent $event
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
+    public ?QueryParamEvent $event = null;
+
+    /**
+     * The interval to retrieve events for. Takes precedence over start and end. If undefined, defaults to 24h.
+     *
+     * @var ?QueryParamInterval $interval
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
+    public ?QueryParamInterval $interval = null;
+
+    /**
+     * The IANA time zone code for aligning timeseries granularity (e.g. America/New_York). Defaults to UTC.
+     *
+     * @var ?string $timezone
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=timezone')]
+    public ?string $timezone = null;
+
+    /**
      *
      * @var ?float $page
      */
@@ -264,15 +264,12 @@ class ListEventsRequest
      */
     public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?QueryParamInterval $interval = QueryParamInterval::TwentyFourh, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?Order $order = Order::Desc, ?SortBy $sortBy = SortBy::Timestamp)
     {
-        $this->event = $event;
         $this->domain = $domain;
         $this->key = $key;
         $this->linkId = $linkId;
         $this->externalId = $externalId;
-        $this->interval = $interval;
         $this->start = $start;
         $this->end = $end;
-        $this->timezone = $timezone;
         $this->country = $country;
         $this->city = $city;
         $this->region = $region;
@@ -288,6 +285,9 @@ class ListEventsRequest
         $this->tagIds = $tagIds;
         $this->qr = $qr;
         $this->root = $root;
+        $this->event = $event;
+        $this->interval = $interval;
+        $this->timezone = $timezone;
         $this->page = $page;
         $this->limit = $limit;
         $this->order = $order;

@@ -44,6 +44,76 @@ class LeadCreatedEventLink
 
     /**
      *
+     * @var string $expiresAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
+    public string $expiresAt;
+
+    /**
+     * The IDs of the webhooks that the short link is associated with.
+     *
+     * @var array<string> $webhookIds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
+    public array $webhookIds;
+
+    /**
+     * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
+     *
+     * @var string $shortLink
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('shortLink')]
+    public string $shortLink;
+
+    /**
+     * The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
+     *
+     * @var string $qrCode
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('qrCode')]
+    public string $qrCode;
+
+    /**
+     * The workspace ID of the short link.
+     *
+     * @var string $workspaceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('workspaceId')]
+    public string $workspaceId;
+
+    /**
+     *
+     * @var string $lastClicked
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
+    public string $lastClicked;
+
+    /**
+     *
+     * @var string $createdAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
+    public string $createdAt;
+
+    /**
+     *
+     * @var string $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
+    public string $updatedAt;
+
+    /**
+     * The project ID of the short link. This field is deprecated – use `workspaceId` instead.
+     *
+     * @var string $projectId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('projectId')]
+    public string $projectId;
+
+    /**
+     *
      * @var ?bool $trackConversion
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
@@ -65,13 +135,6 @@ class LeadCreatedEventLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?bool $archived = null;
-
-    /**
-     *
-     * @var string $expiresAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
-    public string $expiresAt;
 
     /**
      *
@@ -196,37 +259,12 @@ class LeadCreatedEventLink
     public ?array $tags;
 
     /**
-     * The IDs of the webhooks that the short link is associated with.
-     *
-     * @var array<string> $webhookIds
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
-    public array $webhookIds;
-
-    /**
      * The comments for the short link.
      *
      * @var ?string $comments
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('comments')]
     public ?string $comments;
-
-    /**
-     * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
-     *
-     * @var string $shortLink
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('shortLink')]
-    public string $shortLink;
-
-    /**
-     * The full URL of the QR code for the short link (e.g. `https://api.dub.co/qr?url=https://dub.sh/try`).
-     *
-     * @var string $qrCode
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('qrCode')]
-    public string $qrCode;
 
     /**
      * The UTM source of the short link.
@@ -276,12 +314,12 @@ class LeadCreatedEventLink
     public ?string $userId;
 
     /**
-     * The workspace ID of the short link.
+     * The ID of the program the short link is associated with.
      *
-     * @var string $workspaceId
+     * @var ?string $programId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('workspaceId')]
-    public string $workspaceId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    public ?string $programId;
 
     /**
      * The number of clicks on the short link.
@@ -291,13 +329,6 @@ class LeadCreatedEventLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $clicks = null;
-
-    /**
-     *
-     * @var string $lastClicked
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
-    public string $lastClicked;
 
     /**
      * [BETA]: The number of leads the short links has generated.
@@ -325,37 +356,6 @@ class LeadCreatedEventLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $saleAmount = null;
-
-    /**
-     *
-     * @var string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
-    public string $createdAt;
-
-    /**
-     *
-     * @var string $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
-    public string $updatedAt;
-
-    /**
-     * The project ID of the short link. This field is deprecated – use `workspaceId` instead.
-     *
-     * @var string $projectId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('projectId')]
-    public string $projectId;
-
-    /**
-     * The ID of the program the short link is associated with.
-     *
-     * @var ?string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public ?string $programId;
 
     /**
      * @param  string  $id
@@ -442,10 +442,10 @@ class LeadCreatedEventLink
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
         $this->userId = $userId;
+        $this->programId = $programId;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;
         $this->saleAmount = $saleAmount;
-        $this->programId = $programId;
     }
 }

@@ -12,20 +12,20 @@ use Dub\Utils\SpeakeasyMetadata;
 class ListDomainsRequest
 {
     /**
-     * Whether to include archived domains in the response. Defaults to `false` if not provided.
-     *
-     * @var ?bool $archived
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=archived')]
-    public ?bool $archived = null;
-
-    /**
      * The search term to filter the domains by.
      *
      * @var ?string $search
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=search')]
     public ?string $search = null;
+
+    /**
+     * Whether to include archived domains in the response. Defaults to `false` if not provided.
+     *
+     * @var ?bool $archived
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=archived')]
+    public ?bool $archived = null;
 
     /**
      * The page number for pagination.
@@ -51,8 +51,8 @@ class ListDomainsRequest
      */
     public function __construct(?string $search = null, ?bool $archived = true, ?float $page = 1, ?float $pageSize = 50)
     {
-        $this->archived = $archived;
         $this->search = $search;
+        $this->archived = $archived;
         $this->page = $page;
         $this->pageSize = $pageSize;
     }

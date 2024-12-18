@@ -44,7 +44,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listDomains"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->domains->list(\n    archived: true,\n    search: '<value>',\n    page: 1,\n    pageSize: 50\n\n);\n\nif ($response->domainSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$responses = $sdk->domains->list(\n    archived: true,\n    search: '<value>',\n    page: 1,\n    pageSize: 50\n\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
   - target: $["paths"]["/domains"]["post"]
     update:
       "x-codeSamples":
@@ -74,7 +74,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getLinks"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\GetLinksRequest(\n    page: 1,\n    pageSize: 50,\n);\n\n$response = $sdk->links->list(\n    request: $request\n);\n\nif ($response->linkSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\GetLinksRequest(\n    page: 1,\n    pageSize: 50,\n);\n\n$responses = $sdk->links->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
   - target: $["paths"]["/links"]["post"]
     update:
       "x-codeSamples":
