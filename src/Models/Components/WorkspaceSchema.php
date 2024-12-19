@@ -157,6 +157,14 @@ class WorkspaceSchema
     public bool $dotLinkClaimed;
 
     /**
+     * Whether the workspace has Dub Partners enabled.
+     *
+     * @var bool $partnersEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnersEnabled')]
+    public bool $partnersEnabled;
+
+    /**
      * The date and time when the workspace was created.
      *
      * @var string $createdAt
@@ -260,6 +268,7 @@ class WorkspaceSchema
      * @param  float  $aiLimit
      * @param  bool  $conversionEnabled
      * @param  bool  $dotLinkClaimed
+     * @param  bool  $partnersEnabled
      * @param  string  $createdAt
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
@@ -271,7 +280,7 @@ class WorkspaceSchema
      * @param  ?array<string, bool>  $flags
      * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $payoutMethodId = null, ?array $flags = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $payoutMethodId = null, ?array $flags = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -291,6 +300,7 @@ class WorkspaceSchema
         $this->aiLimit = $aiLimit;
         $this->conversionEnabled = $conversionEnabled;
         $this->dotLinkClaimed = $dotLinkClaimed;
+        $this->partnersEnabled = $partnersEnabled;
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;
