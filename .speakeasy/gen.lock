@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 91f8a271509d1f385478a60c83339f25
+  docChecksum: 8242eb9b26c7e6790d67cbbd98b96b1b
   docVersion: 0.0.1
-  speakeasyVersion: 1.456.1
-  generationVersion: 2.481.0
-  releaseVersion: 0.11.9
-  configChecksum: 82a2cfff6e27245b0a738d13b93988fc
+  speakeasyVersion: 1.459.2
+  generationVersion: 2.483.1
+  releaseVersion: 0.11.10
+  configChecksum: 9e82fbef5853015d9b4085451773c1a7
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -65,6 +65,7 @@ generatedFiles:
   - docs/Models/Components/LeadCreatedEvent.md
   - docs/Models/Components/LeadCreatedEventClick.md
   - docs/Models/Components/LeadCreatedEventData.md
+  - docs/Models/Components/LeadCreatedEventDataLink.md
   - docs/Models/Components/LeadCreatedEventEvent.md
   - docs/Models/Components/LeadCreatedEventGeo.md
   - docs/Models/Components/LeadCreatedEventLink.md
@@ -89,6 +90,7 @@ generatedFiles:
   - docs/Models/Components/SaleCreatedEventClick.md
   - docs/Models/Components/SaleCreatedEventCustomer.md
   - docs/Models/Components/SaleCreatedEventData.md
+  - docs/Models/Components/SaleCreatedEventDataLink.md
   - docs/Models/Components/SaleCreatedEventEvent.md
   - docs/Models/Components/SaleCreatedEventGeo.md
   - docs/Models/Components/SaleCreatedEventLink.md
@@ -139,6 +141,7 @@ generatedFiles:
   - docs/Models/Operations/BulkUpdateLinksTagNames.md
   - docs/Models/Operations/Click.md
   - docs/Models/Operations/Color.md
+  - docs/Models/Operations/CreateCustomerLink.md
   - docs/Models/Operations/CreateCustomerRequestBody.md
   - docs/Models/Operations/CreateCustomerResponse.md
   - docs/Models/Operations/CreateCustomerResponseBody.md
@@ -166,6 +169,7 @@ generatedFiles:
   - docs/Models/Operations/DeleteTagResponse.md
   - docs/Models/Operations/DeleteTagResponseBody.md
   - docs/Models/Operations/Event.md
+  - docs/Models/Operations/GetCustomerLink.md
   - docs/Models/Operations/GetCustomerRequest.md
   - docs/Models/Operations/GetCustomerResponse.md
   - docs/Models/Operations/GetCustomerResponseBody.md
@@ -189,6 +193,7 @@ generatedFiles:
   - docs/Models/Operations/GroupBy.md
   - docs/Models/Operations/Interval.md
   - docs/Models/Operations/Level.md
+  - docs/Models/Operations/Link.md
   - docs/Models/Operations/ListDomainsRequest.md
   - docs/Models/Operations/ListDomainsResponse.md
   - docs/Models/Operations/ListEventsQueryParamTagIds.md
@@ -215,9 +220,6 @@ generatedFiles:
   - docs/Models/Operations/TagIds.md
   - docs/Models/Operations/TagNames.md
   - docs/Models/Operations/Three.md
-  - docs/Models/Operations/TrackCustomerRequestBody.md
-  - docs/Models/Operations/TrackCustomerResponse.md
-  - docs/Models/Operations/TrackCustomerResponseBody.md
   - docs/Models/Operations/TrackLeadRequestBody.md
   - docs/Models/Operations/TrackLeadResponse.md
   - docs/Models/Operations/TrackLeadResponseBody.md
@@ -227,6 +229,7 @@ generatedFiles:
   - docs/Models/Operations/TrackSaleResponseBody.md
   - docs/Models/Operations/Trigger.md
   - docs/Models/Operations/Two.md
+  - docs/Models/Operations/UpdateCustomerLink.md
   - docs/Models/Operations/UpdateCustomerRequest.md
   - docs/Models/Operations/UpdateCustomerRequestBody.md
   - docs/Models/Operations/UpdateCustomerResponse.md
@@ -323,6 +326,7 @@ generatedFiles:
   - src/Models/Components/LeadCreatedEvent.php
   - src/Models/Components/LeadCreatedEventClick.php
   - src/Models/Components/LeadCreatedEventData.php
+  - src/Models/Components/LeadCreatedEventDataLink.php
   - src/Models/Components/LeadCreatedEventEvent.php
   - src/Models/Components/LeadCreatedEventGeo.php
   - src/Models/Components/LeadCreatedEventLink.php
@@ -346,6 +350,7 @@ generatedFiles:
   - src/Models/Components/SaleCreatedEventClick.php
   - src/Models/Components/SaleCreatedEventCustomer.php
   - src/Models/Components/SaleCreatedEventData.php
+  - src/Models/Components/SaleCreatedEventDataLink.php
   - src/Models/Components/SaleCreatedEventEvent.php
   - src/Models/Components/SaleCreatedEventGeo.php
   - src/Models/Components/SaleCreatedEventLink.php
@@ -401,6 +406,7 @@ generatedFiles:
   - src/Models/Operations/BulkUpdateLinksResponse.php
   - src/Models/Operations/Click.php
   - src/Models/Operations/Color.php
+  - src/Models/Operations/CreateCustomerLink.php
   - src/Models/Operations/CreateCustomerRequestBody.php
   - src/Models/Operations/CreateCustomerResponse.php
   - src/Models/Operations/CreateCustomerResponseBody.php
@@ -428,6 +434,7 @@ generatedFiles:
   - src/Models/Operations/DeleteTagResponse.php
   - src/Models/Operations/DeleteTagResponseBody.php
   - src/Models/Operations/Event.php
+  - src/Models/Operations/GetCustomerLink.php
   - src/Models/Operations/GetCustomerRequest.php
   - src/Models/Operations/GetCustomerResponse.php
   - src/Models/Operations/GetCustomerResponseBody.php
@@ -448,6 +455,7 @@ generatedFiles:
   - src/Models/Operations/GetWorkspaceResponse.php
   - src/Models/Operations/Interval.php
   - src/Models/Operations/Level.php
+  - src/Models/Operations/Link.php
   - src/Models/Operations/ListDomainsRequest.php
   - src/Models/Operations/ListDomainsResponse.php
   - src/Models/Operations/ListEventsRequest.php
@@ -467,9 +475,6 @@ generatedFiles:
   - src/Models/Operations/Sort.php
   - src/Models/Operations/SortBy.php
   - src/Models/Operations/Three.php
-  - src/Models/Operations/TrackCustomerRequestBody.php
-  - src/Models/Operations/TrackCustomerResponse.php
-  - src/Models/Operations/TrackCustomerResponseBody.php
   - src/Models/Operations/TrackLeadRequestBody.php
   - src/Models/Operations/TrackLeadResponse.php
   - src/Models/Operations/TrackLeadResponseBody.php
@@ -479,6 +484,7 @@ generatedFiles:
   - src/Models/Operations/TrackSaleResponseBody.php
   - src/Models/Operations/Trigger.php
   - src/Models/Operations/Two.php
+  - src/Models/Operations/UpdateCustomerLink.php
   - src/Models/Operations/UpdateCustomerRequest.php
   - src/Models/Operations/UpdateCustomerRequestBody.php
   - src/Models/Operations/UpdateCustomerResponse.php
@@ -516,12 +522,20 @@ generatedFiles:
   - src/Utils/JSON.php
   - src/Utils/MixedJSONHandler.php
   - src/Utils/MultipartMetadata.php
+  - src/Utils/Options.php
   - src/Utils/ParamsMetadata.php
   - src/Utils/PathParameters.php
   - src/Utils/PhpDocTypeParser.php
   - src/Utils/QueryParameters.php
   - src/Utils/RequestBodies.php
   - src/Utils/RequestMetadata.php
+  - src/Utils/Retry/PermanentError.php
+  - src/Utils/Retry/RetryConfig.php
+  - src/Utils/Retry/RetryConfigBackoff.php
+  - src/Utils/Retry/RetryConfigNone.php
+  - src/Utils/Retry/RetryStrategy.php
+  - src/Utils/Retry/RetryUtils.php
+  - src/Utils/Retry/TemporaryError.php
   - src/Utils/Security.php
   - src/Utils/SecurityClient.php
   - src/Utils/SecurityMetadata.php

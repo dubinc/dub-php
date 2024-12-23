@@ -170,7 +170,6 @@ if ($response->linkSchema !== null) {
 
 ### [track](docs/sdks/track/README.md)
 
-* [~~customer~~](docs/sdks/track/README.md#customer) - Track a customer :warning: **Deprecated**
 * [lead](docs/sdks/track/README.md#lead) - Track a lead
 * [sale](docs/sdks/track/README.md#sale) - Track a sale
 

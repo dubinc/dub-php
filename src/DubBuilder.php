@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Dub;
 
+use Dub\Utils\Retry;
+
 /**
  * DubBuilder is used to configure and build an instance of the SDK.
  */
@@ -84,6 +86,13 @@ class DubBuilder
     public function setServerIndex(int $serverIdx): DubBuilder
     {
         $this->sdkConfig->serverIndex = $serverIdx;
+
+        return $this;
+    }
+
+    public function setRetryConfig(Retry\RetryConfig $config): DubBuilder
+    {
+        $this->sdkConfig->retryConfig = $config;
 
         return $this;
     }

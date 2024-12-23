@@ -62,14 +62,34 @@ class SaleCreatedEventCustomer
     public ?string $avatar = null;
 
     /**
+     * Country of the customer.
+     *
+     * @var ?string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $country = null;
+
+    /**
+     *
+     * @var ?SaleCreatedEventDataLink $link
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventDataLink|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SaleCreatedEventDataLink $link = null;
+
+    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
      * @param  string  $createdAt
      * @param  ?string  $email
      * @param  ?string  $avatar
+     * @param  ?string  $country
+     * @param  ?SaleCreatedEventDataLink  $link
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?SaleCreatedEventDataLink $link = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -77,5 +97,7 @@ class SaleCreatedEventCustomer
         $this->createdAt = $createdAt;
         $this->email = $email;
         $this->avatar = $avatar;
+        $this->country = $country;
+        $this->link = $link;
     }
 }

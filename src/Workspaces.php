@@ -10,6 +10,7 @@ namespace Dub;
 
 use Dub\Hooks\HookContext;
 use Dub\Models\Operations;
+use Dub\Utils\Options;
 use Speakeasy\Serializer\DeserializationContext;
 
 class Workspaces
@@ -52,7 +53,7 @@ class Workspaces
      * @return Operations\GetWorkspaceResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function get(string $idOrSlug): Operations\GetWorkspaceResponse
+    public function get(string $idOrSlug, ?Options $options = null): Operations\GetWorkspaceResponse
     {
         $request = new Operations\GetWorkspaceRequest(
             idOrSlug: $idOrSlug,
@@ -60,16 +61,16 @@ class Workspaces
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', Operations\GetWorkspaceRequest::class, $request);
         $urlOverride = null;
-        $options = ['http_errors' => false];
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpOptions = ['http_errors' => false];
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
         $hookContext = new HookContext('getWorkspace', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
-        $options = Utils\Utils::convertHeadersToOptions($httpRequest, $options);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $options);
+            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             if ($res !== null) {
@@ -218,7 +219,7 @@ class Workspaces
      * @return Operations\UpdateWorkspaceResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function update(string $idOrSlug, ?Operations\UpdateWorkspaceRequestBody $requestBody = null): Operations\UpdateWorkspaceResponse
+    public function update(string $idOrSlug, ?Operations\UpdateWorkspaceRequestBody $requestBody = null, ?Options $options = null): Operations\UpdateWorkspaceResponse
     {
         $request = new Operations\UpdateWorkspaceRequest(
             idOrSlug: $idOrSlug,
@@ -227,20 +228,20 @@ class Workspaces
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/workspaces/{idOrSlug}', Operations\UpdateWorkspaceRequest::class, $request);
         $urlOverride = null;
-        $options = ['http_errors' => false];
+        $httpOptions = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
         if ($body !== null) {
-            $options = array_merge_recursive($options, $body);
+            $httpOptions = array_merge_recursive($httpOptions, $body);
         }
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
         $hookContext = new HookContext('updateWorkspace', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
-        $options = Utils\Utils::convertHeadersToOptions($httpRequest, $options);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
-            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $options);
+            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
             if ($res !== null) {
