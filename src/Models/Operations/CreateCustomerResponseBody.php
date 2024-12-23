@@ -63,14 +63,34 @@ class CreateCustomerResponseBody
     public ?string $avatar = null;
 
     /**
+     * Country of the customer.
+     *
+     * @var ?string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $country = null;
+
+    /**
+     *
+     * @var ?CreateCustomerLink $link
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreateCustomerLink|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateCustomerLink $link = null;
+
+    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
      * @param  string  $createdAt
      * @param  ?string  $email
      * @param  ?string  $avatar
+     * @param  ?string  $country
+     * @param  ?CreateCustomerLink  $link
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?CreateCustomerLink $link = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -78,5 +98,7 @@ class CreateCustomerResponseBody
         $this->createdAt = $createdAt;
         $this->email = $email;
         $this->avatar = $avatar;
+        $this->country = $country;
+        $this->link = $link;
     }
 }
