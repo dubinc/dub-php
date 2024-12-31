@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 8242eb9b26c7e6790d67cbbd98b96b1b
+  docChecksum: b6c3f376c48f7905069b63adb30d9d19
   docVersion: 0.0.1
-  speakeasyVersion: 1.459.2
-  generationVersion: 2.483.1
-  releaseVersion: 0.11.10
-  configChecksum: 9e82fbef5853015d9b4085451773c1a7
+  speakeasyVersion: 1.460.3
+  generationVersion: 2.484.0
+  releaseVersion: 0.11.11
+  configChecksum: 535e1975ef269ba8c7433805f32fe224
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -58,10 +58,12 @@ generatedFiles:
   - docs/Models/Components/CountryCode.md
   - docs/Models/Components/Customer.md
   - docs/Models/Components/Data.md
+  - docs/Models/Components/Discount.md
   - docs/Models/Components/DomainSchema.md
   - docs/Models/Components/Domains.md
   - docs/Models/Components/Event.md
   - docs/Models/Components/Geo.md
+  - docs/Models/Components/Interval.md
   - docs/Models/Components/LeadCreatedEvent.md
   - docs/Models/Components/LeadCreatedEventClick.md
   - docs/Models/Components/LeadCreatedEventData.md
@@ -82,6 +84,7 @@ generatedFiles:
   - docs/Models/Components/LinkWebhookEventEvent.md
   - docs/Models/Components/LinkWebhookEventGeo.md
   - docs/Models/Components/One.md
+  - docs/Models/Components/Partner.md
   - docs/Models/Components/Plan.md
   - docs/Models/Components/RegisteredDomain.md
   - docs/Models/Components/Role.md
@@ -91,14 +94,19 @@ generatedFiles:
   - docs/Models/Components/SaleCreatedEventCustomer.md
   - docs/Models/Components/SaleCreatedEventData.md
   - docs/Models/Components/SaleCreatedEventDataLink.md
+  - docs/Models/Components/SaleCreatedEventDiscount.md
   - docs/Models/Components/SaleCreatedEventEvent.md
   - docs/Models/Components/SaleCreatedEventGeo.md
+  - docs/Models/Components/SaleCreatedEventInterval.md
   - docs/Models/Components/SaleCreatedEventLink.md
+  - docs/Models/Components/SaleCreatedEventPartner.md
+  - docs/Models/Components/SaleCreatedEventType.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/TagSchema.md
   - docs/Models/Components/Three.md
   - docs/Models/Components/Trigger.md
   - docs/Models/Components/Two.md
+  - docs/Models/Components/Type.md
   - docs/Models/Components/Users.md
   - docs/Models/Components/WebhookEvent.md
   - docs/Models/Components/WorkspaceSchema.md
@@ -141,10 +149,14 @@ generatedFiles:
   - docs/Models/Operations/BulkUpdateLinksTagNames.md
   - docs/Models/Operations/Click.md
   - docs/Models/Operations/Color.md
+  - docs/Models/Operations/CreateCustomerDiscount.md
+  - docs/Models/Operations/CreateCustomerInterval.md
   - docs/Models/Operations/CreateCustomerLink.md
+  - docs/Models/Operations/CreateCustomerPartner.md
   - docs/Models/Operations/CreateCustomerRequestBody.md
   - docs/Models/Operations/CreateCustomerResponse.md
   - docs/Models/Operations/CreateCustomerResponseBody.md
+  - docs/Models/Operations/CreateCustomerType.md
   - docs/Models/Operations/CreateDomainRequestBody.md
   - docs/Models/Operations/CreateDomainResponse.md
   - docs/Models/Operations/CreateEmbedTokenRequestBody.md
@@ -168,11 +180,17 @@ generatedFiles:
   - docs/Models/Operations/DeleteTagRequest.md
   - docs/Models/Operations/DeleteTagResponse.md
   - docs/Models/Operations/DeleteTagResponseBody.md
+  - docs/Models/Operations/Discount.md
   - docs/Models/Operations/Event.md
+  - docs/Models/Operations/GetCustomerDiscount.md
+  - docs/Models/Operations/GetCustomerInterval.md
   - docs/Models/Operations/GetCustomerLink.md
+  - docs/Models/Operations/GetCustomerPartner.md
   - docs/Models/Operations/GetCustomerRequest.md
   - docs/Models/Operations/GetCustomerResponse.md
   - docs/Models/Operations/GetCustomerResponseBody.md
+  - docs/Models/Operations/GetCustomerType.md
+  - docs/Models/Operations/GetCustomersInterval.md
   - docs/Models/Operations/GetCustomersResponse.md
   - docs/Models/Operations/GetLinkInfoRequest.md
   - docs/Models/Operations/GetLinkInfoResponse.md
@@ -201,6 +219,7 @@ generatedFiles:
   - docs/Models/Operations/ListEventsResponse.md
   - docs/Models/Operations/One.md
   - docs/Models/Operations/Order.md
+  - docs/Models/Operations/Partner.md
   - docs/Models/Operations/PaymentProcessor.md
   - docs/Models/Operations/QueryParamEvent.md
   - docs/Models/Operations/QueryParamGroupBy.md
@@ -229,11 +248,16 @@ generatedFiles:
   - docs/Models/Operations/TrackSaleResponseBody.md
   - docs/Models/Operations/Trigger.md
   - docs/Models/Operations/Two.md
+  - docs/Models/Operations/Type.md
+  - docs/Models/Operations/UpdateCustomerDiscount.md
+  - docs/Models/Operations/UpdateCustomerInterval.md
   - docs/Models/Operations/UpdateCustomerLink.md
+  - docs/Models/Operations/UpdateCustomerPartner.md
   - docs/Models/Operations/UpdateCustomerRequest.md
   - docs/Models/Operations/UpdateCustomerRequestBody.md
   - docs/Models/Operations/UpdateCustomerResponse.md
   - docs/Models/Operations/UpdateCustomerResponseBody.md
+  - docs/Models/Operations/UpdateCustomerType.md
   - docs/Models/Operations/UpdateDomainRequest.md
   - docs/Models/Operations/UpdateDomainRequestBody.md
   - docs/Models/Operations/UpdateDomainResponse.md
@@ -319,10 +343,12 @@ generatedFiles:
   - src/Models/Components/CountryCode.php
   - src/Models/Components/Customer.php
   - src/Models/Components/Data.php
+  - src/Models/Components/Discount.php
   - src/Models/Components/DomainSchema.php
   - src/Models/Components/Domains.php
   - src/Models/Components/Event.php
   - src/Models/Components/Geo.php
+  - src/Models/Components/Interval.php
   - src/Models/Components/LeadCreatedEvent.php
   - src/Models/Components/LeadCreatedEventClick.php
   - src/Models/Components/LeadCreatedEventData.php
@@ -342,6 +368,7 @@ generatedFiles:
   - src/Models/Components/LinkWebhookEvent.php
   - src/Models/Components/LinkWebhookEventGeo.php
   - src/Models/Components/One.php
+  - src/Models/Components/Partner.php
   - src/Models/Components/Plan.php
   - src/Models/Components/RegisteredDomain.php
   - src/Models/Components/Role.php
@@ -351,14 +378,19 @@ generatedFiles:
   - src/Models/Components/SaleCreatedEventCustomer.php
   - src/Models/Components/SaleCreatedEventData.php
   - src/Models/Components/SaleCreatedEventDataLink.php
+  - src/Models/Components/SaleCreatedEventDiscount.php
   - src/Models/Components/SaleCreatedEventEvent.php
   - src/Models/Components/SaleCreatedEventGeo.php
+  - src/Models/Components/SaleCreatedEventInterval.php
   - src/Models/Components/SaleCreatedEventLink.php
+  - src/Models/Components/SaleCreatedEventPartner.php
+  - src/Models/Components/SaleCreatedEventType.php
   - src/Models/Components/Security.php
   - src/Models/Components/TagSchema.php
   - src/Models/Components/Three.php
   - src/Models/Components/Trigger.php
   - src/Models/Components/Two.php
+  - src/Models/Components/Type.php
   - src/Models/Components/Users.php
   - src/Models/Components/WorkspaceSchema.php
   - src/Models/Errors/BadRequest.php
@@ -406,10 +438,14 @@ generatedFiles:
   - src/Models/Operations/BulkUpdateLinksResponse.php
   - src/Models/Operations/Click.php
   - src/Models/Operations/Color.php
+  - src/Models/Operations/CreateCustomerDiscount.php
+  - src/Models/Operations/CreateCustomerInterval.php
   - src/Models/Operations/CreateCustomerLink.php
+  - src/Models/Operations/CreateCustomerPartner.php
   - src/Models/Operations/CreateCustomerRequestBody.php
   - src/Models/Operations/CreateCustomerResponse.php
   - src/Models/Operations/CreateCustomerResponseBody.php
+  - src/Models/Operations/CreateCustomerType.php
   - src/Models/Operations/CreateDomainRequestBody.php
   - src/Models/Operations/CreateDomainResponse.php
   - src/Models/Operations/CreateEmbedTokenRequestBody.php
@@ -433,11 +469,17 @@ generatedFiles:
   - src/Models/Operations/DeleteTagRequest.php
   - src/Models/Operations/DeleteTagResponse.php
   - src/Models/Operations/DeleteTagResponseBody.php
+  - src/Models/Operations/Discount.php
   - src/Models/Operations/Event.php
+  - src/Models/Operations/GetCustomerDiscount.php
+  - src/Models/Operations/GetCustomerInterval.php
   - src/Models/Operations/GetCustomerLink.php
+  - src/Models/Operations/GetCustomerPartner.php
   - src/Models/Operations/GetCustomerRequest.php
   - src/Models/Operations/GetCustomerResponse.php
   - src/Models/Operations/GetCustomerResponseBody.php
+  - src/Models/Operations/GetCustomerType.php
+  - src/Models/Operations/GetCustomersInterval.php
   - src/Models/Operations/GetCustomersResponse.php
   - src/Models/Operations/GetLinkInfoRequest.php
   - src/Models/Operations/GetLinkInfoResponse.php
@@ -462,6 +504,7 @@ generatedFiles:
   - src/Models/Operations/ListEventsResponse.php
   - src/Models/Operations/One.php
   - src/Models/Operations/Order.php
+  - src/Models/Operations/Partner.php
   - src/Models/Operations/PaymentProcessor.php
   - src/Models/Operations/QueryParamEvent.php
   - src/Models/Operations/QueryParamGroupBy.php
@@ -484,11 +527,16 @@ generatedFiles:
   - src/Models/Operations/TrackSaleResponseBody.php
   - src/Models/Operations/Trigger.php
   - src/Models/Operations/Two.php
+  - src/Models/Operations/Type.php
+  - src/Models/Operations/UpdateCustomerDiscount.php
+  - src/Models/Operations/UpdateCustomerInterval.php
   - src/Models/Operations/UpdateCustomerLink.php
+  - src/Models/Operations/UpdateCustomerPartner.php
   - src/Models/Operations/UpdateCustomerRequest.php
   - src/Models/Operations/UpdateCustomerRequestBody.php
   - src/Models/Operations/UpdateCustomerResponse.php
   - src/Models/Operations/UpdateCustomerResponseBody.php
+  - src/Models/Operations/UpdateCustomerType.php
   - src/Models/Operations/UpdateDomainRequest.php
   - src/Models/Operations/UpdateDomainRequestBody.php
   - src/Models/Operations/UpdateDomainResponse.php

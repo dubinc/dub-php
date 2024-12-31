@@ -80,6 +80,24 @@ class SaleCreatedEventCustomer
     public ?SaleCreatedEventDataLink $link = null;
 
     /**
+     *
+     * @var ?SaleCreatedEventPartner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventPartner|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SaleCreatedEventPartner $partner = null;
+
+    /**
+     *
+     * @var ?SaleCreatedEventDiscount $discount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventDiscount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SaleCreatedEventDiscount $discount = null;
+
+    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
@@ -88,8 +106,10 @@ class SaleCreatedEventCustomer
      * @param  ?string  $avatar
      * @param  ?string  $country
      * @param  ?SaleCreatedEventDataLink  $link
+     * @param  ?SaleCreatedEventPartner  $partner
+     * @param  ?SaleCreatedEventDiscount  $discount
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?SaleCreatedEventDataLink $link = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?SaleCreatedEventDataLink $link = null, ?SaleCreatedEventPartner $partner = null, ?SaleCreatedEventDiscount $discount = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -99,5 +119,7 @@ class SaleCreatedEventCustomer
         $this->avatar = $avatar;
         $this->country = $country;
         $this->link = $link;
+        $this->partner = $partner;
+        $this->discount = $discount;
     }
 }
