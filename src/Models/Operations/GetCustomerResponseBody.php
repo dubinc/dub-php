@@ -81,6 +81,24 @@ class GetCustomerResponseBody
     public ?GetCustomerLink $link = null;
 
     /**
+     *
+     * @var ?GetCustomerPartner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomerPartner|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?GetCustomerPartner $partner = null;
+
+    /**
+     *
+     * @var ?GetCustomerDiscount $discount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomerDiscount|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?GetCustomerDiscount $discount = null;
+
+    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
@@ -89,8 +107,10 @@ class GetCustomerResponseBody
      * @param  ?string  $avatar
      * @param  ?string  $country
      * @param  ?GetCustomerLink  $link
+     * @param  ?GetCustomerPartner  $partner
+     * @param  ?GetCustomerDiscount  $discount
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?GetCustomerLink $link = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?GetCustomerLink $link = null, ?GetCustomerPartner $partner = null, ?GetCustomerDiscount $discount = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -100,5 +120,7 @@ class GetCustomerResponseBody
         $this->avatar = $avatar;
         $this->country = $country;
         $this->link = $link;
+        $this->partner = $partner;
+        $this->discount = $discount;
     }
 }
