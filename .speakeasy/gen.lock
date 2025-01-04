@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: b6c3f376c48f7905069b63adb30d9d19
+  docChecksum: e904bd8a77ea57b3ba18586e860e5b93
   docVersion: 0.0.1
-  speakeasyVersion: 1.460.3
-  generationVersion: 2.484.0
-  releaseVersion: 0.11.11
-  configChecksum: 535e1975ef269ba8c7433805f32fe224
+  speakeasyVersion: 1.462.2
+  generationVersion: 2.486.1
+  releaseVersion: 0.11.12
+  configChecksum: fe4eecb46586b1845737f410ec433c59
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -191,6 +191,7 @@ generatedFiles:
   - docs/Models/Operations/GetCustomerResponseBody.md
   - docs/Models/Operations/GetCustomerType.md
   - docs/Models/Operations/GetCustomersInterval.md
+  - docs/Models/Operations/GetCustomersRequest.md
   - docs/Models/Operations/GetCustomersResponse.md
   - docs/Models/Operations/GetLinkInfoRequest.md
   - docs/Models/Operations/GetLinkInfoResponse.md
@@ -480,6 +481,7 @@ generatedFiles:
   - src/Models/Operations/GetCustomerResponseBody.php
   - src/Models/Operations/GetCustomerType.php
   - src/Models/Operations/GetCustomersInterval.php
+  - src/Models/Operations/GetCustomersRequest.php
   - src/Models/Operations/GetCustomersResponse.php
   - src/Models/Operations/GetLinkInfoRequest.php
   - src/Models/Operations/GetLinkInfoResponse.php
@@ -1328,6 +1330,7 @@ examples:
       parameters:
         path:
           id: "<id>"
+        query: {}
       responses:
         "200":
           application/json: {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "<value>"}
@@ -1354,6 +1357,7 @@ examples:
       parameters:
         path:
           id: "<id>"
+        query: {}
       responses:
         "200":
           application/json: {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "<value>"}
