@@ -14,7 +14,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getCustomers"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->list(\n\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->list(\n    email: 'Kassandra.Daugherty@hotmail.com',\n    externalId: '<id>',\n    includeExpandedFields: false\n\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/customers"]["post"]
     update:
       "x-codeSamples":
@@ -32,13 +32,13 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getCustomer"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->get(\n    id: '<id>'\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n\n\n$response = $sdk->customers->get(\n    id: '<id>',\n    includeExpandedFields: false\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/customers/{id}"]["patch"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "updateCustomer"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$requestBody = new Operations\\UpdateCustomerRequestBody();\n\n$response = $sdk->customers->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$security = 'DUB_API_KEY';\n\n$sdk = Dub\\Dub::builder()->setSecurity($security)->build();\n\n$request = new Operations\\UpdateCustomerRequest(\n    id: '<id>',\n);\n\n$response = $sdk->customers->update(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/domains"]["get"]
     update:
       "x-codeSamples":

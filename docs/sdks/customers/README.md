@@ -140,7 +140,9 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 
 $response = $sdk->customers->get(
-    id: '<id>'
+    id: '<id>',
+    includeExpandedFields: false
+
 );
 
 if ($response->object !== null) {
@@ -150,9 +152,10 @@ if ($response->object !== null) {
 
 ### Parameters
 
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `id`                                          | *string*                                      | :heavy_check_mark:                            | The unique identifier of the customer in Dub. |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `id`                                                                                | *string*                                                                            | :heavy_check_mark:                                                                  | The unique identifier of the customer in Dub.                                       |
+| `includeExpandedFields`                                                             | *?bool*                                                                             | :heavy_minus_sign:                                                                  | Whether to include expanded fields on the customer (`link`, `partner`, `discount`). |
 
 ### Response
 
@@ -193,6 +196,9 @@ $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
 
 $response = $sdk->customers->list(
+    email: 'Kassandra.Daugherty@hotmail.com',
+    externalId: '<id>',
+    includeExpandedFields: false
 
 );
 
@@ -200,6 +206,14 @@ if ($response->responseBodies !== null) {
     // handle response
 }
 ```
+
+### Parameters
+
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `email`                                                                                                     | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `email` field. The value must be a string.      |
+| `externalId`                                                                                                | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `externalId` field. The value must be a string. |
+| `includeExpandedFields`                                                                                     | *?bool*                                                                                                     | :heavy_minus_sign:                                                                                          | Whether to include expanded fields on the customer (`link`, `partner`, `discount`).                         |
 
 ### Response
 
@@ -238,12 +252,12 @@ $security = 'DUB_API_KEY';
 
 $sdk = Dub\Dub::builder()->setSecurity($security)->build();
 
-$requestBody = new Operations\UpdateCustomerRequestBody();
+$request = new Operations\UpdateCustomerRequest(
+    id: '<id>',
+);
 
 $response = $sdk->customers->update(
-    id: '<id>',
-    requestBody: $requestBody
-
+    request: $request
 );
 
 if ($response->object !== null) {
@@ -253,10 +267,9 @@ if ($response->object !== null) {
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `id`                                                                                          | *string*                                                                                      | :heavy_check_mark:                                                                            | The unique identifier of the customer in Dub.                                                 |
-| `requestBody`                                                                                 | [?Operations\UpdateCustomerRequestBody](../../Models/Operations/UpdateCustomerRequestBody.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `$request`                                                                           | [Operations\UpdateCustomerRequest](../../Models/Operations/UpdateCustomerRequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 ### Response
 

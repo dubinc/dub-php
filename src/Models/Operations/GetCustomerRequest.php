@@ -20,10 +20,20 @@ class GetCustomerRequest
     public string $id;
 
     /**
-     * @param  string  $id
+     * Whether to include expanded fields on the customer (`link`, `partner`, `discount`).
+     *
+     * @var ?bool $includeExpandedFields
      */
-    public function __construct(string $id)
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeExpandedFields')]
+    public ?bool $includeExpandedFields = null;
+
+    /**
+     * @param  string  $id
+     * @param  ?bool  $includeExpandedFields
+     */
+    public function __construct(string $id, ?bool $includeExpandedFields = null)
     {
         $this->id = $id;
+        $this->includeExpandedFields = $includeExpandedFields;
     }
 }
