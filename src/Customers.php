@@ -381,23 +381,28 @@ class Customers
      * Retrieve a customer by ID for the authenticated workspace.
      *
      * @param  string  $id
+     * @param  ?bool  $includeExpandedFields
      * @return Operations\GetCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function get(string $id, ?Options $options = null): Operations\GetCustomerResponse
+    public function get(string $id, ?bool $includeExpandedFields = null, ?Options $options = null): Operations\GetCustomerResponse
     {
         $request = new Operations\GetCustomerRequest(
             id: $id,
+            includeExpandedFields: $includeExpandedFields,
         );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', Operations\GetCustomerRequest::class, $request);
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
+
+        $qp = Utils\Utils::getQueryParams(Operations\GetCustomerRequest::class, $request, $urlOverride);
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
         $hookContext = new HookContext('getCustomer', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
@@ -545,20 +550,31 @@ class Customers
      *
      * Retrieve a list of customers for the authenticated workspace.
      *
+     * @param  ?string  $email
+     * @param  ?string  $externalId
+     * @param  ?bool  $includeExpandedFields
      * @return Operations\GetCustomersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?Options $options = null): Operations\GetCustomersResponse
+    public function list(?string $email = null, ?string $externalId = null, ?bool $includeExpandedFields = null, ?Options $options = null): Operations\GetCustomersResponse
     {
+        $request = new Operations\GetCustomersRequest(
+            email: $email,
+            externalId: $externalId,
+            includeExpandedFields: $includeExpandedFields,
+        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
+
+        $qp = Utils\Utils::getQueryParams(Operations\GetCustomersRequest::class, $request, $urlOverride);
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
         $hookContext = new HookContext('getCustomers', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {
@@ -706,17 +722,12 @@ class Customers
      *
      * Update a customer for the authenticated workspace.
      *
-     * @param  string  $id
-     * @param  ?Operations\UpdateCustomerRequestBody  $requestBody
+     * @param  Operations\UpdateCustomerRequest  $request
      * @return Operations\UpdateCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function update(string $id, ?Operations\UpdateCustomerRequestBody $requestBody = null, ?Options $options = null): Operations\UpdateCustomerResponse
+    public function update(Operations\UpdateCustomerRequest $request, ?Options $options = null): Operations\UpdateCustomerResponse
     {
-        $request = new Operations\UpdateCustomerRequest(
-            id: $id,
-            requestBody: $requestBody,
-        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', Operations\UpdateCustomerRequest::class, $request);
         $urlOverride = null;
@@ -725,11 +736,14 @@ class Customers
         if ($body !== null) {
             $httpOptions = array_merge_recursive($httpOptions, $body);
         }
+
+        $qp = Utils\Utils::getQueryParams(Operations\UpdateCustomerRequest::class, $request, $urlOverride);
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('PATCH', $url);
         $hookContext = new HookContext('updateCustomer', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
         try {

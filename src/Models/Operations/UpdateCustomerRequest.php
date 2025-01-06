@@ -20,6 +20,14 @@ class UpdateCustomerRequest
     public string $id;
 
     /**
+     * Whether to include expanded fields on the customer (`link`, `partner`, `discount`).
+     *
+     * @var ?bool $includeExpandedFields
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeExpandedFields')]
+    public ?bool $includeExpandedFields = null;
+
+    /**
      *
      * @var ?UpdateCustomerRequestBody $requestBody
      */
@@ -28,11 +36,13 @@ class UpdateCustomerRequest
 
     /**
      * @param  string  $id
+     * @param  ?bool  $includeExpandedFields
      * @param  ?UpdateCustomerRequestBody  $requestBody
      */
-    public function __construct(string $id, ?UpdateCustomerRequestBody $requestBody = null)
+    public function __construct(string $id, ?bool $includeExpandedFields = null, ?UpdateCustomerRequestBody $requestBody = null)
     {
         $this->id = $id;
+        $this->includeExpandedFields = $includeExpandedFields;
         $this->requestBody = $requestBody;
     }
 }
