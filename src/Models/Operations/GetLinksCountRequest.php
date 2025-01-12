@@ -60,6 +60,14 @@ class GetLinksCountRequest
     public ?string $userId = null;
 
     /**
+     * The ID of the tenant that created the link inside your system. If set, will only return links for the specified tenant.
+     *
+     * @var ?string $tenantId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
+    public ?string $tenantId = null;
+
+    /**
      * The field to group the links by.
      *
      * @var One|Two|Three|null $groupBy
@@ -90,11 +98,12 @@ class GetLinksCountRequest
      * @param  string|array<string>|null  $tagNames
      * @param  ?string  $search
      * @param  ?string  $userId
+     * @param  ?string  $tenantId
      * @param  ?bool  $showArchived
      * @param  ?bool  $withTags
      * @param  One|Two|Three|null  $groupBy
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, One|Two|Three|null $groupBy = null, ?bool $showArchived = true, ?bool $withTags = true)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, One|Two|Three|null $groupBy = null, ?bool $showArchived = true, ?bool $withTags = true)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;
@@ -102,6 +111,7 @@ class GetLinksCountRequest
         $this->tagNames = $tagNames;
         $this->search = $search;
         $this->userId = $userId;
+        $this->tenantId = $tenantId;
         $this->groupBy = $groupBy;
         $this->showArchived = $showArchived;
         $this->withTags = $withTags;

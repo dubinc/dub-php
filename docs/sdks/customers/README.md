@@ -25,9 +25,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\CreateCustomerRequestBody(
     externalId: '<id>',
@@ -80,9 +82,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 
@@ -133,9 +137,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 
@@ -189,9 +195,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 
@@ -248,9 +256,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\UpdateCustomerRequest(
     id: '<id>',

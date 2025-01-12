@@ -68,13 +68,22 @@ class UpdateLinkRequestBody
     public string|array|null $tagNames = null;
 
     /**
-     * This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with `ext_` when passed as a query parameter.
+     * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
      *
      * @var ?string $externalId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $externalId = null;
+
+    /**
+     * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $tenantId = null;
 
     /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tagIds` instead.
@@ -328,6 +337,7 @@ class UpdateLinkRequestBody
      * @param  ?bool  $rewrite
      * @param  ?bool  $doIndex
      * @param  ?string  $externalId
+     * @param  ?string  $tenantId
      * @param  ?string  $tagId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
@@ -349,7 +359,7 @@ class UpdateLinkRequestBody
      * @param  ?string  $programId
      * @param  ?array<string>  $webhookIds
      */
-    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?string $prefix = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $externalId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
+    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?string $prefix = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
     {
         $this->url = $url;
         $this->domain = $domain;
@@ -358,6 +368,7 @@ class UpdateLinkRequestBody
         $this->tagIds = $tagIds;
         $this->tagNames = $tagNames;
         $this->externalId = $externalId;
+        $this->tenantId = $tenantId;
         $this->tagId = $tagId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;

@@ -20,9 +20,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 

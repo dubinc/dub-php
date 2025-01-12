@@ -60,6 +60,14 @@ class GetLinksRequest
     public ?string $userId = null;
 
     /**
+     * The ID of the tenant that created the link inside your system. If set, will only return links for the specified tenant.
+     *
+     * @var ?string $tenantId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
+    public ?string $tenantId = null;
+
+    /**
      * Whether to include archived links in the response. Defaults to `false` if not provided.
      *
      * @var ?bool $showArchived
@@ -76,7 +84,23 @@ class GetLinksRequest
     public ?bool $withTags = null;
 
     /**
-     * The field to sort the links by. The default is `createdAt`, and sort order is always descending.
+     * The field to sort the links by. The default is `createdAt`.
+     *
+     * @var ?SortBy $sortBy
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
+    public ?SortBy $sortBy = null;
+
+    /**
+     * The sort order. The default is `desc`.
+     *
+     * @var ?SortOrder $sortOrder
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
+    public ?SortOrder $sortOrder = null;
+
+    /**
+     * DEPRECATED. Use `sortBy` instead.
      *
      * @var ?Sort $sort
      */
@@ -106,13 +130,16 @@ class GetLinksRequest
      * @param  string|array<string>|null  $tagNames
      * @param  ?string  $search
      * @param  ?string  $userId
+     * @param  ?string  $tenantId
      * @param  ?bool  $showArchived
      * @param  ?bool  $withTags
+     * @param  ?SortBy  $sortBy
+     * @param  ?SortOrder  $sortOrder
      * @param  ?Sort  $sort
      * @param  ?float  $page
      * @param  ?float  $pageSize
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?bool $showArchived = true, ?bool $withTags = true, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?bool $showArchived = true, ?bool $withTags = true, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;
@@ -120,8 +147,11 @@ class GetLinksRequest
         $this->tagNames = $tagNames;
         $this->search = $search;
         $this->userId = $userId;
+        $this->tenantId = $tenantId;
         $this->showArchived = $showArchived;
         $this->withTags = $withTags;
+        $this->sortBy = $sortBy;
+        $this->sortOrder = $sortOrder;
         $this->sort = $sort;
         $this->page = $page;
         $this->pageSize = $pageSize;

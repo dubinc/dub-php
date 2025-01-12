@@ -53,9 +53,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\CreateLinkRequestBody(
     url: 'https://google.com',
@@ -84,9 +86,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\UpsertLinkRequestBody(
     url: 'https://google.com',
@@ -196,9 +200,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\GetLinksRequest(
     page: 1,
@@ -257,9 +263,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 try {
     $request = [
@@ -276,7 +284,7 @@ try {
         request: $request
     );
 
-    if ($response->linkSchemas !== null) {
+    if ($response->responseBodies !== null) {
         // handle response
     }
 } catch (Errors\BadRequestThrowable $e) {
@@ -327,11 +335,12 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
 $sdk = Dub\Dub::builder()
     ->setServerURL('https://api.dub.co')
-    ->setSecurity($security)->build();
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = [
     new Operations\RequestBody(
@@ -347,7 +356,7 @@ $response = $sdk->links->createMany(
     request: $request
 );
 
-if ($response->linkSchemas !== null) {
+if ($response->responseBodies !== null) {
     // handle response
 }
 ```

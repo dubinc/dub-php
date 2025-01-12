@@ -7,9 +7,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\CreateLinkRequestBody(
     url: 'https://google.com',
@@ -36,9 +38,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\UpsertLinkRequestBody(
     url: 'https://google.com',

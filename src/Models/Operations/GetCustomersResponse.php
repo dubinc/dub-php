@@ -35,7 +35,7 @@ class GetCustomersResponse
     /**
      * The list of customers.
      *
-     * @var ?array<ResponseBody> $responseBodies
+     * @var ?array<GetCustomersResponseBody> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class GetCustomersResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<ResponseBody>  $responseBodies
+     * @param  ?array<GetCustomersResponseBody>  $responseBodies
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)
     {

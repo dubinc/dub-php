@@ -74,18 +74,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -93,12 +89,12 @@ class Links
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Components\LinkSchema>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, 'array<mixed>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\BulkCreateLinksResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    linkSchemas: $obj);
+                    responseBodies: $obj);
 
                 return $response;
             } else {
@@ -242,18 +238,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -408,18 +400,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -574,18 +562,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -739,18 +723,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -913,18 +893,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -1078,18 +1054,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -1131,8 +1103,11 @@ class Links
                             tagNames: $request != null ? $request->tagNames : null,
                             search: $request != null ? $request->search : null,
                             userId: $request != null ? $request->userId : null,
+                            tenantId: $request != null ? $request->tenantId : null,
                             showArchived: $request != null ? $request->showArchived : null,
                             withTags: $request != null ? $request->withTags : null,
+                            sortBy: $request != null ? $request->sortBy : null,
+                            sortOrder: $request != null ? $request->sortOrder : null,
                             sort: $request != null ? $request->sort : null,
                             page: $nextPage,
                             pageSize: $request != null ? $request->pageSize : null,
@@ -1297,18 +1272,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -1468,18 +1439,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
@@ -1634,18 +1601,14 @@ class Links
             $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
         } catch (\GuzzleHttp\Exception\GuzzleException $error) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
         if ($statusCode == 400 || $statusCode == 401 || $statusCode == 403 || $statusCode == 404 || $statusCode == 409 || $statusCode == 410 || $statusCode == 422 || $statusCode == 429 || $statusCode >= 400 && $statusCode < 500 || $statusCode == 500 || $statusCode >= 500 && $statusCode < 600) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
-            if ($res !== null) {
-                $httpResponse = $res;
-            }
+            $httpResponse = $res;
         }
         if ($statusCode == 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {

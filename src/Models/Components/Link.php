@@ -121,12 +121,20 @@ class Link
     public ?bool $trackConversion = null;
 
     /**
-     * This is the ID of the link in your database that is unique across your workspace. If set, it can be used to identify the link in future API requests. Must be prefixed with 'ext_' when passed as a query parameter.
+     * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
      *
      * @var ?string $externalId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
     public ?string $externalId;
+
+    /**
+     * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    public ?string $tenantId;
 
     /**
      *
@@ -331,7 +339,7 @@ class Link
     public ?float $clicks = null;
 
     /**
-     * [BETA]: The number of leads the short links has generated.
+     * The number of leads the short links has generated.
      *
      * @var ?float $leads
      */
@@ -340,7 +348,7 @@ class Link
     public ?float $leads = null;
 
     /**
-     * [BETA]: The number of sales the short links has generated.
+     * The number of sales the short links has generated.
      *
      * @var ?float $sales
      */
@@ -349,7 +357,7 @@ class Link
     public ?float $sales = null;
 
     /**
-     * [BETA]: The total dollar amount of sales the short links has generated (in cents).
+     * The total dollar amount of sales the short links has generated (in cents).
      *
      * @var ?float $saleAmount
      */
@@ -373,6 +381,7 @@ class Link
      * @param  string  $projectId
      * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
+     * @param  ?string  $tenantId
      * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
@@ -402,7 +411,7 @@ class Link
      * @param  ?float  $saleAmount
      * @param  ?string  $programId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?ClickEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $programId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?ClickEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $programId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -419,6 +428,7 @@ class Link
         $this->projectId = $projectId;
         $this->trackConversion = $trackConversion;
         $this->externalId = $externalId;
+        $this->tenantId = $tenantId;
         $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
