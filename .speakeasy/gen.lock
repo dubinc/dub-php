@@ -1,22 +1,22 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: e904bd8a77ea57b3ba18586e860e5b93
+  docChecksum: a6a1e65c1a9ddd2d1b445252e12b8157
   docVersion: 0.0.1
-  speakeasyVersion: 1.462.2
-  generationVersion: 2.486.1
-  releaseVersion: 0.11.12
-  configChecksum: fe4eecb46586b1845737f410ec433c59
+  speakeasyVersion: 1.468.2
+  generationVersion: 2.493.4
+  releaseVersion: 0.11.13
+  configChecksum: 481be501d2f37979cdf2544785028b08
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.7
+    core: 3.7.8
     deprecations: 2.81.1
     errors: 0.3.0
-    examples: 2.81.3
+    examples: 2.81.4
     flattening: 2.81.1
     globalSecurity: 2.81.7
     globalSecurityFlattening: 0.1.1
@@ -30,7 +30,6 @@ features:
     unions: 0.1.4
 generatedFiles:
   - .gitattributes
-  - CONTRIBUTING.md
   - USAGE.md
   - composer.json
   - docs/Models/Components/AnalyticsBrowsers.md
@@ -51,6 +50,7 @@ generatedFiles:
   - docs/Models/Components/Click.md
   - docs/Models/Components/ClickEvent.md
   - docs/Models/Components/ClickEventGeo.md
+  - docs/Models/Components/Code.md
   - docs/Models/Components/Color.md
   - docs/Models/Components/Continent.md
   - docs/Models/Components/ContinentCode.md
@@ -78,6 +78,7 @@ generatedFiles:
   - docs/Models/Components/LinkClickedEventEvent.md
   - docs/Models/Components/LinkClickedEventGeo.md
   - docs/Models/Components/LinkClickedEventLink.md
+  - docs/Models/Components/LinkErrorSchema.md
   - docs/Models/Components/LinkGeoTargeting.md
   - docs/Models/Components/LinkSchema.md
   - docs/Models/Components/LinkWebhookEvent.md
@@ -193,6 +194,7 @@ generatedFiles:
   - docs/Models/Operations/GetCustomersInterval.md
   - docs/Models/Operations/GetCustomersRequest.md
   - docs/Models/Operations/GetCustomersResponse.md
+  - docs/Models/Operations/GetCustomersResponseBody.md
   - docs/Models/Operations/GetLinkInfoRequest.md
   - docs/Models/Operations/GetLinkInfoResponse.md
   - docs/Models/Operations/GetLinksCountQueryParamTagIds.md
@@ -225,6 +227,8 @@ generatedFiles:
   - docs/Models/Operations/QueryParamEvent.md
   - docs/Models/Operations/QueryParamGroupBy.md
   - docs/Models/Operations/QueryParamInterval.md
+  - docs/Models/Operations/QueryParamSortBy.md
+  - docs/Models/Operations/QueryParamSortOrder.md
   - docs/Models/Operations/QueryParamTagIds.md
   - docs/Models/Operations/QueryParamTagNames.md
   - docs/Models/Operations/QueryParamTrigger.md
@@ -237,6 +241,7 @@ generatedFiles:
   - docs/Models/Operations/Sale.md
   - docs/Models/Operations/Sort.md
   - docs/Models/Operations/SortBy.md
+  - docs/Models/Operations/SortOrder.md
   - docs/Models/Operations/TagIds.md
   - docs/Models/Operations/TagNames.md
   - docs/Models/Operations/Three.md
@@ -337,6 +342,7 @@ generatedFiles:
   - src/Models/Components/Click.php
   - src/Models/Components/ClickEvent.php
   - src/Models/Components/ClickEventGeo.php
+  - src/Models/Components/Code.php
   - src/Models/Components/Color.php
   - src/Models/Components/Continent.php
   - src/Models/Components/ContinentCode.php
@@ -364,6 +370,7 @@ generatedFiles:
   - src/Models/Components/LinkClickedEventEvent.php
   - src/Models/Components/LinkClickedEventGeo.php
   - src/Models/Components/LinkClickedEventLink.php
+  - src/Models/Components/LinkErrorSchema.php
   - src/Models/Components/LinkGeoTargeting.php
   - src/Models/Components/LinkSchema.php
   - src/Models/Components/LinkWebhookEvent.php
@@ -483,6 +490,7 @@ generatedFiles:
   - src/Models/Operations/GetCustomersInterval.php
   - src/Models/Operations/GetCustomersRequest.php
   - src/Models/Operations/GetCustomersResponse.php
+  - src/Models/Operations/GetCustomersResponseBody.php
   - src/Models/Operations/GetLinkInfoRequest.php
   - src/Models/Operations/GetLinkInfoResponse.php
   - src/Models/Operations/GetLinksCountRequest.php
@@ -511,14 +519,16 @@ generatedFiles:
   - src/Models/Operations/QueryParamEvent.php
   - src/Models/Operations/QueryParamGroupBy.php
   - src/Models/Operations/QueryParamInterval.php
+  - src/Models/Operations/QueryParamSortBy.php
+  - src/Models/Operations/QueryParamSortOrder.php
   - src/Models/Operations/QueryParamTrigger.php
   - src/Models/Operations/RequestBody.php
-  - src/Models/Operations/ResponseBody.php
   - src/Models/Operations/RetrieveAnalyticsRequest.php
   - src/Models/Operations/RetrieveAnalyticsResponse.php
   - src/Models/Operations/Sale.php
   - src/Models/Operations/Sort.php
   - src/Models/Operations/SortBy.php
+  - src/Models/Operations/SortOrder.php
   - src/Models/Operations/Three.php
   - src/Models/Operations/TrackLeadRequestBody.php
   - src/Models/Operations/TrackLeadResponse.php
@@ -646,7 +656,7 @@ examples:
         "500":
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
         "200":
-          application/json: {"id": "<id>", "domain": "lighthearted-kilogram.name", "key": "<key>", "url": "https://impartial-dump.com", "trackConversion": false, "externalId": "<value>", "archived": true, "expiresAt": "<value>", "expiredUrl": "https://staid-garment.org", "password": "uL1dlrnUXohO_B9", "proxy": false, "title": "<value>", "description": "Advanced incremental contingency", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": true, "doIndex": true, "ios": "<value>", "android": "<value>", "publicStats": true, "tagId": "<value>", "tags": [], "webhookIds": ["<value>"], "comments": "<value>", "shortLink": "http://sweaty-executor.org", "qrCode": "http://impassioned-beast.name", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "1009.66", "lastClicked": "<value>", "leads": "3577.62", "sales": "6519.85", "saleAmount": "1325.85", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
+          application/json: {"id": "<id>", "domain": "lighthearted-kilogram.name", "key": "<key>", "url": "https://impartial-dump.com", "trackConversion": false, "externalId": "<value>", "tenantId": "<id>", "archived": true, "expiresAt": "<value>", "expiredUrl": "https://staid-garment.org", "password": "uL1dlrnUXohO_B9", "proxy": false, "title": "<value>", "description": "Advanced incremental contingency", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": true, "doIndex": true, "ios": "<value>", "android": "<value>", "publicStats": true, "tagId": "<value>", "tags": [], "webhookIds": ["<value>"], "comments": "<value>", "shortLink": "http://sweaty-executor.org", "qrCode": "http://impassioned-beast.name", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "1009.66", "lastClicked": "<value>", "leads": "3577.62", "sales": "6519.85", "saleAmount": "1325.85", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
   getLinksCount:
     speakeasy-default-get-links-count:
       responses:
@@ -696,7 +706,7 @@ examples:
         "500":
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
         "200":
-          application/json: {"id": "<id>", "domain": "ringed-blow.name", "key": "<key>", "url": "https://monumental-spaghetti.name", "trackConversion": false, "externalId": "<value>", "archived": true, "expiresAt": "<value>", "expiredUrl": "https://joyous-relative.info", "password": "H9v5zJBmg5IWAUj", "proxy": false, "title": "<value>", "description": "Seamless exuding focus group", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": true, "doIndex": true, "ios": "<value>", "android": "<value>", "publicStats": true, "tagId": "<value>", "tags": [], "webhookIds": ["<value>", "<value>"], "comments": "<value>", "shortLink": "http://mundane-bee.biz", "qrCode": "http://fuzzy-fishbone.biz", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "8930.92", "lastClicked": "<value>", "leads": "2433.54", "sales": "21.08", "saleAmount": "7802.62", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
+          application/json: {"id": "<id>", "domain": "ringed-blow.name", "key": "<key>", "url": "https://monumental-spaghetti.name", "trackConversion": false, "externalId": "<value>", "tenantId": "<id>", "archived": true, "expiresAt": "<value>", "expiredUrl": "https://joyous-relative.info", "password": "H9v5zJBmg5IWAUj", "proxy": false, "title": "<value>", "description": "Seamless exuding focus group", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": true, "doIndex": true, "ios": "<value>", "android": "<value>", "publicStats": true, "tagId": "<value>", "tags": [], "webhookIds": ["<value>", "<value>"], "comments": "<value>", "shortLink": "http://mundane-bee.biz", "qrCode": "http://fuzzy-fishbone.biz", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "8930.92", "lastClicked": "<value>", "leads": "2433.54", "sales": "21.08", "saleAmount": "7802.62", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
   deleteLink:
     speakeasy-default-delete-link:
       parameters:
@@ -750,7 +760,7 @@ examples:
         "500":
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
         "200":
-          application/json: {"id": "<id>", "domain": "tidy-amazon.name", "key": "<key>", "url": "http://grand-pupa.org", "trackConversion": false, "externalId": "<value>", "archived": false, "expiresAt": "<value>", "expiredUrl": "https://limited-hutch.org", "password": "vPKDk8CkuAMJjbG", "proxy": true, "title": "<value>", "description": "Assimilated encompassing pricing structure", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": false, "doIndex": true, "ios": "<value>", "android": "<value>", "publicStats": false, "tagId": "<value>", "tags": [], "webhookIds": ["<value>", "<value>", "<value>"], "comments": "<value>", "shortLink": "http://boiling-latitude.info", "qrCode": "http://exciting-curry.info", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "3529.33", "lastClicked": "<value>", "leads": "6476.71", "sales": "8246.79", "saleAmount": "4518.6", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
+          application/json: {"id": "<id>", "domain": "tidy-amazon.name", "key": "<key>", "url": "http://grand-pupa.org", "trackConversion": false, "externalId": "<value>", "tenantId": "<id>", "archived": false, "expiresAt": "<value>", "expiredUrl": "https://limited-hutch.org", "password": "vPKDk8CkuAMJjbG", "proxy": true, "title": "<value>", "description": "Assimilated encompassing pricing structure", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": false, "doIndex": true, "ios": "<value>", "android": "<value>", "publicStats": false, "tagId": "<value>", "tags": [], "webhookIds": ["<value>", "<value>", "<value>"], "comments": "<value>", "shortLink": "http://boiling-latitude.info", "qrCode": "http://exciting-curry.info", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "3529.33", "lastClicked": "<value>", "leads": "6476.71", "sales": "8246.79", "saleAmount": "4518.6", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
   bulkCreateLinks:
     speakeasy-default-bulk-create-links:
       requestBody:
@@ -851,7 +861,7 @@ examples:
         "500":
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
         "200":
-          application/json: {"id": "<id>", "domain": "monthly-hometown.info", "key": "<key>", "url": "https://honored-equality.info", "trackConversion": false, "externalId": "<value>", "archived": true, "expiresAt": "<value>", "expiredUrl": "http://smart-toenail.com", "password": "ZDcrQrPcHBWicBf", "proxy": false, "title": "<value>", "description": "Synergized 3rd generation local area network", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": true, "doIndex": false, "ios": "<value>", "android": "<value>", "publicStats": true, "tagId": "<value>", "tags": [], "webhookIds": ["<value>", "<value>"], "comments": "<value>", "shortLink": "https://anguished-wiseguy.org", "qrCode": "https://well-documented-snowman.com", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "8112.06", "lastClicked": "<value>", "leads": "3096.04", "sales": "8082.68", "saleAmount": "4842.28", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
+          application/json: {"id": "<id>", "domain": "monthly-hometown.info", "key": "<key>", "url": "https://honored-equality.info", "trackConversion": false, "externalId": "<value>", "tenantId": "<id>", "archived": true, "expiresAt": "<value>", "expiredUrl": "http://smart-toenail.com", "password": "ZDcrQrPcHBWicBf", "proxy": false, "title": "<value>", "description": "Synergized 3rd generation local area network", "image": "https://loremflickr.com/640/480", "video": "<value>", "rewrite": true, "doIndex": false, "ios": "<value>", "android": "<value>", "publicStats": true, "tagId": "<value>", "tags": [], "webhookIds": ["<value>", "<value>"], "comments": "<value>", "shortLink": "https://anguished-wiseguy.org", "qrCode": "https://well-documented-snowman.com", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<value>", "workspaceId": "<value>", "clicks": "8112.06", "lastClicked": "<value>", "leads": "3096.04", "sales": "8082.68", "saleAmount": "4842.28", "createdAt": "<value>", "updatedAt": "<value>", "projectId": "<value>", "programId": "<id>"}
   getQRCode:
     speakeasy-default-get-QR-code:
       parameters:

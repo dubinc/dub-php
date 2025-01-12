@@ -41,6 +41,15 @@ class Data
     public string|array|null $tagNames = null;
 
     /**
+     * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $tenantId = null;
+
+    /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tagIds` instead.
      *
      * @var ?string $tagId
@@ -288,6 +297,7 @@ class Data
      * @param  ?bool  $proxy
      * @param  ?bool  $rewrite
      * @param  ?bool  $doIndex
+     * @param  ?string  $tenantId
      * @param  ?string  $tagId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
@@ -309,11 +319,12 @@ class Data
      * @param  ?string  $programId
      * @param  ?array<string>  $webhookIds
      */
-    public function __construct(?string $url = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
+    public function __construct(?string $url = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $tenantId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
     {
         $this->url = $url;
         $this->tagIds = $tagIds;
         $this->tagNames = $tagNames;
+        $this->tenantId = $tenantId;
         $this->tagId = $tagId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;

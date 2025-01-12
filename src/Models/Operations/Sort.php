@@ -9,10 +9,15 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The field to sort the links by. The default is `createdAt`, and sort order is always descending. */
+/**
+ * DEPRECATED. Use `sortBy` instead.
+ *
+ * @deprecated  enum: This will be removed in a future release, please migrate away from it as soon as possible.
+ */
 enum Sort: string
 {
     case CreatedAt = 'createdAt';
     case Clicks = 'clicks';
+    case SaleAmount = 'saleAmount';
     case LastClicked = 'lastClicked';
 }

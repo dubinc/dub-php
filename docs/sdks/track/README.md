@@ -22,9 +22,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\TrackLeadRequestBody(
     clickId: '<id>',
@@ -79,9 +81,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\TrackSaleRequestBody(
     amount: 996500,

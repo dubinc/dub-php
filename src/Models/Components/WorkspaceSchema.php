@@ -215,7 +215,7 @@ class WorkspaceSchema
     public ?string $paymentFailedAt;
 
     /**
-     * [BETA – Dub Conversions]: The Stripe Connect ID of the workspace.
+     * The Stripe Connect ID of the workspace.
      *
      * @var ?string $stripeConnectId
      */

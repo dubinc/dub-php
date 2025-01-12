@@ -9,8 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-
+/** The field to sort the links by. The default is `createdAt`. */
 enum SortBy: string
 {
-    case Timestamp = 'timestamp';
+    case CreatedAt = 'createdAt';
+    case Clicks = 'clicks';
+    case SaleAmount = 'saleAmount';
+    case LastClicked = 'lastClicked';
 }

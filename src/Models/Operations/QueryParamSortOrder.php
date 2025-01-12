@@ -9,12 +9,8 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/**
- * DEPRECATED. Use `sortOrder` instead.
- *
- * @deprecated  enum: This will be removed in a future release, please migrate away from it as soon as possible.
- */
-enum Order: string
+/** The sort order. The default is `desc`. */
+enum QueryParamSortOrder: string
 {
     case Asc = 'asc';
     case Desc = 'desc';

@@ -30,9 +30,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = [
     new Operations\RequestBody(
@@ -48,7 +50,7 @@ $response = $sdk->links->createMany(
     request: $request
 );
 
-if ($response->linkSchemas !== null) {
+if ($response->responseBodies !== null) {
     // handle response
 }
 ```
@@ -91,9 +93,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 
@@ -148,9 +152,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\BulkUpdateLinksRequestBody(
     data: new Operations\Data(
@@ -209,9 +215,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\CreateLinkRequestBody(
     url: 'https://google.com',
@@ -268,9 +276,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 
@@ -321,9 +331,11 @@ require 'vendor/autoload.php';
 
 use Dub;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 
 
@@ -382,9 +394,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\GetLinksRequest(
     page: 1,
@@ -442,9 +456,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\GetLinksCountRequest();
 
@@ -496,9 +512,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $requestBody = new Operations\UpdateLinkRequestBody(
     url: 'https://google.com',
@@ -559,9 +577,11 @@ require 'vendor/autoload.php';
 use Dub;
 use Dub\Models\Operations;
 
-$security = 'DUB_API_KEY';
-
-$sdk = Dub\Dub::builder()->setSecurity($security)->build();
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
 
 $request = new Operations\UpsertLinkRequestBody(
     url: 'https://google.com',

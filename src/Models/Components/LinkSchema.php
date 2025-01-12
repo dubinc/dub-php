@@ -102,12 +102,20 @@ class LinkSchema
     public string $projectId;
 
     /**
-     * This is the ID of the link in your database that is unique across your workspace. If set, it can be used to identify the link in future API requests. Must be prefixed with 'ext_' when passed as a query parameter.
+     * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
      *
      * @var ?string $externalId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
     public ?string $externalId;
+
+    /**
+     * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    public ?string $tenantId;
 
     /**
      * The date and time when the short link will expire in ISO-8601 format.
@@ -281,7 +289,7 @@ class LinkSchema
     public ?string $programId;
 
     /**
-     * [BETA] Whether to track conversions for the short link.
+     * Whether to track conversions for the short link.
      *
      * @var ?bool $trackConversion
      */
@@ -344,7 +352,7 @@ class LinkSchema
     public ?float $clicks = null;
 
     /**
-     * [BETA]: The number of leads the short links has generated.
+     * The number of leads the short links has generated.
      *
      * @var ?float $leads
      */
@@ -353,7 +361,7 @@ class LinkSchema
     public ?float $leads = null;
 
     /**
-     * [BETA]: The number of sales the short links has generated.
+     * The number of sales the short links has generated.
      *
      * @var ?float $sales
      */
@@ -362,7 +370,7 @@ class LinkSchema
     public ?float $sales = null;
 
     /**
-     * [BETA]: The total dollar amount of sales the short links has generated (in cents).
+     * The total dollar amount of sales the short links has generated (in cents).
      *
      * @var ?float $saleAmount
      */
@@ -384,6 +392,7 @@ class LinkSchema
      * @param  string  $projectId
      * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
+     * @param  ?string  $tenantId
      * @param  ?bool  $archived
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
@@ -415,7 +424,7 @@ class LinkSchema
      * @param  ?float  $saleAmount
      * @param  ?string  $programId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $programId = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $programId = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -429,6 +438,7 @@ class LinkSchema
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
         $this->externalId = $externalId;
+        $this->tenantId = $tenantId;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
