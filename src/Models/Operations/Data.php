@@ -21,6 +21,34 @@ class Data
     public ?string $url = null;
 
     /**
+     * Whether to track conversions for the short link. Defaults to `false` if not provided.
+     *
+     * @var ?bool $trackConversion
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $trackConversion = null;
+
+    /**
+     * Whether the short link is archived. Defaults to `false` if not provided.
+     *
+     * @var ?bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $archived = null;
+
+    /**
+     * Deprecated: Use `dashboard` instead. Whether the short link's stats are publicly accessible. Defaults to `false` if not provided.
+     *
+     * @var ?bool $publicStats
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $publicStats = null;
+
+    /**
      * The unique IDs of the tags assigned to the short link.
      *
      * @var string|array<string>|null $tagIds
@@ -39,6 +67,33 @@ class Data
     #[\Speakeasy\Serializer\Annotation\Type('string|array<string>')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $tagNames = null;
+
+    /**
+     * Whether the short link uses Custom Social Media Cards feature. Defaults to `false` if not provided.
+     *
+     * @var ?bool $proxy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $proxy = null;
+
+    /**
+     * Whether the short link uses link cloaking. Defaults to `false` if not provided.
+     *
+     * @var ?bool $rewrite
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $rewrite = null;
+
+    /**
+     * Allow search engines to index your short link. Defaults to `false` if not provided. Learn more: https://d.to/noindex
+     *
+     * @var ?bool $doIndex
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $doIndex = null;
 
     /**
      * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
@@ -233,61 +288,6 @@ class Data
     public ?array $webhookIds = null;
 
     /**
-     * Whether to track conversions for the short link.
-     *
-     * @var ?bool $trackConversion
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $trackConversion = null;
-
-    /**
-     * Whether the short link is archived.
-     *
-     * @var ?bool $archived
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $archived = null;
-
-    /**
-     * Deprecated: Use `dashboard` instead. Whether the short link's stats are publicly accessible.
-     *
-     * @var ?bool $publicStats
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $publicStats = null;
-
-    /**
-     * Whether the short link uses Custom Social Media Cards feature.
-     *
-     * @var ?bool $proxy
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $proxy = null;
-
-    /**
-     * Whether the short link uses link cloaking.
-     *
-     * @var ?bool $rewrite
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $rewrite = null;
-
-    /**
-     * Allow search engines to index your short link. Defaults to `false` if not provided. Learn more: https://d.to/noindex
-     *
-     * @var ?bool $doIndex
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $doIndex = null;
-
-    /**
      * @param  ?string  $url
      * @param  ?bool  $trackConversion
      * @param  ?bool  $archived
@@ -319,11 +319,17 @@ class Data
      * @param  ?string  $programId
      * @param  ?array<string>  $webhookIds
      */
-    public function __construct(?string $url = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $tenantId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $publicStats = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false)
+    public function __construct(?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $tenantId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null)
     {
         $this->url = $url;
+        $this->trackConversion = $trackConversion;
+        $this->archived = $archived;
+        $this->publicStats = $publicStats;
         $this->tagIds = $tagIds;
         $this->tagNames = $tagNames;
+        $this->proxy = $proxy;
+        $this->rewrite = $rewrite;
+        $this->doIndex = $doIndex;
         $this->tenantId = $tenantId;
         $this->tagId = $tagId;
         $this->comments = $comments;
@@ -345,11 +351,5 @@ class Data
         $this->ref = $ref;
         $this->programId = $programId;
         $this->webhookIds = $webhookIds;
-        $this->trackConversion = $trackConversion;
-        $this->archived = $archived;
-        $this->publicStats = $publicStats;
-        $this->proxy = $proxy;
-        $this->rewrite = $rewrite;
-        $this->doIndex = $doIndex;
     }
 }

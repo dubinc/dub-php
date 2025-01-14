@@ -19,6 +19,7 @@ Dub.co API: Dub is link management infrastructure for companies to create market
 * [dub/dub-php](#dubdub-php)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
+  * [Authentication](#authentication)
   * [Available Resources and Operations](#available-resources-and-operations)
   * [Pagination](#pagination)
   * [Error Handling](#error-handling)
@@ -109,6 +110,52 @@ if ($response->linkSchema !== null) {
 }
 ```
 <!-- End SDK Example Usage [usage] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name    | Type | Scheme      |
+| ------- | ---- | ----------- |
+| `token` | http | HTTP Bearer |
+
+To authenticate with the API the `token` parameter must be set when initializing the SDK. For example:
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = [
+    new Operations\RequestBody(
+        url: 'https://google.com',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        externalId: '123456',
+    ),
+];
+
+$response = $sdk->links->createMany(
+    request: $request
+);
+
+if ($response->responseBodies !== null) {
+    // handle response
+}
+```
+<!-- End Authentication [security] -->
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
