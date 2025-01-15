@@ -36,14 +36,24 @@ class UpdateWorkspaceRequestBody
     public ?string $logo = null;
 
     /**
+     *
+     * @var ?bool $conversionEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('conversionEnabled')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $conversionEnabled = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $slug
      * @param  ?string  $logo
+     * @param  ?bool  $conversionEnabled
      */
-    public function __construct(?string $name = null, ?string $slug = null, ?string $logo = null)
+    public function __construct(?string $name = null, ?string $slug = null, ?string $logo = null, ?bool $conversionEnabled = null)
     {
         $this->name = $name;
         $this->slug = $slug;
         $this->logo = $logo;
+        $this->conversionEnabled = $conversionEnabled;
     }
 }

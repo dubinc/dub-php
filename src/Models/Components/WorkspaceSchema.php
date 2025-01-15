@@ -141,7 +141,7 @@ class WorkspaceSchema
     public float $aiLimit;
 
     /**
-     * Whether the workspace has conversion tracking enabled (d.to/conversions).
+     * Whether the workspace has conversion tracking enabled automatically for new links (d.to/conversions).
      *
      * @var bool $conversionEnabled
      */
@@ -241,6 +241,15 @@ class WorkspaceSchema
     public ?array $flags = null;
 
     /**
+     * The miscellaneous key-value store of the workspace.
+     *
+     * @var ?array<string, mixed> $store
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('store')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $store;
+
+    /**
      * The logo of the workspace.
      *
      * @var ?string $logo
@@ -278,9 +287,10 @@ class WorkspaceSchema
      * @param  ?string  $stripeConnectId
      * @param  ?string  $payoutMethodId
      * @param  ?array<string, bool>  $flags
+     * @param  ?array<string, mixed>  $store
      * @param  ?string  $logo
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $payoutMethodId = null, ?array $flags = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?string $payoutMethodId = null, ?array $flags = null, ?array $store = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -310,6 +320,7 @@ class WorkspaceSchema
         $this->stripeConnectId = $stripeConnectId;
         $this->payoutMethodId = $payoutMethodId;
         $this->flags = $flags;
+        $this->store = $store;
         $this->logo = $logo;
     }
 }
