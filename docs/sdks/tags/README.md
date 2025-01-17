@@ -133,6 +133,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
+use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -140,16 +141,25 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-
+$request = new Operations\GetTagsRequest(
+    page: 1,
+    pageSize: 50,
+);
 
 $response = $sdk->tags->list(
-
+    request: $request
 );
 
 if ($response->tagSchemas !== null) {
     // handle response
 }
 ```
+
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `$request`                                                             | [Operations\GetTagsRequest](../../Models/Operations/GetTagsRequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 ### Response
 
