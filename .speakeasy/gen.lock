@@ -1,22 +1,22 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 810d019618d329428080463b7bf165c7
+  docChecksum: c7226fc27f4fb4b6c492bc7d8bb0ce6d
   docVersion: 0.0.1
-  speakeasyVersion: 1.468.6
-  generationVersion: 2.493.13
-  releaseVersion: 0.11.15
-  configChecksum: adde5023a17aa572053f9421707ab5d0
+  speakeasyVersion: 1.468.9
+  generationVersion: 2.493.21
+  releaseVersion: 0.11.16
+  configChecksum: aaa0dc1fbd29c009e7f1bcb8a4d18cfa
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.8
+    core: 3.7.9
     deprecations: 2.81.1
     errors: 0.3.0
-    examples: 2.81.4
+    examples: 2.81.5
     flattening: 2.81.1
     globalSecurity: 2.81.7
     globalSecurityFlattening: 0.1.1
@@ -208,10 +208,14 @@ generatedFiles:
   - docs/Models/Operations/GetMetatagsResponseBody.md
   - docs/Models/Operations/GetQRCodeRequest.md
   - docs/Models/Operations/GetQRCodeResponse.md
+  - docs/Models/Operations/GetTagsQueryParamSortBy.md
+  - docs/Models/Operations/GetTagsQueryParamSortOrder.md
+  - docs/Models/Operations/GetTagsRequest.md
   - docs/Models/Operations/GetTagsResponse.md
   - docs/Models/Operations/GetWorkspaceRequest.md
   - docs/Models/Operations/GetWorkspaceResponse.md
   - docs/Models/Operations/GroupBy.md
+  - docs/Models/Operations/Ids.md
   - docs/Models/Operations/Interval.md
   - docs/Models/Operations/Level.md
   - docs/Models/Operations/Link.md
@@ -502,6 +506,9 @@ generatedFiles:
   - src/Models/Operations/GetMetatagsResponseBody.php
   - src/Models/Operations/GetQRCodeRequest.php
   - src/Models/Operations/GetQRCodeResponse.php
+  - src/Models/Operations/GetTagsQueryParamSortBy.php
+  - src/Models/Operations/GetTagsQueryParamSortOrder.php
+  - src/Models/Operations/GetTagsRequest.php
   - src/Models/Operations/GetTagsResponse.php
   - src/Models/Operations/GetWorkspaceRequest.php
   - src/Models/Operations/GetWorkspaceResponse.php
@@ -1006,6 +1013,10 @@ examples:
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
   getTags:
     speakeasy-default-get-tags:
+      parameters:
+        query:
+          page: 1
+          pageSize: 50
       responses:
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}

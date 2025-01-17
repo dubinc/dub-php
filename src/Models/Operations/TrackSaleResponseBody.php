@@ -21,26 +21,26 @@ class TrackSaleResponseBody
 
     /**
      *
-     * @var TrackSaleCustomer $customer
+     * @var ?TrackSaleCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleCustomer')]
-    public TrackSaleCustomer $customer;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleCustomer|null')]
+    public ?TrackSaleCustomer $customer;
 
     /**
      *
-     * @var Sale $sale
+     * @var ?Sale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale')]
-    public Sale $sale;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale|null')]
+    public ?Sale $sale;
 
     /**
      * @param  string  $eventName
-     * @param  TrackSaleCustomer  $customer
-     * @param  Sale  $sale
+     * @param  ?TrackSaleCustomer  $customer
+     * @param  ?Sale  $sale
      */
-    public function __construct(string $eventName, TrackSaleCustomer $customer, Sale $sale)
+    public function __construct(string $eventName, ?TrackSaleCustomer $customer = null, ?Sale $sale = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;
