@@ -5,15 +5,17 @@
 
 ### Available Operations
 
-* [create](#create) - Create a customer
+* [~~create~~](#create) - Create a customer :warning: **Deprecated**
 * [delete](#delete) - Delete a customer
 * [get](#get) - Retrieve a customer
 * [list](#list) - Retrieve a list of customers
 * [update](#update) - Update a customer
 
-## create
+## ~~create~~
 
-Create a customer for the authenticated workspace.
+[Deprecated]: Customer creation can only be done via tracking a lead event. Use the /track/lead endpoint instead.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
