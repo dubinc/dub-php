@@ -47,14 +47,16 @@ class Customers
     /**
      * Create a customer
      *
-     * Create a customer for the authenticated workspace.
+     * [Deprecated]: Customer creation can only be done via tracking a lead event. Use the /track/lead endpoint instead.
      *
      * @param  ?Operations\CreateCustomerRequestBody  $request
      * @return Operations\CreateCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
+     * @deprecated  method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     public function create(?Operations\CreateCustomerRequestBody $request = null, ?Options $options = null): Operations\CreateCustomerResponse
     {
+        trigger_error('Method '.__METHOD__.' is deprecated', E_USER_DEPRECATED);
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
         $urlOverride = null;

@@ -169,7 +169,7 @@ if ($response->responseBodies !== null) {
 
 ### [customers](docs/sdks/customers/README.md)
 
-* [create](docs/sdks/customers/README.md#create) - Create a customer
+* [~~create~~](docs/sdks/customers/README.md#create) - Create a customer :warning: **Deprecated**
 * [delete](docs/sdks/customers/README.md#delete) - Delete a customer
 * [get](docs/sdks/customers/README.md#get) - Retrieve a customer
 * [list](docs/sdks/customers/README.md#list) - Retrieve a list of customers
