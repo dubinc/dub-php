@@ -189,6 +189,46 @@ class RetrieveAnalyticsRequest
     public ?bool $root = null;
 
     /**
+     * The UTM source of the short link.
+     *
+     * @var ?string $utmSource
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_source')]
+    public ?string $utmSource = null;
+
+    /**
+     * The UTM medium of the short link.
+     *
+     * @var ?string $utmMedium
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_medium')]
+    public ?string $utmMedium = null;
+
+    /**
+     * The UTM campaign of the short link.
+     *
+     * @var ?string $utmCampaign
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_campaign')]
+    public ?string $utmCampaign = null;
+
+    /**
+     * The UTM term of the short link.
+     *
+     * @var ?string $utmTerm
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_term')]
+    public ?string $utmTerm = null;
+
+    /**
+     * The UTM content of the short link.
+     *
+     * @var ?string $utmContent
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_content')]
+    public ?string $utmContent = null;
+
+    /**
      * The type of event to retrieve analytics for. Defaults to `clicks`.
      *
      * @var ?Event $event
@@ -197,7 +237,7 @@ class RetrieveAnalyticsRequest
     public ?Event $event = null;
 
     /**
-     * The parameter to group the analytics data points by. Defaults to `count` if undefined. Note that `trigger` is deprecated (use `triggers` instead), but kept for backwards compatibility.
+     * The parameter to group the analytics data points by. Defaults to `count` if undefined.
      *
      * @var ?QueryParamGroupBy $groupBy
      */
@@ -238,8 +278,13 @@ class RetrieveAnalyticsRequest
      * @param  string|array<string>|null  $tagIds
      * @param  ?bool  $qr
      * @param  ?bool  $root
+     * @param  ?string  $utmSource
+     * @param  ?string  $utmMedium
+     * @param  ?string  $utmCampaign
+     * @param  ?string  $utmTerm
+     * @param  ?string  $utmContent
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -263,6 +308,11 @@ class RetrieveAnalyticsRequest
         $this->tagIds = $tagIds;
         $this->qr = $qr;
         $this->root = $root;
+        $this->utmSource = $utmSource;
+        $this->utmMedium = $utmMedium;
+        $this->utmCampaign = $utmCampaign;
+        $this->utmTerm = $utmTerm;
+        $this->utmContent = $utmContent;
         $this->event = $event;
         $this->groupBy = $groupBy;
         $this->timezone = $timezone;
