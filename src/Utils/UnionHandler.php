@@ -152,8 +152,7 @@ final class UnionHandler implements SubscribingHandlerInterface
 
             $typeToTry = $possibleType['name'];
             if ($typeToTry === 'array') {
-                $typeNames = array_map(fn ($t) => $t['name'], $possibleType['params']);
-                $typeToTry = 'array<'.implode(', ', $typeNames).'>';
+                $typeToTry = $this->resolveArrayTypes($possibleType);
             }
             if ($typeToTry === 'enum') {
                 $typeToTry = $possibleType['params'][0]['name'];
@@ -314,5 +313,27 @@ final class UnionHandler implements SubscribingHandlerInterface
         }
 
         return $type;
+    }
+
+
+    /**
+     * @param  array<string, mixed>  $possibleType
+     * @return string
+     */
+    private function resolveArrayTypes(array $possibleType): string
+    {
+        $typeNames = [];
+        foreach ($possibleType['params'] as $param) {
+
+            if ($param['name'] === 'union') {
+                $innerTypes = array_map(fn ($t) => $t['name'], $param['params']);
+                $typeNames[] = $typeToTry = implode('|', $innerTypes);
+            } else {
+                $typeNames[] = $param['name'];
+            }
+        }
+        $typeToTry = 'array<'.implode(', ', $typeNames).'>';
+
+        return $typeToTry;
     }
 }

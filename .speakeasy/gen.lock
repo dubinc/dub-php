@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 46f65792e2db963b01085754a661b72a
+  docChecksum: adaa2bd5ce5c9f12fb83c88e3ea2c2e0
   docVersion: 0.0.1
-  speakeasyVersion: 1.470.1
-  generationVersion: 2.493.34
-  releaseVersion: 0.11.18
-  configChecksum: fb0c3e6deeb5176675b76b59511a00ea
+  speakeasyVersion: 1.476.2
+  generationVersion: 2.495.1
+  releaseVersion: 0.11.19
+  configChecksum: 7f6c2c3dbe10624b74890ad4c3629b15
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.9
+    core: 3.7.10
     deprecations: 2.81.1
     errors: 0.3.0
     examples: 2.81.5
@@ -66,11 +66,22 @@ generatedFiles:
   - docs/Models/Components/Interval.md
   - docs/Models/Components/LeadCreatedEvent.md
   - docs/Models/Components/LeadCreatedEventClick.md
+  - docs/Models/Components/LeadCreatedEventCustomer.md
   - docs/Models/Components/LeadCreatedEventData.md
   - docs/Models/Components/LeadCreatedEventDataLink.md
+  - docs/Models/Components/LeadCreatedEventDiscount.md
   - docs/Models/Components/LeadCreatedEventEvent.md
   - docs/Models/Components/LeadCreatedEventGeo.md
+  - docs/Models/Components/LeadCreatedEventInterval.md
   - docs/Models/Components/LeadCreatedEventLink.md
+  - docs/Models/Components/LeadCreatedEventPartner.md
+  - docs/Models/Components/LeadCreatedEventType.md
+  - docs/Models/Components/LeadEvent.md
+  - docs/Models/Components/LeadEventClick.md
+  - docs/Models/Components/LeadEventCustomerLink.md
+  - docs/Models/Components/LeadEventEvent.md
+  - docs/Models/Components/LeadEventGeo.md
+  - docs/Models/Components/LeadEventLink.md
   - docs/Models/Components/Link.md
   - docs/Models/Components/LinkClickedEvent.md
   - docs/Models/Components/LinkClickedEventClick.md
@@ -86,6 +97,7 @@ generatedFiles:
   - docs/Models/Components/LinkWebhookEventGeo.md
   - docs/Models/Components/One.md
   - docs/Models/Components/Partner.md
+  - docs/Models/Components/PaymentProcessor.md
   - docs/Models/Components/Plan.md
   - docs/Models/Components/RegisteredDomain.md
   - docs/Models/Components/Role.md
@@ -101,7 +113,19 @@ generatedFiles:
   - docs/Models/Components/SaleCreatedEventInterval.md
   - docs/Models/Components/SaleCreatedEventLink.md
   - docs/Models/Components/SaleCreatedEventPartner.md
+  - docs/Models/Components/SaleCreatedEventSale.md
   - docs/Models/Components/SaleCreatedEventType.md
+  - docs/Models/Components/SaleEvent.md
+  - docs/Models/Components/SaleEventClick.md
+  - docs/Models/Components/SaleEventCustomer.md
+  - docs/Models/Components/SaleEventCustomerLink.md
+  - docs/Models/Components/SaleEventDiscount.md
+  - docs/Models/Components/SaleEventEvent.md
+  - docs/Models/Components/SaleEventGeo.md
+  - docs/Models/Components/SaleEventInterval.md
+  - docs/Models/Components/SaleEventLink.md
+  - docs/Models/Components/SaleEventPartner.md
+  - docs/Models/Components/SaleEventType.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/TagSchema.md
   - docs/Models/Components/Three.md
@@ -150,6 +174,7 @@ generatedFiles:
   - docs/Models/Operations/BulkUpdateLinksTagNames.md
   - docs/Models/Operations/Click.md
   - docs/Models/Operations/Color.md
+  - docs/Models/Operations/Country.md
   - docs/Models/Operations/CreateCustomerDiscount.md
   - docs/Models/Operations/CreateCustomerInterval.md
   - docs/Models/Operations/CreateCustomerLink.md
@@ -165,6 +190,13 @@ generatedFiles:
   - docs/Models/Operations/CreateEmbedTokenResponseBody.md
   - docs/Models/Operations/CreateLinkRequestBody.md
   - docs/Models/Operations/CreateLinkResponse.md
+  - docs/Models/Operations/CreatePartnerDiscount.md
+  - docs/Models/Operations/CreatePartnerInterval.md
+  - docs/Models/Operations/CreatePartnerLink.md
+  - docs/Models/Operations/CreatePartnerRequestBody.md
+  - docs/Models/Operations/CreatePartnerResponse.md
+  - docs/Models/Operations/CreatePartnerResponseBody.md
+  - docs/Models/Operations/CreatePartnerType.md
   - docs/Models/Operations/CreateTagRequestBody.md
   - docs/Models/Operations/CreateTagResponse.md
   - docs/Models/Operations/Customer.md
@@ -224,6 +256,7 @@ generatedFiles:
   - docs/Models/Operations/ListEventsQueryParamTagIds.md
   - docs/Models/Operations/ListEventsRequest.md
   - docs/Models/Operations/ListEventsResponse.md
+  - docs/Models/Operations/ListEventsResponseBody.md
   - docs/Models/Operations/One.md
   - docs/Models/Operations/Order.md
   - docs/Models/Operations/Partner.md
@@ -246,6 +279,7 @@ generatedFiles:
   - docs/Models/Operations/Sort.md
   - docs/Models/Operations/SortBy.md
   - docs/Models/Operations/SortOrder.md
+  - docs/Models/Operations/Status.md
   - docs/Models/Operations/TagIds.md
   - docs/Models/Operations/TagNames.md
   - docs/Models/Operations/Three.md
@@ -295,6 +329,7 @@ generatedFiles:
   - docs/sdks/events/README.md
   - docs/sdks/links/README.md
   - docs/sdks/metatags/README.md
+  - docs/sdks/partners/README.md
   - docs/sdks/qrcodes/README.md
   - docs/sdks/tags/README.md
   - docs/sdks/track/README.md
@@ -362,11 +397,22 @@ generatedFiles:
   - src/Models/Components/Interval.php
   - src/Models/Components/LeadCreatedEvent.php
   - src/Models/Components/LeadCreatedEventClick.php
+  - src/Models/Components/LeadCreatedEventCustomer.php
   - src/Models/Components/LeadCreatedEventData.php
   - src/Models/Components/LeadCreatedEventDataLink.php
+  - src/Models/Components/LeadCreatedEventDiscount.php
   - src/Models/Components/LeadCreatedEventEvent.php
   - src/Models/Components/LeadCreatedEventGeo.php
+  - src/Models/Components/LeadCreatedEventInterval.php
   - src/Models/Components/LeadCreatedEventLink.php
+  - src/Models/Components/LeadCreatedEventPartner.php
+  - src/Models/Components/LeadCreatedEventType.php
+  - src/Models/Components/LeadEvent.php
+  - src/Models/Components/LeadEventClick.php
+  - src/Models/Components/LeadEventCustomerLink.php
+  - src/Models/Components/LeadEventEvent.php
+  - src/Models/Components/LeadEventGeo.php
+  - src/Models/Components/LeadEventLink.php
   - src/Models/Components/Link.php
   - src/Models/Components/LinkClickedEvent.php
   - src/Models/Components/LinkClickedEventClick.php
@@ -381,6 +427,7 @@ generatedFiles:
   - src/Models/Components/LinkWebhookEventGeo.php
   - src/Models/Components/One.php
   - src/Models/Components/Partner.php
+  - src/Models/Components/PaymentProcessor.php
   - src/Models/Components/Plan.php
   - src/Models/Components/RegisteredDomain.php
   - src/Models/Components/Role.php
@@ -396,7 +443,19 @@ generatedFiles:
   - src/Models/Components/SaleCreatedEventInterval.php
   - src/Models/Components/SaleCreatedEventLink.php
   - src/Models/Components/SaleCreatedEventPartner.php
+  - src/Models/Components/SaleCreatedEventSale.php
   - src/Models/Components/SaleCreatedEventType.php
+  - src/Models/Components/SaleEvent.php
+  - src/Models/Components/SaleEventClick.php
+  - src/Models/Components/SaleEventCustomer.php
+  - src/Models/Components/SaleEventCustomerLink.php
+  - src/Models/Components/SaleEventDiscount.php
+  - src/Models/Components/SaleEventEvent.php
+  - src/Models/Components/SaleEventGeo.php
+  - src/Models/Components/SaleEventInterval.php
+  - src/Models/Components/SaleEventLink.php
+  - src/Models/Components/SaleEventPartner.php
+  - src/Models/Components/SaleEventType.php
   - src/Models/Components/Security.php
   - src/Models/Components/TagSchema.php
   - src/Models/Components/Three.php
@@ -450,6 +509,7 @@ generatedFiles:
   - src/Models/Operations/BulkUpdateLinksResponse.php
   - src/Models/Operations/Click.php
   - src/Models/Operations/Color.php
+  - src/Models/Operations/Country.php
   - src/Models/Operations/CreateCustomerDiscount.php
   - src/Models/Operations/CreateCustomerInterval.php
   - src/Models/Operations/CreateCustomerLink.php
@@ -465,6 +525,13 @@ generatedFiles:
   - src/Models/Operations/CreateEmbedTokenResponseBody.php
   - src/Models/Operations/CreateLinkRequestBody.php
   - src/Models/Operations/CreateLinkResponse.php
+  - src/Models/Operations/CreatePartnerDiscount.php
+  - src/Models/Operations/CreatePartnerInterval.php
+  - src/Models/Operations/CreatePartnerLink.php
+  - src/Models/Operations/CreatePartnerRequestBody.php
+  - src/Models/Operations/CreatePartnerResponse.php
+  - src/Models/Operations/CreatePartnerResponseBody.php
+  - src/Models/Operations/CreatePartnerType.php
   - src/Models/Operations/CreateTagRequestBody.php
   - src/Models/Operations/CreateTagResponse.php
   - src/Models/Operations/Customer.php
@@ -536,6 +603,7 @@ generatedFiles:
   - src/Models/Operations/Sort.php
   - src/Models/Operations/SortBy.php
   - src/Models/Operations/SortOrder.php
+  - src/Models/Operations/Status.php
   - src/Models/Operations/Three.php
   - src/Models/Operations/TrackLeadRequestBody.php
   - src/Models/Operations/TrackLeadResponse.php
@@ -571,6 +639,7 @@ generatedFiles:
   - src/Models/Operations/UpdateWorkspaceResponse.php
   - src/Models/Operations/UpsertLinkRequestBody.php
   - src/Models/Operations/UpsertLinkResponse.php
+  - src/Partners.php
   - src/QRCodes.php
   - src/SDKConfiguration.php
   - src/Tags.php
@@ -1452,5 +1521,28 @@ examples:
       responses:
         "200":
           application/json: {"title": "Dub.co - Link Management for Modern Marketing Teams", "description": "Dub.co is the open-source link management infrastructure ...", "image": "https://assets.dub.co/thumbnail.jpg"}
+  createPartner:
+    speakeasy-default-create-partner:
+      responses:
+        "201":
+          application/json: {"id": "<id>", "name": "<value>", "email": "Loyal79@yahoo.com", "image": "https://loremflickr.com/1/679?lock=7139282333236917", "country": "Slovenia", "bio": "<value>", "stripeConnectId": "<id>", "payoutsEnabled": false, "createdAt": "1730216446017", "updatedAt": "1738019902359", "status": "pending", "link": {"id": "<id>", "shortLink": "https://agile-defendant.biz/", "domain": "better-fedora.biz", "key": "<key>", "url": "https://calculating-pearl.info/", "clicks": 0, "leads": 0, "sales": 0, "saleAmount": 0}, "commissionAmount": 365.21, "earnings": 6216.36}
+        "400":
+          application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
+        "401":
+          application/json: {"error": {"code": "unauthorized", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unauthorized"}}
+        "403":
+          application/json: {"error": {"code": "forbidden", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#forbidden"}}
+        "404":
+          application/json: {"error": {"code": "not_found", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#not-found"}}
+        "409":
+          application/json: {"error": {"code": "conflict", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#conflict"}}
+        "410":
+          application/json: {"error": {"code": "invite_expired", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#invite-expired"}}
+        "422":
+          application/json: {"error": {"code": "unprocessable_entity", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unprocessable-entity"}}
+        "429":
+          application/json: {"error": {"code": "rate_limit_exceeded", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#rate-limit_exceeded"}}
+        "500":
+          application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
 examplesVersion: 1.0.0
 generatedTests: {}

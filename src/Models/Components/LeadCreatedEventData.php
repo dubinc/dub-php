@@ -20,11 +20,11 @@ class LeadCreatedEventData
 
     /**
      *
-     * @var Customer $customer
+     * @var LeadCreatedEventCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Customer')]
-    public Customer $customer;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventCustomer')]
+    public LeadCreatedEventCustomer $customer;
 
     /**
      *
@@ -44,11 +44,11 @@ class LeadCreatedEventData
 
     /**
      * @param  string  $eventName
-     * @param  Customer  $customer
+     * @param  LeadCreatedEventCustomer  $customer
      * @param  LeadCreatedEventClick  $click
      * @param  LeadCreatedEventLink  $link
      */
-    public function __construct(string $eventName, Customer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link)
+    public function __construct(string $eventName, LeadCreatedEventCustomer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;

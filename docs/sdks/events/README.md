@@ -41,7 +41,7 @@ $response = $sdk->events->list(
     request: $request
 );
 
-if ($response->clickEvents !== null) {
+if ($response->oneOf !== null) {
     // handle response
 }
 ```

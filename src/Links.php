@@ -89,7 +89,7 @@ class Links
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<mixed>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Components\LinkSchema|\Dub\Models\Components\LinkErrorSchema>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\BulkCreateLinksResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
