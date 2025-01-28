@@ -80,7 +80,7 @@ class RequestBody
      * @var string|array<string>|null $tagIds
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tagIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $tagIds = null;
 
@@ -90,7 +90,7 @@ class RequestBody
      * @var string|array<string>|null $tagNames
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tagNames')]
-    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|array<string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public string|array|null $tagNames = null;
 

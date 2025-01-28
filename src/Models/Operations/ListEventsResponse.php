@@ -35,21 +35,21 @@ class ListEventsResponse
     /**
      * A list of events
      *
-     * @var ?array<Components\ClickEvent> $clickEvents
+     * @var array<Components\ClickEvent>|array<Components\LeadEvent>|array<Components\SaleEvent>|null $oneOf
      */
-    public ?array $clickEvents = null;
+    public ?array $oneOf = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\ClickEvent>  $clickEvents
+     * @param  array<Components\ClickEvent>|array<Components\LeadEvent>|array<Components\SaleEvent>|null  $oneOf
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $clickEvents = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $oneOf = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->clickEvents = $clickEvents;
+        $this->oneOf = $oneOf;
     }
 }

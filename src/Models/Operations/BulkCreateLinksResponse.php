@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-
+use Dub\Models\Components;
 class BulkCreateLinksResponse
 {
     /**
@@ -35,7 +35,7 @@ class BulkCreateLinksResponse
     /**
      * The created links
      *
-     * @var ?array<mixed> $responseBodies
+     * @var ?array<Components\LinkSchema|Components\LinkErrorSchema> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class BulkCreateLinksResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<mixed>  $responseBodies
+     * @param  ?array<Components\LinkSchema|Components\LinkErrorSchema>  $responseBodies
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)
     {

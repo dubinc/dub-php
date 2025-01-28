@@ -44,20 +44,20 @@ class SaleCreatedEventData
 
     /**
      *
-     * @var Sale $sale
+     * @var SaleCreatedEventSale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
-    public Sale $sale;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventSale')]
+    public SaleCreatedEventSale $sale;
 
     /**
      * @param  string  $eventName
      * @param  SaleCreatedEventCustomer  $customer
      * @param  SaleCreatedEventClick  $click
      * @param  SaleCreatedEventLink  $link
-     * @param  Sale  $sale
+     * @param  SaleCreatedEventSale  $sale
      */
-    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, Sale $sale)
+    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, SaleCreatedEventSale $sale)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;

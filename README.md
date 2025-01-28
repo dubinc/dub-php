@@ -208,6 +208,10 @@ if ($response->responseBodies !== null) {
 
 * [get](docs/sdks/metatags/README.md#get) - Retrieve the metatags for a URL
 
+### [partners](docs/sdks/partners/README.md)
+
+* [create](docs/sdks/partners/README.md#create) - Create a new partner
+
 ### [qrCodes](docs/sdks/qrcodes/README.md)
 
 * [get](docs/sdks/qrcodes/README.md#get) - Retrieve a QR code
