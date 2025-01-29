@@ -9,3 +9,4 @@
 | `slug`              | *?string*           | :heavy_minus_sign:  | N/A                 |
 | `logo`              | *?string*           | :heavy_minus_sign:  | N/A                 |
 | `conversionEnabled` | *?bool*             | :heavy_minus_sign:  | N/A                 |
+| `allowedHostnames`  | array<*string*>     | :heavy_minus_sign:  | N/A                 |
