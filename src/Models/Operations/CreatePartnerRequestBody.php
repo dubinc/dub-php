@@ -44,6 +44,16 @@ class CreatePartnerRequestBody
     public string $username;
 
     /**
+     * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
+     *
+     * @var ?LinkProps $linkProps
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('linkProps')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\LinkProps|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?LinkProps $linkProps = null;
+
+    /**
      * Avatar image for the partner – if not provided, a default avatar will be used.
      *
      * @var ?string $image
@@ -76,16 +86,18 @@ class CreatePartnerRequestBody
      * @param  string  $name
      * @param  string  $email
      * @param  string  $username
+     * @param  ?LinkProps  $linkProps
      * @param  ?string  $image
      * @param  ?Country  $country
      * @param  ?string  $description
      */
-    public function __construct(string $programId, string $name, string $email, string $username, ?string $image = null, ?Country $country = null, ?string $description = null)
+    public function __construct(string $programId, string $name, string $email, string $username, ?LinkProps $linkProps = null, ?string $image = null, ?Country $country = null, ?string $description = null)
     {
         $this->programId = $programId;
         $this->name = $name;
         $this->email = $email;
         $this->username = $username;
+        $this->linkProps = $linkProps;
         $this->image = $image;
         $this->country = $country;
         $this->description = $description;

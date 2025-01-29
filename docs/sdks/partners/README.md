@@ -32,6 +32,12 @@ $request = new Operations\CreatePartnerRequestBody(
     name: '<value>',
     email: 'Loyal79@yahoo.com',
     username: 'Aaliyah_Borer',
+    linkProps: new Operations\LinkProps(
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        externalId: '123456',
+    ),
 );
 
 $response = $sdk->partners->create(

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: adaa2bd5ce5c9f12fb83c88e3ea2c2e0
+  docChecksum: 84dee82a0645f42cc2cc52337e45fbfb
   docVersion: 0.0.1
-  speakeasyVersion: 1.476.2
-  generationVersion: 2.495.1
-  releaseVersion: 0.11.19
-  configChecksum: 7f6c2c3dbe10624b74890ad4c3629b15
+  speakeasyVersion: 1.477.0
+  generationVersion: 2.497.0
+  releaseVersion: 0.11.20
+  configChecksum: 8dda342d026d0277608571e08ac9e217
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -196,6 +196,8 @@ generatedFiles:
   - docs/Models/Operations/CreatePartnerRequestBody.md
   - docs/Models/Operations/CreatePartnerResponse.md
   - docs/Models/Operations/CreatePartnerResponseBody.md
+  - docs/Models/Operations/CreatePartnerTagIds.md
+  - docs/Models/Operations/CreatePartnerTagNames.md
   - docs/Models/Operations/CreatePartnerType.md
   - docs/Models/Operations/CreateTagRequestBody.md
   - docs/Models/Operations/CreateTagResponse.md
@@ -251,6 +253,7 @@ generatedFiles:
   - docs/Models/Operations/Interval.md
   - docs/Models/Operations/Level.md
   - docs/Models/Operations/Link.md
+  - docs/Models/Operations/LinkProps.md
   - docs/Models/Operations/ListDomainsRequest.md
   - docs/Models/Operations/ListDomainsResponse.md
   - docs/Models/Operations/ListEventsQueryParamTagIds.md
@@ -582,6 +585,7 @@ generatedFiles:
   - src/Models/Operations/Interval.php
   - src/Models/Operations/Level.php
   - src/Models/Operations/Link.php
+  - src/Models/Operations/LinkProps.php
   - src/Models/Operations/ListDomainsRequest.php
   - src/Models/Operations/ListDomainsResponse.php
   - src/Models/Operations/ListEventsRequest.php
@@ -1412,7 +1416,7 @@ examples:
           idOrSlug: "<value>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "business extra", "stripeId": "<id>", "billingCycleStart": 5588.34, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "usage": 5442.21, "usageLimit": 5212.35, "linksUsage": 9699.61, "linksLimit": 4580.49, "salesUsage": 4508.24, "salesLimit": 2627.95, "domainsLimit": 2134.57, "tagsLimit": 9371.46, "usersLimit": 4381.42, "aiUsage": 8013.73, "aiLimit": 788.88, "conversionEnabled": true, "dotLinkClaimed": true, "partnersEnabled": true, "createdAt": "1723222620163", "users": [{"role": "owner"}, {"role": "member"}, {"role": "member"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>"}}
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "business extra", "stripeId": "<id>", "billingCycleStart": 5588.34, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "usage": 5442.21, "usageLimit": 5212.35, "linksUsage": 9699.61, "linksLimit": 4580.49, "salesUsage": 4508.24, "salesLimit": 2627.95, "domainsLimit": 2134.57, "tagsLimit": 9371.46, "usersLimit": 4381.42, "aiUsage": 8013.73, "aiLimit": 788.88, "conversionEnabled": true, "dotLinkClaimed": true, "partnersEnabled": true, "createdAt": "1723222620163", "users": [{"role": "owner"}, {"role": "member"}, {"role": "member"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>"}, "allowedHostnames": ["dub.sh"]}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1438,7 +1442,7 @@ examples:
           idOrSlug: "<value>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "enterprise", "stripeId": "<id>", "billingCycleStart": 5971.29, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "usage": 3446.2, "usageLimit": 9914.64, "linksUsage": 6276.9, "linksLimit": 4888.52, "salesUsage": 9840.08, "salesLimit": 540.62, "domainsLimit": 8965.01, "tagsLimit": 4468.63, "usersLimit": 3115.07, "aiUsage": 2494.4, "aiLimit": 1395.79, "conversionEnabled": false, "dotLinkClaimed": false, "partnersEnabled": true, "createdAt": "1720441243584", "users": [{"role": "member"}, {"role": "owner"}, {"role": "owner"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>", "key1": "<value>", "key2": "<value>"}}
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "enterprise", "stripeId": "<id>", "billingCycleStart": 5971.29, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "usage": 3446.2, "usageLimit": 9914.64, "linksUsage": 6276.9, "linksLimit": 4888.52, "salesUsage": 9840.08, "salesLimit": 540.62, "domainsLimit": 8965.01, "tagsLimit": 4468.63, "usersLimit": 3115.07, "aiUsage": 2494.4, "aiLimit": 1395.79, "conversionEnabled": false, "dotLinkClaimed": false, "partnersEnabled": true, "createdAt": "1720441243584", "users": [{"role": "member"}, {"role": "owner"}, {"role": "owner"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "allowedHostnames": ["dub.sh"]}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1523,6 +1527,8 @@ examples:
           application/json: {"title": "Dub.co - Link Management for Modern Marketing Teams", "description": "Dub.co is the open-source link management infrastructure ...", "image": "https://assets.dub.co/thumbnail.jpg"}
   createPartner:
     speakeasy-default-create-partner:
+      requestBody:
+        application/json: {"programId": "<id>", "name": "<value>", "email": "Loyal79@yahoo.com", "username": "Aaliyah_Borer", "linkProps": {"externalId": "123456", "tagIds": ["clux0rgak00011..."]}}
       responses:
         "201":
           application/json: {"id": "<id>", "name": "<value>", "email": "Loyal79@yahoo.com", "image": "https://loremflickr.com/1/679?lock=7139282333236917", "country": "Slovenia", "bio": "<value>", "stripeConnectId": "<id>", "payoutsEnabled": false, "createdAt": "1730216446017", "updatedAt": "1738019902359", "status": "pending", "link": {"id": "<id>", "shortLink": "https://agile-defendant.biz/", "domain": "better-fedora.biz", "key": "<key>", "url": "https://calculating-pearl.info/", "clicks": 0, "leads": 0, "sales": 0, "saleAmount": 0}, "commissionAmount": 365.21, "earnings": 6216.36}
