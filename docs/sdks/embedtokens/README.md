@@ -28,7 +28,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\CreateEmbedTokenRequestBody(
-    linkId: '<id>',
+    programId: '<id>',
 );
 
 $response = $sdk->embedTokens->create(

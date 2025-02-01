@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Dub\Models\Errors;
 
-
 use Dub\Utils;
 /** UnprocessableEntity - The request was well-formed but was unable to be followed due to semantic errors. */
 class UnprocessableEntity

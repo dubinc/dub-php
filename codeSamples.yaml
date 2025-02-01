@@ -8,7 +8,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "retrieveAnalytics"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrieveAnalyticsRequest(\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n);\n\n$response = $sdk->analytics->retrieve(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrieveAnalyticsRequest(\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n);\n\n$response = $sdk->analytics->retrieve(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
   - target: $["paths"]["/customers"]["get"]
     update:
       "x-codeSamples":
@@ -44,7 +44,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createDomain"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    notFoundUrl: 'https://acme.com/not-found',\n    archived: false,\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->create(\n    request: $request\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    notFoundUrl: 'https://acme.com/not-found',\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->create(\n    request: $request\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/domains/{slug}"]["delete"]
     update:
       "x-codeSamples":
@@ -56,19 +56,19 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "updateDomain"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    notFoundUrl: 'https://acme.com/not-found',\n    archived: false,\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->update(\n    slug: 'acme.com',\n    requestBody: $requestBody\n\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateDomainRequestBody(\n    slug: 'acme.com',\n    expiredUrl: 'https://acme.com/expired',\n    notFoundUrl: 'https://acme.com/not-found',\n    placeholder: 'https://dub.co/help/article/what-is-dub',\n);\n\n$response = $sdk->domains->update(\n    slug: 'acme.com',\n    requestBody: $requestBody\n\n);\n\nif ($response->domainSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/events"]["get"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "listEvents"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListEventsRequest(\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n);\n\n$response = $sdk->events->list(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListEventsRequest(\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n);\n\n$response = $sdk->events->list(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
   - target: $["paths"]["/links"]["get"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "getLinks"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetLinksRequest(\n    page: 1,\n    pageSize: 50,\n);\n\n$responses = $sdk->links->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetLinksRequest();\n\n$responses = $sdk->links->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
   - target: $["paths"]["/links"]["post"]
     update:
       "x-codeSamples":
@@ -146,7 +146,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getTags"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetTagsRequest(\n    page: 1,\n    pageSize: 50,\n);\n\n$response = $sdk->tags->list(\n    request: $request\n);\n\nif ($response->tagSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetTagsRequest();\n\n$response = $sdk->tags->list(\n    request: $request\n);\n\nif ($response->tagSchemas !== null) {\n    // handle response\n}"
   - target: $["paths"]["/tags"]["post"]
     update:
       "x-codeSamples":
@@ -170,7 +170,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createEmbedToken"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateEmbedTokenRequestBody(\n    linkId: '<id>',\n);\n\n$response = $sdk->embedTokens->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateEmbedTokenRequestBody(\n    programId: '<id>',\n);\n\n$response = $sdk->embedTokens->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/lead"]["post"]
     update:
       "x-codeSamples":
@@ -182,7 +182,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "trackSale"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    amount: 996500,\n    paymentProcessor: Operations\\PaymentProcessor::Paddle,\n    eventName: 'Purchase',\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    amount: 996500,\n    paymentProcessor: Operations\\PaymentProcessor::Paddle,\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/workspaces/{idOrSlug}"]["get"]
     update:
       "x-codeSamples":

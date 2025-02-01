@@ -96,6 +96,15 @@ class LinkProps
     public ?string $tenantId = null;
 
     /**
+     * The ID of the partner the short link is associated with.
+     *
+     * @var ?string $partnerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $partnerId = null;
+
+    /**
      * The comments for the short link.
      *
      * @var ?string $comments
@@ -249,6 +258,7 @@ class LinkProps
      * @param  ?bool  $doIndex
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
+     * @param  ?string  $partnerId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
@@ -266,7 +276,7 @@ class LinkProps
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      */
-    public function __construct(?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null)
+    public function __construct(?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $partnerId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null)
     {
         $this->prefix = $prefix;
         $this->archived = $archived;
@@ -277,6 +287,7 @@ class LinkProps
         $this->doIndex = $doIndex;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
+        $this->partnerId = $partnerId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
