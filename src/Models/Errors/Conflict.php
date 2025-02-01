@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Dub\Models\Errors;
 
-
 use Dub\Utils;
 /** Conflict - This response is sent when a request conflicts with the current state of the server. */
 class Conflict

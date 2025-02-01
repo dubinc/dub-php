@@ -13,16 +13,36 @@ class CreateEmbedTokenRequestBody
 {
     /**
      *
-     * @var string $linkId
+     * @var string $programId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('linkId')]
-    public string $linkId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    public string $programId;
 
     /**
-     * @param  string  $linkId
+     *
+     * @var ?string $partnerId
      */
-    public function __construct(string $linkId)
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $partnerId = null;
+
+    /**
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $tenantId = null;
+
+    /**
+     * @param  string  $programId
+     * @param  ?string  $partnerId
+     * @param  ?string  $tenantId
+     */
+    public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null)
     {
-        $this->linkId = $linkId;
+        $this->programId = $programId;
+        $this->partnerId = $partnerId;
+        $this->tenantId = $tenantId;
     }
 }

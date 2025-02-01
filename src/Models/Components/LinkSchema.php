@@ -118,6 +118,22 @@ class LinkSchema
     public ?string $tenantId;
 
     /**
+     * The ID of the program the short link is associated with.
+     *
+     * @var ?string $programId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    public ?string $programId;
+
+    /**
+     * The ID of the partner the short link is associated with.
+     *
+     * @var ?string $partnerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
+    public ?string $partnerId;
+
+    /**
      * The date and time when the short link will expire in ISO-8601 format.
      *
      * @var ?string $expiresAt
@@ -281,14 +297,6 @@ class LinkSchema
     public ?string $lastClicked;
 
     /**
-     * The ID of the program the short link is associated with.
-     *
-     * @var ?string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public ?string $programId;
-
-    /**
      * Whether to track conversions for the short link.
      *
      * @var ?bool $trackConversion
@@ -393,6 +401,8 @@ class LinkSchema
      * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
+     * @param  ?string  $programId
+     * @param  ?string  $partnerId
      * @param  ?bool  $archived
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
@@ -422,9 +432,8 @@ class LinkSchema
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
-     * @param  ?string  $programId
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $programId = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -439,6 +448,8 @@ class LinkSchema
         $this->projectId = $projectId;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
+        $this->programId = $programId;
+        $this->partnerId = $partnerId;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
@@ -459,7 +470,6 @@ class LinkSchema
         $this->utmContent = $utmContent;
         $this->userId = $userId;
         $this->lastClicked = $lastClicked;
-        $this->programId = $programId;
         $this->trackConversion = $trackConversion;
         $this->archived = $archived;
         $this->proxy = $proxy;

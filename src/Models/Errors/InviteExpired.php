@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Dub\Models\Errors;
 
-
 use Dub\Utils;
 /** InviteExpired - This response is sent when the requested content has been permanently deleted from server, with no forwarding address. */
 class InviteExpired
