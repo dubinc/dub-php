@@ -140,6 +140,24 @@ class UpsertLinkRequestBody
     public ?string $tenantId = null;
 
     /**
+     * The ID of the program the short link is associated with.
+     *
+     * @var ?string $programId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $programId = null;
+
+    /**
+     * The ID of the partner the short link is associated with.
+     *
+     * @var ?string $partnerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $partnerId = null;
+
+    /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tagIds` instead.
      *
      * @var ?string $tagId
@@ -304,15 +322,6 @@ class UpsertLinkRequestBody
     public ?string $ref = null;
 
     /**
-     * The ID of the program the short link is associated with.
-     *
-     * @var ?string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $programId = null;
-
-    /**
      * An array of webhook IDs to trigger when the link is clicked. These webhooks will receive click event data.
      *
      * @var ?array<string> $webhookIds
@@ -337,6 +346,8 @@ class UpsertLinkRequestBody
      * @param  ?bool  $doIndex
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
+     * @param  ?string  $programId
+     * @param  ?string  $partnerId
      * @param  ?string  $tagId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
@@ -355,10 +366,9 @@ class UpsertLinkRequestBody
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      * @param  ?string  $ref
-     * @param  ?string  $programId
      * @param  ?array<string>  $webhookIds
      */
-    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?string $programId = null, ?array $webhookIds = null)
+    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null)
     {
         $this->url = $url;
         $this->domain = $domain;
@@ -374,6 +384,8 @@ class UpsertLinkRequestBody
         $this->doIndex = $doIndex;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
+        $this->programId = $programId;
+        $this->partnerId = $partnerId;
         $this->tagId = $tagId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;
@@ -392,7 +404,6 @@ class UpsertLinkRequestBody
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
         $this->ref = $ref;
-        $this->programId = $programId;
         $this->webhookIds = $webhookIds;
     }
 }

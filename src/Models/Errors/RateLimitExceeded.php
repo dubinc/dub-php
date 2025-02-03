@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Dub\Models\Errors;
 
-
 use Dub\Utils;
 /** RateLimitExceeded - The user has sent too many requests in a given amount of time ("rate limiting") */
 class RateLimitExceeded

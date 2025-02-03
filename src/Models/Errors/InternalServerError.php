@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Dub\Models\Errors;
 
-
 use Dub\Utils;
 /** InternalServerError - The server has encountered a situation it does not know how to handle. */
 class InternalServerError

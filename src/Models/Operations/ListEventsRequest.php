@@ -45,6 +45,30 @@ class ListEventsRequest
     public ?string $externalId = null;
 
     /**
+     * The ID of the tenant that created the link inside your system.
+     *
+     * @var ?string $tenantId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
+    public ?string $tenantId = null;
+
+    /**
+     * The ID of the program to retrieve analytics for.
+     *
+     * @var ?string $programId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=programId')]
+    public ?string $programId = null;
+
+    /**
+     * The ID of the partner to retrieve analytics for.
+     *
+     * @var ?string $partnerId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerId')]
+    public ?string $partnerId = null;
+
+    /**
      * The start date and time when to retrieve analytics from. Takes precedence over `interval`.
      *
      * @var ?string $start
@@ -288,6 +312,9 @@ class ListEventsRequest
      * @param  ?string  $key
      * @param  ?string  $linkId
      * @param  ?string  $externalId
+     * @param  ?string  $tenantId
+     * @param  ?string  $programId
+     * @param  ?string  $partnerId
      * @param  ?QueryParamInterval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
@@ -318,12 +345,15 @@ class ListEventsRequest
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?QueryParamInterval $interval = QueryParamInterval::TwentyFourh, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?QueryParamInterval $interval = QueryParamInterval::TwentyFourh, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
     {
         $this->domain = $domain;
         $this->key = $key;
         $this->linkId = $linkId;
         $this->externalId = $externalId;
+        $this->tenantId = $tenantId;
+        $this->programId = $programId;
+        $this->partnerId = $partnerId;
         $this->start = $start;
         $this->end = $end;
         $this->country = $country;

@@ -64,13 +64,6 @@ class CreatePartnerResponseBody
 
     /**
      *
-     * @var float $earnings
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
-    public float $earnings;
-
-    /**
-     *
      * @var ?string $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
@@ -98,12 +91,13 @@ class CreatePartnerResponseBody
     public ?string $stripeConnectId;
 
     /**
+     * $links
      *
-     * @var ?CreatePartnerLink $link
+     * @var ?array<Links> $links
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerLink|null')]
-    public ?CreatePartnerLink $link;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\Links>|null')]
+    public ?array $links;
 
     /**
      *
@@ -130,6 +124,46 @@ class CreatePartnerResponseBody
     public ?CreatePartnerDiscount $discount = null;
 
     /**
+     *
+     * @var ?float $earnings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $earnings = null;
+
+    /**
+     *
+     * @var ?float $clicks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
+
+    /**
+     *
+     * @var ?float $leads
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('leads')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
+
+    /**
+     *
+     * @var ?float $sales
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
+
+    /**
+     *
+     * @var ?float $salesAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('salesAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $salesAmount = null;
+
+    /**
      * @param  string  $id
      * @param  string  $name
      * @param  string  $country
@@ -137,17 +171,21 @@ class CreatePartnerResponseBody
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  Status  $status
-     * @param  float  $earnings
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $bio
      * @param  ?string  $stripeConnectId
-     * @param  ?CreatePartnerLink  $link
+     * @param  ?array<Links>  $links
      * @param  ?float  $commissionAmount
+     * @param  ?float  $earnings
+     * @param  ?float  $clicks
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $salesAmount
      * @param  ?string  $couponId
      * @param  ?CreatePartnerDiscount  $discount
      */
-    public function __construct(string $id, string $name, string $country, bool $payoutsEnabled, string $createdAt, string $updatedAt, Status $status, float $earnings, ?string $email = null, ?string $image = null, ?string $bio = null, ?string $stripeConnectId = null, ?CreatePartnerLink $link = null, ?float $commissionAmount = null, ?string $couponId = null, ?CreatePartnerDiscount $discount = null)
+    public function __construct(string $id, string $name, string $country, bool $payoutsEnabled, string $createdAt, string $updatedAt, Status $status, ?string $email = null, ?string $image = null, ?string $bio = null, ?string $stripeConnectId = null, ?array $links = null, ?float $commissionAmount = null, ?string $couponId = null, ?CreatePartnerDiscount $discount = null, ?float $earnings = 0, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $salesAmount = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -156,14 +194,18 @@ class CreatePartnerResponseBody
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->status = $status;
-        $this->earnings = $earnings;
         $this->email = $email;
         $this->image = $image;
         $this->bio = $bio;
         $this->stripeConnectId = $stripeConnectId;
-        $this->link = $link;
+        $this->links = $links;
         $this->commissionAmount = $commissionAmount;
         $this->couponId = $couponId;
         $this->discount = $discount;
+        $this->earnings = $earnings;
+        $this->clicks = $clicks;
+        $this->leads = $leads;
+        $this->sales = $sales;
+        $this->salesAmount = $salesAmount;
     }
 }

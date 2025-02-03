@@ -44,6 +44,15 @@ class CreatePartnerRequestBody
     public string $username;
 
     /**
+     * The ID of the partner in your system.
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $tenantId = null;
+
+    /**
      * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
      *
      * @var ?LinkProps $linkProps
@@ -86,17 +95,19 @@ class CreatePartnerRequestBody
      * @param  string  $name
      * @param  string  $email
      * @param  string  $username
+     * @param  ?string  $tenantId
      * @param  ?LinkProps  $linkProps
      * @param  ?string  $image
      * @param  ?Country  $country
      * @param  ?string  $description
      */
-    public function __construct(string $programId, string $name, string $email, string $username, ?LinkProps $linkProps = null, ?string $image = null, ?Country $country = null, ?string $description = null)
+    public function __construct(string $programId, string $name, string $email, string $username, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $image = null, ?Country $country = null, ?string $description = null)
     {
         $this->programId = $programId;
         $this->name = $name;
         $this->email = $email;
         $this->username = $username;
+        $this->tenantId = $tenantId;
         $this->linkProps = $linkProps;
         $this->image = $image;
         $this->country = $country;
