@@ -141,10 +141,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\GetTagsRequest(
-    page: 1,
-    pageSize: 50,
-);
+$request = new Operations\GetTagsRequest();
 
 $response = $sdk->tags->list(
     request: $request

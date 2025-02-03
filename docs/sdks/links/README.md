@@ -400,10 +400,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\GetLinksRequest(
-    page: 1,
-    pageSize: 50,
-);
+$request = new Operations\GetLinksRequest();
 
 $responses = $sdk->links->list(
     request: $request
