@@ -211,6 +211,7 @@ if ($response->responseBodies !== null) {
 ### [partners](docs/sdks/partners/README.md)
 
 * [create](docs/sdks/partners/README.md#create) - Create a new partner
+* [createLink](docs/sdks/partners/README.md#createlink) - Create a link for a partner
 
 ### [qrCodes](docs/sdks/qrcodes/README.md)
 

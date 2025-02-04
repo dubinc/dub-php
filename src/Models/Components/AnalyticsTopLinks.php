@@ -69,6 +69,15 @@ class AnalyticsTopLinks
     public string $createdAt;
 
     /**
+     * The comments of the short link
+     *
+     * @var ?string $comments
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('comments')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $comments = null;
+
+    /**
      * The number of clicks from this link
      *
      * @var ?float $clicks
@@ -116,8 +125,9 @@ class AnalyticsTopLinks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @param  ?string  $comments
      */
-    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $comments = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->link = $link;
         $this->id = $id;
@@ -126,6 +136,7 @@ class AnalyticsTopLinks
         $this->shortLink = $shortLink;
         $this->url = $url;
         $this->createdAt = $createdAt;
+        $this->comments = $comments;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;
