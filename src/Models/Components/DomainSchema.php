@@ -124,6 +124,7 @@ class DomainSchema
      * @param  ?string  $notFoundUrl
      * @param  ?string  $logo
      * @param  ?RegisteredDomain  $registeredDomain
+     * @phpstan-pure
      */
     public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $placeholder = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $logo = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false)
     {

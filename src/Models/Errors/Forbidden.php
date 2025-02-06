@@ -22,6 +22,7 @@ class Forbidden
 
     /**
      * @param  ForbiddenError  $error
+     * @phpstan-pure
      */
     public function __construct(ForbiddenError $error)
     {

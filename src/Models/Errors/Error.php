@@ -41,6 +41,7 @@ class Error
      * @param  Code  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(Code $code, string $message, ?string $docUrl = null)
     {

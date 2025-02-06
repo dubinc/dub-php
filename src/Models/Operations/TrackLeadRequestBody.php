@@ -92,6 +92,7 @@ class TrackLeadRequestBody
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
      * @param  ?array<string, mixed>  $metadata
+     * @phpstan-pure
      */
     public function __construct(string $clickId, string $eventName, ?array $metadata = null, ?string $externalId = '', ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {

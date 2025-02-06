@@ -44,6 +44,7 @@ class GetMetatagsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?GetMetatagsResponseBody  $object
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?GetMetatagsResponseBody $object = null)
     {

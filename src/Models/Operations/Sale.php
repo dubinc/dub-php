@@ -54,6 +54,7 @@ class Sale
      * @param  string  $paymentProcessor
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
+     * @phpstan-pure
      */
     public function __construct(float $amount, string $currency, string $paymentProcessor, ?string $invoiceId = null, ?array $metadata = null)
     {

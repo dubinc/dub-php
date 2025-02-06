@@ -44,6 +44,7 @@ class SaleCreatedEventSale
      * @param  string  $currency
      * @param  string  $paymentProcessor
      * @param  ?string  $invoiceId
+     * @phpstan-pure
      */
     public function __construct(float $amount, string $currency, string $paymentProcessor, ?string $invoiceId = null)
     {

@@ -40,6 +40,7 @@ class RegisteredDomain
      * @param  string  $id
      * @param  string  $createdAt
      * @param  string  $expiresAt
+     * @phpstan-pure
      */
     public function __construct(string $id, string $createdAt, string $expiresAt)
     {

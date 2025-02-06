@@ -22,6 +22,7 @@ class BadRequest
 
     /**
      * @param  Error  $error
+     * @phpstan-pure
      */
     public function __construct(Error $error)
     {

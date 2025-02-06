@@ -52,6 +52,7 @@ class TrackSaleCustomer
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $externalId
+     * @phpstan-pure
      */
     public function __construct(string $id, ?string $name = null, ?string $email = null, ?string $avatar = null, ?string $externalId = null)
     {

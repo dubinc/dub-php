@@ -44,6 +44,7 @@ class DeleteLinkResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?DeleteLinkResponseBody  $object
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteLinkResponseBody $object = null)
     {

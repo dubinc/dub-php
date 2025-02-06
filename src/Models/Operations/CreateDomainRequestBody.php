@@ -71,6 +71,7 @@ class CreateDomainRequestBody
      * @param  ?string  $notFoundUrl
      * @param  ?string  $placeholder
      * @param  ?string  $logo
+     * @phpstan-pure
      */
     public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?string $logo = null, ?bool $archived = false)
     {

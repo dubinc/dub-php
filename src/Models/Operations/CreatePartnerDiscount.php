@@ -70,6 +70,7 @@ class CreatePartnerDiscount
      * @param  ?string  $couponTestId
      * @param  ?float  $duration
      * @param  ?CreatePartnerInterval  $interval
+     * @phpstan-pure
      */
     public function __construct(string $id, float $amount, CreatePartnerType $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?CreatePartnerInterval $interval = null)
     {

@@ -22,6 +22,7 @@ class BulkDeleteLinksResponseBody
 
     /**
      * @param  float  $deletedCount
+     * @phpstan-pure
      */
     public function __construct(float $deletedCount)
     {

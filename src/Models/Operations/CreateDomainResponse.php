@@ -44,6 +44,7 @@ class CreateDomainResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?Components\DomainSchema  $domainSchema
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\DomainSchema $domainSchema = null)
     {

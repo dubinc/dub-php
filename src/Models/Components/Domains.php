@@ -41,6 +41,7 @@ class Domains
      * @param  string  $slug
      * @param  ?bool  $primary
      * @param  ?bool  $verified
+     * @phpstan-pure
      */
     public function __construct(string $slug, ?bool $primary = false, ?bool $verified = false)
     {

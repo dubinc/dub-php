@@ -48,6 +48,7 @@ class ListDomainsRequest
      * @param  ?string  $search
      * @param  ?float  $page
      * @param  ?float  $pageSize
+     * @phpstan-pure
      */
     public function __construct(?string $search = null, ?bool $archived = true, ?float $page = 1, ?float $pageSize = 50)
     {

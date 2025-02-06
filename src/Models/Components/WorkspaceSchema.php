@@ -290,6 +290,7 @@ class WorkspaceSchema
      * @param  ?array<string, mixed>  $store
      * @param  ?array<string>  $allowedHostnames
      * @param  ?string  $logo
+     * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
     {

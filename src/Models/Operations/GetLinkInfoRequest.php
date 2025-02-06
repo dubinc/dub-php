@@ -47,6 +47,7 @@ class GetLinkInfoRequest
      * @param  ?string  $key
      * @param  ?string  $linkId
      * @param  ?string  $externalId
+     * @phpstan-pure
      */
     public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null)
     {

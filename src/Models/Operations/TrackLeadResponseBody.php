@@ -31,6 +31,7 @@ class TrackLeadResponseBody
     /**
      * @param  Click  $click
      * @param  Customer  $customer
+     * @phpstan-pure
      */
     public function __construct(Click $click, Customer $customer)
     {

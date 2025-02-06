@@ -29,6 +29,7 @@ class UpdateTagRequest
     /**
      * @param  string  $id
      * @param  ?UpdateTagRequestBody  $requestBody
+     * @phpstan-pure
      */
     public function __construct(string $id, ?UpdateTagRequestBody $requestBody = null)
     {

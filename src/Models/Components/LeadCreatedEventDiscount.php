@@ -70,6 +70,7 @@ class LeadCreatedEventDiscount
      * @param  ?string  $couponTestId
      * @param  ?float  $duration
      * @param  ?LeadCreatedEventInterval  $interval
+     * @phpstan-pure
      */
     public function __construct(string $id, float $amount, LeadCreatedEventType $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?LeadCreatedEventInterval $interval = null)
     {

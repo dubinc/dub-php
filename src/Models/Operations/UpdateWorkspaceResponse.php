@@ -44,6 +44,7 @@ class UpdateWorkspaceResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?Components\WorkspaceSchema  $workspaceSchema
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\WorkspaceSchema $workspaceSchema = null)
     {

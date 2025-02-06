@@ -38,6 +38,7 @@ class CreateEmbedTokenRequestBody
      * @param  string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
+     * @phpstan-pure
      */
     public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null)
     {

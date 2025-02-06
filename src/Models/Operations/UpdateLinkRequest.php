@@ -29,6 +29,7 @@ class UpdateLinkRequest
     /**
      * @param  string  $linkId
      * @param  ?UpdateLinkRequestBody  $requestBody
+     * @phpstan-pure
      */
     public function __construct(string $linkId, ?UpdateLinkRequestBody $requestBody = null)
     {

@@ -44,6 +44,7 @@ class CreateTagResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?Components\TagSchema  $tagSchema
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TagSchema $tagSchema = null)
     {

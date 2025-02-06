@@ -22,6 +22,7 @@ class Unauthorized
 
     /**
      * @param  UnauthorizedError  $error
+     * @phpstan-pure
      */
     public function __construct(UnauthorizedError $error)
     {

@@ -59,6 +59,7 @@ class UpdateWorkspaceRequestBody
      * @param  ?string  $logo
      * @param  ?bool  $conversionEnabled
      * @param  ?array<string>  $allowedHostnames
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $slug = null, ?string $logo = null, ?bool $conversionEnabled = null, ?array $allowedHostnames = null)
     {

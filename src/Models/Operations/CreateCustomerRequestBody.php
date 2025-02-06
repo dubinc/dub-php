@@ -51,6 +51,7 @@ class CreateCustomerRequestBody
      * @param  ?string  $email
      * @param  ?string  $name
      * @param  ?string  $avatar
+     * @phpstan-pure
      */
     public function __construct(string $externalId, ?string $email = null, ?string $name = null, ?string $avatar = null)
     {

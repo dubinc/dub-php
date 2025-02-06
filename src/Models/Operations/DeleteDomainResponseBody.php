@@ -22,6 +22,7 @@ class DeleteDomainResponseBody
 
     /**
      * @param  string  $slug
+     * @phpstan-pure
      */
     public function __construct(string $slug)
     {

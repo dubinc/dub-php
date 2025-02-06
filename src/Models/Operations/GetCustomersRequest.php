@@ -39,6 +39,7 @@ class GetCustomersRequest
      * @param  ?string  $email
      * @param  ?string  $externalId
      * @param  ?bool  $includeExpandedFields
+     * @phpstan-pure
      */
     public function __construct(?string $email = null, ?string $externalId = null, ?bool $includeExpandedFields = null)
     {

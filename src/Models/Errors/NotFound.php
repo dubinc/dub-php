@@ -22,6 +22,7 @@ class NotFound
 
     /**
      * @param  NotFoundError  $error
+     * @phpstan-pure
      */
     public function __construct(NotFoundError $error)
     {

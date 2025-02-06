@@ -419,6 +419,7 @@ class LeadCreatedEventLink
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @phpstan-pure
      */
     public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LeadCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {

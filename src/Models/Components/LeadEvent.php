@@ -203,6 +203,7 @@ class LeadEvent
      * @param  float  $qr
      * @param  string  $ip
      * @param  ?string  $timestamp
+     * @phpstan-pure
      */
     public function __construct(LeadEventEvent $event, string $eventId, string $eventName, LeadEventClick $click, LeadEventLink $link, Customer $customer, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
     {

@@ -57,6 +57,7 @@ class LeadEventCustomerLink
      * @param  string  $key
      * @param  string  $shortLink
      * @param  ?string  $programId
+     * @phpstan-pure
      */
     public function __construct(string $id, string $domain, string $key, string $shortLink, ?string $programId = null)
     {

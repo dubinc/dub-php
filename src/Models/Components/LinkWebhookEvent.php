@@ -47,6 +47,7 @@ class LinkWebhookEvent
      * @param  One|Two|Three  $event
      * @param  string  $createdAt
      * @param  Data  $data
+     * @phpstan-pure
      */
     public function __construct(string $id, One|Two|Three $event, string $createdAt, Data $data)
     {

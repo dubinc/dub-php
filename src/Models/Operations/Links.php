@@ -97,6 +97,7 @@ class Links
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @phpstan-pure
      */
     public function __construct(string $id, string $domain, string $key, string $shortLink, string $url, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {

@@ -42,6 +42,7 @@ class LinkErrorSchema
      * @param  string  $error
      * @param  Code  $code
      * @param  mixed  $link
+     * @phpstan-pure
      */
     public function __construct(string $error, Code $code, mixed $link = null)
     {

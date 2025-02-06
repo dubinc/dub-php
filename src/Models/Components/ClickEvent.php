@@ -178,6 +178,7 @@ class ClickEvent
      * @param  float  $qr
      * @param  string  $ip
      * @param  ?string  $timestamp
+     * @phpstan-pure
      */
     public function __construct(Event $event, Click $click, Link $link, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
     {

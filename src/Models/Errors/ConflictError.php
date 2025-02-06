@@ -41,6 +41,7 @@ class ConflictError
      * @param  ConflictCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(ConflictCode $code, string $message, ?string $docUrl = null)
     {

@@ -30,6 +30,7 @@ class GetCustomerRequest
     /**
      * @param  string  $id
      * @param  ?bool  $includeExpandedFields
+     * @phpstan-pure
      */
     public function __construct(string $id, ?bool $includeExpandedFields = null)
     {

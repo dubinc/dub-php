@@ -44,6 +44,7 @@ class TrackSaleResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?TrackSaleResponseBody  $object
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?TrackSaleResponseBody $object = null)
     {

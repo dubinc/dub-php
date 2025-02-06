@@ -100,6 +100,7 @@ class CreatePartnerRequestBody
      * @param  ?string  $image
      * @param  ?Country  $country
      * @param  ?string  $description
+     * @phpstan-pure
      */
     public function __construct(string $programId, string $name, string $email, string $username, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $image = null, ?Country $country = null, ?string $description = null)
     {

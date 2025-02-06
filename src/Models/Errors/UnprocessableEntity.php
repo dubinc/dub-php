@@ -22,6 +22,7 @@ class UnprocessableEntity
 
     /**
      * @param  UnprocessableEntityError  $error
+     * @phpstan-pure
      */
     public function __construct(UnprocessableEntityError $error)
     {

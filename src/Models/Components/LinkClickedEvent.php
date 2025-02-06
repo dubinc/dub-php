@@ -47,6 +47,7 @@ class LinkClickedEvent
      * @param  LinkClickedEventEvent  $event
      * @param  string  $createdAt
      * @param  LinkClickedEventData  $data
+     * @phpstan-pure
      */
     public function __construct(string $id, LinkClickedEventEvent $event, string $createdAt, LinkClickedEventData $data)
     {

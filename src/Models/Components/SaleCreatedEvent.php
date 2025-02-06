@@ -47,6 +47,7 @@ class SaleCreatedEvent
      * @param  SaleCreatedEventEvent  $event
      * @param  string  $createdAt
      * @param  SaleCreatedEventData  $data
+     * @phpstan-pure
      */
     public function __construct(string $id, SaleCreatedEventEvent $event, string $createdAt, SaleCreatedEventData $data)
     {

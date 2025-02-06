@@ -108,6 +108,7 @@ class LeadCreatedEventCustomer
      * @param  ?LeadCreatedEventDataLink  $link
      * @param  ?LeadCreatedEventPartner  $partner
      * @param  ?LeadCreatedEventDiscount  $discount
+     * @phpstan-pure
      */
     public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?LeadCreatedEventDataLink $link = null, ?LeadCreatedEventPartner $partner = null, ?LeadCreatedEventDiscount $discount = null)
     {
