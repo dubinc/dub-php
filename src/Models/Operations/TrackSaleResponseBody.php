@@ -39,6 +39,7 @@ class TrackSaleResponseBody
      * @param  string  $eventName
      * @param  ?TrackSaleCustomer  $customer
      * @param  ?Sale  $sale
+     * @phpstan-pure
      */
     public function __construct(string $eventName, ?TrackSaleCustomer $customer = null, ?Sale $sale = null)
     {

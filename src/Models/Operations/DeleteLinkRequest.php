@@ -21,6 +21,7 @@ class DeleteLinkRequest
 
     /**
      * @param  string  $linkId
+     * @phpstan-pure
      */
     public function __construct(string $linkId)
     {

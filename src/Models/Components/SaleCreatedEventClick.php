@@ -20,6 +20,13 @@ class SaleCreatedEventClick
 
     /**
      *
+     * @var string $timestamp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    public string $timestamp;
+
+    /**
+     *
      * @var string $url
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
@@ -105,6 +112,7 @@ class SaleCreatedEventClick
 
     /**
      * @param  string  $id
+     * @param  string  $timestamp
      * @param  string  $url
      * @param  string  $country
      * @param  string  $city
@@ -117,10 +125,12 @@ class SaleCreatedEventClick
      * @param  string  $refererUrl
      * @param  string  $ip
      * @param  ?bool  $qr
+     * @phpstan-pure
      */
-    public function __construct(string $id, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, string $ip, ?bool $qr = null)
+    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, string $ip, ?bool $qr = null)
     {
         $this->id = $id;
+        $this->timestamp = $timestamp;
         $this->url = $url;
         $this->country = $country;
         $this->city = $city;

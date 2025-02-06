@@ -38,6 +38,7 @@ class UpdateCustomerRequest
      * @param  string  $id
      * @param  ?bool  $includeExpandedFields
      * @param  ?UpdateCustomerRequestBody  $requestBody
+     * @phpstan-pure
      */
     public function __construct(string $id, ?bool $includeExpandedFields = null, ?UpdateCustomerRequestBody $requestBody = null)
     {

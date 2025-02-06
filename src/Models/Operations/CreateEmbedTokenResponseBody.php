@@ -29,6 +29,7 @@ class CreateEmbedTokenResponseBody
     /**
      * @param  string  $publicToken
      * @param  string  $expires
+     * @phpstan-pure
      */
     public function __construct(string $publicToken, string $expires)
     {

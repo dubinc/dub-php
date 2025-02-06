@@ -108,6 +108,7 @@ class Customer
      * @param  ?LeadEventCustomerLink  $link
      * @param  ?Partner  $partner
      * @param  ?Discount  $discount
+     * @phpstan-pure
      */
     public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?LeadEventCustomerLink $link = null, ?Partner $partner = null, ?Discount $discount = null)
     {

@@ -41,6 +41,7 @@ class RateLimitExceededError
      * @param  RateLimitExceededCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(RateLimitExceededCode $code, string $message, ?string $docUrl = null)
     {

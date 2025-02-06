@@ -22,6 +22,7 @@ class InternalServerError
 
     /**
      * @param  InternalServerErrorError  $error
+     * @phpstan-pure
      */
     public function __construct(InternalServerErrorError $error)
     {

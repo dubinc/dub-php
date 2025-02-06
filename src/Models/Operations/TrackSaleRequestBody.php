@@ -93,6 +93,7 @@ class TrackSaleRequestBody
      * @param  ?string  $customerId
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
+     * @phpstan-pure
      */
     public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $externalId = '', ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $customerId = null, ?string $invoiceId = null)
     {

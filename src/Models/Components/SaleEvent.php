@@ -241,6 +241,7 @@ class SaleEvent
      * @param  float  $qr
      * @param  string  $ip
      * @param  ?string  $timestamp
+     * @phpstan-pure
      */
     public function __construct(SaleEventEvent $event, string $eventId, string $eventName, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, Sale $sale, float $saleAmount, string $invoiceId, string $paymentProcessor, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
     {

@@ -41,6 +41,7 @@ class NotFoundError
      * @param  NotFoundCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(NotFoundCode $code, string $message, ?string $docUrl = null)
     {

@@ -126,6 +126,7 @@ class AnalyticsTopLinks
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      * @param  ?string  $comments
+     * @phpstan-pure
      */
     public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $comments = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {

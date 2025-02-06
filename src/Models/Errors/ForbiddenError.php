@@ -41,6 +41,7 @@ class ForbiddenError
      * @param  ForbiddenCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(ForbiddenCode $code, string $message, ?string $docUrl = null)
     {

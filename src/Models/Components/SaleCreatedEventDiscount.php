@@ -70,6 +70,7 @@ class SaleCreatedEventDiscount
      * @param  ?string  $couponTestId
      * @param  ?float  $duration
      * @param  ?SaleCreatedEventInterval  $interval
+     * @phpstan-pure
      */
     public function __construct(string $id, float $amount, SaleCreatedEventType $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?SaleCreatedEventInterval $interval = null)
     {

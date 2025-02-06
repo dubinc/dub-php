@@ -41,6 +41,7 @@ class UnprocessableEntityError
      * @param  UnprocessableEntityCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(UnprocessableEntityCode $code, string $message, ?string $docUrl = null)
     {

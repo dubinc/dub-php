@@ -41,6 +41,7 @@ class InviteExpiredError
      * @param  InviteExpiredCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(InviteExpiredCode $code, string $message, ?string $docUrl = null)
     {

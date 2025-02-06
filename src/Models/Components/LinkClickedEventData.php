@@ -30,6 +30,7 @@ class LinkClickedEventData
     /**
      * @param  LinkClickedEventClick  $click
      * @param  LinkClickedEventLink  $link
+     * @phpstan-pure
      */
     public function __construct(LinkClickedEventClick $click, LinkClickedEventLink $link)
     {

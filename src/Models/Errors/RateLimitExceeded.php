@@ -22,6 +22,7 @@ class RateLimitExceeded
 
     /**
      * @param  RateLimitExceededError  $error
+     * @phpstan-pure
      */
     public function __construct(RateLimitExceededError $error)
     {

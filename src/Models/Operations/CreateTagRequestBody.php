@@ -44,6 +44,7 @@ class CreateTagRequestBody
      * @param  ?string  $name
      * @param  ?Color  $color
      * @param  ?string  $tag
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?Color $color = null, ?string $tag = null)
     {

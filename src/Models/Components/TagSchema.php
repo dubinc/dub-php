@@ -40,6 +40,7 @@ class TagSchema
      * @param  string  $id
      * @param  string  $name
      * @param  Color  $color
+     * @phpstan-pure
      */
     public function __construct(string $id, string $name, Color $color)
     {

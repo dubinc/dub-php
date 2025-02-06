@@ -43,6 +43,7 @@ class BulkUpdateLinksRequestBody
      * @param  Data  $data
      * @param  ?array<string>  $linkIds
      * @param  ?array<string>  $externalIds
+     * @phpstan-pure
      */
     public function __construct(Data $data, ?array $linkIds = null, ?array $externalIds = null)
     {

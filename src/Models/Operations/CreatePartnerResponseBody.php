@@ -184,6 +184,7 @@ class CreatePartnerResponseBody
      * @param  ?float  $salesAmount
      * @param  ?string  $couponId
      * @param  ?CreatePartnerDiscount  $discount
+     * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $country, bool $payoutsEnabled, string $createdAt, string $updatedAt, Status $status, ?string $email = null, ?string $image = null, ?string $bio = null, ?string $stripeConnectId = null, ?array $links = null, ?float $commissionAmount = null, ?string $couponId = null, ?CreatePartnerDiscount $discount = null, ?float $earnings = 0, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $salesAmount = 0)
     {

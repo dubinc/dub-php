@@ -44,6 +44,7 @@ class BulkUpdateLinksResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?array<Components\LinkSchema>  $linkSchemas
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $linkSchemas = null)
     {

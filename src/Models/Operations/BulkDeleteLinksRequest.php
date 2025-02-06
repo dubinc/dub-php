@@ -21,6 +21,7 @@ class BulkDeleteLinksRequest
 
     /**
      * @param  array<string>  $linkIds
+     * @phpstan-pure
      */
     public function __construct(array $linkIds)
     {

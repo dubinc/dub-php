@@ -109,6 +109,7 @@ class UpdateCustomerResponseBody
      * @param  ?UpdateCustomerLink  $link
      * @param  ?UpdateCustomerPartner  $partner
      * @param  ?UpdateCustomerDiscount  $discount
+     * @phpstan-pure
      */
     public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?UpdateCustomerLink $link = null, ?UpdateCustomerPartner $partner = null, ?UpdateCustomerDiscount $discount = null)
     {

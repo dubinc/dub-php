@@ -45,6 +45,7 @@ class SaleEventPartner
      * @param  string  $name
      * @param  string  $email
      * @param  ?string  $image
+     * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $email, ?string $image = null)
     {

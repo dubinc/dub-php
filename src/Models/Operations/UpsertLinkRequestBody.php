@@ -367,6 +367,7 @@ class UpsertLinkRequestBody
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      * @param  ?array<string>  $webhookIds
+     * @phpstan-pure
      */
     public function __construct(string $url, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null)
     {

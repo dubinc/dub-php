@@ -44,6 +44,7 @@ class BulkDeleteLinksResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  ?BulkDeleteLinksResponseBody  $object
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?BulkDeleteLinksResponseBody $object = null)
     {

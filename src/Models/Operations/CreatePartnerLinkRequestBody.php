@@ -71,6 +71,7 @@ class CreatePartnerLinkRequestBody
      * @param  ?CreatePartnerLinkLinkProps  $linkProps
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
+     * @phpstan-pure
      */
     public function __construct(string $programId, string $url, ?string $key = null, ?CreatePartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null)
     {

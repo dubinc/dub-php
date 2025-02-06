@@ -41,6 +41,7 @@ class Sale
      * @param  int  $amount
      * @param  PaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
+     * @phpstan-pure
      */
     public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?string $invoiceId = null)
     {

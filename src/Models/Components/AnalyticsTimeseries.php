@@ -61,6 +61,7 @@ class AnalyticsTimeseries
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @phpstan-pure
      */
     public function __construct(string $start, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {

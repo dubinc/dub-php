@@ -22,6 +22,7 @@ class Users
 
     /**
      * @param  Role  $role
+     * @phpstan-pure
      */
     public function __construct(Role $role)
     {

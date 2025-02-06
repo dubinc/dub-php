@@ -29,6 +29,7 @@ class UpdateWorkspaceRequest
     /**
      * @param  string  $idOrSlug
      * @param  ?UpdateWorkspaceRequestBody  $requestBody
+     * @phpstan-pure
      */
     public function __construct(string $idOrSlug, ?UpdateWorkspaceRequestBody $requestBody = null)
     {

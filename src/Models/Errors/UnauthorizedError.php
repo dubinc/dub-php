@@ -41,6 +41,7 @@ class UnauthorizedError
      * @param  UnauthorizedCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
+     * @phpstan-pure
      */
     public function __construct(UnauthorizedCode $code, string $message, ?string $docUrl = null)
     {

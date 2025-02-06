@@ -44,6 +44,7 @@ class ListEventsResponse
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
      * @param  array<Components\ClickEvent>|array<Components\LeadEvent>|array<Components\SaleEvent>|null  $oneOf
+     * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $oneOf = null)
     {

@@ -47,6 +47,7 @@ class LeadCreatedEventData
      * @param  LeadCreatedEventCustomer  $customer
      * @param  LeadCreatedEventClick  $click
      * @param  LeadCreatedEventLink  $link
+     * @phpstan-pure
      */
     public function __construct(string $eventName, LeadCreatedEventCustomer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link)
     {

@@ -47,6 +47,7 @@ class LeadCreatedEvent
      * @param  LeadCreatedEventEvent  $event
      * @param  string  $createdAt
      * @param  LeadCreatedEventData  $data
+     * @phpstan-pure
      */
     public function __construct(string $id, LeadCreatedEventEvent $event, string $createdAt, LeadCreatedEventData $data)
     {

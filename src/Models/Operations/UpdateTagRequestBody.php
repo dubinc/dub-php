@@ -44,6 +44,7 @@ class UpdateTagRequestBody
      * @param  ?string  $name
      * @param  ?UpdateTagColor  $color
      * @param  ?string  $tag
+     * @phpstan-pure
      */
     public function __construct(?string $name = null, ?UpdateTagColor $color = null, ?string $tag = null)
     {

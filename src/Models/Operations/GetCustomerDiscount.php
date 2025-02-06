@@ -70,6 +70,7 @@ class GetCustomerDiscount
      * @param  ?string  $couponTestId
      * @param  ?float  $duration
      * @param  ?GetCustomerInterval  $interval
+     * @phpstan-pure
      */
     public function __construct(string $id, float $amount, GetCustomerType $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?GetCustomerInterval $interval = null)
     {

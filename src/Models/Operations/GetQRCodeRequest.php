@@ -93,6 +93,7 @@ class GetQRCodeRequest
      * @param  ?bool  $hideLogo
      * @param  ?float  $margin
      * @param  ?bool  $includeMargin
+     * @phpstan-pure
      */
     public function __construct(string $url, ?string $logo = null, ?float $size = 600, ?Level $level = Level::L, ?string $fgColor = '#000000', ?string $bgColor = '#FFFFFF', ?bool $hideLogo = true, ?float $margin = 2, ?bool $includeMargin = true)
     {

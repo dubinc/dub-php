@@ -22,6 +22,7 @@ class Conflict
 
     /**
      * @param  ConflictError  $error
+     * @phpstan-pure
      */
     public function __construct(ConflictError $error)
     {

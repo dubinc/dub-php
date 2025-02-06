@@ -56,6 +56,7 @@ class SaleCreatedEventData
      * @param  SaleCreatedEventClick  $click
      * @param  SaleCreatedEventLink  $link
      * @param  SaleCreatedEventSale  $sale
+     * @phpstan-pure
      */
     public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, SaleCreatedEventSale $sale)
     {

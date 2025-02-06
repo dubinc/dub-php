@@ -21,6 +21,7 @@ class GetWorkspaceRequest
 
     /**
      * @param  string  $idOrSlug
+     * @phpstan-pure
      */
     public function __construct(string $idOrSlug)
     {

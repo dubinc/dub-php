@@ -66,6 +66,7 @@ class GetTagsRequest
      * @param  string|array<string>|null  $ids
      * @param  ?float  $page
      * @param  ?float  $pageSize
+     * @phpstan-pure
      */
     public function __construct(?string $search = null, string|array|null $ids = null, ?GetTagsQueryParamSortBy $sortBy = GetTagsQueryParamSortBy::Name, ?GetTagsQueryParamSortOrder $sortOrder = GetTagsQueryParamSortOrder::Asc, ?float $page = 1, ?float $pageSize = 100)
     {

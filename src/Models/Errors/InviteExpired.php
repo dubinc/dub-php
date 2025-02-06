@@ -22,6 +22,7 @@ class InviteExpired
 
     /**
      * @param  InviteExpiredError  $error
+     * @phpstan-pure
      */
     public function __construct(InviteExpiredError $error)
     {

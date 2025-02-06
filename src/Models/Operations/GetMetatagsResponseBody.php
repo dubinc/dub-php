@@ -40,6 +40,7 @@ class GetMetatagsResponseBody
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $image
+     * @phpstan-pure
      */
     public function __construct(?string $title = null, ?string $description = null, ?string $image = null)
     {

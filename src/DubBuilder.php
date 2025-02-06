@@ -44,7 +44,7 @@ class DubBuilder
         $security = new Models\Components\Security(
             token: $token
         );
-        $this->sdkConfig->security = $security;
+        $this->sdkConfig->securitySource = fn () => $security;
 
         return $this;
     }
@@ -58,7 +58,7 @@ class DubBuilder
      */
     public function setSecuritySource(\Closure $securitySource): DubBuilder
     {
-        $this->sdkConfig->securitySource = $securitySource;
+        $this->sdkConfig->securitySource = fn () => new Models\Components\Security(token: $securitySource());
 
         return $this;
     }
