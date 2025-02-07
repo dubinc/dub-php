@@ -12,7 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class GetCustomerRequest
 {
     /**
-     * The unique identifier of the customer in Dub.
+     * The unique ID of the customer. You may use either the customer's `id` on Dub (obtained via `/customers` endpoint) or their `externalId` (unique ID within your system, prefixed with `ext_`, e.g. `ext_123`).
      *
      * @var string $id
      */
