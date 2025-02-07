@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 use Dub\Models\Components;
-class CreatePartnerLinkResponse
+class UpsertPartnerLinkResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,7 +33,7 @@ class CreatePartnerLinkResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The created partner link
+     * The upserted partner link
      *
      * @var ?Components\LinkSchema $linkSchema
      */
