@@ -283,6 +283,14 @@ class Data
     public ?array $tags;
 
     /**
+     * The unique ID of the folder assigned to the short link.
+     *
+     * @var ?string $folderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('folderId')]
+    public ?string $folderId;
+
+    /**
      * The comments for the short link.
      *
      * @var ?string $comments
@@ -408,6 +416,7 @@ class Data
      * @param  ?bool  $publicStats
      * @param  ?string  $tagId
      * @param  ?array<TagSchema>  $tags
+     * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $utmSource
      * @param  ?string  $utmMedium
@@ -421,7 +430,7 @@ class Data
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LinkWebhookEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?LinkWebhookEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -457,6 +466,7 @@ class Data
         $this->publicStats = $publicStats;
         $this->tagId = $tagId;
         $this->tags = $tags;
+        $this->folderId = $folderId;
         $this->comments = $comments;
         $this->utmSource = $utmSource;
         $this->utmMedium = $utmMedium;

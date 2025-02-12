@@ -20,14 +20,6 @@ class UpsertPartnerLinkRequestBody
     public string $programId;
 
     /**
-     * The URL to shorten. Will throw an error if the domain doesn't match the program's default URL domain.
-     *
-     * @var string $url
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
-    public string $url;
-
-    /**
      * The short link slug. If not provided, a random 7-character slug will be generated.
      *
      * @var ?string $key
@@ -65,21 +57,30 @@ class UpsertPartnerLinkRequestBody
     public ?string $tenantId = null;
 
     /**
+     * The URL to shorten (if not provided, the program's default URL will be used). Will throw an error if the domain doesn't match the program's default URL domain.
+     *
+     * @var ?string $url
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $url = null;
+
+    /**
      * @param  string  $programId
-     * @param  string  $url
      * @param  ?string  $key
      * @param  ?UpsertPartnerLinkLinkProps  $linkProps
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
+     * @param  ?string  $url
      * @phpstan-pure
      */
-    public function __construct(string $programId, string $url, ?string $key = null, ?UpsertPartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null)
+    public function __construct(string $programId, ?string $key = null, ?UpsertPartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null, ?string $url = null)
     {
         $this->programId = $programId;
-        $this->url = $url;
         $this->key = $key;
         $this->linkProps = $linkProps;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
+        $this->url = $url;
     }
 }

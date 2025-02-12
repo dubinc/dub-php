@@ -9,8 +9,9 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-enum CreatePartnerInterval: string
+/** The access level of the folder within the workspace. */
+enum UpdateFolderAccessLevel: string
 {
-    case Month = 'month';
-    case Year = 'year';
+    case Read = 'read';
+    case Write = 'write';
 }

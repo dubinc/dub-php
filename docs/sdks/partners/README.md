@@ -7,6 +7,7 @@
 
 * [create](#create) - Create a new partner
 * [createLink](#createlink) - Create a link for a partner
+* [analytics](#analytics) - Retrieve analytics for a partner
 * [upsertLink](#upsertlink) - Upsert a link for a partner
 
 ## create
@@ -98,7 +99,6 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\CreatePartnerLinkRequestBody(
     programId: '<id>',
-    url: 'https://necessary-brief.name',
     linkProps: new Operations\CreatePartnerLinkLinkProps(
         tagIds: [
             'clux0rgak00011...',
@@ -141,6 +141,64 @@ if ($response->linkSchema !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
+## analytics
+
+Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\RetrievePartnerAnalyticsRequest(
+    programId: '<id>',
+);
+
+$response = $sdk->partners->analytics(
+    request: $request
+);
+
+if ($response->oneOf !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                               | [Operations\RetrievePartnerAnalyticsRequest](../../Models/Operations/RetrievePartnerAnalyticsRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+### Response
+
+**[?Operations\RetrievePartnerAnalyticsResponse](../../Models/Operations/RetrievePartnerAnalyticsResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
 ## upsertLink
 
 Upsert a link for a partner that is enrolled in your program. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
@@ -163,7 +221,6 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\UpsertPartnerLinkRequestBody(
     programId: '<id>',
-    url: 'https://unsteady-lobster.com/',
     linkProps: new Operations\UpsertPartnerLinkLinkProps(
         tagIds: [
             'clux0rgak00011...',

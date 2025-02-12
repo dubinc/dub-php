@@ -63,6 +63,30 @@ actions:
         - "lang": "php"
           "label": "listEvents"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListEventsRequest(\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n);\n\n$response = $sdk->events->list(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/folders"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "listFolders"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->folders->list(\n    search: '<value>'\n);\n\nif ($response->folderSchemas !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/folders"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "createFolder"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateFolderRequestBody(\n    name: '<value>',\n);\n\n$response = $sdk->folders->create(\n    request: $request\n);\n\nif ($response->folderSchema !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/folders/{id}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "deleteFolder"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->folders->delete(\n    id: '<id>'\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/folders/{id}"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "updateFolder"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateFolderRequestBody();\n\n$response = $sdk->folders->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->folderSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/links"]["get"]
     update:
       "x-codeSamples":
@@ -135,18 +159,24 @@ actions:
         - "lang": "php"
           "label": "createPartner"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerRequestBody(\n    programId: '<id>',\n    name: '<value>',\n    email: 'Loyal79@yahoo.com',\n    username: 'Aaliyah_Borer',\n    linkProps: new Operations\\LinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/partners/analytics"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "retrievePartnerAnalytics"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrievePartnerAnalyticsRequest(\n    programId: '<id>',\n);\n\n$response = $sdk->partners->analytics(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "createPartnerLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerLinkRequestBody(\n    programId: '<id>',\n    url: 'https://necessary-brief.name',\n    linkProps: new Operations\\CreatePartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->createLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\CreatePartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->createLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links/upsert"]["put"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "upsertPartnerLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    programId: '<id>',\n    url: 'https://unsteady-lobster.com/',\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/qr"]["get"]
     update:
       "x-codeSamples":

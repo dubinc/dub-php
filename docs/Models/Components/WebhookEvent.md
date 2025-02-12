@@ -41,3 +41,12 @@ Components\LeadCreatedEvent $value = /* values here */
 Components\SaleCreatedEvent $value = /* values here */
 ```
 
+### `Components\PartnerCreatedEvent`
+
+```php
+/**
+* @var Components\PartnerCreatedEvent
+*/
+Components\PartnerCreatedEvent $value = /* values here */
+```
+

@@ -191,6 +191,13 @@ if ($response->responseBodies !== null) {
 
 * [list](docs/sdks/events/README.md#list) - Retrieve a list of events
 
+### [folders](docs/sdks/folders/README.md)
+
+* [create](docs/sdks/folders/README.md#create) - Create a new folder
+* [delete](docs/sdks/folders/README.md#delete) - Delete a folder
+* [list](docs/sdks/folders/README.md#list) - Retrieve a list of folders
+* [update](docs/sdks/folders/README.md#update) - Update a folder
+
 ### [links](docs/sdks/links/README.md)
 
 * [createMany](docs/sdks/links/README.md#createmany) - Bulk create links
@@ -212,6 +219,7 @@ if ($response->responseBodies !== null) {
 
 * [create](docs/sdks/partners/README.md#create) - Create a new partner
 * [createLink](docs/sdks/partners/README.md#createlink) - Create a link for a partner
+* [analytics](docs/sdks/partners/README.md#analytics) - Retrieve analytics for a partner
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
 
 ### [qrCodes](docs/sdks/qrcodes/README.md)

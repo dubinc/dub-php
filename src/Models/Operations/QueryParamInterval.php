@@ -16,7 +16,9 @@ enum QueryParamInterval: string
     case Sevend = '7d';
     case Thirtyd = '30d';
     case Ninetyd = '90d';
-    case Ytd = 'ytd';
     case Oney = '1y';
+    case Mtd = 'mtd';
+    case Qtd = 'qtd';
+    case Ytd = 'ytd';
     case All = 'all';
 }

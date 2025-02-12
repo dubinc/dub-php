@@ -26,6 +26,8 @@ class Dub
 
     public Tags $tags;
 
+    public Folders $folders;
+
     public Domains $domains;
 
     public Track $track;
@@ -62,6 +64,7 @@ class Dub
         $this->analytics = new Analytics($this->sdkConfiguration);
         $this->events = new Events($this->sdkConfiguration);
         $this->tags = new Tags($this->sdkConfiguration);
+        $this->folders = new Folders($this->sdkConfiguration);
         $this->domains = new Domains($this->sdkConfiguration);
         $this->track = new Track($this->sdkConfiguration);
         $this->customers = new Customers($this->sdkConfiguration);

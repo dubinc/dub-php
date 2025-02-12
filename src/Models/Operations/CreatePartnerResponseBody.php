@@ -35,24 +35,10 @@ class CreatePartnerResponseBody
 
     /**
      *
-     * @var bool $payoutsEnabled
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsEnabled')]
-    public bool $payoutsEnabled;
-
-    /**
-     *
      * @var string $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
-
-    /**
-     *
-     * @var string $updatedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
-    public string $updatedAt;
 
     /**
      *
@@ -61,6 +47,13 @@ class CreatePartnerResponseBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Status')]
     public Status $status;
+
+    /**
+     *
+     * @var string $programId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    public string $programId;
 
     /**
      *
@@ -78,17 +71,10 @@ class CreatePartnerResponseBody
 
     /**
      *
-     * @var ?string $bio
+     * @var ?string $tenantId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('bio')]
-    public ?string $bio;
-
-    /**
-     *
-     * @var ?string $stripeConnectId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeConnectId')]
-    public ?string $stripeConnectId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    public ?string $tenantId;
 
     /**
      * $links
@@ -101,35 +87,11 @@ class CreatePartnerResponseBody
 
     /**
      *
-     * @var ?float $commissionAmount
+     * @var ?string $description
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('commissionAmount')]
-    public ?float $commissionAmount;
-
-    /**
-     *
-     * @var ?string $couponId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('couponId')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $couponId = null;
-
-    /**
-     *
-     * @var ?CreatePartnerDiscount $discount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerDiscount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreatePartnerDiscount $discount = null;
-
-    /**
-     *
-     * @var ?float $earnings
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $earnings = null;
+    public ?string $description = null;
 
     /**
      *
@@ -157,56 +119,56 @@ class CreatePartnerResponseBody
 
     /**
      *
-     * @var ?float $salesAmount
+     * @var ?float $saleAmount
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('salesAmount')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $salesAmount = null;
+    public ?float $saleAmount = null;
+
+    /**
+     *
+     * @var ?float $earnings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $earnings = null;
 
     /**
      * @param  string  $id
      * @param  string  $name
      * @param  string  $country
-     * @param  bool  $payoutsEnabled
      * @param  string  $createdAt
-     * @param  string  $updatedAt
      * @param  Status  $status
+     * @param  string  $programId
      * @param  ?string  $email
      * @param  ?string  $image
-     * @param  ?string  $bio
-     * @param  ?string  $stripeConnectId
+     * @param  ?string  $tenantId
      * @param  ?array<Links>  $links
-     * @param  ?float  $commissionAmount
-     * @param  ?float  $earnings
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales
-     * @param  ?float  $salesAmount
-     * @param  ?string  $couponId
-     * @param  ?CreatePartnerDiscount  $discount
+     * @param  ?float  $saleAmount
+     * @param  ?float  $earnings
+     * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $country, bool $payoutsEnabled, string $createdAt, string $updatedAt, Status $status, ?string $email = null, ?string $image = null, ?string $bio = null, ?string $stripeConnectId = null, ?array $links = null, ?float $commissionAmount = null, ?string $couponId = null, ?CreatePartnerDiscount $discount = null, ?float $earnings = 0, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $salesAmount = 0)
+    public function __construct(string $id, string $name, string $country, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->id = $id;
         $this->name = $name;
         $this->country = $country;
-        $this->payoutsEnabled = $payoutsEnabled;
         $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;
         $this->status = $status;
+        $this->programId = $programId;
         $this->email = $email;
         $this->image = $image;
-        $this->bio = $bio;
-        $this->stripeConnectId = $stripeConnectId;
+        $this->tenantId = $tenantId;
         $this->links = $links;
-        $this->commissionAmount = $commissionAmount;
-        $this->couponId = $couponId;
-        $this->discount = $discount;
-        $this->earnings = $earnings;
+        $this->description = $description;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;
-        $this->salesAmount = $salesAmount;
+        $this->saleAmount = $saleAmount;
+        $this->earnings = $earnings;
     }
 }
