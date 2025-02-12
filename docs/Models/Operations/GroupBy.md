@@ -32,3 +32,12 @@ Operations\Two $value = /* values here */
 Operations\Three $value = /* values here */
 ```
 
+### `Operations\Four`
+
+```php
+/**
+* @var Operations\Four
+*/
+Operations\Four $value = /* values here */
+```
+

@@ -133,6 +133,15 @@ class Data
     public ?string $tagId = null;
 
     /**
+     * The unique ID existing folder to assign the short link to.
+     *
+     * @var ?string $folderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('folderId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $folderId = null;
+
+    /**
      * The comments for the short link.
      *
      * @var ?string $comments
@@ -310,6 +319,7 @@ class Data
      * @param  ?string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tagId
+     * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
@@ -330,7 +340,7 @@ class Data
      * @param  ?array<string>  $webhookIds
      * @phpstan-pure
      */
-    public function __construct(?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null)
+    public function __construct(?string $url = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null)
     {
         $this->url = $url;
         $this->trackConversion = $trackConversion;
@@ -345,6 +355,7 @@ class Data
         $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->tagId = $tagId;
+        $this->folderId = $folderId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;

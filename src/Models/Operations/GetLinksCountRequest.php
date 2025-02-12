@@ -44,6 +44,14 @@ class GetLinksCountRequest
     public string|array|null $tagNames = null;
 
     /**
+     * The folder ID to filter the links by.
+     *
+     * @var ?string $folderId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=folderId')]
+    public ?string $folderId = null;
+
+    /**
      * The search term to filter the links by. The search term will be matched against the short link slug and the destination url.
      *
      * @var ?string $search
@@ -70,10 +78,10 @@ class GetLinksCountRequest
     /**
      * The field to group the links by.
      *
-     * @var One|Two|Three|null $groupBy
+     * @var One|Two|Three|Four|null $groupBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
-    public One|Two|Three|null $groupBy = null;
+    public One|Two|Three|Four|null $groupBy = null;
 
     /**
      * Whether to include archived links in the response. Defaults to `false` if not provided.
@@ -96,20 +104,22 @@ class GetLinksCountRequest
      * @param  ?string  $tagId
      * @param  string|array<string>|null  $tagIds
      * @param  string|array<string>|null  $tagNames
+     * @param  ?string  $folderId
      * @param  ?string  $search
      * @param  ?string  $userId
      * @param  ?string  $tenantId
      * @param  ?bool  $showArchived
      * @param  ?bool  $withTags
-     * @param  One|Two|Three|null  $groupBy
+     * @param  One|Two|Three|Four|null  $groupBy
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, One|Two|Three|null $groupBy = null, ?bool $showArchived = true, ?bool $withTags = true)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, One|Two|Three|Four|null $groupBy = null, ?bool $showArchived = true, ?bool $withTags = true)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;
         $this->tagIds = $tagIds;
         $this->tagNames = $tagNames;
+        $this->folderId = $folderId;
         $this->search = $search;
         $this->userId = $userId;
         $this->tenantId = $tenantId;

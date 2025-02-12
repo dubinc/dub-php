@@ -1113,6 +1113,7 @@ class Links
                             tagId: $request != null ? $request->tagId : null,
                             tagIds: $request != null ? $request->tagIds : null,
                             tagNames: $request != null ? $request->tagNames : null,
+                            folderId: $request != null ? $request->folderId : null,
                             search: $request != null ? $request->search : null,
                             userId: $request != null ? $request->userId : null,
                             tenantId: $request != null ? $request->tenantId : null,

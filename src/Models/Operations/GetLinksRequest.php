@@ -44,6 +44,14 @@ class GetLinksRequest
     public string|array|null $tagNames = null;
 
     /**
+     * The folder ID to filter the links by.
+     *
+     * @var ?string $folderId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=folderId')]
+    public ?string $folderId = null;
+
+    /**
      * The search term to filter the links by. The search term will be matched against the short link slug and the destination url.
      *
      * @var ?string $search
@@ -128,6 +136,7 @@ class GetLinksRequest
      * @param  ?string  $tagId
      * @param  string|array<string>|null  $tagIds
      * @param  string|array<string>|null  $tagNames
+     * @param  ?string  $folderId
      * @param  ?string  $search
      * @param  ?string  $userId
      * @param  ?string  $tenantId
@@ -140,12 +149,13 @@ class GetLinksRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?bool $showArchived = true, ?bool $withTags = true, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?bool $showArchived = true, ?bool $withTags = true, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;
         $this->tagIds = $tagIds;
         $this->tagNames = $tagNames;
+        $this->folderId = $folderId;
         $this->search = $search;
         $this->userId = $userId;
         $this->tenantId = $tenantId;

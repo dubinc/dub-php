@@ -117,6 +117,14 @@ class WorkspaceSchema
     public float $tagsLimit;
 
     /**
+     * The folders limit of the workspace.
+     *
+     * @var float $foldersLimit
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('foldersLimit')]
+    public float $foldersLimit;
+
+    /**
      * The users limit of the workspace.
      *
      * @var float $usersLimit
@@ -273,6 +281,7 @@ class WorkspaceSchema
      * @param  float  $salesLimit
      * @param  float  $domainsLimit
      * @param  float  $tagsLimit
+     * @param  float  $foldersLimit
      * @param  float  $usersLimit
      * @param  float  $aiUsage
      * @param  float  $aiLimit
@@ -292,7 +301,7 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -307,6 +316,7 @@ class WorkspaceSchema
         $this->salesLimit = $salesLimit;
         $this->domainsLimit = $domainsLimit;
         $this->tagsLimit = $tagsLimit;
+        $this->foldersLimit = $foldersLimit;
         $this->usersLimit = $usersLimit;
         $this->aiUsage = $aiUsage;
         $this->aiLimit = $aiLimit;

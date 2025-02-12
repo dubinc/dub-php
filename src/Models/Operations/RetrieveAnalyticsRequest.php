@@ -197,6 +197,14 @@ class RetrieveAnalyticsRequest
     public string|array|null $tagIds = null;
 
     /**
+     * The folder ID to retrieve analytics for. If not provided, return analytics for unsorted links.
+     *
+     * @var ?string $folderId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=folderId')]
+    public ?string $folderId = null;
+
+    /**
      * Deprecated. Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
      *
      * @var ?bool $qr
@@ -303,6 +311,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $url
      * @param  ?string  $tagId
      * @param  string|array<string>|null  $tagIds
+     * @param  ?string  $folderId
      * @param  ?bool  $qr
      * @param  ?bool  $root
      * @param  ?string  $utmSource
@@ -312,7 +321,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $utmContent
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?bool $qr = null, ?bool $root = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $qr = null, ?bool $root = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -337,6 +346,7 @@ class RetrieveAnalyticsRequest
         $this->url = $url;
         $this->tagId = $tagId;
         $this->tagIds = $tagIds;
+        $this->folderId = $folderId;
         $this->qr = $qr;
         $this->root = $root;
         $this->utmSource = $utmSource;

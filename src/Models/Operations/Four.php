@@ -9,8 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-enum CreatePartnerType: string
+enum Four: string
 {
-    case Percentage = 'percentage';
-    case Flat = 'flat';
+    case FolderId = 'folderId';
 }
