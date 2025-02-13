@@ -12,6 +12,6 @@ namespace Dub\Models\Operations;
 /** The access level of the folder within the workspace. */
 enum AccessLevel: string
 {
-    case Read = 'read';
     case Write = 'write';
+    case Read = 'read';
 }
