@@ -34,6 +34,13 @@ class PartnerCreatedEventData
 
     /**
      *
+     * @var bool $payoutsEnabled
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsEnabled')]
+    public bool $payoutsEnabled;
+
+    /**
+     *
      * @var string $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
@@ -136,6 +143,7 @@ class PartnerCreatedEventData
      * @param  string  $id
      * @param  string  $name
      * @param  string  $country
+     * @param  bool  $payoutsEnabled
      * @param  string  $createdAt
      * @param  Status  $status
      * @param  string  $programId
@@ -151,11 +159,12 @@ class PartnerCreatedEventData
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $country, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
+    public function __construct(string $id, string $name, string $country, bool $payoutsEnabled, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->id = $id;
         $this->name = $name;
         $this->country = $country;
+        $this->payoutsEnabled = $payoutsEnabled;
         $this->createdAt = $createdAt;
         $this->status = $status;
         $this->programId = $programId;
