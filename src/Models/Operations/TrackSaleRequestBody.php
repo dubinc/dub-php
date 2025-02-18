@@ -85,6 +85,15 @@ class TrackSaleRequestBody
     public ?string $invoiceId = null;
 
     /**
+     * The name of the lead event that occurred before the sale.
+     *
+     * @var ?string $leadEventName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('leadEventName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $leadEventName = null;
+
+    /**
      * @param  int  $amount
      * @param  PaymentProcessor  $paymentProcessor
      * @param  ?string  $externalId
@@ -93,9 +102,10 @@ class TrackSaleRequestBody
      * @param  ?string  $customerId
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
+     * @param  ?string  $leadEventName
      * @phpstan-pure
      */
-    public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $externalId = '', ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $customerId = null, ?string $invoiceId = null)
+    public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $externalId = '', ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $customerId = null, ?string $invoiceId = null, ?string $leadEventName = null)
     {
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
@@ -105,5 +115,6 @@ class TrackSaleRequestBody
         $this->currency = $currency;
         $this->customerId = $customerId;
         $this->invoiceId = $invoiceId;
+        $this->leadEventName = $leadEventName;
     }
 }
