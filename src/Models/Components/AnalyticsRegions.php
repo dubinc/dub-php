@@ -9,36 +9,36 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-class AnalyticsCities
+class AnalyticsRegions
 {
     /**
-     * The 2-letter country code of the city: https://d.to/geo
+     * The 2-letter country code of the region: https://d.to/geo
      *
-     * @var AnalyticsCitiesCountry $country
+     * @var AnalyticsRegionsCountry $country
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsCitiesCountry')]
-    public AnalyticsCitiesCountry $country;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsRegionsCountry')]
+    public AnalyticsRegionsCountry $country;
 
     /**
-     * The name of the city
+     * The 2-letter ISO 3166-2 region code representing the region associated with the location of the user.
      *
-     * @var string $city
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
-    public string $city;
-
-    /**
-     *
-     * @var ?AnalyticsCitiesRegion $region
+     * @var string $region
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('region')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsCitiesRegion|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?AnalyticsCitiesRegion $region = null;
+    public string $region;
 
     /**
-     * The number of clicks from this city
+     *
+     * @var ?AnalyticsRegionsCity $city
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsRegionsCity|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?AnalyticsRegionsCity $city = null;
+
+    /**
+     * The number of clicks from this region
      *
      * @var ?float $clicks
      */
@@ -47,7 +47,7 @@ class AnalyticsCities
     public ?float $clicks = null;
 
     /**
-     * The number of leads from this city
+     * The number of leads from this region
      *
      * @var ?float $leads
      */
@@ -56,7 +56,7 @@ class AnalyticsCities
     public ?float $leads = null;
 
     /**
-     * The number of sales from this city
+     * The number of sales from this region
      *
      * @var ?float $sales
      */
@@ -65,7 +65,7 @@ class AnalyticsCities
     public ?float $sales = null;
 
     /**
-     * The total amount of sales from this city, in cents
+     * The total amount of sales from this region, in cents
      *
      * @var ?float $saleAmount
      */
@@ -74,20 +74,20 @@ class AnalyticsCities
     public ?float $saleAmount = null;
 
     /**
-     * @param  AnalyticsCitiesCountry  $country
-     * @param  string  $city
-     * @param  ?AnalyticsCitiesRegion  $region
+     * @param  AnalyticsRegionsCountry  $country
+     * @param  string  $region
+     * @param  ?AnalyticsRegionsCity  $city
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(AnalyticsCitiesCountry $country, string $city, ?AnalyticsCitiesRegion $region = AnalyticsCitiesRegion::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(AnalyticsRegionsCountry $country, string $region, ?AnalyticsRegionsCity $city = AnalyticsRegionsCity::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->country = $country;
-        $this->city = $city;
         $this->region = $region;
+        $this->city = $city;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;

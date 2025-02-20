@@ -45,6 +45,15 @@ array $value = /* values here */
 
 ```php
 /**
+* @var array<Components\AnalyticsRegions>
+*/
+array $value = /* values here */
+```
+
+### `array`
+
+```php
+/**
 * @var array<Components\AnalyticsCities>
 */
 array $value = /* values here */
