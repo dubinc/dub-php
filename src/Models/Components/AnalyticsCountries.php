@@ -22,6 +22,15 @@ class AnalyticsCountries
 
     /**
      *
+     * @var ?Region $region
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('region')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Region|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Region $region = null;
+
+    /**
+     *
      * @var ?City $city
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
@@ -67,6 +76,7 @@ class AnalyticsCountries
 
     /**
      * @param  Country  $country
+     * @param  ?Region  $region
      * @param  ?City  $city
      * @param  ?float  $clicks
      * @param  ?float  $leads
@@ -74,9 +84,10 @@ class AnalyticsCountries
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(Country $country, ?City $city = City::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(Country $country, ?Region $region = Region::Wildcard, ?City $city = City::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->country = $country;
+        $this->region = $region;
         $this->city = $city;
         $this->clicks = $clicks;
         $this->leads = $leads;
