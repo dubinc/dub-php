@@ -319,6 +319,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
+use Dub\Models\Errors;
 use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
@@ -384,7 +385,7 @@ try {
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
+The default server can be overridden globally using the `setServerUrl(string $serverUrl)` builder method when initializing the SDK client instance. For example:
 ```php
 declare(strict_types=1);
 
