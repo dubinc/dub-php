@@ -85,7 +85,7 @@ class TrackSaleRequestBody
     public ?string $invoiceId = null;
 
     /**
-     * The name of the lead event that occurred before the sale.
+     * The name of the lead event that occurred before the sale (case-sensitive).
      *
      * @var ?string $leadEventName
      */
