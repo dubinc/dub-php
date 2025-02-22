@@ -56,6 +56,24 @@ class CreateDomainRequestBody
     public ?string $logo = null;
 
     /**
+     * assetLinks.json configuration file (for deep link support on Android).
+     *
+     * @var ?string $assetLinks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('assetLinks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $assetLinks = null;
+
+    /**
+     * apple-app-site-association configuration file (for deep link support on iOS).
+     *
+     * @var ?string $appleAppSiteAssociation
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('appleAppSiteAssociation')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $appleAppSiteAssociation = null;
+
+    /**
      * Whether to archive this domain. `false` will unarchive a previously archived domain.
      *
      * @var ?bool $archived
@@ -71,15 +89,19 @@ class CreateDomainRequestBody
      * @param  ?string  $notFoundUrl
      * @param  ?string  $placeholder
      * @param  ?string  $logo
+     * @param  ?string  $assetLinks
+     * @param  ?string  $appleAppSiteAssociation
      * @phpstan-pure
      */
-    public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?string $logo = null, ?bool $archived = false)
+    public function __construct(string $slug, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $placeholder = null, ?string $logo = null, ?string $assetLinks = null, ?string $appleAppSiteAssociation = null, ?bool $archived = false)
     {
         $this->slug = $slug;
         $this->expiredUrl = $expiredUrl;
         $this->notFoundUrl = $notFoundUrl;
         $this->placeholder = $placeholder;
         $this->logo = $logo;
+        $this->assetLinks = $assetLinks;
+        $this->appleAppSiteAssociation = $appleAppSiteAssociation;
         $this->archived = $archived;
     }
 }

@@ -27,13 +27,6 @@ class PartnerCreatedEventData
 
     /**
      *
-     * @var string $country
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    public string $country;
-
-    /**
-     *
      * @var bool $payoutsEnabled
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsEnabled')]
@@ -74,6 +67,13 @@ class PartnerCreatedEventData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
     public ?string $image;
+
+    /**
+     *
+     * @var ?string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    public ?string $country;
 
     /**
      *
@@ -142,13 +142,13 @@ class PartnerCreatedEventData
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  string  $country
      * @param  bool  $payoutsEnabled
      * @param  string  $createdAt
      * @param  Status  $status
      * @param  string  $programId
      * @param  ?string  $email
      * @param  ?string  $image
+     * @param  ?string  $country
      * @param  ?string  $tenantId
      * @param  ?array<Links>  $links
      * @param  ?float  $clicks
@@ -159,17 +159,17 @@ class PartnerCreatedEventData
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $country, bool $payoutsEnabled, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
+    public function __construct(string $id, string $name, bool $payoutsEnabled, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->country = $country;
         $this->payoutsEnabled = $payoutsEnabled;
         $this->createdAt = $createdAt;
         $this->status = $status;
         $this->programId = $programId;
         $this->email = $email;
         $this->image = $image;
+        $this->country = $country;
         $this->tenantId = $tenantId;
         $this->links = $links;
         $this->description = $description;
