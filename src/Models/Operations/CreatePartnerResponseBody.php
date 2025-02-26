@@ -102,6 +102,14 @@ class CreatePartnerResponseBody
 
     /**
      *
+     * @var ?string $applicationId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('applicationId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $applicationId = null;
+
+    /**
+     *
      * @var ?float $clicks
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
@@ -158,9 +166,10 @@ class CreatePartnerResponseBody
      * @param  ?float  $saleAmount
      * @param  ?float  $earnings
      * @param  ?string  $description
+     * @param  ?string  $applicationId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, bool $payoutsEnabled, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
+    public function __construct(string $id, string $name, bool $payoutsEnabled, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $applicationId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -174,6 +183,7 @@ class CreatePartnerResponseBody
         $this->tenantId = $tenantId;
         $this->links = $links;
         $this->description = $description;
+        $this->applicationId = $applicationId;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;

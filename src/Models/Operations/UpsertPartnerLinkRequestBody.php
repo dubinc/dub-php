@@ -66,15 +66,25 @@ class UpsertPartnerLinkRequestBody
     public ?string $url = null;
 
     /**
+     * The comments for the short link.
+     *
+     * @var ?string $comments
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('comments')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $comments = null;
+
+    /**
      * @param  string  $programId
      * @param  ?string  $key
      * @param  ?UpsertPartnerLinkLinkProps  $linkProps
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $url
+     * @param  ?string  $comments
      * @phpstan-pure
      */
-    public function __construct(string $programId, ?string $key = null, ?UpsertPartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null, ?string $url = null)
+    public function __construct(string $programId, ?string $key = null, ?UpsertPartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null, ?string $url = null, ?string $comments = null)
     {
         $this->programId = $programId;
         $this->key = $key;
@@ -82,5 +92,6 @@ class UpsertPartnerLinkRequestBody
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->url = $url;
+        $this->comments = $comments;
     }
 }
