@@ -56,6 +56,16 @@ class TrackLeadRequestBody
     public ?string $externalId = null;
 
     /**
+     * The mode to use for tracking the lead event. `async` will not block the request; `wait` will block the request until the lead event is fully recorded in Dub.
+     *
+     * @var ?Mode $mode
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('mode')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Mode|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Mode $mode = null;
+
+    /**
      * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
      *
      * @var ?string $customerId
@@ -96,6 +106,7 @@ class TrackLeadRequestBody
      * @param  string  $clickId
      * @param  string  $eventName
      * @param  ?string  $externalId
+     * @param  ?Mode  $mode
      * @param  ?float  $eventQuantity
      * @param  ?string  $customerId
      * @param  ?string  $customerName
@@ -104,13 +115,14 @@ class TrackLeadRequestBody
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $clickId, string $eventName, ?float $eventQuantity = null, ?array $metadata = null, ?string $externalId = '', ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
+    public function __construct(string $clickId, string $eventName, ?float $eventQuantity = null, ?array $metadata = null, ?string $externalId = '', ?Mode $mode = Mode::Async, ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;
         $this->eventQuantity = $eventQuantity;
         $this->metadata = $metadata;
         $this->externalId = $externalId;
+        $this->mode = $mode;
         $this->customerId = $customerId;
         $this->customerName = $customerName;
         $this->customerEmail = $customerEmail;

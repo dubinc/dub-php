@@ -9,4 +9,6 @@ The payment processor via which the sale was made.
 | --------- | --------- |
 | `Stripe`  | stripe    |
 | `Shopify` | shopify   |
+| `Polar`   | polar     |
 | `Paddle`  | paddle    |
+| `Custom`  | custom    |
