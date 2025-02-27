@@ -14,5 +14,7 @@ enum PaymentProcessor: string
 {
     case Stripe = 'stripe';
     case Shopify = 'shopify';
+    case Polar = 'polar';
     case Paddle = 'paddle';
+    case Custom = 'custom';
 }

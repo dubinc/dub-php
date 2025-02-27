@@ -29,7 +29,7 @@ class Sale
     public PaymentProcessor $paymentProcessor;
 
     /**
-     * The invoice ID of the sale.
+     * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
      *
      * @var ?string $invoiceId
      */

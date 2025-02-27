@@ -89,7 +89,7 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\TrackSaleRequestBody(
     amount: 996500,
-    paymentProcessor: Operations\PaymentProcessor::Paddle,
+    paymentProcessor: Operations\PaymentProcessor::Custom,
 );
 
 $response = $sdk->track->sale(
