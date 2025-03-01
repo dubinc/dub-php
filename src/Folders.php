@@ -377,13 +377,19 @@ class Folders
      * Retrieve a list of folders for the authenticated workspace.
      *
      * @param  ?string  $search
+     * @param  ?bool  $includeLinkCount
+     * @param  ?float  $page
+     * @param  ?float  $pageSize
      * @return Operations\ListFoldersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?string $search = null, ?Options $options = null): Operations\ListFoldersResponse
+    public function list(?string $search = null, ?bool $includeLinkCount = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): Operations\ListFoldersResponse
     {
         $request = new Operations\ListFoldersRequest(
             search: $search,
+            includeLinkCount: $includeLinkCount,
+            page: $page,
+            pageSize: $pageSize,
         );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/folders');

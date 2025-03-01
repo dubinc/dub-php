@@ -68,7 +68,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listFolders"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->folders->list(\n    search: '<value>'\n);\n\nif ($response->folderSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->folders->list(\n    search: '<value>',\n    includeLinkCount: false,\n    page: 1,\n    pageSize: 50\n\n);\n\nif ($response->folderSchemas !== null) {\n    // handle response\n}"
   - target: $["paths"]["/folders"]["post"]
     update:
       "x-codeSamples":

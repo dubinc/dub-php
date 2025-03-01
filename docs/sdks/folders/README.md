@@ -145,7 +145,11 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->folders->list(
-    search: '<value>'
+    search: '<value>',
+    includeLinkCount: false,
+    page: 1,
+    pageSize: 50
+
 );
 
 if ($response->folderSchemas !== null) {
@@ -155,9 +159,12 @@ if ($response->folderSchemas !== null) {
 
 ### Parameters
 
-| Parameter                                 | Type                                      | Required                                  | Description                               |
-| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| `search`                                  | *?string*                                 | :heavy_minus_sign:                        | The search term to filter the folders by. |
+| Parameter                                          | Type                                               | Required                                           | Description                                        | Example                                            |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| `search`                                           | *?string*                                          | :heavy_minus_sign:                                 | The search term to filter the folders by.          |                                                    |
+| `includeLinkCount`                                 | *?bool*                                            | :heavy_minus_sign:                                 | Whether to include the link count in the response. |                                                    |
+| `page`                                             | *?float*                                           | :heavy_minus_sign:                                 | The page number for pagination.                    | 1                                                  |
+| `pageSize`                                         | *?float*                                           | :heavy_minus_sign:                                 | The number of items per page.                      | 50                                                 |
 
 ### Response
 
