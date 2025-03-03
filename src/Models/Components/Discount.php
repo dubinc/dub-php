@@ -27,11 +27,11 @@ class Discount
 
     /**
      *
-     * @var Type $type
+     * @var LeadEventType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Type')]
-    public Type $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadEventType')]
+    public LeadEventType $type;
 
     /**
      *
@@ -65,14 +65,14 @@ class Discount
     /**
      * @param  string  $id
      * @param  float  $amount
-     * @param  Type  $type
+     * @param  LeadEventType  $type
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId
      * @param  ?float  $duration
      * @param  ?Interval  $interval
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, Type $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?Interval $interval = null)
+    public function __construct(string $id, float $amount, LeadEventType $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?Interval $interval = null)
     {
         $this->id = $id;
         $this->amount = $amount;

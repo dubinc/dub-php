@@ -28,6 +28,14 @@ class FolderSchema
     public string $name;
 
     /**
+     *
+     * @var Type $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Type')]
+    public Type $type;
+
+    /**
      * The date the folder was created.
      *
      * @var string $createdAt
@@ -65,16 +73,18 @@ class FolderSchema
     /**
      * @param  string  $id
      * @param  string  $name
+     * @param  Type  $type
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?float  $linkCount
      * @param  ?AccessLevel  $accessLevel
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $createdAt, string $updatedAt, ?float $linkCount = 0, ?AccessLevel $accessLevel = null)
+    public function __construct(string $id, string $name, Type $type, string $createdAt, string $updatedAt, ?float $linkCount = 0, ?AccessLevel $accessLevel = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->type = $type;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->linkCount = $linkCount;

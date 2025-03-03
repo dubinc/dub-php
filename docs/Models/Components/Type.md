@@ -3,7 +3,7 @@
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Percentage` | percentage   |
-| `Flat`       | flat         |
+| Name      | Value     |
+| --------- | --------- |
+| `Default` | default   |
+| `Mega`    | mega      |
