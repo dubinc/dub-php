@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-enum Type: string
+enum LeadEventType: string
 {
-    case Default = 'default';
-    case Mega = 'mega';
+    case Percentage = 'percentage';
+    case Flat = 'flat';
 }

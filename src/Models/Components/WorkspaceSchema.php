@@ -53,6 +53,14 @@ class WorkspaceSchema
     public float $billingCycleStart;
 
     /**
+     * The total number of links in the workspace.
+     *
+     * @var float $totalLinks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalLinks')]
+    public float $totalLinks;
+
+    /**
      * The usage of the workspace.
      *
      * @var float $usage
@@ -281,6 +289,7 @@ class WorkspaceSchema
      * @param  string  $slug
      * @param  Plan  $plan
      * @param  float  $billingCycleStart
+     * @param  float  $totalLinks
      * @param  float  $usage
      * @param  float  $usageLimit
      * @param  float  $linksUsage
@@ -310,13 +319,14 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->slug = $slug;
         $this->plan = $plan;
         $this->billingCycleStart = $billingCycleStart;
+        $this->totalLinks = $totalLinks;
         $this->usage = $usage;
         $this->usageLimit = $usageLimit;
         $this->linksUsage = $linksUsage;
