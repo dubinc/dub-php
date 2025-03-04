@@ -177,6 +177,12 @@ actions:
         - "lang": "php"
           "label": "upsertPartnerLink"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/partners/sales"]["patch"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "updatePartnerSale"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpdatePartnerSaleRequestBody(\n    programId: '<id>',\n    invoiceId: '<id>',\n    amount: 1560.34,\n);\n\n$response = $sdk->partners->updateSale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/qr"]["get"]
     update:
       "x-codeSamples":

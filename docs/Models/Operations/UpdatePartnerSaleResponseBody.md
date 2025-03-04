@@ -1,0 +1,16 @@
+# UpdatePartnerSaleResponseBody
+
+The updated sale.
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `amount`                                                                                 | *float*                                                                                  | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `earnings`                                                                               | *float*                                                                                  | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `currency`                                                                               | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `status`                                                                                 | [Operations\UpdatePartnerSaleStatus](../../Models/Operations/UpdatePartnerSaleStatus.md) | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `createdAt`                                                                              | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `updatedAt`                                                                              | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
