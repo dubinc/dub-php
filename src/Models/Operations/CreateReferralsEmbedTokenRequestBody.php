@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class CreateEmbedTokenRequestBody
+class CreateReferralsEmbedTokenRequestBody
 {
     /**
      *
@@ -35,15 +35,26 @@ class CreateEmbedTokenRequestBody
     public ?string $tenantId = null;
 
     /**
+     *
+     * @var ?Partner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Partner|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Partner $partner = null;
+
+    /**
      * @param  string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
+     * @param  ?Partner  $partner
      * @phpstan-pure
      */
-    public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null)
+    public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null, ?Partner $partner = null)
     {
         $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
+        $this->partner = $partner;
     }
 }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 67941bfbb5e02cd5bc33d054673647ac
+  docChecksum: 7d12cd211b08ee0e5d9a48c3e7a01812
   docVersion: 0.0.1
-  speakeasyVersion: 1.509.0
-  generationVersion: 2.539.0
-  releaseVersion: 0.11.36
-  configChecksum: 389c4476151acfa75f88ea0dcb333bf3
+  speakeasyVersion: 1.509.1
+  generationVersion: 2.539.1
+  releaseVersion: 0.11.37
+  configChecksum: 51a932ebe2279906fa79c87bef7ec12d
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -202,9 +202,6 @@ generatedFiles:
   - docs/Models/Operations/CreateCustomerType.md
   - docs/Models/Operations/CreateDomainRequestBody.md
   - docs/Models/Operations/CreateDomainResponse.md
-  - docs/Models/Operations/CreateEmbedTokenRequestBody.md
-  - docs/Models/Operations/CreateEmbedTokenResponse.md
-  - docs/Models/Operations/CreateEmbedTokenResponseBody.md
   - docs/Models/Operations/CreateFolderRequestBody.md
   - docs/Models/Operations/CreateFolderResponse.md
   - docs/Models/Operations/CreateLinkRequestBody.md
@@ -219,6 +216,13 @@ generatedFiles:
   - docs/Models/Operations/CreatePartnerResponseBody.md
   - docs/Models/Operations/CreatePartnerTagIds.md
   - docs/Models/Operations/CreatePartnerTagNames.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenCountry.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenLinkProps.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenRequestBody.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenResponse.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenResponseBody.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenTagIds.md
+  - docs/Models/Operations/CreateReferralsEmbedTokenTagNames.md
   - docs/Models/Operations/CreateTagRequestBody.md
   - docs/Models/Operations/CreateTagResponse.md
   - docs/Models/Operations/Customer.md
@@ -250,6 +254,7 @@ generatedFiles:
   - docs/Models/Operations/GetCustomerResponseBody.md
   - docs/Models/Operations/GetCustomerType.md
   - docs/Models/Operations/GetCustomersInterval.md
+  - docs/Models/Operations/GetCustomersPartner.md
   - docs/Models/Operations/GetCustomersRequest.md
   - docs/Models/Operations/GetCustomersResponse.md
   - docs/Models/Operations/GetCustomersResponseBody.md
@@ -588,9 +593,6 @@ generatedFiles:
   - src/Models/Operations/CreateCustomerType.php
   - src/Models/Operations/CreateDomainRequestBody.php
   - src/Models/Operations/CreateDomainResponse.php
-  - src/Models/Operations/CreateEmbedTokenRequestBody.php
-  - src/Models/Operations/CreateEmbedTokenResponse.php
-  - src/Models/Operations/CreateEmbedTokenResponseBody.php
   - src/Models/Operations/CreateFolderRequestBody.php
   - src/Models/Operations/CreateFolderResponse.php
   - src/Models/Operations/CreateLinkRequestBody.php
@@ -601,6 +603,11 @@ generatedFiles:
   - src/Models/Operations/CreatePartnerRequestBody.php
   - src/Models/Operations/CreatePartnerResponse.php
   - src/Models/Operations/CreatePartnerResponseBody.php
+  - src/Models/Operations/CreateReferralsEmbedTokenCountry.php
+  - src/Models/Operations/CreateReferralsEmbedTokenLinkProps.php
+  - src/Models/Operations/CreateReferralsEmbedTokenRequestBody.php
+  - src/Models/Operations/CreateReferralsEmbedTokenResponse.php
+  - src/Models/Operations/CreateReferralsEmbedTokenResponseBody.php
   - src/Models/Operations/CreateTagRequestBody.php
   - src/Models/Operations/CreateTagResponse.php
   - src/Models/Operations/Customer.php
@@ -632,6 +639,7 @@ generatedFiles:
   - src/Models/Operations/GetCustomerResponseBody.php
   - src/Models/Operations/GetCustomerType.php
   - src/Models/Operations/GetCustomersInterval.php
+  - src/Models/Operations/GetCustomersPartner.php
   - src/Models/Operations/GetCustomersRequest.php
   - src/Models/Operations/GetCustomersResponse.php
   - src/Models/Operations/GetCustomersResponseBody.php
@@ -1092,7 +1100,7 @@ examples:
           sortBy: "timestamp"
       responses:
         "200":
-          application/json: [{"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "remorseful-concentration.biz", "key": "<key>", "url": "https://primary-paintwork.com/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1763700039650", "expiredUrl": "https://black-poetry.name/", "password": "COyVtOrvIw1vLIJ", "title": "<value>", "description": "despite er boom however when uh-huh", "image": "https://picsum.photos/seed/T1tZJLp1EG/3827/3109", "video": "https://loremflickr.com/2420/1632?lock=7470650813503352", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "green"}], "folderId": "<id>", "webhookIds": [], "comments": "tenement commonly softly boo massive sorrowful", "shortLink": "https://dense-custom.info/", "qrCode": "https://alive-lid.biz", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1729112851205", "updatedAt": "1740986479204", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://utilized-quit.net/", "country": "Togo", "city": "Cormiermouth", "region": "<value>", "continent": "North America", "device": "Mobile", "browser": "Chrome", "os": "Chrome OS", "referer": "gummy-cope.net", "refererUrl": "https://prickly-bourgeoisie.info/", "ip": "69bd:53cd:cebc:ac4b:d1e8:50e8:ee59:b0b3"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1739868395664"}, "sale": {"amount": 625809, "invoiceId": null, "paymentProcessor": "stripe"}, "saleAmount": 1401.42, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "unruly-allegation.name", "key": "<key>", "url": "https://fortunate-swim.info/", "continent": "Australia", "country": "Cook Islands", "city": "South Harryburgh", "device": "Mobile", "browser": "Safari", "os": "WebOS", "qr": 1523.03, "ip": "caf5:04dc:da9e:67cc:af3b:8caf:afbe:e39c"}, {"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "right-window.biz", "key": "<key>", "url": "https://physical-experience.org/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1752391393247", "expiredUrl": "https://indelible-birdbath.net", "password": "4yMlkCXkK5ppW3u", "title": "<value>", "description": "terribly gosh facilitate in", "image": "https://loremflickr.com/2596/954?lock=8527955982122580", "video": "https://loremflickr.com/3336/742?lock=2177640289466521", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "red"}, {"id": "<id>", "name": "<value>", "color": "pink"}, {"id": "<id>", "name": "<value>", "color": "pink"}], "folderId": "<id>", "webhookIds": ["<value>", "<value>", "<value>"], "comments": "up so pro pish clear-cut an mid aw disconnection which wetly typeface usable underneath putrefy ah aha", "shortLink": "https://knowledgeable-season.info", "qrCode": "https://nimble-individual.biz/", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1739607116953", "updatedAt": "1740992200418", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://perfumed-marketplace.com/", "country": "Burundi", "city": "Stockton", "region": "<value>", "continent": "Asia", "device": "Desktop", "browser": "Chrome", "os": "Symbian", "referer": "well-off-hygienic.org", "refererUrl": "https://ripe-ceramic.org", "ip": "eebc:cce9:cecf:ebeb:dfd9:15f2:a0cc:a3b1"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1723968061776"}, "sale": {"amount": 443316, "invoiceId": null, "paymentProcessor": "custom"}, "saleAmount": 2634.98, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "next-cricket.biz", "key": "<key>", "url": "https://repentant-rust.name/", "continent": "Australia", "country": "Saint Helena", "city": "Luettgenfort", "device": "Mobile", "browser": "Safari", "os": "Chrome OS", "qr": 4390.32, "ip": "54.229.114.129"}]
+          application/json: [{"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "remorseful-concentration.biz", "key": "<key>", "url": "https://primary-paintwork.com/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1763786446246", "expiredUrl": "https://black-poetry.name/", "password": "COyVtOrvIw1vLIJ", "title": "<value>", "description": "despite er boom however when uh-huh", "image": "https://picsum.photos/seed/T1tZJLp1EG/3827/3109", "video": "https://loremflickr.com/2420/1632?lock=7470650813503352", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "green"}], "folderId": "<id>", "webhookIds": [], "comments": "tenement commonly softly boo massive sorrowful", "shortLink": "https://dense-custom.info/", "qrCode": "https://alive-lid.biz", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1729199257796", "updatedAt": "1741072885795", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://utilized-quit.net/", "country": "Togo", "city": "Cormiermouth", "region": "<value>", "continent": "North America", "device": "Mobile", "browser": "Chrome", "os": "Chrome OS", "referer": "gummy-cope.net", "refererUrl": "https://prickly-bourgeoisie.info/", "ip": "69bd:53cd:cebc:ac4b:d1e8:50e8:ee59:b0b3"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1739954802254"}, "sale": {"amount": 625809, "invoiceId": null, "paymentProcessor": "stripe"}, "saleAmount": 1401.42, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "unruly-allegation.name", "key": "<key>", "url": "https://fortunate-swim.info/", "continent": "Australia", "country": "Cook Islands", "city": "South Harryburgh", "device": "Mobile", "browser": "Safari", "os": "WebOS", "qr": 1523.03, "ip": "caf5:04dc:da9e:67cc:af3b:8caf:afbe:e39c"}, {"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "right-window.biz", "key": "<key>", "url": "https://physical-experience.org/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1752477799836", "expiredUrl": "https://indelible-birdbath.net", "password": "4yMlkCXkK5ppW3u", "title": "<value>", "description": "terribly gosh facilitate in", "image": "https://loremflickr.com/2596/954?lock=8527955982122580", "video": "https://loremflickr.com/3336/742?lock=2177640289466521", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "red"}, {"id": "<id>", "name": "<value>", "color": "pink"}, {"id": "<id>", "name": "<value>", "color": "pink"}], "folderId": "<id>", "webhookIds": ["<value>", "<value>", "<value>"], "comments": "up so pro pish clear-cut an mid aw disconnection which wetly typeface usable underneath putrefy ah aha", "shortLink": "https://knowledgeable-season.info", "qrCode": "https://nimble-individual.biz/", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1739693523538", "updatedAt": "1741078607002", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://perfumed-marketplace.com/", "country": "Burundi", "city": "Stockton", "region": "<value>", "continent": "Asia", "device": "Desktop", "browser": "Chrome", "os": "Symbian", "referer": "well-off-hygienic.org", "refererUrl": "https://ripe-ceramic.org", "ip": "eebc:cce9:cecf:ebeb:dfd9:15f2:a0cc:a3b1"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1724054468360"}, "sale": {"amount": 443316, "invoiceId": null, "paymentProcessor": "custom"}, "saleAmount": 2634.98, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "next-cricket.biz", "key": "<key>", "url": "https://repentant-rust.name/", "continent": "Australia", "country": "Saint Helena", "city": "Luettgenfort", "device": "Mobile", "browser": "Safari", "os": "Chrome OS", "qr": 4390.32, "ip": "54.229.114.129"}]
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1824,6 +1832,31 @@ examples:
       responses:
         "200":
           application/json: {"id": "<id>", "amount": 1560.34, "earnings": 2256.73, "currency": "Cayman Islands Dollar", "status": "pending", "createdAt": "1729448140410", "updatedAt": "1740966811338"}
+        "400":
+          application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
+        "401":
+          application/json: {"error": {"code": "unauthorized", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unauthorized"}}
+        "403":
+          application/json: {"error": {"code": "forbidden", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#forbidden"}}
+        "404":
+          application/json: {"error": {"code": "not_found", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#not-found"}}
+        "409":
+          application/json: {"error": {"code": "conflict", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#conflict"}}
+        "410":
+          application/json: {"error": {"code": "invite_expired", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#invite-expired"}}
+        "422":
+          application/json: {"error": {"code": "unprocessable_entity", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unprocessable-entity"}}
+        "429":
+          application/json: {"error": {"code": "rate_limit_exceeded", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#rate-limit_exceeded"}}
+        "500":
+          application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
+  createReferralsEmbedToken:
+    speakeasy-default-create-referrals-embed-token:
+      requestBody:
+        application/json: {"programId": "<id>", "partner": {"name": "<value>", "email": "Florencio98@hotmail.com", "linkProps": {"externalId": "123456", "tagIds": ["clux0rgak00011..."]}}}
+      responses:
+        "201":
+          application/json: {"publicToken": "<value>", "expires": "<value>"}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":

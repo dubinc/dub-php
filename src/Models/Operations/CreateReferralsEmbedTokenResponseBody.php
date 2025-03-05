@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** CreateEmbedTokenResponseBody - The created public embed token. */
-class CreateEmbedTokenResponseBody
+/** CreateReferralsEmbedTokenResponseBody - The created public embed token. */
+class CreateReferralsEmbedTokenResponseBody
 {
     /**
      *

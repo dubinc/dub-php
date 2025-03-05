@@ -35,7 +35,6 @@ $request = new Operations\CreatePartnerRequestBody(
     programId: '<id>',
     name: '<value>',
     email: 'Loyal79@yahoo.com',
-    username: 'Aaliyah_Borer',
     linkProps: new Operations\LinkProps(
         tagIds: [
             'clux0rgak00011...',

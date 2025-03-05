@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** UpsertPartnerLinkLinkProps - Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner. */
-class UpsertPartnerLinkLinkProps
+/** CreateReferralsEmbedTokenLinkProps - Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner. */
+class CreateReferralsEmbedTokenLinkProps
 {
     /**
      * The prefix of the short link slug for randomly-generated keys (e.g. if prefix is `/c/`, generated keys will be in the `/c/:key` format). Will be ignored if `key` is provided.

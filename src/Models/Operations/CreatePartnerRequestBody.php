@@ -36,14 +36,6 @@ class CreatePartnerRequestBody
     public string $email;
 
     /**
-     * A unique username for the partner in your system. This will be used to create a short link for the partner using your program's default domain.
-     *
-     * @var string $username
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('username')]
-    public string $username;
-
-    /**
      * The ID of the partner in your system.
      *
      * @var ?string $tenantId
@@ -61,6 +53,15 @@ class CreatePartnerRequestBody
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\LinkProps|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?LinkProps $linkProps = null;
+
+    /**
+     * A unique username for the partner in your system (max 100 characters). This will be used to create a short link for the partner using your program's default domain. If not provided, Dub will try to generate a username from the partner's name or email.
+     *
+     * @var ?string $username
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $username = null;
 
     /**
      * Avatar image for the partner – if not provided, a default avatar will be used.
@@ -94,22 +95,22 @@ class CreatePartnerRequestBody
      * @param  string  $programId
      * @param  string  $name
      * @param  string  $email
-     * @param  string  $username
      * @param  ?string  $tenantId
      * @param  ?LinkProps  $linkProps
+     * @param  ?string  $username
      * @param  ?string  $image
      * @param  ?Country  $country
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $programId, string $name, string $email, string $username, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $image = null, ?Country $country = null, ?string $description = null)
+    public function __construct(string $programId, string $name, string $email, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $username = null, ?string $image = null, ?Country $country = null, ?string $description = null)
     {
         $this->programId = $programId;
         $this->name = $name;
         $this->email = $email;
-        $this->username = $username;
         $this->tenantId = $tenantId;
         $this->linkProps = $linkProps;
+        $this->username = $username;
         $this->image = $image;
         $this->country = $country;
         $this->description = $description;
