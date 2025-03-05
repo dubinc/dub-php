@@ -158,7 +158,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createPartner"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerRequestBody(\n    programId: '<id>',\n    name: '<value>',\n    email: 'Loyal79@yahoo.com',\n    username: 'Aaliyah_Borer',\n    linkProps: new Operations\\LinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerRequestBody(\n    programId: '<id>',\n    name: '<value>',\n    email: 'Loyal79@yahoo.com',\n    linkProps: new Operations\\LinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/analytics"]["get"]
     update:
       "x-codeSamples":
@@ -213,12 +213,12 @@ actions:
         - "lang": "php"
           "label": "updateTag"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateTagRequestBody();\n\n$response = $sdk->tags->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->tagSchema !== null) {\n    // handle response\n}"
-  - target: $["paths"]["/tokens/embed"]["post"]
+  - target: $["paths"]["/tokens/embed/referrals"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
-          "label": "createEmbedToken"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateEmbedTokenRequestBody(\n    programId: '<id>',\n);\n\n$response = $sdk->embedTokens->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "label": "createReferralsEmbedToken"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateReferralsEmbedTokenRequestBody(\n    programId: '<id>',\n    partner: new Operations\\Partner(\n        name: '<value>',\n        email: 'Florencio98@hotmail.com',\n        linkProps: new Operations\\CreateReferralsEmbedTokenLinkProps(\n            externalId: '123456',\n            tagIds: [\n                'clux0rgak00011...',\n            ],\n        ),\n    ),\n);\n\n$response = $sdk->embedTokens->referrals(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/lead"]["post"]
     update:
       "x-codeSamples":

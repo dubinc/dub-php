@@ -96,15 +96,6 @@ class LinkProps
     public ?string $tenantId = null;
 
     /**
-     * The ID of the partner the short link is associated with.
-     *
-     * @var ?string $partnerId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $partnerId = null;
-
-    /**
      * The unique ID existing folder to assign the short link to.
      *
      * @var ?string $folderId
@@ -267,7 +258,6 @@ class LinkProps
      * @param  ?bool  $doIndex
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
-     * @param  ?string  $partnerId
      * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
@@ -287,7 +277,7 @@ class LinkProps
      * @param  ?string  $ref
      * @phpstan-pure
      */
-    public function __construct(?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null)
+    public function __construct(?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null)
     {
         $this->prefix = $prefix;
         $this->archived = $archived;
@@ -298,7 +288,6 @@ class LinkProps
         $this->doIndex = $doIndex;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
-        $this->partnerId = $partnerId;
         $this->folderId = $folderId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;

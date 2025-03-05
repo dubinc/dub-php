@@ -45,18 +45,18 @@ class EmbedTokens
     }
 
     /**
-     * Create a new embed token
+     * Create a new referrals embed token
      *
-     * Create a new embed token for the referral link.
+     * Create a new referrals embed token for the given partner/tenant.
      *
-     * @param  ?Operations\CreateEmbedTokenRequestBody  $request
-     * @return Operations\CreateEmbedTokenResponse
+     * @param  ?Operations\CreateReferralsEmbedTokenRequestBody  $request
+     * @return Operations\CreateReferralsEmbedTokenResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function create(?Operations\CreateEmbedTokenRequestBody $request = null, ?Options $options = null): Operations\CreateEmbedTokenResponse
+    public function referrals(?Operations\CreateReferralsEmbedTokenRequestBody $request = null, ?Options $options = null): Operations\CreateReferralsEmbedTokenResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/tokens/embed');
+        $url = Utils\Utils::generateUrl($baseUrl, '/tokens/embed/referrals');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, 'request', 'json');
@@ -66,7 +66,7 @@ class EmbedTokens
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext('createEmbedToken', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext('createReferralsEmbedToken', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -89,8 +89,8 @@ class EmbedTokens
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\CreateEmbedTokenResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\CreateEmbedTokenResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\CreateReferralsEmbedTokenResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\CreateReferralsEmbedTokenResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,

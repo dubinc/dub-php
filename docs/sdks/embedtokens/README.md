@@ -5,11 +5,11 @@
 
 ### Available Operations
 
-* [create](#create) - Create a new embed token
+* [referrals](#referrals) - Create a new referrals embed token
 
-## create
+## referrals
 
-Create a new embed token for the referral link.
+Create a new referrals embed token for the given partner/tenant.
 
 ### Example Usage
 
@@ -27,11 +27,21 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\CreateEmbedTokenRequestBody(
+$request = new Operations\CreateReferralsEmbedTokenRequestBody(
     programId: '<id>',
+    partner: new Operations\Partner(
+        name: '<value>',
+        email: 'Florencio98@hotmail.com',
+        linkProps: new Operations\CreateReferralsEmbedTokenLinkProps(
+            tagIds: [
+                'clux0rgak00011...',
+            ],
+            externalId: '123456',
+        ),
+    ),
 );
 
-$response = $sdk->embedTokens->create(
+$response = $sdk->embedTokens->referrals(
     request: $request
 );
 
@@ -42,13 +52,13 @@ if ($response->object !== null) {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                       | [Operations\CreateEmbedTokenRequestBody](../../Models/Operations/CreateEmbedTokenRequestBody.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                         | [Operations\CreateReferralsEmbedTokenRequestBody](../../Models/Operations/CreateReferralsEmbedTokenRequestBody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 ### Response
 
-**[?Operations\CreateEmbedTokenResponse](../../Models/Operations/CreateEmbedTokenResponse.md)**
+**[?Operations\CreateReferralsEmbedTokenResponse](../../Models/Operations/CreateReferralsEmbedTokenResponse.md)**
 
 ### Errors
 

@@ -185,7 +185,7 @@ if ($response->responseBodies !== null) {
 
 ### [embedTokens](docs/sdks/embedtokens/README.md)
 
-* [create](docs/sdks/embedtokens/README.md#create) - Create a new embed token
+* [referrals](docs/sdks/embedtokens/README.md#referrals) - Create a new referrals embed token
 
 ### [events](docs/sdks/events/README.md)
 

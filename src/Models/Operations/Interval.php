@@ -21,5 +21,4 @@ enum Interval: string
     case Qtd = 'qtd';
     case Ytd = 'ytd';
     case All = 'all';
-    case AllUnfiltered = 'all_unfiltered';
 }

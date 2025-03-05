@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class CreateEmbedTokenResponse
+class CreateReferralsEmbedTokenResponse
 {
     /**
      * HTTP response content type for this operation
@@ -35,18 +35,18 @@ class CreateEmbedTokenResponse
     /**
      * The created public embed token.
      *
-     * @var ?CreateEmbedTokenResponseBody $object
+     * @var ?CreateReferralsEmbedTokenResponseBody $object
      */
-    public ?CreateEmbedTokenResponseBody $object = null;
+    public ?CreateReferralsEmbedTokenResponseBody $object = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?CreateEmbedTokenResponseBody  $object
+     * @param  ?CreateReferralsEmbedTokenResponseBody  $object
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?CreateEmbedTokenResponseBody $object = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?CreateReferralsEmbedTokenResponseBody $object = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

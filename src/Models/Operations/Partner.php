@@ -12,13 +12,7 @@ namespace Dub\Models\Operations;
 class Partner
 {
     /**
-     *
-     * @var string $id
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('id')]
-    public string $id;
-
-    /**
+     * Full legal name of the partner.
      *
      * @var string $name
      */
@@ -26,6 +20,7 @@ class Partner
     public string $name;
 
     /**
+     * Email for the partner in your system. Partners will be able to claim their profile by signing up to Dub Partners with this email.
      *
      * @var string $email
      */
@@ -33,6 +28,35 @@ class Partner
     public string $email;
 
     /**
+     * The ID of the partner in your system.
+     *
+     * @var ?string $tenantId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tenantId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $tenantId = null;
+
+    /**
+     * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
+     *
+     * @var ?CreateReferralsEmbedTokenLinkProps $linkProps
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('linkProps')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreateReferralsEmbedTokenLinkProps|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateReferralsEmbedTokenLinkProps $linkProps = null;
+
+    /**
+     * A unique username for the partner in your system (max 100 characters). This will be used to create a short link for the partner using your program's default domain. If not provided, Dub will try to generate a username from the partner's name or email.
+     *
+     * @var ?string $username
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('username')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $username = null;
+
+    /**
+     * Avatar image for the partner – if not provided, a default avatar will be used.
      *
      * @var ?string $image
      */
@@ -41,17 +65,44 @@ class Partner
     public ?string $image = null;
 
     /**
-     * @param  string  $id
+     * Country where the partner is based.
+     *
+     * @var ?CreateReferralsEmbedTokenCountry $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreateReferralsEmbedTokenCountry|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreateReferralsEmbedTokenCountry $country = null;
+
+    /**
+     * A brief description of the partner and their background.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
      * @param  string  $name
      * @param  string  $email
+     * @param  ?string  $tenantId
+     * @param  ?CreateReferralsEmbedTokenLinkProps  $linkProps
+     * @param  ?string  $username
      * @param  ?string  $image
+     * @param  ?CreateReferralsEmbedTokenCountry  $country
+     * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $email, ?string $image = null)
+    public function __construct(string $name, string $email, ?string $tenantId = null, ?CreateReferralsEmbedTokenLinkProps $linkProps = null, ?string $username = null, ?string $image = null, ?CreateReferralsEmbedTokenCountry $country = null, ?string $description = null)
     {
-        $this->id = $id;
         $this->name = $name;
         $this->email = $email;
+        $this->tenantId = $tenantId;
+        $this->linkProps = $linkProps;
+        $this->username = $username;
         $this->image = $image;
+        $this->country = $country;
+        $this->description = $description;
     }
 }
