@@ -27,27 +27,26 @@ class CreateCustomerPartner
 
     /**
      *
-     * @var string $email
+     * @var ?string $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    public string $email;
+    public ?string $email;
 
     /**
      *
      * @var ?string $image
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $image = null;
+    public ?string $image;
 
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  string  $email
+     * @param  ?string  $email
      * @param  ?string  $image
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $email, ?string $image = null)
+    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null)
     {
         $this->id = $id;
         $this->name = $name;

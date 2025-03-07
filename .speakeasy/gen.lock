@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 7d12cd211b08ee0e5d9a48c3e7a01812
+  docChecksum: 2ce50b8b514248f8824b7ba29f83b819
   docVersion: 0.0.1
-  speakeasyVersion: 1.509.1
-  generationVersion: 2.539.1
-  releaseVersion: 0.11.37
-  configChecksum: 51a932ebe2279906fa79c87bef7ec12d
+  speakeasyVersion: 1.513.2
+  generationVersion: 2.545.2
+  releaseVersion: 0.12.0
+  configChecksum: 9fa499657d4d9269ab9602ea3f2aa06c
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
 features:
   php:
     constsAndDefaults: 0.2.0
-    core: 3.7.9
+    core: 3.8.0
     deprecations: 2.81.1
     errors: 0.3.0
     examples: 2.81.5
@@ -25,7 +25,7 @@ features:
     methodArguments: 0.1.0
     nameOverrides: 2.81.2
     nullables: 1.0.1
-    pagination: 0.1.3
+    pagination: 0.1.4
     responseFormat: 0.1.0
     unions: 0.1.4
 generatedFiles:
@@ -63,32 +63,23 @@ generatedFiles:
   - docs/Models/Components/CountryCode.md
   - docs/Models/Components/Customer.md
   - docs/Models/Components/Data.md
-  - docs/Models/Components/Discount.md
   - docs/Models/Components/DomainSchema.md
   - docs/Models/Components/Domains.md
   - docs/Models/Components/Event.md
   - docs/Models/Components/FolderSchema.md
   - docs/Models/Components/Geo.md
-  - docs/Models/Components/Interval.md
   - docs/Models/Components/LeadCreatedEvent.md
   - docs/Models/Components/LeadCreatedEventClick.md
   - docs/Models/Components/LeadCreatedEventCustomer.md
   - docs/Models/Components/LeadCreatedEventData.md
-  - docs/Models/Components/LeadCreatedEventDataLink.md
-  - docs/Models/Components/LeadCreatedEventDiscount.md
   - docs/Models/Components/LeadCreatedEventEvent.md
   - docs/Models/Components/LeadCreatedEventGeo.md
-  - docs/Models/Components/LeadCreatedEventInterval.md
   - docs/Models/Components/LeadCreatedEventLink.md
-  - docs/Models/Components/LeadCreatedEventPartner.md
-  - docs/Models/Components/LeadCreatedEventType.md
   - docs/Models/Components/LeadEvent.md
   - docs/Models/Components/LeadEventClick.md
-  - docs/Models/Components/LeadEventCustomerLink.md
   - docs/Models/Components/LeadEventEvent.md
   - docs/Models/Components/LeadEventGeo.md
   - docs/Models/Components/LeadEventLink.md
-  - docs/Models/Components/LeadEventType.md
   - docs/Models/Components/Link.md
   - docs/Models/Components/LinkClickedEvent.md
   - docs/Models/Components/LinkClickedEventClick.md
@@ -104,7 +95,6 @@ generatedFiles:
   - docs/Models/Components/LinkWebhookEventGeo.md
   - docs/Models/Components/Links.md
   - docs/Models/Components/One.md
-  - docs/Models/Components/Partner.md
   - docs/Models/Components/PartnerAnalyticsCount.md
   - docs/Models/Components/PartnerAnalyticsTimeseries.md
   - docs/Models/Components/PartnerAnalyticsTopLinks.md
@@ -121,26 +111,16 @@ generatedFiles:
   - docs/Models/Components/SaleCreatedEventClick.md
   - docs/Models/Components/SaleCreatedEventCustomer.md
   - docs/Models/Components/SaleCreatedEventData.md
-  - docs/Models/Components/SaleCreatedEventDataLink.md
-  - docs/Models/Components/SaleCreatedEventDiscount.md
   - docs/Models/Components/SaleCreatedEventEvent.md
   - docs/Models/Components/SaleCreatedEventGeo.md
-  - docs/Models/Components/SaleCreatedEventInterval.md
   - docs/Models/Components/SaleCreatedEventLink.md
-  - docs/Models/Components/SaleCreatedEventPartner.md
   - docs/Models/Components/SaleCreatedEventSale.md
-  - docs/Models/Components/SaleCreatedEventType.md
   - docs/Models/Components/SaleEvent.md
   - docs/Models/Components/SaleEventClick.md
   - docs/Models/Components/SaleEventCustomer.md
-  - docs/Models/Components/SaleEventCustomerLink.md
-  - docs/Models/Components/SaleEventDiscount.md
   - docs/Models/Components/SaleEventEvent.md
   - docs/Models/Components/SaleEventGeo.md
-  - docs/Models/Components/SaleEventInterval.md
   - docs/Models/Components/SaleEventLink.md
-  - docs/Models/Components/SaleEventPartner.md
-  - docs/Models/Components/SaleEventType.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/Status.md
   - docs/Models/Components/TagSchema.md
@@ -450,32 +430,23 @@ generatedFiles:
   - src/Models/Components/CountryCode.php
   - src/Models/Components/Customer.php
   - src/Models/Components/Data.php
-  - src/Models/Components/Discount.php
   - src/Models/Components/DomainSchema.php
   - src/Models/Components/Domains.php
   - src/Models/Components/Event.php
   - src/Models/Components/FolderSchema.php
   - src/Models/Components/Geo.php
-  - src/Models/Components/Interval.php
   - src/Models/Components/LeadCreatedEvent.php
   - src/Models/Components/LeadCreatedEventClick.php
   - src/Models/Components/LeadCreatedEventCustomer.php
   - src/Models/Components/LeadCreatedEventData.php
-  - src/Models/Components/LeadCreatedEventDataLink.php
-  - src/Models/Components/LeadCreatedEventDiscount.php
   - src/Models/Components/LeadCreatedEventEvent.php
   - src/Models/Components/LeadCreatedEventGeo.php
-  - src/Models/Components/LeadCreatedEventInterval.php
   - src/Models/Components/LeadCreatedEventLink.php
-  - src/Models/Components/LeadCreatedEventPartner.php
-  - src/Models/Components/LeadCreatedEventType.php
   - src/Models/Components/LeadEvent.php
   - src/Models/Components/LeadEventClick.php
-  - src/Models/Components/LeadEventCustomerLink.php
   - src/Models/Components/LeadEventEvent.php
   - src/Models/Components/LeadEventGeo.php
   - src/Models/Components/LeadEventLink.php
-  - src/Models/Components/LeadEventType.php
   - src/Models/Components/Link.php
   - src/Models/Components/LinkClickedEvent.php
   - src/Models/Components/LinkClickedEventClick.php
@@ -490,7 +461,6 @@ generatedFiles:
   - src/Models/Components/LinkWebhookEventGeo.php
   - src/Models/Components/Links.php
   - src/Models/Components/One.php
-  - src/Models/Components/Partner.php
   - src/Models/Components/PartnerAnalyticsCount.php
   - src/Models/Components/PartnerAnalyticsTimeseries.php
   - src/Models/Components/PartnerAnalyticsTopLinks.php
@@ -507,26 +477,16 @@ generatedFiles:
   - src/Models/Components/SaleCreatedEventClick.php
   - src/Models/Components/SaleCreatedEventCustomer.php
   - src/Models/Components/SaleCreatedEventData.php
-  - src/Models/Components/SaleCreatedEventDataLink.php
-  - src/Models/Components/SaleCreatedEventDiscount.php
   - src/Models/Components/SaleCreatedEventEvent.php
   - src/Models/Components/SaleCreatedEventGeo.php
-  - src/Models/Components/SaleCreatedEventInterval.php
   - src/Models/Components/SaleCreatedEventLink.php
-  - src/Models/Components/SaleCreatedEventPartner.php
   - src/Models/Components/SaleCreatedEventSale.php
-  - src/Models/Components/SaleCreatedEventType.php
   - src/Models/Components/SaleEvent.php
   - src/Models/Components/SaleEventClick.php
   - src/Models/Components/SaleEventCustomer.php
-  - src/Models/Components/SaleEventCustomerLink.php
-  - src/Models/Components/SaleEventDiscount.php
   - src/Models/Components/SaleEventEvent.php
   - src/Models/Components/SaleEventGeo.php
-  - src/Models/Components/SaleEventInterval.php
   - src/Models/Components/SaleEventLink.php
-  - src/Models/Components/SaleEventPartner.php
-  - src/Models/Components/SaleEventType.php
   - src/Models/Components/Security.php
   - src/Models/Components/Status.php
   - src/Models/Components/TagSchema.php
@@ -1100,7 +1060,7 @@ examples:
           sortBy: "timestamp"
       responses:
         "200":
-          application/json: [{"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "remorseful-concentration.biz", "key": "<key>", "url": "https://primary-paintwork.com/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1763786446246", "expiredUrl": "https://black-poetry.name/", "password": "COyVtOrvIw1vLIJ", "title": "<value>", "description": "despite er boom however when uh-huh", "image": "https://picsum.photos/seed/T1tZJLp1EG/3827/3109", "video": "https://loremflickr.com/2420/1632?lock=7470650813503352", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "green"}], "folderId": "<id>", "webhookIds": [], "comments": "tenement commonly softly boo massive sorrowful", "shortLink": "https://dense-custom.info/", "qrCode": "https://alive-lid.biz", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1729199257796", "updatedAt": "1741072885795", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://utilized-quit.net/", "country": "Togo", "city": "Cormiermouth", "region": "<value>", "continent": "North America", "device": "Mobile", "browser": "Chrome", "os": "Chrome OS", "referer": "gummy-cope.net", "refererUrl": "https://prickly-bourgeoisie.info/", "ip": "69bd:53cd:cebc:ac4b:d1e8:50e8:ee59:b0b3"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1739954802254"}, "sale": {"amount": 625809, "invoiceId": null, "paymentProcessor": "stripe"}, "saleAmount": 1401.42, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "unruly-allegation.name", "key": "<key>", "url": "https://fortunate-swim.info/", "continent": "Australia", "country": "Cook Islands", "city": "South Harryburgh", "device": "Mobile", "browser": "Safari", "os": "WebOS", "qr": 1523.03, "ip": "caf5:04dc:da9e:67cc:af3b:8caf:afbe:e39c"}, {"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "right-window.biz", "key": "<key>", "url": "https://physical-experience.org/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1752477799836", "expiredUrl": "https://indelible-birdbath.net", "password": "4yMlkCXkK5ppW3u", "title": "<value>", "description": "terribly gosh facilitate in", "image": "https://loremflickr.com/2596/954?lock=8527955982122580", "video": "https://loremflickr.com/3336/742?lock=2177640289466521", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "red"}, {"id": "<id>", "name": "<value>", "color": "pink"}, {"id": "<id>", "name": "<value>", "color": "pink"}], "folderId": "<id>", "webhookIds": ["<value>", "<value>", "<value>"], "comments": "up so pro pish clear-cut an mid aw disconnection which wetly typeface usable underneath putrefy ah aha", "shortLink": "https://knowledgeable-season.info", "qrCode": "https://nimble-individual.biz/", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1739693523538", "updatedAt": "1741078607002", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://perfumed-marketplace.com/", "country": "Burundi", "city": "Stockton", "region": "<value>", "continent": "Asia", "device": "Desktop", "browser": "Chrome", "os": "Symbian", "referer": "well-off-hygienic.org", "refererUrl": "https://ripe-ceramic.org", "ip": "eebc:cce9:cecf:ebeb:dfd9:15f2:a0cc:a3b1"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1724054468360"}, "sale": {"amount": 443316, "invoiceId": null, "paymentProcessor": "custom"}, "saleAmount": 2634.98, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "next-cricket.biz", "key": "<key>", "url": "https://repentant-rust.name/", "continent": "Australia", "country": "Saint Helena", "city": "Luettgenfort", "device": "Mobile", "browser": "Safari", "os": "Chrome OS", "qr": 4390.32, "ip": "54.229.114.129"}]
+          application/json: [{"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "remorseful-concentration.biz", "key": "<key>", "url": "https://primary-paintwork.com/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1763959243014", "expiredUrl": "https://black-poetry.name/", "password": "COyVtOrvIw1vLIJ", "title": "<value>", "description": "despite er boom however when uh-huh", "image": "https://picsum.photos/seed/T1tZJLp1EG/3827/3109", "video": "https://loremflickr.com/2420/1632?lock=7470650813503352", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "green"}], "folderId": "<id>", "webhookIds": [], "comments": "tenement commonly softly boo massive sorrowful", "shortLink": "https://dense-custom.info/", "qrCode": "https://alive-lid.biz", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1729372054564", "updatedAt": "1741245682563", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://utilized-quit.net/", "country": "Togo", "city": "Cormiermouth", "region": "<value>", "continent": "North America", "device": "Mobile", "browser": "Chrome", "os": "Chrome OS", "referer": "gummy-cope.net", "refererUrl": "https://prickly-bourgeoisie.info/", "ip": "69bd:53cd:cebc:ac4b:d1e8:50e8:ee59:b0b3"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1740127599022"}, "sale": {"amount": 625809, "invoiceId": null, "paymentProcessor": "stripe"}, "saleAmount": 1401.42, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "unruly-allegation.name", "key": "<key>", "url": "https://fortunate-swim.info/", "continent": "Australia", "country": "Cook Islands", "city": "South Harryburgh", "device": "Mobile", "browser": "Safari", "os": "WebOS", "qr": 1523.03, "ip": "caf5:04dc:da9e:67cc:af3b:8caf:afbe:e39c"}, {"event": "sale", "eventId": "<id>", "eventName": "<value>", "link": {"id": "<id>", "domain": "right-window.biz", "key": "<key>", "url": "https://physical-experience.org/", "externalId": "<id>", "tenantId": "<id>", "programId": "<id>", "partnerId": "<id>", "expiresAt": "1752650596604", "expiredUrl": "https://indelible-birdbath.net", "password": "4yMlkCXkK5ppW3u", "title": "<value>", "description": "terribly gosh facilitate in", "image": "https://loremflickr.com/2596/954?lock=8527955982122580", "video": "https://loremflickr.com/3336/742?lock=2177640289466521", "ios": "<value>", "android": "<id>", "geo": {}, "tagId": "<id>", "tags": [{"id": "<id>", "name": "<value>", "color": "red"}, {"id": "<id>", "name": "<value>", "color": "pink"}, {"id": "<id>", "name": "<value>", "color": "pink"}], "folderId": "<id>", "webhookIds": ["<value>", "<value>", "<value>"], "comments": "up so pro pish clear-cut an mid aw disconnection which wetly typeface usable underneath putrefy ah aha", "shortLink": "https://knowledgeable-season.info", "qrCode": "https://nimble-individual.biz/", "utm_source": "<value>", "utm_medium": "<value>", "utm_campaign": "<value>", "utm_term": "<value>", "utm_content": "<value>", "userId": "<id>", "workspaceId": "<id>", "clicks": 0, "lastClicked": "<value>", "leads": 0, "sales": 0, "saleAmount": 0, "createdAt": "1739866320312", "updatedAt": "1741251403777", "projectId": "<id>"}, "click": {"id": "<id>", "timestamp": "<value>", "url": "https://perfumed-marketplace.com/", "country": "Burundi", "city": "Stockton", "region": "<value>", "continent": "Asia", "device": "Desktop", "browser": "Chrome", "os": "Symbian", "referer": "well-off-hygienic.org", "refererUrl": "https://ripe-ceramic.org", "ip": "eebc:cce9:cecf:ebeb:dfd9:15f2:a0cc:a3b1"}, "customer": {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1724227265145"}, "sale": {"amount": 443316, "invoiceId": null, "paymentProcessor": "custom"}, "saleAmount": 2634.98, "invoice_id": "<id>", "payment_processor": "<value>", "click_id": "<id>", "link_id": "<id>", "domain": "next-cricket.biz", "key": "<key>", "url": "https://repentant-rust.name/", "continent": "Australia", "country": "Saint Helena", "city": "Luettgenfort", "device": "Mobile", "browser": "Safari", "os": "Chrome OS", "qr": 4390.32, "ip": "54.229.114.129"}]
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":

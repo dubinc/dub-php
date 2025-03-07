@@ -71,33 +71,6 @@ class Customer
     public ?string $country = null;
 
     /**
-     *
-     * @var ?LeadEventCustomerLink $link
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadEventCustomerLink|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?LeadEventCustomerLink $link = null;
-
-    /**
-     *
-     * @var ?Partner $partner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Partner|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Partner $partner = null;
-
-    /**
-     *
-     * @var ?Discount $discount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Discount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Discount $discount = null;
-
-    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
@@ -105,12 +78,9 @@ class Customer
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $country
-     * @param  ?LeadEventCustomerLink  $link
-     * @param  ?Partner  $partner
-     * @param  ?Discount  $discount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?LeadEventCustomerLink $link = null, ?Partner $partner = null, ?Discount $discount = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -119,8 +89,5 @@ class Customer
         $this->email = $email;
         $this->avatar = $avatar;
         $this->country = $country;
-        $this->link = $link;
-        $this->partner = $partner;
-        $this->discount = $discount;
     }
 }

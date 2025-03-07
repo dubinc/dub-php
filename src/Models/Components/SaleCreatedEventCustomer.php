@@ -71,33 +71,6 @@ class SaleCreatedEventCustomer
     public ?string $country = null;
 
     /**
-     *
-     * @var ?SaleCreatedEventDataLink $link
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventDataLink|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleCreatedEventDataLink $link = null;
-
-    /**
-     *
-     * @var ?SaleCreatedEventPartner $partner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventPartner|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleCreatedEventPartner $partner = null;
-
-    /**
-     *
-     * @var ?SaleCreatedEventDiscount $discount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventDiscount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleCreatedEventDiscount $discount = null;
-
-    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
@@ -105,12 +78,9 @@ class SaleCreatedEventCustomer
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $country
-     * @param  ?SaleCreatedEventDataLink  $link
-     * @param  ?SaleCreatedEventPartner  $partner
-     * @param  ?SaleCreatedEventDiscount  $discount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?SaleCreatedEventDataLink $link = null, ?SaleCreatedEventPartner $partner = null, ?SaleCreatedEventDiscount $discount = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -119,8 +89,5 @@ class SaleCreatedEventCustomer
         $this->email = $email;
         $this->avatar = $avatar;
         $this->country = $country;
-        $this->link = $link;
-        $this->partner = $partner;
-        $this->discount = $discount;
     }
 }

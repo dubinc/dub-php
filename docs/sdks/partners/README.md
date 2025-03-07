@@ -222,7 +222,6 @@ $sdk = Dub\Dub::builder()
 $request = new Operations\UpdatePartnerSaleRequestBody(
     programId: '<id>',
     invoiceId: '<id>',
-    amount: 1560.34,
 );
 
 $response = $sdk->partners->updateSale(
