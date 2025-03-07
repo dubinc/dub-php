@@ -63,6 +63,14 @@ class UpdatePartnerSaleResponseBody
     public string $updatedAt;
 
     /**
+     *
+     * @var ?string $invoiceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $invoiceId = null;
+
+    /**
      * @param  string  $id
      * @param  float  $amount
      * @param  float  $earnings
@@ -70,9 +78,10 @@ class UpdatePartnerSaleResponseBody
      * @param  UpdatePartnerSaleStatus  $status
      * @param  string  $createdAt
      * @param  string  $updatedAt
+     * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdatePartnerSaleStatus $status, string $createdAt, string $updatedAt)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdatePartnerSaleStatus $status, string $createdAt, string $updatedAt, ?string $invoiceId = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -81,5 +90,6 @@ class UpdatePartnerSaleResponseBody
         $this->status = $status;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->invoiceId = $invoiceId;
     }
 }

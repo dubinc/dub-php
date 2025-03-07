@@ -71,33 +71,6 @@ class SaleEventCustomer
     public ?string $country = null;
 
     /**
-     *
-     * @var ?SaleEventCustomerLink $link
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleEventCustomerLink|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleEventCustomerLink $link = null;
-
-    /**
-     *
-     * @var ?SaleEventPartner $partner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleEventPartner|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleEventPartner $partner = null;
-
-    /**
-     *
-     * @var ?SaleEventDiscount $discount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleEventDiscount|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleEventDiscount $discount = null;
-
-    /**
      * @param  string  $id
      * @param  string  $externalId
      * @param  string  $name
@@ -105,12 +78,9 @@ class SaleEventCustomer
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $country
-     * @param  ?SaleEventCustomerLink  $link
-     * @param  ?SaleEventPartner  $partner
-     * @param  ?SaleEventDiscount  $discount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?SaleEventCustomerLink $link = null, ?SaleEventPartner $partner = null, ?SaleEventDiscount $discount = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -119,8 +89,5 @@ class SaleEventCustomer
         $this->email = $email;
         $this->avatar = $avatar;
         $this->country = $country;
-        $this->link = $link;
-        $this->partner = $partner;
-        $this->discount = $discount;
     }
 }

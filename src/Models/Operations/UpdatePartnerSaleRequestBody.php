@@ -26,23 +26,35 @@ class UpdatePartnerSaleRequestBody
     public string $invoiceId;
 
     /**
-     * The new amount for the sale.
+     * The new absolute amount for the sale.
      *
-     * @var float $amount
+     * @var ?float $amount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
+
+    /**
+     * Modify the current sale amount: use positive values to increase the amount, negative values to decrease it.
+     *
+     * @var ?float $modifyAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('modifyAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $modifyAmount = null;
 
     /**
      * @param  string  $programId
      * @param  string  $invoiceId
-     * @param  float  $amount
+     * @param  ?float  $amount
+     * @param  ?float  $modifyAmount
      * @phpstan-pure
      */
-    public function __construct(string $programId, string $invoiceId, float $amount)
+    public function __construct(string $programId, string $invoiceId, ?float $amount = null, ?float $modifyAmount = null)
     {
         $this->programId = $programId;
         $this->invoiceId = $invoiceId;
         $this->amount = $amount;
+        $this->modifyAmount = $modifyAmount;
     }
 }

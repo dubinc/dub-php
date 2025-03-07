@@ -8,4 +8,4 @@
 | `id`               | *string*           | :heavy_check_mark: | N/A                |
 | `name`             | *string*           | :heavy_check_mark: | N/A                |
 | `email`            | *string*           | :heavy_check_mark: | N/A                |
-| `image`            | *?string*          | :heavy_minus_sign: | N/A                |
+| `image`            | *string*           | :heavy_check_mark: | N/A                |
