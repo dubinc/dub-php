@@ -35,6 +35,13 @@ class UpdateCustomerDiscount
 
     /**
      *
+     * @var ?float $maxDuration
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('maxDuration')]
+    public ?float $maxDuration;
+
+    /**
+     *
      * @var ?string $couponId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('couponId')]
@@ -49,37 +56,30 @@ class UpdateCustomerDiscount
 
     /**
      *
-     * @var ?float $duration
+     * @var ?float $partnersCount
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('duration')]
-    public ?float $duration;
-
-    /**
-     *
-     * @var ?UpdateCustomerInterval $interval
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('interval')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCustomerInterval|null')]
-    public ?UpdateCustomerInterval $interval;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnersCount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $partnersCount = null;
 
     /**
      * @param  string  $id
      * @param  float  $amount
      * @param  UpdateCustomerType  $type
+     * @param  ?float  $maxDuration
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId
-     * @param  ?float  $duration
-     * @param  ?UpdateCustomerInterval  $interval
+     * @param  ?float  $partnersCount
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, UpdateCustomerType $type, ?string $couponId = null, ?string $couponTestId = null, ?float $duration = null, ?UpdateCustomerInterval $interval = null)
+    public function __construct(string $id, float $amount, UpdateCustomerType $type, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?float $partnersCount = null)
     {
         $this->id = $id;
         $this->amount = $amount;
         $this->type = $type;
+        $this->maxDuration = $maxDuration;
         $this->couponId = $couponId;
         $this->couponTestId = $couponTestId;
-        $this->duration = $duration;
-        $this->interval = $interval;
+        $this->partnersCount = $partnersCount;
     }
 }
