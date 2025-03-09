@@ -44,17 +44,28 @@ class UpdatePartnerSaleRequestBody
     public ?float $modifyAmount = null;
 
     /**
+     * The currency of the sale amount to update. Accepts ISO 4217 currency codes.
+     *
+     * @var ?string $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $currency = null;
+
+    /**
      * @param  string  $programId
      * @param  string  $invoiceId
      * @param  ?float  $amount
      * @param  ?float  $modifyAmount
+     * @param  ?string  $currency
      * @phpstan-pure
      */
-    public function __construct(string $programId, string $invoiceId, ?float $amount = null, ?float $modifyAmount = null)
+    public function __construct(string $programId, string $invoiceId, ?float $amount = null, ?float $modifyAmount = null, ?string $currency = 'usd')
     {
         $this->programId = $programId;
         $this->invoiceId = $invoiceId;
         $this->amount = $amount;
         $this->modifyAmount = $modifyAmount;
+        $this->currency = $currency;
     }
 }
