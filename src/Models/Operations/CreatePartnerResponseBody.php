@@ -28,13 +28,6 @@ class CreatePartnerResponseBody
 
     /**
      *
-     * @var bool $payoutsEnabled
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsEnabled')]
-    public bool $payoutsEnabled;
-
-    /**
-     *
      * @var string $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
@@ -75,6 +68,13 @@ class CreatePartnerResponseBody
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
     public ?string $country;
+
+    /**
+     *
+     * @var ?string $payoutsEnabledAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsEnabledAt')]
+    public ?string $payoutsEnabledAt;
 
     /**
      *
@@ -151,13 +151,13 @@ class CreatePartnerResponseBody
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  bool  $payoutsEnabled
      * @param  string  $createdAt
      * @param  Status  $status
      * @param  string  $programId
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $country
+     * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $tenantId
      * @param  ?array<Links>  $links
      * @param  ?float  $clicks
@@ -169,17 +169,17 @@ class CreatePartnerResponseBody
      * @param  ?string  $applicationId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, bool $payoutsEnabled, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $applicationId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
+    public function __construct(string $id, string $name, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $payoutsEnabledAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $applicationId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->payoutsEnabled = $payoutsEnabled;
         $this->createdAt = $createdAt;
         $this->status = $status;
         $this->programId = $programId;
         $this->email = $email;
         $this->image = $image;
         $this->country = $country;
+        $this->payoutsEnabledAt = $payoutsEnabledAt;
         $this->tenantId = $tenantId;
         $this->links = $links;
         $this->description = $description;
