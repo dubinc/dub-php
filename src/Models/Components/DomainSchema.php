@@ -112,6 +112,24 @@ class DomainSchema
     public ?bool $archived = null;
 
     /**
+     * assetLinks.json configuration file (for deep link support on Android).
+     *
+     * @var ?string $assetLinks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('assetLinks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $assetLinks = null;
+
+    /**
+     * apple-app-site-association configuration file (for deep link support on iOS).
+     *
+     * @var ?string $appleAppSiteAssociation
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('appleAppSiteAssociation')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $appleAppSiteAssociation = null;
+
+    /**
      * @param  string  $id
      * @param  string  $slug
      * @param  string  $createdAt
@@ -124,9 +142,11 @@ class DomainSchema
      * @param  ?string  $notFoundUrl
      * @param  ?string  $logo
      * @param  ?RegisteredDomain  $registeredDomain
+     * @param  ?string  $assetLinks
+     * @param  ?string  $appleAppSiteAssociation
      * @phpstan-pure
      */
-    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $placeholder = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $logo = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false)
+    public function __construct(string $id, string $slug, string $createdAt, string $updatedAt, ?string $placeholder = null, ?string $expiredUrl = null, ?string $notFoundUrl = null, ?string $logo = null, ?RegisteredDomain $registeredDomain = null, ?bool $verified = false, ?bool $primary = false, ?bool $archived = false, ?string $assetLinks = null, ?string $appleAppSiteAssociation = null)
     {
         $this->id = $id;
         $this->slug = $slug;
@@ -140,5 +160,7 @@ class DomainSchema
         $this->verified = $verified;
         $this->primary = $primary;
         $this->archived = $archived;
+        $this->assetLinks = $assetLinks;
+        $this->appleAppSiteAssociation = $appleAppSiteAssociation;
     }
 }
