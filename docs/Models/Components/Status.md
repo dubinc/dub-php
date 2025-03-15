@@ -5,6 +5,8 @@
 
 | Name       | Value      |
 | ---------- | ---------- |
+| `Invited`  | invited    |
 | `Approved` | approved   |
-| `Pending`  | pending    |
 | `Rejected` | rejected   |
+| `Declined` | declined   |
+| `Pending`  | pending    |

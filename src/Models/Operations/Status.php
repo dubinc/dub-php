@@ -11,7 +11,9 @@ namespace Dub\Models\Operations;
 
 enum Status: string
 {
+    case Invited = 'invited';
     case Approved = 'approved';
-    case Pending = 'pending';
     case Rejected = 'rejected';
+    case Declined = 'declined';
+    case Pending = 'pending';
 }
