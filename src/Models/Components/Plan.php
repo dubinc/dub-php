@@ -18,5 +18,6 @@ enum Plan: string
     case BusinessPlus = 'business plus';
     case BusinessExtra = 'business extra';
     case BusinessMax = 'business max';
+    case Advanced = 'advanced';
     case Enterprise = 'enterprise';
 }

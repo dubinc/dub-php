@@ -13,4 +13,5 @@ The plan of the workspace.
 | `BusinessPlus`  | business plus   |
 | `BusinessExtra` | business extra  |
 | `BusinessMax`   | business max    |
+| `Advanced`      | advanced        |
 | `Enterprise`    | enterprise      |
