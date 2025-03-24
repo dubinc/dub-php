@@ -11,9 +11,10 @@ namespace Dub\Models\Components;
 
 enum Status: string
 {
-    case Invited = 'invited';
+    case Pending = 'pending';
     case Approved = 'approved';
     case Rejected = 'rejected';
+    case Invited = 'invited';
     case Declined = 'declined';
-    case Pending = 'pending';
+    case Banned = 'banned';
 }
