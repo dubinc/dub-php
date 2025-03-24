@@ -11,3 +11,4 @@
 | `Refunded`  | refunded    |
 | `Duplicate` | duplicate   |
 | `Fraud`     | fraud       |
+| `Canceled`  | canceled    |

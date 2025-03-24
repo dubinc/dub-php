@@ -17,4 +17,5 @@ enum UpdatePartnerSaleStatus: string
     case Refunded = 'refunded';
     case Duplicate = 'duplicate';
     case Fraud = 'fraud';
+    case Canceled = 'canceled';
 }
