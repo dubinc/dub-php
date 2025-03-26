@@ -21,11 +21,21 @@ class Users
     public Role $role;
 
     /**
+     * The ID of the default folder for the user in the workspace.
+     *
+     * @var ?string $defaultFolderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('defaultFolderId')]
+    public ?string $defaultFolderId;
+
+    /**
      * @param  Role  $role
+     * @param  ?string  $defaultFolderId
      * @phpstan-pure
      */
-    public function __construct(Role $role)
+    public function __construct(Role $role, ?string $defaultFolderId = null)
     {
         $this->role = $role;
+        $this->defaultFolderId = $defaultFolderId;
     }
 }
