@@ -56,6 +56,14 @@ class UpdateCustomerDiscount
 
     /**
      *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
+     *
      * @var ?float $partnersCount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partnersCount')]
@@ -69,10 +77,11 @@ class UpdateCustomerDiscount
      * @param  ?float  $maxDuration
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId
+     * @param  ?string  $description
      * @param  ?float  $partnersCount
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, UpdateCustomerType $type, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?float $partnersCount = null)
+    public function __construct(string $id, float $amount, UpdateCustomerType $type, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?string $description = null, ?float $partnersCount = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -80,6 +89,7 @@ class UpdateCustomerDiscount
         $this->maxDuration = $maxDuration;
         $this->couponId = $couponId;
         $this->couponTestId = $couponTestId;
+        $this->description = $description;
         $this->partnersCount = $partnersCount;
     }
 }
