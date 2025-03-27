@@ -11,4 +11,5 @@
 | `maxDuration`                                      | *float*                                            | :heavy_check_mark:                                 | N/A                                                |
 | `couponId`                                         | *string*                                           | :heavy_check_mark:                                 | N/A                                                |
 | `couponTestId`                                     | *string*                                           | :heavy_check_mark:                                 | N/A                                                |
+| `description`                                      | *?string*                                          | :heavy_minus_sign:                                 | N/A                                                |
 | `partnersCount`                                    | *?float*                                           | :heavy_minus_sign:                                 | N/A                                                |
