@@ -78,6 +78,15 @@ class PartnerAnalyticsTopLinks
     public ?string $comments = null;
 
     /**
+     * The custom link preview title (og:title)
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
      * The number of clicks from this link
      *
      * @var ?float $clicks
@@ -135,9 +144,10 @@ class PartnerAnalyticsTopLinks
      * @param  ?float  $saleAmount
      * @param  ?float  $earnings
      * @param  ?string  $comments
+     * @param  ?string  $title
      * @phpstan-pure
      */
-    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $comments = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
+    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $comments = null, ?string $title = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->link = $link;
         $this->id = $id;
@@ -147,6 +157,7 @@ class PartnerAnalyticsTopLinks
         $this->url = $url;
         $this->createdAt = $createdAt;
         $this->comments = $comments;
+        $this->title = $title;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;
