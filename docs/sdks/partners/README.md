@@ -7,6 +7,7 @@
 
 * [create](#create) - Create a new partner
 * [createLink](#createlink) - Create a link for a partner
+* [retrieveLinks](#retrievelinks) - Retrieve a partner's links.
 * [analytics](#analytics) - Retrieve analytics for a partner
 * [updateSale](#updatesale) - Update a sale for a partner.
 * [upsertLink](#upsertlink) - Upsert a link for a partner
@@ -125,6 +126,66 @@ if ($response->linkSchema !== null) {
 ### Response
 
 **[?Operations\CreatePartnerLinkResponse](../../Models/Operations/CreatePartnerLinkResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## retrieveLinks
+
+Retrieve a partner's links by their partner ID or tenant ID.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->partners->retrieveLinks(
+    programId: '<id>',
+    partnerId: '<id>',
+    tenantId: '<id>'
+
+);
+
+if ($response->responseBodies !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `programId`        | *string*           | :heavy_check_mark: | N/A                |
+| `partnerId`        | *?string*          | :heavy_minus_sign: | N/A                |
+| `tenantId`         | *?string*          | :heavy_minus_sign: | N/A                |
+
+### Response
+
+**[?Operations\RetrieveLinksResponse](../../Models/Operations/RetrieveLinksResponse.md)**
 
 ### Errors
 

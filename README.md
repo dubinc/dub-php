@@ -219,6 +219,7 @@ if ($response->responseBodies !== null) {
 
 * [create](docs/sdks/partners/README.md#create) - Create a new partner
 * [createLink](docs/sdks/partners/README.md#createlink) - Create a link for a partner
+* [retrieveLinks](docs/sdks/partners/README.md#retrievelinks) - Retrieve a partner's links.
 * [analytics](docs/sdks/partners/README.md#analytics) - Retrieve analytics for a partner
 * [updateSale](docs/sdks/partners/README.md#updatesale) - Update a sale for a partner.
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
