@@ -9,7 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-/** PartnerCreatedEvent - Triggered when a partner is created. */
+/**
+ * PartnerCreatedEvent - Triggered when a partner is created.
+ *
+ * @deprecated  class: This will be removed in a future release, please migrate away from it as soon as possible.
+ */
 class PartnerCreatedEvent
 {
     /**
