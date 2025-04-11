@@ -50,3 +50,12 @@ Components\SaleCreatedEvent $value = /* values here */
 Components\PartnerCreatedEvent $value = /* values here */
 ```
 
+### `Components\PartnerEnrolledEvent`
+
+```php
+/**
+* @var Components\PartnerEnrolledEvent
+*/
+Components\PartnerEnrolledEvent $value = /* values here */
+```
+
