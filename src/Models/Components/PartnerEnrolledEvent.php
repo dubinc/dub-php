@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-/** PartnerCreatedEvent - Triggered when a partner is created. */
-class PartnerCreatedEvent
+/** PartnerEnrolledEvent - Triggered when a partner is enrolled. */
+class PartnerEnrolledEvent
 {
     /**
      *
@@ -21,11 +21,11 @@ class PartnerCreatedEvent
 
     /**
      *
-     * @var PartnerCreatedEventEvent $event
+     * @var PartnerEnrolledEventEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerCreatedEventEvent')]
-    public PartnerCreatedEventEvent $event;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventEvent')]
+    public PartnerEnrolledEventEvent $event;
 
     /**
      *
@@ -36,20 +36,20 @@ class PartnerCreatedEvent
 
     /**
      *
-     * @var PartnerCreatedEventData $data
+     * @var PartnerEnrolledEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerCreatedEventData')]
-    public PartnerCreatedEventData $data;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventData')]
+    public PartnerEnrolledEventData $data;
 
     /**
      * @param  string  $id
-     * @param  PartnerCreatedEventEvent  $event
+     * @param  PartnerEnrolledEventEvent  $event
      * @param  string  $createdAt
-     * @param  PartnerCreatedEventData  $data
+     * @param  PartnerEnrolledEventData  $data
      * @phpstan-pure
      */
-    public function __construct(string $id, PartnerCreatedEventEvent $event, string $createdAt, PartnerCreatedEventData $data)
+    public function __construct(string $id, PartnerEnrolledEventEvent $event, string $createdAt, PartnerEnrolledEventData $data)
     {
         $this->id = $id;
         $this->event = $event;

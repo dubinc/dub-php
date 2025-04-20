@@ -82,6 +82,14 @@ class UpdateCustomerResponseBody
 
     /**
      *
+     * @var ?string $programId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $programId = null;
+
+    /**
+     *
      * @var ?UpdateCustomerPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
@@ -107,11 +115,12 @@ class UpdateCustomerResponseBody
      * @param  ?string  $avatar
      * @param  ?string  $country
      * @param  ?UpdateCustomerLink  $link
+     * @param  ?string  $programId
      * @param  ?UpdateCustomerPartner  $partner
      * @param  ?UpdateCustomerDiscount  $discount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?UpdateCustomerLink $link = null, ?UpdateCustomerPartner $partner = null, ?UpdateCustomerDiscount $discount = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?UpdateCustomerLink $link = null, ?string $programId = null, ?UpdateCustomerPartner $partner = null, ?UpdateCustomerDiscount $discount = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -121,6 +130,7 @@ class UpdateCustomerResponseBody
         $this->avatar = $avatar;
         $this->country = $country;
         $this->link = $link;
+        $this->programId = $programId;
         $this->partner = $partner;
         $this->discount = $discount;
     }

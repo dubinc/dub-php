@@ -342,6 +342,34 @@ class UpdateLinkRequestBody
     public ?array $webhookIds = null;
 
     /**
+     * An array of A/B test URLs and the percentage of traffic to send to each URL.
+     *
+     * @var ?array<UpdateLinkTestVariants> $testVariants
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\UpdateLinkTestVariants>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $testVariants = null;
+
+    /**
+     * The date and time when the tests started.
+     *
+     * @var ?string $testStartedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testStartedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $testStartedAt = null;
+
+    /**
+     * The date and time when the tests were or will be completed.
+     *
+     * @var ?string $testCompletedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testCompletedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $testCompletedAt = null;
+
+    /**
      * @param  ?string  $url
      * @param  ?string  $domain
      * @param  ?string  $key
@@ -378,9 +406,12 @@ class UpdateLinkRequestBody
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      * @param  ?array<string>  $webhookIds
+     * @param  ?array<UpdateLinkTestVariants>  $testVariants
+     * @param  ?string  $testStartedAt
+     * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null)
+    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null)
     {
         $this->url = $url;
         $this->domain = $domain;
@@ -418,5 +449,8 @@ class UpdateLinkRequestBody
         $this->utmContent = $utmContent;
         $this->ref = $ref;
         $this->webhookIds = $webhookIds;
+        $this->testVariants = $testVariants;
+        $this->testStartedAt = $testStartedAt;
+        $this->testCompletedAt = $testCompletedAt;
     }
 }

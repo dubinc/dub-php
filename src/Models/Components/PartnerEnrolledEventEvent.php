@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-enum PartnerCreatedEventEvent: string
+enum PartnerEnrolledEventEvent: string
 {
-    case PartnerCreated = 'partner.created';
+    case PartnerEnrolled = 'partner.enrolled';
 }

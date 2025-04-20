@@ -305,6 +305,34 @@ class LinkSchema
     public ?string $lastClicked;
 
     /**
+     * An array of A/B test URLs and the percentage of traffic to send to each URL.
+     *
+     * @var ?array<TestVariants> $testVariants
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\TestVariants>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $testVariants = null;
+
+    /**
+     * The date and time when the tests started.
+     *
+     * @var ?string $testStartedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testStartedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $testStartedAt = null;
+
+    /**
+     * The date and time when the tests were or will be completed.
+     *
+     * @var ?string $testCompletedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testCompletedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $testCompletedAt = null;
+
+    /**
      * Whether to track conversions for the short link.
      *
      * @var ?bool $trackConversion
@@ -441,9 +469,12 @@ class LinkSchema
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @param  ?array<TestVariants>  $testVariants
+     * @param  ?string  $testStartedAt
+     * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -481,6 +512,9 @@ class LinkSchema
         $this->utmContent = $utmContent;
         $this->userId = $userId;
         $this->lastClicked = $lastClicked;
+        $this->testVariants = $testVariants;
+        $this->testStartedAt = $testStartedAt;
+        $this->testCompletedAt = $testCompletedAt;
         $this->trackConversion = $trackConversion;
         $this->archived = $archived;
         $this->proxy = $proxy;

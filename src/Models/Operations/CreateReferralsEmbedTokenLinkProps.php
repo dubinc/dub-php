@@ -249,6 +249,34 @@ class CreateReferralsEmbedTokenLinkProps
     public ?string $ref = null;
 
     /**
+     * An array of A/B test URLs and the percentage of traffic to send to each URL.
+     *
+     * @var ?array<CreateReferralsEmbedTokenTestVariants> $testVariants
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreateReferralsEmbedTokenTestVariants>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $testVariants = null;
+
+    /**
+     * The date and time when the tests started.
+     *
+     * @var ?string $testStartedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testStartedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $testStartedAt = null;
+
+    /**
+     * The date and time when the tests were or will be completed.
+     *
+     * @var ?string $testCompletedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testCompletedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $testCompletedAt = null;
+
+    /**
      * @param  ?string  $prefix
      * @param  ?bool  $archived
      * @param  string|array<string>|null  $tagIds
@@ -275,9 +303,12 @@ class CreateReferralsEmbedTokenLinkProps
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      * @param  ?string  $ref
+     * @param  ?array<CreateReferralsEmbedTokenTestVariants>  $testVariants
+     * @param  ?string  $testStartedAt
+     * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null)
+    public function __construct(?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null)
     {
         $this->prefix = $prefix;
         $this->archived = $archived;
@@ -305,5 +336,8 @@ class CreateReferralsEmbedTokenLinkProps
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
         $this->ref = $ref;
+        $this->testVariants = $testVariants;
+        $this->testStartedAt = $testStartedAt;
+        $this->testCompletedAt = $testCompletedAt;
     }
 }
