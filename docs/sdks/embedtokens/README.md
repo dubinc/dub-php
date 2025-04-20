@@ -33,10 +33,20 @@ $request = new Operations\CreateReferralsEmbedTokenRequestBody(
         name: '<value>',
         email: 'Florencio98@hotmail.com',
         linkProps: new Operations\CreateReferralsEmbedTokenLinkProps(
+            externalId: '123456',
             tagIds: [
                 'clux0rgak00011...',
             ],
-            externalId: '123456',
+            testVariants: [
+                new Operations\CreateReferralsEmbedTokenTestVariants(
+                    url: 'https://example.com/variant-1',
+                    percentage: 50,
+                ),
+                new Operations\CreateReferralsEmbedTokenTestVariants(
+                    url: 'https://example.com/variant-2',
+                    percentage: 50,
+                ),
+            ],
         ),
     ),
 );

@@ -64,6 +64,15 @@ class UpdatePartnerSaleResponseBody
 
     /**
      *
+     * @var ?Type $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Type|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Type $type = null;
+
+    /**
+     *
      * @var ?string $invoiceId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
@@ -78,10 +87,11 @@ class UpdatePartnerSaleResponseBody
      * @param  UpdatePartnerSaleStatus  $status
      * @param  string  $createdAt
      * @param  string  $updatedAt
+     * @param  ?Type  $type
      * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdatePartnerSaleStatus $status, string $createdAt, string $updatedAt, ?string $invoiceId = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdatePartnerSaleStatus $status, string $createdAt, string $updatedAt, ?Type $type = null, ?string $invoiceId = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -90,6 +100,7 @@ class UpdatePartnerSaleResponseBody
         $this->status = $status;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->type = $type;
         $this->invoiceId = $invoiceId;
     }
 }

@@ -37,7 +37,7 @@ class TrackLeadRequestBody
     public ?float $eventQuantity = null;
 
     /**
-     * Additional metadata to be stored with the lead event
+     * Additional metadata to be stored with the lead event. Max 10,000 characters.
      *
      * @var ?array<string, mixed> $metadata
      */

@@ -29,7 +29,7 @@ class TrackSaleRequestBody
     public PaymentProcessor $paymentProcessor;
 
     /**
-     * Additional metadata to be stored with the sale event.
+     * Additional metadata to be stored with the sale event. Max 10,000 characters.
      *
      * @var ?array<string, mixed> $metadata
      */
