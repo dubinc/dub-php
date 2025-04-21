@@ -12,7 +12,15 @@ namespace Dub\Models\Operations;
 class TrackSaleRequestBody
 {
     /**
-     * The amount of the sale. Should be passed in cents.
+     * The unique ID of the customer in your system. Will be used to identify and attribute all future events to this customer.
+     *
+     * @var string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
+
+    /**
+     * The amount of the sale in cents.
      *
      * @var int $amount
      */
@@ -29,7 +37,7 @@ class TrackSaleRequestBody
     public PaymentProcessor $paymentProcessor;
 
     /**
-     * Additional metadata to be stored with the sale event.
+     * Additional metadata to be stored with the sale event. Max 10,000 characters.
      *
      * @var ?array<string, mixed> $metadata
      */
@@ -39,16 +47,7 @@ class TrackSaleRequestBody
     public ?array $metadata = null;
 
     /**
-     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     *
-     * @var ?string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalId = null;
-
-    /**
-     * The name of the sale event. It can be used to track different types of event for example 'Purchase', 'Upgrade', 'Payment', etc.
+     * The name of the sale event.
      *
      * @var ?string $eventName
      */
@@ -64,16 +63,6 @@ class TrackSaleRequestBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
-
-    /**
-     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     *
-     * @var ?string $customerId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerId = null;
 
     /**
      * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
@@ -94,26 +83,24 @@ class TrackSaleRequestBody
     public ?string $leadEventName = null;
 
     /**
+     * @param  string  $externalId
      * @param  int  $amount
      * @param  PaymentProcessor  $paymentProcessor
-     * @param  ?string  $externalId
      * @param  ?string  $eventName
      * @param  ?string  $currency
-     * @param  ?string  $customerId
      * @param  ?string  $invoiceId
-     * @param  ?array<string, mixed>  $metadata
      * @param  ?string  $leadEventName
+     * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $externalId = '', ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $customerId = null, ?string $invoiceId = null, ?string $leadEventName = null)
+    public function __construct(string $externalId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $invoiceId = null, ?string $leadEventName = null)
     {
+        $this->externalId = $externalId;
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
         $this->metadata = $metadata;
-        $this->externalId = $externalId;
         $this->eventName = $eventName;
         $this->currency = $currency;
-        $this->customerId = $customerId;
         $this->invoiceId = $invoiceId;
         $this->leadEventName = $leadEventName;
     }

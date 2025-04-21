@@ -5,11 +5,71 @@
 
 ### Available Operations
 
-* [~~create~~](#create) - Create a customer :warning: **Deprecated**
-* [delete](#delete) - Delete a customer
-* [get](#get) - Retrieve a customer
 * [list](#list) - Retrieve a list of customers
+* [~~create~~](#create) - Create a customer :warning: **Deprecated**
+* [get](#get) - Retrieve a customer
 * [update](#update) - Update a customer
+* [delete](#delete) - Delete a customer
+
+## list
+
+Retrieve a list of customers for the authenticated workspace.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->customers->list(
+    email: 'Kassandra.Daugherty@hotmail.com',
+    externalId: '<id>',
+    includeExpandedFields: false
+
+);
+
+if ($response->responseBodies !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `email`                                                                                                     | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `email` field. The value must be a string.      |
+| `externalId`                                                                                                | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `externalId` field. The value must be a string. |
+| `includeExpandedFields`                                                                                     | *?bool*                                                                                                     | :heavy_minus_sign:                                                                                          | Whether to include expanded fields on the customer (`link`, `partner`, `discount`).                         |
+
+### Response
+
+**[?Operations\GetCustomersResponse](../../Models/Operations/GetCustomersResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
 ## ~~create~~
 
@@ -55,61 +115,6 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\CreateCustomerResponse](../../Models/Operations/CreateCustomerResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
-## delete
-
-Delete a customer from a workspace.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-
-
-$response = $sdk->customers->delete(
-    id: '<id>'
-);
-
-if ($response->object !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                                                     | Type                                                                                                                                                                                                          | Required                                                                                                                                                                                                      | Description                                                                                                                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                                                                                                                          | *string*                                                                                                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                            | The unique ID of the customer. You may use either the customer's `id` on Dub (obtained via `/customers` endpoint) or their `externalId` (unique ID within your system, prefixed with `ext_`, e.g. `ext_123`). |
-
-### Response
-
-**[?Operations\DeleteCustomerResponse](../../Models/Operations/DeleteCustomerResponse.md)**
 
 ### Errors
 
@@ -184,66 +189,6 @@ if ($response->object !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
-## list
-
-Retrieve a list of customers for the authenticated workspace.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-
-
-$response = $sdk->customers->list(
-    email: 'Kassandra.Daugherty@hotmail.com',
-    externalId: '<id>',
-    includeExpandedFields: false
-
-);
-
-if ($response->responseBodies !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `email`                                                                                                     | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `email` field. The value must be a string.      |
-| `externalId`                                                                                                | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `externalId` field. The value must be a string. |
-| `includeExpandedFields`                                                                                     | *?bool*                                                                                                     | :heavy_minus_sign:                                                                                          | Whether to include expanded fields on the customer (`link`, `partner`, `discount`).                         |
-
-### Response
-
-**[?Operations\GetCustomersResponse](../../Models/Operations/GetCustomersResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
 ## update
 
 Update a customer for the authenticated workspace.
@@ -286,6 +231,61 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\UpdateCustomerResponse](../../Models/Operations/UpdateCustomerResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## delete
+
+Delete a customer from a workspace.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->customers->delete(
+    id: '<id>'
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                     | Type                                                                                                                                                                                                          | Required                                                                                                                                                                                                      | Description                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                                          | *string*                                                                                                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                            | The unique ID of the customer. You may use either the customer's `id` on Dub (obtained via `/customers` endpoint) or their `externalId` (unique ID within your system, prefixed with `ext_`, e.g. `ext_123`). |
+
+### Response
+
+**[?Operations\DeleteCustomerResponse](../../Models/Operations/DeleteCustomerResponse.md)**
 
 ### Errors
 

@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-class PartnerCreatedEventData
+class PartnerEnrolledEventData
 {
     /**
      *

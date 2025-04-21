@@ -184,7 +184,7 @@ class SaleCreatedEventLink
     public ?bool $proxy = null;
 
     /**
-     * The title of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The title of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
      *
      * @var ?string $title
      */
@@ -192,7 +192,7 @@ class SaleCreatedEventLink
     public ?string $title;
 
     /**
-     * The description of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The description of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
      *
      * @var ?string $description
      */
@@ -200,7 +200,7 @@ class SaleCreatedEventLink
     public ?string $description;
 
     /**
-     * The image of the short link generated via `api.dub.co/metatags`. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The image of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
      *
      * @var ?string $image
      */
@@ -340,10 +340,34 @@ class SaleCreatedEventLink
 
     /**
      *
+     * @var ?string $testStartedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testStartedAt')]
+    public ?string $testStartedAt;
+
+    /**
+     *
+     * @var ?string $testCompletedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testCompletedAt')]
+    public ?string $testCompletedAt;
+
+    /**
+     *
      * @var ?string $userId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('userId')]
     public ?string $userId;
+
+    /**
+     * An array of A/B test URLs and the percentage of traffic to send to each URL.
+     *
+     * @var ?array<SaleCreatedEventTestVariants> $testVariants
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\SaleCreatedEventTestVariants>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $testVariants = null;
 
     /**
      * The number of clicks on the short link.
@@ -423,14 +447,17 @@ class SaleCreatedEventLink
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
+     * @param  ?string  $testStartedAt
+     * @param  ?string  $testCompletedAt
      * @param  ?string  $userId
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @param  ?array<SaleCreatedEventTestVariants>  $testVariants
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?SaleCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?SaleCreatedEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $userId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -473,7 +500,10 @@ class SaleCreatedEventLink
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
+        $this->testStartedAt = $testStartedAt;
+        $this->testCompletedAt = $testCompletedAt;
         $this->userId = $userId;
+        $this->testVariants = $testVariants;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;
