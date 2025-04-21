@@ -98,7 +98,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n);\n\n$response = $sdk->links->create(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n    testVariants: [\n        new Operations\\TestVariants(\n            url: 'https://example.com/variant-1',\n            percentage: 50,\n        ),\n        new Operations\\TestVariants(\n            url: 'https://example.com/variant-2',\n            percentage: 50,\n        ),\n    ],\n);\n\n$response = $sdk->links->create(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/links/bulk"]["delete"]
     update:
       "x-codeSamples":
@@ -110,13 +110,13 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "bulkUpdateLinks"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\BulkUpdateLinksRequestBody(\n    data: new Operations\\Data(\n        url: 'https://google.com',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->links->updateMany(\n    request: $request\n);\n\nif ($response->linkSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\BulkUpdateLinksRequestBody(\n    data: new Operations\\Data(\n        url: 'https://google.com',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\BulkUpdateLinksTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\BulkUpdateLinksTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n);\n\n$response = $sdk->links->updateMany(\n    request: $request\n);\n\nif ($response->linkSchemas !== null) {\n    // handle response\n}"
   - target: $["paths"]["/links/bulk"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "bulkCreateLinks"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = [\n    new Operations\\RequestBody(\n        url: 'https://google.com',\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n];\n\n$response = $sdk->links->createMany(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = [\n    new Operations\\RequestBody(\n        url: 'https://google.com',\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\BulkCreateLinksTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\BulkCreateLinksTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n];\n\n$response = $sdk->links->createMany(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/links/count"]["get"]
     update:
       "x-codeSamples":
@@ -134,7 +134,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "upsertLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n);\n\n$response = $sdk->links->upsert(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n    testVariants: [\n        new Operations\\UpsertLinkTestVariants(\n            url: 'https://example.com/variant-1',\n            percentage: 50,\n        ),\n        new Operations\\UpsertLinkTestVariants(\n            url: 'https://example.com/variant-2',\n            percentage: 50,\n        ),\n    ],\n);\n\n$response = $sdk->links->upsert(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/links/{linkId}"]["delete"]
     update:
       "x-codeSamples":
@@ -146,19 +146,13 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "updateLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n);\n\n$response = $sdk->links->update(\n    linkId: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
-  - target: $["paths"]["/metatags"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "php"
-          "label": "getMetatags"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->metatags->get(\n    url: 'https://dub.co'\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n    testVariants: [\n        new Operations\\UpdateLinkTestVariants(\n            url: 'https://example.com/variant-1',\n            percentage: 50,\n        ),\n        new Operations\\UpdateLinkTestVariants(\n            url: 'https://example.com/variant-2',\n            percentage: 50,\n        ),\n    ],\n);\n\n$response = $sdk->links->update(\n    linkId: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "createPartner"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerRequestBody(\n    programId: '<id>',\n    name: '<value>',\n    email: 'Loyal79@yahoo.com',\n    linkProps: new Operations\\LinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerRequestBody(\n    programId: '<id>',\n    name: '<value>',\n    email: 'Loyal79@yahoo.com',\n    linkProps: new Operations\\LinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\CreatePartnerTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\CreatePartnerTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n);\n\n$response = $sdk->partners->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/analytics"]["get"]
     update:
       "x-codeSamples":
@@ -176,13 +170,13 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createPartnerLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\CreatePartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->createLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreatePartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\CreatePartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\CreatePartnerLinkTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\CreatePartnerLinkTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n);\n\n$response = $sdk->partners->createLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links/upsert"]["put"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "upsertPartnerLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    programId: '<id>',\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\UpsertPartnerLinkTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\UpsertPartnerLinkTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/sales"]["patch"]
     update:
       "x-codeSamples":
@@ -224,19 +218,19 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "createReferralsEmbedToken"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateReferralsEmbedTokenRequestBody(\n    programId: '<id>',\n    partner: new Operations\\Partner(\n        name: '<value>',\n        email: 'Florencio98@hotmail.com',\n        linkProps: new Operations\\CreateReferralsEmbedTokenLinkProps(\n            externalId: '123456',\n            tagIds: [\n                'clux0rgak00011...',\n            ],\n        ),\n    ),\n);\n\n$response = $sdk->embedTokens->referrals(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\CreateReferralsEmbedTokenRequestBody(\n    programId: '<id>',\n    partner: new Operations\\Partner(\n        name: '<value>',\n        email: 'Florencio98@hotmail.com',\n        linkProps: new Operations\\CreateReferralsEmbedTokenLinkProps(\n            externalId: '123456',\n            tagIds: [\n                'clux0rgak00011...',\n            ],\n            testVariants: [\n                new Operations\\CreateReferralsEmbedTokenTestVariants(\n                    url: 'https://example.com/variant-1',\n                    percentage: 50,\n                ),\n                new Operations\\CreateReferralsEmbedTokenTestVariants(\n                    url: 'https://example.com/variant-2',\n                    percentage: 50,\n                ),\n            ],\n        ),\n    ),\n);\n\n$response = $sdk->embedTokens->referrals(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/lead"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "trackLead"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackLeadRequestBody(\n    clickId: '<id>',\n    eventName: 'Sign up',\n);\n\n$response = $sdk->track->lead(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackLeadRequestBody(\n    clickId: '<id>',\n    eventName: 'Sign up',\n    externalId: '<id>',\n);\n\n$response = $sdk->track->lead(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/track/sale"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "trackSale"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    amount: 996500,\n    paymentProcessor: Operations\\PaymentProcessor::Custom,\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    externalId: '<id>',\n    amount: 996500,\n    paymentProcessor: Operations\\PaymentProcessor::Custom,\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/workspaces/{idOrSlug}"]["get"]
     update:
       "x-codeSamples":

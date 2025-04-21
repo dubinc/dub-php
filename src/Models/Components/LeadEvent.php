@@ -35,6 +35,13 @@ class LeadEvent
 
     /**
      *
+     * @var string $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    public string $metadata;
+
+    /**
+     *
      * @var LeadEventClick $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
@@ -186,6 +193,7 @@ class LeadEvent
      * @param  LeadEventEvent  $event
      * @param  string  $eventId
      * @param  string  $eventName
+     * @param  string  $metadata
      * @param  LeadEventClick  $click
      * @param  LeadEventLink  $link
      * @param  Customer  $customer
@@ -205,11 +213,12 @@ class LeadEvent
      * @param  ?string  $timestamp
      * @phpstan-pure
      */
-    public function __construct(LeadEventEvent $event, string $eventId, string $eventName, LeadEventClick $click, LeadEventLink $link, Customer $customer, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
+    public function __construct(LeadEventEvent $event, string $eventId, string $eventName, string $metadata, LeadEventClick $click, LeadEventLink $link, Customer $customer, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
     {
         $this->event = $event;
         $this->eventId = $eventId;
         $this->eventName = $eventName;
+        $this->metadata = $metadata;
         $this->click = $click;
         $this->link = $link;
         $this->customer = $customer;

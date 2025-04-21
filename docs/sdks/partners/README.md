@@ -8,9 +8,9 @@
 * [create](#create) - Create a new partner
 * [createLink](#createlink) - Create a link for a partner
 * [retrieveLinks](#retrievelinks) - Retrieve a partner's links.
+* [upsertLink](#upsertlink) - Upsert a link for a partner
 * [analytics](#analytics) - Retrieve analytics for a partner
 * [updateSale](#updatesale) - Update a sale for a partner.
-* [upsertLink](#upsertlink) - Upsert a link for a partner
 
 ## create
 
@@ -37,10 +37,20 @@ $request = new Operations\CreatePartnerRequestBody(
     name: '<value>',
     email: 'Loyal79@yahoo.com',
     linkProps: new Operations\LinkProps(
+        externalId: '123456',
         tagIds: [
             'clux0rgak00011...',
         ],
-        externalId: '123456',
+        testVariants: [
+            new Operations\CreatePartnerTestVariants(
+                url: 'https://example.com/variant-1',
+                percentage: 50,
+            ),
+            new Operations\CreatePartnerTestVariants(
+                url: 'https://example.com/variant-2',
+                percentage: 50,
+            ),
+        ],
     ),
 );
 
@@ -101,10 +111,20 @@ $sdk = Dub\Dub::builder()
 $request = new Operations\CreatePartnerLinkRequestBody(
     programId: '<id>',
     linkProps: new Operations\CreatePartnerLinkLinkProps(
+        externalId: '123456',
         tagIds: [
             'clux0rgak00011...',
         ],
-        externalId: '123456',
+        testVariants: [
+            new Operations\CreatePartnerLinkTestVariants(
+                url: 'https://example.com/variant-1',
+                percentage: 50,
+            ),
+            new Operations\CreatePartnerLinkTestVariants(
+                url: 'https://example.com/variant-2',
+                percentage: 50,
+            ),
+        ],
     ),
 );
 
@@ -186,6 +206,80 @@ if ($response->responseBodies !== null) {
 ### Response
 
 **[?Operations\RetrieveLinksResponse](../../Models/Operations/RetrieveLinksResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## upsertLink
+
+Upsert a link for a partner that is enrolled in your program. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\UpsertPartnerLinkRequestBody(
+    programId: '<id>',
+    linkProps: new Operations\UpsertPartnerLinkLinkProps(
+        externalId: '123456',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        testVariants: [
+            new Operations\UpsertPartnerLinkTestVariants(
+                url: 'https://example.com/variant-1',
+                percentage: 50,
+            ),
+            new Operations\UpsertPartnerLinkTestVariants(
+                url: 'https://example.com/variant-2',
+                percentage: 50,
+            ),
+        ],
+    ),
+);
+
+$response = $sdk->partners->upsertLink(
+    request: $request
+);
+
+if ($response->linkSchema !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\UpsertPartnerLinkRequestBody](../../Models/Operations/UpsertPartnerLinkRequestBody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\UpsertPartnerLinkResponse](../../Models/Operations/UpsertPartnerLinkResponse.md)**
 
 ### Errors
 
@@ -303,70 +397,6 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\UpdatePartnerSaleResponse](../../Models/Operations/UpdatePartnerSaleResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
-## upsertLink
-
-Upsert a link for a partner that is enrolled in your program. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-use Dub\Models\Operations;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-$request = new Operations\UpsertPartnerLinkRequestBody(
-    programId: '<id>',
-    linkProps: new Operations\UpsertPartnerLinkLinkProps(
-        tagIds: [
-            'clux0rgak00011...',
-        ],
-        externalId: '123456',
-    ),
-);
-
-$response = $sdk->partners->upsertLink(
-    request: $request
-);
-
-if ($response->linkSchema !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [Operations\UpsertPartnerLinkRequestBody](../../Models/Operations/UpsertPartnerLinkRequestBody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-
-### Response
-
-**[?Operations\UpsertPartnerLinkResponse](../../Models/Operations/UpsertPartnerLinkResponse.md)**
 
 ### Errors
 

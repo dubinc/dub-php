@@ -12,7 +12,7 @@ namespace Dub\Models\Components;
 class Sale
 {
     /**
-     * The amount of the sale. Should be passed in cents.
+     * The amount of the sale in cents.
      *
      * @var int $amount
      */

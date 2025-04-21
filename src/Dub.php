@@ -42,8 +42,6 @@ class Dub
 
     public QRCodes $qrCodes;
 
-    public Metatags $metatags;
-
     /**
      * Returns a new instance of the SDK builder used to configure and create the SDK instance.
      *
@@ -72,7 +70,6 @@ class Dub
         $this->workspaces = new Workspaces($this->sdkConfiguration);
         $this->embedTokens = new EmbedTokens($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);
-        $this->metatags = new Metatags($this->sdkConfiguration);
         $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
 
     }

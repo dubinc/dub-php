@@ -12,7 +12,7 @@ namespace Dub\Models\Operations;
 class TrackLeadRequestBody
 {
     /**
-     * The ID of the click in Dub. You can read this value from `dub_id` cookie.
+     * The unique ID of the click that the lead conversion event is attributed to. You can read this value from `dub_id` cookie.
      *
      * @var string $clickId
      */
@@ -20,12 +20,20 @@ class TrackLeadRequestBody
     public string $clickId;
 
     /**
-     * The name of the lead event to track.
+     * The name of the lead event to track. Can also be used as a unique identifier to associate a given lead event for a customer for a subsequent sale event (via the `leadEventName` prop in `/track/sale`).
      *
      * @var string $eventName
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
     public string $eventName;
+
+    /**
+     * The unique ID of the customer in your system. Will be used to identify and attribute all future events to this customer.
+     *
+     * @var string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
 
     /**
      * The numerical value associated with this lead event (e.g., number of provisioned seats in a free trial). If defined as N, the lead event will be tracked N times.
@@ -37,7 +45,7 @@ class TrackLeadRequestBody
     public ?float $eventQuantity = null;
 
     /**
-     * Additional metadata to be stored with the lead event
+     * Additional metadata to be stored with the lead event. Max 10,000 characters.
      *
      * @var ?array<string, mixed> $metadata
      */
@@ -45,15 +53,6 @@ class TrackLeadRequestBody
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $metadata = null;
-
-    /**
-     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     *
-     * @var ?string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $externalId = null;
 
     /**
      * The mode to use for tracking the lead event. `async` will not block the request; `wait` will block the request until the lead event is fully recorded in Dub.
@@ -66,17 +65,7 @@ class TrackLeadRequestBody
     public ?Mode $mode = null;
 
     /**
-     * This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
-     *
-     * @var ?string $customerId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('customerId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $customerId = null;
-
-    /**
-     * Name of the customer in the client's app.
+     * The name of the customer. If not passed, a random name will be generated (e.g. “Big Red Caribou”).
      *
      * @var ?string $customerName
      */
@@ -85,7 +74,7 @@ class TrackLeadRequestBody
     public ?string $customerName = null;
 
     /**
-     * Email of the customer in the client's app.
+     * The email address of the customer.
      *
      * @var ?string $customerEmail
      */
@@ -94,7 +83,7 @@ class TrackLeadRequestBody
     public ?string $customerEmail = null;
 
     /**
-     * Avatar of the customer in the client's app.
+     * The avatar URL of the customer.
      *
      * @var ?string $customerAvatar
      */
@@ -105,25 +94,23 @@ class TrackLeadRequestBody
     /**
      * @param  string  $clickId
      * @param  string  $eventName
-     * @param  ?string  $externalId
+     * @param  string  $externalId
      * @param  ?Mode  $mode
      * @param  ?float  $eventQuantity
-     * @param  ?string  $customerId
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $clickId, string $eventName, ?float $eventQuantity = null, ?array $metadata = null, ?string $externalId = '', ?Mode $mode = Mode::Async, ?string $customerId = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
+    public function __construct(string $clickId, string $eventName, string $externalId, ?float $eventQuantity = null, ?array $metadata = null, ?Mode $mode = Mode::Async, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;
+        $this->externalId = $externalId;
         $this->eventQuantity = $eventQuantity;
         $this->metadata = $metadata;
-        $this->externalId = $externalId;
         $this->mode = $mode;
-        $this->customerId = $customerId;
         $this->customerName = $customerName;
         $this->customerEmail = $customerEmail;
         $this->customerAvatar = $customerAvatar;

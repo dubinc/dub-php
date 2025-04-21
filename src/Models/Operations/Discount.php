@@ -27,11 +27,11 @@ class Discount
 
     /**
      *
-     * @var Type $type
+     * @var GetCustomersType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Type')]
-    public Type $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomersType')]
+    public GetCustomersType $type;
 
     /**
      *
@@ -73,7 +73,7 @@ class Discount
     /**
      * @param  string  $id
      * @param  float  $amount
-     * @param  Type  $type
+     * @param  GetCustomersType  $type
      * @param  ?float  $maxDuration
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId
@@ -81,7 +81,7 @@ class Discount
      * @param  ?float  $partnersCount
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, Type $type, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?string $description = null, ?float $partnersCount = null)
+    public function __construct(string $id, float $amount, GetCustomersType $type, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?string $description = null, ?float $partnersCount = null)
     {
         $this->id = $id;
         $this->amount = $amount;

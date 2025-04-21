@@ -11,6 +11,7 @@ namespace Dub\Models\Operations;
 
 enum Type: string
 {
-    case Percentage = 'percentage';
-    case Flat = 'flat';
+    case Click = 'click';
+    case Lead = 'lead';
+    case Sale = 'sale';
 }

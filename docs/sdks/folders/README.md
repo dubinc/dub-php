@@ -6,9 +6,9 @@
 ### Available Operations
 
 * [create](#create) - Create a new folder
-* [delete](#delete) - Delete a folder
 * [list](#list) - Retrieve a list of folders
 * [update](#update) - Update a folder
+* [delete](#delete) - Delete a folder
 
 ## create
 
@@ -52,61 +52,6 @@ if ($response->folderSchema !== null) {
 ### Response
 
 **[?Operations\CreateFolderResponse](../../Models/Operations/CreateFolderResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
-## delete
-
-Delete a folder from the workspace. All existing links will still work, but they will no longer be associated with this folder.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-
-
-$response = $sdk->folders->delete(
-    id: '<id>'
-);
-
-if ($response->object !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                       | Type                            | Required                        | Description                     |
-| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
-| `id`                            | *string*                        | :heavy_check_mark:              | The ID of the folder to delete. |
-
-### Response
-
-**[?Operations\DeleteFolderResponse](../../Models/Operations/DeleteFolderResponse.md)**
 
 ### Errors
 
@@ -228,6 +173,61 @@ if ($response->folderSchema !== null) {
 ### Response
 
 **[?Operations\UpdateFolderResponse](../../Models/Operations/UpdateFolderResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## delete
+
+Delete a folder from the workspace. All existing links will still work, but they will no longer be associated with this folder.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->folders->delete(
+    id: '<id>'
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                       | Type                            | Required                        | Description                     |
+| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
+| `id`                            | *string*                        | :heavy_check_mark:              | The ID of the folder to delete. |
+
+### Response
+
+**[?Operations\DeleteFolderResponse](../../Models/Operations/DeleteFolderResponse.md)**
 
 ### Errors
 

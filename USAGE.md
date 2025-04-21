@@ -15,10 +15,20 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\CreateLinkRequestBody(
     url: 'https://google.com',
+    externalId: '123456',
     tagIds: [
         'clux0rgak00011...',
     ],
-    externalId: '123456',
+    testVariants: [
+        new Operations\TestVariants(
+            url: 'https://example.com/variant-1',
+            percentage: 50,
+        ),
+        new Operations\TestVariants(
+            url: 'https://example.com/variant-2',
+            percentage: 50,
+        ),
+    ],
 );
 
 $response = $sdk->links->create(
@@ -46,10 +56,20 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\UpsertLinkRequestBody(
     url: 'https://google.com',
+    externalId: '123456',
     tagIds: [
         'clux0rgak00011...',
     ],
-    externalId: '123456',
+    testVariants: [
+        new Operations\UpsertLinkTestVariants(
+            url: 'https://example.com/variant-1',
+            percentage: 50,
+        ),
+        new Operations\UpsertLinkTestVariants(
+            url: 'https://example.com/variant-2',
+            percentage: 50,
+        ),
+    ],
 );
 
 $response = $sdk->links->upsert(
