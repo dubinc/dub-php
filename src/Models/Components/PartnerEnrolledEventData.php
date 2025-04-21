@@ -85,10 +85,10 @@ class PartnerEnrolledEventData
     /**
      * $links
      *
-     * @var ?array<Links> $links
+     * @var ?array<PartnerEnrolledEventLink> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Links>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\PartnerEnrolledEventLink>|null')]
     public ?array $links;
 
     /**
@@ -158,7 +158,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $country
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $tenantId
-     * @param  ?array<Links>  $links
+     * @param  ?array<PartnerEnrolledEventLink>  $links
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales

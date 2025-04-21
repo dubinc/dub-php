@@ -21,6 +21,13 @@ class SaleEvent
 
     /**
      *
+     * @var string $timestamp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    public string $timestamp;
+
+    /**
+     *
      * @var string $eventId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('eventId')]
@@ -216,15 +223,8 @@ class SaleEvent
     public string $ip;
 
     /**
-     *
-     * @var ?string $timestamp
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $timestamp = null;
-
-    /**
      * @param  SaleEventEvent  $event
+     * @param  string  $timestamp
      * @param  string  $eventId
      * @param  string  $eventName
      * @param  SaleEventLink  $link
@@ -248,12 +248,12 @@ class SaleEvent
      * @param  string  $os
      * @param  float  $qr
      * @param  string  $ip
-     * @param  ?string  $timestamp
      * @phpstan-pure
      */
-    public function __construct(SaleEventEvent $event, string $eventId, string $eventName, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, Sale $sale, float $saleAmount, string $invoiceId, string $paymentProcessor, string $metadata, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
+    public function __construct(SaleEventEvent $event, string $timestamp, string $eventId, string $eventName, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, Sale $sale, float $saleAmount, string $invoiceId, string $paymentProcessor, string $metadata, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip)
     {
         $this->event = $event;
+        $this->timestamp = $timestamp;
         $this->eventId = $eventId;
         $this->eventName = $eventName;
         $this->link = $link;
@@ -277,6 +277,5 @@ class SaleEvent
         $this->os = $os;
         $this->qr = $qr;
         $this->ip = $ip;
-        $this->timestamp = $timestamp;
     }
 }

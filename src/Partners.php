@@ -423,12 +423,12 @@ class Partners
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Operations\RetrieveLinksResponseBody>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Operations\Link>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\RetrieveLinksResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    responseBodies: $obj);
+                    links: $obj);
 
                 return $response;
             } else {

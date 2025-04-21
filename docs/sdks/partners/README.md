@@ -190,7 +190,7 @@ $response = $sdk->partners->retrieveLinks(
 
 );
 
-if ($response->responseBodies !== null) {
+if ($response->links !== null) {
     // handle response
 }
 ```

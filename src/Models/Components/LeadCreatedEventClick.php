@@ -97,18 +97,17 @@ class LeadCreatedEventClick
 
     /**
      *
+     * @var bool $qr
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('qr')]
+    public bool $qr;
+
+    /**
+     *
      * @var string $ip
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('ip')]
     public string $ip;
-
-    /**
-     *
-     * @var ?bool $qr
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('qr')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $qr = null;
 
     /**
      * @param  string  $id
@@ -123,11 +122,11 @@ class LeadCreatedEventClick
      * @param  string  $os
      * @param  string  $referer
      * @param  string  $refererUrl
+     * @param  bool  $qr
      * @param  string  $ip
-     * @param  ?bool  $qr
      * @phpstan-pure
      */
-    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, string $ip, ?bool $qr = null)
+    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, bool $qr, string $ip)
     {
         $this->id = $id;
         $this->timestamp = $timestamp;
@@ -141,7 +140,7 @@ class LeadCreatedEventClick
         $this->os = $os;
         $this->referer = $referer;
         $this->refererUrl = $refererUrl;
-        $this->ip = $ip;
         $this->qr = $qr;
+        $this->ip = $ip;
     }
 }
