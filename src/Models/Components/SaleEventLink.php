@@ -44,10 +44,52 @@ class SaleEventLink
 
     /**
      *
+     * @var bool $trackConversion
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
+    public bool $trackConversion;
+
+    /**
+     *
+     * @var bool $archived
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
+    public bool $archived;
+
+    /**
+     *
      * @var string $expiresAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
     public string $expiresAt;
+
+    /**
+     *
+     * @var bool $proxy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
+    public bool $proxy;
+
+    /**
+     *
+     * @var bool $rewrite
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
+    public bool $rewrite;
+
+    /**
+     *
+     * @var bool $doIndex
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
+    public bool $doIndex;
+
+    /**
+     *
+     * @var bool $publicStats
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
+    public bool $publicStats;
 
     /**
      * The IDs of the webhooks that the short link is associated with.
@@ -113,14 +155,6 @@ class SaleEventLink
     public string $projectId;
 
     /**
-     *
-     * @var ?bool $trackConversion
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('trackConversion')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $trackConversion = null;
-
-    /**
      * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
      *
      * @var ?string $externalId
@@ -154,14 +188,6 @@ class SaleEventLink
 
     /**
      *
-     * @var ?bool $archived
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('archived')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $archived = null;
-
-    /**
-     *
      * @var ?string $expiredUrl
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expiredUrl')]
@@ -174,14 +200,6 @@ class SaleEventLink
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('password')]
     public ?string $password;
-
-    /**
-     *
-     * @var ?bool $proxy
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $proxy = null;
 
     /**
      * The title of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
@@ -216,22 +234,6 @@ class SaleEventLink
     public ?string $video;
 
     /**
-     *
-     * @var ?bool $rewrite
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('rewrite')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $rewrite = null;
-
-    /**
-     *
-     * @var ?bool $doIndex
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('doIndex')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $doIndex = null;
-
-    /**
      * The iOS destination URL for the short link for iOS device targeting.
      *
      * @var ?string $ios
@@ -255,14 +257,6 @@ class SaleEventLink
     #[\Speakeasy\Serializer\Annotation\SerializedName('geo')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleEventGeo|null')]
     public ?SaleEventGeo $geo;
-
-    /**
-     *
-     * @var ?bool $publicStats
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $publicStats = null;
 
     /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
@@ -410,7 +404,13 @@ class SaleEventLink
      * @param  string  $domain
      * @param  string  $key
      * @param  string  $url
+     * @param  bool  $trackConversion
+     * @param  bool  $archived
      * @param  string  $expiresAt
+     * @param  bool  $proxy
+     * @param  bool  $rewrite
+     * @param  bool  $doIndex
+     * @param  bool  $publicStats
      * @param  array<string>  $webhookIds
      * @param  string  $shortLink
      * @param  string  $qrCode
@@ -419,25 +419,19 @@ class SaleEventLink
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  string  $projectId
-     * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
      * @param  ?string  $programId
      * @param  ?string  $partnerId
-     * @param  ?bool  $archived
      * @param  ?string  $expiredUrl
      * @param  ?string  $password
-     * @param  ?bool  $proxy
      * @param  ?string  $title
      * @param  ?string  $description
      * @param  ?string  $image
      * @param  ?string  $video
-     * @param  ?bool  $rewrite
-     * @param  ?bool  $doIndex
      * @param  ?string  $ios
      * @param  ?string  $android
      * @param  ?SaleEventGeo  $geo
-     * @param  ?bool  $publicStats
      * @param  ?string  $tagId
      * @param  ?array<TagSchema>  $tags
      * @param  ?string  $folderId
@@ -457,13 +451,19 @@ class SaleEventLink
      * @param  ?array<SaleEventTestVariants>  $testVariants
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, string $expiresAt, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?bool $trackConversion = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?bool $archived = null, ?string $expiredUrl = null, ?string $password = null, ?bool $proxy = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $ios = null, ?string $android = null, ?SaleEventGeo $geo = null, ?bool $publicStats = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $userId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, string $expiresAt, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?SaleEventGeo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $userId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->url = $url;
+        $this->trackConversion = $trackConversion;
+        $this->archived = $archived;
         $this->expiresAt = $expiresAt;
+        $this->proxy = $proxy;
+        $this->rewrite = $rewrite;
+        $this->doIndex = $doIndex;
+        $this->publicStats = $publicStats;
         $this->webhookIds = $webhookIds;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
@@ -472,25 +472,19 @@ class SaleEventLink
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
-        $this->trackConversion = $trackConversion;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
         $this->programId = $programId;
         $this->partnerId = $partnerId;
-        $this->archived = $archived;
         $this->expiredUrl = $expiredUrl;
         $this->password = $password;
-        $this->proxy = $proxy;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->video = $video;
-        $this->rewrite = $rewrite;
-        $this->doIndex = $doIndex;
         $this->ios = $ios;
         $this->android = $android;
         $this->geo = $geo;
-        $this->publicStats = $publicStats;
         $this->tagId = $tagId;
         $this->tags = $tags;
         $this->folderId = $folderId;

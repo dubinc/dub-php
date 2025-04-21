@@ -72,12 +72,12 @@ class GetCustomersResponseBody
 
     /**
      *
-     * @var ?Link $link
+     * @var ?GetCustomersLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Link|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomersLink|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Link $link = null;
+    public ?GetCustomersLink $link = null;
 
     /**
      *
@@ -113,13 +113,13 @@ class GetCustomersResponseBody
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $country
-     * @param  ?Link  $link
+     * @param  ?GetCustomersLink  $link
      * @param  ?string  $programId
      * @param  ?GetCustomersPartner  $partner
      * @param  ?Discount  $discount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?Link $link = null, ?string $programId = null, ?GetCustomersPartner $partner = null, ?Discount $discount = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?GetCustomersLink $link = null, ?string $programId = null, ?GetCustomersPartner $partner = null, ?Discount $discount = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;

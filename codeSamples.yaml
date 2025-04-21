@@ -164,7 +164,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "retrieveLinks"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->partners->retrieveLinks(\n    programId: '<id>',\n    partnerId: '<id>',\n    tenantId: '<id>'\n\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->partners->retrieveLinks(\n    programId: '<id>',\n    partnerId: '<id>',\n    tenantId: '<id>'\n\n);\n\nif ($response->links !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links"]["post"]
     update:
       "x-codeSamples":

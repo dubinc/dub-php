@@ -36,20 +36,20 @@ class LinkWebhookEvent
 
     /**
      *
-     * @var Data $data
+     * @var LinkWebhookEventLink $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Data')]
-    public Data $data;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkWebhookEventLink')]
+    public LinkWebhookEventLink $data;
 
     /**
      * @param  string  $id
      * @param  One|Two|Three  $event
      * @param  string  $createdAt
-     * @param  Data  $data
+     * @param  LinkWebhookEventLink  $data
      * @phpstan-pure
      */
-    public function __construct(string $id, One|Two|Three $event, string $createdAt, Data $data)
+    public function __construct(string $id, One|Two|Three $event, string $createdAt, LinkWebhookEventLink $data)
     {
         $this->id = $id;
         $this->event = $event;

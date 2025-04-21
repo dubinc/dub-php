@@ -32,7 +32,7 @@ class GetLinksRequest
      *
      * @var string|array<string>|null $tagIds
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=false,name=tagIds')]
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagIds')]
     public string|array|null $tagIds = null;
 
     /**

@@ -21,6 +21,13 @@ class LeadEvent
 
     /**
      *
+     * @var string $timestamp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    public string $timestamp;
+
+    /**
+     *
      * @var string $eventId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('eventId')]
@@ -182,15 +189,8 @@ class LeadEvent
     public string $ip;
 
     /**
-     *
-     * @var ?string $timestamp
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $timestamp = null;
-
-    /**
      * @param  LeadEventEvent  $event
+     * @param  string  $timestamp
      * @param  string  $eventId
      * @param  string  $eventName
      * @param  string  $metadata
@@ -210,12 +210,12 @@ class LeadEvent
      * @param  string  $os
      * @param  float  $qr
      * @param  string  $ip
-     * @param  ?string  $timestamp
      * @phpstan-pure
      */
-    public function __construct(LeadEventEvent $event, string $eventId, string $eventName, string $metadata, LeadEventClick $click, LeadEventLink $link, Customer $customer, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
+    public function __construct(LeadEventEvent $event, string $timestamp, string $eventId, string $eventName, string $metadata, LeadEventClick $click, LeadEventLink $link, Customer $customer, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip)
     {
         $this->event = $event;
+        $this->timestamp = $timestamp;
         $this->eventId = $eventId;
         $this->eventName = $eventName;
         $this->metadata = $metadata;
@@ -235,6 +235,5 @@ class LeadEvent
         $this->os = $os;
         $this->qr = $qr;
         $this->ip = $ip;
-        $this->timestamp = $timestamp;
     }
 }

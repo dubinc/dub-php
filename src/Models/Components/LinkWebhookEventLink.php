@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-class LeadEventLink
+class LinkWebhookEventLink
 {
     /**
      * The unique ID of the short link.
@@ -252,11 +252,11 @@ class LeadEventLink
     /**
      * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
      *
-     * @var ?LeadEventGeo $geo
+     * @var ?LinkWebhookEventGeo $geo
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('geo')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadEventGeo|null')]
-    public ?LeadEventGeo $geo;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkWebhookEventGeo|null')]
+    public ?LinkWebhookEventGeo $geo;
 
     /**
      * The unique ID of the tag assigned to the short link. This field is deprecated – use `tags` instead.
@@ -356,10 +356,10 @@ class LeadEventLink
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<LeadEventTestVariants> $testVariants
+     * @var ?array<LinkWebhookEventTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\LeadEventTestVariants>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\LinkWebhookEventTestVariants>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $testVariants = null;
 
@@ -431,7 +431,7 @@ class LeadEventLink
      * @param  ?string  $video
      * @param  ?string  $ios
      * @param  ?string  $android
-     * @param  ?LeadEventGeo  $geo
+     * @param  ?LinkWebhookEventGeo  $geo
      * @param  ?string  $tagId
      * @param  ?array<TagSchema>  $tags
      * @param  ?string  $folderId
@@ -448,10 +448,10 @@ class LeadEventLink
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
-     * @param  ?array<LeadEventTestVariants>  $testVariants
+     * @param  ?array<LinkWebhookEventTestVariants>  $testVariants
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, string $expiresAt, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?LeadEventGeo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $userId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, string $expiresAt, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?LinkWebhookEventGeo $geo = null, ?string $tagId = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $userId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;

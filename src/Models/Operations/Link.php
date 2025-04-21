@@ -44,27 +44,71 @@ class Link
     public string $shortLink;
 
     /**
-     * The ID of the program the short link is associated with.
+     * The destination URL of the short link.
      *
-     * @var ?string $programId
+     * @var string $url
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public ?string $programId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    public string $url;
+
+    /**
+     * The number of clicks on the short link.
+     *
+     * @var ?float $clicks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clicks')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $clicks = null;
+
+    /**
+     * The number of leads the short links has generated.
+     *
+     * @var ?float $leads
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('leads')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $leads = null;
+
+    /**
+     * The number of sales the short links has generated.
+     *
+     * @var ?float $sales
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
+
+    /**
+     * The total dollar amount of sales the short links has generated (in cents).
+     *
+     * @var ?float $saleAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
 
     /**
      * @param  string  $id
      * @param  string  $domain
      * @param  string  $key
      * @param  string  $shortLink
-     * @param  ?string  $programId
+     * @param  string  $url
+     * @param  ?float  $clicks
+     * @param  ?float  $leads
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $shortLink, ?string $programId = null)
+    public function __construct(string $id, string $domain, string $key, string $shortLink, string $url, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->shortLink = $shortLink;
-        $this->programId = $programId;
+        $this->url = $url;
+        $this->clicks = $clicks;
+        $this->leads = $leads;
+        $this->sales = $sales;
+        $this->saleAmount = $saleAmount;
     }
 }

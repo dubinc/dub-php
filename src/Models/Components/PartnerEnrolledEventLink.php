@@ -6,10 +6,10 @@
 
 declare(strict_types=1);
 
-namespace Dub\Models\Operations;
+namespace Dub\Models\Components;
 
 
-class Links
+class PartnerEnrolledEventLink
 {
     /**
      * The unique ID of the short link.

@@ -86,10 +86,10 @@ class CreatePartnerResponseBody
     /**
      * $links
      *
-     * @var ?array<Links> $links
+     * @var ?array<CreatePartnerLink> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\Links>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerLink>|null')]
     public ?array $links;
 
     /**
@@ -159,7 +159,7 @@ class CreatePartnerResponseBody
      * @param  ?string  $country
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $tenantId
-     * @param  ?array<Links>  $links
+     * @param  ?array<CreatePartnerLink>  $links
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales

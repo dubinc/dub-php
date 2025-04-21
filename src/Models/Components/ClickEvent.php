@@ -21,6 +21,13 @@ class ClickEvent
 
     /**
      *
+     * @var string $timestamp
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
+    public string $timestamp;
+
+    /**
+     *
      * @var Click $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
@@ -153,15 +160,8 @@ class ClickEvent
     public string $ip;
 
     /**
-     *
-     * @var ?string $timestamp
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('timestamp')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $timestamp = null;
-
-    /**
      * @param  Event  $event
+     * @param  string  $timestamp
      * @param  Click  $click
      * @param  Link  $link
      * @param  string  $clickId
@@ -177,12 +177,12 @@ class ClickEvent
      * @param  string  $os
      * @param  float  $qr
      * @param  string  $ip
-     * @param  ?string  $timestamp
      * @phpstan-pure
      */
-    public function __construct(Event $event, Click $click, Link $link, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, ?string $timestamp = null)
+    public function __construct(Event $event, string $timestamp, Click $click, Link $link, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip)
     {
         $this->event = $event;
+        $this->timestamp = $timestamp;
         $this->click = $click;
         $this->link = $link;
         $this->clickId = $clickId;
@@ -198,6 +198,5 @@ class ClickEvent
         $this->os = $os;
         $this->qr = $qr;
         $this->ip = $ip;
-        $this->timestamp = $timestamp;
     }
 }
