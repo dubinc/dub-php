@@ -14,7 +14,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getCustomers"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->customers->list(\n    email: 'Kassandra.Daugherty@hotmail.com',\n    externalId: '<id>',\n    includeExpandedFields: false\n\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetCustomersRequest();\n\n$response = $sdk->customers->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/customers/{id}"]["delete"]
     update:
       "x-codeSamples":

@@ -23,6 +23,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
+use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -30,13 +31,10 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-
+$request = new Operations\GetCustomersRequest();
 
 $response = $sdk->customers->list(
-    email: 'Kassandra.Daugherty@hotmail.com',
-    externalId: '<id>',
-    includeExpandedFields: false
-
+    request: $request
 );
 
 if ($response->responseBodies !== null) {
@@ -46,11 +44,9 @@ if ($response->responseBodies !== null) {
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `email`                                                                                                     | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `email` field. The value must be a string.      |
-| `externalId`                                                                                                | *?string*                                                                                                   | :heavy_minus_sign:                                                                                          | A case-sensitive filter on the list based on the customer's `externalId` field. The value must be a string. |
-| `includeExpandedFields`                                                                                     | *?bool*                                                                                                     | :heavy_minus_sign:                                                                                          | Whether to include expanded fields on the customer (`link`, `partner`, `discount`).                         |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `$request`                                                                       | [Operations\GetCustomersRequest](../../Models/Operations/GetCustomersRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 ### Response
 

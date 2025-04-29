@@ -29,14 +29,6 @@ class UpdateWorkspaceRequestBody
 
     /**
      *
-     * @var ?string $logo
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $logo = null;
-
-    /**
-     *
      * @var ?bool $conversionEnabled
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('conversionEnabled')]
@@ -54,19 +46,27 @@ class UpdateWorkspaceRequestBody
     public ?array $allowedHostnames = null;
 
     /**
+     *
+     * @var ?string $logo
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $logo = null;
+
+    /**
      * @param  ?string  $name
      * @param  ?string  $slug
-     * @param  ?string  $logo
      * @param  ?bool  $conversionEnabled
      * @param  ?array<string>  $allowedHostnames
+     * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $slug = null, ?string $logo = null, ?bool $conversionEnabled = null, ?array $allowedHostnames = null)
+    public function __construct(?string $name = null, ?string $slug = null, ?bool $conversionEnabled = null, ?array $allowedHostnames = null, ?string $logo = null)
     {
         $this->name = $name;
         $this->slug = $slug;
-        $this->logo = $logo;
         $this->conversionEnabled = $conversionEnabled;
         $this->allowedHostnames = $allowedHostnames;
+        $this->logo = $logo;
     }
 }
