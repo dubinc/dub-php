@@ -21,21 +21,20 @@ class AnalyticsCities
     public AnalyticsCitiesCountry $country;
 
     /**
+     * The 2-letter ISO 3166-2 region code representing the region associated with the location of the user.
+     *
+     * @var string $region
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('region')]
+    public string $region;
+
+    /**
      * The name of the city
      *
      * @var string $city
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
     public string $city;
-
-    /**
-     *
-     * @var ?AnalyticsCitiesRegion $region
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('region')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsCitiesRegion|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?AnalyticsCitiesRegion $region = null;
 
     /**
      * The number of clicks from this city
@@ -75,19 +74,19 @@ class AnalyticsCities
 
     /**
      * @param  AnalyticsCitiesCountry  $country
+     * @param  string  $region
      * @param  string  $city
-     * @param  ?AnalyticsCitiesRegion  $region
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(AnalyticsCitiesCountry $country, string $city, ?AnalyticsCitiesRegion $region = AnalyticsCitiesRegion::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(AnalyticsCitiesCountry $country, string $region, string $city, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->country = $country;
-        $this->city = $city;
         $this->region = $region;
+        $this->city = $city;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;

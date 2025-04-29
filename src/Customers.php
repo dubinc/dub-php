@@ -546,19 +546,12 @@ class Customers
      *
      * Retrieve a list of customers for the authenticated workspace.
      *
-     * @param  ?string  $email
-     * @param  ?string  $externalId
-     * @param  ?bool  $includeExpandedFields
+     * @param  ?Operations\GetCustomersRequest  $request
      * @return Operations\GetCustomersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?string $email = null, ?string $externalId = null, ?bool $includeExpandedFields = null, ?Options $options = null): Operations\GetCustomersResponse
+    public function list(?Operations\GetCustomersRequest $request = null, ?Options $options = null): Operations\GetCustomersResponse
     {
-        $request = new Operations\GetCustomersRequest(
-            email: $email,
-            externalId: $externalId,
-            includeExpandedFields: $includeExpandedFields,
-        );
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
         $urlOverride = null;

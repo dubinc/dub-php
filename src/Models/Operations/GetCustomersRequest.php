@@ -12,7 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class GetCustomersRequest
 {
     /**
-     * A case-sensitive filter on the list based on the customer's `email` field. The value must be a string.
+     * A case-sensitive filter on the list based on the customer's `email` field. The value must be a string. Takes precedence over `externalId`.
      *
      * @var ?string $email
      */
@@ -20,12 +20,20 @@ class GetCustomersRequest
     public ?string $email = null;
 
     /**
-     * A case-sensitive filter on the list based on the customer's `externalId` field. The value must be a string.
+     * A case-sensitive filter on the list based on the customer's `externalId` field. The value must be a string. Takes precedence over `search`.
      *
      * @var ?string $externalId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=externalId')]
     public ?string $externalId = null;
+
+    /**
+     * A search query to filter customers by email, externalId, or name. If `email` or `externalId` is provided, this will be ignored.
+     *
+     * @var ?string $search
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=search')]
+    public ?string $search = null;
 
     /**
      * Whether to include expanded fields on the customer (`link`, `partner`, `discount`).
@@ -36,15 +44,37 @@ class GetCustomersRequest
     public ?bool $includeExpandedFields = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
+     * The number of items per page.
+     *
+     * @var ?float $pageSize
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
+    public ?float $pageSize = null;
+
+    /**
      * @param  ?string  $email
      * @param  ?string  $externalId
+     * @param  ?string  $search
      * @param  ?bool  $includeExpandedFields
+     * @param  ?float  $page
+     * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $externalId = null, ?bool $includeExpandedFields = null)
+    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?bool $includeExpandedFields = null, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->email = $email;
         $this->externalId = $externalId;
+        $this->search = $search;
         $this->includeExpandedFields = $includeExpandedFields;
+        $this->page = $page;
+        $this->pageSize = $pageSize;
     }
 }
