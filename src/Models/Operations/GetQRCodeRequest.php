@@ -20,7 +20,7 @@ class GetQRCodeRequest
     public string $url;
 
     /**
-     * The logo to include in the QR code. Can only be used with a paid plan on Dub.co.
+     * The logo to include in the QR code. Can only be used with a paid plan on Dub.
      *
      * @var ?string $logo
      */
@@ -60,7 +60,7 @@ class GetQRCodeRequest
     public ?string $bgColor = null;
 
     /**
-     * Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.co.
+     * Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.
      *
      * @var ?bool $hideLogo
      */
