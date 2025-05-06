@@ -45,9 +45,9 @@ class Folders
     }
 
     /**
-     * Create a new folder
+     * Create a folder
      *
-     * Create a new folder for the authenticated workspace.
+     * Create a folder for the authenticated workspace.
      *
      * @param  ?Operations\CreateFolderRequestBody  $request
      * @return Operations\CreateFolderResponse

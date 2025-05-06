@@ -539,9 +539,9 @@ class Links
     }
 
     /**
-     * Create a new link
+     * Create a link
      *
-     * Create a new link for the authenticated workspace.
+     * Create a link for the authenticated workspace.
      *
      * @param  ?Operations\CreateLinkRequestBody  $request
      * @return Operations\CreateLinkResponse

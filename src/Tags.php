@@ -45,9 +45,9 @@ class Tags
     }
 
     /**
-     * Create a new tag
+     * Create a tag
      *
-     * Create a new tag for the authenticated workspace.
+     * Create a tag for the authenticated workspace.
      *
      * @param  ?Operations\CreateTagRequestBody  $request
      * @return Operations\CreateTagResponse

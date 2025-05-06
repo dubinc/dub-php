@@ -88,12 +88,12 @@ class Events
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Components\ClickEvent>|array<\Dub\Models\Components\LeadEvent>|array<\Dub\Models\Components\SaleEvent>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Components\ClickEvent|\Dub\Models\Components\LeadEvent|\Dub\Models\Components\SaleEvent>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\ListEventsResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    oneOf: $obj);
+                    responseBodies: $obj);
 
                 return $response;
             } else {

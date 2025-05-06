@@ -45,9 +45,9 @@ class EmbedTokens
     }
 
     /**
-     * Create a new referrals embed token
+     * Create a referrals embed token
      *
-     * Create a new referrals embed token for the given partner/tenant.
+     * Create a referrals embed token for the given partner/tenant.
      *
      * @param  ?Operations\CreateReferralsEmbedTokenRequestBody  $request
      * @return Operations\CreateReferralsEmbedTokenResponse

@@ -99,13 +99,6 @@ class SaleEvent
     public string $paymentProcessor;
 
     /**
-     *
-     * @var string $metadata
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    public string $metadata;
-
-    /**
      * Deprecated. Use `click.id` instead.
      *
      * @var string $clickId
@@ -234,7 +227,6 @@ class SaleEvent
      * @param  float  $saleAmount
      * @param  string  $invoiceId
      * @param  string  $paymentProcessor
-     * @param  string  $metadata
      * @param  string  $clickId
      * @param  string  $linkId
      * @param  string  $domain
@@ -250,7 +242,7 @@ class SaleEvent
      * @param  string  $ip
      * @phpstan-pure
      */
-    public function __construct(SaleEventEvent $event, string $timestamp, string $eventId, string $eventName, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, Sale $sale, float $saleAmount, string $invoiceId, string $paymentProcessor, string $metadata, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip)
+    public function __construct(SaleEventEvent $event, string $timestamp, string $eventId, string $eventName, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, Sale $sale, float $saleAmount, string $invoiceId, string $paymentProcessor, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip)
     {
         $this->event = $event;
         $this->timestamp = $timestamp;
@@ -263,7 +255,6 @@ class SaleEvent
         $this->saleAmount = $saleAmount;
         $this->invoiceId = $invoiceId;
         $this->paymentProcessor = $paymentProcessor;
-        $this->metadata = $metadata;
         $this->clickId = $clickId;
         $this->linkId = $linkId;
         $this->domain = $domain;

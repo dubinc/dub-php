@@ -24,11 +24,11 @@ class SDKConfiguration
 
     public string $openapiDocVersion = '0.0.1';
 
-    public string $sdkVersion = '0.12.13';
+    public string $sdkVersion = '0.12.14';
 
-    public string $genVersion = '2.593.4';
+    public string $genVersion = '2.597.9';
 
-    public string $userAgent = 'speakeasy-sdk/php 0.12.13 2.593.4 0.0.1 dub/dub-php';
+    public string $userAgent = 'speakeasy-sdk/php 0.12.14 2.597.9 0.0.1 dub/dub-php';
 
     public ?RetryConfig $retryConfig = null;
 
