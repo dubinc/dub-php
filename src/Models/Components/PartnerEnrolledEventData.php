@@ -70,6 +70,20 @@ class PartnerEnrolledEventData
 
     /**
      *
+     * @var ?string $paypalEmail
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paypalEmail')]
+    public ?string $paypalEmail;
+
+    /**
+     *
+     * @var ?string $stripeConnectId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeConnectId')]
+    public ?string $stripeConnectId;
+
+    /**
+     *
      * @var ?string $payoutsEnabledAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsEnabledAt')]
@@ -156,6 +170,8 @@ class PartnerEnrolledEventData
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $country
+     * @param  ?string  $paypalEmail
+     * @param  ?string  $stripeConnectId
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $tenantId
      * @param  ?array<PartnerEnrolledEventLink>  $links
@@ -168,7 +184,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $applicationId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $payoutsEnabledAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $applicationId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
+    public function __construct(string $id, string $name, string $createdAt, Status $status, string $programId, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $applicationId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $earnings = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -178,6 +194,8 @@ class PartnerEnrolledEventData
         $this->email = $email;
         $this->image = $image;
         $this->country = $country;
+        $this->paypalEmail = $paypalEmail;
+        $this->stripeConnectId = $stripeConnectId;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
         $this->tenantId = $tenantId;
         $this->links = $links;

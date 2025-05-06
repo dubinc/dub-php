@@ -40,7 +40,7 @@ $response = $sdk->events->list(
     request: $request
 );
 
-if ($response->oneOf !== null) {
+if ($response->responseBodies !== null) {
     // handle response
 }
 ```

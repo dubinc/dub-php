@@ -232,7 +232,6 @@ class UpdateLinkRequestBody
     public ?string $description = null;
 
     /**
-     * The custom link preview image (og:image). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
      *
      * @var ?string $image
      */

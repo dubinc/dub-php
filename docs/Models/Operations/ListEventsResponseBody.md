@@ -1,34 +1,32 @@
 # ListEventsResponseBody
 
-A list of events
-
 
 ## Supported Types
 
-### `array`
+### `Components\ClickEvent`
 
 ```php
 /**
-* @var array<Components\ClickEvent>
+* @var Components\ClickEvent
 */
-array $value = /* values here */
+Components\ClickEvent $value = /* values here */
 ```
 
-### `array`
+### `Components\LeadEvent`
 
 ```php
 /**
-* @var array<Components\LeadEvent>
+* @var Components\LeadEvent
 */
-array $value = /* values here */
+Components\LeadEvent $value = /* values here */
 ```
 
-### `array`
+### `Components\SaleEvent`
 
 ```php
 /**
-* @var array<Components\SaleEvent>
+* @var Components\SaleEvent
 */
-array $value = /* values here */
+Components\SaleEvent $value = /* values here */
 ```
 

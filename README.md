@@ -213,7 +213,7 @@ if ($response->linkSchema !== null) {
 
 ### [embedTokens](docs/sdks/embedtokens/README.md)
 
-* [referrals](docs/sdks/embedtokens/README.md#referrals) - Create a new referrals embed token
+* [referrals](docs/sdks/embedtokens/README.md#referrals) - Create a referrals embed token
 
 ### [events](docs/sdks/events/README.md)
 
@@ -221,14 +221,14 @@ if ($response->linkSchema !== null) {
 
 ### [folders](docs/sdks/folders/README.md)
 
-* [create](docs/sdks/folders/README.md#create) - Create a new folder
+* [create](docs/sdks/folders/README.md#create) - Create a folder
 * [list](docs/sdks/folders/README.md#list) - Retrieve a list of folders
 * [update](docs/sdks/folders/README.md#update) - Update a folder
 * [delete](docs/sdks/folders/README.md#delete) - Delete a folder
 
 ### [links](docs/sdks/links/README.md)
 
-* [create](docs/sdks/links/README.md#create) - Create a new link
+* [create](docs/sdks/links/README.md#create) - Create a link
 * [list](docs/sdks/links/README.md#list) - Retrieve a list of links
 * [count](docs/sdks/links/README.md#count) - Retrieve links count
 * [get](docs/sdks/links/README.md#get) - Retrieve a link
@@ -241,7 +241,7 @@ if ($response->linkSchema !== null) {
 
 ### [partners](docs/sdks/partners/README.md)
 
-* [create](docs/sdks/partners/README.md#create) - Create a new partner
+* [create](docs/sdks/partners/README.md#create) - Create a partner
 * [createLink](docs/sdks/partners/README.md#createlink) - Create a link for a partner
 * [retrieveLinks](docs/sdks/partners/README.md#retrievelinks) - Retrieve a partner's links.
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
@@ -254,7 +254,7 @@ if ($response->linkSchema !== null) {
 
 ### [tags](docs/sdks/tags/README.md)
 
-* [create](docs/sdks/tags/README.md#create) - Create a new tag
+* [create](docs/sdks/tags/README.md#create) - Create a tag
 * [list](docs/sdks/tags/README.md#list) - Retrieve a list of tags
 * [update](docs/sdks/tags/README.md#update) - Update a tag
 * [delete](docs/sdks/tags/README.md#delete) - Delete a tag

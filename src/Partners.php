@@ -45,9 +45,9 @@ class Partners
     }
 
     /**
-     * Create a new partner
+     * Create a partner
      *
-     * Create a new partner for a program. If partner exists, automatically enrolls them.
+     * Create a partner for a program. If partner exists, automatically enrolls them.
      *
      * @param  ?Operations\CreatePartnerRequestBody  $request
      * @return Operations\CreatePartnerResponse
@@ -211,7 +211,7 @@ class Partners
     /**
      * Create a link for a partner
      *
-     * Create a new link for a partner that is enrolled in your program.
+     * Create a link for a partner that is enrolled in your program.
      *
      * @param  ?Operations\CreatePartnerLinkRequestBody  $request
      * @return Operations\CreatePartnerLinkResponse

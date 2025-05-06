@@ -35,22 +35,22 @@ class ListEventsResponse
     /**
      * A list of events
      *
-     * @var array<Components\ClickEvent>|array<Components\LeadEvent>|array<Components\SaleEvent>|null $oneOf
+     * @var ?array<Components\ClickEvent|Components\LeadEvent|Components\SaleEvent> $responseBodies
      */
-    public ?array $oneOf = null;
+    public ?array $responseBodies = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  array<Components\ClickEvent>|array<Components\LeadEvent>|array<Components\SaleEvent>|null  $oneOf
+     * @param  ?array<Components\ClickEvent|Components\LeadEvent|Components\SaleEvent>  $responseBodies
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $oneOf = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->oneOf = $oneOf;
+        $this->responseBodies = $responseBodies;
     }
 }
