@@ -71,6 +71,24 @@ class GetCustomersResponseBody
     public ?string $country = null;
 
     /**
+     * Total number of sales for the customer.
+     *
+     * @var ?float $sales
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sales')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $sales = null;
+
+    /**
+     * Total amount of sales for the customer.
+     *
+     * @var ?float $saleAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
+
+    /**
      *
      * @var ?GetCustomersLink $link
      */
@@ -113,13 +131,15 @@ class GetCustomersResponseBody
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $country
+     * @param  ?float  $sales
+     * @param  ?float  $saleAmount
      * @param  ?GetCustomersLink  $link
      * @param  ?string  $programId
      * @param  ?GetCustomersPartner  $partner
      * @param  ?Discount  $discount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?GetCustomersLink $link = null, ?string $programId = null, ?GetCustomersPartner $partner = null, ?Discount $discount = null)
+    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?GetCustomersLink $link = null, ?string $programId = null, ?GetCustomersPartner $partner = null, ?Discount $discount = null)
     {
         $this->id = $id;
         $this->externalId = $externalId;
@@ -128,6 +148,8 @@ class GetCustomersResponseBody
         $this->email = $email;
         $this->avatar = $avatar;
         $this->country = $country;
+        $this->sales = $sales;
+        $this->saleAmount = $saleAmount;
         $this->link = $link;
         $this->programId = $programId;
         $this->partner = $partner;

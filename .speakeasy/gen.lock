@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: a7ba8704507363fabccfcbe7aad3310c
+  docChecksum: 8a6a0e4f5b4986b7f9ed7f84fe894d95
   docVersion: 0.0.1
-  speakeasyVersion: 1.542.3
-  generationVersion: 2.597.9
-  releaseVersion: 0.12.14
-  configChecksum: 70caae979f40af98956cbcf67ea89bd1
+  speakeasyVersion: 1.543.4
+  generationVersion: 2.598.22
+  releaseVersion: 0.12.15
+  configChecksum: 68e7e981e57b071fc91b35c14d5358f5
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -20,7 +20,7 @@ features:
     flattening: 2.81.1
     globalSecurity: 2.81.8
     globalSecurityFlattening: 0.1.2
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     includes: 2.81.1
     methodArguments: 0.1.0
     nameOverrides: 2.81.2
@@ -246,6 +246,8 @@ generatedFiles:
   - docs/Models/Operations/GetCustomerType.md
   - docs/Models/Operations/GetCustomersLink.md
   - docs/Models/Operations/GetCustomersPartner.md
+  - docs/Models/Operations/GetCustomersQueryParamSortBy.md
+  - docs/Models/Operations/GetCustomersQueryParamSortOrder.md
   - docs/Models/Operations/GetCustomersRequest.md
   - docs/Models/Operations/GetCustomersResponse.md
   - docs/Models/Operations/GetCustomersResponseBody.md
@@ -622,6 +624,8 @@ generatedFiles:
   - src/Models/Operations/GetCustomerType.php
   - src/Models/Operations/GetCustomersLink.php
   - src/Models/Operations/GetCustomersPartner.php
+  - src/Models/Operations/GetCustomersQueryParamSortBy.php
+  - src/Models/Operations/GetCustomersQueryParamSortOrder.php
   - src/Models/Operations/GetCustomersRequest.php
   - src/Models/Operations/GetCustomersResponse.php
   - src/Models/Operations/GetCustomersResponseBody.php
@@ -1472,6 +1476,8 @@ examples:
         query:
           page: 1
           pageSize: 50
+          sortBy: "createdAt"
+          sortOrder: "desc"
       responses:
         "200":
           application/json: [{"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1730924966018"}, {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1735057585000"}, {"id": "<id>", "externalId": "<id>", "name": "<value>", "createdAt": "1719270352098"}]
