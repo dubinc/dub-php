@@ -44,6 +44,14 @@ class CreateCustomerLink
     public string $shortLink;
 
     /**
+     * The destination URL of the short link.
+     *
+     * @var string $url
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('url')]
+    public string $url;
+
+    /**
      * The ID of the program the short link is associated with.
      *
      * @var ?string $programId
@@ -56,15 +64,17 @@ class CreateCustomerLink
      * @param  string  $domain
      * @param  string  $key
      * @param  string  $shortLink
+     * @param  string  $url
      * @param  ?string  $programId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $shortLink, ?string $programId = null)
+    public function __construct(string $id, string $domain, string $key, string $shortLink, string $url, ?string $programId = null)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->shortLink = $shortLink;
+        $this->url = $url;
         $this->programId = $programId;
     }
 }
