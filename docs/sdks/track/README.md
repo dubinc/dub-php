@@ -90,8 +90,8 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\TrackSaleRequestBody(
     externalId: '<id>',
-    amount: 996500,
-    paymentProcessor: Operations\PaymentProcessor::Custom,
+    amount: 594903,
+    paymentProcessor: Operations\PaymentProcessor::Polar,
 );
 
 $response = $sdk->track->sale(

@@ -28,7 +28,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\GetQRCodeRequest(
-    url: 'https://normal-making.name',
+    url: 'https://needy-newsstand.biz/',
 );
 
 $response = $sdk->qrCodes->get(

@@ -225,7 +225,7 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->links->get(
-    domain: 'rural-mathematics.name',
+    domain: 'crazy-intent.net',
     key: '<key>',
     linkId: 'clux0rgak00011...',
     externalId: '123456'
