@@ -12,6 +12,7 @@ namespace Dub\Models\Operations;
 class GetCustomersPartner
 {
     /**
+     * The partner's unique ID on Dub.
      *
      * @var string $id
      */
@@ -19,6 +20,7 @@ class GetCustomersPartner
     public string $id;
 
     /**
+     * The partner's full legal name.
      *
      * @var string $name
      */
@@ -26,6 +28,7 @@ class GetCustomersPartner
     public string $name;
 
     /**
+     * The partner's email address. Should be a unique value across Dub.
      *
      * @var ?string $email
      */
@@ -33,6 +36,7 @@ class GetCustomersPartner
     public ?string $email;
 
     /**
+     * The partner's avatar image.
      *
      * @var ?string $image
      */

@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
+/** The status of the partner's enrollment in the program. */
 enum Status: string
 {
     case Pending = 'pending';

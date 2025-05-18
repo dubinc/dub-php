@@ -31,7 +31,7 @@ $request = new Operations\CreateReferralsEmbedTokenRequestBody(
     programId: '<id>',
     partner: new Operations\Partner(
         name: '<value>',
-        email: 'Florencio98@hotmail.com',
+        email: 'Letha_Wuckert2@yahoo.com',
         linkProps: new Operations\CreateReferralsEmbedTokenLinkProps(
             externalId: '123456',
             tagIds: [
