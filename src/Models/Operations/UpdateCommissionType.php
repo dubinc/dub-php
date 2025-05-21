@@ -9,8 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-
-enum Type: string
+enum UpdateCommissionType: string
 {
     case Click = 'click';
     case Lead = 'lead';

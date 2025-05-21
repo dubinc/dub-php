@@ -9,13 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The status of the partner's enrollment in the program. */
+/** Useful for marking a commission as refunded, duplicate, canceled, or fraudulent. Takes precedence over `amount` and `modifyAmount`. When a commission is marked as refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated. */
 enum Status: string
 {
-    case Pending = 'pending';
-    case Approved = 'approved';
-    case Rejected = 'rejected';
-    case Invited = 'invited';
-    case Declined = 'declined';
-    case Banned = 'banned';
+    case Refunded = 'refunded';
+    case Duplicate = 'duplicate';
+    case Canceled = 'canceled';
+    case Fraud = 'fraud';
 }

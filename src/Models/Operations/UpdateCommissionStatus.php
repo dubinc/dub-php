@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-enum UpdatePartnerSaleStatus: string
+enum UpdateCommissionStatus: string
 {
     case Pending = 'pending';
     case Processed = 'processed';

@@ -9,10 +9,9 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-
-enum Type: string
+/** The sort order for the list of commissions. */
+enum ListCommissionsQueryParamSortOrder: string
 {
-    case Click = 'click';
-    case Lead = 'lead';
-    case Sale = 'sale';
+    case Asc = 'asc';
+    case Desc = 'desc';
 }
