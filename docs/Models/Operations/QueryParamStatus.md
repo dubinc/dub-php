@@ -1,4 +1,6 @@
-# UpdatePartnerSaleStatus
+# QueryParamStatus
+
+Filter the list of commissions by their corresponding status.
 
 
 ## Values

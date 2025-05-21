@@ -36,6 +36,8 @@ class Dub
 
     public Partners $partners;
 
+    public Commissions $commissions;
+
     public Workspaces $workspaces;
 
     public EmbedTokens $embedTokens;
@@ -67,6 +69,7 @@ class Dub
         $this->track = new Track($this->sdkConfiguration);
         $this->customers = new Customers($this->sdkConfiguration);
         $this->partners = new Partners($this->sdkConfiguration);
+        $this->commissions = new Commissions($this->sdkConfiguration);
         $this->workspaces = new Workspaces($this->sdkConfiguration);
         $this->embedTokens = new EmbedTokens($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);

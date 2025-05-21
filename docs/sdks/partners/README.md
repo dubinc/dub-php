@@ -10,7 +10,6 @@
 * [retrieveLinks](#retrievelinks) - Retrieve a partner's links.
 * [upsertLink](#upsertlink) - Upsert a link for a partner
 * [analytics](#analytics) - Retrieve analytics for a partner
-* [updateSale](#updatesale) - Update a sale for a partner.
 
 ## create
 
@@ -338,65 +337,6 @@ if ($response->oneOf !== null) {
 ### Response
 
 **[?Operations\RetrievePartnerAnalyticsResponse](../../Models/Operations/RetrievePartnerAnalyticsResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
-## updateSale
-
-Update an existing sale amount. This is useful for handling refunds (partial or full) or fraudulent sales.
-
-### Example Usage
-
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-use Dub\Models\Operations;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-$request = new Operations\UpdatePartnerSaleRequestBody(
-    programId: '<id>',
-    invoiceId: '<id>',
-);
-
-$response = $sdk->partners->updateSale(
-    request: $request
-);
-
-if ($response->object !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [Operations\UpdatePartnerSaleRequestBody](../../Models/Operations/UpdatePartnerSaleRequestBody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-
-### Response
-
-**[?Operations\UpdatePartnerSaleResponse](../../Models/Operations/UpdatePartnerSaleResponse.md)**
 
 ### Errors
 

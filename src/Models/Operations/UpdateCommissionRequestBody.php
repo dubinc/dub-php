@@ -9,24 +9,10 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class UpdatePartnerSaleRequestBody
+class UpdateCommissionRequestBody
 {
     /**
-     *
-     * @var string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public string $programId;
-
-    /**
-     *
-     * @var string $invoiceId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
-    public string $invoiceId;
-
-    /**
-     * The new absolute amount for the sale.
+     * The new absolute amount for the sale. Paid commissions cannot be updated.
      *
      * @var ?float $amount
      */
@@ -35,13 +21,23 @@ class UpdatePartnerSaleRequestBody
     public ?float $amount = null;
 
     /**
-     * Modify the current sale amount: use positive values to increase the amount, negative values to decrease it.
+     * Modify the current sale amount: use positive values to increase the amount, negative values to decrease it. Takes precedence over `amount`. Paid commissions cannot be updated.
      *
      * @var ?float $modifyAmount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('modifyAmount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $modifyAmount = null;
+
+    /**
+     * Useful for marking a commission as refunded, duplicate, canceled, or fraudulent. Takes precedence over `amount` and `modifyAmount`. When a commission is marked as refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated.
+     *
+     * @var ?Status $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Status|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Status $status = null;
 
     /**
      * The currency of the sale amount to update. Accepts ISO 4217 currency codes.
@@ -53,19 +49,17 @@ class UpdatePartnerSaleRequestBody
     public ?string $currency = null;
 
     /**
-     * @param  string  $programId
-     * @param  string  $invoiceId
      * @param  ?float  $amount
      * @param  ?float  $modifyAmount
      * @param  ?string  $currency
+     * @param  ?Status  $status
      * @phpstan-pure
      */
-    public function __construct(string $programId, string $invoiceId, ?float $amount = null, ?float $modifyAmount = null, ?string $currency = 'usd')
+    public function __construct(?float $amount = null, ?float $modifyAmount = null, ?Status $status = null, ?string $currency = 'usd')
     {
-        $this->programId = $programId;
-        $this->invoiceId = $invoiceId;
         $this->amount = $amount;
         $this->modifyAmount = $modifyAmount;
+        $this->status = $status;
         $this->currency = $currency;
     }
 }

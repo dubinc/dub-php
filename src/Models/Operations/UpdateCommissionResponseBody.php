@@ -9,10 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** UpdatePartnerSaleResponseBody - The updated sale. */
-class UpdatePartnerSaleResponseBody
+/** UpdateCommissionResponseBody - The updated commission. */
+class UpdateCommissionResponseBody
 {
     /**
+     * The commission's unique ID on Dub.
      *
      * @var string $id
      */
@@ -42,11 +43,11 @@ class UpdatePartnerSaleResponseBody
 
     /**
      *
-     * @var UpdatePartnerSaleStatus $status
+     * @var UpdateCommissionStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdatePartnerSaleStatus')]
-    public UpdatePartnerSaleStatus $status;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionStatus')]
+    public UpdateCommissionStatus $status;
 
     /**
      *
@@ -64,12 +65,12 @@ class UpdatePartnerSaleResponseBody
 
     /**
      *
-     * @var ?Type $type
+     * @var ?UpdateCommissionType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Type|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionType|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Type $type = null;
+    public ?UpdateCommissionType $type = null;
 
     /**
      *
@@ -84,14 +85,14 @@ class UpdatePartnerSaleResponseBody
      * @param  float  $amount
      * @param  float  $earnings
      * @param  string  $currency
-     * @param  UpdatePartnerSaleStatus  $status
+     * @param  UpdateCommissionStatus  $status
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  ?Type  $type
+     * @param  ?UpdateCommissionType  $type
      * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdatePartnerSaleStatus $status, string $createdAt, string $updatedAt, ?Type $type = null, ?string $invoiceId = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdateCommissionStatus $status, string $createdAt, string $updatedAt, ?UpdateCommissionType $type = null, ?string $invoiceId = null)
     {
         $this->id = $id;
         $this->amount = $amount;

@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class UpdatePartnerSaleResponse
+class UpdateCommissionResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,20 +33,20 @@ class UpdatePartnerSaleResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The updated sale.
+     * The updated commission.
      *
-     * @var ?UpdatePartnerSaleResponseBody $object
+     * @var ?UpdateCommissionResponseBody $object
      */
-    public ?UpdatePartnerSaleResponseBody $object = null;
+    public ?UpdateCommissionResponseBody $object = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?UpdatePartnerSaleResponseBody  $object
+     * @param  ?UpdateCommissionResponseBody  $object
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?UpdatePartnerSaleResponseBody $object = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?UpdateCommissionResponseBody $object = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
