@@ -20,14 +20,6 @@ class ListFoldersRequest
     public ?string $search = null;
 
     /**
-     * Whether to include the link count in the response.
-     *
-     * @var ?bool $includeLinkCount
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeLinkCount')]
-    public ?bool $includeLinkCount = null;
-
-    /**
      * The page number for pagination.
      *
      * @var ?float $page
@@ -45,15 +37,13 @@ class ListFoldersRequest
 
     /**
      * @param  ?string  $search
-     * @param  ?bool  $includeLinkCount
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, ?bool $includeLinkCount = null, ?float $page = 1, ?float $pageSize = 50)
+    public function __construct(?string $search = null, ?float $page = 1, ?float $pageSize = 50)
     {
         $this->search = $search;
-        $this->includeLinkCount = $includeLinkCount;
         $this->page = $page;
         $this->pageSize = $pageSize;
     }

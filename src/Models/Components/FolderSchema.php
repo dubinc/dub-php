@@ -52,15 +52,6 @@ class FolderSchema
     public string $updatedAt;
 
     /**
-     * The number of links in the folder.
-     *
-     * @var ?float $linkCount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('linkCount')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $linkCount = null;
-
-    /**
      * The access level of the folder within the workspace.
      *
      * @var ?AccessLevel $accessLevel
@@ -76,18 +67,16 @@ class FolderSchema
      * @param  Type  $type
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  ?float  $linkCount
      * @param  ?AccessLevel  $accessLevel
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, Type $type, string $createdAt, string $updatedAt, ?float $linkCount = 0, ?AccessLevel $accessLevel = null)
+    public function __construct(string $id, string $name, Type $type, string $createdAt, string $updatedAt, ?AccessLevel $accessLevel = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
-        $this->linkCount = $linkCount;
         $this->accessLevel = $accessLevel;
     }
 }
