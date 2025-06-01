@@ -73,7 +73,16 @@ class Dub
         $this->workspaces = new Workspaces($this->sdkConfiguration);
         $this->embedTokens = new EmbedTokens($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);
-        $this->sdkConfiguration->client = $this->sdkConfiguration->initHooks($this->sdkConfiguration->client);
+        $this->initHooks();
 
+    }
+
+    private function initHooks(): void
+    {
+        $preHooksUrl = $this->sdkConfiguration->getTemplatedServerUrl();
+        $ret = $this->sdkConfiguration->hooks->sdkInit($preHooksUrl, $this->sdkConfiguration->client);
+        if ($preHooksUrl != $ret->url) {
+            $this->sdkConfiguration->serverUrl = $ret->url;
+        }
     }
 }
