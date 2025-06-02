@@ -221,9 +221,10 @@ class CreatePartnerResponseBody
     public ?float $saleAmount = null;
 
     /**
-     * The total earnings/commissions accrued by the partner's links.
+     * DEPRECATED: The total earnings/commissions accrued by the partner's links.
      *
      * @var ?float $earnings
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
