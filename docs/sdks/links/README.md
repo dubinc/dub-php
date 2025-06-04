@@ -108,7 +108,9 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\GetLinksRequest();
+$request = new Operations\GetLinksRequest(
+    pageSize: 50,
+);
 
 $responses = $sdk->links->list(
     request: $request
@@ -225,8 +227,6 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->links->get(
-    domain: 'crazy-intent.net',
-    key: '<key>',
     linkId: 'clux0rgak00011...',
     externalId: '123456'
 
@@ -416,6 +416,23 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = [
+    new Operations\RequestBody(
+        url: 'https://google.com',
+        externalId: '123456',
+        tagIds: [
+            'clux0rgak00011...',
+        ],
+        testVariants: [
+            new Operations\BulkCreateLinksTestVariants(
+                url: 'https://example.com/variant-1',
+                percentage: 50,
+            ),
+            new Operations\BulkCreateLinksTestVariants(
+                url: 'https://example.com/variant-2',
+                percentage: 50,
+            ),
+        ],
+    ),
     new Operations\RequestBody(
         url: 'https://google.com',
         externalId: '123456',

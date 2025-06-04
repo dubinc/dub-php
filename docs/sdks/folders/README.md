@@ -22,7 +22,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -30,9 +29,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\CreateFolderRequestBody(
-    name: '<value>',
-);
+
 
 $response = $sdk->folders->create(
     request: $request
@@ -90,7 +87,6 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->folders->list(
-    search: '<value>',
     page: 1,
     pageSize: 50
 
@@ -140,7 +136,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -148,7 +143,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$requestBody = new Operations\UpdateFolderRequestBody();
+
 
 $response = $sdk->folders->update(
     id: '<id>',

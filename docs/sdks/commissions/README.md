@@ -28,7 +28,9 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\ListCommissionsRequest();
+$request = new Operations\ListCommissionsRequest(
+    pageSize: 50,
+);
 
 $response = $sdk->commissions->list(
     request: $request
@@ -76,7 +78,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -84,7 +85,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$requestBody = new Operations\UpdateCommissionRequestBody();
+
 
 $response = $sdk->commissions->update(
     id: 'cm_1JVR7XRCSR0EDBAF39FZ4PMYE',

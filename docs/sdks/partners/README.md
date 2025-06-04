@@ -183,10 +183,7 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->partners->retrieveLinks(
-    programId: '<id>',
-    partnerId: '<id>',
-    tenantId: '<id>'
-
+    programId: '<id>'
 );
 
 if ($response->links !== null) {
@@ -316,6 +313,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\RetrievePartnerAnalyticsRequest(
+    timezone: 'America/New_York',
     programId: '<id>',
 );
 

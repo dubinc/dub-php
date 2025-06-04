@@ -214,6 +214,8 @@ if ($response->linkSchema !== null) {
 * [list](docs/sdks/domains/README.md#list) - Retrieve a list of domains
 * [update](docs/sdks/domains/README.md#update) - Update a domain
 * [delete](docs/sdks/domains/README.md#delete) - Delete a domain
+* [register](docs/sdks/domains/README.md#register) - Register a domain
+* [checkStatus](docs/sdks/domains/README.md#checkstatus) - Check the availability of one or more domains
 
 
 ### [embedTokens](docs/sdks/embedtokens/README.md)
@@ -297,7 +299,9 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\GetLinksRequest();
+$request = new Operations\GetLinksRequest(
+    pageSize: 50,
+);
 
 $responses = $sdk->links->list(
     request: $request
