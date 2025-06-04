@@ -92,6 +92,8 @@ $request = new Operations\TrackSaleRequestBody(
     externalId: '<id>',
     amount: 594903,
     paymentProcessor: Operations\PaymentProcessor::Polar,
+    eventName: 'Invoice paid',
+    leadEventName: 'Cloned template 1481267',
 );
 
 $response = $sdk->track->sale(

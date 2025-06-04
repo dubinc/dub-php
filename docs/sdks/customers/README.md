@@ -31,7 +31,9 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\GetCustomersRequest();
+$request = new Operations\GetCustomersRequest(
+    pageSize: 50,
+);
 
 $response = $sdk->customers->list(
     request: $request
@@ -81,7 +83,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -89,9 +90,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\CreateCustomerRequestBody(
-    externalId: '<id>',
-);
+
 
 $response = $sdk->customers->create(
     request: $request
@@ -149,9 +148,7 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->customers->get(
-    id: '<id>',
-    includeExpandedFields: false
-
+    id: '<id>'
 );
 
 if ($response->object !== null) {

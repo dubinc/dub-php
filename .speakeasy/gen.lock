@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 0a8f1269dd811d1db24f573a0bb6361e
+  docChecksum: 2ae539dae8fc94a9a85bd8d0e988da6a
   docVersion: 0.0.1
-  speakeasyVersion: 1.554.1
-  generationVersion: 2.616.1
-  releaseVersion: 0.12.20
-  configChecksum: bbcb65858c3c336f2cb6edb7b5e6fa16
+  speakeasyVersion: 1.555.2
+  generationVersion: 2.620.2
+  releaseVersion: 0.12.21
+  configChecksum: e4898db712bc16b389a505b910a9267c
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -178,6 +178,9 @@ generatedFiles:
   - docs/Models/Operations/BulkUpdateLinksTagIds.md
   - docs/Models/Operations/BulkUpdateLinksTagNames.md
   - docs/Models/Operations/BulkUpdateLinksTestVariants.md
+  - docs/Models/Operations/CheckDomainStatusRequest.md
+  - docs/Models/Operations/CheckDomainStatusResponse.md
+  - docs/Models/Operations/CheckDomainStatusResponseBody.md
   - docs/Models/Operations/Click.md
   - docs/Models/Operations/Color.md
   - docs/Models/Operations/Country.md
@@ -236,6 +239,7 @@ generatedFiles:
   - docs/Models/Operations/DeleteTagResponse.md
   - docs/Models/Operations/DeleteTagResponseBody.md
   - docs/Models/Operations/Discount.md
+  - docs/Models/Operations/Domains.md
   - docs/Models/Operations/Event.md
   - docs/Models/Operations/Four.md
   - docs/Models/Operations/GetCustomerDiscount.md
@@ -305,6 +309,9 @@ generatedFiles:
   - docs/Models/Operations/QueryParamTagIds.md
   - docs/Models/Operations/QueryParamTagNames.md
   - docs/Models/Operations/QueryParamTrigger.md
+  - docs/Models/Operations/RegisterDomainRequestBody.md
+  - docs/Models/Operations/RegisterDomainResponse.md
+  - docs/Models/Operations/RegisterDomainResponseBody.md
   - docs/Models/Operations/RequestBody.md
   - docs/Models/Operations/ResponseBody.md
   - docs/Models/Operations/RetrieveAnalyticsQueryParamTagIds.md
@@ -576,6 +583,9 @@ generatedFiles:
   - src/Models/Operations/BulkUpdateLinksRequestBody.php
   - src/Models/Operations/BulkUpdateLinksResponse.php
   - src/Models/Operations/BulkUpdateLinksTestVariants.php
+  - src/Models/Operations/CheckDomainStatusRequest.php
+  - src/Models/Operations/CheckDomainStatusResponse.php
+  - src/Models/Operations/CheckDomainStatusResponseBody.php
   - src/Models/Operations/Click.php
   - src/Models/Operations/Color.php
   - src/Models/Operations/Country.php
@@ -689,6 +699,9 @@ generatedFiles:
   - src/Models/Operations/QueryParamSortOrder.php
   - src/Models/Operations/QueryParamStatus.php
   - src/Models/Operations/QueryParamTrigger.php
+  - src/Models/Operations/RegisterDomainRequestBody.php
+  - src/Models/Operations/RegisterDomainResponse.php
+  - src/Models/Operations/RegisterDomainResponseBody.php
   - src/Models/Operations/RequestBody.php
   - src/Models/Operations/RetrieveAnalyticsRequest.php
   - src/Models/Operations/RetrieveAnalyticsResponse.php
@@ -1929,6 +1942,57 @@ examples:
       responses:
         "200":
           application/json: {"id": "cm_1JVR7XRCSR0EDBAF39FZ4PMYE", "amount": 7439.54, "earnings": 3399.15, "currency": "Gourde", "status": "processed", "createdAt": "1712704982111", "updatedAt": "1735651406534"}
+        "400":
+          application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
+        "401":
+          application/json: {"error": {"code": "unauthorized", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unauthorized"}}
+        "403":
+          application/json: {"error": {"code": "forbidden", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#forbidden"}}
+        "404":
+          application/json: {"error": {"code": "not_found", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#not-found"}}
+        "409":
+          application/json: {"error": {"code": "conflict", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#conflict"}}
+        "410":
+          application/json: {"error": {"code": "invite_expired", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#invite-expired"}}
+        "422":
+          application/json: {"error": {"code": "unprocessable_entity", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unprocessable-entity"}}
+        "429":
+          application/json: {"error": {"code": "rate_limit_exceeded", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#rate-limit_exceeded"}}
+        "500":
+          application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
+  registerDomain:
+    speakeasy-default-register-domain:
+      requestBody:
+        application/json: {"domain": "acme.link"}
+      responses:
+        "201":
+          application/json: {"domain": "cooperative-partridge.name", "status": "<value>", "expiration": 9148.99}
+        "400":
+          application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
+        "401":
+          application/json: {"error": {"code": "unauthorized", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unauthorized"}}
+        "403":
+          application/json: {"error": {"code": "forbidden", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#forbidden"}}
+        "404":
+          application/json: {"error": {"code": "not_found", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#not-found"}}
+        "409":
+          application/json: {"error": {"code": "conflict", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#conflict"}}
+        "410":
+          application/json: {"error": {"code": "invite_expired", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#invite-expired"}}
+        "422":
+          application/json: {"error": {"code": "unprocessable_entity", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#unprocessable-entity"}}
+        "429":
+          application/json: {"error": {"code": "rate_limit_exceeded", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#rate-limit_exceeded"}}
+        "500":
+          application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
+  checkDomainStatus:
+    speakeasy-default-check-domain-status:
+      parameters:
+        query:
+          domains: "<value>"
+      responses:
+        "200":
+          application/json: [{"domain": "little-mallard.info", "available": false, "price": "597.79", "premium": false}]
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":

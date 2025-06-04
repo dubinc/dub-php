@@ -22,7 +22,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -30,7 +29,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\CreateTagRequestBody();
+
 
 $response = $sdk->tags->create(
     request: $request
@@ -86,7 +85,9 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\GetTagsRequest();
+$request = new Operations\GetTagsRequest(
+    pageSize: 50,
+);
 
 $response = $sdk->tags->list(
     request: $request
@@ -134,7 +135,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -142,7 +142,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$requestBody = new Operations\UpdateTagRequestBody();
+
 
 $response = $sdk->tags->update(
     id: '<id>',

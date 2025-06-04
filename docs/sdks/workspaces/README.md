@@ -75,7 +75,6 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
-use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -83,7 +82,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$requestBody = new Operations\UpdateWorkspaceRequestBody();
+
 
 $response = $sdk->workspaces->update(
     idOrSlug: '<value>',

@@ -9,6 +9,8 @@
 * [list](#list) - Retrieve a list of domains
 * [update](#update) - Update a domain
 * [delete](#delete) - Delete a domain
+* [register](#register) - Register a domain
+* [checkStatus](#checkstatus) - Check the availability of one or more domains
 
 ## create
 
@@ -94,7 +96,6 @@ $sdk = Dub\Dub::builder()
 
 $responses = $sdk->domains->list(
     archived: true,
-    search: '<value>',
     page: 1,
     pageSize: 50
 
@@ -239,6 +240,119 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\DeleteDomainResponse](../../Models/Operations/DeleteDomainResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## register
+
+Register a domain for the authenticated workspace. Only available for Enterprise Plans.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\RegisterDomainRequestBody(
+    domain: 'acme.link',
+);
+
+$response = $sdk->domains->register(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `$request`                                                                                   | [Operations\RegisterDomainRequestBody](../../Models/Operations/RegisterDomainRequestBody.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+### Response
+
+**[?Operations\RegisterDomainResponse](../../Models/Operations/RegisterDomainResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## checkStatus
+
+Check if a domain name is available for purchase. You can check multiple domains at once.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->domains->checkStatus(
+    domains: '<value>'
+);
+
+if ($response->responseBodies !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `domains`                                                     | [string\|array](../../Models/Operations/Domains.md)           | :heavy_check_mark:                                            | The domains to search. We only support .link domains for now. |
+
+### Response
+
+**[?Operations\CheckDomainStatusResponse](../../Models/Operations/CheckDomainStatusResponse.md)**
 
 ### Errors
 
