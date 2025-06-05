@@ -93,20 +93,20 @@ class WorkspaceSchema
     public float $linksLimit;
 
     /**
-     * The dollar amount of tracked revenue in the current billing cycle (in cents).
+     * The dollar amount of partner payouts processed in the current billing cycle (in cents).
      *
-     * @var float $salesUsage
+     * @var float $payoutsUsage
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('salesUsage')]
-    public float $salesUsage;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsUsage')]
+    public float $payoutsUsage;
 
     /**
-     * The limit of tracked revenue in the current billing cycle (in cents).
+     * The max dollar amount of partner payouts that can be processed within a billing cycle (in cents).
      *
-     * @var float $salesLimit
+     * @var float $payoutsLimit
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('salesLimit')]
-    public float $salesLimit;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutsLimit')]
+    public float $payoutsLimit;
 
     /**
      * The domains limit of the workspace.
@@ -294,8 +294,8 @@ class WorkspaceSchema
      * @param  float  $usageLimit
      * @param  float  $linksUsage
      * @param  float  $linksLimit
-     * @param  float  $salesUsage
-     * @param  float  $salesLimit
+     * @param  float  $payoutsUsage
+     * @param  float  $payoutsLimit
      * @param  float  $domainsLimit
      * @param  float  $tagsLimit
      * @param  float  $foldersUsage
@@ -319,7 +319,7 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $salesUsage, float $salesLimit, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -331,8 +331,8 @@ class WorkspaceSchema
         $this->usageLimit = $usageLimit;
         $this->linksUsage = $linksUsage;
         $this->linksLimit = $linksLimit;
-        $this->salesUsage = $salesUsage;
-        $this->salesLimit = $salesLimit;
+        $this->payoutsUsage = $payoutsUsage;
+        $this->payoutsLimit = $payoutsLimit;
         $this->domainsLimit = $domainsLimit;
         $this->tagsLimit = $tagsLimit;
         $this->foldersUsage = $foldersUsage;
