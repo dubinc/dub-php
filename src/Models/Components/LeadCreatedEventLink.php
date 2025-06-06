@@ -202,7 +202,7 @@ class LeadCreatedEventLink
     public ?string $password;
 
     /**
-     * The title of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The title of the short link. Will be used for Custom Link Previews if `proxy` is true.
      *
      * @var ?string $title
      */
@@ -210,7 +210,7 @@ class LeadCreatedEventLink
     public ?string $title;
 
     /**
-     * The description of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The description of the short link. Will be used for Custom Link Previews if `proxy` is true.
      *
      * @var ?string $description
      */
@@ -218,7 +218,7 @@ class LeadCreatedEventLink
     public ?string $description;
 
     /**
-     * The image of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The image of the short link. Will be used for Custom Link Previews if `proxy` is true.
      *
      * @var ?string $image
      */
@@ -226,7 +226,7 @@ class LeadCreatedEventLink
     public ?string $image;
 
     /**
-     * The custom link preview video (og:video). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+     * The custom link preview video (og:video). Will be used for Custom Link Previews if `proxy` is true. Learn more: https://d.to/og
      *
      * @var ?string $video
      */
