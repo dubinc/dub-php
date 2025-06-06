@@ -96,7 +96,7 @@ class UpdateLinkRequestBody
     public string|array|null $tagNames = null;
 
     /**
-     * Whether the short link uses Custom Social Media Cards feature. Defaults to `false` if not provided.
+     * Whether the short link uses Custom Link Previews feature. Defaults to `false` if not provided.
      *
      * @var ?bool $proxy
      */
@@ -214,7 +214,7 @@ class UpdateLinkRequestBody
     public ?string $password = null;
 
     /**
-     * The custom link preview title (og:title). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+     * The custom link preview title (og:title). Will be used for Custom Link Previews if `proxy` is true. Learn more: https://d.to/og
      *
      * @var ?string $title
      */
@@ -223,7 +223,7 @@ class UpdateLinkRequestBody
     public ?string $title = null;
 
     /**
-     * The custom link preview description (og:description). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+     * The custom link preview description (og:description). Will be used for Custom Link Previews if `proxy` is true. Learn more: https://d.to/og
      *
      * @var ?string $description
      */
@@ -240,7 +240,7 @@ class UpdateLinkRequestBody
     public ?string $image = null;
 
     /**
-     * The custom link preview video (og:video). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+     * The custom link preview video (og:video). Will be used for Custom Link Previews if `proxy` is true. Learn more: https://d.to/og
      *
      * @var ?string $video
      */

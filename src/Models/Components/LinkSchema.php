@@ -158,7 +158,7 @@ class LinkSchema
     public ?string $password;
 
     /**
-     * The title of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The title of the short link. Will be used for Custom Link Previews if `proxy` is true.
      *
      * @var ?string $title
      */
@@ -166,7 +166,7 @@ class LinkSchema
     public ?string $title;
 
     /**
-     * The description of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The description of the short link. Will be used for Custom Link Previews if `proxy` is true.
      *
      * @var ?string $description
      */
@@ -174,7 +174,7 @@ class LinkSchema
     public ?string $description;
 
     /**
-     * The image of the short link. Will be used for Custom Social Media Cards if `proxy` is true.
+     * The image of the short link. Will be used for Custom Link Previews if `proxy` is true.
      *
      * @var ?string $image
      */
@@ -182,7 +182,7 @@ class LinkSchema
     public ?string $image;
 
     /**
-     * The custom link preview video (og:video). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+     * The custom link preview video (og:video). Will be used for Custom Link Previews if `proxy` is true. Learn more: https://d.to/og
      *
      * @var ?string $video
      */
@@ -351,7 +351,7 @@ class LinkSchema
     public ?bool $archived = null;
 
     /**
-     * Whether the short link uses Custom Social Media Cards feature.
+     * Whether the short link uses Custom Link Previews feature.
      *
      * @var ?bool $proxy
      */
