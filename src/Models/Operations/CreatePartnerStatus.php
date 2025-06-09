@@ -18,4 +18,5 @@ enum CreatePartnerStatus: string
     case Invited = 'invited';
     case Declined = 'declined';
     case Banned = 'banned';
+    case Archived = 'archived';
 }

@@ -21,7 +21,7 @@ class RetrieveAnalyticsRequest
     public ?string $domain = null;
 
     /**
-     * The short link slug.
+     * The slug of the short link to retrieve analytics for. Must be used along with the corresponding `domain` of the short link to fetch analytics for a specific short link.
      *
      * @var ?string $key
      */
@@ -29,7 +29,7 @@ class RetrieveAnalyticsRequest
     public ?string $key = null;
 
     /**
-     * The unique ID of the short link on Dub.
+     * The unique ID of the short link on Dub to retrieve analytics for.
      *
      * @var ?string $linkId
      */
@@ -37,7 +37,7 @@ class RetrieveAnalyticsRequest
     public ?string $linkId = null;
 
     /**
-     * This is the ID of the link in the your database. Must be prefixed with 'ext_' when passed as a query parameter.
+     * The ID of the link in the your database. Must be prefixed with 'ext_' when passed as a query parameter.
      *
      * @var ?string $externalId
      */
