@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 1f2d4c898b6141a97115319cc3fc6712
+  docChecksum: 2888b170a568c5574a256a458ca8e766
   docVersion: 0.0.1
-  speakeasyVersion: 1.561.0
-  generationVersion: 2.628.0
-  releaseVersion: 0.12.25
-  configChecksum: 3d1d4d4325ebf5a3996bd386b677d8fc
+  speakeasyVersion: 1.563.4
+  generationVersion: 2.630.6
+  releaseVersion: 0.12.26
+  configChecksum: bc24f5067794bcbfe6fa0028469bafe9
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -289,6 +289,7 @@ generatedFiles:
   - docs/Models/Operations/ListCommissionsType.md
   - docs/Models/Operations/ListDomainsRequest.md
   - docs/Models/Operations/ListDomainsResponse.md
+  - docs/Models/Operations/ListEventsQueryParamSortBy.md
   - docs/Models/Operations/ListEventsQueryParamTagIds.md
   - docs/Models/Operations/ListEventsRequest.md
   - docs/Models/Operations/ListEventsResponse.md
@@ -683,6 +684,7 @@ generatedFiles:
   - src/Models/Operations/ListCommissionsType.php
   - src/Models/Operations/ListDomainsRequest.php
   - src/Models/Operations/ListDomainsResponse.php
+  - src/Models/Operations/ListEventsQueryParamSortBy.php
   - src/Models/Operations/ListEventsRequest.php
   - src/Models/Operations/ListEventsResponse.php
   - src/Models/Operations/ListFoldersRequest.php

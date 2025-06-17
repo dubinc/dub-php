@@ -229,6 +229,13 @@ class RetrieveAnalyticsRequest
     public ?bool $root = null;
 
     /**
+     *
+     * @var ?QueryParamSortBy $sortBy
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
+    public ?QueryParamSortBy $sortBy = null;
+
+    /**
      * The UTM source of the short link.
      *
      * @var ?string $utmSource
@@ -323,6 +330,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $folderId
      * @param  ?bool  $qr
      * @param  ?bool  $root
+     * @param  ?QueryParamSortBy  $sortBy
      * @param  ?string  $utmSource
      * @param  ?string  $utmMedium
      * @param  ?string  $utmCampaign
@@ -330,7 +338,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $utmContent
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $qr = null, ?bool $root = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $qr = null, ?bool $root = null, ?QueryParamSortBy $sortBy = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -359,6 +367,7 @@ class RetrieveAnalyticsRequest
         $this->folderId = $folderId;
         $this->qr = $qr;
         $this->root = $root;
+        $this->sortBy = $sortBy;
         $this->utmSource = $utmSource;
         $this->utmMedium = $utmMedium;
         $this->utmCampaign = $utmCampaign;
