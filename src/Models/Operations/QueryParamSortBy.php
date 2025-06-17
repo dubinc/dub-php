@@ -9,10 +9,8 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-
+/** The field to sort the events by. The default is `timestamp`. */
 enum QueryParamSortBy: string
 {
-    case Clicks = 'clicks';
-    case Leads = 'leads';
-    case Sales = 'sales';
+    case Timestamp = 'timestamp';
 }
