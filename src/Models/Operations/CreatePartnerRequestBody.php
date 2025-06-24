@@ -12,14 +12,6 @@ namespace Dub\Models\Operations;
 class CreatePartnerRequestBody
 {
     /**
-     * The ID of the program to create a partner for.
-     *
-     * @var string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public string $programId;
-
-    /**
      * Full legal name of the partner.
      *
      * @var string $name
@@ -92,7 +84,6 @@ class CreatePartnerRequestBody
     public ?string $description = null;
 
     /**
-     * @param  string  $programId
      * @param  string  $name
      * @param  string  $email
      * @param  ?string  $tenantId
@@ -103,9 +94,8 @@ class CreatePartnerRequestBody
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $programId, string $name, string $email, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $username = null, ?string $image = null, ?Country $country = null, ?string $description = null)
+    public function __construct(string $name, string $email, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $username = null, ?string $image = null, ?Country $country = null, ?string $description = null)
     {
-        $this->programId = $programId;
         $this->name = $name;
         $this->email = $email;
         $this->tenantId = $tenantId;

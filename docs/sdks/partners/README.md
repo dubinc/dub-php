@@ -32,7 +32,6 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\CreatePartnerRequestBody(
-    programId: '<id>',
     name: '<value>',
     email: 'Summer50@yahoo.com',
     linkProps: new Operations\LinkProps(
@@ -108,7 +107,6 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\CreatePartnerLinkRequestBody(
-    programId: '<id>',
     linkProps: new Operations\CreatePartnerLinkLinkProps(
         externalId: '123456',
         tagIds: [
@@ -239,7 +237,6 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\UpsertPartnerLinkRequestBody(
-    programId: '<id>',
     linkProps: new Operations\UpsertPartnerLinkLinkProps(
         externalId: '123456',
         tagIds: [
@@ -314,7 +311,6 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\RetrievePartnerAnalyticsRequest(
     timezone: 'America/New_York',
-    programId: '<id>',
 );
 
 $response = $sdk->partners->analytics(

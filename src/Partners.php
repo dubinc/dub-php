@@ -547,11 +547,11 @@ class Partners
      *
      * Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
      *
-     * @param  Operations\RetrievePartnerAnalyticsRequest  $request
+     * @param  ?Operations\RetrievePartnerAnalyticsRequest  $request
      * @return Operations\RetrievePartnerAnalyticsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function analytics(Operations\RetrievePartnerAnalyticsRequest $request, ?Options $options = null): Operations\RetrievePartnerAnalyticsResponse
+    public function analytics(?Operations\RetrievePartnerAnalyticsRequest $request = null, ?Options $options = null): Operations\RetrievePartnerAnalyticsResponse
     {
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/partners/analytics');

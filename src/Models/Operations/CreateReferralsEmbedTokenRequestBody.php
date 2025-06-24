@@ -13,13 +13,6 @@ class CreateReferralsEmbedTokenRequestBody
 {
     /**
      *
-     * @var string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public string $programId;
-
-    /**
-     *
      * @var ?string $partnerId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
@@ -44,15 +37,13 @@ class CreateReferralsEmbedTokenRequestBody
     public ?Partner $partner = null;
 
     /**
-     * @param  string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?Partner  $partner
      * @phpstan-pure
      */
-    public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null, ?Partner $partner = null)
+    public function __construct(?string $partnerId = null, ?string $tenantId = null, ?Partner $partner = null)
     {
-        $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->partner = $partner;
