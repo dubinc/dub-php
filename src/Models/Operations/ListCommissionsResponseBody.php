@@ -80,6 +80,14 @@ class ListCommissionsResponseBody
     public ?string $invoiceId = null;
 
     /**
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
      * @param  string  $id
      * @param  float  $amount
      * @param  float  $earnings
@@ -89,9 +97,10 @@ class ListCommissionsResponseBody
      * @param  string  $updatedAt
      * @param  ?ListCommissionsType  $type
      * @param  ?string  $invoiceId
+     * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, ListCommissionsStatus $status, string $createdAt, string $updatedAt, ?ListCommissionsType $type = null, ?string $invoiceId = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, ListCommissionsStatus $status, string $createdAt, string $updatedAt, ?ListCommissionsType $type = null, ?string $invoiceId = null, ?string $description = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -102,5 +111,6 @@ class ListCommissionsResponseBody
         $this->updatedAt = $updatedAt;
         $this->type = $type;
         $this->invoiceId = $invoiceId;
+        $this->description = $description;
     }
 }
