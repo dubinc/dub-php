@@ -28,7 +28,6 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\CreateReferralsEmbedTokenRequestBody(
-    programId: '<id>',
     partner: new Operations\Partner(
         name: '<value>',
         email: 'Letha_Wuckert2@yahoo.com',

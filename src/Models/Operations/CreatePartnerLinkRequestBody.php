@@ -12,14 +12,6 @@ namespace Dub\Models\Operations;
 class CreatePartnerLinkRequestBody
 {
     /**
-     * The ID of the program that the partner is enrolled in.
-     *
-     * @var string $programId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('programId')]
-    public string $programId;
-
-    /**
      * The short link slug. If not provided, a random 7-character slug will be generated.
      *
      * @var ?string $key
@@ -75,7 +67,6 @@ class CreatePartnerLinkRequestBody
     public ?string $comments = null;
 
     /**
-     * @param  string  $programId
      * @param  ?string  $key
      * @param  ?CreatePartnerLinkLinkProps  $linkProps
      * @param  ?string  $partnerId
@@ -84,9 +75,8 @@ class CreatePartnerLinkRequestBody
      * @param  ?string  $comments
      * @phpstan-pure
      */
-    public function __construct(string $programId, ?string $key = null, ?CreatePartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null, ?string $url = null, ?string $comments = null)
+    public function __construct(?string $key = null, ?CreatePartnerLinkLinkProps $linkProps = null, ?string $partnerId = null, ?string $tenantId = null, ?string $url = null, ?string $comments = null)
     {
-        $this->programId = $programId;
         $this->key = $key;
         $this->linkProps = $linkProps;
         $this->partnerId = $partnerId;

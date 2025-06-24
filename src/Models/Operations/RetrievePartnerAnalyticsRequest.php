@@ -12,14 +12,6 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrievePartnerAnalyticsRequest
 {
     /**
-     * The ID of the program to retrieve analytics for.
-     *
-     * @var string $programId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=programId')]
-    public string $programId;
-
-    /**
      * The ID of the partner to retrieve analytics for.
      *
      * @var ?string $partnerId
@@ -76,7 +68,6 @@ class RetrievePartnerAnalyticsRequest
     public ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = null;
 
     /**
-     * @param  string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?RetrievePartnerAnalyticsQueryParamInterval  $interval
@@ -86,9 +77,8 @@ class RetrievePartnerAnalyticsRequest
      * @param  ?RetrievePartnerAnalyticsQueryParamGroupBy  $groupBy
      * @phpstan-pure
      */
-    public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null, ?RetrievePartnerAnalyticsQueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = 'UTC', ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = RetrievePartnerAnalyticsQueryParamGroupBy::Count)
+    public function __construct(?string $partnerId = null, ?string $tenantId = null, ?RetrievePartnerAnalyticsQueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = 'UTC', ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = RetrievePartnerAnalyticsQueryParamGroupBy::Count)
     {
-        $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->interval = $interval;
