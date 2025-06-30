@@ -91,8 +91,8 @@ $sdk = Dub\Dub::builder()
 $request = new Operations\TrackSaleRequestBody(
     externalId: '<id>',
     amount: 594903,
-    paymentProcessor: Operations\PaymentProcessor::Polar,
     eventName: 'Invoice paid',
+    paymentProcessor: Operations\PaymentProcessor::Polar,
     leadEventName: 'Cloned template 1481267',
 );
 

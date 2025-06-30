@@ -12,7 +12,7 @@ namespace Dub\Models\Components;
 class Sale
 {
     /**
-     * The amount of the sale in cents.
+     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1437` JPY). Learn more: https://d.to/currency
      *
      * @var int $amount
      */
