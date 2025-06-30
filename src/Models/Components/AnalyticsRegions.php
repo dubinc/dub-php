@@ -12,16 +12,15 @@ namespace Dub\Models\Components;
 class AnalyticsRegions
 {
     /**
-     * The 2-letter country code of the region: https://d.to/geo
+     * The 2-letter ISO 3166-1 country code of the country. Learn more: https://d.to/geo
      *
-     * @var AnalyticsRegionsCountry $country
+     * @var string $country
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsRegionsCountry')]
-    public AnalyticsRegionsCountry $country;
+    public string $country;
 
     /**
-     * The 2-letter ISO 3166-2 region code representing the region associated with the location of the user.
+     * The 2-letter ISO 3166-2 region code of the region.
      *
      * @var string $region
      */
@@ -74,7 +73,7 @@ class AnalyticsRegions
     public ?float $saleAmount = null;
 
     /**
-     * @param  AnalyticsRegionsCountry  $country
+     * @param  string  $country
      * @param  string  $region
      * @param  ?AnalyticsRegionsCity  $city
      * @param  ?float  $clicks
@@ -83,7 +82,7 @@ class AnalyticsRegions
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(AnalyticsRegionsCountry $country, string $region, ?AnalyticsRegionsCity $city = AnalyticsRegionsCity::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $country, string $region, ?AnalyticsRegionsCity $city = AnalyticsRegionsCity::Wildcard, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->country = $country;
         $this->region = $region;

@@ -96,10 +96,10 @@ class TrackLeadRequestBody
      * @param  string  $eventName
      * @param  string  $externalId
      * @param  ?Mode  $mode
-     * @param  ?float  $eventQuantity
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
+     * @param  ?float  $eventQuantity
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */

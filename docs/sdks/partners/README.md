@@ -32,7 +32,6 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\CreatePartnerRequestBody(
-    name: '<value>',
     email: 'Summer50@yahoo.com',
     linkProps: new Operations\LinkProps(
         externalId: '123456',

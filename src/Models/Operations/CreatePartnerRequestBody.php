@@ -12,15 +12,7 @@ namespace Dub\Models\Operations;
 class CreatePartnerRequestBody
 {
     /**
-     * Full legal name of the partner.
-     *
-     * @var string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
-
-    /**
-     * Email for the partner in your system. Partners will be able to claim their profile by signing up to Dub Partners with this email.
+     * The partner's email address. Partners will be able to claim their profile by signing up at `partners.dub.co` with this email.
      *
      * @var string $email
      */
@@ -28,7 +20,7 @@ class CreatePartnerRequestBody
     public string $email;
 
     /**
-     * The ID of the partner in your system.
+     * The partner's unique ID in your system. Useful for retrieving the partner's links and stats later on. If not provided, the partner will be created as a standalone partner.
      *
      * @var ?string $tenantId
      */
@@ -47,7 +39,16 @@ class CreatePartnerRequestBody
     public ?LinkProps $linkProps = null;
 
     /**
-     * A unique username for the partner in your system (max 100 characters). This will be used to create a short link for the partner using your program's default domain. If not provided, Dub will try to generate a username from the partner's name or email.
+     * The partner's full name. If undefined, the partner's email will be used in lieu of their name (e.g. `john@acme.com`)
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * The partner's unique username in your system (max 100 characters). This will be used to create a short link for the partner using your program's default domain. If not provided, Dub will try to generate a username from the partner's name or email.
      *
      * @var ?string $username
      */
@@ -56,7 +57,7 @@ class CreatePartnerRequestBody
     public ?string $username = null;
 
     /**
-     * Avatar image for the partner – if not provided, a default avatar will be used.
+     * The partner's avatar image. If not provided, a default avatar will be used.
      *
      * @var ?string $image
      */
@@ -65,7 +66,7 @@ class CreatePartnerRequestBody
     public ?string $image = null;
 
     /**
-     * Country where the partner is based.
+     * The partner's country of residence. Must be passed as a 2-letter ISO 3166-1 country code. Learn more: https://d.to/geo
      *
      * @var ?Country $country
      */
@@ -75,7 +76,7 @@ class CreatePartnerRequestBody
     public ?Country $country = null;
 
     /**
-     * A brief description of the partner and their background.
+     * A brief description of the partner and their background. Max 5,000 characters.
      *
      * @var ?string $description
      */
@@ -84,22 +85,22 @@ class CreatePartnerRequestBody
     public ?string $description = null;
 
     /**
-     * @param  string  $name
      * @param  string  $email
      * @param  ?string  $tenantId
      * @param  ?LinkProps  $linkProps
+     * @param  ?string  $name
      * @param  ?string  $username
      * @param  ?string  $image
      * @param  ?Country  $country
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $name, string $email, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $username = null, ?string $image = null, ?Country $country = null, ?string $description = null)
+    public function __construct(string $email, ?string $tenantId = null, ?LinkProps $linkProps = null, ?string $name = null, ?string $username = null, ?string $image = null, ?Country $country = null, ?string $description = null)
     {
-        $this->name = $name;
         $this->email = $email;
         $this->tenantId = $tenantId;
         $this->linkProps = $linkProps;
+        $this->name = $name;
         $this->username = $username;
         $this->image = $image;
         $this->country = $country;
