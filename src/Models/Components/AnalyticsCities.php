@@ -12,13 +12,12 @@ namespace Dub\Models\Components;
 class AnalyticsCities
 {
     /**
-     * The 2-letter country code of the city: https://d.to/geo
+     * The 2-letter ISO 3166-1 country code of the country where this city is located. Learn more: https://d.to/geo
      *
-     * @var AnalyticsCitiesCountry $country
+     * @var string $country
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AnalyticsCitiesCountry')]
-    public AnalyticsCitiesCountry $country;
+    public string $country;
 
     /**
      * The 2-letter ISO 3166-2 region code representing the region associated with the location of the user.
@@ -73,7 +72,7 @@ class AnalyticsCities
     public ?float $saleAmount = null;
 
     /**
-     * @param  AnalyticsCitiesCountry  $country
+     * @param  string  $country
      * @param  string  $region
      * @param  string  $city
      * @param  ?float  $clicks
@@ -82,7 +81,7 @@ class AnalyticsCities
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(AnalyticsCitiesCountry $country, string $region, string $city, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $country, string $region, string $city, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->country = $country;
         $this->region = $region;

@@ -13,13 +13,6 @@ class RetrieveLinksRequest
 {
     /**
      *
-     * @var string $programId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=programId')]
-    public string $programId;
-
-    /**
-     *
      * @var ?string $partnerId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerId')]
@@ -33,14 +26,12 @@ class RetrieveLinksRequest
     public ?string $tenantId = null;
 
     /**
-     * @param  string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @phpstan-pure
      */
-    public function __construct(string $programId, ?string $partnerId = null, ?string $tenantId = null)
+    public function __construct(?string $partnerId = null, ?string $tenantId = null)
     {
-        $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
     }

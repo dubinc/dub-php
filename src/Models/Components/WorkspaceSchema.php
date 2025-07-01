@@ -109,6 +109,14 @@ class WorkspaceSchema
     public float $payoutsLimit;
 
     /**
+     * The processing fee (in decimals) for partner payouts. For card payments, an additional 0.03 is added to the fee. Learn more: https://d.to/payouts
+     *
+     * @var float $payoutFee
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('payoutFee')]
+    public float $payoutFee;
+
+    /**
      * The domains limit of the workspace.
      *
      * @var float $domainsLimit
@@ -296,6 +304,7 @@ class WorkspaceSchema
      * @param  float  $linksLimit
      * @param  float  $payoutsUsage
      * @param  float  $payoutsLimit
+     * @param  float  $payoutFee
      * @param  float  $domainsLimit
      * @param  float  $tagsLimit
      * @param  float  $foldersUsage
@@ -319,7 +328,7 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -333,6 +342,7 @@ class WorkspaceSchema
         $this->linksLimit = $linksLimit;
         $this->payoutsUsage = $payoutsUsage;
         $this->payoutsLimit = $payoutsLimit;
+        $this->payoutFee = $payoutFee;
         $this->domainsLimit = $domainsLimit;
         $this->tagsLimit = $tagsLimit;
         $this->foldersUsage = $foldersUsage;

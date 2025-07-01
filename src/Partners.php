@@ -377,16 +377,14 @@ class Partners
      *
      * Retrieve a partner's links by their partner ID or tenant ID.
      *
-     * @param  string  $programId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @return Operations\RetrieveLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function retrieveLinks(string $programId, ?string $partnerId = null, ?string $tenantId = null, ?Options $options = null): Operations\RetrieveLinksResponse
+    public function retrieveLinks(?string $partnerId = null, ?string $tenantId = null, ?Options $options = null): Operations\RetrieveLinksResponse
     {
         $request = new Operations\RetrieveLinksRequest(
-            programId: $programId,
             partnerId: $partnerId,
             tenantId: $tenantId,
         );

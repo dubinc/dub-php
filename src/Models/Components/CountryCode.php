@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-/** The country to retrieve analytics for. */
+/** The country to retrieve analytics for. Must be passed as a 2-letter ISO 3166-1 country code. Learn more: https://d.to/geo */
 enum CountryCode: string
 {
     case Af = 'AF';

@@ -20,7 +20,7 @@ class TrackSaleRequestBody
     public string $externalId;
 
     /**
-     * The amount of the sale in cents.
+     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1437` JPY). Learn more: https://d.to/currency
      *
      * @var int $amount
      */
@@ -37,7 +37,7 @@ class TrackSaleRequestBody
     public PaymentProcessor $paymentProcessor;
 
     /**
-     * Additional metadata to be stored with the sale event. Max 10,000 characters.
+     * Additional metadata to be stored with the sale event. Max 10,000 characters when stringified.
      *
      * @var ?array<string, mixed> $metadata
      */
@@ -47,22 +47,22 @@ class TrackSaleRequestBody
     public ?array $metadata = null;
 
     /**
-     * The name of the sale event.
-     *
-     * @var ?string $eventName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $eventName = null;
-
-    /**
-     * The currency of the sale. Accepts ISO 4217 currency codes.
+     * The currency of the sale. Accepts ISO 4217 currency codes. Sales will be automatically converted and stored as USD at the latest exchange rates. Learn more: https://d.to/currency
      *
      * @var ?string $currency
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $currency = null;
+
+    /**
+     * The name of the sale event. Recommended format: `Invoice paid` or `Subscription created`.
+     *
+     * @var ?string $eventName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $eventName = null;
 
     /**
      * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
@@ -74,7 +74,7 @@ class TrackSaleRequestBody
     public ?string $invoiceId = null;
 
     /**
-     * The name of the lead event that occurred before the sale (case-sensitive). This is used to associate the sale event with a particular lead event (instead of the latest lead event, which is the default behavior).
+     * The name of the lead event that occurred before the sale (case-sensitive). This is used to associate the sale event with a particular lead event (instead of the latest lead event for a link-customer combination, which is the default behavior).
      *
      * @var ?string $leadEventName
      */
@@ -86,21 +86,21 @@ class TrackSaleRequestBody
      * @param  string  $externalId
      * @param  int  $amount
      * @param  PaymentProcessor  $paymentProcessor
-     * @param  ?string  $eventName
      * @param  ?string  $currency
+     * @param  ?string  $eventName
      * @param  ?string  $invoiceId
      * @param  ?string  $leadEventName
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $externalId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $eventName = 'Purchase', ?string $currency = 'usd', ?string $invoiceId = null, ?string $leadEventName = null)
+    public function __construct(string $externalId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?string $invoiceId = null, ?string $leadEventName = null)
     {
         $this->externalId = $externalId;
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
         $this->metadata = $metadata;
-        $this->eventName = $eventName;
         $this->currency = $currency;
+        $this->eventName = $eventName;
         $this->invoiceId = $invoiceId;
         $this->leadEventName = $leadEventName;
     }
