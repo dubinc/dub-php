@@ -32,7 +32,6 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\CreatePartnerRequestBody(
-    name: '<value>',
     email: 'Summer50@yahoo.com',
     linkProps: new Operations\LinkProps(
         externalId: '123456',
@@ -181,7 +180,7 @@ $sdk = Dub\Dub::builder()
 
 
 $response = $sdk->partners->retrieveLinks(
-    programId: '<id>'
+
 );
 
 if ($response->links !== null) {
@@ -193,7 +192,6 @@ if ($response->links !== null) {
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `programId`        | *string*           | :heavy_check_mark: | N/A                |
 | `partnerId`        | *?string*          | :heavy_minus_sign: | N/A                |
 | `tenantId`         | *?string*          | :heavy_minus_sign: | N/A                |
 
