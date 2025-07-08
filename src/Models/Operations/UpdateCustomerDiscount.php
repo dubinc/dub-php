@@ -35,6 +35,13 @@ class UpdateCustomerDiscount
 
     /**
      *
+     * @var bool $default
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('default')]
+    public bool $default;
+
+    /**
+     *
      * @var ?float $maxDuration
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('maxDuration')]
@@ -74,6 +81,7 @@ class UpdateCustomerDiscount
      * @param  string  $id
      * @param  float  $amount
      * @param  UpdateCustomerType  $type
+     * @param  bool  $default
      * @param  ?float  $maxDuration
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId
@@ -81,11 +89,12 @@ class UpdateCustomerDiscount
      * @param  ?float  $partnersCount
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, UpdateCustomerType $type, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?string $description = null, ?float $partnersCount = null)
+    public function __construct(string $id, float $amount, UpdateCustomerType $type, bool $default, ?float $maxDuration = null, ?string $couponId = null, ?string $couponTestId = null, ?string $description = null, ?float $partnersCount = null)
     {
         $this->id = $id;
         $this->amount = $amount;
         $this->type = $type;
+        $this->default = $default;
         $this->maxDuration = $maxDuration;
         $this->couponId = $couponId;
         $this->couponTestId = $couponTestId;
