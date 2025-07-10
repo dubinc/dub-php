@@ -14,10 +14,10 @@ class TrackSaleRequestBody
     /**
      * The unique ID of the customer in your system. Will be used to identify and attribute all future events to this customer.
      *
-     * @var string $externalId
+     * @var string $customerExternalId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    public string $externalId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerExternalId')]
+    public string $customerExternalId;
 
     /**
      * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1437` JPY). Learn more: https://d.to/currency
@@ -83,7 +83,7 @@ class TrackSaleRequestBody
     public ?string $leadEventName = null;
 
     /**
-     * @param  string  $externalId
+     * @param  string  $customerExternalId
      * @param  int  $amount
      * @param  PaymentProcessor  $paymentProcessor
      * @param  ?string  $currency
@@ -93,9 +93,9 @@ class TrackSaleRequestBody
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $externalId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?string $invoiceId = null, ?string $leadEventName = null)
+    public function __construct(string $customerExternalId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?string $invoiceId = null, ?string $leadEventName = null)
     {
-        $this->externalId = $externalId;
+        $this->customerExternalId = $customerExternalId;
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
         $this->metadata = $metadata;

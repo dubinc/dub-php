@@ -31,7 +31,7 @@ $sdk = Dub\Dub::builder()
 $request = new Operations\TrackLeadRequestBody(
     clickId: '<id>',
     eventName: 'Sign up',
-    externalId: '<id>',
+    customerExternalId: '<id>',
 );
 
 $response = $sdk->track->lead(
@@ -89,7 +89,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\TrackSaleRequestBody(
-    externalId: '<id>',
+    customerExternalId: '<id>',
     amount: 594903,
     eventName: 'Invoice paid',
     paymentProcessor: Operations\PaymentProcessor::Polar,

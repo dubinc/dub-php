@@ -30,10 +30,10 @@ class TrackLeadRequestBody
     /**
      * The unique ID of the customer in your system. Will be used to identify and attribute all future events to this customer.
      *
-     * @var string $externalId
+     * @var string $customerExternalId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    public string $externalId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerExternalId')]
+    public string $customerExternalId;
 
     /**
      * The numerical value associated with this lead event (e.g., number of provisioned seats in a free trial). If defined as N, the lead event will be tracked N times.
@@ -94,7 +94,7 @@ class TrackLeadRequestBody
     /**
      * @param  string  $clickId
      * @param  string  $eventName
-     * @param  string  $externalId
+     * @param  string  $customerExternalId
      * @param  ?Mode  $mode
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
@@ -103,11 +103,11 @@ class TrackLeadRequestBody
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $clickId, string $eventName, string $externalId, ?float $eventQuantity = null, ?array $metadata = null, ?Mode $mode = Mode::Async, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
+    public function __construct(string $clickId, string $eventName, string $customerExternalId, ?float $eventQuantity = null, ?array $metadata = null, ?Mode $mode = Mode::Async, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;
-        $this->externalId = $externalId;
+        $this->customerExternalId = $customerExternalId;
         $this->eventQuantity = $eventQuantity;
         $this->metadata = $metadata;
         $this->mode = $mode;
