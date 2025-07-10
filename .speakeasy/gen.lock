@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 6e45f3521cae083a495cc5102bf01725
+  docChecksum: aa92a2d401a7d3e37140aef2558f04b3
   docVersion: 0.0.1
-  speakeasyVersion: 1.576.1
-  generationVersion: 2.651.2
-  releaseVersion: 0.12.31
-  configChecksum: 53f57d1e5d36bc404b1c8df2599e1a85
+  speakeasyVersion: 1.580.2
+  generationVersion: 2.656.5
+  releaseVersion: 0.12.32
+  configChecksum: 69ff564775f5311a07ce16b14f6f2d10
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -16,7 +16,7 @@ features:
     core: 3.8.6
     deprecations: 2.81.1
     errors: 0.3.0
-    examples: 2.81.5
+    examples: 2.81.6
     flattening: 2.81.1
     globalSecurity: 2.81.8
     globalSecurityFlattening: 0.1.2
@@ -1457,7 +1457,7 @@ examples:
   trackLead:
     speakeasy-default-track-lead:
       requestBody:
-        application/json: {"clickId": "<id>", "eventName": "Sign up", "externalId": "<id>", "customerName": null, "customerEmail": null, "customerAvatar": null, "mode": "async"}
+        application/json: {"clickId": "<id>", "eventName": "Sign up", "customerExternalId": "<id>", "customerName": null, "customerEmail": null, "customerAvatar": null, "mode": "async"}
       responses:
         "200":
           application/json: {"click": {"id": "<id>"}, "customer": {"name": "<value>", "email": "Beaulah.Hamill78@gmail.com", "avatar": "https://picsum.photos/seed/4p2vQu6/2339/955", "externalId": "<id>"}}
@@ -1482,7 +1482,7 @@ examples:
   trackSale:
     speakeasy-default-track-sale:
       requestBody:
-        application/json: {"externalId": "<id>", "amount": 594903, "currency": "usd", "eventName": "Invoice paid", "paymentProcessor": "polar", "invoiceId": null, "leadEventName": "Cloned template 1481267"}
+        application/json: {"customerExternalId": "<id>", "amount": 594903, "currency": "usd", "eventName": "Invoice paid", "paymentProcessor": "polar", "invoiceId": null, "leadEventName": "Cloned template 1481267"}
       responses:
         "200":
           application/json: {"eventName": "<value>", "customer": {"id": "<id>", "name": "<value>", "email": "Jettie.Hirthe97@yahoo.com", "avatar": "https://loremflickr.com/2112/1585?lock=96959249386723", "externalId": "<id>"}, "sale": {"amount": 67.63, "currency": "Pula", "paymentProcessor": "<value>", "invoiceId": "<id>", "metadata": {"key": "<value>"}}}
