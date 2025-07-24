@@ -16,5 +16,6 @@ enum PaymentProcessor: string
     case Shopify = 'shopify';
     case Polar = 'polar';
     case Paddle = 'paddle';
+    case Revenuecat = 'revenuecat';
     case Custom = 'custom';
 }

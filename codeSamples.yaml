@@ -171,6 +171,12 @@ actions:
         - "lang": "php"
           "label": "updateLink"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n    testVariants: [\n        new Operations\\UpdateLinkTestVariants(\n            url: 'https://example.com/variant-1',\n            percentage: 50,\n        ),\n        new Operations\\UpdateLinkTestVariants(\n            url: 'https://example.com/variant-2',\n            percentage: 50,\n        ),\n    ],\n);\n\n$response = $sdk->links->update(\n    linkId: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/partners"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "listPartners"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    includeExpandedFields: false,\n    search: 'john',\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners"]["post"]
     update:
       "x-codeSamples":
@@ -248,7 +254,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "trackSale"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    customerExternalId: '<id>',\n    amount: 594903,\n    eventName: 'Invoice paid',\n    paymentProcessor: Operations\\PaymentProcessor::Polar,\n    leadEventName: 'Cloned template 1481267',\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    customerExternalId: '<id>',\n    amount: 594903,\n    eventName: 'Invoice paid',\n    paymentProcessor: Operations\\PaymentProcessor::Paddle,\n    leadEventName: 'Cloned template 1481267',\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/workspaces/{idOrSlug}"]["get"]
     update:
       "x-codeSamples":
