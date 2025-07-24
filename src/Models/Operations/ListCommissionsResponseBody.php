@@ -50,6 +50,13 @@ class ListCommissionsResponseBody
 
     /**
      *
+     * @var float $quantity
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('quantity')]
+    public float $quantity;
+
+    /**
+     *
      * @var string $createdAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
@@ -61,6 +68,14 @@ class ListCommissionsResponseBody
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
     public string $updatedAt;
+
+    /**
+     *
+     * @var ListCommissionsPartner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListCommissionsPartner')]
+    public ListCommissionsPartner $partner;
 
     /**
      *
@@ -76,16 +91,32 @@ class ListCommissionsResponseBody
      * @var ?string $invoiceId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $invoiceId = null;
+    public ?string $invoiceId;
 
     /**
      *
      * @var ?string $description
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    public ?string $description;
+
+    /**
+     * The user who created the manual commission.
+     *
+     * @var ?string $userId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('userId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
+    public ?string $userId = null;
+
+    /**
+     *
+     * @var ?ListCommissionsCustomer $customer
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListCommissionsCustomer|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ListCommissionsCustomer $customer = null;
 
     /**
      * @param  string  $id
@@ -93,24 +124,32 @@ class ListCommissionsResponseBody
      * @param  float  $earnings
      * @param  string  $currency
      * @param  ListCommissionsStatus  $status
+     * @param  float  $quantity
      * @param  string  $createdAt
      * @param  string  $updatedAt
+     * @param  ListCommissionsPartner  $partner
      * @param  ?ListCommissionsType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
+     * @param  ?string  $userId
+     * @param  ?ListCommissionsCustomer  $customer
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, ListCommissionsStatus $status, string $createdAt, string $updatedAt, ?ListCommissionsType $type = null, ?string $invoiceId = null, ?string $description = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, ListCommissionsStatus $status, float $quantity, string $createdAt, string $updatedAt, ListCommissionsPartner $partner, ?ListCommissionsType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $userId = null, ?ListCommissionsCustomer $customer = null)
     {
         $this->id = $id;
         $this->amount = $amount;
         $this->earnings = $earnings;
         $this->currency = $currency;
         $this->status = $status;
+        $this->quantity = $quantity;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->partner = $partner;
         $this->type = $type;
         $this->invoiceId = $invoiceId;
         $this->description = $description;
+        $this->userId = $userId;
+        $this->customer = $customer;
     }
 }

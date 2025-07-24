@@ -6,6 +6,7 @@
 ### Available Operations
 
 * [create](#create) - Create a partner
+* [list](#list) - List all partners
 * [createLink](#createlink) - Create a link for a partner
 * [retrieveLinks](#retrievelinks) - Retrieve a partner's links.
 * [upsertLink](#upsertlink) - Upsert a link for a partner
@@ -69,6 +70,69 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\CreatePartnerResponse](../../Models/Operations/CreatePartnerResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## list
+
+List all partners for a partner program.
+
+### Example Usage
+
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\ListPartnersRequest(
+    status: Operations\ListPartnersQueryParamStatus::Approved,
+    country: 'US',
+    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',
+    includeExpandedFields: false,
+    search: 'john',
+    pageSize: 50,
+);
+
+$response = $sdk->partners->list(
+    request: $request
+);
+
+if ($response->responseBodies !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `$request`                                                                       | [Operations\ListPartnersRequest](../../Models/Operations/ListPartnersRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+
+### Response
+
+**[?Operations\ListPartnersResponse](../../Models/Operations/ListPartnersResponse.md)**
 
 ### Errors
 

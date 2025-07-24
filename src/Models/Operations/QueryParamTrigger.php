@@ -14,4 +14,6 @@ enum QueryParamTrigger: string
 {
     case Qr = 'qr';
     case Link = 'link';
+    case Pageview = 'pageview';
+    case Deeplink = 'deeplink';
 }

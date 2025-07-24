@@ -249,6 +249,7 @@ if ($response->linkSchema !== null) {
 ### [partners](docs/sdks/partners/README.md)
 
 * [create](docs/sdks/partners/README.md#create) - Create a partner
+* [list](docs/sdks/partners/README.md#list) - List all partners
 * [createLink](docs/sdks/partners/README.md#createlink) - Create a link for a partner
 * [retrieveLinks](docs/sdks/partners/README.md#retrievelinks) - Retrieve a partner's links.
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
