@@ -14,6 +14,7 @@ Track a lead for a short link.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="trackLead" method="post" path="/track/lead" -->
 ```php
 declare(strict_types=1);
 
@@ -74,6 +75,7 @@ Track a sale for a short link.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="trackSale" method="post" path="/track/sale" -->
 ```php
 declare(strict_types=1);
 

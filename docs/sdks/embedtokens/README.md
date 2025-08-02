@@ -13,6 +13,7 @@ Create a referrals embed token for the given partner/tenant.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createReferralsEmbedToken" method="post" path="/tokens/embed/referrals" -->
 ```php
 declare(strict_types=1);
 
