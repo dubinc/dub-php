@@ -18,6 +18,7 @@ Create a domain for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createDomain" method="post" path="/domains" -->
 ```php
 declare(strict_types=1);
 
@@ -79,6 +80,7 @@ Retrieve a list of domains associated with the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="listDomains" method="get" path="/domains" -->
 ```php
 declare(strict_types=1);
 
@@ -143,6 +145,7 @@ Update a domain for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateDomain" method="patch" path="/domains/{slug}" -->
 ```php
 declare(strict_types=1);
 
@@ -207,6 +210,7 @@ Delete a domain from a workspace. It cannot be undone. This will also delete all
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="deleteDomain" method="delete" path="/domains/{slug}" -->
 ```php
 declare(strict_types=1);
 
@@ -262,6 +266,7 @@ Register a domain for the authenticated workspace. Only available for Enterprise
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="registerDomain" method="post" path="/domains/register" -->
 ```php
 declare(strict_types=1);
 
@@ -320,6 +325,7 @@ Check if a domain name is available for purchase. You can check multiple domains
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="checkDomainStatus" method="get" path="/domains/status" -->
 ```php
 declare(strict_types=1);
 

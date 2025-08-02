@@ -10,7 +10,7 @@ namespace Dub;
 
 
 
-/** Dub - Dub API: Dub is link management infrastructure for companies to create marketing campaigns, link sharing features, and referral programs. */
+/** Dub - Dub API: Dub is the modern link attribution platform for short links, conversion tracking, and affiliate programs. */
 class Dub
 {
     public const SERVERS = [

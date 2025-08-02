@@ -13,6 +13,7 @@ Retrieve a QR code for a link.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getQRCode" method="get" path="/qr" -->
 ```php
 declare(strict_types=1);
 
