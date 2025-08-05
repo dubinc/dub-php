@@ -43,7 +43,7 @@ class ClickEvent
     public Link $link;
 
     /**
-     * Deprecated. Use `click.id` instead.
+     * Deprecated: Use `click.id` instead.
      *
      * @var string $clickId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -52,7 +52,7 @@ class ClickEvent
     public string $clickId;
 
     /**
-     * Deprecated. Use `link.id` instead.
+     * Deprecated: Use `link.id` instead.
      *
      * @var string $linkId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -61,7 +61,7 @@ class ClickEvent
     public string $linkId;
 
     /**
-     * Deprecated. Use `link.domain` instead.
+     * Deprecated: Use `link.domain` instead.
      *
      * @var string $domain
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -70,7 +70,7 @@ class ClickEvent
     public string $domain;
 
     /**
-     * Deprecated. Use `link.key` instead.
+     * Deprecated: Use `link.key` instead.
      *
      * @var string $key
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -79,7 +79,7 @@ class ClickEvent
     public string $key;
 
     /**
-     * Deprecated. Use `click.url` instead.
+     * Deprecated: Use `click.url` instead.
      *
      * @var string $url
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -88,7 +88,7 @@ class ClickEvent
     public string $url;
 
     /**
-     * Deprecated. Use `click.continent` instead.
+     * Deprecated: Use `click.continent` instead.
      *
      * @var string $continent
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -97,7 +97,7 @@ class ClickEvent
     public string $continent;
 
     /**
-     * Deprecated. Use `click.country` instead.
+     * Deprecated: Use `click.country` instead.
      *
      * @var string $country
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -106,7 +106,7 @@ class ClickEvent
     public string $country;
 
     /**
-     * Deprecated. Use `click.city` instead.
+     * Deprecated: Use `click.city` instead.
      *
      * @var string $city
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -115,7 +115,7 @@ class ClickEvent
     public string $city;
 
     /**
-     * Deprecated. Use `click.device` instead.
+     * Deprecated: Use `click.device` instead.
      *
      * @var string $device
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -124,7 +124,7 @@ class ClickEvent
     public string $device;
 
     /**
-     * Deprecated. Use `click.browser` instead.
+     * Deprecated: Use `click.browser` instead.
      *
      * @var string $browser
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -133,7 +133,7 @@ class ClickEvent
     public string $browser;
 
     /**
-     * Deprecated. Use `click.os` instead.
+     * Deprecated: Use `click.os` instead.
      *
      * @var string $os
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -142,7 +142,7 @@ class ClickEvent
     public string $os;
 
     /**
-     * Deprecated. Use `click.qr` instead.
+     * Deprecated: Use `click.qr` instead.
      *
      * @var float $qr
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -151,7 +151,7 @@ class ClickEvent
     public float $qr;
 
     /**
-     * Deprecated. Use `click.ip` instead.
+     * Deprecated: Use `click.ip` instead.
      *
      * @var string $ip
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.

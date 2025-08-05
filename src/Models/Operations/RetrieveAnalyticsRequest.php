@@ -157,7 +157,7 @@ class RetrieveAnalyticsRequest
     public ?string $os = null;
 
     /**
-     * The trigger to retrieve analytics for. If undefined, return both QR and link clicks.
+     * The trigger to retrieve analytics for. If undefined, returns all trigger types.
      *
      * @var ?Trigger $trigger
      */
@@ -189,14 +189,6 @@ class RetrieveAnalyticsRequest
     public ?string $url = null;
 
     /**
-     * Deprecated. Use `tagIds` instead. The tag ID to retrieve analytics for.
-     *
-     * @var ?string $tagId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagId')]
-    public ?string $tagId = null;
-
-    /**
      * The tag IDs to retrieve analytics for.
      *
      * @var string|array<string>|null $tagIds
@@ -213,14 +205,6 @@ class RetrieveAnalyticsRequest
     public ?string $folderId = null;
 
     /**
-     * Deprecated. Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
-     *
-     * @var ?bool $qr
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=qr')]
-    public ?bool $qr = null;
-
-    /**
      * Filter for root domains. If true, filter for domains only. If false, filter for links only. If undefined, return both.
      *
      * @var ?bool $root
@@ -235,6 +219,30 @@ class RetrieveAnalyticsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=saleType')]
     public ?SaleType $saleType = null;
+
+    /**
+     * Search the events by a custom metadata value. Only available for lead and sale events.
+     *
+     * @var ?string $query
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=query')]
+    public ?string $query = null;
+
+    /**
+     * Deprecated: Use `tagIds` instead. The tag ID to retrieve analytics for.
+     *
+     * @var ?string $tagId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagId')]
+    public ?string $tagId = null;
+
+    /**
+     * Deprecated: Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
+     *
+     * @var ?bool $qr
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=qr')]
+    public ?bool $qr = null;
 
     /**
      * The UTM source of the short link.
@@ -326,12 +334,13 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $referer
      * @param  ?string  $refererUrl
      * @param  ?string  $url
-     * @param  ?string  $tagId
      * @param  string|array<string>|null  $tagIds
      * @param  ?string  $folderId
-     * @param  ?bool  $qr
      * @param  ?bool  $root
      * @param  ?SaleType  $saleType
+     * @param  ?string  $query
+     * @param  ?string  $tagId
+     * @param  ?bool  $qr
      * @param  ?string  $utmSource
      * @param  ?string  $utmMedium
      * @param  ?string  $utmCampaign
@@ -339,7 +348,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $utmContent
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $tagId = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $qr = null, ?bool $root = null, ?SaleType $saleType = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -363,12 +372,13 @@ class RetrieveAnalyticsRequest
         $this->referer = $referer;
         $this->refererUrl = $refererUrl;
         $this->url = $url;
-        $this->tagId = $tagId;
         $this->tagIds = $tagIds;
         $this->folderId = $folderId;
-        $this->qr = $qr;
         $this->root = $root;
         $this->saleType = $saleType;
+        $this->query = $query;
+        $this->tagId = $tagId;
+        $this->qr = $qr;
         $this->utmSource = $utmSource;
         $this->utmMedium = $utmMedium;
         $this->utmCampaign = $utmCampaign;

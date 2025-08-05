@@ -57,16 +57,6 @@ class UpdateLinkRequestBody
     public ?bool $archived = null;
 
     /**
-     * Deprecated: Use `dashboard` instead. Whether the short link's stats are publicly accessible. Defaults to `false` if not provided.
-     *
-     * @var ?bool $publicStats
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $publicStats = null;
-
-    /**
      * The unique IDs of the tags assigned to the short link.
      *
      * @var string|array<string>|null $tagIds
@@ -114,6 +104,16 @@ class UpdateLinkRequestBody
     public ?bool $doIndex = null;
 
     /**
+     * Deprecated: Use `dashboard` instead. Whether the short link's stats are publicly accessible. Defaults to `false` if not provided.
+     *
+     * @var ?bool $publicStats
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('publicStats')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $publicStats = null;
+
+    /**
      * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
      *
      * @var ?string $externalId
@@ -148,16 +148,6 @@ class UpdateLinkRequestBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $partnerId = null;
-
-    /**
-     * The unique ID of the tag assigned to the short link. This field is deprecated – use `tagIds` instead.
-     *
-     * @var ?string $tagId
-     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tagId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $tagId = null;
 
     /**
      * The unique ID existing folder to assign the short link to.
@@ -360,22 +350,31 @@ class UpdateLinkRequestBody
     public ?string $testCompletedAt = null;
 
     /**
+     * Deprecated: Use `tagIds` instead. The unique ID of the tag assigned to the short link.
+     *
+     * @var ?string $tagId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $tagId = null;
+
+    /**
      * @param  ?string  $url
      * @param  ?string  $domain
      * @param  ?string  $key
      * @param  ?bool  $trackConversion
      * @param  ?bool  $archived
-     * @param  ?bool  $publicStats
      * @param  string|array<string>|null  $tagIds
      * @param  string|array<string>|null  $tagNames
      * @param  ?bool  $proxy
      * @param  ?bool  $rewrite
      * @param  ?bool  $doIndex
+     * @param  ?bool  $publicStats
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
      * @param  ?string  $programId
      * @param  ?string  $partnerId
-     * @param  ?string  $tagId
      * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
@@ -398,26 +397,26 @@ class UpdateLinkRequestBody
      * @param  ?array<UpdateLinkTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
+     * @param  ?string  $tagId
      * @phpstan-pure
      */
-    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?bool $trackConversion = null, ?bool $archived = null, ?bool $publicStats = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $tagId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null)
+    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null)
     {
         $this->url = $url;
         $this->domain = $domain;
         $this->key = $key;
         $this->trackConversion = $trackConversion;
         $this->archived = $archived;
-        $this->publicStats = $publicStats;
         $this->tagIds = $tagIds;
         $this->tagNames = $tagNames;
         $this->proxy = $proxy;
         $this->rewrite = $rewrite;
         $this->doIndex = $doIndex;
+        $this->publicStats = $publicStats;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
         $this->programId = $programId;
         $this->partnerId = $partnerId;
-        $this->tagId = $tagId;
         $this->folderId = $folderId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;
@@ -440,5 +439,6 @@ class UpdateLinkRequestBody
         $this->testVariants = $testVariants;
         $this->testStartedAt = $testStartedAt;
         $this->testCompletedAt = $testCompletedAt;
+        $this->tagId = $tagId;
     }
 }

@@ -42,6 +42,14 @@ class SaleEvent
 
     /**
      *
+     * @var Sale $sale
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
+    public Sale $sale;
+
+    /**
+     *
      * @var SaleEventLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
@@ -65,15 +73,7 @@ class SaleEvent
     public SaleEventCustomer $customer;
 
     /**
-     *
-     * @var Sale $sale
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
-    public Sale $sale;
-
-    /**
-     * Deprecated. Use `sale.amount` instead.
+     * Deprecated: Use `sale.amount` instead.
      *
      * @var float $saleAmount
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -82,7 +82,7 @@ class SaleEvent
     public float $saleAmount;
 
     /**
-     * Deprecated. Use `sale.invoiceId` instead.
+     * Deprecated: Use `sale.invoiceId` instead.
      *
      * @var string $invoiceId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -91,15 +91,16 @@ class SaleEvent
     public string $invoiceId;
 
     /**
-     * Deprecated. Use `sale.paymentProcessor` instead.
+     * Deprecated: Use `sale.paymentProcessor` instead.
      *
      * @var string $paymentProcessor
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('payment_processor')]
     public string $paymentProcessor;
 
     /**
-     * Deprecated. Use `click.id` instead.
+     * Deprecated: Use `click.id` instead.
      *
      * @var string $clickId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -108,7 +109,7 @@ class SaleEvent
     public string $clickId;
 
     /**
-     * Deprecated. Use `link.id` instead.
+     * Deprecated: Use `link.id` instead.
      *
      * @var string $linkId
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -117,7 +118,7 @@ class SaleEvent
     public string $linkId;
 
     /**
-     * Deprecated. Use `link.domain` instead.
+     * Deprecated: Use `link.domain` instead.
      *
      * @var string $domain
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -126,7 +127,7 @@ class SaleEvent
     public string $domain;
 
     /**
-     * Deprecated. Use `link.key` instead.
+     * Deprecated: Use `link.key` instead.
      *
      * @var string $key
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -135,7 +136,7 @@ class SaleEvent
     public string $key;
 
     /**
-     * Deprecated. Use `click.url` instead.
+     * Deprecated: Use `click.url` instead.
      *
      * @var string $url
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -144,7 +145,7 @@ class SaleEvent
     public string $url;
 
     /**
-     * Deprecated. Use `click.continent` instead.
+     * Deprecated: Use `click.continent` instead.
      *
      * @var string $continent
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -153,7 +154,7 @@ class SaleEvent
     public string $continent;
 
     /**
-     * Deprecated. Use `click.country` instead.
+     * Deprecated: Use `click.country` instead.
      *
      * @var string $country
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -162,7 +163,7 @@ class SaleEvent
     public string $country;
 
     /**
-     * Deprecated. Use `click.city` instead.
+     * Deprecated: Use `click.city` instead.
      *
      * @var string $city
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -171,7 +172,7 @@ class SaleEvent
     public string $city;
 
     /**
-     * Deprecated. Use `click.device` instead.
+     * Deprecated: Use `click.device` instead.
      *
      * @var string $device
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -180,7 +181,7 @@ class SaleEvent
     public string $device;
 
     /**
-     * Deprecated. Use `click.browser` instead.
+     * Deprecated: Use `click.browser` instead.
      *
      * @var string $browser
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -189,7 +190,7 @@ class SaleEvent
     public string $browser;
 
     /**
-     * Deprecated. Use `click.os` instead.
+     * Deprecated: Use `click.os` instead.
      *
      * @var string $os
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -198,7 +199,7 @@ class SaleEvent
     public string $os;
 
     /**
-     * Deprecated. Use `click.qr` instead.
+     * Deprecated: Use `click.qr` instead.
      *
      * @var float $qr
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -207,7 +208,7 @@ class SaleEvent
     public float $qr;
 
     /**
-     * Deprecated. Use `click.ip` instead.
+     * Deprecated: Use `click.ip` instead.
      *
      * @var string $ip
      * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
@@ -216,14 +217,23 @@ class SaleEvent
     public string $ip;
 
     /**
+     *
+     * @var mixed $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('mixed')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public mixed $metadata = null;
+
+    /**
      * @param  SaleEventEvent  $event
      * @param  string  $timestamp
      * @param  string  $eventId
      * @param  string  $eventName
+     * @param  Sale  $sale
      * @param  SaleEventLink  $link
      * @param  SaleEventClick  $click
      * @param  SaleEventCustomer  $customer
-     * @param  Sale  $sale
      * @param  float  $saleAmount
      * @param  string  $invoiceId
      * @param  string  $paymentProcessor
@@ -240,18 +250,19 @@ class SaleEvent
      * @param  string  $os
      * @param  float  $qr
      * @param  string  $ip
+     * @param  mixed  $metadata
      * @phpstan-pure
      */
-    public function __construct(SaleEventEvent $event, string $timestamp, string $eventId, string $eventName, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, Sale $sale, float $saleAmount, string $invoiceId, string $paymentProcessor, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip)
+    public function __construct(SaleEventEvent $event, string $timestamp, string $eventId, string $eventName, Sale $sale, SaleEventLink $link, SaleEventClick $click, SaleEventCustomer $customer, float $saleAmount, string $invoiceId, string $paymentProcessor, string $clickId, string $linkId, string $domain, string $key, string $url, string $continent, string $country, string $city, string $device, string $browser, string $os, float $qr, string $ip, mixed $metadata = null)
     {
         $this->event = $event;
         $this->timestamp = $timestamp;
         $this->eventId = $eventId;
         $this->eventName = $eventName;
+        $this->sale = $sale;
         $this->link = $link;
         $this->click = $click;
         $this->customer = $customer;
-        $this->sale = $sale;
         $this->saleAmount = $saleAmount;
         $this->invoiceId = $invoiceId;
         $this->paymentProcessor = $paymentProcessor;
@@ -268,5 +279,6 @@ class SaleEvent
         $this->os = $os;
         $this->qr = $qr;
         $this->ip = $ip;
+        $this->metadata = $metadata;
     }
 }

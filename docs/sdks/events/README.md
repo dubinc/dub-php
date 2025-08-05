@@ -35,6 +35,7 @@ $request = new Operations\ListEventsRequest(
     os: 'Windows',
     referer: 'google.com',
     refererUrl: 'https://dub.co/blog',
+    query: 'metadata[\'key\']:\'value\'',
 );
 
 $response = $sdk->events->list(

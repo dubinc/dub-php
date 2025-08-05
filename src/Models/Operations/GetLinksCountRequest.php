@@ -20,7 +20,7 @@ class GetLinksCountRequest
     public ?string $domain = null;
 
     /**
-     * Deprecated. Use `tagIds` instead. The tag ID to filter the links by.
+     * Deprecated: Use `tagIds` instead. The tag ID to filter the links by.
      *
      * @var ?string $tagId
      */
