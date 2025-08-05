@@ -110,6 +110,14 @@ class SaleEventClick
     public string $ip;
 
     /**
+     *
+     * @var ?string $trigger
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trigger')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $trigger = null;
+
+    /**
      * @param  string  $id
      * @param  string  $timestamp
      * @param  string  $url
@@ -124,9 +132,10 @@ class SaleEventClick
      * @param  string  $refererUrl
      * @param  bool  $qr
      * @param  string  $ip
+     * @param  ?string  $trigger
      * @phpstan-pure
      */
-    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, bool $qr, string $ip)
+    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, bool $qr, string $ip, ?string $trigger = null)
     {
         $this->id = $id;
         $this->timestamp = $timestamp;
@@ -142,5 +151,6 @@ class SaleEventClick
         $this->refererUrl = $refererUrl;
         $this->qr = $qr;
         $this->ip = $ip;
+        $this->trigger = $trigger;
     }
 }

@@ -35,6 +35,7 @@ $request = new Operations\RetrieveAnalyticsRequest(
     os: 'Windows',
     referer: 'google.com',
     refererUrl: 'https://dub.co/blog',
+    query: 'metadata[\'key\']:\'value\'',
 );
 
 $response = $sdk->analytics->retrieve(
