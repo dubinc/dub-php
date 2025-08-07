@@ -14,6 +14,7 @@ Retrieve a workspace for the authenticated user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getWorkspace" method="get" path="/workspaces/{idOrSlug}" -->
 ```php
 declare(strict_types=1);
 
@@ -69,6 +70,7 @@ Update a workspace by ID or slug.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateWorkspace" method="patch" path="/workspaces/{idOrSlug}" -->
 ```php
 declare(strict_types=1);
 

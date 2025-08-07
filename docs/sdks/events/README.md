@@ -13,6 +13,7 @@ Retrieve a paginated list of events for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="listEvents" method="get" path="/events" -->
 ```php
 declare(strict_types=1);
 
