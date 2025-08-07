@@ -16,6 +16,7 @@ Create a tag for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createTag" method="post" path="/tags" -->
 ```php
 declare(strict_types=1);
 
@@ -71,6 +72,7 @@ Retrieve a list of tags for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getTags" method="get" path="/tags" -->
 ```php
 declare(strict_types=1);
 
@@ -129,6 +131,7 @@ Update a tag in the workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateTag" method="patch" path="/tags/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -187,6 +190,7 @@ Delete a tag from the workspace. All existing links will still work, but they wi
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="deleteTag" method="delete" path="/tags/{id}" -->
 ```php
 declare(strict_types=1);
 

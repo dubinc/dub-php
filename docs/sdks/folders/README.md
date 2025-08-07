@@ -16,6 +16,7 @@ Create a folder for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createFolder" method="post" path="/folders" -->
 ```php
 declare(strict_types=1);
 
@@ -71,6 +72,7 @@ Retrieve a list of folders for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="listFolders" method="get" path="/folders" -->
 ```php
 declare(strict_types=1);
 
@@ -130,6 +132,7 @@ Update a folder in the workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateFolder" method="patch" path="/folders/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -188,6 +191,7 @@ Delete a folder from the workspace. All existing links will still work, but they
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="deleteFolder" method="delete" path="/folders/{id}" -->
 ```php
 declare(strict_types=1);
 

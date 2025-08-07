@@ -17,6 +17,7 @@ Retrieve a list of customers for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getCustomers" method="get" path="/customers" -->
 ```php
 declare(strict_types=1);
 
@@ -77,6 +78,7 @@ if ($response->responseBodies !== null) {
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createCustomer" method="post" path="/customers" -->
 ```php
 declare(strict_types=1);
 
@@ -132,6 +134,7 @@ Retrieve a customer by ID for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getCustomer" method="get" path="/customers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -188,6 +191,7 @@ Update a customer for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateCustomer" method="patch" path="/customers/{id}" -->
 ```php
 declare(strict_types=1);
 
@@ -246,6 +250,7 @@ Delete a customer from a workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="deleteCustomer" method="delete" path="/customers/{id}" -->
 ```php
 declare(strict_types=1);
 

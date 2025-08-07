@@ -14,6 +14,7 @@ Retrieve a list of commissions for a program.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="listCommissions" method="get" path="/commissions" -->
 ```php
 declare(strict_types=1);
 
@@ -72,6 +73,7 @@ Update an existing commission amount. This is useful for handling refunds (parti
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateCommission" method="patch" path="/commissions/{id}" -->
 ```php
 declare(strict_types=1);
 

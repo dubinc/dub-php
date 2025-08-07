@@ -22,6 +22,7 @@ Create a link for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createLink" method="post" path="/links" -->
 ```php
 declare(strict_types=1);
 
@@ -94,6 +95,7 @@ Retrieve a paginated list of links for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getLinks" method="get" path="/links" -->
 ```php
 declare(strict_types=1);
 
@@ -155,6 +157,7 @@ Retrieve the number of links for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getLinksCount" method="get" path="/links/count" -->
 ```php
 declare(strict_types=1);
 
@@ -211,6 +214,7 @@ Retrieve the info for a link.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="getLinkInfo" method="get" path="/links/info" -->
 ```php
 declare(strict_types=1);
 
@@ -271,6 +275,7 @@ Update a link for the authenticated workspace. If there's no change, returns it 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="updateLink" method="patch" path="/links/{linkId}" -->
 ```php
 declare(strict_types=1);
 
@@ -346,6 +351,7 @@ Delete a link for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="deleteLink" method="delete" path="/links/{linkId}" -->
 ```php
 declare(strict_types=1);
 
@@ -401,6 +407,7 @@ Bulk create up to 100 links for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="bulkCreateLinks" method="post" path="/links/bulk" -->
 ```php
 declare(strict_types=1);
 
@@ -492,6 +499,7 @@ Bulk update up to 100 links with the same data for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="bulkUpdateLinks" method="patch" path="/links/bulk" -->
 ```php
 declare(strict_types=1);
 
@@ -565,6 +573,7 @@ Bulk delete up to 100 links for the authenticated workspace.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="bulkDeleteLinks" method="delete" path="/links/bulk" -->
 ```php
 declare(strict_types=1);
 
@@ -623,6 +632,7 @@ Upsert a link for the authenticated workspace by its URL. If a link with the sam
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="upsertLink" method="put" path="/links/upsert" -->
 ```php
 declare(strict_types=1);
 

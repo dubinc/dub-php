@@ -37,15 +37,35 @@ class RegisteredDomain
     public string $expiresAt;
 
     /**
+     * The fee to renew the domain.
+     *
+     * @var float $renewalFee
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('renewalFee')]
+    public float $renewalFee;
+
+    /**
+     * The date the domain auto-renew is disabled.
+     *
+     * @var ?string $autoRenewalDisabledAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('autoRenewalDisabledAt')]
+    public ?string $autoRenewalDisabledAt;
+
+    /**
      * @param  string  $id
      * @param  string  $createdAt
      * @param  string  $expiresAt
+     * @param  float  $renewalFee
+     * @param  ?string  $autoRenewalDisabledAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $createdAt, string $expiresAt)
+    public function __construct(string $id, string $createdAt, string $expiresAt, float $renewalFee, ?string $autoRenewalDisabledAt = null)
     {
         $this->id = $id;
         $this->createdAt = $createdAt;
         $this->expiresAt = $expiresAt;
+        $this->renewalFee = $renewalFee;
+        $this->autoRenewalDisabledAt = $autoRenewalDisabledAt;
     }
 }

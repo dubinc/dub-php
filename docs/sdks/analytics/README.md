@@ -13,6 +13,7 @@ Retrieve analytics for a link, a domain, or the authenticated workspace. The res
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="retrieveAnalytics" method="get" path="/analytics" -->
 ```php
 declare(strict_types=1);
 

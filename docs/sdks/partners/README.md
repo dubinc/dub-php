@@ -18,6 +18,7 @@ Create a partner for a program. If partner exists, automatically enrolls them.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createPartner" method="post" path="/partners" -->
 ```php
 declare(strict_types=1);
 
@@ -92,6 +93,7 @@ List all partners for a partner program.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="listPartners" method="get" path="/partners" -->
 ```php
 declare(strict_types=1);
 
@@ -155,6 +157,7 @@ Create a link for a partner that is enrolled in your program.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="createPartnerLink" method="post" path="/partners/links" -->
 ```php
 declare(strict_types=1);
 
@@ -228,6 +231,7 @@ Retrieve a partner's links by their partner ID or tenant ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="retrieveLinks" method="get" path="/partners/links" -->
 ```php
 declare(strict_types=1);
 
@@ -284,6 +288,7 @@ Upsert a link for a partner that is enrolled in your program. If a link with the
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="upsertPartnerLink" method="put" path="/partners/links/upsert" -->
 ```php
 declare(strict_types=1);
 
@@ -357,6 +362,7 @@ Retrieve analytics for a partner within a program. The response type vary based 
 
 ### Example Usage
 
+<!-- UsageSnippet language="php" operationID="retrievePartnerAnalytics" method="get" path="/partners/analytics" -->
 ```php
 declare(strict_types=1);
 
