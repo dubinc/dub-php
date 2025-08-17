@@ -10,6 +10,7 @@ The field to sort the partners by. The default is `saleAmount`.
 | `CreatedAt`   | createdAt     |
 | `Clicks`      | clicks        |
 | `Leads`       | leads         |
+| `Conversions` | conversions   |
 | `Sales`       | sales         |
 | `SaleAmount`  | saleAmount    |
 | `Commissions` | commissions   |

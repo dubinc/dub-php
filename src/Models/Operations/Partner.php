@@ -29,6 +29,15 @@ class Partner
     public ?string $tenantId = null;
 
     /**
+     * The group ID to add the partner to. If not provided, the partner will be added to the default group.
+     *
+     * @var ?string $groupId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('groupId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $groupId = null;
+
+    /**
      * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
      *
      * @var ?CreateReferralsEmbedTokenLinkProps $linkProps
@@ -66,14 +75,13 @@ class Partner
     public ?string $image = null;
 
     /**
-     * The partner's country of residence. Must be passed as a 2-letter ISO 3166-1 country code. Learn more: https://d.to/geo
+     * The partner's country of residence. Must be passed as a 2-letter ISO 3166-1 country code. See https://d.to/geo for more information.
      *
-     * @var ?CreateReferralsEmbedTokenCountry $country
+     * @var ?string $country
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreateReferralsEmbedTokenCountry|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?CreateReferralsEmbedTokenCountry $country = null;
+    public ?string $country = null;
 
     /**
      * A brief description of the partner and their background. Max 5,000 characters.
@@ -87,18 +95,20 @@ class Partner
     /**
      * @param  string  $email
      * @param  ?string  $tenantId
+     * @param  ?string  $groupId
      * @param  ?CreateReferralsEmbedTokenLinkProps  $linkProps
      * @param  ?string  $name
      * @param  ?string  $username
      * @param  ?string  $image
-     * @param  ?CreateReferralsEmbedTokenCountry  $country
+     * @param  ?string  $country
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $email, ?string $tenantId = null, ?CreateReferralsEmbedTokenLinkProps $linkProps = null, ?string $name = null, ?string $username = null, ?string $image = null, ?CreateReferralsEmbedTokenCountry $country = null, ?string $description = null)
+    public function __construct(string $email, ?string $tenantId = null, ?string $groupId = null, ?CreateReferralsEmbedTokenLinkProps $linkProps = null, ?string $name = null, ?string $username = null, ?string $image = null, ?string $country = null, ?string $description = null)
     {
         $this->email = $email;
         $this->tenantId = $tenantId;
+        $this->groupId = $groupId;
         $this->linkProps = $linkProps;
         $this->name = $name;
         $this->username = $username;

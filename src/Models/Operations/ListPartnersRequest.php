@@ -36,7 +36,7 @@ class ListPartnersRequest
     public ?string $tenantId = null;
 
     /**
-     * Whether to include stats fields on the partner (`clicks`, `leads`, `sales`, `saleAmount`, `commissions`, `netRevenue`). If false, those fields will be returned as 0.
+     * Whether to include stats fields on the partner (`clicks`, `leads`, `conversions`, `sales`, `saleAmount`, `commissions`, `netRevenue`). If false, those fields will be returned as 0.
      *
      * @var ?bool $includeExpandedFields
      */

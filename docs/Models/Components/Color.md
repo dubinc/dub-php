@@ -12,5 +12,5 @@ The color of the tag.
 | `Green`  | green    |
 | `Blue`   | blue     |
 | `Purple` | purple   |
-| `Pink`   | pink     |
 | `Brown`  | brown    |
+| `Pink`   | pink     |
