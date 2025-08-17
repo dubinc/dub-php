@@ -52,6 +52,14 @@ class RetrievePartnerAnalyticsRequest
     public ?string $end = null;
 
     /**
+     * Search the events by a custom metadata value. Only available for lead and sale events.
+     *
+     * @var ?string $query
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=query')]
+    public ?string $query = null;
+
+    /**
      * The IANA time zone code for aligning timeseries granularity (e.g. America/New_York). Defaults to UTC.
      *
      * @var ?string $timezone
@@ -74,16 +82,18 @@ class RetrievePartnerAnalyticsRequest
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
+     * @param  ?string  $query
      * @param  ?RetrievePartnerAnalyticsQueryParamGroupBy  $groupBy
      * @phpstan-pure
      */
-    public function __construct(?string $partnerId = null, ?string $tenantId = null, ?RetrievePartnerAnalyticsQueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $timezone = 'UTC', ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = RetrievePartnerAnalyticsQueryParamGroupBy::Count)
+    public function __construct(?string $partnerId = null, ?string $tenantId = null, ?RetrievePartnerAnalyticsQueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $query = null, ?string $timezone = 'UTC', ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = RetrievePartnerAnalyticsQueryParamGroupBy::Count)
     {
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->interval = $interval;
         $this->start = $start;
         $this->end = $end;
+        $this->query = $query;
         $this->timezone = $timezone;
         $this->groupBy = $groupBy;
     }

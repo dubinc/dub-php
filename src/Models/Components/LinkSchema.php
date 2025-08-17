@@ -206,13 +206,13 @@ class LinkSchema
     public ?string $android;
 
     /**
-     * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. Learn more: https://d.to/geo
+     * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. See https://d.to/geo for more information.
      *
-     * @var ?Geo $geo
+     * @var ?array<string, string> $geo
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('geo')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Geo|null')]
-    public ?Geo $geo;
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string>|null')]
+    public ?array $geo;
 
     /**
      * The tags assigned to the short link.
@@ -461,7 +461,7 @@ class LinkSchema
      * @param  ?bool  $doIndex
      * @param  ?string  $ios
      * @param  ?string  $android
-     * @param  ?Geo  $geo
+     * @param  ?array<string, string>  $geo
      * @param  ?bool  $publicStats
      * @param  ?array<TagSchema>  $tags
      * @param  ?string  $folderId
@@ -484,7 +484,7 @@ class LinkSchema
      * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Geo $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;

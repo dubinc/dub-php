@@ -101,12 +101,12 @@ class ListEventsRequest
     public ?string $end = null;
 
     /**
-     * The country to retrieve analytics for. Must be passed as a 2-letter ISO 3166-1 country code. Learn more: https://d.to/geo
+     * The country to retrieve analytics for. Must be passed as a 2-letter ISO 3166-1 country code. See https://d.to/geo for more information.
      *
-     * @var ?Components\CountryCode $country
+     * @var ?string $country
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=country')]
-    public ?Components\CountryCode $country = null;
+    public ?string $country = null;
 
     /**
      * The city to retrieve analytics for.
@@ -352,7 +352,7 @@ class ListEventsRequest
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
-     * @param  ?Components\CountryCode  $country
+     * @param  ?string  $country
      * @param  ?string  $city
      * @param  ?string  $region
      * @param  ?Components\ContinentCode  $continent
@@ -382,7 +382,7 @@ class ListEventsRequest
      * @param  ?string  $utmContent
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?Components\CountryCode $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
     {
         $this->domain = $domain;
         $this->key = $key;

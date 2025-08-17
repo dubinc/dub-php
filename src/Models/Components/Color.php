@@ -17,6 +17,6 @@ enum Color: string
     case Green = 'green';
     case Blue = 'blue';
     case Purple = 'purple';
-    case Pink = 'pink';
     case Brown = 'brown';
+    case Pink = 'pink';
 }

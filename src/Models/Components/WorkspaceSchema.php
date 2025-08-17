@@ -149,6 +149,14 @@ class WorkspaceSchema
     public float $foldersLimit;
 
     /**
+     * The groups limit of the workspace.
+     *
+     * @var float $groupsLimit
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('groupsLimit')]
+    public float $groupsLimit;
+
+    /**
      * The users limit of the workspace.
      *
      * @var float $usersLimit
@@ -187,14 +195,6 @@ class WorkspaceSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('dotLinkClaimed')]
     public bool $dotLinkClaimed;
-
-    /**
-     * Whether the workspace has Dub Partners enabled.
-     *
-     * @var bool $partnersEnabled
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partnersEnabled')]
-    public bool $partnersEnabled;
 
     /**
      * The date and time when the workspace was created.
@@ -309,12 +309,12 @@ class WorkspaceSchema
      * @param  float  $tagsLimit
      * @param  float  $foldersUsage
      * @param  float  $foldersLimit
+     * @param  float  $groupsLimit
      * @param  float  $usersLimit
      * @param  float  $aiUsage
      * @param  float  $aiLimit
      * @param  bool  $conversionEnabled
      * @param  bool  $dotLinkClaimed
-     * @param  bool  $partnersEnabled
      * @param  string  $createdAt
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
@@ -328,7 +328,7 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, bool $partnersEnabled, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -347,12 +347,12 @@ class WorkspaceSchema
         $this->tagsLimit = $tagsLimit;
         $this->foldersUsage = $foldersUsage;
         $this->foldersLimit = $foldersLimit;
+        $this->groupsLimit = $groupsLimit;
         $this->usersLimit = $usersLimit;
         $this->aiUsage = $aiUsage;
         $this->aiLimit = $aiLimit;
         $this->conversionEnabled = $conversionEnabled;
         $this->dotLinkClaimed = $dotLinkClaimed;
-        $this->partnersEnabled = $partnersEnabled;
         $this->createdAt = $createdAt;
         $this->users = $users;
         $this->domains = $domains;

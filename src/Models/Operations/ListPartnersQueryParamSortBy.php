@@ -15,6 +15,7 @@ enum ListPartnersQueryParamSortBy: string
     case CreatedAt = 'createdAt';
     case Clicks = 'clicks';
     case Leads = 'leads';
+    case Conversions = 'conversions';
     case Sales = 'sales';
     case SaleAmount = 'saleAmount';
     case Commissions = 'commissions';

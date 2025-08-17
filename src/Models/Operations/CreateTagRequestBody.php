@@ -21,7 +21,7 @@ class CreateTagRequestBody
     public ?string $name = null;
 
     /**
-     * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, pink, brown.
+     * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown.
      *
      * @var ?Color $color
      */

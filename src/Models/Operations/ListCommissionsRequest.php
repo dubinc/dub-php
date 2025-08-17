@@ -43,6 +43,14 @@ class ListCommissionsRequest
     public ?string $partnerId = null;
 
     /**
+     * Filter the list of commissions by the associated partner group.
+     *
+     * @var ?string $groupId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
+    public ?string $groupId = null;
+
+    /**
      * Filter the list of commissions by the associated invoice. Since invoiceId is unique on a per-program basis, this will only return one commission per invoice.
      *
      * @var ?string $invoiceId
@@ -119,6 +127,7 @@ class ListCommissionsRequest
      * @param  ?string  $customerId
      * @param  ?string  $payoutId
      * @param  ?string  $partnerId
+     * @param  ?string  $groupId
      * @param  ?string  $invoiceId
      * @param  ?QueryParamStatus  $status
      * @param  ?ListCommissionsQueryParamSortBy  $sortBy
@@ -130,12 +139,13 @@ class ListCommissionsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
         $this->payoutId = $payoutId;
         $this->partnerId = $partnerId;
+        $this->groupId = $groupId;
         $this->invoiceId = $invoiceId;
         $this->status = $status;
         $this->start = $start;

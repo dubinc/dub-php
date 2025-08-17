@@ -379,6 +379,7 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\RetrievePartnerAnalyticsRequest(
     timezone: 'America/New_York',
+    query: 'metadata[\'key\']:\'value\'',
 );
 
 $response = $sdk->partners->analytics(

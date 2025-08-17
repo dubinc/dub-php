@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-use Dub\Models\Components;
+
 class UpdateLinkRequestBody
 {
     /**
@@ -248,14 +248,14 @@ class UpdateLinkRequestBody
     public ?string $android = null;
 
     /**
-     * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`.
+     * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. See https://d.to/geo for more information.
      *
-     * @var ?Components\LinkGeoTargeting $geo
+     * @var ?array<string, string> $geo
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('geo')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkGeoTargeting|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, string>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Components\LinkGeoTargeting $geo = null;
+    public ?array $geo = null;
 
     /**
      * The UTM source of the short link. If set, this will populate or override the UTM source in the destination URL.
@@ -386,7 +386,7 @@ class UpdateLinkRequestBody
      * @param  ?string  $video
      * @param  ?string  $ios
      * @param  ?string  $android
-     * @param  ?Components\LinkGeoTargeting  $geo
+     * @param  ?array<string, string>  $geo
      * @param  ?string  $utmSource
      * @param  ?string  $utmMedium
      * @param  ?string  $utmCampaign
@@ -400,7 +400,7 @@ class UpdateLinkRequestBody
      * @param  ?string  $tagId
      * @phpstan-pure
      */
-    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?Components\LinkGeoTargeting $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null)
+    public function __construct(?string $url = null, ?string $domain = null, ?string $key = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null)
     {
         $this->url = $url;
         $this->domain = $domain;
