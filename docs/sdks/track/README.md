@@ -94,7 +94,6 @@ $request = new Operations\TrackSaleRequestBody(
     customerExternalId: '<id>',
     amount: 594903,
     eventName: 'Invoice paid',
-    paymentProcessor: Operations\PaymentProcessor::Polar,
     leadEventName: 'Cloned template 1481267',
 );
 

@@ -22,11 +22,12 @@ class Sale
     /**
      * The payment processor via which the sale was made.
      *
-     * @var PaymentProcessor $paymentProcessor
+     * @var ?PaymentProcessor $paymentProcessor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PaymentProcessor')]
-    public PaymentProcessor $paymentProcessor;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PaymentProcessor|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PaymentProcessor $paymentProcessor = null;
 
     /**
      * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
@@ -39,11 +40,11 @@ class Sale
 
     /**
      * @param  int  $amount
-     * @param  PaymentProcessor  $paymentProcessor
+     * @param  ?PaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(int $amount, PaymentProcessor $paymentProcessor, ?string $invoiceId = null)
+    public function __construct(int $amount, ?PaymentProcessor $paymentProcessor = PaymentProcessor::Custom, ?string $invoiceId = null)
     {
         $this->amount = $amount;
         $this->paymentProcessor = $paymentProcessor;
