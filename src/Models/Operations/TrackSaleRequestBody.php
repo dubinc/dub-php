@@ -28,15 +28,6 @@ class TrackSaleRequestBody
     public int $amount;
 
     /**
-     * The payment processor via which the sale was made.
-     *
-     * @var PaymentProcessor $paymentProcessor
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\PaymentProcessor')]
-    public PaymentProcessor $paymentProcessor;
-
-    /**
      * Additional metadata to be stored with the sale event. Max 10,000 characters when stringified.
      *
      * @var ?array<string, mixed> $metadata
@@ -65,6 +56,16 @@ class TrackSaleRequestBody
     public ?string $eventName = null;
 
     /**
+     * The payment processor via which the sale was made.
+     *
+     * @var ?PaymentProcessor $paymentProcessor
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\PaymentProcessor|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?PaymentProcessor $paymentProcessor = null;
+
+    /**
      * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
      *
      * @var ?string $invoiceId
@@ -85,22 +86,22 @@ class TrackSaleRequestBody
     /**
      * @param  string  $customerExternalId
      * @param  int  $amount
-     * @param  PaymentProcessor  $paymentProcessor
      * @param  ?string  $currency
      * @param  ?string  $eventName
+     * @param  ?PaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
      * @param  ?string  $leadEventName
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $customerExternalId, int $amount, PaymentProcessor $paymentProcessor, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?string $invoiceId = null, ?string $leadEventName = null)
+    public function __construct(string $customerExternalId, int $amount, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?PaymentProcessor $paymentProcessor = PaymentProcessor::Custom, ?string $invoiceId = null, ?string $leadEventName = null)
     {
         $this->customerExternalId = $customerExternalId;
         $this->amount = $amount;
-        $this->paymentProcessor = $paymentProcessor;
         $this->metadata = $metadata;
         $this->currency = $currency;
         $this->eventName = $eventName;
+        $this->paymentProcessor = $paymentProcessor;
         $this->invoiceId = $invoiceId;
         $this->leadEventName = $leadEventName;
     }
