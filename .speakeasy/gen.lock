@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: b064e9938ff571586b1d703bf639a40f
+  docChecksum: f2d78471adf5b41f29967a9b4fe89ba5
   docVersion: 0.0.1
-  speakeasyVersion: 1.606.3
-  generationVersion: 2.687.1
-  releaseVersion: 0.13.1
-  configChecksum: 847c722e4e62211abcc6fc7329259cb2
+  speakeasyVersion: 1.606.8
+  generationVersion: 2.687.13
+  releaseVersion: 0.13.2
+  configChecksum: dc8ce0c4080b3bd6e2ce4544f12d237b
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -2069,4 +2069,3 @@ examples:
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `dub->workspaces->update()`: \n  *  `requestBody->allowedHostnames` **Removed** **Breaking** :warning:\n* `dub->events->list()`:  `response.[]->[sale]->sale->paymentProcessor` **Changed**\n* `dub->track->sale()`: \n  *  `request->paymentProcessor` **Changed**\n"
