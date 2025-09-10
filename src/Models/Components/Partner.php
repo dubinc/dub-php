@@ -28,6 +28,48 @@ class Partner
     public string $name;
 
     /**
+     *
+     * @var float $totalClicks
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalClicks')]
+    public float $totalClicks;
+
+    /**
+     *
+     * @var float $totalLeads
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalLeads')]
+    public float $totalLeads;
+
+    /**
+     *
+     * @var float $totalConversions
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalConversions')]
+    public float $totalConversions;
+
+    /**
+     *
+     * @var float $totalSales
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalSales')]
+    public float $totalSales;
+
+    /**
+     *
+     * @var float $totalSaleAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalSaleAmount')]
+    public float $totalSaleAmount;
+
+    /**
+     *
+     * @var float $totalCommissions
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('totalCommissions')]
+    public float $totalCommissions;
+
+    /**
      * The partner's email address. Should be a unique value across Dub.
      *
      * @var ?string $email
@@ -62,16 +104,28 @@ class Partner
     /**
      * @param  string  $id
      * @param  string  $name
+     * @param  float  $totalClicks
+     * @param  float  $totalLeads
+     * @param  float  $totalConversions
+     * @param  float  $totalSales
+     * @param  float  $totalSaleAmount
+     * @param  float  $totalCommissions
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $country
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null)
+    public function __construct(string $id, string $name, float $totalClicks, float $totalLeads, float $totalConversions, float $totalSales, float $totalSaleAmount, float $totalCommissions, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->totalClicks = $totalClicks;
+        $this->totalLeads = $totalLeads;
+        $this->totalConversions = $totalConversions;
+        $this->totalSales = $totalSales;
+        $this->totalSaleAmount = $totalSaleAmount;
+        $this->totalCommissions = $totalCommissions;
         $this->email = $email;
         $this->image = $image;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
