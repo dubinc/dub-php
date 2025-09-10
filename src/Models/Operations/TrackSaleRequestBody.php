@@ -38,6 +38,15 @@ class TrackSaleRequestBody
     public ?array $metadata = null;
 
     /**
+     * [For sale tracking without a pre-existing lead event]: The unique ID of the click that the sale conversion event is attributed to. You can read this value from `dub_id` cookie.
+     *
+     * @var ?string $clickId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('clickId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $clickId = null;
+
+    /**
      * The currency of the sale. Accepts ISO 4217 currency codes. Sales will be automatically converted and stored as USD at the latest exchange rates. Learn more: https://d.to/currency
      *
      * @var ?string $currency
@@ -75,7 +84,7 @@ class TrackSaleRequestBody
     public ?string $invoiceId = null;
 
     /**
-     * The name of the lead event that occurred before the sale (case-sensitive). This is used to associate the sale event with a particular lead event (instead of the latest lead event for a link-customer combination, which is the default behavior).
+     * The name of the lead event that occurred before the sale (case-sensitive). This is used to associate the sale event with a particular lead event (instead of the latest lead event for a link-customer combination, which is the default behavior). For sale tracking without a pre-existing lead event, this field can also be used to specify the lead event name.
      *
      * @var ?string $leadEventName
      */
@@ -84,25 +93,60 @@ class TrackSaleRequestBody
     public ?string $leadEventName = null;
 
     /**
+     * [For sale tracking without a pre-existing lead event]: The name of the customer. If not passed, a random name will be generated (e.g. “Big Red Caribou”).
+     *
+     * @var ?string $customerName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customerName = null;
+
+    /**
+     * [For sale tracking without a pre-existing lead event]: The email address of the customer.
+     *
+     * @var ?string $customerEmail
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerEmail')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customerEmail = null;
+
+    /**
+     * [For sale tracking without a pre-existing lead event]: The avatar URL of the customer.
+     *
+     * @var ?string $customerAvatar
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customerAvatar')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customerAvatar = null;
+
+    /**
      * @param  string  $customerExternalId
      * @param  int  $amount
      * @param  ?string  $currency
      * @param  ?string  $eventName
      * @param  ?PaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
-     * @param  ?string  $leadEventName
      * @param  ?array<string, mixed>  $metadata
+     * @param  ?string  $leadEventName
+     * @param  ?string  $clickId
+     * @param  ?string  $customerName
+     * @param  ?string  $customerEmail
+     * @param  ?string  $customerAvatar
      * @phpstan-pure
      */
-    public function __construct(string $customerExternalId, int $amount, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?PaymentProcessor $paymentProcessor = PaymentProcessor::Custom, ?string $invoiceId = null, ?string $leadEventName = null)
+    public function __construct(string $customerExternalId, int $amount, ?array $metadata = null, ?string $clickId = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?PaymentProcessor $paymentProcessor = PaymentProcessor::Custom, ?string $invoiceId = null, ?string $leadEventName = null, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->customerExternalId = $customerExternalId;
         $this->amount = $amount;
         $this->metadata = $metadata;
+        $this->clickId = $clickId;
         $this->currency = $currency;
         $this->eventName = $eventName;
         $this->paymentProcessor = $paymentProcessor;
         $this->invoiceId = $invoiceId;
         $this->leadEventName = $leadEventName;
+        $this->customerName = $customerName;
+        $this->customerEmail = $customerEmail;
+        $this->customerAvatar = $customerAvatar;
     }
 }
