@@ -29,13 +29,23 @@ class TrackLeadResponseBody
     public Customer $customer;
 
     /**
+     *
+     * @var ?TrackLeadLink $link
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackLeadLink|null')]
+    public ?TrackLeadLink $link;
+
+    /**
      * @param  Click  $click
      * @param  Customer  $customer
+     * @param  ?TrackLeadLink  $link
      * @phpstan-pure
      */
-    public function __construct(Click $click, Customer $customer)
+    public function __construct(Click $click, Customer $customer, ?TrackLeadLink $link = null)
     {
         $this->click = $click;
         $this->customer = $customer;
+        $this->link = $link;
     }
 }

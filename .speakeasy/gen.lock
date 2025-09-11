@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 54c12f37004dd851733d9c6060b4addb
+  docChecksum: ca039d761420ae6bf30481214b90948f
   docVersion: 0.0.1
-  speakeasyVersion: 1.615.0
-  generationVersion: 2.698.0
-  releaseVersion: 0.13.2
-  configChecksum: dc8ce0c4080b3bd6e2ce4544f12d237b
+  speakeasyVersion: 1.615.2
+  generationVersion: 2.698.4
+  releaseVersion: 0.13.3
+  configChecksum: 45b57c30a64d7783345d8ebea2383886
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -18,7 +18,7 @@ features:
     errors: 0.3.0
     examples: 2.81.6
     flattening: 2.81.1
-    globalSecurity: 2.81.8
+    globalSecurity: 2.81.9
     globalSecurityFlattening: 0.1.2
     globalServerURLs: 2.82.2
     ignores: 2.81.1
@@ -342,6 +342,7 @@ generatedFiles:
   - docs/Models/Operations/TagNames.md
   - docs/Models/Operations/TestVariants.md
   - docs/Models/Operations/Three.md
+  - docs/Models/Operations/TrackLeadLink.md
   - docs/Models/Operations/TrackLeadRequestBody.md
   - docs/Models/Operations/TrackLeadResponse.md
   - docs/Models/Operations/TrackLeadResponseBody.md
@@ -735,6 +736,7 @@ generatedFiles:
   - src/Models/Operations/Status.php
   - src/Models/Operations/TestVariants.php
   - src/Models/Operations/Three.php
+  - src/Models/Operations/TrackLeadLink.php
   - src/Models/Operations/TrackLeadRequestBody.php
   - src/Models/Operations/TrackLeadResponse.php
   - src/Models/Operations/TrackLeadResponseBody.php
@@ -1487,7 +1489,7 @@ examples:
         application/json: {"clickId": "<id>", "eventName": "Sign up", "customerExternalId": "<id>", "customerName": null, "customerEmail": null, "customerAvatar": null, "mode": "async"}
       responses:
         "200":
-          application/json: {"click": {"id": "<id>"}, "customer": {"name": "<value>", "email": "Beaulah.Hamill78@gmail.com", "avatar": "https://picsum.photos/seed/4p2vQu6/2339/955", "externalId": "<id>"}}
+          application/json: {"click": {"id": "<id>"}, "link": {"id": "<id>", "domain": "caring-editor.biz", "key": "<key>", "shortLink": "https://spotless-airbus.name/", "url": "https://quarrelsome-incandescence.com/", "partnerId": "<id>", "programId": null, "tenantId": "<id>", "externalId": "<id>"}, "customer": {"name": "<value>", "email": "Beaulah.Hamill78@gmail.com", "avatar": "https://picsum.photos/seed/4p2vQu6/2339/955", "externalId": "<id>"}}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -2071,4 +2073,4 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Php SDK Changes Detected:
-  * `dub->track->sale()`:  `request` **Changed**
+  * `dub->track->lead()`:  `response.link` **Added**
