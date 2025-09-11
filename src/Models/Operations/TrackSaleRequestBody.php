@@ -38,7 +38,7 @@ class TrackSaleRequestBody
     public ?array $metadata = null;
 
     /**
-     * [For sale tracking without a pre-existing lead event]: The unique ID of the click that the sale conversion event is attributed to. You can read this value from `dub_id` cookie.
+     * [For direct sale tracking]: The unique ID of the click that the sale conversion event is attributed to. You can read this value from `dub_id` cookie.
      *
      * @var ?string $clickId
      */
@@ -84,7 +84,7 @@ class TrackSaleRequestBody
     public ?string $invoiceId = null;
 
     /**
-     * The name of the lead event that occurred before the sale (case-sensitive). This is used to associate the sale event with a particular lead event (instead of the latest lead event for a link-customer combination, which is the default behavior). For sale tracking without a pre-existing lead event, this field can also be used to specify the lead event name.
+     * The name of the lead event that occurred before the sale (case-sensitive). This is used to associate the sale event with a particular lead event (instead of the latest lead event for a link-customer combination, which is the default behavior). For direct sale tracking, this field can also be used to specify the lead event name.
      *
      * @var ?string $leadEventName
      */
@@ -93,7 +93,7 @@ class TrackSaleRequestBody
     public ?string $leadEventName = null;
 
     /**
-     * [For sale tracking without a pre-existing lead event]: The name of the customer. If not passed, a random name will be generated (e.g. “Big Red Caribou”).
+     * [For direct sale tracking]: The name of the customer. If not passed, a random name will be generated (e.g. “Big Red Caribou”).
      *
      * @var ?string $customerName
      */
@@ -102,7 +102,7 @@ class TrackSaleRequestBody
     public ?string $customerName = null;
 
     /**
-     * [For sale tracking without a pre-existing lead event]: The email address of the customer.
+     * [For direct sale tracking]: The email address of the customer.
      *
      * @var ?string $customerEmail
      */
@@ -111,7 +111,7 @@ class TrackSaleRequestBody
     public ?string $customerEmail = null;
 
     /**
-     * [For sale tracking without a pre-existing lead event]: The avatar URL of the customer.
+     * [For direct sale tracking]: The avatar URL of the customer.
      *
      * @var ?string $customerAvatar
      */
