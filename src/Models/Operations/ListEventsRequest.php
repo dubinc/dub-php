@@ -285,6 +285,14 @@ class ListEventsRequest
     public ?string $utmContent = null;
 
     /**
+     * The ref of the short link.
+     *
+     * @var ?string $ref
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=ref')]
+    public ?string $ref = null;
+
+    /**
      * The type of event to retrieve analytics for. Defaults to 'clicks'.
      *
      * @var ?QueryParamEvent $event
@@ -380,9 +388,10 @@ class ListEventsRequest
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
+     * @param  ?string  $ref
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -418,6 +427,7 @@ class ListEventsRequest
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
+        $this->ref = $ref;
         $this->event = $event;
         $this->timezone = $timezone;
         $this->page = $page;

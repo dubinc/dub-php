@@ -60,6 +60,14 @@ class PartnerEnrolledEventData
     public Status $status;
 
     /**
+     * If the partner profile type is a company, this is the partner's legal company name.
+     *
+     * @var ?string $companyName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('companyName')]
+    public ?string $companyName;
+
+    /**
      * The partner's email address. Should be a unique value across Dub.
      *
      * @var ?string $email
@@ -212,22 +220,6 @@ class PartnerEnrolledEventData
     public ?string $website = null;
 
     /**
-     *
-     * @var ?string $websiteTxtRecord
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('websiteTxtRecord')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $websiteTxtRecord = null;
-
-    /**
-     *
-     * @var ?string $websiteVerifiedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('websiteVerifiedAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $websiteVerifiedAt = null;
-
-    /**
      * The partner's YouTube channel username (e.g. `johndoe`).
      *
      * @var ?string $youtube
@@ -235,30 +227,6 @@ class PartnerEnrolledEventData
     #[\Speakeasy\Serializer\Annotation\SerializedName('youtube')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $youtube = null;
-
-    /**
-     *
-     * @var ?string $youtubeVerifiedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('youtubeVerifiedAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $youtubeVerifiedAt = null;
-
-    /**
-     *
-     * @var ?float $youtubeSubscriberCount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('youtubeSubscriberCount')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $youtubeSubscriberCount = null;
-
-    /**
-     *
-     * @var ?float $youtubeViewCount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('youtubeViewCount')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $youtubeViewCount = null;
 
     /**
      * The partner's Twitter username (e.g. `johndoe`).
@@ -270,14 +238,6 @@ class PartnerEnrolledEventData
     public ?string $twitter = null;
 
     /**
-     *
-     * @var ?string $twitterVerifiedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('twitterVerifiedAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $twitterVerifiedAt = null;
-
-    /**
      * The partner's LinkedIn username (e.g. `johndoe`).
      *
      * @var ?string $linkedin
@@ -285,14 +245,6 @@ class PartnerEnrolledEventData
     #[\Speakeasy\Serializer\Annotation\SerializedName('linkedin')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $linkedin = null;
-
-    /**
-     *
-     * @var ?string $linkedinVerifiedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('linkedinVerifiedAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $linkedinVerifiedAt = null;
 
     /**
      * The partner's Instagram username (e.g. `johndoe`).
@@ -304,14 +256,6 @@ class PartnerEnrolledEventData
     public ?string $instagram = null;
 
     /**
-     *
-     * @var ?string $instagramVerifiedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('instagramVerifiedAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $instagramVerifiedAt = null;
-
-    /**
      * The partner's TikTok username (e.g. `johndoe`).
      *
      * @var ?string $tiktok
@@ -319,14 +263,6 @@ class PartnerEnrolledEventData
     #[\Speakeasy\Serializer\Annotation\SerializedName('tiktok')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $tiktok = null;
-
-    /**
-     *
-     * @var ?string $tiktokVerifiedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tiktokVerifiedAt')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $tiktokVerifiedAt = null;
 
     /**
      * The total commissions paid to the partner for their referrals. Defaults to 0 if `includeExpandedFields` is false.
@@ -398,6 +334,7 @@ class PartnerEnrolledEventData
      * @param  string  $partnerId
      * @param  string  $createdAt
      * @param  Status  $status
+     * @param  ?string  $companyName
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $country
@@ -423,23 +360,14 @@ class PartnerEnrolledEventData
      * @param  ?string  $bannedAt
      * @param  ?BannedReason  $bannedReason
      * @param  ?string  $website
-     * @param  ?string  $websiteTxtRecord
-     * @param  ?string  $websiteVerifiedAt
      * @param  ?string  $youtube
-     * @param  ?string  $youtubeVerifiedAt
-     * @param  ?float  $youtubeSubscriberCount
-     * @param  ?float  $youtubeViewCount
      * @param  ?string  $twitter
-     * @param  ?string  $twitterVerifiedAt
      * @param  ?string  $linkedin
-     * @param  ?string  $linkedinVerifiedAt
      * @param  ?string  $instagram
-     * @param  ?string  $instagramVerifiedAt
      * @param  ?string  $tiktok
-     * @param  ?string  $tiktokVerifiedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?string $website = null, ?string $websiteTxtRecord = null, ?string $websiteVerifiedAt = null, ?string $youtube = null, ?string $youtubeVerifiedAt = null, ?float $youtubeSubscriberCount = null, ?float $youtubeViewCount = null, ?string $twitter = null, ?string $twitterVerifiedAt = null, ?string $linkedin = null, ?string $linkedinVerifiedAt = null, ?string $instagram = null, ?string $instagramVerifiedAt = null, ?string $tiktok = null, ?string $tiktokVerifiedAt = null, ?float $totalCommissions = 0, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -447,6 +375,7 @@ class PartnerEnrolledEventData
         $this->partnerId = $partnerId;
         $this->createdAt = $createdAt;
         $this->status = $status;
+        $this->companyName = $companyName;
         $this->email = $email;
         $this->image = $image;
         $this->country = $country;
@@ -465,20 +394,11 @@ class PartnerEnrolledEventData
         $this->bannedAt = $bannedAt;
         $this->bannedReason = $bannedReason;
         $this->website = $website;
-        $this->websiteTxtRecord = $websiteTxtRecord;
-        $this->websiteVerifiedAt = $websiteVerifiedAt;
         $this->youtube = $youtube;
-        $this->youtubeVerifiedAt = $youtubeVerifiedAt;
-        $this->youtubeSubscriberCount = $youtubeSubscriberCount;
-        $this->youtubeViewCount = $youtubeViewCount;
         $this->twitter = $twitter;
-        $this->twitterVerifiedAt = $twitterVerifiedAt;
         $this->linkedin = $linkedin;
-        $this->linkedinVerifiedAt = $linkedinVerifiedAt;
         $this->instagram = $instagram;
-        $this->instagramVerifiedAt = $instagramVerifiedAt;
         $this->tiktok = $tiktok;
-        $this->tiktokVerifiedAt = $tiktokVerifiedAt;
         $this->totalCommissions = $totalCommissions;
         $this->clicks = $clicks;
         $this->leads = $leads;

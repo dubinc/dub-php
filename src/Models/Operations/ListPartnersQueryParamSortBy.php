@@ -18,6 +18,6 @@ enum ListPartnersQueryParamSortBy: string
     case Conversions = 'conversions';
     case Sales = 'sales';
     case SaleAmount = 'saleAmount';
-    case Commissions = 'commissions';
+    case TotalCommissions = 'totalCommissions';
     case NetRevenue = 'netRevenue';
 }

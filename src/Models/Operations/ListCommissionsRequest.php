@@ -35,12 +35,20 @@ class ListCommissionsRequest
     public ?string $payoutId = null;
 
     /**
-     * Filter the list of commissions by the associated partner.
+     * Filter the list of commissions by the associated partner. When specified, takes precedence over `tenantId`.
      *
      * @var ?string $partnerId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerId')]
     public ?string $partnerId = null;
+
+    /**
+     * Filter the list of commissions by the associated partner's `tenantId` (their unique ID within your database).
+     *
+     * @var ?string $tenantId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
+    public ?string $tenantId = null;
 
     /**
      * Filter the list of commissions by the associated partner group.
@@ -127,6 +135,7 @@ class ListCommissionsRequest
      * @param  ?string  $customerId
      * @param  ?string  $payoutId
      * @param  ?string  $partnerId
+     * @param  ?string  $tenantId
      * @param  ?string  $groupId
      * @param  ?string  $invoiceId
      * @param  ?QueryParamStatus  $status
@@ -139,12 +148,13 @@ class ListCommissionsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
         $this->payoutId = $payoutId;
         $this->partnerId = $partnerId;
+        $this->tenantId = $tenantId;
         $this->groupId = $groupId;
         $this->invoiceId = $invoiceId;
         $this->status = $status;

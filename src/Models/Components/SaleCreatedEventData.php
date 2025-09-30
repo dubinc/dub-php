@@ -51,19 +51,41 @@ class SaleCreatedEventData
     public SaleCreatedEventSale $sale;
 
     /**
+     * $metadata
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $metadata;
+
+    /**
+     *
+     * @var ?SaleCreatedEventPartner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventPartner|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?SaleCreatedEventPartner $partner = null;
+
+    /**
      * @param  string  $eventName
      * @param  SaleCreatedEventCustomer  $customer
      * @param  SaleCreatedEventClick  $click
      * @param  SaleCreatedEventLink  $link
      * @param  SaleCreatedEventSale  $sale
+     * @param  ?array<string, mixed>  $metadata
+     * @param  ?SaleCreatedEventPartner  $partner
      * @phpstan-pure
      */
-    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, SaleCreatedEventSale $sale)
+    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, SaleCreatedEventSale $sale, ?array $metadata = null, ?SaleCreatedEventPartner $partner = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;
         $this->click = $click;
         $this->link = $link;
         $this->sale = $sale;
+        $this->metadata = $metadata;
+        $this->partner = $partner;
     }
 }

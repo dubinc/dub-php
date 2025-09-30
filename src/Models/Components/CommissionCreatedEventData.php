@@ -71,11 +71,11 @@ class CommissionCreatedEventData
 
     /**
      *
-     * @var Partner $partner
+     * @var CommissionCreatedEventPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Partner')]
-    public Partner $partner;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventPartner')]
+    public CommissionCreatedEventPartner $partner;
 
     /**
      *
@@ -127,7 +127,7 @@ class CommissionCreatedEventData
      * @param  float  $quantity
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  Partner  $partner
+     * @param  CommissionCreatedEventPartner  $partner
      * @param  ?CommissionCreatedEventType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
@@ -135,7 +135,7 @@ class CommissionCreatedEventData
      * @param  ?CommissionCreatedEventCustomer  $customer
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, CommissionCreatedEventStatus $status, float $quantity, string $createdAt, string $updatedAt, Partner $partner, ?CommissionCreatedEventType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $userId = null, ?CommissionCreatedEventCustomer $customer = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, CommissionCreatedEventStatus $status, float $quantity, string $createdAt, string $updatedAt, CommissionCreatedEventPartner $partner, ?CommissionCreatedEventType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $userId = null, ?CommissionCreatedEventCustomer $customer = null)
     {
         $this->id = $id;
         $this->amount = $amount;

@@ -47,17 +47,28 @@ class CreateCustomerRequestBody
     public ?string $avatar = null;
 
     /**
+     * The customer's Stripe customer ID. Useful for attribution recurring sale events to the partner who referred the customer.
+     *
+     * @var ?string $stripeCustomerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeCustomerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stripeCustomerId = null;
+
+    /**
      * @param  string  $externalId
      * @param  ?string  $email
      * @param  ?string  $name
      * @param  ?string  $avatar
+     * @param  ?string  $stripeCustomerId
      * @phpstan-pure
      */
-    public function __construct(string $externalId, ?string $email = null, ?string $name = null, ?string $avatar = null)
+    public function __construct(string $externalId, ?string $email = null, ?string $name = null, ?string $avatar = null, ?string $stripeCustomerId = null)
     {
         $this->externalId = $externalId;
         $this->email = $email;
         $this->name = $name;
         $this->avatar = $avatar;
+        $this->stripeCustomerId = $stripeCustomerId;
     }
 }
