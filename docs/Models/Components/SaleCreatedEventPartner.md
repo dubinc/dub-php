@@ -1,0 +1,19 @@
+# SaleCreatedEventPartner
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `id`                                                              | *string*                                                          | :heavy_check_mark:                                                | The partner's unique ID on Dub.                                   |
+| `name`                                                            | *string*                                                          | :heavy_check_mark:                                                | The partner's full legal name.                                    |
+| `email`                                                           | *string*                                                          | :heavy_check_mark:                                                | The partner's email address. Should be a unique value across Dub. |
+| `image`                                                           | *string*                                                          | :heavy_check_mark:                                                | The partner's avatar image.                                       |
+| `payoutsEnabledAt`                                                | *string*                                                          | :heavy_check_mark:                                                | The date when the partner enabled payouts.                        |
+| `country`                                                         | *string*                                                          | :heavy_check_mark:                                                | The partner's country (required for tax purposes).                |
+| `totalClicks`                                                     | *float*                                                           | :heavy_check_mark:                                                | N/A                                                               |
+| `totalLeads`                                                      | *float*                                                           | :heavy_check_mark:                                                | N/A                                                               |
+| `totalConversions`                                                | *float*                                                           | :heavy_check_mark:                                                | N/A                                                               |
+| `totalSales`                                                      | *float*                                                           | :heavy_check_mark:                                                | N/A                                                               |
+| `totalSaleAmount`                                                 | *float*                                                           | :heavy_check_mark:                                                | N/A                                                               |
+| `totalCommissions`                                                | *float*                                                           | :heavy_check_mark:                                                | N/A                                                               |

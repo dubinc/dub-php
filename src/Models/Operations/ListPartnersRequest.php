@@ -28,12 +28,28 @@ class ListPartnersRequest
     public ?string $country = null;
 
     /**
-     * A case-sensitive filter on the list based on the partner's `tenantId` field. The value must be a string. Takes precedence over `search`.
+     * Filter the partner list based on the partner's `email`. The value must be a string. Takes precedence over `search`.
+     *
+     * @var ?string $email
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=email')]
+    public ?string $email = null;
+
+    /**
+     * Filter the partner list based on the partner's `tenantId`. The value must be a string. Takes precedence over `email` and `search`.
      *
      * @var ?string $tenantId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
     public ?string $tenantId = null;
+
+    /**
+     * A search query to filter partners by ID, name, email, or link.
+     *
+     * @var ?string $search
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=search')]
+    public ?string $search = null;
 
     /**
      * Whether to include stats fields on the partner (`clicks`, `leads`, `conversions`, `sales`, `saleAmount`, `commissions`, `netRevenue`). If false, those fields will be returned as 0.
@@ -42,14 +58,6 @@ class ListPartnersRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeExpandedFields')]
     public ?bool $includeExpandedFields = null;
-
-    /**
-     * A search query to filter partners by name, email, or tenantId.
-     *
-     * @var ?string $search
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=search')]
-    public ?string $search = null;
 
     /**
      * The field to sort the partners by. The default is `saleAmount`.
@@ -88,20 +96,22 @@ class ListPartnersRequest
      * @param  ?string  $country
      * @param  ?ListPartnersQueryParamSortBy  $sortBy
      * @param  ?ListPartnersQueryParamSortOrder  $sortOrder
+     * @param  ?string  $email
      * @param  ?string  $tenantId
-     * @param  ?bool  $includeExpandedFields
      * @param  ?string  $search
+     * @param  ?bool  $includeExpandedFields
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $tenantId = null, ?bool $includeExpandedFields = null, ?string $search = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::SaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?bool $includeExpandedFields = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::SaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->status = $status;
         $this->country = $country;
+        $this->email = $email;
         $this->tenantId = $tenantId;
-        $this->includeExpandedFields = $includeExpandedFields;
         $this->search = $search;
+        $this->includeExpandedFields = $includeExpandedFields;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
         $this->page = $page;

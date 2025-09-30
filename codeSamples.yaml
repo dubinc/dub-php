@@ -176,7 +176,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listPartners"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    includeExpandedFields: false,\n    search: 'john',\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    email: 'panic@thedis.co',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    search: 'john',\n    includeExpandedFields: false,\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners"]["post"]
     update:
       "x-codeSamples":

@@ -43,17 +43,39 @@ class LeadCreatedEventData
     public LeadCreatedEventLink $link;
 
     /**
+     * $metadata
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $metadata;
+
+    /**
+     *
+     * @var ?Partner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Partner|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Partner $partner = null;
+
+    /**
      * @param  string  $eventName
      * @param  LeadCreatedEventCustomer  $customer
      * @param  LeadCreatedEventClick  $click
      * @param  LeadCreatedEventLink  $link
+     * @param  ?array<string, mixed>  $metadata
+     * @param  ?Partner  $partner
      * @phpstan-pure
      */
-    public function __construct(string $eventName, LeadCreatedEventCustomer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link)
+    public function __construct(string $eventName, LeadCreatedEventCustomer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link, ?array $metadata = null, ?Partner $partner = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;
         $this->click = $click;
         $this->link = $link;
+        $this->metadata = $metadata;
+        $this->partner = $partner;
     }
 }
