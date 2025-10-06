@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** CreatePartnerResponseBody - The created partner */
+/** CreatePartnerResponseBody - The created or updated partner */
 class CreatePartnerResponseBody
 {
     /**

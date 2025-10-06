@@ -17,6 +17,7 @@ enum ListPartnersQueryParamStatus: string
     case Rejected = 'rejected';
     case Invited = 'invited';
     case Declined = 'declined';
+    case Deactivated = 'deactivated';
     case Banned = 'banned';
     case Archived = 'archived';
 }
