@@ -45,9 +45,9 @@ class Partners
     }
 
     /**
-     * Create a partner
+     * Create or update a partner
      *
-     * Create a partner for a program. If partner exists, automatically enrolls them.
+     * Creates or updates a partner record (upsert behavior). If a partner with the same email already exists, their program enrollment will be updated with the provided tenantId. If no existing partner is found, a new partner will be created using the supplied information.
      *
      * @param  ?Operations\CreatePartnerRequestBody  $request
      * @return Operations\CreatePartnerResponse

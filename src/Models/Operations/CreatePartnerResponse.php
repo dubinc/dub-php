@@ -33,7 +33,7 @@ class CreatePartnerResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The created partner
+     * The created or updated partner
      *
      * @var ?CreatePartnerResponseBody $object
      */

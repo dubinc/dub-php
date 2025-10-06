@@ -283,6 +283,20 @@ class WorkspaceSchema
     public ?array $allowedHostnames;
 
     /**
+     *
+     * @var ?string $ssoEmailDomain
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ssoEmailDomain')]
+    public ?string $ssoEmailDomain;
+
+    /**
+     *
+     * @var ?string $ssoEnforcedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ssoEnforcedAt')]
+    public ?string $ssoEnforcedAt;
+
+    /**
      * The logo of the workspace.
      *
      * @var ?string $logo
@@ -325,10 +339,12 @@ class WorkspaceSchema
      * @param  ?array<string, bool>  $flags
      * @param  ?array<string, mixed>  $store
      * @param  ?array<string>  $allowedHostnames
+     * @param  ?string  $ssoEmailDomain
+     * @param  ?string  $ssoEnforcedAt
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $ssoEmailDomain = null, ?string $ssoEnforcedAt = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -363,6 +379,8 @@ class WorkspaceSchema
         $this->flags = $flags;
         $this->store = $store;
         $this->allowedHostnames = $allowedHostnames;
+        $this->ssoEmailDomain = $ssoEmailDomain;
+        $this->ssoEnforcedAt = $ssoEnforcedAt;
         $this->logo = $logo;
     }
 }
