@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 43797075fd9e0d4bb17d9938a972af9d
+  docChecksum: 2f49d01dd9fd4eaf80fa66447008d630
   docVersion: 0.0.1
-  speakeasyVersion: 1.635.1
-  generationVersion: 2.722.2
-  releaseVersion: 0.13.5
-  configChecksum: ccbbd25a25a4bfb256f275ac98e1c36e
+  speakeasyVersion: 1.636.3
+  generationVersion: 2.723.11
+  releaseVersion: 0.13.6
+  configChecksum: 94fa9774c77ac3bdc8d5b28afc2dd82f
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php
   published: true
@@ -406,7 +406,6 @@ generatedFiles:
   - docs/sdks/commissions/README.md
   - docs/sdks/customers/README.md
   - docs/sdks/domains/README.md
-  - docs/sdks/dub/README.md
   - docs/sdks/embedtokens/README.md
   - docs/sdks/events/README.md
   - docs/sdks/folders/README.md
@@ -1282,7 +1281,7 @@ examples:
     speakeasy-default-create-folder:
       responses:
         "201":
-          application/json: {"id": "<id>", "name": "<value>", "type": "mega", "accessLevel": null, "createdAt": "1737752987668", "updatedAt": "1747570295522"}
+          application/json: {"id": "<id>", "name": "<value>", "description": "wedge ew slight before volleyball throughout yum overspend", "type": "mega", "accessLevel": null, "createdAt": "1737752987668", "updatedAt": "1747570295522"}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1309,7 +1308,7 @@ examples:
           pageSize: 50
       responses:
         "200":
-          application/json: [{"id": "<id>", "name": "<value>", "type": "default", "accessLevel": null, "createdAt": "1739500925203", "updatedAt": "1747574885655"}, {"id": "<id>", "name": "<value>", "type": "default", "accessLevel": null, "createdAt": "1739500925203", "updatedAt": "1747574885655"}]
+          application/json: [{"id": "<id>", "name": "<value>", "description": "igloo stock lox pressure playfully", "type": "default", "accessLevel": null, "createdAt": "1739500925203", "updatedAt": "1747574885655"}, {"id": "<id>", "name": "<value>", "description": "like exactly blah unhealthy eggplant", "type": "default", "accessLevel": null, "createdAt": "1739500925203", "updatedAt": "1747574885655"}]
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1335,7 +1334,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "type": "default", "accessLevel": null, "createdAt": "1719092330224", "updatedAt": "1747578286192"}
+          application/json: {"id": "<id>", "name": "<value>", "description": "ouch slather muddy", "type": "default", "accessLevel": null, "createdAt": "1719092330224", "updatedAt": "1747578286192"}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1829,7 +1828,7 @@ examples:
           idOrSlug: "<value>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "business max", "stripeId": "<id>", "billingCycleStart": 8266.32, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "totalLinks": 1378.83, "usage": 2392.88, "usageLimit": 402.3, "linksUsage": 7273.44, "linksLimit": 9583.5, "payoutsUsage": 6544.94, "payoutsLimit": 8266.32, "payoutFee": 6544.94, "domainsLimit": 9444.18, "tagsLimit": 3440.64, "foldersUsage": 9717.42, "foldersLimit": 7249.67, "groupsLimit": 6544.94, "usersLimit": 5932.4, "aiUsage": 4075.34, "aiLimit": 4898.74, "conversionEnabled": false, "dotLinkClaimed": false, "createdAt": "1719645884128", "users": [{"role": "member", "defaultFolderId": "<id>"}, {"role": "member", "defaultFolderId": "<id>"}, {"role": "member", "defaultFolderId": "<id>"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>"}, "allowedHostnames": ["dub.sh"], "ssoEmailDomain": "<value>", "ssoEnforcedAt": "<value>"}
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "business max", "stripeId": "<id>", "billingCycleStart": 8266.32, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "totalLinks": 1378.83, "usage": 2392.88, "usageLimit": 402.3, "linksUsage": 7273.44, "linksLimit": 9583.5, "payoutsUsage": 6544.94, "payoutsLimit": 8266.32, "payoutFee": 6544.94, "domainsLimit": 9444.18, "tagsLimit": 3440.64, "foldersUsage": 9717.42, "foldersLimit": 7249.67, "groupsLimit": 6544.94, "networkInvitesLimit": 6544.94, "usersLimit": 5932.4, "aiUsage": 4075.34, "aiLimit": 4898.74, "conversionEnabled": false, "dotLinkClaimed": false, "createdAt": "1719645884128", "users": [{"role": "member", "defaultFolderId": "<id>"}, {"role": "member", "defaultFolderId": "<id>"}, {"role": "member", "defaultFolderId": "<id>"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>"}, "allowedHostnames": ["dub.sh"], "ssoEmailDomain": "<value>", "ssoEnforcedAt": "<value>"}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -1855,7 +1854,7 @@ examples:
           idOrSlug: "<value>"
       responses:
         "200":
-          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "business", "stripeId": "<id>", "billingCycleStart": 6751.25, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "totalLinks": 217.76, "usage": 2028.85, "usageLimit": 7509.63, "linksUsage": 6390.88, "linksLimit": 5728.58, "payoutsUsage": 3164.81, "payoutsLimit": 6751.25, "payoutFee": 3164.81, "domainsLimit": 5981.08, "tagsLimit": 2040.39, "foldersUsage": 9329.44, "foldersLimit": 9097.44, "groupsLimit": 3164.81, "usersLimit": 4731.38, "aiUsage": 7848.2, "aiLimit": 9885.62, "conversionEnabled": false, "dotLinkClaimed": false, "createdAt": "1736937020489", "users": [{"role": "owner", "defaultFolderId": "<id>"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>"}, "allowedHostnames": ["dub.sh"], "ssoEmailDomain": "<value>", "ssoEnforcedAt": "<value>"}
+          application/json: {"id": "<id>", "name": "<value>", "slug": "<value>", "logo": null, "inviteCode": "<value>", "plan": "business", "stripeId": "<id>", "billingCycleStart": 6751.25, "paymentFailedAt": "<value>", "stripeConnectId": "<id>", "totalLinks": 217.76, "usage": 2028.85, "usageLimit": 7509.63, "linksUsage": 6390.88, "linksLimit": 5728.58, "payoutsUsage": 3164.81, "payoutsLimit": 6751.25, "payoutFee": 3164.81, "domainsLimit": 5981.08, "tagsLimit": 2040.39, "foldersUsage": 9329.44, "foldersLimit": 9097.44, "groupsLimit": 3164.81, "networkInvitesLimit": 3164.81, "usersLimit": 4731.38, "aiUsage": 7848.2, "aiLimit": 9885.62, "conversionEnabled": false, "dotLinkClaimed": false, "createdAt": "1736937020489", "users": [{"role": "owner", "defaultFolderId": "<id>"}], "domains": [{"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}, {"slug": "acme.com", "primary": false, "verified": false}], "store": {"key": "<value>"}, "allowedHostnames": ["dub.sh"], "ssoEmailDomain": "<value>", "ssoEnforcedAt": "<value>"}
         "400":
           application/json: {"error": {"code": "bad_request", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#bad-request"}}
         "401":
@@ -2076,4 +2075,4 @@ examples:
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes Detected:\n* `dub->partners->list()`: \n  *  `request->status` **Changed**\n* `dub->workspaces->get()`:  `response` **Changed**\n* `dub->workspaces->update()`:  `response` **Changed**\n"
+releaseNotes: "## Php SDK Changes Detected:\n* `dub->folders->list()`:  `response.[]->description` **Added**\n* `dub->folders->create()`: \n  *  `request->description` **Added**\n  *  `response.description` **Added**\n* `dub->folders->update()`: \n  *  `requestBody->description` **Added**\n  *  `response.description` **Added**\n* `dub->workspaces->get()`:  `response.networkInvitesLimit` **Added**\n* `dub->workspaces->update()`:  `response.networkInvitesLimit` **Added**\n"

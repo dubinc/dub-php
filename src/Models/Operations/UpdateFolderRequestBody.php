@@ -21,6 +21,15 @@ class UpdateFolderRequestBody
     public ?string $name = null;
 
     /**
+     * The description of the folder.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
      * The access level of the folder within the workspace.
      *
      * @var ?UpdateFolderAccessLevel $accessLevel
@@ -32,12 +41,14 @@ class UpdateFolderRequestBody
 
     /**
      * @param  ?string  $name
+     * @param  ?string  $description
      * @param  ?UpdateFolderAccessLevel  $accessLevel
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?UpdateFolderAccessLevel $accessLevel = null)
+    public function __construct(?string $name = null, ?string $description = null, ?UpdateFolderAccessLevel $accessLevel = null)
     {
         $this->name = $name;
+        $this->description = $description;
         $this->accessLevel = $accessLevel;
     }
 }
