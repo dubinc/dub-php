@@ -157,6 +157,14 @@ class WorkspaceSchema
     public float $groupsLimit;
 
     /**
+     * The weekly network invites limit of the workspace.
+     *
+     * @var float $networkInvitesLimit
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('networkInvitesLimit')]
+    public float $networkInvitesLimit;
+
+    /**
      * The users limit of the workspace.
      *
      * @var float $usersLimit
@@ -324,6 +332,7 @@ class WorkspaceSchema
      * @param  float  $foldersUsage
      * @param  float  $foldersLimit
      * @param  float  $groupsLimit
+     * @param  float  $networkInvitesLimit
      * @param  float  $usersLimit
      * @param  float  $aiUsage
      * @param  float  $aiLimit
@@ -344,7 +353,7 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $ssoEmailDomain = null, ?string $ssoEnforcedAt = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $networkInvitesLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $ssoEmailDomain = null, ?string $ssoEnforcedAt = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -364,6 +373,7 @@ class WorkspaceSchema
         $this->foldersUsage = $foldersUsage;
         $this->foldersLimit = $foldersLimit;
         $this->groupsLimit = $groupsLimit;
+        $this->networkInvitesLimit = $networkInvitesLimit;
         $this->usersLimit = $usersLimit;
         $this->aiUsage = $aiUsage;
         $this->aiLimit = $aiLimit;

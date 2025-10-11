@@ -20,6 +20,15 @@ class CreateFolderRequestBody
     public string $name;
 
     /**
+     * The description of the folder.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $description = null;
+
+    /**
      * The access level of the folder within the workspace.
      *
      * @var ?AccessLevel $accessLevel
@@ -31,12 +40,14 @@ class CreateFolderRequestBody
 
     /**
      * @param  string  $name
+     * @param  ?string  $description
      * @param  ?AccessLevel  $accessLevel
      * @phpstan-pure
      */
-    public function __construct(string $name, ?AccessLevel $accessLevel = null)
+    public function __construct(string $name, ?string $description = null, ?AccessLevel $accessLevel = null)
     {
         $this->name = $name;
+        $this->description = $description;
         $this->accessLevel = $accessLevel;
     }
 }
