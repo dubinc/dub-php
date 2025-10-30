@@ -35,22 +35,22 @@ class GetTagsResponse
     /**
      * A list of tags
      *
-     * @var ?array<Components\TagSchema> $tagSchemas
+     * @var ?array<Components\LinkTagSchema> $linkTagSchemas
      */
-    public ?array $tagSchemas = null;
+    public ?array $linkTagSchemas = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\TagSchema>  $tagSchemas
+     * @param  ?array<Components\LinkTagSchema>  $linkTagSchemas
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $tagSchemas = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $linkTagSchemas = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->tagSchemas = $tagSchemas;
+        $this->linkTagSchemas = $linkTagSchemas;
     }
 }

@@ -9,15 +9,13 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The field to sort the partners by. The default is `saleAmount`. */
+/** The field to sort the partners by. The default is `totalSaleAmount`. */
 enum ListPartnersQueryParamSortBy: string
 {
     case CreatedAt = 'createdAt';
-    case Clicks = 'clicks';
-    case Leads = 'leads';
-    case Conversions = 'conversions';
-    case Sales = 'sales';
-    case SaleAmount = 'saleAmount';
+    case TotalClicks = 'totalClicks';
+    case TotalLeads = 'totalLeads';
+    case TotalConversions = 'totalConversions';
+    case TotalSaleAmount = 'totalSaleAmount';
     case TotalCommissions = 'totalCommissions';
-    case NetRevenue = 'netRevenue';
 }

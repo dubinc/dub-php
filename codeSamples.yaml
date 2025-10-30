@@ -176,7 +176,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listPartners"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    email: 'panic@thedis.co',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    search: 'john',\n    includeExpandedFields: false,\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    email: 'panic@thedis.co',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    search: 'john',\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners"]["post"]
     update:
       "x-codeSamples":
@@ -218,13 +218,13 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getTags"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetTagsRequest(\n    pageSize: 50,\n);\n\n$response = $sdk->tags->list(\n    request: $request\n);\n\nif ($response->tagSchemas !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetTagsRequest(\n    pageSize: 50,\n);\n\n$response = $sdk->tags->list(\n    request: $request\n);\n\nif ($response->linkTagSchemas !== null) {\n    // handle response\n}"
   - target: $["paths"]["/tags"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
           "label": "createTag"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->tags->create(\n    request: $request\n);\n\nif ($response->tagSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->tags->create(\n    request: $request\n);\n\nif ($response->linkTagSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/tags/{id}"]["delete"]
     update:
       "x-codeSamples":
@@ -236,7 +236,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "updateTag"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->tags->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->tagSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->tags->update(\n    id: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->linkTagSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/tokens/embed/referrals"]["post"]
     update:
       "x-codeSamples":

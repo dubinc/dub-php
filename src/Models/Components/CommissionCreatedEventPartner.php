@@ -102,6 +102,14 @@ class CommissionCreatedEventPartner
     public ?string $country;
 
     /**
+     *
+     * @var ?string $groupId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('groupId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $groupId = null;
+
+    /**
      * @param  string  $id
      * @param  string  $name
      * @param  float  $totalClicks
@@ -114,9 +122,10 @@ class CommissionCreatedEventPartner
      * @param  ?string  $image
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $country
+     * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, float $totalClicks, float $totalLeads, float $totalConversions, float $totalSales, float $totalSaleAmount, float $totalCommissions, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null)
+    public function __construct(string $id, string $name, float $totalClicks, float $totalLeads, float $totalConversions, float $totalSales, float $totalSaleAmount, float $totalCommissions, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $groupId = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -130,5 +139,6 @@ class CommissionCreatedEventPartner
         $this->image = $image;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
         $this->country = $country;
+        $this->groupId = $groupId;
     }
 }

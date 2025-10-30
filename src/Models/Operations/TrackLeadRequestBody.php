@@ -12,7 +12,7 @@ namespace Dub\Models\Operations;
 class TrackLeadRequestBody
 {
     /**
-     * The unique ID of the click that the lead conversion event is attributed to. You can read this value from `dub_id` cookie. If an empty string is provided, Dub will try to find an existing customer with the provided `customerExternalId` and use the `clickId` from the customer if found.
+     * The unique ID of the click that the lead conversion event is attributed to. You can read this value from `dub_id` cookie. [For deferred lead tracking]: If an empty string is provided, Dub will try to find an existing customer with the provided `customerExternalId` and use the `clickId` from the customer if found.
      *
      * @var string $clickId
      */

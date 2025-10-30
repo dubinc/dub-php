@@ -217,10 +217,10 @@ class LinkSchema
     /**
      * The tags assigned to the short link.
      *
-     * @var ?array<TagSchema> $tags
+     * @var ?array<LinkTagSchema> $tags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\TagSchema>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\LinkTagSchema>|null')]
     public ?array $tags;
 
     /**
@@ -463,7 +463,7 @@ class LinkSchema
      * @param  ?string  $android
      * @param  ?array<string, string>  $geo
      * @param  ?bool  $publicStats
-     * @param  ?array<TagSchema>  $tags
+     * @param  ?array<LinkTagSchema>  $tags
      * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $utmSource
