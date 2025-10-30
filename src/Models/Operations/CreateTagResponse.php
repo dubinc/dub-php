@@ -35,22 +35,22 @@ class CreateTagResponse
     /**
      * The created tag
      *
-     * @var ?Components\TagSchema $tagSchema
+     * @var ?Components\LinkTagSchema $linkTagSchema
      */
-    public ?Components\TagSchema $tagSchema = null;
+    public ?Components\LinkTagSchema $linkTagSchema = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\TagSchema  $tagSchema
+     * @param  ?Components\LinkTagSchema  $linkTagSchema
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\TagSchema $tagSchema = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\LinkTagSchema $linkTagSchema = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->tagSchema = $tagSchema;
+        $this->linkTagSchema = $linkTagSchema;
     }
 }

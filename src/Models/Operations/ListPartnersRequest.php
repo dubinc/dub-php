@@ -52,15 +52,7 @@ class ListPartnersRequest
     public ?string $search = null;
 
     /**
-     * Whether to include stats fields on the partner (`clicks`, `leads`, `conversions`, `sales`, `saleAmount`, `commissions`, `netRevenue`). If false, those fields will be returned as 0.
-     *
-     * @var ?bool $includeExpandedFields
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=includeExpandedFields')]
-    public ?bool $includeExpandedFields = null;
-
-    /**
-     * The field to sort the partners by. The default is `saleAmount`.
+     * The field to sort the partners by. The default is `totalSaleAmount`.
      *
      * @var ?ListPartnersQueryParamSortBy $sortBy
      */
@@ -99,19 +91,17 @@ class ListPartnersRequest
      * @param  ?string  $email
      * @param  ?string  $tenantId
      * @param  ?string  $search
-     * @param  ?bool  $includeExpandedFields
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?bool $includeExpandedFields = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::SaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->status = $status;
         $this->country = $country;
         $this->email = $email;
         $this->tenantId = $tenantId;
         $this->search = $search;
-        $this->includeExpandedFields = $includeExpandedFields;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
         $this->page = $page;

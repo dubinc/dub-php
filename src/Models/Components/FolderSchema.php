@@ -52,6 +52,14 @@ class FolderSchema
     public string $updatedAt;
 
     /**
+     * The description of the folder.
+     *
+     * @var ?string $description
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    public ?string $description;
+
+    /**
      * The access level of the folder within the workspace.
      *
      * @var ?AccessLevel $accessLevel
@@ -67,16 +75,18 @@ class FolderSchema
      * @param  Type  $type
      * @param  string  $createdAt
      * @param  string  $updatedAt
+     * @param  ?string  $description
      * @param  ?AccessLevel  $accessLevel
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, Type $type, string $createdAt, string $updatedAt, ?AccessLevel $accessLevel = null)
+    public function __construct(string $id, string $name, Type $type, string $createdAt, string $updatedAt, ?string $description = null, ?AccessLevel $accessLevel = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
+        $this->description = $description;
         $this->accessLevel = $accessLevel;
     }
 }

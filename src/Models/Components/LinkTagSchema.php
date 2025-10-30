@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-class TagSchema
+class LinkTagSchema
 {
     /**
      * The unique ID of the tag.
