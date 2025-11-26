@@ -203,7 +203,6 @@ if ($response->linkSchema !== null) {
 ### [customers](docs/sdks/customers/README.md)
 
 * [list](docs/sdks/customers/README.md#list) - Retrieve a list of customers
-* [~~create~~](docs/sdks/customers/README.md#create) - Create a customer :warning: **Deprecated**
 * [get](docs/sdks/customers/README.md#get) - Retrieve a customer
 * [update](docs/sdks/customers/README.md#update) - Update a customer
 * [delete](docs/sdks/customers/README.md#delete) - Delete a customer
@@ -253,6 +252,7 @@ if ($response->linkSchema !== null) {
 * [retrieveLinks](docs/sdks/partners/README.md#retrievelinks) - Retrieve a partner's links.
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
 * [analytics](docs/sdks/partners/README.md#analytics) - Retrieve analytics for a partner
+* [ban](docs/sdks/partners/README.md#ban) - Ban a partner
 
 ### [qrCodes](docs/sdks/qrcodes/README.md)
 

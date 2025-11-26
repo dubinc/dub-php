@@ -189,6 +189,12 @@ actions:
         - "lang": "php"
           "label": "retrievePartnerAnalytics"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrievePartnerAnalyticsRequest(\n    timezone: 'America/New_York',\n    query: 'metadata[\\'key\\']:\\'value\\'',\n);\n\n$response = $sdk->partners->analytics(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/partners/ban"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "banPartner"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->partners->ban(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links"]["get"]
     update:
       "x-codeSamples":

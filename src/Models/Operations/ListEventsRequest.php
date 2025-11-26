@@ -205,6 +205,14 @@ class ListEventsRequest
     public ?string $folderId = null;
 
     /**
+     * The group ID to retrieve analytics for.
+     *
+     * @var ?string $groupId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
+    public ?string $groupId = null;
+
+    /**
      * Filter for root domains. If true, filter for domains only. If false, filter for links only. If undefined, return both.
      *
      * @var ?bool $root
@@ -373,6 +381,7 @@ class ListEventsRequest
      * @param  ?string  $url
      * @param  string|array<string>|null  $tagIds
      * @param  ?string  $folderId
+     * @param  ?string  $groupId
      * @param  ?bool  $root
      * @param  ?QueryParamSaleType  $saleType
      * @param  ?string  $query
@@ -391,7 +400,7 @@ class ListEventsRequest
      * @param  ?string  $ref
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?Components\ContinentCode $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?QueryParamTrigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?string $groupId = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -417,6 +426,7 @@ class ListEventsRequest
         $this->url = $url;
         $this->tagIds = $tagIds;
         $this->folderId = $folderId;
+        $this->groupId = $groupId;
         $this->root = $root;
         $this->saleType = $saleType;
         $this->query = $query;

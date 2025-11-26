@@ -150,6 +150,14 @@ class LinkSchema
     public ?string $expiredUrl;
 
     /**
+     * The date and time when the short link was disabled. When a short link is disabled, it will redirect to its domain's not found URL, and its stats will be excluded from your overall stats.
+     *
+     * @var ?string $disabledAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('disabledAt')]
+    public ?string $disabledAt;
+
+    /**
      * The password required to access the destination URL of the short link.
      *
      * @var ?string $password
@@ -451,6 +459,7 @@ class LinkSchema
      * @param  ?bool  $archived
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
+     * @param  ?string  $disabledAt
      * @param  ?string  $password
      * @param  ?bool  $proxy
      * @param  ?string  $title
@@ -484,7 +493,7 @@ class LinkSchema
      * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $disabledAt = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -503,6 +512,7 @@ class LinkSchema
         $this->partnerId = $partnerId;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
+        $this->disabledAt = $disabledAt;
         $this->password = $password;
         $this->title = $title;
         $this->description = $description;

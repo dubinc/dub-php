@@ -12,6 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrieveLinksRequest
 {
     /**
+     * The ID of the partner to create a link for. Will take precedence over `tenantId` if provided.
      *
      * @var ?string $partnerId
      */
@@ -19,6 +20,7 @@ class RetrieveLinksRequest
     public ?string $partnerId = null;
 
     /**
+     * The ID of the partner in your system. If both `partnerId` and `tenantId` are not provided, an error will be thrown.
      *
      * @var ?string $tenantId
      */

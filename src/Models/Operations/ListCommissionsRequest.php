@@ -91,6 +91,13 @@ class ListCommissionsRequest
     public ?string $end = null;
 
     /**
+     *
+     * @var ?string $timezone
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=timezone')]
+    public ?string $timezone = null;
+
+    /**
      * The field to sort the list of commissions by.
      *
      * @var ?ListCommissionsQueryParamSortBy $sortBy
@@ -144,11 +151,12 @@ class ListCommissionsRequest
      * @param  ?ListCommissionsQueryParamInterval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
+     * @param  ?string  $timezone
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
@@ -160,6 +168,7 @@ class ListCommissionsRequest
         $this->status = $status;
         $this->start = $start;
         $this->end = $end;
+        $this->timezone = $timezone;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
         $this->interval = $interval;

@@ -60,15 +60,25 @@ class UpdateCommissionPartner
     public ?string $country;
 
     /**
+     * The partner's group ID on Dub.
+     *
+     * @var ?string $groupId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('groupId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $groupId = null;
+
+    /**
      * @param  string  $id
      * @param  string  $name
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $country
+     * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null)
+    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $groupId = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -76,5 +86,6 @@ class UpdateCommissionPartner
         $this->image = $image;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
         $this->country = $country;
+        $this->groupId = $groupId;
     }
 }

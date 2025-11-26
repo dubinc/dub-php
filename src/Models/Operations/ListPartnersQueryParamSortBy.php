@@ -18,4 +18,11 @@ enum ListPartnersQueryParamSortBy: string
     case TotalConversions = 'totalConversions';
     case TotalSaleAmount = 'totalSaleAmount';
     case TotalCommissions = 'totalCommissions';
+    case NetRevenue = 'netRevenue';
+    case EarningsPerClick = 'earningsPerClick';
+    case AverageLifetimeValue = 'averageLifetimeValue';
+    case ClickToLeadRate = 'clickToLeadRate';
+    case ClickToConversionRate = 'clickToConversionRate';
+    case LeadToConversionRate = 'leadToConversionRate';
+    case ReturnOnAdSpend = 'returnOnAdSpend';
 }

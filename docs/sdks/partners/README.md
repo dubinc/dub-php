@@ -11,6 +11,7 @@
 * [retrieveLinks](#retrievelinks) - Retrieve a partner's links.
 * [upsertLink](#upsertlink) - Upsert a link for a partner
 * [analytics](#analytics) - Retrieve analytics for a partner
+* [ban](#ban) - Ban a partner
 
 ## create
 
@@ -258,10 +259,10 @@ if ($response->links !== null) {
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `partnerId`        | *?string*          | :heavy_minus_sign: | N/A                |
-| `tenantId`         | *?string*          | :heavy_minus_sign: | N/A                |
+| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `partnerId`                                                                                                         | *?string*                                                                                                           | :heavy_minus_sign:                                                                                                  | The ID of the partner to create a link for. Will take precedence over `tenantId` if provided.                       |
+| `tenantId`                                                                                                          | *?string*                                                                                                           | :heavy_minus_sign:                                                                                                  | The ID of the partner in your system. If both `partnerId` and `tenantId` are not provided, an error will be thrown. |
 
 ### Response
 
@@ -400,6 +401,62 @@ if ($response->oneOf !== null) {
 ### Response
 
 **[?Operations\RetrievePartnerAnalyticsResponse](../../Models/Operations/RetrievePartnerAnalyticsResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## ban
+
+Ban a partner from your program. This will disable all links and mark all commissions as canceled.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="banPartner" method="post" path="/partners/ban" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->partners->ban(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `$request`                                                                           | [Operations\BanPartnerRequestBody](../../Models/Operations/BanPartnerRequestBody.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+
+### Response
+
+**[?Operations\BanPartnerResponse](../../Models/Operations/BanPartnerResponse.md)**
 
 ### Errors
 
