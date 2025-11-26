@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class CreateCustomerResponse
+class BanPartnerResponse
 {
     /**
      * HTTP response content type for this operation
@@ -33,20 +33,20 @@ class CreateCustomerResponse
     public \Psr\Http\Message\ResponseInterface $rawResponse;
 
     /**
-     * The customer was created.
+     * The banned partner
      *
-     * @var ?CreateCustomerResponseBody $object
+     * @var ?BanPartnerResponseBody $object
      */
-    public ?CreateCustomerResponseBody $object = null;
+    public ?BanPartnerResponseBody $object = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?CreateCustomerResponseBody  $object
+     * @param  ?BanPartnerResponseBody  $object
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?CreateCustomerResponseBody $object = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?BanPartnerResponseBody $object = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;

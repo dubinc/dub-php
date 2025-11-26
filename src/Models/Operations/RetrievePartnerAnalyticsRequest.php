@@ -12,22 +12,6 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrievePartnerAnalyticsRequest
 {
     /**
-     * The ID of the partner to retrieve analytics for.
-     *
-     * @var ?string $partnerId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerId')]
-    public ?string $partnerId = null;
-
-    /**
-     * The ID of the tenant that created the link inside your system.
-     *
-     * @var ?string $tenantId
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
-    public ?string $tenantId = null;
-
-    /**
      * The interval to retrieve analytics for. If undefined, defaults to 24h.
      *
      * @var ?RetrievePartnerAnalyticsQueryParamInterval $interval
@@ -60,6 +44,22 @@ class RetrievePartnerAnalyticsRequest
     public ?string $query = null;
 
     /**
+     * The ID of the partner to create a link for. Will take precedence over `tenantId` if provided.
+     *
+     * @var ?string $partnerId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerId')]
+    public ?string $partnerId = null;
+
+    /**
+     * The ID of the partner in your system. If both `partnerId` and `tenantId` are not provided, an error will be thrown.
+     *
+     * @var ?string $tenantId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tenantId')]
+    public ?string $tenantId = null;
+
+    /**
      * The IANA time zone code for aligning timeseries granularity (e.g. America/New_York). Defaults to UTC.
      *
      * @var ?string $timezone
@@ -76,24 +76,24 @@ class RetrievePartnerAnalyticsRequest
     public ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = null;
 
     /**
-     * @param  ?string  $partnerId
-     * @param  ?string  $tenantId
      * @param  ?RetrievePartnerAnalyticsQueryParamInterval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
      * @param  ?string  $query
      * @param  ?RetrievePartnerAnalyticsQueryParamGroupBy  $groupBy
+     * @param  ?string  $partnerId
+     * @param  ?string  $tenantId
      * @phpstan-pure
      */
-    public function __construct(?string $partnerId = null, ?string $tenantId = null, ?RetrievePartnerAnalyticsQueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $query = null, ?string $timezone = 'UTC', ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = RetrievePartnerAnalyticsQueryParamGroupBy::Count)
+    public function __construct(?RetrievePartnerAnalyticsQueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $query = null, ?string $partnerId = null, ?string $tenantId = null, ?string $timezone = 'UTC', ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = RetrievePartnerAnalyticsQueryParamGroupBy::Count)
     {
-        $this->partnerId = $partnerId;
-        $this->tenantId = $tenantId;
         $this->interval = $interval;
         $this->start = $start;
         $this->end = $end;
         $this->query = $query;
+        $this->partnerId = $partnerId;
+        $this->tenantId = $tenantId;
         $this->timezone = $timezone;
         $this->groupBy = $groupBy;
     }

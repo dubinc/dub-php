@@ -239,6 +239,14 @@ class WorkspaceSchema
     public ?string $inviteCode;
 
     /**
+     * The tier of the workspace's plan.
+     *
+     * @var ?float $planTier
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('planTier')]
+    public ?float $planTier;
+
+    /**
      * The Stripe ID of the workspace.
      *
      * @var ?string $stripeId
@@ -342,6 +350,7 @@ class WorkspaceSchema
      * @param  array<Users>  $users
      * @param  array<Domains>  $domains
      * @param  ?string  $inviteCode
+     * @param  ?float  $planTier
      * @param  ?string  $stripeId
      * @param  ?string  $paymentFailedAt
      * @param  ?string  $stripeConnectId
@@ -353,7 +362,7 @@ class WorkspaceSchema
      * @param  ?string  $logo
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $networkInvitesLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $ssoEmailDomain = null, ?string $ssoEnforcedAt = null, ?string $logo = null)
+    public function __construct(string $id, string $name, string $slug, Plan $plan, float $billingCycleStart, float $totalLinks, float $usage, float $usageLimit, float $linksUsage, float $linksLimit, float $payoutsUsage, float $payoutsLimit, float $payoutFee, float $domainsLimit, float $tagsLimit, float $foldersUsage, float $foldersLimit, float $groupsLimit, float $networkInvitesLimit, float $usersLimit, float $aiUsage, float $aiLimit, bool $conversionEnabled, bool $dotLinkClaimed, string $createdAt, array $users, array $domains, ?string $inviteCode = null, ?float $planTier = null, ?string $stripeId = null, ?string $paymentFailedAt = null, ?string $stripeConnectId = null, ?array $flags = null, ?array $store = null, ?array $allowedHostnames = null, ?string $ssoEmailDomain = null, ?string $ssoEnforcedAt = null, ?string $logo = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -383,6 +392,7 @@ class WorkspaceSchema
         $this->users = $users;
         $this->domains = $domains;
         $this->inviteCode = $inviteCode;
+        $this->planTier = $planTier;
         $this->stripeId = $stripeId;
         $this->paymentFailedAt = $paymentFailedAt;
         $this->stripeConnectId = $stripeConnectId;

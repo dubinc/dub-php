@@ -12,7 +12,7 @@ namespace Dub\Models\Components;
 class AnalyticsTopUrls
 {
     /**
-     * The destination URL
+     * The full destination URL (including query parameters)
      *
      * @var string $url
      */

@@ -6,7 +6,6 @@
 ### Available Operations
 
 * [list](#list) - Retrieve a list of customers
-* [~~create~~](#create) - Create a customer :warning: **Deprecated**
 * [get](#get) - Retrieve a customer
 * [update](#update) - Update a customer
 * [delete](#delete) - Delete a customer
@@ -54,64 +53,6 @@ if ($response->responseBodies !== null) {
 ### Response
 
 **[?Operations\GetCustomersResponse](../../Models/Operations/GetCustomersResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
-
-## ~~create~~
-
-[Deprecated]: Customer creation can only be done via tracking a lead event. Use the /track/lead endpoint instead.
-
-> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-<!-- UsageSnippet language="php" operationID="createCustomer" method="post" path="/customers" -->
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-
-
-$response = $sdk->customers->create(
-    request: $request
-);
-
-if ($response->object !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [Operations\CreateCustomerRequestBody](../../Models/Operations/CreateCustomerRequestBody.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-
-### Response
-
-**[?Operations\CreateCustomerResponse](../../Models/Operations/CreateCustomerResponse.md)**
 
 ### Errors
 
