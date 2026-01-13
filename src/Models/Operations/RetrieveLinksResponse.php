@@ -35,22 +35,22 @@ class RetrieveLinksResponse
     /**
      * The retrieved partner links.
      *
-     * @var ?array<Link> $links
+     * @var ?array<RetrieveLinksResponseBody> $responseBodies
      */
-    public ?array $links = null;
+    public ?array $responseBodies = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Link>  $links
+     * @param  ?array<RetrieveLinksResponseBody>  $responseBodies
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $links = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->links = $links;
+        $this->responseBodies = $responseBodies;
     }
 }

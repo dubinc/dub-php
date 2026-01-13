@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Dub\Models\Operations;
 
-use Dub\Models\Components;
+
 class ListEventsResponse
 {
     /**
@@ -35,7 +35,7 @@ class ListEventsResponse
     /**
      * A list of events
      *
-     * @var ?array<Components\ClickEvent|Components\LeadEvent|Components\SaleEvent> $responseBodies
+     * @var ?array<ClickEvent|LeadEvent|SaleEvent> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class ListEventsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\ClickEvent|Components\LeadEvent|Components\SaleEvent>  $responseBodies
+     * @param  ?array<ClickEvent|LeadEvent|SaleEvent>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

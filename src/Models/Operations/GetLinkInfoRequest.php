@@ -19,7 +19,6 @@ class GetLinkInfoRequest
     public ?string $domain = null;
 
     /**
-     * The key of the link to retrieve. E.g. for `d.to/github`, the key is `github`.
      *
      * @var ?string $key
      */

@@ -37,20 +37,21 @@ class UpdateWorkspaceRequestBody
 
     /**
      *
-     * @var ?string $logo
+     * @var mixed $logo
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('logo')]
+    #[\Speakeasy\Serializer\Annotation\Type('mixed')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $logo = null;
+    public mixed $logo = null;
 
     /**
      * @param  ?string  $name
      * @param  ?string  $slug
      * @param  ?bool  $conversionEnabled
-     * @param  ?string  $logo
+     * @param  mixed  $logo
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $slug = null, ?bool $conversionEnabled = null, ?string $logo = null)
+    public function __construct(?string $name = null, ?string $slug = null, ?bool $conversionEnabled = null, mixed $logo = null)
     {
         $this->name = $name;
         $this->slug = $slug;

@@ -52,6 +52,22 @@ class GetCustomersRequest
     public ?string $linkId = null;
 
     /**
+     * Program ID to filter by.
+     *
+     * @var ?string $programId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=programId')]
+    public ?string $programId = null;
+
+    /**
+     * Partner ID to filter by.
+     *
+     * @var ?string $partnerId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerId')]
+    public ?string $partnerId = null;
+
+    /**
      * Whether to include expanded fields on the customer (`link`, `partner`, `discount`).
      *
      * @var ?bool $includeExpandedFields
@@ -97,6 +113,8 @@ class GetCustomersRequest
      * @param  ?string  $search
      * @param  ?string  $country
      * @param  ?string  $linkId
+     * @param  ?string  $programId
+     * @param  ?string  $partnerId
      * @param  ?bool  $includeExpandedFields
      * @param  ?GetCustomersQueryParamSortBy  $sortBy
      * @param  ?GetCustomersQueryParamSortOrder  $sortOrder
@@ -104,13 +122,15 @@ class GetCustomersRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?string $country = null, ?string $linkId = null, ?bool $includeExpandedFields = null, ?GetCustomersQueryParamSortBy $sortBy = GetCustomersQueryParamSortBy::CreatedAt, ?GetCustomersQueryParamSortOrder $sortOrder = GetCustomersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?string $country = null, ?string $linkId = null, ?string $programId = null, ?string $partnerId = null, ?bool $includeExpandedFields = null, ?GetCustomersQueryParamSortBy $sortBy = GetCustomersQueryParamSortBy::CreatedAt, ?GetCustomersQueryParamSortOrder $sortOrder = GetCustomersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->email = $email;
         $this->externalId = $externalId;
         $this->search = $search;
         $this->country = $country;
         $this->linkId = $linkId;
+        $this->programId = $programId;
+        $this->partnerId = $partnerId;
         $this->includeExpandedFields = $includeExpandedFields;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;

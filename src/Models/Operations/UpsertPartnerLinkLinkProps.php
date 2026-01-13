@@ -105,15 +105,6 @@ class UpsertPartnerLinkLinkProps
     public ?string $tenantId = null;
 
     /**
-     * The unique ID existing folder to assign the short link to.
-     *
-     * @var ?string $folderId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('folderId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $folderId = null;
-
-    /**
      * The comments for the short link.
      *
      * @var ?string $comments
@@ -204,60 +195,6 @@ class UpsertPartnerLinkLinkProps
     public ?string $android = null;
 
     /**
-     * The UTM source of the short link. If set, this will populate or override the UTM source in the destination URL.
-     *
-     * @var ?string $utmSource
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_source')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $utmSource = null;
-
-    /**
-     * The UTM medium of the short link. If set, this will populate or override the UTM medium in the destination URL.
-     *
-     * @var ?string $utmMedium
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_medium')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $utmMedium = null;
-
-    /**
-     * The UTM campaign of the short link. If set, this will populate or override the UTM campaign in the destination URL.
-     *
-     * @var ?string $utmCampaign
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_campaign')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $utmCampaign = null;
-
-    /**
-     * The UTM term of the short link. If set, this will populate or override the UTM term in the destination URL.
-     *
-     * @var ?string $utmTerm
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_term')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $utmTerm = null;
-
-    /**
-     * The UTM content of the short link. If set, this will populate or override the UTM content in the destination URL.
-     *
-     * @var ?string $utmContent
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('utm_content')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $utmContent = null;
-
-    /**
-     * The referral tag of the short link. If set, this will populate or override the `ref` query parameter in the destination URL.
-     *
-     * @var ?string $ref
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('ref')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $ref = null;
-
-    /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
      * @var ?array<UpsertPartnerLinkTestVariants> $testVariants
@@ -296,7 +233,6 @@ class UpsertPartnerLinkLinkProps
      * @param  ?bool  $doIndex
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
-     * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
@@ -307,18 +243,12 @@ class UpsertPartnerLinkLinkProps
      * @param  ?string  $video
      * @param  ?string  $ios
      * @param  ?string  $android
-     * @param  ?string  $utmSource
-     * @param  ?string  $utmMedium
-     * @param  ?string  $utmCampaign
-     * @param  ?string  $utmTerm
-     * @param  ?string  $utmContent
-     * @param  ?string  $ref
      * @param  ?array<UpsertPartnerLinkTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(?float $keyLength = null, ?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null)
+    public function __construct(?float $keyLength = null, ?string $prefix = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?string $externalId = null, ?string $tenantId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null)
     {
         $this->keyLength = $keyLength;
         $this->prefix = $prefix;
@@ -330,7 +260,6 @@ class UpsertPartnerLinkLinkProps
         $this->doIndex = $doIndex;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
-        $this->folderId = $folderId;
         $this->comments = $comments;
         $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
@@ -341,12 +270,6 @@ class UpsertPartnerLinkLinkProps
         $this->video = $video;
         $this->ios = $ios;
         $this->android = $android;
-        $this->utmSource = $utmSource;
-        $this->utmMedium = $utmMedium;
-        $this->utmCampaign = $utmCampaign;
-        $this->utmTerm = $utmTerm;
-        $this->utmContent = $utmContent;
-        $this->ref = $ref;
         $this->testVariants = $testVariants;
         $this->testStartedAt = $testStartedAt;
         $this->testCompletedAt = $testCompletedAt;

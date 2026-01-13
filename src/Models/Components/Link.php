@@ -363,10 +363,10 @@ class Link
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<ClickEventTestVariants> $testVariants
+     * @var ?array<LinkClickedEventTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\ClickEventTestVariants>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\LinkClickedEventTestVariants>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $testVariants = null;
 
@@ -466,7 +466,7 @@ class Link
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      * @param  ?string  $tagId
-     * @param  ?array<ClickEventTestVariants>  $testVariants
+     * @param  ?array<LinkClickedEventTestVariants>  $testVariants
      * @phpstan-pure
      */
     public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, string $expiresAt, string $disabledAt, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, array $webhookIds, string $shortLink, string $qrCode, string $testStartedAt, string $testCompletedAt, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $tagId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)

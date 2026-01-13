@@ -113,7 +113,7 @@ class GetLinksCountRequest
      * @param  One|Two|Three|Four|null  $groupBy
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, One|Two|Three|Four|null $groupBy = null, ?bool $showArchived = true, ?bool $withTags = true)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, One|Two|Three|Four|null $groupBy = null, ?bool $showArchived = false, ?bool $withTags = false)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;

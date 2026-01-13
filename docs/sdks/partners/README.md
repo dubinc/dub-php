@@ -1,5 +1,4 @@
 # Partners
-(*partners*)
 
 ## Overview
 
@@ -252,7 +251,7 @@ $response = $sdk->partners->retrieveLinks(
 
 );
 
-if ($response->links !== null) {
+if ($response->responseBodies !== null) {
     // handle response
 }
 ```

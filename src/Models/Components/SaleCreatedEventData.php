@@ -44,20 +44,11 @@ class SaleCreatedEventData
 
     /**
      *
-     * @var SaleCreatedEventSale $sale
+     * @var Sale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventSale')]
-    public SaleCreatedEventSale $sale;
-
-    /**
-     * $metadata
-     *
-     * @var ?array<string, mixed> $metadata
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    public ?array $metadata;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
+    public Sale $sale;
 
     /**
      *
@@ -69,23 +60,33 @@ class SaleCreatedEventData
     public ?SaleCreatedEventPartner $partner = null;
 
     /**
+     * $metadata
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $metadata = null;
+
+    /**
      * @param  string  $eventName
      * @param  SaleCreatedEventCustomer  $customer
      * @param  SaleCreatedEventClick  $click
      * @param  SaleCreatedEventLink  $link
-     * @param  SaleCreatedEventSale  $sale
-     * @param  ?array<string, mixed>  $metadata
+     * @param  Sale  $sale
      * @param  ?SaleCreatedEventPartner  $partner
+     * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, SaleCreatedEventSale $sale, ?array $metadata = null, ?SaleCreatedEventPartner $partner = null)
+    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, Sale $sale, ?SaleCreatedEventPartner $partner = null, ?array $metadata = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;
         $this->click = $click;
         $this->link = $link;
         $this->sale = $sale;
-        $this->metadata = $metadata;
         $this->partner = $partner;
+        $this->metadata = $metadata;
     }
 }

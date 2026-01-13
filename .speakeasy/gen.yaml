@@ -20,12 +20,13 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
   requestBodyFieldName: ""
+  persistentEdits: {}
   tests:
     generateTests: true
     generateNewTests: false
     skipResponseBodyAssertions: false
 php:
-  version: 0.15.0
+  version: 0.15.1
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
@@ -50,6 +51,7 @@ php:
     svcName: openapi
   maxMethodParams: 4
   methodArguments: infer-optional-args
+  multipartArrayFormat: legacy
   namespace: Dub
   outputModelSuffix: output
   packageName: dub/dub-php

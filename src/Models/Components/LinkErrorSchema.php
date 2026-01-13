@@ -12,6 +12,15 @@ namespace Dub\Models\Components;
 class LinkErrorSchema
 {
     /**
+     * The link that caused the error.
+     *
+     * @var mixed $link
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('mixed')]
+    public mixed $link;
+
+    /**
      * The error message.
      *
      * @var string $error
@@ -29,25 +38,15 @@ class LinkErrorSchema
     public Code $code;
 
     /**
-     * The link that caused the error.
-     *
-     * @var mixed $link
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
-    #[\Speakeasy\Serializer\Annotation\Type('mixed')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public mixed $link = null;
-
-    /**
+     * @param  mixed  $link
      * @param  string  $error
      * @param  Code  $code
-     * @param  mixed  $link
      * @phpstan-pure
      */
-    public function __construct(string $error, Code $code, mixed $link = null)
+    public function __construct(mixed $link, string $error, Code $code)
     {
+        $this->link = $link;
         $this->error = $error;
         $this->code = $code;
-        $this->link = $link;
     }
 }

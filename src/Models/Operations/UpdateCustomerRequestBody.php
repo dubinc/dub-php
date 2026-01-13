@@ -12,7 +12,7 @@ namespace Dub\Models\Operations;
 class UpdateCustomerRequestBody
 {
     /**
-     * Unique identifier for the customer in the client's app.
+     * The customer's unique identifier your database. This is useful for associating subsequent conversion events from Dub's API to your internal systems.
      *
      * @var ?string $externalId
      */
@@ -21,7 +21,16 @@ class UpdateCustomerRequestBody
     public ?string $externalId = null;
 
     /**
-     * Email of the customer in the client's app.
+     * The customer's country in ISO 3166-1 alpha-2 format. Updating this field will only affect the customer's country in Dub's system (and has no effect on existing conversion events).
+     *
+     * @var ?string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $country = null;
+
+    /**
+     * The customer's email address.
      *
      * @var ?string $email
      */
@@ -30,7 +39,7 @@ class UpdateCustomerRequestBody
     public ?string $email = null;
 
     /**
-     * Name of the customer in the client's app. If not provided, a random name will be generated.
+     * The customer's name. If not provided, the email address will be used, and if email is not provided, a random name will be generated.
      *
      * @var ?string $name
      */
@@ -39,7 +48,7 @@ class UpdateCustomerRequestBody
     public ?string $name = null;
 
     /**
-     * Avatar URL of the customer in the client's app.
+     * The customer's avatar URL. If not provided, a random avatar will be generated.
      *
      * @var ?string $avatar
      */
@@ -48,7 +57,7 @@ class UpdateCustomerRequestBody
     public ?string $avatar = null;
 
     /**
-     * The customer's Stripe customer ID. Useful for attribution recurring sale events to the partner who referred the customer.
+     * The customer's Stripe customer ID. This is useful for attributing recurring sale events to the partner who referred the customer.
      *
      * @var ?string $stripeCustomerId
      */
@@ -58,15 +67,17 @@ class UpdateCustomerRequestBody
 
     /**
      * @param  ?string  $externalId
+     * @param  ?string  $country
      * @param  ?string  $email
      * @param  ?string  $name
      * @param  ?string  $avatar
      * @param  ?string  $stripeCustomerId
      * @phpstan-pure
      */
-    public function __construct(?string $externalId = null, ?string $email = null, ?string $name = null, ?string $avatar = null, ?string $stripeCustomerId = null)
+    public function __construct(?string $externalId = null, ?string $country = null, ?string $email = null, ?string $name = null, ?string $avatar = null, ?string $stripeCustomerId = null)
     {
         $this->externalId = $externalId;
+        $this->country = $country;
         $this->email = $email;
         $this->name = $name;
         $this->avatar = $avatar;

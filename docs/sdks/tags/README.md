@@ -1,5 +1,4 @@
 # Tags
-(*tags*)
 
 ## Overview
 
@@ -36,7 +35,7 @@ $response = $sdk->tags->create(
     request: $request
 );
 
-if ($response->linkTagSchema !== null) {
+if ($response->linkTagSchemaOutput !== null) {
     // handle response
 }
 ```
@@ -95,7 +94,7 @@ $response = $sdk->tags->list(
     request: $request
 );
 
-if ($response->linkTagSchemas !== null) {
+if ($response->linkTagSchemaOutputs !== null) {
     // handle response
 }
 ```
@@ -153,7 +152,7 @@ $response = $sdk->tags->update(
 
 );
 
-if ($response->linkTagSchema !== null) {
+if ($response->linkTagSchemaOutput !== null) {
     // handle response
 }
 ```

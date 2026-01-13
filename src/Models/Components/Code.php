@@ -13,14 +13,14 @@ namespace Dub\Models\Components;
 enum Code: string
 {
     case BadRequest = 'bad_request';
-    case NotFound = 'not_found';
-    case InternalServerError = 'internal_server_error';
     case Unauthorized = 'unauthorized';
     case Forbidden = 'forbidden';
-    case RateLimitExceeded = 'rate_limit_exceeded';
-    case InviteExpired = 'invite_expired';
-    case InvitePending = 'invite_pending';
     case ExceededLimit = 'exceeded_limit';
+    case NotFound = 'not_found';
     case Conflict = 'conflict';
+    case InvitePending = 'invite_pending';
+    case InviteExpired = 'invite_expired';
     case UnprocessableEntity = 'unprocessable_entity';
+    case RateLimitExceeded = 'rate_limit_exceeded';
+    case InternalServerError = 'internal_server_error';
 }

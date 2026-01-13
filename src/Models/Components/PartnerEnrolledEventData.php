@@ -134,10 +134,10 @@ class PartnerEnrolledEventData
     /**
      * The partner's referral links in this program.
      *
-     * @var ?array<PartnerEnrolledEventLink> $links
+     * @var ?array<Links> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\PartnerEnrolledEventLink>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Links>|null')]
     public ?array $links;
 
     /**
@@ -405,7 +405,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $trustedAt
      * @param  ?string  $tenantId
-     * @param  ?array<PartnerEnrolledEventLink>  $links
+     * @param  ?array<Links>  $links
      * @param  ?float  $totalCommissions
      * @param  ?float  $totalClicks
      * @param  ?float  $totalLeads

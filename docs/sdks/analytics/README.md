@@ -1,5 +1,4 @@
 # Analytics
-(*analytics*)
 
 ## Overview
 
@@ -29,6 +28,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\RetrieveAnalyticsRequest(
+    event: Operations\Event::Leads,
     timezone: 'America/New_York',
     city: 'New York',
     device: 'Desktop',

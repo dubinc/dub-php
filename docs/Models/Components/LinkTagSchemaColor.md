@@ -1,0 +1,16 @@
+# LinkTagSchemaColor
+
+The color of the tag.
+
+
+## Values
+
+| Name     | Value    |
+| -------- | -------- |
+| `Red`    | red      |
+| `Yellow` | yellow   |
+| `Green`  | green    |
+| `Blue`   | blue     |
+| `Purple` | purple   |
+| `Brown`  | brown    |
+| `Pink`   | pink     |

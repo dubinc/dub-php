@@ -89,12 +89,12 @@ class Tags
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Components\LinkTagSchema', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Components\LinkTagSchemaOutput', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\CreateTagResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    linkTagSchema: $obj);
+                    linkTagSchemaOutput: $obj);
 
                 return $response;
             } else {
@@ -415,12 +415,12 @@ class Tags
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Components\LinkTagSchema>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Components\LinkTagSchemaOutput>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\GetTagsResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    linkTagSchemas: $obj);
+                    linkTagSchemaOutputs: $obj);
 
                 return $response;
             } else {
@@ -584,12 +584,12 @@ class Tags
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Components\LinkTagSchema', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Components\LinkTagSchemaOutput', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
                 $response = new Operations\UpdateTagResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    linkTagSchema: $obj);
+                    linkTagSchemaOutput: $obj);
 
                 return $response;
             } else {

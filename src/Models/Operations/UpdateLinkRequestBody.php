@@ -248,7 +248,7 @@ class UpdateLinkRequestBody
     public ?string $android = null;
 
     /**
-     * Geo targeting information for the short link in JSON format `{[COUNTRY]: https://example.com }`. See https://d.to/geo for more information.
+     * $geo
      *
      * @var ?array<string, string> $geo
      */
