@@ -135,10 +135,10 @@ class CreatePartnerResponseBody
     /**
      * The partner's referral links in this program.
      *
-     * @var ?array<CreatePartnerLink> $links
+     * @var ?array<Links> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerLink>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\Links>|null')]
     public ?array $links;
 
     /**
@@ -406,7 +406,7 @@ class CreatePartnerResponseBody
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $trustedAt
      * @param  ?string  $tenantId
-     * @param  ?array<CreatePartnerLink>  $links
+     * @param  ?array<Links>  $links
      * @param  ?float  $totalCommissions
      * @param  ?float  $totalClicks
      * @param  ?float  $totalLeads

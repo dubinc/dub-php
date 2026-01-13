@@ -50,7 +50,7 @@ class ListDomainsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, ?bool $archived = true, ?float $page = 1, ?float $pageSize = 50)
+    public function __construct(?string $search = null, ?bool $archived = false, ?float $page = 1, ?float $pageSize = 50)
     {
         $this->search = $search;
         $this->archived = $archived;

@@ -3,30 +3,30 @@
 
 ## Supported Types
 
-### `Components\ClickEvent`
+### `Operations\ClickEvent`
 
 ```php
 /**
-* @var Components\ClickEvent
+* @var Operations\ClickEvent
 */
-Components\ClickEvent $value = /* values here */
+Operations\ClickEvent $value = /* values here */
 ```
 
-### `Components\LeadEvent`
+### `Operations\LeadEvent`
 
 ```php
 /**
-* @var Components\LeadEvent
+* @var Operations\LeadEvent
 */
-Components\LeadEvent $value = /* values here */
+Operations\LeadEvent $value = /* values here */
 ```
 
-### `Components\SaleEvent`
+### `Operations\SaleEvent`
 
 ```php
 /**
-* @var Components\SaleEvent
+* @var Operations\SaleEvent
 */
-Components\SaleEvent $value = /* values here */
+Operations\SaleEvent $value = /* values here */
 ```
 

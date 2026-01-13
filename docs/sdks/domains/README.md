@@ -1,5 +1,4 @@
 # Domains
-(*domains*)
 
 ## Overview
 
@@ -97,7 +96,7 @@ $sdk = Dub\Dub::builder()
 
 
 $responses = $sdk->domains->list(
-    archived: true,
+    archived: false,
     page: 1,
     pageSize: 50
 

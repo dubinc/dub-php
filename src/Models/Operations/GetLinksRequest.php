@@ -149,7 +149,7 @@ class GetLinksRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?bool $showArchived = true, ?bool $withTags = true, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?bool $showArchived = false, ?bool $withTags = false, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;

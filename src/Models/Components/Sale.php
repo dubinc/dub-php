@@ -12,41 +12,44 @@ namespace Dub\Models\Components;
 class Sale
 {
     /**
-     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1437` JPY). Learn more: https://d.to/currency
      *
-     * @var int $amount
+     * @var float $amount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public int $amount;
+    public float $amount;
 
     /**
-     * The payment processor via which the sale was made.
      *
-     * @var ?PaymentProcessor $paymentProcessor
+     * @var string $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    public string $currency;
+
+    /**
+     *
+     * @var string $paymentProcessor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PaymentProcessor|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?PaymentProcessor $paymentProcessor = null;
+    public string $paymentProcessor;
 
     /**
-     * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
      *
      * @var ?string $invoiceId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $invoiceId = null;
+    public ?string $invoiceId;
 
     /**
-     * @param  int  $amount
-     * @param  ?PaymentProcessor  $paymentProcessor
+     * @param  float  $amount
+     * @param  string  $currency
+     * @param  string  $paymentProcessor
      * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(int $amount, ?PaymentProcessor $paymentProcessor = PaymentProcessor::Custom, ?string $invoiceId = null)
+    public function __construct(float $amount, string $currency, string $paymentProcessor, ?string $invoiceId = null)
     {
         $this->amount = $amount;
+        $this->currency = $currency;
         $this->paymentProcessor = $paymentProcessor;
         $this->invoiceId = $invoiceId;
     }

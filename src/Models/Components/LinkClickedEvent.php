@@ -36,20 +36,20 @@ class LinkClickedEvent
 
     /**
      *
-     * @var Data $data
+     * @var LinkClickedEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Data')]
-    public Data $data;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventData')]
+    public LinkClickedEventData $data;
 
     /**
      * @param  string  $id
      * @param  LinkClickedEventEvent  $event
      * @param  string  $createdAt
-     * @param  Data  $data
+     * @param  LinkClickedEventData  $data
      * @phpstan-pure
      */
-    public function __construct(string $id, LinkClickedEventEvent $event, string $createdAt, Data $data)
+    public function __construct(string $id, LinkClickedEventEvent $event, string $createdAt, LinkClickedEventData $data)
     {
         $this->id = $id;
         $this->event = $event;
