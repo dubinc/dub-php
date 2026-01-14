@@ -304,6 +304,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\UpsertPartnerLinkRequestBody(
+    url: 'https://bad-intent.org/',
     linkProps: new Operations\UpsertPartnerLinkLinkProps(
         externalId: '123456',
         tagIds: [

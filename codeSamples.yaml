@@ -9,6 +9,24 @@ actions:
         - "lang": "php"
           "label": "retrieveAnalytics"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrieveAnalyticsRequest(\n    event: Operations\\Event::Leads,\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n    query: 'metadata[\\'key\\']:\\'value\\'',\n);\n\n$response = $sdk->analytics->retrieve(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/bounties/{bountyId}/submissions"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "listBountySubmissions"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListBountySubmissionsRequest(\n    bountyId: '<id>',\n    pageSize: 50,\n);\n\n$response = $sdk->bounties->listSubmissions(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/bounties/{bountyId}/submissions/{submissionId}/approve"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "approveBountySubmission"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->bounties->approveSubmission(\n    bountyId: '<id>',\n    submissionId: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/bounties/{bountyId}/submissions/{submissionId}/reject"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "rejectBountySubmission"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->bounties->rejectSubmission(\n    bountyId: '<id>',\n    submissionId: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/commissions"]["get"]
     update:
       "x-codeSamples":
@@ -212,7 +230,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "upsertPartnerLink"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\UpsertPartnerLinkTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\UpsertPartnerLinkTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpsertPartnerLinkRequestBody(\n    url: 'https://bad-intent.org/',\n    linkProps: new Operations\\UpsertPartnerLinkLinkProps(\n        externalId: '123456',\n        tagIds: [\n            'clux0rgak00011...',\n        ],\n        testVariants: [\n            new Operations\\UpsertPartnerLinkTestVariants(\n                url: 'https://example.com/variant-1',\n                percentage: 50,\n            ),\n            new Operations\\UpsertPartnerLinkTestVariants(\n                url: 'https://example.com/variant-2',\n                percentage: 50,\n            ),\n        ],\n    ),\n);\n\n$response = $sdk->partners->upsertLink(\n    request: $request\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
   - target: $["paths"]["/qr"]["get"]
     update:
       "x-codeSamples":
