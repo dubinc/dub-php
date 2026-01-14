@@ -101,6 +101,14 @@ class CommissionCreatedEventData
     public ?string $description;
 
     /**
+     *
+     * @var ?CommissionCreatedEventLink $link
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventLink|null')]
+    public ?CommissionCreatedEventLink $link;
+
+    /**
      * The user who created the manual commission.
      *
      * @var ?string $userId
@@ -131,11 +139,12 @@ class CommissionCreatedEventData
      * @param  ?CommissionCreatedEventType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
+     * @param  ?CommissionCreatedEventLink  $link
      * @param  ?string  $userId
      * @param  ?CommissionCreatedEventCustomer  $customer
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, CommissionCreatedEventStatus $status, float $quantity, string $createdAt, string $updatedAt, CommissionCreatedEventPartner $partner, ?CommissionCreatedEventType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $userId = null, ?CommissionCreatedEventCustomer $customer = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, CommissionCreatedEventStatus $status, float $quantity, string $createdAt, string $updatedAt, CommissionCreatedEventPartner $partner, ?CommissionCreatedEventType $type = null, ?string $invoiceId = null, ?string $description = null, ?CommissionCreatedEventLink $link = null, ?string $userId = null, ?CommissionCreatedEventCustomer $customer = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -149,6 +158,7 @@ class CommissionCreatedEventData
         $this->type = $type;
         $this->invoiceId = $invoiceId;
         $this->description = $description;
+        $this->link = $link;
         $this->userId = $userId;
         $this->customer = $customer;
     }
