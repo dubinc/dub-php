@@ -20,20 +20,20 @@ class Customer
     public string $id;
 
     /**
-     * Unique identifier for the customer in the client's app.
-     *
-     * @var string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    public string $externalId;
-
-    /**
      * Name of the customer.
      *
      * @var string $name
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
     public string $name;
+
+    /**
+     * Unique identifier for the customer in the client's app.
+     *
+     * @var string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
 
     /**
      * The date the customer was created.
@@ -60,6 +60,15 @@ class Customer
     #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $avatar = null;
+
+    /**
+     * The customer's Stripe customer ID. This is useful for attributing recurring sale events to the partner who referred the customer.
+     *
+     * @var ?string $stripeCustomerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeCustomerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stripeCustomerId = null;
 
     /**
      * Country of the customer.
@@ -90,24 +99,26 @@ class Customer
 
     /**
      * @param  string  $id
-     * @param  string  $externalId
      * @param  string  $name
+     * @param  string  $externalId
      * @param  string  $createdAt
      * @param  ?string  $email
      * @param  ?string  $avatar
+     * @param  ?string  $stripeCustomerId
      * @param  ?string  $country
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $id, string $name, string $externalId, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null)
     {
         $this->id = $id;
-        $this->externalId = $externalId;
         $this->name = $name;
+        $this->externalId = $externalId;
         $this->createdAt = $createdAt;
         $this->email = $email;
         $this->avatar = $avatar;
+        $this->stripeCustomerId = $stripeCustomerId;
         $this->country = $country;
         $this->sales = $sales;
         $this->saleAmount = $saleAmount;
