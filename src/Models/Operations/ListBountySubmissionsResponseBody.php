@@ -12,6 +12,7 @@ namespace Dub\Models\Operations;
 class ListBountySubmissionsResponseBody
 {
     /**
+     * The ID of the bounty submission
      *
      * @var string $id
      */
@@ -19,6 +20,7 @@ class ListBountySubmissionsResponseBody
     public string $id;
 
     /**
+     * The ID of the bounty
      *
      * @var string $bountyId
      */
@@ -26,6 +28,7 @@ class ListBountySubmissionsResponseBody
     public string $bountyId;
 
     /**
+     * The ID of the partner
      *
      * @var string $partnerId
      */
@@ -33,6 +36,7 @@ class ListBountySubmissionsResponseBody
     public string $partnerId;
 
     /**
+     * The status of the submission
      *
      * @var ListBountySubmissionsStatus $status
      */
@@ -41,6 +45,7 @@ class ListBountySubmissionsResponseBody
     public ListBountySubmissionsStatus $status;
 
     /**
+     * The date and time the submission was created
      *
      * @var string $createdAt
      */
@@ -48,6 +53,7 @@ class ListBountySubmissionsResponseBody
     public string $createdAt;
 
     /**
+     * The description of the submission
      *
      * @var ?string $description
      */
@@ -55,7 +61,7 @@ class ListBountySubmissionsResponseBody
     public ?string $description;
 
     /**
-     * $urls
+     * The URLs submitted for the submission
      *
      * @var ?array<string> $urls
      */
@@ -64,7 +70,7 @@ class ListBountySubmissionsResponseBody
     public ?array $urls;
 
     /**
-     * $files
+     * The files uploaded for the submission
      *
      * @var ?array<Files> $files
      */
@@ -73,6 +79,7 @@ class ListBountySubmissionsResponseBody
     public ?array $files;
 
     /**
+     * The performance count of the submission
      *
      * @var ?float $performanceCount
      */
@@ -80,6 +87,7 @@ class ListBountySubmissionsResponseBody
     public ?float $performanceCount;
 
     /**
+     * The date and time the submission was completed
      *
      * @var ?string $completedAt
      */
@@ -87,6 +95,7 @@ class ListBountySubmissionsResponseBody
     public ?string $completedAt;
 
     /**
+     * The date and time the submission was reviewed
      *
      * @var ?string $reviewedAt
      */
@@ -94,6 +103,7 @@ class ListBountySubmissionsResponseBody
     public ?string $reviewedAt;
 
     /**
+     * The reason for rejecting the submission
      *
      * @var ?string $rejectionReason
      */
@@ -101,6 +111,7 @@ class ListBountySubmissionsResponseBody
     public ?string $rejectionReason;
 
     /**
+     * The note for rejecting the submission
      *
      * @var ?string $rejectionNote
      */

@@ -12,6 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class RejectBountySubmissionRequest
 {
     /**
+     * The ID of the bounty
      *
      * @var string $bountyId
      */
@@ -19,6 +20,7 @@ class RejectBountySubmissionRequest
     public string $bountyId;
 
     /**
+     * The ID of the bounty submission
      *
      * @var string $submissionId
      */

@@ -14,4 +14,6 @@ enum Role: string
 {
     case Owner = 'owner';
     case Member = 'member';
+    case Viewer = 'viewer';
+    case Billing = 'billing';
 }

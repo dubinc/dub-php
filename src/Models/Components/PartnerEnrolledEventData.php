@@ -219,6 +219,15 @@ class PartnerEnrolledEventData
     public ?BannedReason $bannedReason = null;
 
     /**
+     *
+     * @var ?ReferralFormData $referralFormData
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('referralFormData')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\ReferralFormData|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?ReferralFormData $referralFormData = null;
+
+    /**
      * Earnings Per Click (EPC) (`Total Revenue ÷ Total Clicks`)
      *
      * @var ?float $earningsPerClick
@@ -422,6 +431,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $applicationId
      * @param  ?string  $bannedAt
      * @param  ?BannedReason  $bannedReason
+     * @param  ?ReferralFormData  $referralFormData
      * @param  ?float  $earningsPerClick
      * @param  ?float  $averageLifetimeValue
      * @param  ?float  $clickToLeadRate
@@ -436,7 +446,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $tiktok
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -463,6 +473,7 @@ class PartnerEnrolledEventData
         $this->applicationId = $applicationId;
         $this->bannedAt = $bannedAt;
         $this->bannedReason = $bannedReason;
+        $this->referralFormData = $referralFormData;
         $this->earningsPerClick = $earningsPerClick;
         $this->averageLifetimeValue = $averageLifetimeValue;
         $this->clickToLeadRate = $clickToLeadRate;

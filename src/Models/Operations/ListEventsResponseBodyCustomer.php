@@ -20,14 +20,6 @@ class ListEventsResponseBodyCustomer
     public string $id;
 
     /**
-     * Unique identifier for the customer in the client's app.
-     *
-     * @var string $externalId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    public string $externalId;
-
-    /**
      * Name of the customer.
      *
      * @var string $name
@@ -36,7 +28,15 @@ class ListEventsResponseBodyCustomer
     public string $name;
 
     /**
-     * The date the customer was created.
+     * Unique identifier for the customer in the client's app.
+     *
+     * @var string $externalId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
+
+    /**
+     * The date the customer was created (usually the signup date or trial start date).
      *
      * @var string $createdAt
      */
@@ -60,6 +60,15 @@ class ListEventsResponseBodyCustomer
     #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $avatar = null;
+
+    /**
+     * The customer's Stripe customer ID. This is useful for attributing recurring sale events to the partner who referred the customer.
+     *
+     * @var ?string $stripeCustomerId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeCustomerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stripeCustomerId = null;
 
     /**
      * Country of the customer.
@@ -89,27 +98,51 @@ class ListEventsResponseBodyCustomer
     public ?float $saleAmount = null;
 
     /**
+     * The date the customer made their first sale. Useful for calculating the time to first sale and LTV.
+     *
+     * @var ?string $firstSaleAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('firstSaleAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $firstSaleAt = null;
+
+    /**
+     * The date the customer canceled their subscription. Useful for calculating LTV and churn rate.
+     *
+     * @var ?string $subscriptionCanceledAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptionCanceledAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subscriptionCanceledAt = null;
+
+    /**
      * @param  string  $id
-     * @param  string  $externalId
      * @param  string  $name
+     * @param  string  $externalId
      * @param  string  $createdAt
      * @param  ?string  $email
      * @param  ?string  $avatar
+     * @param  ?string  $stripeCustomerId
      * @param  ?string  $country
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @param  ?string  $firstSaleAt
+     * @param  ?string  $subscriptionCanceledAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $externalId, string $name, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null)
+    public function __construct(string $id, string $name, string $externalId, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?string $firstSaleAt = null, ?string $subscriptionCanceledAt = null)
     {
         $this->id = $id;
-        $this->externalId = $externalId;
         $this->name = $name;
+        $this->externalId = $externalId;
         $this->createdAt = $createdAt;
         $this->email = $email;
         $this->avatar = $avatar;
+        $this->stripeCustomerId = $stripeCustomerId;
         $this->country = $country;
         $this->sales = $sales;
         $this->saleAmount = $saleAmount;
+        $this->firstSaleAt = $firstSaleAt;
+        $this->subscriptionCanceledAt = $subscriptionCanceledAt;
     }
 }
