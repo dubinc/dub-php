@@ -13,6 +13,7 @@ namespace Dub\Models\Operations;
 class RejectBountySubmissionResponseBody
 {
     /**
+     * The ID of the bounty submission
      *
      * @var string $id
      */
@@ -20,6 +21,7 @@ class RejectBountySubmissionResponseBody
     public string $id;
 
     /**
+     * The ID of the bounty
      *
      * @var string $bountyId
      */
@@ -27,6 +29,7 @@ class RejectBountySubmissionResponseBody
     public string $bountyId;
 
     /**
+     * The ID of the partner
      *
      * @var string $partnerId
      */
@@ -34,6 +37,7 @@ class RejectBountySubmissionResponseBody
     public string $partnerId;
 
     /**
+     * The status of the submission
      *
      * @var RejectBountySubmissionStatus $status
      */
@@ -42,6 +46,7 @@ class RejectBountySubmissionResponseBody
     public RejectBountySubmissionStatus $status;
 
     /**
+     * The date and time the submission was created
      *
      * @var string $createdAt
      */
@@ -49,6 +54,7 @@ class RejectBountySubmissionResponseBody
     public string $createdAt;
 
     /**
+     * The description of the submission
      *
      * @var ?string $description
      */
@@ -56,7 +62,7 @@ class RejectBountySubmissionResponseBody
     public ?string $description;
 
     /**
-     * $urls
+     * The URLs submitted for the submission
      *
      * @var ?array<string> $urls
      */
@@ -65,7 +71,7 @@ class RejectBountySubmissionResponseBody
     public ?array $urls;
 
     /**
-     * $files
+     * The files uploaded for the submission
      *
      * @var ?array<RejectBountySubmissionFiles> $files
      */
@@ -74,6 +80,7 @@ class RejectBountySubmissionResponseBody
     public ?array $files;
 
     /**
+     * The performance count of the submission
      *
      * @var ?float $performanceCount
      */
@@ -81,6 +88,7 @@ class RejectBountySubmissionResponseBody
     public ?float $performanceCount;
 
     /**
+     * The date and time the submission was completed
      *
      * @var ?string $completedAt
      */
@@ -88,6 +96,7 @@ class RejectBountySubmissionResponseBody
     public ?string $completedAt;
 
     /**
+     * The date and time the submission was reviewed
      *
      * @var ?string $reviewedAt
      */
@@ -95,6 +104,7 @@ class RejectBountySubmissionResponseBody
     public ?string $reviewedAt;
 
     /**
+     * The reason for rejecting the submission
      *
      * @var ?string $rejectionReason
      */
@@ -102,6 +112,7 @@ class RejectBountySubmissionResponseBody
     public ?string $rejectionReason;
 
     /**
+     * The note for rejecting the submission
      *
      * @var ?string $rejectionNote
      */

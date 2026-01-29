@@ -12,6 +12,7 @@ namespace Dub\Models\Operations;
 class ApproveBountySubmissionRequestBody
 {
     /**
+     * The reward amount for the performance-based bounty. Applicable if the bounty reward amount is not set.
      *
      * @var ?float $rewardAmount
      */
