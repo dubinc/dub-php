@@ -11,6 +11,7 @@
 * [upsertLink](#upsertlink) - Upsert a link for a partner
 * [analytics](#analytics) - Retrieve analytics for a partner
 * [ban](#ban) - Ban a partner
+* [deactivate](#deactivate) - Deactivate a partner
 
 ## create
 
@@ -457,6 +458,62 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\BanPartnerResponse](../../Models/Operations/BanPartnerResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## deactivate
+
+This will deactivate the partner from your program and disable all their active links. Their commissions and payouts will remain intact. You can reactivate them later if needed.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="deactivatePartner" method="post" path="/partners/deactivate" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->partners->deactivate(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\DeactivatePartnerRequestBody](../../Models/Operations/DeactivatePartnerRequestBody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\DeactivatePartnerResponse](../../Models/Operations/DeactivatePartnerResponse.md)**
 
 ### Errors
 

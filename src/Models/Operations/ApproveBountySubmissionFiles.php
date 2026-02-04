@@ -12,6 +12,7 @@ namespace Dub\Models\Operations;
 class ApproveBountySubmissionFiles
 {
     /**
+     * The URL of the uploaded file.
      *
      * @var string $url
      */
@@ -19,6 +20,7 @@ class ApproveBountySubmissionFiles
     public string $url;
 
     /**
+     * The original file name.
      *
      * @var string $fileName
      */
@@ -26,6 +28,7 @@ class ApproveBountySubmissionFiles
     public string $fileName;
 
     /**
+     * The file size in bytes.
      *
      * @var float $size
      */
