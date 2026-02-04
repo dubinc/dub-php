@@ -213,6 +213,12 @@ actions:
         - "lang": "php"
           "label": "banPartner"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->partners->ban(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/partners/deactivate"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "deactivatePartner"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->partners->deactivate(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links"]["get"]
     update:
       "x-codeSamples":
@@ -279,15 +285,3 @@ actions:
         - "lang": "php"
           "label": "trackSale"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\TrackSaleRequestBody(\n    customerExternalId: '<id>',\n    amount: 594903,\n    eventName: 'Invoice paid',\n    leadEventName: 'Cloned template 1481267',\n);\n\n$response = $sdk->track->sale(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
-  - target: $["paths"]["/workspaces/{idOrSlug}"]["get"]
-    update:
-      "x-codeSamples":
-        - "lang": "php"
-          "label": "getWorkspace"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->workspaces->get(\n    idOrSlug: '<value>'\n);\n\nif ($response->workspaceSchema !== null) {\n    // handle response\n}"
-  - target: $["paths"]["/workspaces/{idOrSlug}"]["patch"]
-    update:
-      "x-codeSamples":
-        - "lang": "php"
-          "label": "updateWorkspace"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->workspaces->update(\n    idOrSlug: '<value>',\n    requestBody: $requestBody\n\n);\n\nif ($response->workspaceSchema !== null) {\n    // handle response\n}"

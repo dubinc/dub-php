@@ -14,4 +14,6 @@ enum GetCustomersQueryParamSortBy: string
 {
     case CreatedAt = 'createdAt';
     case SaleAmount = 'saleAmount';
+    case FirstSaleAt = 'firstSaleAt';
+    case SubscriptionCanceledAt = 'subscriptionCanceledAt';
 }

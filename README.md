@@ -259,6 +259,7 @@ if ($response->linkSchema !== null) {
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
 * [analytics](docs/sdks/partners/README.md#analytics) - Retrieve analytics for a partner
 * [ban](docs/sdks/partners/README.md#ban) - Ban a partner
+* [deactivate](docs/sdks/partners/README.md#deactivate) - Deactivate a partner
 
 ### [QRCodes](docs/sdks/qrcodes/README.md)
 
@@ -275,11 +276,6 @@ if ($response->linkSchema !== null) {
 
 * [lead](docs/sdks/track/README.md#lead) - Track a lead
 * [sale](docs/sdks/track/README.md#sale) - Track a sale
-
-### [Workspaces](docs/sdks/workspaces/README.md)
-
-* [get](docs/sdks/workspaces/README.md#get) - Retrieve a workspace
-* [update](docs/sdks/workspaces/README.md#update) - Update a workspace
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

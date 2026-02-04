@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
+/** The status of the submission */
 enum RejectBountySubmissionStatus: string
 {
     case Draft = 'draft';
