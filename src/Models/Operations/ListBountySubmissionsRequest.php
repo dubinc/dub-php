@@ -12,7 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class ListBountySubmissionsRequest
 {
     /**
-     * The ID of the bounty
+     * The unique ID of the bounty on Dub. Can be found in the URL of the bounty page, prefixed with `bnty_`.
      *
      * @var string $bountyId
      */
