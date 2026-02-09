@@ -218,7 +218,7 @@ class Bounties
     /**
      * List bounty submissions
      *
-     * List all submissions for a specific bounty.
+     * List all submissions for a specific bounty in your partner program.
      *
      * @param  Operations\ListBountySubmissionsRequest  $request
      * @return Operations\ListBountySubmissionsResponse

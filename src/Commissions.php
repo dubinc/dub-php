@@ -45,9 +45,9 @@ class Commissions
     }
 
     /**
-     * Get commissions for a program.
+     * List all commissions
      *
-     * Retrieve a list of commissions for a program.
+     * Retrieve a list of commissions for your partner program.
      *
      * @param  ?Operations\ListCommissionsRequest  $request
      * @return Operations\ListCommissionsResponse
