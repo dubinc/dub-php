@@ -28,31 +28,6 @@ class ListPayoutsPartner
     public string $name;
 
     /**
-     * The partner's profile type on Dub.
-     *
-     * @var ProfileType $profileType
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('profileType')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ProfileType')]
-    public ProfileType $profileType;
-
-    /**
-     * The date when the partner was created on Dub.
-     *
-     * @var string $createdAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
-    public string $createdAt;
-
-    /**
-     * If the partner profile type is a company, this is the partner's legal company name.
-     *
-     * @var ?string $companyName
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('companyName')]
-    public ?string $companyName;
-
-    /**
      * The partner's email address. Should be a unique value across Dub.
      *
      * @var ?string $email
@@ -69,30 +44,6 @@ class ListPayoutsPartner
     public ?string $image;
 
     /**
-     * The partner's country (required for tax purposes).
-     *
-     * @var ?string $country
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
-    public ?string $country;
-
-    /**
-     * The partner's Stripe Connect ID (for receiving payouts via Stripe).
-     *
-     * @var ?string $stripeConnectId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeConnectId')]
-    public ?string $stripeConnectId;
-
-    /**
-     * The partner's PayPal email (for receiving payouts via PayPal).
-     *
-     * @var ?string $paypalEmail
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('paypalEmail')]
-    public ?string $paypalEmail;
-
-    /**
      * The date when the partner enabled payouts.
      *
      * @var ?string $payoutsEnabledAt
@@ -101,61 +52,15 @@ class ListPayoutsPartner
     public ?string $payoutsEnabledAt;
 
     /**
-     * The partner's invoice settings.
+     * The partner's country (required for tax purposes).
      *
-     * @var ?InvoiceSettings $invoiceSettings
+     * @var ?string $country
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceSettings')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\InvoiceSettings|null')]
-    public ?InvoiceSettings $invoiceSettings;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    public ?string $country;
 
     /**
-     * The date when the partner was added to the partner network.
-     *
-     * @var ?string $discoverableAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('discoverableAt')]
-    public ?string $discoverableAt;
-
-    /**
-     * The date when the partner received the trusted badge in the partner network.
-     *
-     * @var ?string $trustedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('trustedAt')]
-    public ?string $trustedAt;
-
-    /**
-     * The partner's industry interests.
-     *
-     * @var ?array<IndustryInterests> $industryInterests
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('industryInterests')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\IndustryInterests>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $industryInterests = null;
-
-    /**
-     * The partner's preferred earning structures.
-     *
-     * @var ?array<PreferredEarningStructures> $preferredEarningStructures
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('preferredEarningStructures')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\PreferredEarningStructures>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $preferredEarningStructures = null;
-
-    /**
-     * The partner's sales channels.
-     *
-     * @var ?array<SalesChannels> $salesChannels
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('salesChannels')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\SalesChannels>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $salesChannels = null;
-
-    /**
+     * The partner's unique ID within your database. Can be useful for associating the partner with a user in your database and retrieving/update their data in the future.
      *
      * @var ?string $tenantId
      */
@@ -163,134 +68,34 @@ class ListPayoutsPartner
     public ?string $tenantId;
 
     /**
-     * A brief description of the partner and their background.
+     * The partner's group ID on Dub.
      *
-     * @var ?string $description
+     * @var ?string $groupId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('groupId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $description = null;
-
-    /**
-     * The partner's website URL (including the https protocol).
-     *
-     * @var ?string $website
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('website')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $website = null;
-
-    /**
-     * The partner's YouTube channel username (e.g. `johndoe`).
-     *
-     * @var ?string $youtube
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('youtube')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $youtube = null;
-
-    /**
-     * The partner's Twitter username (e.g. `johndoe`).
-     *
-     * @var ?string $twitter
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('twitter')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $twitter = null;
-
-    /**
-     * The partner's LinkedIn username (e.g. `johndoe`).
-     *
-     * @var ?string $linkedin
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('linkedin')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $linkedin = null;
-
-    /**
-     * The partner's Instagram username (e.g. `johndoe`).
-     *
-     * @var ?string $instagram
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('instagram')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $instagram = null;
-
-    /**
-     * The partner's TikTok username (e.g. `johndoe`).
-     *
-     * @var ?string $tiktok
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('tiktok')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $tiktok = null;
-
-    /**
-     * The partner's monthly traffic.
-     *
-     * @var ?MonthlyTraffic $monthlyTraffic
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('monthlyTraffic')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\MonthlyTraffic|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?MonthlyTraffic $monthlyTraffic = null;
+    public ?string $groupId = null;
 
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  ProfileType  $profileType
-     * @param  string  $createdAt
-     * @param  ?string  $companyName
      * @param  ?string  $email
      * @param  ?string  $image
-     * @param  ?string  $country
-     * @param  ?string  $stripeConnectId
-     * @param  ?string  $paypalEmail
      * @param  ?string  $payoutsEnabledAt
-     * @param  ?InvoiceSettings  $invoiceSettings
-     * @param  ?string  $discoverableAt
-     * @param  ?string  $trustedAt
-     * @param  ?array<IndustryInterests>  $industryInterests
-     * @param  ?array<PreferredEarningStructures>  $preferredEarningStructures
-     * @param  ?array<SalesChannels>  $salesChannels
+     * @param  ?string  $country
      * @param  ?string  $tenantId
-     * @param  ?string  $description
-     * @param  ?string  $website
-     * @param  ?string  $youtube
-     * @param  ?string  $twitter
-     * @param  ?string  $linkedin
-     * @param  ?string  $instagram
-     * @param  ?string  $tiktok
-     * @param  ?MonthlyTraffic  $monthlyTraffic
+     * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ProfileType $profileType, string $createdAt, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $stripeConnectId = null, ?string $paypalEmail = null, ?string $payoutsEnabledAt = null, ?InvoiceSettings $invoiceSettings = null, ?string $discoverableAt = null, ?string $trustedAt = null, ?array $industryInterests = null, ?array $preferredEarningStructures = null, ?array $salesChannels = null, ?string $tenantId = null, ?string $description = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?MonthlyTraffic $monthlyTraffic = null)
+    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $tenantId = null, ?string $groupId = null)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->profileType = $profileType;
-        $this->createdAt = $createdAt;
-        $this->companyName = $companyName;
         $this->email = $email;
         $this->image = $image;
-        $this->country = $country;
-        $this->stripeConnectId = $stripeConnectId;
-        $this->paypalEmail = $paypalEmail;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
-        $this->invoiceSettings = $invoiceSettings;
-        $this->discoverableAt = $discoverableAt;
-        $this->trustedAt = $trustedAt;
-        $this->industryInterests = $industryInterests;
-        $this->preferredEarningStructures = $preferredEarningStructures;
-        $this->salesChannels = $salesChannels;
+        $this->country = $country;
         $this->tenantId = $tenantId;
-        $this->description = $description;
-        $this->website = $website;
-        $this->youtube = $youtube;
-        $this->twitter = $twitter;
-        $this->linkedin = $linkedin;
-        $this->instagram = $instagram;
-        $this->tiktok = $tiktok;
-        $this->monthlyTraffic = $monthlyTraffic;
+        $this->groupId = $groupId;
     }
 }
