@@ -48,11 +48,11 @@ class Fields2
 
     /**
      *
-     * @var CreatePartnerFieldsType $type
+     * @var ListPartnersFieldsType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsType')]
-    public CreatePartnerFieldsType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsType')]
+    public ListPartnersFieldsType $type;
 
     /**
      *
@@ -69,11 +69,11 @@ class Fields2
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsType  $type
+     * @param  ListPartnersFieldsType  $type
      * @param  ?FieldsConstraints  $constraints
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsType $type, ?FieldsConstraints $constraints = null)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsType $type, ?FieldsConstraints $constraints = null)
     {
         $this->key = $key;
         $this->label = $label;

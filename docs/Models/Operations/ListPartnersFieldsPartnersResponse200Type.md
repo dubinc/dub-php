@@ -3,6 +3,6 @@
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Country` | country   |
+| Name   | Value  |
+| ------ | ------ |
+| `Date` | date   |

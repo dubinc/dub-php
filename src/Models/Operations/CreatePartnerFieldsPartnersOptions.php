@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class ListPartnersFieldsOptions
+class CreatePartnerFieldsPartnersOptions
 {
     /**
      *

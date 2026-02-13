@@ -1,42 +1,42 @@
-# ListPartnersFields
+# CreatePartnerFields
 
 
 ## Supported Types
 
-### `Operations\ListPartnersFields1`
+### `Operations\CreatePartnerFields1`
 
 ```php
 /**
-* @var Operations\ListPartnersFields1
+* @var Operations\CreatePartnerFields1
 */
-Operations\ListPartnersFields1 $value = /* values here */
+Operations\CreatePartnerFields1 $value = /* values here */
 ```
 
-### `Operations\ListPartnersFields2`
+### `Operations\CreatePartnerFields2`
 
 ```php
 /**
-* @var Operations\ListPartnersFields2
+* @var Operations\CreatePartnerFields2
 */
-Operations\ListPartnersFields2 $value = /* values here */
+Operations\CreatePartnerFields2 $value = /* values here */
 ```
 
-### `Operations\ListPartnersFields3`
+### `Operations\CreatePartnerFields3`
 
 ```php
 /**
-* @var Operations\ListPartnersFields3
+* @var Operations\CreatePartnerFields3
 */
-Operations\ListPartnersFields3 $value = /* values here */
+Operations\CreatePartnerFields3 $value = /* values here */
 ```
 
-### `Operations\ListPartnersFields4`
+### `Operations\CreatePartnerFields4`
 
 ```php
 /**
-* @var Operations\ListPartnersFields4
+* @var Operations\CreatePartnerFields4
 */
-Operations\ListPartnersFields4 $value = /* values here */
+Operations\CreatePartnerFields4 $value = /* values here */
 ```
 
 ### `Operations\Fields5`

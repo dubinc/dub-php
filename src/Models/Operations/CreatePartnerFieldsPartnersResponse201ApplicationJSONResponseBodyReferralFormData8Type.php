@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-enum ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormData8Type: string
+enum CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type: string
 {
     case Phone = 'phone';
 }

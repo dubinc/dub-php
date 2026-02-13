@@ -11,5 +11,5 @@ namespace Dub\Models\Operations;
 
 enum ListPartnersFieldsPartnersResponse200Type: string
 {
-    case Country = 'country';
+    case Date = 'date';
 }

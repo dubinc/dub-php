@@ -11,5 +11,5 @@ namespace Dub\Models\Operations;
 
 enum ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType: string
 {
-    case MultiSelect = 'multiSelect';
+    case Number = 'number';
 }

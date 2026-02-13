@@ -48,11 +48,11 @@ class Fields3
 
     /**
      *
-     * @var CreatePartnerFieldsPartnersType $type
+     * @var ListPartnersFieldsPartnersType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersType')]
-    public CreatePartnerFieldsPartnersType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersType')]
+    public ListPartnersFieldsPartnersType $type;
 
     /**
      * $options
@@ -69,11 +69,11 @@ class Fields3
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsPartnersType  $type
+     * @param  ListPartnersFieldsPartnersType  $type
      * @param  array<Options>  $options
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersType $type, array $options)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersType $type, array $options)
     {
         $this->key = $key;
         $this->label = $label;

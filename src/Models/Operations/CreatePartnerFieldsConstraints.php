@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class ListPartnersFieldsPartnersConstraints
+class CreatePartnerFieldsConstraints
 {
     /**
      *
@@ -20,11 +20,21 @@ class ListPartnersFieldsPartnersConstraints
     public ?int $maxLength = null;
 
     /**
+     *
+     * @var ?string $pattern
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('pattern')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $pattern = null;
+
+    /**
      * @param  ?int  $maxLength
+     * @param  ?string  $pattern
      * @phpstan-pure
      */
-    public function __construct(?int $maxLength = null)
+    public function __construct(?int $maxLength = null, ?string $pattern = null)
     {
         $this->maxLength = $maxLength;
+        $this->pattern = $pattern;
     }
 }

@@ -3,6 +3,6 @@
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Phone` | phone   |
+| Name     | Value    |
+| -------- | -------- |
+| `Number` | number   |

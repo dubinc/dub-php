@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class ListPartnersFields4
+class CreatePartnerFields2
 {
     /**
      *
@@ -48,11 +48,20 @@ class ListPartnersFields4
 
     /**
      *
-     * @var ListPartnersFieldsPartnersResponse200Type $type
+     * @var CreatePartnerFieldsPartnersType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponse200Type')]
-    public ListPartnersFieldsPartnersResponse200Type $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersType')]
+    public CreatePartnerFieldsPartnersType $type;
+
+    /**
+     *
+     * @var ?CreatePartnerFieldsPartnersConstraints $constraints
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('constraints')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersConstraints|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?CreatePartnerFieldsPartnersConstraints $constraints = null;
 
     /**
      * @param  string  $key
@@ -60,10 +69,11 @@ class ListPartnersFields4
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersResponse200Type  $type
+     * @param  CreatePartnerFieldsPartnersType  $type
+     * @param  ?CreatePartnerFieldsPartnersConstraints  $constraints
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponse200Type $type)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersType $type, ?CreatePartnerFieldsPartnersConstraints $constraints = null)
     {
         $this->key = $key;
         $this->label = $label;
@@ -71,5 +81,6 @@ class ListPartnersFields4
         $this->locked = $locked;
         $this->position = $position;
         $this->type = $type;
+        $this->constraints = $constraints;
     }
 }

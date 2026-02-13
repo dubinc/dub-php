@@ -3,6 +3,6 @@
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Textarea` | textarea   |
+| Name     | Value    |
+| -------- | -------- |
+| `Select` | select   |

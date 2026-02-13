@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class ListPartnersFields1
+class CreatePartnerFields1
 {
     /**
      *
@@ -48,20 +48,20 @@ class ListPartnersFields1
 
     /**
      *
-     * @var ListPartnersFieldsType $type
+     * @var CreatePartnerFieldsType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsType')]
-    public ListPartnersFieldsType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsType')]
+    public CreatePartnerFieldsType $type;
 
     /**
      *
-     * @var ?ListPartnersFieldsConstraints $constraints
+     * @var ?CreatePartnerFieldsConstraints $constraints
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('constraints')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsConstraints|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsConstraints|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ListPartnersFieldsConstraints $constraints = null;
+    public ?CreatePartnerFieldsConstraints $constraints = null;
 
     /**
      * @param  string  $key
@@ -69,11 +69,11 @@ class ListPartnersFields1
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsType  $type
-     * @param  ?ListPartnersFieldsConstraints  $constraints
+     * @param  CreatePartnerFieldsType  $type
+     * @param  ?CreatePartnerFieldsConstraints  $constraints
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsType $type, ?ListPartnersFieldsConstraints $constraints = null)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsType $type, ?CreatePartnerFieldsConstraints $constraints = null)
     {
         $this->key = $key;
         $this->label = $label;

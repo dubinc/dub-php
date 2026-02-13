@@ -11,5 +11,5 @@ namespace Dub\Models\Operations;
 
 enum CreatePartnerFieldsPartnersResponse201ApplicationJSONType: string
 {
-    case MultiSelect = 'multiSelect';
+    case Date = 'date';
 }

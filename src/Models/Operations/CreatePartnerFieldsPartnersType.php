@@ -11,5 +11,5 @@ namespace Dub\Models\Operations;
 
 enum CreatePartnerFieldsPartnersType: string
 {
-    case Select = 'select';
+    case Textarea = 'textarea';
 }

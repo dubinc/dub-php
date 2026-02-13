@@ -48,11 +48,11 @@ class Fields7
 
     /**
      *
-     * @var ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormDataType $type
+     * @var CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormDataType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormDataType')]
-    public ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormDataType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormDataType')]
+    public CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormDataType $type;
 
     /**
      * @param  string  $key
@@ -60,10 +60,10 @@ class Fields7
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormDataType  $type
+     * @param  CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormDataType  $type
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormDataType $type)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormDataType $type)
     {
         $this->key = $key;
         $this->label = $label;

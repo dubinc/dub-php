@@ -11,5 +11,5 @@ namespace Dub\Models\Operations;
 
 enum ListPartnersFieldsType: string
 {
-    case Text = 'text';
+    case Textarea = 'textarea';
 }

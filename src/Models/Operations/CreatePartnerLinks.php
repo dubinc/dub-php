@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class ListPartnersLinks
+class CreatePartnerLinks
 {
     /**
      * The unique ID of the short link.
