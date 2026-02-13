@@ -4,66 +4,10 @@
 
 ### Available Operations
 
-* [create](#create) - Create a folder
 * [list](#list) - Retrieve a list of folders
-* [update](#update) - Update a folder
+* [create](#create) - Create a folder
 * [delete](#delete) - Delete a folder
-
-## create
-
-Create a folder for the authenticated workspace.
-
-### Example Usage
-
-<!-- UsageSnippet language="php" operationID="createFolder" method="post" path="/folders" -->
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-
-
-$response = $sdk->folders->create(
-    request: $request
-);
-
-if ($response->folderSchema !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `$request`                                                                               | [Operations\CreateFolderRequestBody](../../Models/Operations/CreateFolderRequestBody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-
-### Response
-
-**[?Operations\CreateFolderResponse](../../Models/Operations/CreateFolderResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+* [update](#update) - Update a folder
 
 ## list
 
@@ -125,13 +69,13 @@ if ($response->folderSchemas !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
-## update
+## create
 
-Update a folder in the workspace.
+Create a folder for the authenticated workspace.
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="updateFolder" method="patch" path="/folders/{id}" -->
+<!-- UsageSnippet language="php" operationID="createFolder" method="post" path="/folders" -->
 ```php
 declare(strict_types=1);
 
@@ -147,10 +91,8 @@ $sdk = Dub\Dub::builder()
 
 
 
-$response = $sdk->folders->update(
-    id: '<id>',
-    requestBody: $requestBody
-
+$response = $sdk->folders->create(
+    request: $request
 );
 
 if ($response->folderSchema !== null) {
@@ -160,14 +102,13 @@ if ($response->folderSchema !== null) {
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `id`                                                                                      | *string*                                                                                  | :heavy_check_mark:                                                                        | The ID of the folder to update.                                                           |
-| `requestBody`                                                                             | [?Operations\UpdateFolderRequestBody](../../Models/Operations/UpdateFolderRequestBody.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `$request`                                                                               | [Operations\CreateFolderRequestBody](../../Models/Operations/CreateFolderRequestBody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 ### Response
 
-**[?Operations\UpdateFolderResponse](../../Models/Operations/UpdateFolderResponse.md)**
+**[?Operations\CreateFolderResponse](../../Models/Operations/CreateFolderResponse.md)**
 
 ### Errors
 
@@ -224,6 +165,65 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\DeleteFolderResponse](../../Models/Operations/DeleteFolderResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## update
+
+Update a folder in the workspace.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="updateFolder" method="patch" path="/folders/{id}" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->folders->update(
+    id: '<id>',
+    requestBody: $requestBody
+
+);
+
+if ($response->folderSchema !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `id`                                                                                      | *string*                                                                                  | :heavy_check_mark:                                                                        | The ID of the folder to update.                                                           |
+| `requestBody`                                                                             | [?Operations\UpdateFolderRequestBody](../../Models/Operations/UpdateFolderRequestBody.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+
+### Response
+
+**[?Operations\UpdateFolderResponse](../../Models/Operations/UpdateFolderResponse.md)**
 
 ### Errors
 

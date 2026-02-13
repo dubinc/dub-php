@@ -11,5 +11,5 @@ namespace Dub\Models\Operations;
 
 enum ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyReferralFormDataType: string
 {
-    case Number = 'number';
+    case Phone = 'phone';
 }

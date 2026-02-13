@@ -10,7 +10,7 @@ namespace Dub\Models\Operations;
 
 
 /** If the partner was banned from the program, this is the reason for the ban. */
-enum ListPartnersBannedReason: string
+enum CreatePartnerBannedReason: string
 {
     case TosViolation = 'tos_violation';
     case InappropriateContent = 'inappropriate_content';

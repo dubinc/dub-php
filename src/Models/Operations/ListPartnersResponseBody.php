@@ -134,10 +134,10 @@ class ListPartnersResponseBody
     /**
      * The partner's referral links in this program.
      *
-     * @var ?array<ListPartnersLinks> $links
+     * @var ?array<Links> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\ListPartnersLinks>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\Links>|null')]
     public ?array $links;
 
     /**
@@ -211,21 +211,21 @@ class ListPartnersResponseBody
     /**
      * If the partner was banned from the program, this is the reason for the ban.
      *
-     * @var ?ListPartnersBannedReason $bannedReason
+     * @var ?BannedReason $bannedReason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bannedReason')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersBannedReason|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\BannedReason|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ListPartnersBannedReason $bannedReason = null;
+    public ?BannedReason $bannedReason = null;
 
     /**
      *
-     * @var ?ListPartnersReferralFormData $referralFormData
+     * @var ?ReferralFormData $referralFormData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('referralFormData')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersReferralFormData|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ReferralFormData|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ListPartnersReferralFormData $referralFormData = null;
+    public ?ReferralFormData $referralFormData = null;
 
     /**
      * Earnings Per Click (EPC) (`Total Revenue ÷ Total Clicks`)
@@ -414,7 +414,7 @@ class ListPartnersResponseBody
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $trustedAt
      * @param  ?string  $tenantId
-     * @param  ?array<ListPartnersLinks>  $links
+     * @param  ?array<Links>  $links
      * @param  ?float  $totalCommissions
      * @param  ?float  $totalClicks
      * @param  ?float  $totalLeads
@@ -430,8 +430,8 @@ class ListPartnersResponseBody
      * @param  ?string  $discountId
      * @param  ?string  $applicationId
      * @param  ?string  $bannedAt
-     * @param  ?ListPartnersBannedReason  $bannedReason
-     * @param  ?ListPartnersReferralFormData  $referralFormData
+     * @param  ?BannedReason  $bannedReason
+     * @param  ?ReferralFormData  $referralFormData
      * @param  ?float  $earningsPerClick
      * @param  ?float  $averageLifetimeValue
      * @param  ?float  $clickToLeadRate
@@ -446,7 +446,7 @@ class ListPartnersResponseBody
      * @param  ?string  $tiktok
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, ListPartnersStatus $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?ListPartnersBannedReason $bannedReason = null, ?ListPartnersReferralFormData $referralFormData = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, ListPartnersStatus $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;

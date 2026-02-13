@@ -48,19 +48,19 @@ class Fields6
 
     /**
      *
-     * @var ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType $type
+     * @var CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType')]
-    public ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType')]
+    public CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType $type;
 
     /**
      * $options
      *
-     * @var array<ListPartnersFieldsPartnersOptions> $options
+     * @var array<CreatePartnerFieldsPartnersOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\ListPartnersFieldsPartnersOptions>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerFieldsPartnersOptions>')]
     public array $options;
 
     /**
@@ -69,11 +69,11 @@ class Fields6
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType  $type
-     * @param  array<ListPartnersFieldsPartnersOptions>  $options
+     * @param  CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType  $type
+     * @param  array<CreatePartnerFieldsPartnersOptions>  $options
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType $type, array $options)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType $type, array $options)
     {
         $this->key = $key;
         $this->label = $label;

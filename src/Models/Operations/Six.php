@@ -48,11 +48,11 @@ class Six
 
     /**
      *
-     * @var CreatePartnerFieldsPartnersResponse201ApplicationJSONType $type
+     * @var ListPartnersFieldsPartnersResponse200ApplicationJSONType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONType')]
-    public CreatePartnerFieldsPartnersResponse201ApplicationJSONType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponse200ApplicationJSONType')]
+    public ListPartnersFieldsPartnersResponse200ApplicationJSONType $type;
 
     /**
      * $options
@@ -69,11 +69,11 @@ class Six
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsPartnersResponse201ApplicationJSONType  $type
+     * @param  ListPartnersFieldsPartnersResponse200ApplicationJSONType  $type
      * @param  array<FieldsOptions>  $options
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponse201ApplicationJSONType $type, array $options)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponse200ApplicationJSONType $type, array $options)
     {
         $this->key = $key;
         $this->label = $label;

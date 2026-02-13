@@ -4,66 +4,10 @@
 
 ### Available Operations
 
-* [create](#create) - Create a tag
 * [list](#list) - Retrieve a list of tags
-* [update](#update) - Update a tag
+* [create](#create) - Create a tag
 * [delete](#delete) - Delete a tag
-
-## create
-
-Create a tag for the authenticated workspace.
-
-### Example Usage
-
-<!-- UsageSnippet language="php" operationID="createTag" method="post" path="/tags" -->
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Dub;
-
-$sdk = Dub\Dub::builder()
-    ->setSecurity(
-        'DUB_API_KEY'
-    )
-    ->build();
-
-
-
-$response = $sdk->tags->create(
-    request: $request
-);
-
-if ($response->linkTagSchemaOutput !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `$request`                                                                         | [Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-
-### Response
-
-**[?Operations\CreateTagResponse](../../Models/Operations/CreateTagResponse.md)**
-
-### Errors
-
-| Error Type                 | Status Code                | Content Type               |
-| -------------------------- | -------------------------- | -------------------------- |
-| Errors\BadRequest          | 400                        | application/json           |
-| Errors\Unauthorized        | 401                        | application/json           |
-| Errors\Forbidden           | 403                        | application/json           |
-| Errors\NotFound            | 404                        | application/json           |
-| Errors\Conflict            | 409                        | application/json           |
-| Errors\InviteExpired       | 410                        | application/json           |
-| Errors\UnprocessableEntity | 422                        | application/json           |
-| Errors\RateLimitExceeded   | 429                        | application/json           |
-| Errors\InternalServerError | 500                        | application/json           |
-| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+* [update](#update) - Update a tag
 
 ## list
 
@@ -124,13 +68,13 @@ if ($response->linkTagSchemaOutputs !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
-## update
+## create
 
-Update a tag in the workspace.
+Create a tag for the authenticated workspace.
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="updateTag" method="patch" path="/tags/{id}" -->
+<!-- UsageSnippet language="php" operationID="createTag" method="post" path="/tags" -->
 ```php
 declare(strict_types=1);
 
@@ -146,10 +90,8 @@ $sdk = Dub\Dub::builder()
 
 
 
-$response = $sdk->tags->update(
-    id: '<id>',
-    requestBody: $requestBody
-
+$response = $sdk->tags->create(
+    request: $request
 );
 
 if ($response->linkTagSchemaOutput !== null) {
@@ -159,14 +101,13 @@ if ($response->linkTagSchemaOutput !== null) {
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `id`                                                                                | *string*                                                                            | :heavy_check_mark:                                                                  | The ID of the tag to update.                                                        |
-| `requestBody`                                                                       | [?Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `$request`                                                                         | [Operations\CreateTagRequestBody](../../Models/Operations/CreateTagRequestBody.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 ### Response
 
-**[?Operations\UpdateTagResponse](../../Models/Operations/UpdateTagResponse.md)**
+**[?Operations\CreateTagResponse](../../Models/Operations/CreateTagResponse.md)**
 
 ### Errors
 
@@ -223,6 +164,65 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\DeleteTagResponse](../../Models/Operations/DeleteTagResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## update
+
+Update a tag in the workspace.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="updateTag" method="patch" path="/tags/{id}" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+
+
+$response = $sdk->tags->update(
+    id: '<id>',
+    requestBody: $requestBody
+
+);
+
+if ($response->linkTagSchemaOutput !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `id`                                                                                | *string*                                                                            | :heavy_check_mark:                                                                  | The ID of the tag to update.                                                        |
+| `requestBody`                                                                       | [?Operations\UpdateTagRequestBody](../../Models/Operations/UpdateTagRequestBody.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+
+### Response
+
+**[?Operations\UpdateTagResponse](../../Models/Operations/UpdateTagResponse.md)**
 
 ### Errors
 

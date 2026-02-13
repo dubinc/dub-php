@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-class ListPartnersFields3
+class CreatePartnerFields3
 {
     /**
      *
@@ -48,19 +48,19 @@ class ListPartnersFields3
 
     /**
      *
-     * @var ListPartnersFieldsPartnersResponseType $type
+     * @var CreatePartnerFieldsPartnersResponseType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponseType')]
-    public ListPartnersFieldsPartnersResponseType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponseType')]
+    public CreatePartnerFieldsPartnersResponseType $type;
 
     /**
      * $options
      *
-     * @var array<ListPartnersFieldsOptions> $options
+     * @var array<CreatePartnerFieldsOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\ListPartnersFieldsOptions>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerFieldsOptions>')]
     public array $options;
 
     /**
@@ -69,11 +69,11 @@ class ListPartnersFields3
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersResponseType  $type
-     * @param  array<ListPartnersFieldsOptions>  $options
+     * @param  CreatePartnerFieldsPartnersResponseType  $type
+     * @param  array<CreatePartnerFieldsOptions>  $options
      * @phpstan-pure
      */
-    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponseType $type, array $options)
+    public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponseType $type, array $options)
     {
         $this->key = $key;
         $this->label = $label;
