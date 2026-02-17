@@ -36,7 +36,7 @@ class RetrievePartnerAnalyticsRequest
     public ?string $end = null;
 
     /**
-     * Search the events by a custom metadata value. Only available for lead and sale events.
+     * Search the events by a custom metadata value. Only available for lead and sale events. Examples: `metadata['key']:'value'`
      *
      * @var ?string $query
      */
