@@ -69,6 +69,15 @@ class AnalyticsTopLinks
     public string $createdAt;
 
     /**
+     * The custom link preview title (og:title)
+     *
+     * @var ?string $title
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $title = null;
+
+    /**
      * The comments of the short link
      *
      * @var ?string $comments
@@ -78,13 +87,13 @@ class AnalyticsTopLinks
     public ?string $comments = null;
 
     /**
-     * The custom link preview title (og:title)
+     * The ID of the partner that the link belongs to (if applicable)
      *
-     * @var ?string $title
+     * @var ?string $partnerId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('title')]
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partnerId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?string $title = null;
+    public ?string $partnerId = null;
 
     /**
      * The number of clicks from this link
@@ -134,11 +143,12 @@ class AnalyticsTopLinks
      * @param  ?float  $leads
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
-     * @param  ?string  $comments
      * @param  ?string  $title
+     * @param  ?string  $comments
+     * @param  ?string  $partnerId
      * @phpstan-pure
      */
-    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $comments = null, ?string $title = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $title = null, ?string $comments = null, ?string $partnerId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->link = $link;
         $this->id = $id;
@@ -147,8 +157,9 @@ class AnalyticsTopLinks
         $this->shortLink = $shortLink;
         $this->url = $url;
         $this->createdAt = $createdAt;
-        $this->comments = $comments;
         $this->title = $title;
+        $this->comments = $comments;
+        $this->partnerId = $partnerId;
         $this->clicks = $clicks;
         $this->leads = $leads;
         $this->sales = $sales;

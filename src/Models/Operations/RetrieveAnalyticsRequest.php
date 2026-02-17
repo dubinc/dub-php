@@ -12,7 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class RetrieveAnalyticsRequest
 {
     /**
-     * The domain to filter analytics for.
+     * The domain to filter analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `dub.co`, `dub.co,google.com`, `-spam.com`.
      *
      * @var ?string $domain
      */
@@ -28,7 +28,7 @@ class RetrieveAnalyticsRequest
     public ?string $key = null;
 
     /**
-     * The unique ID of the short link on Dub to retrieve analytics for.
+     * The unique ID of the link to retrieve analytics for.Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `link_123`, `link_123,link_456`, `-link_789`.
      *
      * @var ?string $linkId
      */
@@ -44,7 +44,7 @@ class RetrieveAnalyticsRequest
     public ?string $externalId = null;
 
     /**
-     * The ID of the tenant that created the link inside your system.
+     * The ID of the tenant that created the link inside your system. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `tenant_123`, `tenant_123,tenant_456`, `-tenant_789`.
      *
      * @var ?string $tenantId
      */
@@ -52,15 +52,31 @@ class RetrieveAnalyticsRequest
     public ?string $tenantId = null;
 
     /**
-     * The ID of the program to retrieve analytics for.
+     * The tag ID to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `tag_123`, `tag_123,tag_456`, `-tag_789`.
      *
-     * @var ?string $programId
+     * @var ?string $tagId
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=programId')]
-    public ?string $programId = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagId')]
+    public ?string $tagId = null;
 
     /**
-     * The ID of the partner to retrieve analytics for.
+     * The folder ID to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `folder_123`, `folder_123,folder_456`, `-folder_789`. If not provided, return analytics for all links.
+     *
+     * @var ?string $folderId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=folderId')]
+    public ?string $folderId = null;
+
+    /**
+     * The group ID to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `grp_123`, `grp_123,grp_456`, `-grp_789`.
+     *
+     * @var ?string $groupId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
+    public ?string $groupId = null;
+
+    /**
+     * The ID of the partner to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `pn_123`, `pn_123,pn_456`, `-pn_789`.
      *
      * @var ?string $partnerId
      */
@@ -100,7 +116,7 @@ class RetrieveAnalyticsRequest
     public ?string $end = null;
 
     /**
-     * The country to retrieve analytics for. Must be passed as a 2-letter ISO 3166-1 country code. See https://d.to/geo for more information.
+     * The country to retrieve analytics for. Must be passed as a 2-letter ISO 3166-1 country code (see https://d.to/geo). Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `US`, `US,BR,FR`, `-US`.
      *
      * @var ?string $country
      */
@@ -108,7 +124,7 @@ class RetrieveAnalyticsRequest
     public ?string $country = null;
 
     /**
-     * The city to retrieve analytics for.
+     * The city to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `New York`, `New York,London`, `-New York`.
      *
      * @var ?string $city
      */
@@ -116,7 +132,7 @@ class RetrieveAnalyticsRequest
     public ?string $city = null;
 
     /**
-     * The ISO 3166-2 region code to retrieve analytics for.
+     * The ISO 3166-2 region code to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `NY`, `NY,CA`, `-NY`.
      *
      * @var ?string $region
      */
@@ -124,15 +140,15 @@ class RetrieveAnalyticsRequest
     public ?string $region = null;
 
     /**
-     * The continent to retrieve analytics for.
+     * The continent to retrieve analytics for. Valid values: AF, AN, AS, EU, NA, OC, SA. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `NA`, `NA,EU`, `-AS`.
      *
-     * @var ?Continent $continent
+     * @var ?string $continent
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=continent')]
-    public ?Continent $continent = null;
+    public ?string $continent = null;
 
     /**
-     * The device to retrieve analytics for.
+     * The device to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `Desktop`, `Mobile,Tablet`, `-Mobile`.
      *
      * @var ?string $device
      */
@@ -140,7 +156,7 @@ class RetrieveAnalyticsRequest
     public ?string $device = null;
 
     /**
-     * The browser to retrieve analytics for.
+     * The browser to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `Chrome`, `Chrome,Firefox,Safari`, `-IE`.
      *
      * @var ?string $browser
      */
@@ -148,7 +164,7 @@ class RetrieveAnalyticsRequest
     public ?string $browser = null;
 
     /**
-     * The OS to retrieve analytics for.
+     * The OS to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `Windows`, `Mac,Windows,Linux`, `-Windows`.
      *
      * @var ?string $os
      */
@@ -156,15 +172,15 @@ class RetrieveAnalyticsRequest
     public ?string $os = null;
 
     /**
-     * The trigger to retrieve analytics for. If undefined, returns all trigger types.
+     * The trigger to retrieve analytics for. Valid values: qr, link, pageview. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `qr`, `qr,link`, `-qr`. If undefined, returns all trigger types.
      *
-     * @var ?Trigger $trigger
+     * @var ?string $trigger
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=trigger')]
-    public ?Trigger $trigger = null;
+    public ?string $trigger = null;
 
     /**
-     * The referer hostname to retrieve analytics for.
+     * The referer hostname to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `google.com`, `google.com,twitter.com`, `-facebook.com`.
      *
      * @var ?string $referer
      */
@@ -172,7 +188,7 @@ class RetrieveAnalyticsRequest
     public ?string $referer = null;
 
     /**
-     * The full referer URL to retrieve analytics for.
+     * The full referer URL to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `https://google.com`, `https://google.com,https://twitter.com`, `-https://spam.com`.
      *
      * @var ?string $refererUrl
      */
@@ -180,7 +196,7 @@ class RetrieveAnalyticsRequest
     public ?string $refererUrl = null;
 
     /**
-     * The URL to retrieve analytics for.
+     * The destination URL to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `https://example.com`, `https://example.com,https://other.com`, `-https://spam.com`.
      *
      * @var ?string $url
      */
@@ -188,28 +204,44 @@ class RetrieveAnalyticsRequest
     public ?string $url = null;
 
     /**
-     * The tag IDs to retrieve analytics for.
+     * The UTM source to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `google`, `google,twitter`, `-spam`.
      *
-     * @var string|array<string>|null $tagIds
+     * @var ?string $utmSource
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagIds')]
-    public string|array|null $tagIds = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_source')]
+    public ?string $utmSource = null;
 
     /**
-     * The folder ID to retrieve analytics for. If not provided, return analytics for unsorted links.
+     * The UTM medium to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `cpc`, `cpc,social`, `-email`.
      *
-     * @var ?string $folderId
+     * @var ?string $utmMedium
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=folderId')]
-    public ?string $folderId = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_medium')]
+    public ?string $utmMedium = null;
 
     /**
-     * The group ID to retrieve analytics for.
+     * The UTM campaign to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `summer_sale`, `summer_sale,winter_sale`, `-old_campaign`.
      *
-     * @var ?string $groupId
+     * @var ?string $utmCampaign
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
-    public ?string $groupId = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_campaign')]
+    public ?string $utmCampaign = null;
+
+    /**
+     * The UTM term to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`).
+     *
+     * @var ?string $utmTerm
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_term')]
+    public ?string $utmTerm = null;
+
+    /**
+     * The UTM content to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`).
+     *
+     * @var ?string $utmContent
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_content')]
+    public ?string $utmContent = null;
 
     /**
      * Filter for root domains. If true, filter for domains only. If false, filter for links only. If undefined, return both.
@@ -228,7 +260,7 @@ class RetrieveAnalyticsRequest
     public ?SaleType $saleType = null;
 
     /**
-     * Search the events by a custom metadata value. Only available for lead and sale events.
+     * Search the events by a custom metadata value. Only available for lead and sale events. Examples: `metadata['key']:'value'`
      *
      * @var ?string $query
      */
@@ -236,12 +268,20 @@ class RetrieveAnalyticsRequest
     public ?string $query = null;
 
     /**
-     * Deprecated: Use `tagIds` instead. The tag ID to retrieve analytics for.
+     * Deprecated: This is automatically inferred from your workspace's defaultProgramId. The ID of the program to retrieve analytics for.
      *
-     * @var ?string $tagId
+     * @var ?string $programId
      */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagId')]
-    public ?string $tagId = null;
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=programId')]
+    public ?string $programId = null;
+
+    /**
+     * Deprecated: Use `tagId` instead. The tag IDs to retrieve analytics for.
+     *
+     * @var ?string $tagIds
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=tagIds')]
+    public ?string $tagIds = null;
 
     /**
      * Deprecated: Use the `trigger` field instead. Filter for QR code scans. If true, filter for QR codes only. If false, filter for links only. If undefined, return both.
@@ -250,54 +290,6 @@ class RetrieveAnalyticsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=qr')]
     public ?bool $qr = null;
-
-    /**
-     * The UTM source of the short link.
-     *
-     * @var ?string $utmSource
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_source')]
-    public ?string $utmSource = null;
-
-    /**
-     * The UTM medium of the short link.
-     *
-     * @var ?string $utmMedium
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_medium')]
-    public ?string $utmMedium = null;
-
-    /**
-     * The UTM campaign of the short link.
-     *
-     * @var ?string $utmCampaign
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_campaign')]
-    public ?string $utmCampaign = null;
-
-    /**
-     * The UTM term of the short link.
-     *
-     * @var ?string $utmTerm
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_term')]
-    public ?string $utmTerm = null;
-
-    /**
-     * The UTM content of the short link.
-     *
-     * @var ?string $utmContent
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=utm_content')]
-    public ?string $utmContent = null;
-
-    /**
-     * The ref of the short link.
-     *
-     * @var ?string $ref
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=ref')]
-    public ?string $ref = null;
 
     /**
      * The type of event to retrieve analytics for. Defaults to `clicks`.
@@ -331,7 +323,9 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $linkId
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
-     * @param  ?string  $programId
+     * @param  ?string  $tagId
+     * @param  ?string  $folderId
+     * @param  ?string  $groupId
      * @param  ?string  $partnerId
      * @param  ?string  $customerId
      * @param  ?Interval  $interval
@@ -341,38 +335,37 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $country
      * @param  ?string  $city
      * @param  ?string  $region
-     * @param  ?Continent  $continent
+     * @param  ?string  $continent
      * @param  ?string  $device
      * @param  ?string  $browser
      * @param  ?string  $os
-     * @param  ?Trigger  $trigger
+     * @param  ?string  $trigger
      * @param  ?string  $referer
      * @param  ?string  $refererUrl
      * @param  ?string  $url
-     * @param  string|array<string>|null  $tagIds
-     * @param  ?string  $folderId
-     * @param  ?string  $groupId
-     * @param  ?bool  $root
-     * @param  ?SaleType  $saleType
-     * @param  ?string  $query
-     * @param  ?string  $tagId
-     * @param  ?bool  $qr
      * @param  ?string  $utmSource
      * @param  ?string  $utmMedium
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
-     * @param  ?string  $ref
+     * @param  ?bool  $root
+     * @param  ?SaleType  $saleType
+     * @param  ?string  $query
+     * @param  ?string  $programId
+     * @param  ?string  $tagIds
+     * @param  ?bool  $qr
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?Continent $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?Trigger $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, string|array|null $tagIds = null, ?string $folderId = null, ?string $groupId = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $tagId = null, ?bool $qr = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
         $this->linkId = $linkId;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
-        $this->programId = $programId;
+        $this->tagId = $tagId;
+        $this->folderId = $folderId;
+        $this->groupId = $groupId;
         $this->partnerId = $partnerId;
         $this->customerId = $customerId;
         $this->interval = $interval;
@@ -389,20 +382,17 @@ class RetrieveAnalyticsRequest
         $this->referer = $referer;
         $this->refererUrl = $refererUrl;
         $this->url = $url;
-        $this->tagIds = $tagIds;
-        $this->folderId = $folderId;
-        $this->groupId = $groupId;
-        $this->root = $root;
-        $this->saleType = $saleType;
-        $this->query = $query;
-        $this->tagId = $tagId;
-        $this->qr = $qr;
         $this->utmSource = $utmSource;
         $this->utmMedium = $utmMedium;
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
-        $this->ref = $ref;
+        $this->root = $root;
+        $this->saleType = $saleType;
+        $this->query = $query;
+        $this->programId = $programId;
+        $this->tagIds = $tagIds;
+        $this->qr = $qr;
         $this->event = $event;
         $this->groupBy = $groupBy;
         $this->timezone = $timezone;

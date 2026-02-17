@@ -29,6 +29,7 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\RetrieveAnalyticsRequest(
     event: Operations\Event::Leads,
+    domain: 'dub.co',
     timezone: 'America/New_York',
     city: 'New York',
     device: 'Desktop',

@@ -8,7 +8,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "retrieveAnalytics"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrieveAnalyticsRequest(\n    event: Operations\\Event::Leads,\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n    query: 'metadata[\\'key\\']:\\'value\\'',\n);\n\n$response = $sdk->analytics->retrieve(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RetrieveAnalyticsRequest(\n    event: Operations\\Event::Leads,\n    domain: 'dub.co',\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n    query: 'metadata[\\'key\\']:\\'value\\'',\n);\n\n$response = $sdk->analytics->retrieve(\n    request: $request\n);\n\nif ($response->oneOf !== null) {\n    // handle response\n}"
   - target: $["paths"]["/bounties/{bountyId}/submissions"]["get"]
     update:
       "x-codeSamples":
@@ -104,7 +104,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listEvents"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListEventsRequest(\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n    query: 'metadata[\\'key\\']:\\'value\\'',\n);\n\n$response = $sdk->events->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListEventsRequest(\n    domain: 'dub.co',\n    timezone: 'America/New_York',\n    city: 'New York',\n    device: 'Desktop',\n    browser: 'Chrome',\n    os: 'Windows',\n    referer: 'google.com',\n    refererUrl: 'https://dub.co/blog',\n    query: 'metadata[\\'key\\']:\\'value\\'',\n);\n\n$response = $sdk->events->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/folders"]["get"]
     update:
       "x-codeSamples":

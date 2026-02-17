@@ -28,6 +28,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\ListEventsRequest(
+    domain: 'dub.co',
     timezone: 'America/New_York',
     city: 'New York',
     device: 'Desktop',
