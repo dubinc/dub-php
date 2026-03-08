@@ -100,6 +100,14 @@ class ListPayoutsResponseBody
 
     /**
      *
+     * @var ?Method $method
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('method')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Method|null')]
+    public ?Method $method;
+
+    /**
+     *
      * @var ?string $description
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
@@ -113,6 +121,14 @@ class ListPayoutsResponseBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('failureReason')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $failureReason = null;
+
+    /**
+     *
+     * @var ?string $traceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('traceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $traceId = null;
 
     /**
      *
@@ -136,12 +152,14 @@ class ListPayoutsResponseBody
      * @param  ?string  $initiatedAt
      * @param  ?string  $paidAt
      * @param  ?ListPayoutsMode  $mode
+     * @param  ?Method  $method
      * @param  ?string  $description
      * @param  ?string  $failureReason
+     * @param  ?string  $traceId
      * @param  ?User  $user
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, string $currency, ListPayoutsStatus $status, string $createdAt, ListPayoutsPartner $partner, ?string $invoiceId = null, ?string $periodStart = null, ?string $periodEnd = null, ?string $initiatedAt = null, ?string $paidAt = null, ?ListPayoutsMode $mode = null, ?string $description = null, ?string $failureReason = null, ?User $user = null)
+    public function __construct(string $id, float $amount, string $currency, ListPayoutsStatus $status, string $createdAt, ListPayoutsPartner $partner, ?string $invoiceId = null, ?string $periodStart = null, ?string $periodEnd = null, ?string $initiatedAt = null, ?string $paidAt = null, ?ListPayoutsMode $mode = null, ?Method $method = null, ?string $description = null, ?string $failureReason = null, ?string $traceId = null, ?User $user = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -155,8 +173,10 @@ class ListPayoutsResponseBody
         $this->initiatedAt = $initiatedAt;
         $this->paidAt = $paidAt;
         $this->mode = $mode;
+        $this->method = $method;
         $this->description = $description;
         $this->failureReason = $failureReason;
+        $this->traceId = $traceId;
         $this->user = $user;
     }
 }
