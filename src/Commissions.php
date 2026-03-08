@@ -208,7 +208,7 @@ class Commissions
     }
 
     /**
-     * Update a commission.
+     * Update a commission
      *
      * Update an existing commission amount. This is useful for handling refunds (partial or full) or fraudulent sales.
      *
