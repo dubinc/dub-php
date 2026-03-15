@@ -1122,6 +1122,8 @@ class Links
                             sortBy: $request != null ? $request->sortBy : null,
                             sortOrder: $request != null ? $request->sortOrder : null,
                             sort: $request != null ? $request->sort : null,
+                            endingBefore: $request != null ? $request->endingBefore : null,
+                            startingAfter: $request != null ? $request->startingAfter : null,
                             page: $nextPage,
                             pageSize: $request != null ? $request->pageSize : null,
                         ),

@@ -52,6 +52,14 @@ class ListPartnersRequest
     public ?string $search = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the partners by. The default is `totalSaleAmount`.
      *
      * @var ?ListPartnersQueryParamSortBy $sortBy
@@ -66,14 +74,6 @@ class ListPartnersRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListPartnersQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -95,16 +95,16 @@ class ListPartnersRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?float $page = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $pageSize = 100)
     {
         $this->status = $status;
         $this->country = $country;
         $this->email = $email;
         $this->tenantId = $tenantId;
         $this->search = $search;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

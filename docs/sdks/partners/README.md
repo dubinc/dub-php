@@ -40,6 +40,7 @@ $request = new Operations\ListPartnersRequest(
     email: 'panic@thedis.co',
     tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',
     search: 'john',
+    page: 1,
     pageSize: 50,
 );
 

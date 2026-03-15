@@ -28,6 +28,14 @@ class GetTagsRequest
     public string|array|null $ids = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the tags by.
      *
      * @var ?GetTagsQueryParamSortBy $sortBy
@@ -42,14 +50,6 @@ class GetTagsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?GetTagsQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -68,13 +68,13 @@ class GetTagsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, string|array|null $ids = null, ?GetTagsQueryParamSortBy $sortBy = GetTagsQueryParamSortBy::Name, ?GetTagsQueryParamSortOrder $sortOrder = GetTagsQueryParamSortOrder::Asc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $search = null, string|array|null $ids = null, ?float $page = null, ?GetTagsQueryParamSortBy $sortBy = GetTagsQueryParamSortBy::Name, ?GetTagsQueryParamSortOrder $sortOrder = GetTagsQueryParamSortOrder::Asc, ?float $pageSize = 100)
     {
         $this->search = $search;
         $this->ids = $ids;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

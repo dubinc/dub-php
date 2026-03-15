@@ -92,6 +92,15 @@ class PartnerEnrolledEventData
     public ?string $country;
 
     /**
+     * The partner's default payout method. Connect: Bank account payouts via Stripe Connect; Stablecoin: USDC payouts directly to a crypto wallet; PayPal: Payouts via PayPal
+     *
+     * @var ?DefaultPayoutMethod $defaultPayoutMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('defaultPayoutMethod')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\DefaultPayoutMethod|null')]
+    public ?DefaultPayoutMethod $defaultPayoutMethod;
+
+    /**
      * The partner's PayPal email (for receiving payouts via PayPal).
      *
      * @var ?string $paypalEmail
@@ -409,6 +418,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $country
+     * @param  ?DefaultPayoutMethod  $defaultPayoutMethod
      * @param  ?string  $paypalEmail
      * @param  ?string  $stripeConnectId
      * @param  ?string  $payoutsEnabledAt
@@ -446,7 +456,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $tiktok
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -458,6 +468,7 @@ class PartnerEnrolledEventData
         $this->email = $email;
         $this->image = $image;
         $this->country = $country;
+        $this->defaultPayoutMethod = $defaultPayoutMethod;
         $this->paypalEmail = $paypalEmail;
         $this->stripeConnectId = $stripeConnectId;
         $this->payoutsEnabledAt = $payoutsEnabledAt;

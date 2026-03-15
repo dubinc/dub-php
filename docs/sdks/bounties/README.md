@@ -31,6 +31,7 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\ListBountySubmissionsRequest(
     bountyId: '<id>',
+    page: 1,
     pageSize: 50,
 );
 

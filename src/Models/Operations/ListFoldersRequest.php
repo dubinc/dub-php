@@ -41,7 +41,7 @@ class ListFoldersRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, ?float $page = 1, ?float $pageSize = 50)
+    public function __construct(?string $search = null, ?float $page = null, ?float $pageSize = 50)
     {
         $this->search = $search;
         $this->page = $page;

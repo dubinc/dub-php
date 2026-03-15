@@ -37,6 +37,9 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\GetLinksRequest(
+    endingBefore: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    startingAfter: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    page: 1,
     pageSize: 50,
 );
 

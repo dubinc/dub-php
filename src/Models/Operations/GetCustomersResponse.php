@@ -40,6 +40,10 @@ class GetCustomersResponse
     public ?array $responseBodies = null;
 
     /**
+     * @var \Closure(string): ?GetCustomersResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
@@ -52,5 +56,18 @@ class GetCustomersResponse
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->responseBodies = $responseBodies;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?GetCustomersResponse
+     */
+    public function __call($name, $args): ?GetCustomersResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

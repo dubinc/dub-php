@@ -44,6 +44,14 @@ class ListBountySubmissionsRequest
     public ?string $partnerId = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the submissions by.
      *
      * @var ?ListBountySubmissionsQueryParamSortBy $sortBy
@@ -58,14 +66,6 @@ class ListBountySubmissionsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListBountySubmissionsQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -86,15 +86,15 @@ class ListBountySubmissionsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(string $bountyId, ?ListBountySubmissionsQueryParamStatus $status = null, ?string $groupId = null, ?string $partnerId = null, ?ListBountySubmissionsQueryParamSortBy $sortBy = ListBountySubmissionsQueryParamSortBy::CompletedAt, ?ListBountySubmissionsQueryParamSortOrder $sortOrder = ListBountySubmissionsQueryParamSortOrder::Asc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(string $bountyId, ?ListBountySubmissionsQueryParamStatus $status = null, ?string $groupId = null, ?string $partnerId = null, ?float $page = null, ?ListBountySubmissionsQueryParamSortBy $sortBy = ListBountySubmissionsQueryParamSortBy::CompletedAt, ?ListBountySubmissionsQueryParamSortOrder $sortOrder = ListBountySubmissionsQueryParamSortOrder::Asc, ?float $pageSize = 100)
     {
         $this->bountyId = $bountyId;
         $this->status = $status;
         $this->groupId = $groupId;
         $this->partnerId = $partnerId;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

@@ -5,7 +5,7 @@
 ### Available Operations
 
 * [list](#list) - List all commissions
-* [update](#update) - Update a commission.
+* [update](#update) - Update a commission
 
 ## list
 
@@ -29,15 +29,21 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\ListCommissionsRequest(
+    endingBefore: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',
+    startingAfter: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',
+    page: 1,
     pageSize: 50,
 );
 
-$response = $sdk->commissions->list(
+$responses = $sdk->commissions->list(
     request: $request
 );
 
-if ($response->responseBodies !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

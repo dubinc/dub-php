@@ -53,7 +53,7 @@ class Commissions
      * @return Operations\ListCommissionsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?Operations\ListCommissionsRequest $request = null, ?Options $options = null): Operations\ListCommissionsResponse
+    private function listIndividual(?Operations\ListCommissionsRequest $request = null, ?Options $options = null): Operations\ListCommissionsResponse
     {
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/commissions');
@@ -94,6 +94,44 @@ class Commissions
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     responseBodies: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\ListCommissionsResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$[-1].id');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
+                            return null;
+                        }
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\ListCommissionsRequest(
+                            type: $request != null ? $request->type : null,
+                            customerId: $request != null ? $request->customerId : null,
+                            payoutId: $request != null ? $request->payoutId : null,
+                            partnerId: $request != null ? $request->partnerId : null,
+                            tenantId: $request != null ? $request->tenantId : null,
+                            groupId: $request != null ? $request->groupId : null,
+                            invoiceId: $request != null ? $request->invoiceId : null,
+                            status: $request != null ? $request->status : null,
+                            sortBy: $request != null ? $request->sortBy : null,
+                            sortOrder: $request != null ? $request->sortOrder : null,
+                            interval: $request != null ? $request->interval : null,
+                            start: $request != null ? $request->start : null,
+                            end: $request != null ? $request->end : null,
+                            timezone: $request != null ? $request->timezone : null,
+                            endingBefore: $request != null ? $request->endingBefore : null,
+                            startingAfter: $nextCursor,
+                            page: $request != null ? $request->page : null,
+                            pageSize: $request != null ? $request->pageSize : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -206,9 +244,26 @@ class Commissions
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+    /**
+     * List all commissions
+     *
+     * Retrieve a list of commissions for your partner program.
+     *
+     * @param  ?Operations\ListCommissionsRequest  $request
+     * @return \Generator<Operations\ListCommissionsResponse>
+     * @throws \Dub\Models\Errors\SDKException
+     */
+    public function list(?Operations\ListCommissionsRequest $request = null, ?Options $options = null): \Generator
+    {
+        $res = $this->listIndividual($request, $options);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
+        }
+    }
 
     /**
-     * Update a commission.
+     * Update a commission
      *
      * Update an existing commission amount. This is useful for handling refunds (partial or full) or fraudulent sales.
      *

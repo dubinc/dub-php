@@ -14,7 +14,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listBountySubmissions"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListBountySubmissionsRequest(\n    bountyId: '<id>',\n    pageSize: 50,\n);\n\n$response = $sdk->bounties->listSubmissions(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListBountySubmissionsRequest(\n    bountyId: '<id>',\n    page: 1,\n    pageSize: 50,\n);\n\n$response = $sdk->bounties->listSubmissions(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/bounties/{bountyId}/submissions/{submissionId}/approve"]["post"]
     update:
       "x-codeSamples":
@@ -32,7 +32,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listCommissions"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListCommissionsRequest(\n    pageSize: 50,\n);\n\n$response = $sdk->commissions->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListCommissionsRequest(\n    endingBefore: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',\n    startingAfter: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',\n    page: 1,\n    pageSize: 50,\n);\n\n$responses = $sdk->commissions->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
   - target: $["paths"]["/commissions/{id}"]["patch"]
     update:
       "x-codeSamples":
@@ -44,7 +44,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getCustomers"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetCustomersRequest(\n    pageSize: 50,\n);\n\n$response = $sdk->customers->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetCustomersRequest(\n    endingBefore: 'cus_1KAP4CDPBSVMMBMH9XX3YZZ0Z',\n    startingAfter: 'cus_1KAP4CDPBSVMMBMH9XX3YZZ0Z',\n    page: 1,\n    pageSize: 50,\n);\n\n$responses = $sdk->customers->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
   - target: $["paths"]["/customers/{id}"]["delete"]
     update:
       "x-codeSamples":
@@ -134,7 +134,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getLinks"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetLinksRequest(\n    pageSize: 50,\n);\n\n$responses = $sdk->links->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetLinksRequest(\n    endingBefore: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',\n    startingAfter: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',\n    page: 1,\n    pageSize: 50,\n);\n\n$responses = $sdk->links->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
   - target: $["paths"]["/links"]["post"]
     update:
       "x-codeSamples":
@@ -194,7 +194,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listPartners"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    email: 'panic@thedis.co',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    search: 'john',\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPartnersRequest(\n    status: Operations\\ListPartnersQueryParamStatus::Approved,\n    country: 'US',\n    email: 'panic@thedis.co',\n    tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',\n    search: 'john',\n    page: 1,\n    pageSize: 50,\n);\n\n$response = $sdk->partners->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners"]["post"]
     update:
       "x-codeSamples":
@@ -242,7 +242,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "listPayouts"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPayoutsRequest(\n    pageSize: 50,\n);\n\n$response = $sdk->payouts->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListPayoutsRequest(\n    page: 1,\n    pageSize: 50,\n);\n\n$response = $sdk->payouts->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/qr"]["get"]
     update:
       "x-codeSamples":
@@ -254,7 +254,7 @@ actions:
       "x-codeSamples":
         - "lang": "php"
           "label": "getTags"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetTagsRequest(\n    pageSize: 50,\n);\n\n$response = $sdk->tags->list(\n    request: $request\n);\n\nif ($response->linkTagSchemaOutputs !== null) {\n    // handle response\n}"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\GetTagsRequest(\n    page: 1,\n    pageSize: 50,\n);\n\n$response = $sdk->tags->list(\n    request: $request\n);\n\nif ($response->linkTagSchemaOutputs !== null) {\n    // handle response\n}"
   - target: $["paths"]["/tags"]["post"]
     update:
       "x-codeSamples":

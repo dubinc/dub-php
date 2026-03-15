@@ -76,6 +76,30 @@ class GetCustomersRequest
     public ?bool $includeExpandedFields = null;
 
     /**
+     * If specified, the query only searches for results before this cursor. Mutually exclusive with `startingAfter`.
+     *
+     * @var ?string $endingBefore
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=endingBefore')]
+    public ?string $endingBefore = null;
+
+    /**
+     * If specified, the query only searches for results after this cursor. Mutually exclusive with `endingBefore`.
+     *
+     * @var ?string $startingAfter
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=startingAfter')]
+    public ?string $startingAfter = null;
+
+    /**
+     * DEPRECATED. Use `startingAfter` instead.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the customers by. The default is `createdAt`.
      *
      * @var ?GetCustomersQueryParamSortBy $sortBy
@@ -90,14 +114,6 @@ class GetCustomersRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?GetCustomersQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -118,11 +134,13 @@ class GetCustomersRequest
      * @param  ?bool  $includeExpandedFields
      * @param  ?GetCustomersQueryParamSortBy  $sortBy
      * @param  ?GetCustomersQueryParamSortOrder  $sortOrder
+     * @param  ?string  $endingBefore
+     * @param  ?string  $startingAfter
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?string $country = null, ?string $linkId = null, ?string $programId = null, ?string $partnerId = null, ?bool $includeExpandedFields = null, ?GetCustomersQueryParamSortBy $sortBy = GetCustomersQueryParamSortBy::CreatedAt, ?GetCustomersQueryParamSortOrder $sortOrder = GetCustomersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?string $country = null, ?string $linkId = null, ?string $programId = null, ?string $partnerId = null, ?bool $includeExpandedFields = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?GetCustomersQueryParamSortBy $sortBy = GetCustomersQueryParamSortBy::CreatedAt, ?GetCustomersQueryParamSortOrder $sortOrder = GetCustomersQueryParamSortOrder::Desc, ?float $pageSize = 100)
     {
         $this->email = $email;
         $this->externalId = $externalId;
@@ -132,9 +150,11 @@ class GetCustomersRequest
         $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->includeExpandedFields = $includeExpandedFields;
+        $this->endingBefore = $endingBefore;
+        $this->startingAfter = $startingAfter;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }
