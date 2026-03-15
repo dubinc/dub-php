@@ -31,15 +31,21 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\GetCustomersRequest(
+    endingBefore: 'cus_1KAP4CDPBSVMMBMH9XX3YZZ0Z',
+    startingAfter: 'cus_1KAP4CDPBSVMMBMH9XX3YZZ0Z',
+    page: 1,
     pageSize: 50,
 );
 
-$response = $sdk->customers->list(
+$responses = $sdk->customers->list(
     request: $request
 );
 
-if ($response->responseBodies !== null) {
-    // handle response
+
+foreach ($responses as $response) {
+    if ($response->statusCode === 200) {
+        // handle response
+    }
 }
 ```
 

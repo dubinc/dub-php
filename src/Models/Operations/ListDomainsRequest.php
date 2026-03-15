@@ -20,20 +20,20 @@ class ListDomainsRequest
     public ?string $search = null;
 
     /**
-     * Whether to include archived domains in the response. Defaults to `false` if not provided.
-     *
-     * @var ?bool $archived
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=archived')]
-    public ?bool $archived = null;
-
-    /**
      * The page number for pagination.
      *
      * @var ?float $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
     public ?float $page = null;
+
+    /**
+     * Whether to include archived domains in the response. Defaults to `false` if not provided.
+     *
+     * @var ?bool $archived
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=archived')]
+    public ?bool $archived = null;
 
     /**
      * The number of items per page.
@@ -50,11 +50,11 @@ class ListDomainsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, ?bool $archived = false, ?float $page = 1, ?float $pageSize = 50)
+    public function __construct(?string $search = null, ?float $page = null, ?bool $archived = false, ?float $pageSize = 50)
     {
         $this->search = $search;
-        $this->archived = $archived;
         $this->page = $page;
+        $this->archived = $archived;
         $this->pageSize = $pageSize;
     }
 }

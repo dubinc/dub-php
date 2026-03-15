@@ -598,7 +598,7 @@ class Domains
                     domainSchemas: $obj);
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $request, $responseData, $archived, $search, $pageSize): ?Operations\ListDomainsResponse {
+                $response->next = function () use ($sdk, $request, $responseData): ?Operations\ListDomainsResponse {
                     $page = $request != null ? $request->page : 0;
                     $nextPage = $page + 1;
                     if (! $responseData) {
@@ -617,10 +617,10 @@ class Domains
                     }
 
                     return $sdk->listIndividual(
-                        archived: $archived,
-                        search: $search,
+                        archived: $request != null ? $request->archived : null,
+                        search: $request != null ? $request->search : null,
                         page: $nextPage,
-                        pageSize: $pageSize,
+                        pageSize: $request != null ? $request->pageSize : null,
                     );
                 };
 

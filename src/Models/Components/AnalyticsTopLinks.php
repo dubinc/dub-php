@@ -87,6 +87,15 @@ class AnalyticsTopLinks
     public ?string $comments = null;
 
     /**
+     * The ID of the folder that the link belongs to (if applicable)
+     *
+     * @var ?string $folderId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('folderId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $folderId = null;
+
+    /**
      * The ID of the partner that the link belongs to (if applicable)
      *
      * @var ?string $partnerId
@@ -145,10 +154,11 @@ class AnalyticsTopLinks
      * @param  ?float  $saleAmount
      * @param  ?string  $title
      * @param  ?string  $comments
+     * @param  ?string  $folderId
      * @param  ?string  $partnerId
      * @phpstan-pure
      */
-    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $title = null, ?string $comments = null, ?string $partnerId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $link, string $id, string $domain, string $key, string $shortLink, string $url, string $createdAt, ?string $title = null, ?string $comments = null, ?string $folderId = null, ?string $partnerId = null, ?float $clicks = 0, ?float $leads = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->link = $link;
         $this->id = $id;
@@ -159,6 +169,7 @@ class AnalyticsTopLinks
         $this->createdAt = $createdAt;
         $this->title = $title;
         $this->comments = $comments;
+        $this->folderId = $folderId;
         $this->partnerId = $partnerId;
         $this->clicks = $clicks;
         $this->leads = $leads;

@@ -98,6 +98,30 @@ class ListCommissionsRequest
     public ?string $timezone = null;
 
     /**
+     * If specified, the query only searches for results before this cursor. Mutually exclusive with `startingAfter`.
+     *
+     * @var ?string $endingBefore
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=endingBefore')]
+    public ?string $endingBefore = null;
+
+    /**
+     * If specified, the query only searches for results after this cursor. Mutually exclusive with `endingBefore`.
+     *
+     * @var ?string $startingAfter
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=startingAfter')]
+    public ?string $startingAfter = null;
+
+    /**
+     * DEPRECATED. Use `startingAfter` instead.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the list of commissions by.
      *
      * @var ?ListCommissionsQueryParamSortBy $sortBy
@@ -122,14 +146,6 @@ class ListCommissionsRequest
     public ?ListCommissionsQueryParamInterval $interval = null;
 
     /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
-
-    /**
      * The number of items per page.
      *
      * @var ?float $pageSize
@@ -152,11 +168,13 @@ class ListCommissionsRequest
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
+     * @param  ?string  $endingBefore
+     * @param  ?string  $startingAfter
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
@@ -169,10 +187,12 @@ class ListCommissionsRequest
         $this->start = $start;
         $this->end = $end;
         $this->timezone = $timezone;
+        $this->endingBefore = $endingBefore;
+        $this->startingAfter = $startingAfter;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
         $this->interval = $interval;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

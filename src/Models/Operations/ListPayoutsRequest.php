@@ -44,6 +44,14 @@ class ListPayoutsRequest
     public ?string $invoiceId = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the list of payouts by.
      *
      * @var ?ListPayoutsQueryParamSortBy $sortBy
@@ -58,14 +66,6 @@ class ListPayoutsRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListPayoutsQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -86,15 +86,15 @@ class ListPayoutsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?float $page = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?float $pageSize = 100)
     {
         $this->status = $status;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->invoiceId = $invoiceId;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

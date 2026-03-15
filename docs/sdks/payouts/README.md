@@ -28,6 +28,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\ListPayoutsRequest(
+    page: 1,
     pageSize: 50,
 );
 
