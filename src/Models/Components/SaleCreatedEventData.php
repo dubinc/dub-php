@@ -20,7 +20,7 @@ class SaleCreatedEventData
 
     /**
      *
-     * @var SaleCreatedEventCustomer $customer
+     * @var \Dub\Models\Components\SaleCreatedEventCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventCustomer')]
@@ -28,7 +28,7 @@ class SaleCreatedEventData
 
     /**
      *
-     * @var SaleCreatedEventClick $click
+     * @var \Dub\Models\Components\SaleCreatedEventClick $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventClick')]
@@ -36,7 +36,7 @@ class SaleCreatedEventData
 
     /**
      *
-     * @var SaleCreatedEventLink $link
+     * @var \Dub\Models\Components\SaleCreatedEventLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventLink')]
@@ -44,20 +44,11 @@ class SaleCreatedEventData
 
     /**
      *
-     * @var Sale $sale
+     * @var \Dub\Models\Components\Sale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Sale')]
     public Sale $sale;
-
-    /**
-     *
-     * @var ?SaleCreatedEventPartner $partner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventPartner|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?SaleCreatedEventPartner $partner = null;
 
     /**
      * $metadata
@@ -66,27 +57,35 @@ class SaleCreatedEventData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $metadata;
+
+    /**
+     *
+     * @var ?\Dub\Models\Components\SaleCreatedEventPartner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventPartner|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
+    public ?SaleCreatedEventPartner $partner = null;
 
     /**
      * @param  string  $eventName
-     * @param  SaleCreatedEventCustomer  $customer
-     * @param  SaleCreatedEventClick  $click
-     * @param  SaleCreatedEventLink  $link
-     * @param  Sale  $sale
-     * @param  ?SaleCreatedEventPartner  $partner
+     * @param  \Dub\Models\Components\SaleCreatedEventCustomer  $customer
+     * @param  \Dub\Models\Components\SaleCreatedEventClick  $click
+     * @param  \Dub\Models\Components\SaleCreatedEventLink  $link
+     * @param  \Dub\Models\Components\Sale  $sale
      * @param  ?array<string, mixed>  $metadata
+     * @param  ?\Dub\Models\Components\SaleCreatedEventPartner  $partner
      * @phpstan-pure
      */
-    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, Sale $sale, ?SaleCreatedEventPartner $partner = null, ?array $metadata = null)
+    public function __construct(string $eventName, SaleCreatedEventCustomer $customer, SaleCreatedEventClick $click, SaleCreatedEventLink $link, Sale $sale, ?array $metadata = null, ?SaleCreatedEventPartner $partner = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;
         $this->click = $click;
         $this->link = $link;
         $this->sale = $sale;
-        $this->partner = $partner;
         $this->metadata = $metadata;
+        $this->partner = $partner;
     }
 }

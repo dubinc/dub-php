@@ -14,7 +14,7 @@ class ListPayoutsRequest
     /**
      * Filter the list of payouts by their corresponding status.
      *
-     * @var ?ListPayoutsQueryParamStatus $status
+     * @var ?\Dub\Models\Operations\ListPayoutsQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
     public ?ListPayoutsQueryParamStatus $status = null;
@@ -44,9 +44,17 @@ class ListPayoutsRequest
     public ?string $invoiceId = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the list of payouts by.
      *
-     * @var ?ListPayoutsQueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\ListPayoutsQueryParamSortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?ListPayoutsQueryParamSortBy $sortBy = null;
@@ -54,18 +62,10 @@ class ListPayoutsRequest
     /**
      * The sort order for the list of payouts.
      *
-     * @var ?ListPayoutsQueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\ListPayoutsQueryParamSortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListPayoutsQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -76,25 +76,25 @@ class ListPayoutsRequest
     public ?float $pageSize = null;
 
     /**
-     * @param  ?ListPayoutsQueryParamStatus  $status
+     * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamStatus  $status
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $invoiceId
-     * @param  ?ListPayoutsQueryParamSortBy  $sortBy
-     * @param  ?ListPayoutsQueryParamSortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamSortOrder  $sortOrder
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?float $page = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?float $pageSize = 100)
     {
         $this->status = $status;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->invoiceId = $invoiceId;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

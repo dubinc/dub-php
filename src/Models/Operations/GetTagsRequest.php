@@ -28,9 +28,17 @@ class GetTagsRequest
     public string|array|null $ids = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the tags by.
      *
-     * @var ?GetTagsQueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\GetTagsQueryParamSortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?GetTagsQueryParamSortBy $sortBy = null;
@@ -38,18 +46,10 @@ class GetTagsRequest
     /**
      * The order to sort the tags by.
      *
-     * @var ?GetTagsQueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\GetTagsQueryParamSortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?GetTagsQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -60,21 +60,21 @@ class GetTagsRequest
     public ?float $pageSize = null;
 
     /**
-     * @param  ?GetTagsQueryParamSortBy  $sortBy
-     * @param  ?GetTagsQueryParamSortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\GetTagsQueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\GetTagsQueryParamSortOrder  $sortOrder
      * @param  ?string  $search
      * @param  string|array<string>|null  $ids
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, string|array|null $ids = null, ?GetTagsQueryParamSortBy $sortBy = GetTagsQueryParamSortBy::Name, ?GetTagsQueryParamSortOrder $sortOrder = GetTagsQueryParamSortOrder::Asc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $search = null, string|array|null $ids = null, ?float $page = null, ?GetTagsQueryParamSortBy $sortBy = GetTagsQueryParamSortBy::Name, ?GetTagsQueryParamSortOrder $sortOrder = GetTagsQueryParamSortOrder::Asc, ?float $pageSize = 100)
     {
         $this->search = $search;
         $this->ids = $ids;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

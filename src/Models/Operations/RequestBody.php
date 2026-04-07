@@ -342,7 +342,7 @@ class RequestBody
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<BulkCreateLinksTestVariants> $testVariants
+     * @var ?array<\Dub\Models\Operations\BulkCreateLinksTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\BulkCreateLinksTestVariants>|null')]
@@ -414,7 +414,7 @@ class RequestBody
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      * @param  ?array<string>  $webhookIds
-     * @param  ?array<BulkCreateLinksTestVariants>  $testVariants
+     * @param  ?array<\Dub\Models\Operations\BulkCreateLinksTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @param  ?string  $tagId

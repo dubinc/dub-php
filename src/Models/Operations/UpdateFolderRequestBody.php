@@ -32,7 +32,7 @@ class UpdateFolderRequestBody
     /**
      * The access level of the folder within the workspace.
      *
-     * @var ?UpdateFolderAccessLevel $accessLevel
+     * @var ?\Dub\Models\Operations\UpdateFolderAccessLevel $accessLevel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('accessLevel')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateFolderAccessLevel|null')]
@@ -42,7 +42,7 @@ class UpdateFolderRequestBody
     /**
      * @param  ?string  $name
      * @param  ?string  $description
-     * @param  ?UpdateFolderAccessLevel  $accessLevel
+     * @param  ?\Dub\Models\Operations\UpdateFolderAccessLevel  $accessLevel
      * @phpstan-pure
      */
     public function __construct(?string $name = null, ?string $description = null, ?UpdateFolderAccessLevel $accessLevel = null)

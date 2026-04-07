@@ -35,7 +35,7 @@ class DeleteFolderResponse
     /**
      * The deleted folder ID.
      *
-     * @var ?DeleteFolderResponseBody $object
+     * @var ?\Dub\Models\Operations\DeleteFolderResponseBody $object
      */
     public ?DeleteFolderResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteFolderResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteFolderResponseBody  $object
+     * @param  ?\Dub\Models\Operations\DeleteFolderResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteFolderResponseBody $object = null)

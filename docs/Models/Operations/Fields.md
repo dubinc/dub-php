@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\Fields1
+* @var \Dub\Models\Operations\Fields1
 */
 Operations\Fields1 $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\Fields1 $value = /* values here */
 
 ```php
 /**
-* @var Operations\Fields2
+* @var \Dub\Models\Operations\Fields2
 */
 Operations\Fields2 $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Operations\Fields2 $value = /* values here */
 
 ```php
 /**
-* @var Operations\Fields3
+* @var \Dub\Models\Operations\Fields3
 */
 Operations\Fields3 $value = /* values here */
 ```
@@ -34,7 +34,7 @@ Operations\Fields3 $value = /* values here */
 
 ```php
 /**
-* @var Operations\Fields4
+* @var \Dub\Models\Operations\Fields4
 */
 Operations\Fields4 $value = /* values here */
 ```
@@ -43,7 +43,7 @@ Operations\Fields4 $value = /* values here */
 
 ```php
 /**
-* @var Operations\Five
+* @var \Dub\Models\Operations\Five
 */
 Operations\Five $value = /* values here */
 ```
@@ -52,7 +52,7 @@ Operations\Five $value = /* values here */
 
 ```php
 /**
-* @var Operations\Six
+* @var \Dub\Models\Operations\Six
 */
 Operations\Six $value = /* values here */
 ```
@@ -61,7 +61,7 @@ Operations\Six $value = /* values here */
 
 ```php
 /**
-* @var Operations\Seven
+* @var \Dub\Models\Operations\Seven
 */
 Operations\Seven $value = /* values here */
 ```
@@ -70,7 +70,7 @@ Operations\Seven $value = /* values here */
 
 ```php
 /**
-* @var Operations\Eight
+* @var \Dub\Models\Operations\Eight
 */
 Operations\Eight $value = /* values here */
 ```

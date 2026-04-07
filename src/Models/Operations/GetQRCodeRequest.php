@@ -38,7 +38,7 @@ class GetQRCodeRequest
     /**
      * The level of error correction to use for the QR code. Defaults to `L` if not provided.
      *
-     * @var ?Level $level
+     * @var ?\Dub\Models\Operations\Level $level
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=level')]
     public ?Level $level = null;
@@ -87,7 +87,7 @@ class GetQRCodeRequest
      * @param  string  $url
      * @param  ?string  $logo
      * @param  ?float  $size
-     * @param  ?Level  $level
+     * @param  ?\Dub\Models\Operations\Level  $level
      * @param  ?string  $fgColor
      * @param  ?string  $bgColor
      * @param  ?bool  $hideLogo

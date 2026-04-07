@@ -31,7 +31,7 @@ class LinkErrorSchema
     /**
      * The error code.
      *
-     * @var Code $code
+     * @var \Dub\Models\Components\Code $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Code')]
@@ -40,7 +40,7 @@ class LinkErrorSchema
     /**
      * @param  mixed  $link
      * @param  string  $error
-     * @param  Code  $code
+     * @param  \Dub\Models\Components\Code  $code
      * @phpstan-pure
      */
     public function __construct(mixed $link, string $error, Code $code)

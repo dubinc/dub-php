@@ -35,7 +35,7 @@ class ListDomainsResponse
     /**
      * The domains were retrieved.
      *
-     * @var ?array<Components\DomainSchema> $domainSchemas
+     * @var ?array<\Dub\Models\Components\DomainSchema> $domainSchemas
      */
     public ?array $domainSchemas = null;
 
@@ -47,7 +47,7 @@ class ListDomainsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\DomainSchema>  $domainSchemas
+     * @param  ?array<\Dub\Models\Components\DomainSchema>  $domainSchemas
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $domainSchemas = null)

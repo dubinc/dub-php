@@ -9,7 +9,7 @@ Webhook event schema
 
 ```php
 /**
-* @var Components\LinkWebhookEvent
+* @var \Dub\Models\Components\LinkWebhookEvent
 */
 Components\LinkWebhookEvent $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Components\LinkWebhookEvent $value = /* values here */
 
 ```php
 /**
-* @var Components\LinkClickedEvent
+* @var \Dub\Models\Components\LinkClickedEvent
 */
 Components\LinkClickedEvent $value = /* values here */
 ```
@@ -27,7 +27,7 @@ Components\LinkClickedEvent $value = /* values here */
 
 ```php
 /**
-* @var Components\LeadCreatedEvent
+* @var \Dub\Models\Components\LeadCreatedEvent
 */
 Components\LeadCreatedEvent $value = /* values here */
 ```
@@ -36,7 +36,7 @@ Components\LeadCreatedEvent $value = /* values here */
 
 ```php
 /**
-* @var Components\SaleCreatedEvent
+* @var \Dub\Models\Components\SaleCreatedEvent
 */
 Components\SaleCreatedEvent $value = /* values here */
 ```
@@ -45,7 +45,7 @@ Components\SaleCreatedEvent $value = /* values here */
 
 ```php
 /**
-* @var Components\PartnerEnrolledEvent
+* @var \Dub\Models\Components\PartnerEnrolledEvent
 */
 Components\PartnerEnrolledEvent $value = /* values here */
 ```
@@ -54,7 +54,7 @@ Components\PartnerEnrolledEvent $value = /* values here */
 
 ```php
 /**
-* @var Components\PartnerApplicationSubmittedEvent
+* @var \Dub\Models\Components\PartnerApplicationSubmittedEvent
 */
 Components\PartnerApplicationSubmittedEvent $value = /* values here */
 ```
@@ -63,7 +63,7 @@ Components\PartnerApplicationSubmittedEvent $value = /* values here */
 
 ```php
 /**
-* @var Components\CommissionCreatedEvent
+* @var \Dub\Models\Components\CommissionCreatedEvent
 */
 Components\CommissionCreatedEvent $value = /* values here */
 ```

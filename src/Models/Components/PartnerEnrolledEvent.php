@@ -21,7 +21,7 @@ class PartnerEnrolledEvent
 
     /**
      *
-     * @var PartnerEnrolledEventEvent $event
+     * @var \Dub\Models\Components\PartnerEnrolledEventEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventEvent')]
@@ -36,7 +36,7 @@ class PartnerEnrolledEvent
 
     /**
      *
-     * @var PartnerEnrolledEventData $data
+     * @var \Dub\Models\Components\PartnerEnrolledEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventData')]
@@ -44,9 +44,9 @@ class PartnerEnrolledEvent
 
     /**
      * @param  string  $id
-     * @param  PartnerEnrolledEventEvent  $event
+     * @param  \Dub\Models\Components\PartnerEnrolledEventEvent  $event
      * @param  string  $createdAt
-     * @param  PartnerEnrolledEventData  $data
+     * @param  \Dub\Models\Components\PartnerEnrolledEventData  $data
      * @phpstan-pure
      */
     public function __construct(string $id, PartnerEnrolledEventEvent $event, string $createdAt, PartnerEnrolledEventData $data)

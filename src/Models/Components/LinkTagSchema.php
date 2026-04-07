@@ -30,7 +30,7 @@ class LinkTagSchema
     /**
      * The color of the tag.
      *
-     * @var LinkTagSchemaColor $color
+     * @var \Dub\Models\Components\LinkTagSchemaColor $color
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('color')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkTagSchemaColor')]
@@ -39,7 +39,7 @@ class LinkTagSchema
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  LinkTagSchemaColor  $color
+     * @param  \Dub\Models\Components\LinkTagSchemaColor  $color
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, LinkTagSchemaColor $color)

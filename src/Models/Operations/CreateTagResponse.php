@@ -35,7 +35,7 @@ class CreateTagResponse
     /**
      * The created tag
      *
-     * @var ?Components\LinkTagSchemaOutput $linkTagSchemaOutput
+     * @var ?\Dub\Models\Components\LinkTagSchemaOutput $linkTagSchemaOutput
      */
     public ?Components\LinkTagSchemaOutput $linkTagSchemaOutput = null;
 
@@ -43,7 +43,7 @@ class CreateTagResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\LinkTagSchemaOutput  $linkTagSchemaOutput
+     * @param  ?\Dub\Models\Components\LinkTagSchemaOutput  $linkTagSchemaOutput
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\LinkTagSchemaOutput $linkTagSchemaOutput = null)

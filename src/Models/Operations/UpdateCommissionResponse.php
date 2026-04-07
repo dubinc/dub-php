@@ -35,7 +35,7 @@ class UpdateCommissionResponse
     /**
      * The updated commission.
      *
-     * @var ?UpdateCommissionResponseBody $object
+     * @var ?\Dub\Models\Operations\UpdateCommissionResponseBody $object
      */
     public ?UpdateCommissionResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class UpdateCommissionResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?UpdateCommissionResponseBody  $object
+     * @param  ?\Dub\Models\Operations\UpdateCommissionResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?UpdateCommissionResponseBody $object = null)

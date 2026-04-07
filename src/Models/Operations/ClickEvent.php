@@ -13,7 +13,7 @@ class ClickEvent
 {
     /**
      *
-     * @var ResponseBodyEvent $event
+     * @var \Dub\Models\Operations\ResponseBodyEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ResponseBodyEvent')]
@@ -28,7 +28,7 @@ class ClickEvent
 
     /**
      *
-     * @var ListEventsResponseBodyEventsClick $click
+     * @var \Dub\Models\Operations\ListEventsResponseBodyEventsClick $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyEventsClick')]
@@ -36,7 +36,7 @@ class ClickEvent
 
     /**
      *
-     * @var ListEventsResponseBodyEventsLink $link
+     * @var \Dub\Models\Operations\ListEventsResponseBodyEventsLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyEventsLink')]
@@ -160,10 +160,10 @@ class ClickEvent
     public string $ip;
 
     /**
-     * @param  ResponseBodyEvent  $event
+     * @param  \Dub\Models\Operations\ResponseBodyEvent  $event
      * @param  string  $timestamp
-     * @param  ListEventsResponseBodyEventsClick  $click
-     * @param  ListEventsResponseBodyEventsLink  $link
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyEventsClick  $click
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyEventsLink  $link
      * @param  string  $clickId
      * @param  string  $linkId
      * @param  string  $domain

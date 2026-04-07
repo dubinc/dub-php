@@ -12,7 +12,7 @@ namespace Dub\Models\Operations;
 class ResponseBodySale
 {
     /**
-     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1437` JPY). Learn more: https://d.to/currency
+     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1580` JPY). Learn more: https://d.to/currency
      *
      * @var int $amount
      */
@@ -22,7 +22,7 @@ class ResponseBodySale
     /**
      * The payment processor via which the sale was made.
      *
-     * @var ?ResponseBodyPaymentProcessor $paymentProcessor
+     * @var ?\Dub\Models\Operations\ResponseBodyPaymentProcessor $paymentProcessor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ResponseBodyPaymentProcessor|null')]
@@ -40,7 +40,7 @@ class ResponseBodySale
 
     /**
      * @param  int  $amount
-     * @param  ?ResponseBodyPaymentProcessor  $paymentProcessor
+     * @param  ?\Dub\Models\Operations\ResponseBodyPaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
      * @phpstan-pure
      */

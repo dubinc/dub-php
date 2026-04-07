@@ -35,7 +35,7 @@ class ListBountySubmissionsResponse
     /**
      * The list of bounty submissions.
      *
-     * @var ?array<ListBountySubmissionsResponseBody> $responseBodies
+     * @var ?array<\Dub\Models\Operations\ListBountySubmissionsResponseBody> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class ListBountySubmissionsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<ListBountySubmissionsResponseBody>  $responseBodies
+     * @param  ?array<\Dub\Models\Operations\ListBountySubmissionsResponseBody>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

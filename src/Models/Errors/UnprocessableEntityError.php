@@ -14,7 +14,7 @@ class UnprocessableEntityError
     /**
      * A short code indicating the error code returned.
      *
-     * @var UnprocessableEntityCode $code
+     * @var \Dub\Models\Errors\UnprocessableEntityCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\UnprocessableEntityCode')]
@@ -38,7 +38,7 @@ class UnprocessableEntityError
     public ?string $docUrl = null;
 
     /**
-     * @param  UnprocessableEntityCode  $code
+     * @param  \Dub\Models\Errors\UnprocessableEntityCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

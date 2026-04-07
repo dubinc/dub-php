@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\One
+* @var \Dub\Models\Components\One
 */
 Components\One $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\One $value = /* values here */
 
 ```php
 /**
-* @var Components\Two
+* @var \Dub\Models\Components\Two
 */
 Components\Two $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Components\Two $value = /* values here */
 
 ```php
 /**
-* @var Components\Three
+* @var \Dub\Models\Components\Three
 */
 Components\Three $value = /* values here */
 ```

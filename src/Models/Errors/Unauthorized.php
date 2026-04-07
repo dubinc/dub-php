@@ -14,14 +14,14 @@ class Unauthorized
 {
     /**
      *
-     * @var UnauthorizedError $error
+     * @var \Dub\Models\Errors\UnauthorizedError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\UnauthorizedError')]
     public UnauthorizedError $error;
 
     /**
-     * @param  UnauthorizedError  $error
+     * @param  \Dub\Models\Errors\UnauthorizedError  $error
      * @phpstan-pure
      */
     public function __construct(UnauthorizedError $error)

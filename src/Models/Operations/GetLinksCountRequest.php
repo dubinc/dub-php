@@ -78,7 +78,7 @@ class GetLinksCountRequest
     /**
      * The field to group the links by.
      *
-     * @var One|Two|Three|Four|null $groupBy
+     * @var \Dub\Models\Operations\One|\Dub\Models\Operations\Two|\Dub\Models\Operations\Three|\Dub\Models\Operations\Four|null $groupBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
     public One|Two|Three|Four|null $groupBy = null;
@@ -110,7 +110,7 @@ class GetLinksCountRequest
      * @param  ?string  $tenantId
      * @param  ?bool  $showArchived
      * @param  ?bool  $withTags
-     * @param  One|Two|Three|Four|null  $groupBy
+     * @param  \Dub\Models\Operations\One|\Dub\Models\Operations\Two|\Dub\Models\Operations\Three|\Dub\Models\Operations\Four|null  $groupBy
      * @phpstan-pure
      */
     public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, One|Two|Three|Four|null $groupBy = null, ?bool $showArchived = false, ?bool $withTags = false)

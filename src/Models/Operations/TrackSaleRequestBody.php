@@ -20,7 +20,7 @@ class TrackSaleRequestBody
     public string $customerExternalId;
 
     /**
-     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1437` JPY). Learn more: https://d.to/currency
+     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1580` JPY). Learn more: https://d.to/currency
      *
      * @var int $amount
      */
@@ -67,7 +67,7 @@ class TrackSaleRequestBody
     /**
      * The payment processor via which the sale was made.
      *
-     * @var ?PaymentProcessor $paymentProcessor
+     * @var ?\Dub\Models\Operations\PaymentProcessor $paymentProcessor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\PaymentProcessor|null')]
@@ -124,7 +124,7 @@ class TrackSaleRequestBody
      * @param  int  $amount
      * @param  ?string  $currency
      * @param  ?string  $eventName
-     * @param  ?PaymentProcessor  $paymentProcessor
+     * @param  ?\Dub\Models\Operations\PaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
      * @param  ?string  $leadEventName

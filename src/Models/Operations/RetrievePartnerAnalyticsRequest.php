@@ -14,7 +14,7 @@ class RetrievePartnerAnalyticsRequest
     /**
      * The interval to retrieve analytics for. If undefined, defaults to 24h.
      *
-     * @var ?RetrievePartnerAnalyticsQueryParamInterval $interval
+     * @var ?\Dub\Models\Operations\RetrievePartnerAnalyticsQueryParamInterval $interval
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
     public ?RetrievePartnerAnalyticsQueryParamInterval $interval = null;
@@ -70,18 +70,18 @@ class RetrievePartnerAnalyticsRequest
     /**
      * The parameter to group the analytics data points by. Defaults to `count` if undefined.
      *
-     * @var ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy
+     * @var ?\Dub\Models\Operations\RetrievePartnerAnalyticsQueryParamGroupBy $groupBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
     public ?RetrievePartnerAnalyticsQueryParamGroupBy $groupBy = null;
 
     /**
-     * @param  ?RetrievePartnerAnalyticsQueryParamInterval  $interval
+     * @param  ?\Dub\Models\Operations\RetrievePartnerAnalyticsQueryParamInterval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
      * @param  ?string  $query
-     * @param  ?RetrievePartnerAnalyticsQueryParamGroupBy  $groupBy
+     * @param  ?\Dub\Models\Operations\RetrievePartnerAnalyticsQueryParamGroupBy  $groupBy
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @phpstan-pure

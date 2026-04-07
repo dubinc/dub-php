@@ -48,7 +48,7 @@ class Seven
 
     /**
      *
-     * @var ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType $type
+     * @var \Dub\Models\Operations\ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType')]
@@ -60,7 +60,7 @@ class Seven
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType  $type
+     * @param  \Dub\Models\Operations\ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType  $type
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponse200ApplicationJSONResponseBodyType $type)

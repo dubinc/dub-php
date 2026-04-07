@@ -48,7 +48,7 @@ class Five
 
     /**
      *
-     * @var PartnerEnrolledEventFieldsDataReferralFormData5Type $type
+     * @var \Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData5Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData5Type')]
@@ -60,7 +60,7 @@ class Five
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  PartnerEnrolledEventFieldsDataReferralFormData5Type  $type
+     * @param  \Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData5Type  $type
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, PartnerEnrolledEventFieldsDataReferralFormData5Type $type)

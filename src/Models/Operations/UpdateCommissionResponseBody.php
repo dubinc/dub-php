@@ -43,7 +43,7 @@ class UpdateCommissionResponseBody
 
     /**
      *
-     * @var UpdateCommissionStatus $status
+     * @var \Dub\Models\Operations\UpdateCommissionStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionStatus')]
@@ -72,7 +72,7 @@ class UpdateCommissionResponseBody
 
     /**
      *
-     * @var UpdateCommissionPartner $partner
+     * @var \Dub\Models\Operations\UpdateCommissionPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionPartner')]
@@ -80,7 +80,7 @@ class UpdateCommissionResponseBody
 
     /**
      *
-     * @var ?UpdateCommissionType $type
+     * @var ?\Dub\Models\Operations\UpdateCommissionType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionType|null')]
@@ -112,7 +112,7 @@ class UpdateCommissionResponseBody
 
     /**
      *
-     * @var ?UpdateCommissionCustomer $customer
+     * @var ?\Dub\Models\Operations\UpdateCommissionCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionCustomer|null')]
@@ -124,16 +124,16 @@ class UpdateCommissionResponseBody
      * @param  float  $amount
      * @param  float  $earnings
      * @param  string  $currency
-     * @param  UpdateCommissionStatus  $status
+     * @param  \Dub\Models\Operations\UpdateCommissionStatus  $status
      * @param  float  $quantity
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  UpdateCommissionPartner  $partner
-     * @param  ?UpdateCommissionType  $type
+     * @param  \Dub\Models\Operations\UpdateCommissionPartner  $partner
+     * @param  ?\Dub\Models\Operations\UpdateCommissionType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
      * @param  ?string  $userId
-     * @param  ?UpdateCommissionCustomer  $customer
+     * @param  ?\Dub\Models\Operations\UpdateCommissionCustomer  $customer
      * @phpstan-pure
      */
     public function __construct(string $id, float $amount, float $earnings, string $currency, UpdateCommissionStatus $status, float $quantity, string $createdAt, string $updatedAt, UpdateCommissionPartner $partner, ?UpdateCommissionType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $userId = null, ?UpdateCommissionCustomer $customer = null)

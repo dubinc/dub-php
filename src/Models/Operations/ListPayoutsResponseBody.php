@@ -34,7 +34,7 @@ class ListPayoutsResponseBody
 
     /**
      *
-     * @var ListPayoutsStatus $status
+     * @var \Dub\Models\Operations\ListPayoutsStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPayoutsStatus')]
@@ -49,7 +49,7 @@ class ListPayoutsResponseBody
 
     /**
      *
-     * @var ListPayoutsPartner $partner
+     * @var \Dub\Models\Operations\ListPayoutsPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPayoutsPartner')]
@@ -78,6 +78,14 @@ class ListPayoutsResponseBody
 
     /**
      *
+     * @var ?string $updatedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('updatedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $updatedAt = null;
+
+    /**
+     *
      * @var ?string $initiatedAt
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('initiatedAt')]
@@ -92,11 +100,19 @@ class ListPayoutsResponseBody
 
     /**
      *
-     * @var ?ListPayoutsMode $mode
+     * @var ?\Dub\Models\Operations\ListPayoutsMode $mode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('mode')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPayoutsMode|null')]
     public ?ListPayoutsMode $mode;
+
+    /**
+     *
+     * @var ?\Dub\Models\Operations\Method $method
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('method')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Method|null')]
+    public ?Method $method;
 
     /**
      *
@@ -116,7 +132,15 @@ class ListPayoutsResponseBody
 
     /**
      *
-     * @var ?User $user
+     * @var ?string $traceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('traceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $traceId = null;
+
+    /**
+     *
+     * @var ?\Dub\Models\Operations\User $user
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('user')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\User|null')]
@@ -127,21 +151,24 @@ class ListPayoutsResponseBody
      * @param  string  $id
      * @param  float  $amount
      * @param  string  $currency
-     * @param  ListPayoutsStatus  $status
+     * @param  \Dub\Models\Operations\ListPayoutsStatus  $status
      * @param  string  $createdAt
-     * @param  ListPayoutsPartner  $partner
+     * @param  \Dub\Models\Operations\ListPayoutsPartner  $partner
      * @param  ?string  $invoiceId
      * @param  ?string  $periodStart
      * @param  ?string  $periodEnd
+     * @param  ?string  $updatedAt
      * @param  ?string  $initiatedAt
      * @param  ?string  $paidAt
-     * @param  ?ListPayoutsMode  $mode
+     * @param  ?\Dub\Models\Operations\ListPayoutsMode  $mode
+     * @param  ?\Dub\Models\Operations\Method  $method
      * @param  ?string  $description
      * @param  ?string  $failureReason
-     * @param  ?User  $user
+     * @param  ?string  $traceId
+     * @param  ?\Dub\Models\Operations\User  $user
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, string $currency, ListPayoutsStatus $status, string $createdAt, ListPayoutsPartner $partner, ?string $invoiceId = null, ?string $periodStart = null, ?string $periodEnd = null, ?string $initiatedAt = null, ?string $paidAt = null, ?ListPayoutsMode $mode = null, ?string $description = null, ?string $failureReason = null, ?User $user = null)
+    public function __construct(string $id, float $amount, string $currency, ListPayoutsStatus $status, string $createdAt, ListPayoutsPartner $partner, ?string $invoiceId = null, ?string $periodStart = null, ?string $periodEnd = null, ?string $updatedAt = null, ?string $initiatedAt = null, ?string $paidAt = null, ?ListPayoutsMode $mode = null, ?Method $method = null, ?string $description = null, ?string $failureReason = null, ?string $traceId = null, ?User $user = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -152,11 +179,14 @@ class ListPayoutsResponseBody
         $this->invoiceId = $invoiceId;
         $this->periodStart = $periodStart;
         $this->periodEnd = $periodEnd;
+        $this->updatedAt = $updatedAt;
         $this->initiatedAt = $initiatedAt;
         $this->paidAt = $paidAt;
         $this->mode = $mode;
+        $this->method = $method;
         $this->description = $description;
         $this->failureReason = $failureReason;
+        $this->traceId = $traceId;
         $this->user = $user;
     }
 }

@@ -42,7 +42,7 @@ class CommissionCreatedEventData
 
     /**
      *
-     * @var CommissionCreatedEventStatus $status
+     * @var \Dub\Models\Components\CommissionCreatedEventStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventStatus')]
@@ -71,7 +71,7 @@ class CommissionCreatedEventData
 
     /**
      *
-     * @var CommissionCreatedEventPartner $partner
+     * @var \Dub\Models\Components\CommissionCreatedEventPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventPartner')]
@@ -79,7 +79,7 @@ class CommissionCreatedEventData
 
     /**
      *
-     * @var ?CommissionCreatedEventType $type
+     * @var ?\Dub\Models\Components\CommissionCreatedEventType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventType|null')]
@@ -102,7 +102,7 @@ class CommissionCreatedEventData
 
     /**
      *
-     * @var ?CommissionCreatedEventLink $link
+     * @var ?\Dub\Models\Components\CommissionCreatedEventLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventLink|null')]
@@ -119,7 +119,7 @@ class CommissionCreatedEventData
 
     /**
      *
-     * @var ?CommissionCreatedEventCustomer $customer
+     * @var ?\Dub\Models\Components\CommissionCreatedEventCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventCustomer|null')]
@@ -131,17 +131,17 @@ class CommissionCreatedEventData
      * @param  float  $amount
      * @param  float  $earnings
      * @param  string  $currency
-     * @param  CommissionCreatedEventStatus  $status
+     * @param  \Dub\Models\Components\CommissionCreatedEventStatus  $status
      * @param  float  $quantity
      * @param  string  $createdAt
      * @param  string  $updatedAt
-     * @param  CommissionCreatedEventPartner  $partner
-     * @param  ?CommissionCreatedEventType  $type
+     * @param  \Dub\Models\Components\CommissionCreatedEventPartner  $partner
+     * @param  ?\Dub\Models\Components\CommissionCreatedEventType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
-     * @param  ?CommissionCreatedEventLink  $link
+     * @param  ?\Dub\Models\Components\CommissionCreatedEventLink  $link
      * @param  ?string  $userId
-     * @param  ?CommissionCreatedEventCustomer  $customer
+     * @param  ?\Dub\Models\Components\CommissionCreatedEventCustomer  $customer
      * @phpstan-pure
      */
     public function __construct(string $id, float $amount, float $earnings, string $currency, CommissionCreatedEventStatus $status, float $quantity, string $createdAt, string $updatedAt, CommissionCreatedEventPartner $partner, ?CommissionCreatedEventType $type = null, ?string $invoiceId = null, ?string $description = null, ?CommissionCreatedEventLink $link = null, ?string $userId = null, ?CommissionCreatedEventCustomer $customer = null)

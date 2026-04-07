@@ -35,7 +35,7 @@ class CreatePartnerResponse
     /**
      * The created or updated partner
      *
-     * @var ?CreatePartnerResponseBody $object
+     * @var ?\Dub\Models\Operations\CreatePartnerResponseBody $object
      */
     public ?CreatePartnerResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class CreatePartnerResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?CreatePartnerResponseBody  $object
+     * @param  ?\Dub\Models\Operations\CreatePartnerResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?CreatePartnerResponseBody $object = null)

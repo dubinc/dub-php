@@ -29,7 +29,7 @@ class RejectBountySubmissionRequest
 
     /**
      *
-     * @var ?RejectBountySubmissionRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\RejectBountySubmissionRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?RejectBountySubmissionRequestBody $requestBody = null;
@@ -37,7 +37,7 @@ class RejectBountySubmissionRequest
     /**
      * @param  string  $bountyId
      * @param  string  $submissionId
-     * @param  ?RejectBountySubmissionRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\RejectBountySubmissionRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $bountyId, string $submissionId, ?RejectBountySubmissionRequestBody $requestBody = null)

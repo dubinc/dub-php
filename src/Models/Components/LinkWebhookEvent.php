@@ -21,7 +21,7 @@ class LinkWebhookEvent
 
     /**
      *
-     * @var One|Two|Three $event
+     * @var \Dub\Models\Components\One|\Dub\Models\Components\Two|\Dub\Models\Components\Three $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\One|\Dub\Models\Components\Two|\Dub\Models\Components\Three')]
@@ -36,7 +36,7 @@ class LinkWebhookEvent
 
     /**
      *
-     * @var Data $data
+     * @var \Dub\Models\Components\Data $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Data')]
@@ -44,9 +44,9 @@ class LinkWebhookEvent
 
     /**
      * @param  string  $id
-     * @param  One|Two|Three  $event
+     * @param  \Dub\Models\Components\One|\Dub\Models\Components\Two|\Dub\Models\Components\Three  $event
      * @param  string  $createdAt
-     * @param  Data  $data
+     * @param  \Dub\Models\Components\Data  $data
      * @phpstan-pure
      */
     public function __construct(string $id, One|Two|Three $event, string $createdAt, Data $data)

@@ -49,8 +49,8 @@ class Tags
      *
      * Create a tag for the authenticated workspace.
      *
-     * @param  ?Operations\CreateTagRequestBody  $request
-     * @return Operations\CreateTagResponse
+     * @param  ?\Dub\Models\Operations\CreateTagRequestBody  $request
+     * @return \Dub\Models\Operations\CreateTagResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function create(?Operations\CreateTagRequestBody $request = null, ?Options $options = null): Operations\CreateTagResponse
@@ -214,7 +214,7 @@ class Tags
      * Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
      *
      * @param  string  $id
-     * @return Operations\DeleteTagResponse
+     * @return \Dub\Models\Operations\DeleteTagResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function delete(string $id, ?Options $options = null): Operations\DeleteTagResponse
@@ -376,8 +376,8 @@ class Tags
      *
      * Retrieve a list of tags for the authenticated workspace.
      *
-     * @param  ?Operations\GetTagsRequest  $request
-     * @return Operations\GetTagsResponse
+     * @param  ?\Dub\Models\Operations\GetTagsRequest  $request
+     * @return \Dub\Models\Operations\GetTagsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?Operations\GetTagsRequest $request = null, ?Options $options = null): Operations\GetTagsResponse
@@ -540,8 +540,8 @@ class Tags
      * Update a tag in the workspace.
      *
      * @param  string  $id
-     * @param  ?Operations\UpdateTagRequestBody  $requestBody
-     * @return Operations\UpdateTagResponse
+     * @param  ?\Dub\Models\Operations\UpdateTagRequestBody  $requestBody
+     * @return \Dub\Models\Operations\UpdateTagResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function update(string $id, ?Operations\UpdateTagRequestBody $requestBody = null, ?Options $options = null): Operations\UpdateTagResponse

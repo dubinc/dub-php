@@ -21,7 +21,7 @@ class CommissionCreatedEvent
 
     /**
      *
-     * @var CommissionCreatedEventEvent $event
+     * @var \Dub\Models\Components\CommissionCreatedEventEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventEvent')]
@@ -36,7 +36,7 @@ class CommissionCreatedEvent
 
     /**
      *
-     * @var CommissionCreatedEventData $data
+     * @var \Dub\Models\Components\CommissionCreatedEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\CommissionCreatedEventData')]
@@ -44,9 +44,9 @@ class CommissionCreatedEvent
 
     /**
      * @param  string  $id
-     * @param  CommissionCreatedEventEvent  $event
+     * @param  \Dub\Models\Components\CommissionCreatedEventEvent  $event
      * @param  string  $createdAt
-     * @param  CommissionCreatedEventData  $data
+     * @param  \Dub\Models\Components\CommissionCreatedEventData  $data
      * @phpstan-pure
      */
     public function __construct(string $id, CommissionCreatedEventEvent $event, string $createdAt, CommissionCreatedEventData $data)

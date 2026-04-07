@@ -31,7 +31,7 @@ class UpsertPartnerLinkRequestBody
     /**
      * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
      *
-     * @var ?UpsertPartnerLinkLinkProps $linkProps
+     * @var ?\Dub\Models\Operations\UpsertPartnerLinkLinkProps $linkProps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('linkProps')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpsertPartnerLinkLinkProps|null')]
@@ -68,7 +68,7 @@ class UpsertPartnerLinkRequestBody
     /**
      * @param  string  $url
      * @param  ?string  $key
-     * @param  ?UpsertPartnerLinkLinkProps  $linkProps
+     * @param  ?\Dub\Models\Operations\UpsertPartnerLinkLinkProps  $linkProps
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $comments

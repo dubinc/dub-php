@@ -21,7 +21,7 @@ class AnalyticsCountries
 
     /**
      *
-     * @var ?Region $region
+     * @var ?\Dub\Models\Components\Region $region
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('region')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Region|null')]
@@ -30,7 +30,7 @@ class AnalyticsCountries
 
     /**
      *
-     * @var ?City $city
+     * @var ?\Dub\Models\Components\City $city
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('city')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\City|null')]
@@ -75,8 +75,8 @@ class AnalyticsCountries
 
     /**
      * @param  string  $country
-     * @param  ?Region  $region
-     * @param  ?City  $city
+     * @param  ?\Dub\Models\Components\Region  $region
+     * @param  ?\Dub\Models\Components\City  $city
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales

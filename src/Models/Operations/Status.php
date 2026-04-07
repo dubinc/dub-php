@@ -9,9 +9,10 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** Useful for marking a commission as refunded, duplicate, canceled, or fraudulent. Takes precedence over `amount` and `modifyAmount`. When a commission is marked as refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated. */
+/** Useful for marking a commission as pending, refunded, duplicate, canceled, or fraudulent. Takes precedence over `saleAmount` and `modifySaleAmount`. When a commission is marked as pending, refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated. */
 enum Status: string
 {
+    case Pending = 'pending';
     case Refunded = 'refunded';
     case Duplicate = 'duplicate';
     case Canceled = 'canceled';

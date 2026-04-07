@@ -158,6 +158,9 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\GetLinksRequest(
+    endingBefore: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    startingAfter: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    page: 1,
     pageSize: 50,
 );
 
@@ -193,7 +196,8 @@ foreach ($responses as $response) {
 ### [Commissions](docs/sdks/commissions/README.md)
 
 * [list](docs/sdks/commissions/README.md#list) - List all commissions
-* [update](docs/sdks/commissions/README.md#update) - Update a commission.
+* [update](docs/sdks/commissions/README.md#update) - Update a commission
+* [updateMany](docs/sdks/commissions/README.md#updatemany) - Bulk update commissions
 
 ### [Customers](docs/sdks/customers/README.md)
 
@@ -295,6 +299,9 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\GetLinksRequest(
+    endingBefore: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    startingAfter: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    page: 1,
     pageSize: 50,
 );
 
@@ -359,6 +366,9 @@ $sdk = Dub\Dub::builder()
 
 try {
     $request = new Operations\GetLinksRequest(
+        endingBefore: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+        startingAfter: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+        page: 1,
         pageSize: 50,
     );
 
@@ -427,6 +437,9 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\GetLinksRequest(
+    endingBefore: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    startingAfter: 'link_1KAP4CDPBSVMMBMH9XX3YZZ0Z...',
+    page: 1,
     pageSize: 50,
 );
 

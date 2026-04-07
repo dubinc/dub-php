@@ -35,7 +35,7 @@ class UpdateFolderResponse
     /**
      * The updated folder.
      *
-     * @var ?Components\FolderSchema $folderSchema
+     * @var ?\Dub\Models\Components\FolderSchema $folderSchema
      */
     public ?Components\FolderSchema $folderSchema = null;
 
@@ -43,7 +43,7 @@ class UpdateFolderResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\FolderSchema  $folderSchema
+     * @param  ?\Dub\Models\Components\FolderSchema  $folderSchema
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\FolderSchema $folderSchema = null)

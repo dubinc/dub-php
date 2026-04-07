@@ -35,7 +35,7 @@ class TrackSaleResponse
     /**
      * A sale was tracked.
      *
-     * @var ?TrackSaleResponseBody $object
+     * @var ?\Dub\Models\Operations\TrackSaleResponseBody $object
      */
     public ?TrackSaleResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class TrackSaleResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?TrackSaleResponseBody  $object
+     * @param  ?\Dub\Models\Operations\TrackSaleResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?TrackSaleResponseBody $object = null)

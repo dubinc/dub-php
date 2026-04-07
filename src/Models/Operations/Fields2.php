@@ -48,7 +48,7 @@ class Fields2
 
     /**
      *
-     * @var ListPartnersFieldsType $type
+     * @var \Dub\Models\Operations\ListPartnersFieldsType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsType')]
@@ -56,7 +56,7 @@ class Fields2
 
     /**
      *
-     * @var ?FieldsConstraints $constraints
+     * @var ?\Dub\Models\Operations\FieldsConstraints $constraints
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('constraints')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\FieldsConstraints|null')]
@@ -69,8 +69,8 @@ class Fields2
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsType  $type
-     * @param  ?FieldsConstraints  $constraints
+     * @param  \Dub\Models\Operations\ListPartnersFieldsType  $type
+     * @param  ?\Dub\Models\Operations\FieldsConstraints  $constraints
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsType $type, ?FieldsConstraints $constraints = null)

@@ -50,7 +50,7 @@ class Customers
      * Delete a customer from a workspace.
      *
      * @param  string  $id
-     * @return Operations\DeleteCustomerResponse
+     * @return \Dub\Models\Operations\DeleteCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function delete(string $id, ?Options $options = null): Operations\DeleteCustomerResponse
@@ -214,7 +214,7 @@ class Customers
      *
      * @param  string  $id
      * @param  ?bool  $includeExpandedFields
-     * @return Operations\GetCustomerResponse
+     * @return \Dub\Models\Operations\GetCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function get(string $id, ?bool $includeExpandedFields = null, ?Options $options = null): Operations\GetCustomerResponse
@@ -380,11 +380,11 @@ class Customers
      *
      * Retrieve a list of customers for the authenticated workspace.
      *
-     * @param  ?Operations\GetCustomersRequest  $request
-     * @return Operations\GetCustomersResponse
+     * @param  ?\Dub\Models\Operations\GetCustomersRequest  $request
+     * @return \Dub\Models\Operations\GetCustomersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?Operations\GetCustomersRequest $request = null, ?Options $options = null): Operations\GetCustomersResponse
+    private function listIndividual(?Operations\GetCustomersRequest $request = null, ?Options $options = null): Operations\GetCustomersResponse
     {
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
@@ -425,6 +425,40 @@ class Customers
                     contentType: $contentType,
                     rawResponse: $httpResponse,
                     responseBodies: $obj);
+                $sdk = $this;
+
+                $response->next = function () use ($sdk, $responseData, $request): ?Operations\GetCustomersResponse {
+                    $jsonObject = new \JsonPath\JsonObject($responseData);
+                    $nextCursor = $jsonObject->get('$[-1].id');
+                    if ($nextCursor == null) {
+                        return null;
+                    } else {
+                        $nextCursor = $nextCursor[0];
+                        if ($nextCursor == null || (is_string($nextCursor) && trim($nextCursor) === '')) {
+                            return null;
+                        }
+                    }
+
+                    return $sdk->listIndividual(
+                        request: new Operations\GetCustomersRequest(
+                            email: $request != null ? $request->email : null,
+                            externalId: $request != null ? $request->externalId : null,
+                            search: $request != null ? $request->search : null,
+                            country: $request != null ? $request->country : null,
+                            linkId: $request != null ? $request->linkId : null,
+                            programId: $request != null ? $request->programId : null,
+                            partnerId: $request != null ? $request->partnerId : null,
+                            includeExpandedFields: $request != null ? $request->includeExpandedFields : null,
+                            sortBy: $request != null ? $request->sortBy : null,
+                            sortOrder: $request != null ? $request->sortOrder : null,
+                            endingBefore: $request != null ? $request->endingBefore : null,
+                            startingAfter: $nextCursor,
+                            page: $request != null ? $request->page : null,
+                            pageSize: $request != null ? $request->pageSize : null,
+                        ),
+                    );
+                };
+
 
                 return $response;
             } else {
@@ -537,14 +571,31 @@ class Customers
             throw new \Dub\Models\Errors\SDKException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         }
     }
+    /**
+     * Retrieve a list of customers
+     *
+     * Retrieve a list of customers for the authenticated workspace.
+     *
+     * @param  ?\Dub\Models\Operations\GetCustomersRequest  $request
+     * @return \Generator<\Dub\Models\Operations\GetCustomersResponse>
+     * @throws \Dub\Models\Errors\SDKException
+     */
+    public function list(?Operations\GetCustomersRequest $request = null, ?Options $options = null): \Generator
+    {
+        $res = $this->listIndividual($request, $options);
+        while ($res !== null) {
+            yield $res;
+            $res = $res->next($res);
+        }
+    }
 
     /**
      * Update a customer
      *
      * Update a customer for the authenticated workspace.
      *
-     * @param  Operations\UpdateCustomerRequest  $request
-     * @return Operations\UpdateCustomerResponse
+     * @param  \Dub\Models\Operations\UpdateCustomerRequest  $request
+     * @return \Dub\Models\Operations\UpdateCustomerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function update(Operations\UpdateCustomerRequest $request, ?Options $options = null): Operations\UpdateCustomerResponse

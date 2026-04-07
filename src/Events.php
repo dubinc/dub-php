@@ -49,8 +49,8 @@ class Events
      *
      * Retrieve a paginated list of events for the authenticated workspace.
      *
-     * @param  ?Operations\ListEventsRequest  $request
-     * @return Operations\ListEventsResponse
+     * @param  ?\Dub\Models\Operations\ListEventsRequest  $request
+     * @return \Dub\Models\Operations\ListEventsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?Operations\ListEventsRequest $request = null, ?Options $options = null): Operations\ListEventsResponse

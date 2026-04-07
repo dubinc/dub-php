@@ -35,7 +35,7 @@ class RetrieveLinksResponse
     /**
      * The retrieved partner links.
      *
-     * @var ?array<RetrieveLinksResponseBody> $responseBodies
+     * @var ?array<\Dub\Models\Operations\RetrieveLinksResponseBody> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class RetrieveLinksResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<RetrieveLinksResponseBody>  $responseBodies
+     * @param  ?array<\Dub\Models\Operations\RetrieveLinksResponseBody>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

@@ -14,7 +14,7 @@ class AnalyticsContinents
     /**
      * The 2-letter ISO 3166-1 code representing the continent associated with the location of the user.
      *
-     * @var Continent $continent
+     * @var \Dub\Models\Components\Continent $continent
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('continent')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Continent')]
@@ -57,7 +57,7 @@ class AnalyticsContinents
     public ?float $saleAmount = null;
 
     /**
-     * @param  Continent  $continent
+     * @param  \Dub\Models\Components\Continent  $continent
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales

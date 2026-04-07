@@ -35,7 +35,7 @@ class CreateReferralsEmbedTokenResponse
     /**
      * The created public embed token.
      *
-     * @var ?CreateReferralsEmbedTokenResponseBody $object
+     * @var ?\Dub\Models\Operations\CreateReferralsEmbedTokenResponseBody $object
      */
     public ?CreateReferralsEmbedTokenResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class CreateReferralsEmbedTokenResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?CreateReferralsEmbedTokenResponseBody  $object
+     * @param  ?\Dub\Models\Operations\CreateReferralsEmbedTokenResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?CreateReferralsEmbedTokenResponseBody $object = null)

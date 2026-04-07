@@ -57,7 +57,7 @@ class TrackLeadRequestBody
     /**
      * The mode to use for tracking the lead event. `async` will not block the request; `wait` will block the request until the lead event is fully recorded in Dub; `deferred` will defer the lead event creation to a subsequent request.
      *
-     * @var ?Mode $mode
+     * @var ?\Dub\Models\Operations\Mode $mode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('mode')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Mode|null')]
@@ -95,7 +95,7 @@ class TrackLeadRequestBody
      * @param  string  $clickId
      * @param  string  $eventName
      * @param  string  $customerExternalId
-     * @param  ?Mode  $mode
+     * @param  ?\Dub\Models\Operations\Mode  $mode
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar

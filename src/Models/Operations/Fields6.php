@@ -48,7 +48,7 @@ class Fields6
 
     /**
      *
-     * @var CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType $type
+     * @var \Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType')]
@@ -57,7 +57,7 @@ class Fields6
     /**
      * $options
      *
-     * @var array<CreatePartnerFieldsPartnersOptions> $options
+     * @var array<\Dub\Models\Operations\CreatePartnerFieldsPartnersOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerFieldsPartnersOptions>')]
@@ -69,8 +69,8 @@ class Fields6
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType  $type
-     * @param  array<CreatePartnerFieldsPartnersOptions>  $options
+     * @param  \Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType  $type
+     * @param  array<\Dub\Models\Operations\CreatePartnerFieldsPartnersOptions>  $options
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyType $type, array $options)

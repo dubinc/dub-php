@@ -14,7 +14,7 @@ class NotFoundError
     /**
      * A short code indicating the error code returned.
      *
-     * @var NotFoundCode $code
+     * @var \Dub\Models\Errors\NotFoundCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\NotFoundCode')]
@@ -38,7 +38,7 @@ class NotFoundError
     public ?string $docUrl = null;
 
     /**
-     * @param  NotFoundCode  $code
+     * @param  \Dub\Models\Errors\NotFoundCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

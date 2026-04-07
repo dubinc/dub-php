@@ -21,9 +21,9 @@ class UpdateTagRequestBody
     public ?string $name = null;
 
     /**
-     * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown.
+     * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown, gray.
      *
-     * @var ?UpdateTagColor $color
+     * @var ?\Dub\Models\Operations\UpdateTagColor $color
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('color')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateTagColor|null')]
@@ -42,7 +42,7 @@ class UpdateTagRequestBody
 
     /**
      * @param  ?string  $name
-     * @param  ?UpdateTagColor  $color
+     * @param  ?\Dub\Models\Operations\UpdateTagColor  $color
      * @param  ?string  $tag
      * @phpstan-pure
      */

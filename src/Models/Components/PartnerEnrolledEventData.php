@@ -53,7 +53,7 @@ class PartnerEnrolledEventData
     /**
      * The status of the partner's enrollment in the program.
      *
-     * @var Status $status
+     * @var \Dub\Models\Components\Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Status')]
@@ -90,6 +90,15 @@ class PartnerEnrolledEventData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
     public ?string $country;
+
+    /**
+     * The partner's default payout method. Connect: Bank account payouts via Stripe Connect; Stablecoin: USDC payouts directly to a crypto wallet; PayPal: Payouts via PayPal
+     *
+     * @var ?\Dub\Models\Components\DefaultPayoutMethod $defaultPayoutMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('defaultPayoutMethod')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\DefaultPayoutMethod|null')]
+    public ?DefaultPayoutMethod $defaultPayoutMethod;
 
     /**
      * The partner's PayPal email (for receiving payouts via PayPal).
@@ -134,7 +143,7 @@ class PartnerEnrolledEventData
     /**
      * The partner's referral links in this program.
      *
-     * @var ?array<Links> $links
+     * @var ?array<\Dub\Models\Components\Links> $links
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Links>|null')]
@@ -211,7 +220,7 @@ class PartnerEnrolledEventData
     /**
      * If the partner was banned from the program, this is the reason for the ban.
      *
-     * @var ?BannedReason $bannedReason
+     * @var ?\Dub\Models\Components\BannedReason $bannedReason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('bannedReason')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\BannedReason|null')]
@@ -220,12 +229,22 @@ class PartnerEnrolledEventData
 
     /**
      *
-     * @var ?ReferralFormData $referralFormData
+     * @var ?\Dub\Models\Components\ReferralFormData $referralFormData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('referralFormData')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\ReferralFormData|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?ReferralFormData $referralFormData = null;
+
+    /**
+     * Linked program application, including review outcome when applicable.
+     *
+     * @var ?\Dub\Models\Components\Application $application
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('application')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Application|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Application $application = null;
 
     /**
      * Earnings Per Click (EPC) (`Total Revenue ÷ Total Clicks`)
@@ -404,17 +423,18 @@ class PartnerEnrolledEventData
      * @param  string  $programId
      * @param  string  $partnerId
      * @param  string  $createdAt
-     * @param  Status  $status
+     * @param  \Dub\Models\Components\Status  $status
      * @param  ?string  $companyName
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $country
+     * @param  ?\Dub\Models\Components\DefaultPayoutMethod  $defaultPayoutMethod
      * @param  ?string  $paypalEmail
      * @param  ?string  $stripeConnectId
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $trustedAt
      * @param  ?string  $tenantId
-     * @param  ?array<Links>  $links
+     * @param  ?array<\Dub\Models\Components\Links>  $links
      * @param  ?float  $totalCommissions
      * @param  ?float  $totalClicks
      * @param  ?float  $totalLeads
@@ -430,8 +450,9 @@ class PartnerEnrolledEventData
      * @param  ?string  $discountId
      * @param  ?string  $applicationId
      * @param  ?string  $bannedAt
-     * @param  ?BannedReason  $bannedReason
-     * @param  ?ReferralFormData  $referralFormData
+     * @param  ?\Dub\Models\Components\BannedReason  $bannedReason
+     * @param  ?\Dub\Models\Components\ReferralFormData  $referralFormData
+     * @param  ?\Dub\Models\Components\Application  $application
      * @param  ?float  $earningsPerClick
      * @param  ?float  $averageLifetimeValue
      * @param  ?float  $clickToLeadRate
@@ -446,7 +467,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $tiktok
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, Status $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -458,6 +479,7 @@ class PartnerEnrolledEventData
         $this->email = $email;
         $this->image = $image;
         $this->country = $country;
+        $this->defaultPayoutMethod = $defaultPayoutMethod;
         $this->paypalEmail = $paypalEmail;
         $this->stripeConnectId = $stripeConnectId;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
@@ -474,6 +496,7 @@ class PartnerEnrolledEventData
         $this->bannedAt = $bannedAt;
         $this->bannedReason = $bannedReason;
         $this->referralFormData = $referralFormData;
+        $this->application = $application;
         $this->earningsPerClick = $earningsPerClick;
         $this->averageLifetimeValue = $averageLifetimeValue;
         $this->clickToLeadRate = $clickToLeadRate;

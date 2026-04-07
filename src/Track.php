@@ -49,8 +49,8 @@ class Track
      *
      * Track a lead for a short link.
      *
-     * @param  ?Operations\TrackLeadRequestBody  $request
-     * @return Operations\TrackLeadResponse
+     * @param  ?\Dub\Models\Operations\TrackLeadRequestBody  $request
+     * @return \Dub\Models\Operations\TrackLeadResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function lead(?Operations\TrackLeadRequestBody $request = null, ?Options $options = null): Operations\TrackLeadResponse
@@ -213,8 +213,8 @@ class Track
      *
      * Track a sale for a short link.
      *
-     * @param  ?Operations\TrackSaleRequestBody  $request
-     * @return Operations\TrackSaleResponse
+     * @param  ?\Dub\Models\Operations\TrackSaleRequestBody  $request
+     * @return \Dub\Models\Operations\TrackSaleResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function sale(?Operations\TrackSaleRequestBody $request = null, ?Options $options = null): Operations\TrackSaleResponse

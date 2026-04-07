@@ -118,7 +118,7 @@ class GetCustomerResponseBody
 
     /**
      *
-     * @var ?GetCustomerLink $link
+     * @var ?\Dub\Models\Operations\GetCustomerLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomerLink|null')]
@@ -135,7 +135,7 @@ class GetCustomerResponseBody
 
     /**
      *
-     * @var ?GetCustomerPartner $partner
+     * @var ?\Dub\Models\Operations\GetCustomerPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomerPartner|null')]
@@ -144,7 +144,7 @@ class GetCustomerResponseBody
 
     /**
      *
-     * @var ?GetCustomerDiscount $discount
+     * @var ?\Dub\Models\Operations\GetCustomerDiscount $discount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomerDiscount|null')]
@@ -164,10 +164,10 @@ class GetCustomerResponseBody
      * @param  ?float  $saleAmount
      * @param  ?string  $firstSaleAt
      * @param  ?string  $subscriptionCanceledAt
-     * @param  ?GetCustomerLink  $link
+     * @param  ?\Dub\Models\Operations\GetCustomerLink  $link
      * @param  ?string  $programId
-     * @param  ?GetCustomerPartner  $partner
-     * @param  ?GetCustomerDiscount  $discount
+     * @param  ?\Dub\Models\Operations\GetCustomerPartner  $partner
+     * @param  ?\Dub\Models\Operations\GetCustomerDiscount  $discount
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $externalId, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?string $firstSaleAt = null, ?string $subscriptionCanceledAt = null, ?GetCustomerLink $link = null, ?string $programId = null, ?GetCustomerPartner $partner = null, ?GetCustomerDiscount $discount = null)

@@ -14,14 +14,14 @@ class Forbidden
 {
     /**
      *
-     * @var ForbiddenError $error
+     * @var \Dub\Models\Errors\ForbiddenError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\ForbiddenError')]
     public ForbiddenError $error;
 
     /**
-     * @param  ForbiddenError  $error
+     * @param  \Dub\Models\Errors\ForbiddenError  $error
      * @phpstan-pure
      */
     public function __construct(ForbiddenError $error)

@@ -94,7 +94,7 @@ class ListEventsRequest
     /**
      * The interval to retrieve analytics for. If undefined, defaults to 24h.
      *
-     * @var ?QueryParamInterval $interval
+     * @var ?\Dub\Models\Operations\QueryParamInterval $interval
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
     public ?QueryParamInterval $interval = null;
@@ -254,7 +254,7 @@ class ListEventsRequest
     /**
      * Filter sales by type: 'new' for first-time purchases, 'recurring' for repeat purchases. If undefined, returns both.
      *
-     * @var ?QueryParamSaleType $saleType
+     * @var ?\Dub\Models\Operations\QueryParamSaleType $saleType
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=saleType')]
     public ?QueryParamSaleType $saleType = null;
@@ -294,7 +294,7 @@ class ListEventsRequest
     /**
      * The type of event to retrieve analytics for. Defaults to 'clicks'.
      *
-     * @var ?QueryParamEvent $event
+     * @var ?\Dub\Models\Operations\QueryParamEvent $event
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
     public ?QueryParamEvent $event = null;
@@ -324,7 +324,7 @@ class ListEventsRequest
     /**
      * The sort order. The default is `desc`.
      *
-     * @var ?QueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\QueryParamSortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?QueryParamSortOrder $sortOrder = null;
@@ -332,7 +332,7 @@ class ListEventsRequest
     /**
      * The field to sort the events by. The default is `timestamp`.
      *
-     * @var ?QueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\QueryParamSortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?QueryParamSortBy $sortBy = null;
@@ -340,13 +340,13 @@ class ListEventsRequest
     /**
      * DEPRECATED. Use `sortOrder` instead.
      *
-     * @var ?Order $order
+     * @var ?\Dub\Models\Operations\Order $order
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=order')]
     public ?Order $order = null;
 
     /**
-     * @param  ?QueryParamEvent  $event
+     * @param  ?\Dub\Models\Operations\QueryParamEvent  $event
      * @param  ?string  $domain
      * @param  ?string  $key
      * @param  ?string  $linkId
@@ -357,7 +357,7 @@ class ListEventsRequest
      * @param  ?string  $groupId
      * @param  ?string  $partnerId
      * @param  ?string  $customerId
-     * @param  ?QueryParamInterval  $interval
+     * @param  ?\Dub\Models\Operations\QueryParamInterval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
@@ -378,16 +378,16 @@ class ListEventsRequest
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      * @param  ?bool  $root
-     * @param  ?QueryParamSaleType  $saleType
+     * @param  ?\Dub\Models\Operations\QueryParamSaleType  $saleType
      * @param  ?string  $query
      * @param  ?string  $programId
      * @param  ?string  $tagIds
      * @param  ?bool  $qr
      * @param  ?float  $page
      * @param  ?float  $limit
-     * @param  ?QueryParamSortOrder  $sortOrder
-     * @param  ?QueryParamSortBy  $sortBy
-     * @param  ?Order  $order
+     * @param  ?\Dub\Models\Operations\QueryParamSortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\QueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\Order  $order
      * @phpstan-pure
      */
     public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)

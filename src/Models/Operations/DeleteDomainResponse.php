@@ -35,7 +35,7 @@ class DeleteDomainResponse
     /**
      * The domain was deleted.
      *
-     * @var ?DeleteDomainResponseBody $object
+     * @var ?\Dub\Models\Operations\DeleteDomainResponseBody $object
      */
     public ?DeleteDomainResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteDomainResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteDomainResponseBody  $object
+     * @param  ?\Dub\Models\Operations\DeleteDomainResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteDomainResponseBody $object = null)

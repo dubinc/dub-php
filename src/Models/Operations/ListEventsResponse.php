@@ -35,7 +35,7 @@ class ListEventsResponse
     /**
      * A list of events
      *
-     * @var ?array<ClickEvent|LeadEvent|SaleEvent> $responseBodies
+     * @var ?array<\Dub\Models\Operations\ClickEvent|\Dub\Models\Operations\LeadEvent|\Dub\Models\Operations\SaleEvent> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class ListEventsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<ClickEvent|LeadEvent|SaleEvent>  $responseBodies
+     * @param  ?array<\Dub\Models\Operations\ClickEvent|\Dub\Models\Operations\LeadEvent|\Dub\Models\Operations\SaleEvent>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

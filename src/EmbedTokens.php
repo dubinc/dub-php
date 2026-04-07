@@ -47,10 +47,10 @@ class EmbedTokens
     /**
      * Create a referrals embed token
      *
-     * Create a referrals embed token for the given partner/tenant.
+     * Create a referrals embed token for the given partner/tenant. The endpoint first attempts to locate an existing enrollment using the provided tenantId. If no enrollment is found, it resolves the partner by email and creates a new enrollment as needed. This results in an upsert-style flow that guarantees a valid enrollment and returns a usable embed token.
      *
-     * @param  ?Operations\CreateReferralsEmbedTokenRequestBody  $request
-     * @return Operations\CreateReferralsEmbedTokenResponse
+     * @param  ?\Dub\Models\Operations\CreateReferralsEmbedTokenRequestBody  $request
+     * @return \Dub\Models\Operations\CreateReferralsEmbedTokenResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function referrals(?Operations\CreateReferralsEmbedTokenRequestBody $request = null, ?Options $options = null): Operations\CreateReferralsEmbedTokenResponse

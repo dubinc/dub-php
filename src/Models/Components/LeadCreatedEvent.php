@@ -21,7 +21,7 @@ class LeadCreatedEvent
 
     /**
      *
-     * @var LeadCreatedEventEvent $event
+     * @var \Dub\Models\Components\LeadCreatedEventEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventEvent')]
@@ -36,7 +36,7 @@ class LeadCreatedEvent
 
     /**
      *
-     * @var LeadCreatedEventData $data
+     * @var \Dub\Models\Components\LeadCreatedEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventData')]
@@ -44,9 +44,9 @@ class LeadCreatedEvent
 
     /**
      * @param  string  $id
-     * @param  LeadCreatedEventEvent  $event
+     * @param  \Dub\Models\Components\LeadCreatedEventEvent  $event
      * @param  string  $createdAt
-     * @param  LeadCreatedEventData  $data
+     * @param  \Dub\Models\Components\LeadCreatedEventData  $data
      * @phpstan-pure
      */
     public function __construct(string $id, LeadCreatedEventEvent $event, string $createdAt, LeadCreatedEventData $data)

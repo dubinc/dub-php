@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\LinkSchema
+* @var \Dub\Models\Components\LinkSchema
 */
 Components\LinkSchema $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\LinkSchema $value = /* values here */
 
 ```php
 /**
-* @var Components\LinkErrorSchema
+* @var \Dub\Models\Components\LinkErrorSchema
 */
 Components\LinkErrorSchema $value = /* values here */
 ```

@@ -48,7 +48,7 @@ class CreatePartnerFields3
 
     /**
      *
-     * @var CreatePartnerFieldsPartnersResponseType $type
+     * @var \Dub\Models\Operations\CreatePartnerFieldsPartnersResponseType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponseType')]
@@ -57,7 +57,7 @@ class CreatePartnerFields3
     /**
      * $options
      *
-     * @var array<CreatePartnerFieldsOptions> $options
+     * @var array<\Dub\Models\Operations\CreatePartnerFieldsOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerFieldsOptions>')]
@@ -69,8 +69,8 @@ class CreatePartnerFields3
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsPartnersResponseType  $type
-     * @param  array<CreatePartnerFieldsOptions>  $options
+     * @param  \Dub\Models\Operations\CreatePartnerFieldsPartnersResponseType  $type
+     * @param  array<\Dub\Models\Operations\CreatePartnerFieldsOptions>  $options
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponseType $type, array $options)

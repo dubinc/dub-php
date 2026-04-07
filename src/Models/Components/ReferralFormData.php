@@ -14,14 +14,14 @@ class ReferralFormData
     /**
      * $fields
      *
-     * @var array<Fields1|Fields2|Fields3|Four|Five|Six|Seven|Eight> $fields
+     * @var array<\Dub\Models\Components\Fields1|\Dub\Models\Components\Fields2|\Dub\Models\Components\Fields3|\Dub\Models\Components\Four|\Dub\Models\Components\Five|\Dub\Models\Components\Six|\Dub\Models\Components\Seven|\Dub\Models\Components\Eight> $fields
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('fields')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Fields1|\Dub\Models\Components\Fields2|\Dub\Models\Components\Fields3|\Dub\Models\Components\Four|\Dub\Models\Components\Five|\Dub\Models\Components\Six|\Dub\Models\Components\Seven|\Dub\Models\Components\Eight>')]
     public array $fields;
 
     /**
-     * @param  array<Fields1|Fields2|Fields3|Four|Five|Six|Seven|Eight>  $fields
+     * @param  array<\Dub\Models\Components\Fields1|\Dub\Models\Components\Fields2|\Dub\Models\Components\Fields3|\Dub\Models\Components\Four|\Dub\Models\Components\Five|\Dub\Models\Components\Six|\Dub\Models\Components\Seven|\Dub\Models\Components\Eight>  $fields
      * @phpstan-pure
      */
     public function __construct(array $fields)

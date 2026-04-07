@@ -35,15 +35,19 @@ class ListCommissionsResponse
     /**
      * The list of commissions.
      *
-     * @var ?array<ListCommissionsResponseBody> $responseBodies
+     * @var ?array<\Dub\Models\Operations\ListCommissionsResponseBody> $responseBodies
      */
     public ?array $responseBodies = null;
 
     /**
+     * @var \Closure(string): ?ListCommissionsResponse $next
+     */
+    public \Closure $next;
+    /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<ListCommissionsResponseBody>  $responseBodies
+     * @param  ?array<\Dub\Models\Operations\ListCommissionsResponseBody>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)
@@ -52,5 +56,18 @@ class ListCommissionsResponse
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
         $this->responseBodies = $responseBodies;
+    }
+    /**
+     * @param  string  $name
+     * @param  array<mixed>  $args
+     * @return ?ListCommissionsResponse
+     */
+    public function __call($name, $args): ?ListCommissionsResponse
+    {
+        if ($name === 'next') {
+            return call_user_func_array($this->next, $args);
+        }
+
+        return null;
     }
 }

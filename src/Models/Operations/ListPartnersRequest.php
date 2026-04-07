@@ -12,9 +12,17 @@ use Dub\Utils\SpeakeasyMetadata;
 class ListPartnersRequest
 {
     /**
+     * A filter on the list based on the partner's `groupId` field.
+     *
+     * @var ?string $groupId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
+    public ?string $groupId = null;
+
+    /**
      * A filter on the list based on the partner's `status` field.
      *
-     * @var ?ListPartnersQueryParamStatus $status
+     * @var ?\Dub\Models\Operations\ListPartnersQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
     public ?ListPartnersQueryParamStatus $status = null;
@@ -52,9 +60,17 @@ class ListPartnersRequest
     public ?string $search = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the partners by. The default is `totalSaleAmount`.
      *
-     * @var ?ListPartnersQueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\ListPartnersQueryParamSortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?ListPartnersQueryParamSortBy $sortBy = null;
@@ -62,18 +78,10 @@ class ListPartnersRequest
     /**
      * The sort order. The default is `desc`.
      *
-     * @var ?ListPartnersQueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\ListPartnersQueryParamSortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListPartnersQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -84,10 +92,11 @@ class ListPartnersRequest
     public ?float $pageSize = null;
 
     /**
-     * @param  ?ListPartnersQueryParamStatus  $status
+     * @param  ?string  $groupId
+     * @param  ?\Dub\Models\Operations\ListPartnersQueryParamStatus  $status
      * @param  ?string  $country
-     * @param  ?ListPartnersQueryParamSortBy  $sortBy
-     * @param  ?ListPartnersQueryParamSortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\ListPartnersQueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\ListPartnersQueryParamSortOrder  $sortOrder
      * @param  ?string  $email
      * @param  ?string  $tenantId
      * @param  ?string  $search
@@ -95,16 +104,17 @@ class ListPartnersRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $groupId = null, ?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?float $page = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $pageSize = 100)
     {
+        $this->groupId = $groupId;
         $this->status = $status;
         $this->country = $country;
         $this->email = $email;
         $this->tenantId = $tenantId;
         $this->search = $search;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

@@ -48,7 +48,7 @@ class Fields8
 
     /**
      *
-     * @var CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type $type
+     * @var \Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type')]
@@ -60,7 +60,7 @@ class Fields8
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type  $type
+     * @param  \Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type  $type
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponse201ApplicationJSONResponseBodyReferralFormData8Type $type)

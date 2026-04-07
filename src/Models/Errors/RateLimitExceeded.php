@@ -14,14 +14,14 @@ class RateLimitExceeded
 {
     /**
      *
-     * @var RateLimitExceededError $error
+     * @var \Dub\Models\Errors\RateLimitExceededError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\RateLimitExceededError')]
     public RateLimitExceededError $error;
 
     /**
-     * @param  RateLimitExceededError  $error
+     * @param  \Dub\Models\Errors\RateLimitExceededError  $error
      * @phpstan-pure
      */
     public function __construct(RateLimitExceededError $error)

@@ -51,8 +51,8 @@ class Bounties
      *
      * @param  string  $bountyId
      * @param  string  $submissionId
-     * @param  ?Operations\ApproveBountySubmissionRequestBody  $requestBody
-     * @return Operations\ApproveBountySubmissionResponse
+     * @param  ?\Dub\Models\Operations\ApproveBountySubmissionRequestBody  $requestBody
+     * @return \Dub\Models\Operations\ApproveBountySubmissionResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function approveSubmission(string $bountyId, string $submissionId, ?Operations\ApproveBountySubmissionRequestBody $requestBody = null, ?Options $options = null): Operations\ApproveBountySubmissionResponse
@@ -220,8 +220,8 @@ class Bounties
      *
      * List all submissions for a specific bounty in your partner program.
      *
-     * @param  Operations\ListBountySubmissionsRequest  $request
-     * @return Operations\ListBountySubmissionsResponse
+     * @param  \Dub\Models\Operations\ListBountySubmissionsRequest  $request
+     * @return \Dub\Models\Operations\ListBountySubmissionsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function listSubmissions(Operations\ListBountySubmissionsRequest $request, ?Options $options = null): Operations\ListBountySubmissionsResponse
@@ -385,8 +385,8 @@ class Bounties
      *
      * @param  string  $bountyId
      * @param  string  $submissionId
-     * @param  ?Operations\RejectBountySubmissionRequestBody  $requestBody
-     * @return Operations\RejectBountySubmissionResponse
+     * @param  ?\Dub\Models\Operations\RejectBountySubmissionRequestBody  $requestBody
+     * @return \Dub\Models\Operations\RejectBountySubmissionResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function rejectSubmission(string $bountyId, string $submissionId, ?Operations\RejectBountySubmissionRequestBody $requestBody = null, ?Options $options = null): Operations\RejectBountySubmissionResponse

@@ -48,7 +48,7 @@ class Fields3
 
     /**
      *
-     * @var ListPartnersFieldsPartnersType $type
+     * @var \Dub\Models\Operations\ListPartnersFieldsPartnersType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersType')]
@@ -57,7 +57,7 @@ class Fields3
     /**
      * $options
      *
-     * @var array<Options> $options
+     * @var array<\Dub\Models\Operations\Options> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\Options>')]
@@ -69,8 +69,8 @@ class Fields3
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersType  $type
-     * @param  array<Options>  $options
+     * @param  \Dub\Models\Operations\ListPartnersFieldsPartnersType  $type
+     * @param  array<\Dub\Models\Operations\Options>  $options
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersType $type, array $options)

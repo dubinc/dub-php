@@ -21,14 +21,14 @@ class UpdateLinkRequest
 
     /**
      *
-     * @var ?UpdateLinkRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\UpdateLinkRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateLinkRequestBody $requestBody = null;
 
     /**
      * @param  string  $linkId
-     * @param  ?UpdateLinkRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\UpdateLinkRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $linkId, ?UpdateLinkRequestBody $requestBody = null)

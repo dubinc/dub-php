@@ -282,7 +282,7 @@ class ListEventsResponseBodyEventsLink
     /**
      * The tags assigned to the short link.
      *
-     * @var ?array<Components\LinkTagSchemaOutput> $tags
+     * @var ?array<\Dub\Models\Components\LinkTagSchemaOutput> $tags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\LinkTagSchemaOutput>|null')]
@@ -363,7 +363,7 @@ class ListEventsResponseBodyEventsLink
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<ResponseBodyTestVariants> $testVariants
+     * @var ?array<\Dub\Models\Operations\ResponseBodyTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\ResponseBodyTestVariants>|null')]
@@ -451,7 +451,7 @@ class ListEventsResponseBodyEventsLink
      * @param  ?string  $ios
      * @param  ?string  $android
      * @param  ?array<string, string>  $geo
-     * @param  ?array<Components\LinkTagSchemaOutput>  $tags
+     * @param  ?array<\Dub\Models\Components\LinkTagSchemaOutput>  $tags
      * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $utmSource
@@ -466,7 +466,7 @@ class ListEventsResponseBodyEventsLink
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
      * @param  ?string  $tagId
-     * @param  ?array<ResponseBodyTestVariants>  $testVariants
+     * @param  ?array<\Dub\Models\Operations\ResponseBodyTestVariants>  $testVariants
      * @phpstan-pure
      */
     public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, string $expiresAt, string $disabledAt, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, array $webhookIds, string $shortLink, string $qrCode, string $testStartedAt, string $testCompletedAt, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $tagId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)

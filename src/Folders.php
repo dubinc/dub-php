@@ -49,8 +49,8 @@ class Folders
      *
      * Create a folder for the authenticated workspace.
      *
-     * @param  ?Operations\CreateFolderRequestBody  $request
-     * @return Operations\CreateFolderResponse
+     * @param  ?\Dub\Models\Operations\CreateFolderRequestBody  $request
+     * @return \Dub\Models\Operations\CreateFolderResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function create(?Operations\CreateFolderRequestBody $request = null, ?Options $options = null): Operations\CreateFolderResponse
@@ -214,7 +214,7 @@ class Folders
      * Delete a folder from the workspace. All existing links will still work, but they will no longer be associated with this folder.
      *
      * @param  string  $id
-     * @return Operations\DeleteFolderResponse
+     * @return \Dub\Models\Operations\DeleteFolderResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function delete(string $id, ?Options $options = null): Operations\DeleteFolderResponse
@@ -379,7 +379,7 @@ class Folders
      * @param  ?string  $search
      * @param  ?float  $page
      * @param  ?float  $pageSize
-     * @return Operations\ListFoldersResponse
+     * @return \Dub\Models\Operations\ListFoldersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?string $search = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): Operations\ListFoldersResponse
@@ -547,8 +547,8 @@ class Folders
      * Update a folder in the workspace.
      *
      * @param  string  $id
-     * @param  ?Operations\UpdateFolderRequestBody  $requestBody
-     * @return Operations\UpdateFolderResponse
+     * @param  ?\Dub\Models\Operations\UpdateFolderRequestBody  $requestBody
+     * @return \Dub\Models\Operations\UpdateFolderResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function update(string $id, ?Operations\UpdateFolderRequestBody $requestBody = null, ?Options $options = null): Operations\UpdateFolderResponse

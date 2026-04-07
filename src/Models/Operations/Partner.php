@@ -40,7 +40,7 @@ class Partner
     /**
      * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
      *
-     * @var ?CreateReferralsEmbedTokenLinkProps $linkProps
+     * @var ?\Dub\Models\Operations\CreateReferralsEmbedTokenLinkProps $linkProps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('linkProps')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreateReferralsEmbedTokenLinkProps|null')]
@@ -96,7 +96,7 @@ class Partner
      * @param  string  $email
      * @param  ?string  $tenantId
      * @param  ?string  $groupId
-     * @param  ?CreateReferralsEmbedTokenLinkProps  $linkProps
+     * @param  ?\Dub\Models\Operations\CreateReferralsEmbedTokenLinkProps  $linkProps
      * @param  ?string  $name
      * @param  ?string  $username
      * @param  ?string  $image

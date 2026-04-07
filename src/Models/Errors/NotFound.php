@@ -14,14 +14,14 @@ class NotFound
 {
     /**
      *
-     * @var NotFoundError $error
+     * @var \Dub\Models\Errors\NotFoundError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\NotFoundError')]
     public NotFoundError $error;
 
     /**
-     * @param  NotFoundError  $error
+     * @param  \Dub\Models\Errors\NotFoundError  $error
      * @phpstan-pure
      */
     public function __construct(NotFoundError $error)

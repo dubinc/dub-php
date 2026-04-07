@@ -21,7 +21,7 @@ class SaleCreatedEvent
 
     /**
      *
-     * @var SaleCreatedEventEvent $event
+     * @var \Dub\Models\Components\SaleCreatedEventEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventEvent')]
@@ -36,7 +36,7 @@ class SaleCreatedEvent
 
     /**
      *
-     * @var SaleCreatedEventData $data
+     * @var \Dub\Models\Components\SaleCreatedEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\SaleCreatedEventData')]
@@ -44,9 +44,9 @@ class SaleCreatedEvent
 
     /**
      * @param  string  $id
-     * @param  SaleCreatedEventEvent  $event
+     * @param  \Dub\Models\Components\SaleCreatedEventEvent  $event
      * @param  string  $createdAt
-     * @param  SaleCreatedEventData  $data
+     * @param  \Dub\Models\Components\SaleCreatedEventData  $data
      * @phpstan-pure
      */
     public function __construct(string $id, SaleCreatedEventEvent $event, string $createdAt, SaleCreatedEventData $data)

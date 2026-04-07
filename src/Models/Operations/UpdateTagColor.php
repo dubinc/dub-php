@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown. */
+/** The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown, gray. */
 enum UpdateTagColor: string
 {
     case Red = 'red';
@@ -18,5 +18,6 @@ enum UpdateTagColor: string
     case Blue = 'blue';
     case Purple = 'purple';
     case Brown = 'brown';
+    case Gray = 'gray';
     case Pink = 'pink';
 }

@@ -27,7 +27,7 @@ class PartnerApplicationSubmittedEventData
 
     /**
      *
-     * @var PartnerApplicationSubmittedEventPartner $partner
+     * @var \Dub\Models\Components\PartnerApplicationSubmittedEventPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerApplicationSubmittedEventPartner')]
@@ -36,7 +36,7 @@ class PartnerApplicationSubmittedEventData
     /**
      * $applicationFormData
      *
-     * @var ?array<ApplicationFormData> $applicationFormData
+     * @var ?array<\Dub\Models\Components\ApplicationFormData> $applicationFormData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('applicationFormData')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\ApplicationFormData>|null')]
@@ -45,8 +45,8 @@ class PartnerApplicationSubmittedEventData
     /**
      * @param  string  $id
      * @param  string  $createdAt
-     * @param  PartnerApplicationSubmittedEventPartner  $partner
-     * @param  ?array<ApplicationFormData>  $applicationFormData
+     * @param  \Dub\Models\Components\PartnerApplicationSubmittedEventPartner  $partner
+     * @param  ?array<\Dub\Models\Components\ApplicationFormData>  $applicationFormData
      * @phpstan-pure
      */
     public function __construct(string $id, string $createdAt, PartnerApplicationSubmittedEventPartner $partner, ?array $applicationFormData = null)

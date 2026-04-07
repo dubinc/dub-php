@@ -35,7 +35,7 @@ class RegisterDomainResponse
     /**
      * The domain was registered.
      *
-     * @var ?RegisterDomainResponseBody $object
+     * @var ?\Dub\Models\Operations\RegisterDomainResponseBody $object
      */
     public ?RegisterDomainResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class RegisterDomainResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?RegisterDomainResponseBody  $object
+     * @param  ?\Dub\Models\Operations\RegisterDomainResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?RegisterDomainResponseBody $object = null)

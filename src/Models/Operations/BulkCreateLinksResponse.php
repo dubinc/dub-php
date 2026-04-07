@@ -35,7 +35,7 @@ class BulkCreateLinksResponse
     /**
      * The created links
      *
-     * @var ?array<Components\LinkSchema|Components\LinkErrorSchema> $responseBodies
+     * @var ?array<\Dub\Models\Components\LinkSchema|\Dub\Models\Components\LinkErrorSchema> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class BulkCreateLinksResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\LinkSchema|Components\LinkErrorSchema>  $responseBodies
+     * @param  ?array<\Dub\Models\Components\LinkSchema|\Dub\Models\Components\LinkErrorSchema>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

@@ -14,7 +14,7 @@ class TrackLeadResponseBody
 {
     /**
      *
-     * @var Click $click
+     * @var \Dub\Models\Operations\Click $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Click')]
@@ -22,7 +22,7 @@ class TrackLeadResponseBody
 
     /**
      *
-     * @var Customer $customer
+     * @var \Dub\Models\Operations\Customer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Customer')]
@@ -30,16 +30,16 @@ class TrackLeadResponseBody
 
     /**
      *
-     * @var ?Link $link
+     * @var ?\Dub\Models\Operations\Link $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Link|null')]
     public ?Link $link;
 
     /**
-     * @param  Click  $click
-     * @param  Customer  $customer
-     * @param  ?Link  $link
+     * @param  \Dub\Models\Operations\Click  $click
+     * @param  \Dub\Models\Operations\Customer  $customer
+     * @param  ?\Dub\Models\Operations\Link  $link
      * @phpstan-pure
      */
     public function __construct(Click $click, Customer $customer, ?Link $link = null)

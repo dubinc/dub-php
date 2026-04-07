@@ -225,7 +225,7 @@ class LinkSchema
     /**
      * The tags assigned to the short link.
      *
-     * @var ?array<LinkTagSchemaOutput> $tags
+     * @var ?array<\Dub\Models\Components\LinkTagSchemaOutput> $tags
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\LinkTagSchemaOutput>|null')]
@@ -315,7 +315,7 @@ class LinkSchema
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<TestVariants> $testVariants
+     * @var ?array<\Dub\Models\Components\TestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\TestVariants>|null')]
@@ -472,7 +472,7 @@ class LinkSchema
      * @param  ?string  $android
      * @param  ?array<string, string>  $geo
      * @param  ?bool  $publicStats
-     * @param  ?array<LinkTagSchemaOutput>  $tags
+     * @param  ?array<\Dub\Models\Components\LinkTagSchemaOutput>  $tags
      * @param  ?string  $folderId
      * @param  ?string  $comments
      * @param  ?string  $utmSource
@@ -488,7 +488,7 @@ class LinkSchema
      * @param  ?float  $saleAmount
      * @param  ?string  $lastClicked
      * @param  ?string  $tagId
-     * @param  ?array<TestVariants>  $testVariants
+     * @param  ?array<\Dub\Models\Components\TestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @phpstan-pure
