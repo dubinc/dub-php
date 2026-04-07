@@ -14,7 +14,7 @@ class UnauthorizedError
     /**
      * A short code indicating the error code returned.
      *
-     * @var UnauthorizedCode $code
+     * @var \Dub\Models\Errors\UnauthorizedCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\UnauthorizedCode')]
@@ -38,7 +38,7 @@ class UnauthorizedError
     public ?string $docUrl = null;
 
     /**
-     * @param  UnauthorizedCode  $code
+     * @param  \Dub\Models\Errors\UnauthorizedCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

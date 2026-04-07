@@ -14,7 +14,7 @@ class AnalyticsTriggers
     /**
      * The type of trigger method: link click or QR scan
      *
-     * @var Trigger $trigger
+     * @var \Dub\Models\Components\Trigger $trigger
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('trigger')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Trigger')]
@@ -57,7 +57,7 @@ class AnalyticsTriggers
     public ?float $saleAmount = null;
 
     /**
-     * @param  Trigger  $trigger
+     * @param  \Dub\Models\Components\Trigger  $trigger
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $sales

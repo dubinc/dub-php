@@ -48,7 +48,7 @@ class CreatePartnerFields4
 
     /**
      *
-     * @var CreatePartnerFieldsPartnersResponse201Type $type
+     * @var \Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201Type')]
@@ -60,7 +60,7 @@ class CreatePartnerFields4
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  CreatePartnerFieldsPartnersResponse201Type  $type
+     * @param  \Dub\Models\Operations\CreatePartnerFieldsPartnersResponse201Type  $type
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, CreatePartnerFieldsPartnersResponse201Type $type)

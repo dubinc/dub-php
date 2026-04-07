@@ -14,7 +14,7 @@ class RejectBountySubmissionRequestBody
     /**
      * The reason for rejecting the submission.
      *
-     * @var ?RejectionReason $rejectionReason
+     * @var ?\Dub\Models\Operations\RejectionReason $rejectionReason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('rejectionReason')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\RejectionReason|null')]
@@ -31,7 +31,7 @@ class RejectBountySubmissionRequestBody
     public ?string $rejectionNote = null;
 
     /**
-     * @param  ?RejectionReason  $rejectionReason
+     * @param  ?\Dub\Models\Operations\RejectionReason  $rejectionReason
      * @param  ?string  $rejectionNote
      * @phpstan-pure
      */

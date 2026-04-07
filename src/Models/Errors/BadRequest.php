@@ -14,14 +14,14 @@ class BadRequest
 {
     /**
      *
-     * @var Error $error
+     * @var \Dub\Models\Errors\Error $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\Error')]
     public Error $error;
 
     /**
-     * @param  Error  $error
+     * @param  \Dub\Models\Errors\Error  $error
      * @phpstan-pure
      */
     public function __construct(Error $error)

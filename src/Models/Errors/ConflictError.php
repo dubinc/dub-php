@@ -14,7 +14,7 @@ class ConflictError
     /**
      * A short code indicating the error code returned.
      *
-     * @var ConflictCode $code
+     * @var \Dub\Models\Errors\ConflictCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\ConflictCode')]
@@ -38,7 +38,7 @@ class ConflictError
     public ?string $docUrl = null;
 
     /**
-     * @param  ConflictCode  $code
+     * @param  \Dub\Models\Errors\ConflictCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

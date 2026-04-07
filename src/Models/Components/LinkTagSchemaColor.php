@@ -18,5 +18,6 @@ enum LinkTagSchemaColor: string
     case Blue = 'blue';
     case Purple = 'purple';
     case Brown = 'brown';
+    case Gray = 'gray';
     case Pink = 'pink';
 }

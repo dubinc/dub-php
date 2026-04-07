@@ -35,7 +35,7 @@ class RejectBountySubmissionResponse
     /**
      * The rejected bounty submission.
      *
-     * @var ?RejectBountySubmissionResponseBody $object
+     * @var ?\Dub\Models\Operations\RejectBountySubmissionResponseBody $object
      */
     public ?RejectBountySubmissionResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class RejectBountySubmissionResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?RejectBountySubmissionResponseBody  $object
+     * @param  ?\Dub\Models\Operations\RejectBountySubmissionResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?RejectBountySubmissionResponseBody $object = null)

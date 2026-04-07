@@ -21,14 +21,14 @@ class UpdateTagRequest
 
     /**
      *
-     * @var ?UpdateTagRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\UpdateTagRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateTagRequestBody $requestBody = null;
 
     /**
      * @param  string  $id
-     * @param  ?UpdateTagRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\UpdateTagRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $id, ?UpdateTagRequestBody $requestBody = null)

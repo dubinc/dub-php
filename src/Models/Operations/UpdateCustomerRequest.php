@@ -29,7 +29,7 @@ class UpdateCustomerRequest
 
     /**
      *
-     * @var ?UpdateCustomerRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\UpdateCustomerRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateCustomerRequestBody $requestBody = null;
@@ -37,7 +37,7 @@ class UpdateCustomerRequest
     /**
      * @param  string  $id
      * @param  ?bool  $includeExpandedFields
-     * @param  ?UpdateCustomerRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\UpdateCustomerRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $id, ?bool $includeExpandedFields = null, ?UpdateCustomerRequestBody $requestBody = null)

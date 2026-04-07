@@ -35,7 +35,7 @@ class RetrieveAnalyticsResponse
     /**
      * Analytics data
      *
-     * @var Components\AnalyticsCount|array<Components\AnalyticsTimeseries>|array<Components\AnalyticsContinents>|array<Components\AnalyticsCountries>|array<Components\AnalyticsRegions>|array<Components\AnalyticsCities>|array<Components\AnalyticsDevices>|array<Components\AnalyticsBrowsers>|array<Components\AnalyticsOS>|array<Components\AnalyticsTriggers>|array<Components\AnalyticsReferers>|array<Components\AnalyticsRefererUrls>|array<Components\AnalyticsTopLinks>|array<Components\AnalyticsTopUrls>|null $oneOf
+     * @var \Dub\Models\Components\AnalyticsCount|array<\Dub\Models\Components\AnalyticsTimeseries>|array<\Dub\Models\Components\AnalyticsContinents>|array<\Dub\Models\Components\AnalyticsCountries>|array<\Dub\Models\Components\AnalyticsRegions>|array<\Dub\Models\Components\AnalyticsCities>|array<\Dub\Models\Components\AnalyticsDevices>|array<\Dub\Models\Components\AnalyticsBrowsers>|array<\Dub\Models\Components\AnalyticsOS>|array<\Dub\Models\Components\AnalyticsTriggers>|array<\Dub\Models\Components\AnalyticsReferers>|array<\Dub\Models\Components\AnalyticsRefererUrls>|array<\Dub\Models\Components\AnalyticsTopLinks>|array<\Dub\Models\Components\AnalyticsTopUrls>|null $oneOf
      */
     public Components\AnalyticsCount|array|null $oneOf = null;
 
@@ -43,7 +43,7 @@ class RetrieveAnalyticsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  Components\AnalyticsCount|array<Components\AnalyticsTimeseries>|array<Components\AnalyticsContinents>|array<Components\AnalyticsCountries>|array<Components\AnalyticsRegions>|array<Components\AnalyticsCities>|array<Components\AnalyticsDevices>|array<Components\AnalyticsBrowsers>|array<Components\AnalyticsOS>|array<Components\AnalyticsTriggers>|array<Components\AnalyticsReferers>|array<Components\AnalyticsRefererUrls>|array<Components\AnalyticsTopLinks>|array<Components\AnalyticsTopUrls>|null  $oneOf
+     * @param  \Dub\Models\Components\AnalyticsCount|array<\Dub\Models\Components\AnalyticsTimeseries>|array<\Dub\Models\Components\AnalyticsContinents>|array<\Dub\Models\Components\AnalyticsCountries>|array<\Dub\Models\Components\AnalyticsRegions>|array<\Dub\Models\Components\AnalyticsCities>|array<\Dub\Models\Components\AnalyticsDevices>|array<\Dub\Models\Components\AnalyticsBrowsers>|array<\Dub\Models\Components\AnalyticsOS>|array<\Dub\Models\Components\AnalyticsTriggers>|array<\Dub\Models\Components\AnalyticsReferers>|array<\Dub\Models\Components\AnalyticsRefererUrls>|array<\Dub\Models\Components\AnalyticsTopLinks>|array<\Dub\Models\Components\AnalyticsTopUrls>|null  $oneOf
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, Components\AnalyticsCount|array|null $oneOf = null)

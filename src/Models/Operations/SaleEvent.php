@@ -13,7 +13,7 @@ class SaleEvent
 {
     /**
      *
-     * @var ListEventsResponseBodyEventsEvent $event
+     * @var \Dub\Models\Operations\ListEventsResponseBodyEventsEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyEventsEvent')]
@@ -42,7 +42,7 @@ class SaleEvent
 
     /**
      *
-     * @var ResponseBodySale $sale
+     * @var \Dub\Models\Operations\ResponseBodySale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ResponseBodySale')]
@@ -50,7 +50,7 @@ class SaleEvent
 
     /**
      *
-     * @var ListEventsResponseBodyLink $link
+     * @var \Dub\Models\Operations\ListEventsResponseBodyLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyLink')]
@@ -58,7 +58,7 @@ class SaleEvent
 
     /**
      *
-     * @var ListEventsResponseBodyClick $click
+     * @var \Dub\Models\Operations\ListEventsResponseBodyClick $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyClick')]
@@ -66,7 +66,7 @@ class SaleEvent
 
     /**
      *
-     * @var ResponseBodyCustomer $customer
+     * @var \Dub\Models\Operations\ResponseBodyCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ResponseBodyCustomer')]
@@ -226,14 +226,14 @@ class SaleEvent
     public mixed $metadata = null;
 
     /**
-     * @param  ListEventsResponseBodyEventsEvent  $event
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyEventsEvent  $event
      * @param  string  $timestamp
      * @param  string  $eventId
      * @param  string  $eventName
-     * @param  ResponseBodySale  $sale
-     * @param  ListEventsResponseBodyLink  $link
-     * @param  ListEventsResponseBodyClick  $click
-     * @param  ResponseBodyCustomer  $customer
+     * @param  \Dub\Models\Operations\ResponseBodySale  $sale
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyLink  $link
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyClick  $click
+     * @param  \Dub\Models\Operations\ResponseBodyCustomer  $customer
      * @param  float  $saleAmount
      * @param  string  $invoiceId
      * @param  string  $paymentProcessor

@@ -35,11 +35,13 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\ListPartnersRequest(
+    groupId: 'grp_123',
     status: Operations\ListPartnersQueryParamStatus::Approved,
     country: 'US',
     email: 'panic@thedis.co',
     tenantId: '1K0NM7HCN944PEMZ3CQPH43H8',
     search: 'john',
+    page: 1,
     pageSize: 50,
 );
 

@@ -9,7 +9,7 @@ Analytics data
 
 ```php
 /**
-* @var Components\AnalyticsCount
+* @var \Dub\Models\Components\AnalyticsCount
 */
 Components\AnalyticsCount $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Components\AnalyticsCount $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsTimeseries>
+* @var array<\Dub\Models\Components\AnalyticsTimeseries>
 */
 array $value = /* values here */
 ```
@@ -27,7 +27,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsContinents>
+* @var array<\Dub\Models\Components\AnalyticsContinents>
 */
 array $value = /* values here */
 ```
@@ -36,7 +36,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsCountries>
+* @var array<\Dub\Models\Components\AnalyticsCountries>
 */
 array $value = /* values here */
 ```
@@ -45,7 +45,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsRegions>
+* @var array<\Dub\Models\Components\AnalyticsRegions>
 */
 array $value = /* values here */
 ```
@@ -54,7 +54,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsCities>
+* @var array<\Dub\Models\Components\AnalyticsCities>
 */
 array $value = /* values here */
 ```
@@ -63,7 +63,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsDevices>
+* @var array<\Dub\Models\Components\AnalyticsDevices>
 */
 array $value = /* values here */
 ```
@@ -72,7 +72,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsBrowsers>
+* @var array<\Dub\Models\Components\AnalyticsBrowsers>
 */
 array $value = /* values here */
 ```
@@ -81,7 +81,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsOS>
+* @var array<\Dub\Models\Components\AnalyticsOS>
 */
 array $value = /* values here */
 ```
@@ -90,7 +90,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsTriggers>
+* @var array<\Dub\Models\Components\AnalyticsTriggers>
 */
 array $value = /* values here */
 ```
@@ -99,7 +99,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsReferers>
+* @var array<\Dub\Models\Components\AnalyticsReferers>
 */
 array $value = /* values here */
 ```
@@ -108,7 +108,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsRefererUrls>
+* @var array<\Dub\Models\Components\AnalyticsRefererUrls>
 */
 array $value = /* values here */
 ```
@@ -117,7 +117,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsTopLinks>
+* @var array<\Dub\Models\Components\AnalyticsTopLinks>
 */
 array $value = /* values here */
 ```
@@ -126,7 +126,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\AnalyticsTopUrls>
+* @var array<\Dub\Models\Components\AnalyticsTopUrls>
 */
 array $value = /* values here */
 ```

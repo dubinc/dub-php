@@ -324,7 +324,7 @@ class UpdateLinkRequestBody
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<UpdateLinkTestVariants> $testVariants
+     * @var ?array<\Dub\Models\Operations\UpdateLinkTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\UpdateLinkTestVariants>|null')]
@@ -394,7 +394,7 @@ class UpdateLinkRequestBody
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      * @param  ?array<string>  $webhookIds
-     * @param  ?array<UpdateLinkTestVariants>  $testVariants
+     * @param  ?array<\Dub\Models\Operations\UpdateLinkTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @param  ?string  $tagId

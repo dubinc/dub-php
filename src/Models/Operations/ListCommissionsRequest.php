@@ -13,7 +13,7 @@ class ListCommissionsRequest
 {
     /**
      *
-     * @var ?Type $type
+     * @var ?\Dub\Models\Operations\Type $type
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=type')]
     public ?Type $type = null;
@@ -69,7 +69,7 @@ class ListCommissionsRequest
     /**
      * Filter the list of commissions by their corresponding status.
      *
-     * @var ?QueryParamStatus $status
+     * @var ?\Dub\Models\Operations\QueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
     public ?QueryParamStatus $status = null;
@@ -98,9 +98,33 @@ class ListCommissionsRequest
     public ?string $timezone = null;
 
     /**
+     * If specified, the query only searches for results before this cursor. Mutually exclusive with `startingAfter`.
+     *
+     * @var ?string $endingBefore
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=endingBefore')]
+    public ?string $endingBefore = null;
+
+    /**
+     * If specified, the query only searches for results after this cursor. Mutually exclusive with `endingBefore`.
+     *
+     * @var ?string $startingAfter
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=startingAfter')]
+    public ?string $startingAfter = null;
+
+    /**
+     * DEPRECATED. Use `startingAfter` instead.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the list of commissions by.
      *
-     * @var ?ListCommissionsQueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\ListCommissionsQueryParamSortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?ListCommissionsQueryParamSortBy $sortBy = null;
@@ -108,7 +132,7 @@ class ListCommissionsRequest
     /**
      * The sort order for the list of commissions.
      *
-     * @var ?ListCommissionsQueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\ListCommissionsQueryParamSortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListCommissionsQueryParamSortOrder $sortOrder = null;
@@ -116,18 +140,10 @@ class ListCommissionsRequest
     /**
      * The interval to retrieve commissions for.
      *
-     * @var ?ListCommissionsQueryParamInterval $interval
+     * @var ?\Dub\Models\Operations\ListCommissionsQueryParamInterval $interval
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
     public ?ListCommissionsQueryParamInterval $interval = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -138,25 +154,27 @@ class ListCommissionsRequest
     public ?float $pageSize = null;
 
     /**
-     * @param  ?Type  $type
+     * @param  ?\Dub\Models\Operations\Type  $type
      * @param  ?string  $customerId
      * @param  ?string  $payoutId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $groupId
      * @param  ?string  $invoiceId
-     * @param  ?QueryParamStatus  $status
-     * @param  ?ListCommissionsQueryParamSortBy  $sortBy
-     * @param  ?ListCommissionsQueryParamSortOrder  $sortOrder
-     * @param  ?ListCommissionsQueryParamInterval  $interval
+     * @param  ?\Dub\Models\Operations\QueryParamStatus  $status
+     * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamSortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamInterval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
+     * @param  ?string  $endingBefore
+     * @param  ?string  $startingAfter
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
@@ -169,10 +187,12 @@ class ListCommissionsRequest
         $this->start = $start;
         $this->end = $end;
         $this->timezone = $timezone;
+        $this->endingBefore = $endingBefore;
+        $this->startingAfter = $startingAfter;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
         $this->interval = $interval;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

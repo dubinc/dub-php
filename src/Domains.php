@@ -50,7 +50,7 @@ class Domains
      * Check if a domain name is available for purchase. You can check multiple domains at once.
      *
      * @param  string|array<string>  $domains
-     * @return Operations\CheckDomainStatusResponse
+     * @return \Dub\Models\Operations\CheckDomainStatusResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function checkStatus(string|array $domains, ?Options $options = null): Operations\CheckDomainStatusResponse
@@ -215,8 +215,8 @@ class Domains
      *
      * Create a domain for the authenticated workspace.
      *
-     * @param  ?Operations\CreateDomainRequestBody  $request
-     * @return Operations\CreateDomainResponse
+     * @param  ?\Dub\Models\Operations\CreateDomainRequestBody  $request
+     * @return \Dub\Models\Operations\CreateDomainResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function create(?Operations\CreateDomainRequestBody $request = null, ?Options $options = null): Operations\CreateDomainResponse
@@ -380,7 +380,7 @@ class Domains
      * Delete a domain from a workspace. It cannot be undone. This will also delete all the links associated with the domain.
      *
      * @param  string  $slug
-     * @return Operations\DeleteDomainResponse
+     * @return \Dub\Models\Operations\DeleteDomainResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function delete(string $slug, ?Options $options = null): Operations\DeleteDomainResponse
@@ -546,7 +546,7 @@ class Domains
      * @param  ?string  $search
      * @param  ?float  $page
      * @param  ?float  $pageSize
-     * @return Operations\ListDomainsResponse
+     * @return \Dub\Models\Operations\ListDomainsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     private function listIndividual(?bool $archived = null, ?string $search = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): Operations\ListDomainsResponse
@@ -598,7 +598,7 @@ class Domains
                     domainSchemas: $obj);
                 $sdk = $this;
 
-                $response->next = function () use ($sdk, $request, $responseData, $archived, $search, $pageSize): ?Operations\ListDomainsResponse {
+                $response->next = function () use ($sdk, $request, $responseData): ?Operations\ListDomainsResponse {
                     $page = $request != null ? $request->page : 0;
                     $nextPage = $page + 1;
                     if (! $responseData) {
@@ -617,10 +617,10 @@ class Domains
                     }
 
                     return $sdk->listIndividual(
-                        archived: $archived,
-                        search: $search,
+                        archived: $request != null ? $request->archived : null,
+                        search: $request != null ? $request->search : null,
                         page: $nextPage,
-                        pageSize: $pageSize,
+                        pageSize: $request != null ? $request->pageSize : null,
                     );
                 };
 
@@ -745,7 +745,7 @@ class Domains
      * @param  ?string  $search
      * @param  ?float  $page
      * @param  ?float  $pageSize
-     * @return \Generator<Operations\ListDomainsResponse>
+     * @return \Generator<\Dub\Models\Operations\ListDomainsResponse>
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?bool $archived = null, ?string $search = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): \Generator
@@ -762,8 +762,8 @@ class Domains
      *
      * Register a domain for the authenticated workspace. Only available for Enterprise Plans.
      *
-     * @param  ?Operations\RegisterDomainRequestBody  $request
-     * @return Operations\RegisterDomainResponse
+     * @param  ?\Dub\Models\Operations\RegisterDomainRequestBody  $request
+     * @return \Dub\Models\Operations\RegisterDomainResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function register(?Operations\RegisterDomainRequestBody $request = null, ?Options $options = null): Operations\RegisterDomainResponse
@@ -927,8 +927,8 @@ class Domains
      * Update a domain for the authenticated workspace.
      *
      * @param  string  $slug
-     * @param  ?Operations\UpdateDomainRequestBody  $requestBody
-     * @return Operations\UpdateDomainResponse
+     * @param  ?\Dub\Models\Operations\UpdateDomainRequestBody  $requestBody
+     * @return \Dub\Models\Operations\UpdateDomainResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function update(string $slug, ?Operations\UpdateDomainRequestBody $requestBody = null, ?Options $options = null): Operations\UpdateDomainResponse

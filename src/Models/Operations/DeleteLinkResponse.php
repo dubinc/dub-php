@@ -35,7 +35,7 @@ class DeleteLinkResponse
     /**
      * The deleted link ID.
      *
-     * @var ?DeleteLinkResponseBody $object
+     * @var ?\Dub\Models\Operations\DeleteLinkResponseBody $object
      */
     public ?DeleteLinkResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteLinkResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteLinkResponseBody  $object
+     * @param  ?\Dub\Models\Operations\DeleteLinkResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteLinkResponseBody $object = null)

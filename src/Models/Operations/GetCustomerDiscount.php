@@ -27,7 +27,7 @@ class GetCustomerDiscount
 
     /**
      *
-     * @var GetCustomerType $type
+     * @var \Dub\Models\Operations\GetCustomerType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomerType')]
@@ -73,7 +73,7 @@ class GetCustomerDiscount
     /**
      * @param  string  $id
      * @param  float  $amount
-     * @param  GetCustomerType  $type
+     * @param  \Dub\Models\Operations\GetCustomerType  $type
      * @param  ?float  $maxDuration
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId

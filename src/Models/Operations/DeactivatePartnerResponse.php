@@ -35,7 +35,7 @@ class DeactivatePartnerResponse
     /**
      * The deactivated partner
      *
-     * @var ?DeactivatePartnerResponseBody $object
+     * @var ?\Dub\Models\Operations\DeactivatePartnerResponseBody $object
      */
     public ?DeactivatePartnerResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeactivatePartnerResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeactivatePartnerResponseBody  $object
+     * @param  ?\Dub\Models\Operations\DeactivatePartnerResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeactivatePartnerResponseBody $object = null)

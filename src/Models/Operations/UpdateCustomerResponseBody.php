@@ -118,7 +118,7 @@ class UpdateCustomerResponseBody
 
     /**
      *
-     * @var ?UpdateCustomerLink $link
+     * @var ?\Dub\Models\Operations\UpdateCustomerLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCustomerLink|null')]
@@ -135,7 +135,7 @@ class UpdateCustomerResponseBody
 
     /**
      *
-     * @var ?UpdateCustomerPartner $partner
+     * @var ?\Dub\Models\Operations\UpdateCustomerPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCustomerPartner|null')]
@@ -144,7 +144,7 @@ class UpdateCustomerResponseBody
 
     /**
      *
-     * @var ?UpdateCustomerDiscount $discount
+     * @var ?\Dub\Models\Operations\UpdateCustomerDiscount $discount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCustomerDiscount|null')]
@@ -164,10 +164,10 @@ class UpdateCustomerResponseBody
      * @param  ?float  $saleAmount
      * @param  ?string  $firstSaleAt
      * @param  ?string  $subscriptionCanceledAt
-     * @param  ?UpdateCustomerLink  $link
+     * @param  ?\Dub\Models\Operations\UpdateCustomerLink  $link
      * @param  ?string  $programId
-     * @param  ?UpdateCustomerPartner  $partner
-     * @param  ?UpdateCustomerDiscount  $discount
+     * @param  ?\Dub\Models\Operations\UpdateCustomerPartner  $partner
+     * @param  ?\Dub\Models\Operations\UpdateCustomerDiscount  $discount
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $externalId, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?string $firstSaleAt = null, ?string $subscriptionCanceledAt = null, ?UpdateCustomerLink $link = null, ?string $programId = null, ?UpdateCustomerPartner $partner = null, ?UpdateCustomerDiscount $discount = null)

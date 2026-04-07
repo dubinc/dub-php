@@ -21,7 +21,7 @@ class LinkClickedEvent
 
     /**
      *
-     * @var LinkClickedEventEvent $event
+     * @var \Dub\Models\Components\LinkClickedEventEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventEvent')]
@@ -36,7 +36,7 @@ class LinkClickedEvent
 
     /**
      *
-     * @var LinkClickedEventData $data
+     * @var \Dub\Models\Components\LinkClickedEventData $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LinkClickedEventData')]
@@ -44,9 +44,9 @@ class LinkClickedEvent
 
     /**
      * @param  string  $id
-     * @param  LinkClickedEventEvent  $event
+     * @param  \Dub\Models\Components\LinkClickedEventEvent  $event
      * @param  string  $createdAt
-     * @param  LinkClickedEventData  $data
+     * @param  \Dub\Models\Components\LinkClickedEventData  $data
      * @phpstan-pure
      */
     public function __construct(string $id, LinkClickedEventEvent $event, string $createdAt, LinkClickedEventData $data)

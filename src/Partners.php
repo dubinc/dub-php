@@ -49,8 +49,8 @@ class Partners
      *
      * Ban a partner from your program. This will disable all links and mark all commissions as canceled.
      *
-     * @param  ?Operations\BanPartnerRequestBody  $request
-     * @return Operations\BanPartnerResponse
+     * @param  ?\Dub\Models\Operations\BanPartnerRequestBody  $request
+     * @return \Dub\Models\Operations\BanPartnerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function ban(?Operations\BanPartnerRequestBody $request = null, ?Options $options = null): Operations\BanPartnerResponse
@@ -213,8 +213,8 @@ class Partners
      *
      * Creates or updates a partner record (upsert behavior). If a partner with the same email already exists, their program enrollment will be updated with the provided tenantId. If no existing partner is found, a new partner will be created using the supplied information.
      *
-     * @param  ?Operations\CreatePartnerRequestBody  $request
-     * @return Operations\CreatePartnerResponse
+     * @param  ?\Dub\Models\Operations\CreatePartnerRequestBody  $request
+     * @return \Dub\Models\Operations\CreatePartnerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function create(?Operations\CreatePartnerRequestBody $request = null, ?Options $options = null): Operations\CreatePartnerResponse
@@ -377,8 +377,8 @@ class Partners
      *
      * Create a link for a partner that is enrolled in your program.
      *
-     * @param  ?Operations\CreatePartnerLinkRequestBody  $request
-     * @return Operations\CreatePartnerLinkResponse
+     * @param  ?\Dub\Models\Operations\CreatePartnerLinkRequestBody  $request
+     * @return \Dub\Models\Operations\CreatePartnerLinkResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function createLink(?Operations\CreatePartnerLinkRequestBody $request = null, ?Options $options = null): Operations\CreatePartnerLinkResponse
@@ -541,8 +541,8 @@ class Partners
      *
      * This will deactivate the partner from your program and disable all their active links. Their commissions and payouts will remain intact. You can reactivate them later if needed.
      *
-     * @param  ?Operations\DeactivatePartnerRequestBody  $request
-     * @return Operations\DeactivatePartnerResponse
+     * @param  ?\Dub\Models\Operations\DeactivatePartnerRequestBody  $request
+     * @return \Dub\Models\Operations\DeactivatePartnerResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function deactivate(?Operations\DeactivatePartnerRequestBody $request = null, ?Options $options = null): Operations\DeactivatePartnerResponse
@@ -705,8 +705,8 @@ class Partners
      *
      * List all partners for a partner program.
      *
-     * @param  ?Operations\ListPartnersRequest  $request
-     * @return Operations\ListPartnersResponse
+     * @param  ?\Dub\Models\Operations\ListPartnersRequest  $request
+     * @return \Dub\Models\Operations\ListPartnersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?Operations\ListPartnersRequest $request = null, ?Options $options = null): Operations\ListPartnersResponse
@@ -870,7 +870,7 @@ class Partners
      *
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
-     * @return Operations\RetrieveLinksResponse
+     * @return \Dub\Models\Operations\RetrieveLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function retrieveLinks(?string $partnerId = null, ?string $tenantId = null, ?Options $options = null): Operations\RetrieveLinksResponse
@@ -1036,8 +1036,8 @@ class Partners
      *
      * Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
      *
-     * @param  ?Operations\RetrievePartnerAnalyticsRequest  $request
-     * @return Operations\RetrievePartnerAnalyticsResponse
+     * @param  ?\Dub\Models\Operations\RetrievePartnerAnalyticsRequest  $request
+     * @return \Dub\Models\Operations\RetrievePartnerAnalyticsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function analytics(?Operations\RetrievePartnerAnalyticsRequest $request = null, ?Options $options = null): Operations\RetrievePartnerAnalyticsResponse
@@ -1199,8 +1199,8 @@ class Partners
      *
      * Upsert a link for a partner that is enrolled in your program. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
      *
-     * @param  ?Operations\UpsertPartnerLinkRequestBody  $request
-     * @return Operations\UpsertPartnerLinkResponse
+     * @param  ?\Dub\Models\Operations\UpsertPartnerLinkRequestBody  $request
+     * @return \Dub\Models\Operations\UpsertPartnerLinkResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function upsertLink(?Operations\UpsertPartnerLinkRequestBody $request = null, ?Options $options = null): Operations\UpsertPartnerLinkResponse

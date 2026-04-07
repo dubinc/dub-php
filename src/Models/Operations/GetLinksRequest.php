@@ -76,6 +76,30 @@ class GetLinksRequest
     public ?string $tenantId = null;
 
     /**
+     * If specified, the query only searches for results before this cursor. Mutually exclusive with `startingAfter`.
+     *
+     * @var ?string $endingBefore
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=endingBefore')]
+    public ?string $endingBefore = null;
+
+    /**
+     * If specified, the query only searches for results after this cursor. Mutually exclusive with `endingBefore`.
+     *
+     * @var ?string $startingAfter
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=startingAfter')]
+    public ?string $startingAfter = null;
+
+    /**
+     * DEPRECATED. Use `startingAfter` instead.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * Whether to include archived links in the response. Defaults to `false` if not provided.
      *
      * @var ?bool $showArchived
@@ -94,7 +118,7 @@ class GetLinksRequest
     /**
      * The field to sort the links by. The default is `createdAt`.
      *
-     * @var ?SortBy $sortBy
+     * @var ?\Dub\Models\Operations\SortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?SortBy $sortBy = null;
@@ -102,7 +126,7 @@ class GetLinksRequest
     /**
      * The sort order. The default is `desc`.
      *
-     * @var ?SortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\SortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?SortOrder $sortOrder = null;
@@ -110,18 +134,10 @@ class GetLinksRequest
     /**
      * DEPRECATED. Use `sortBy` instead.
      *
-     * @var ?Sort $sort
+     * @var ?\Dub\Models\Operations\Sort $sort
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sort')]
     public ?Sort $sort = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -142,14 +158,16 @@ class GetLinksRequest
      * @param  ?string  $tenantId
      * @param  ?bool  $showArchived
      * @param  ?bool  $withTags
-     * @param  ?SortBy  $sortBy
-     * @param  ?SortOrder  $sortOrder
-     * @param  ?Sort  $sort
+     * @param  ?\Dub\Models\Operations\SortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\SortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\Sort  $sort
+     * @param  ?string  $endingBefore
+     * @param  ?string  $startingAfter
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?bool $showArchived = false, ?bool $withTags = false, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?bool $showArchived = false, ?bool $withTags = false, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;
@@ -159,12 +177,14 @@ class GetLinksRequest
         $this->search = $search;
         $this->userId = $userId;
         $this->tenantId = $tenantId;
+        $this->endingBefore = $endingBefore;
+        $this->startingAfter = $startingAfter;
+        $this->page = $page;
         $this->showArchived = $showArchived;
         $this->withTags = $withTags;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
         $this->sort = $sort;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

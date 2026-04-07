@@ -35,7 +35,7 @@ class DeleteCustomerResponse
     /**
      * The customer was deleted.
      *
-     * @var ?DeleteCustomerResponseBody $object
+     * @var ?\Dub\Models\Operations\DeleteCustomerResponseBody $object
      */
     public ?DeleteCustomerResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteCustomerResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteCustomerResponseBody  $object
+     * @param  ?\Dub\Models\Operations\DeleteCustomerResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteCustomerResponseBody $object = null)

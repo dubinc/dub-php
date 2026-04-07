@@ -14,4 +14,5 @@ enum ListBountySubmissionsQueryParamSortBy: string
 {
     case CompletedAt = 'completedAt';
     case PerformanceCount = 'performanceCount';
+    case SocialMetricCount = 'socialMetricCount';
 }

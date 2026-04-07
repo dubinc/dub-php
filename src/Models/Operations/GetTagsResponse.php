@@ -35,7 +35,7 @@ class GetTagsResponse
     /**
      * A list of tags
      *
-     * @var ?array<Components\LinkTagSchemaOutput> $linkTagSchemaOutputs
+     * @var ?array<\Dub\Models\Components\LinkTagSchemaOutput> $linkTagSchemaOutputs
      */
     public ?array $linkTagSchemaOutputs = null;
 
@@ -43,7 +43,7 @@ class GetTagsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\LinkTagSchemaOutput>  $linkTagSchemaOutputs
+     * @param  ?array<\Dub\Models\Components\LinkTagSchemaOutput>  $linkTagSchemaOutputs
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $linkTagSchemaOutputs = null)

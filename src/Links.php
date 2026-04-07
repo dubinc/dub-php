@@ -49,8 +49,8 @@ class Links
      *
      * Bulk create up to 100 links for the authenticated workspace.
      *
-     * @param  ?array<Operations\RequestBody>  $request
-     * @return Operations\BulkCreateLinksResponse
+     * @param  ?array<\Dub\Models\Operations\RequestBody>  $request
+     * @return \Dub\Models\Operations\BulkCreateLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function createMany(?array $request = null, ?Options $options = null): Operations\BulkCreateLinksResponse
@@ -214,7 +214,7 @@ class Links
      * Bulk delete up to 100 links for the authenticated workspace.
      *
      * @param  array<string>  $linkIds
-     * @return Operations\BulkDeleteLinksResponse
+     * @return \Dub\Models\Operations\BulkDeleteLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function deleteMany(array $linkIds, ?Options $options = null): Operations\BulkDeleteLinksResponse
@@ -379,8 +379,8 @@ class Links
      *
      * Bulk update up to 100 links with the same data for the authenticated workspace.
      *
-     * @param  ?Operations\BulkUpdateLinksRequestBody  $request
-     * @return Operations\BulkUpdateLinksResponse
+     * @param  ?\Dub\Models\Operations\BulkUpdateLinksRequestBody  $request
+     * @return \Dub\Models\Operations\BulkUpdateLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function updateMany(?Operations\BulkUpdateLinksRequestBody $request = null, ?Options $options = null): Operations\BulkUpdateLinksResponse
@@ -543,8 +543,8 @@ class Links
      *
      * Create a link for the authenticated workspace.
      *
-     * @param  ?Operations\CreateLinkRequestBody  $request
-     * @return Operations\CreateLinkResponse
+     * @param  ?\Dub\Models\Operations\CreateLinkRequestBody  $request
+     * @return \Dub\Models\Operations\CreateLinkResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function create(?Operations\CreateLinkRequestBody $request = null, ?Options $options = null): Operations\CreateLinkResponse
@@ -708,7 +708,7 @@ class Links
      * Delete a link for the authenticated workspace.
      *
      * @param  string  $linkId
-     * @return Operations\DeleteLinkResponse
+     * @return \Dub\Models\Operations\DeleteLinkResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function delete(string $linkId, ?Options $options = null): Operations\DeleteLinkResponse
@@ -874,7 +874,7 @@ class Links
      * @param  ?string  $key
      * @param  ?string  $linkId
      * @param  ?string  $externalId
-     * @return Operations\GetLinkInfoResponse
+     * @return \Dub\Models\Operations\GetLinkInfoResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function get(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?Options $options = null): Operations\GetLinkInfoResponse
@@ -1042,8 +1042,8 @@ class Links
      *
      * Retrieve a paginated list of links for the authenticated workspace.
      *
-     * @param  ?Operations\GetLinksRequest  $request
-     * @return Operations\GetLinksResponse
+     * @param  ?\Dub\Models\Operations\GetLinksRequest  $request
+     * @return \Dub\Models\Operations\GetLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     private function listIndividual(?Operations\GetLinksRequest $request = null, ?Options $options = null): Operations\GetLinksResponse
@@ -1122,6 +1122,8 @@ class Links
                             sortBy: $request != null ? $request->sortBy : null,
                             sortOrder: $request != null ? $request->sortOrder : null,
                             sort: $request != null ? $request->sort : null,
+                            endingBefore: $request != null ? $request->endingBefore : null,
+                            startingAfter: $request != null ? $request->startingAfter : null,
                             page: $nextPage,
                             pageSize: $request != null ? $request->pageSize : null,
                         ),
@@ -1245,8 +1247,8 @@ class Links
      *
      * Retrieve a paginated list of links for the authenticated workspace.
      *
-     * @param  ?Operations\GetLinksRequest  $request
-     * @return \Generator<Operations\GetLinksResponse>
+     * @param  ?\Dub\Models\Operations\GetLinksRequest  $request
+     * @return \Generator<\Dub\Models\Operations\GetLinksResponse>
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?Operations\GetLinksRequest $request = null, ?Options $options = null): \Generator
@@ -1263,8 +1265,8 @@ class Links
      *
      * Retrieve the number of links for the authenticated workspace.
      *
-     * @param  ?Operations\GetLinksCountRequest  $request
-     * @return Operations\GetLinksCountResponse
+     * @param  ?\Dub\Models\Operations\GetLinksCountRequest  $request
+     * @return \Dub\Models\Operations\GetLinksCountResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function count(?Operations\GetLinksCountRequest $request = null, ?Options $options = null): Operations\GetLinksCountResponse
@@ -1427,8 +1429,8 @@ class Links
      * Update a link for the authenticated workspace. If there's no change, returns it as it is.
      *
      * @param  string  $linkId
-     * @param  ?Operations\UpdateLinkRequestBody  $requestBody
-     * @return Operations\UpdateLinkResponse
+     * @param  ?\Dub\Models\Operations\UpdateLinkRequestBody  $requestBody
+     * @return \Dub\Models\Operations\UpdateLinkResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function update(string $linkId, ?Operations\UpdateLinkRequestBody $requestBody = null, ?Options $options = null): Operations\UpdateLinkResponse
@@ -1595,8 +1597,8 @@ class Links
      *
      * Upsert a link for the authenticated workspace by its URL. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
      *
-     * @param  ?Operations\UpsertLinkRequestBody  $request
-     * @return Operations\UpsertLinkResponse
+     * @param  ?\Dub\Models\Operations\UpsertLinkRequestBody  $request
+     * @return \Dub\Models\Operations\UpsertLinkResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function upsert(?Operations\UpsertLinkRequestBody $request = null, ?Options $options = null): Operations\UpsertLinkResponse

@@ -20,7 +20,7 @@ class LeadCreatedEventData
 
     /**
      *
-     * @var Customer $customer
+     * @var \Dub\Models\Components\Customer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Customer')]
@@ -28,7 +28,7 @@ class LeadCreatedEventData
 
     /**
      *
-     * @var LeadCreatedEventClick $click
+     * @var \Dub\Models\Components\LeadCreatedEventClick $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventClick')]
@@ -36,20 +36,11 @@ class LeadCreatedEventData
 
     /**
      *
-     * @var LeadCreatedEventLink $link
+     * @var \Dub\Models\Components\LeadCreatedEventLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\LeadCreatedEventLink')]
     public LeadCreatedEventLink $link;
-
-    /**
-     *
-     * @var ?Partner $partner
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Partner|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Partner $partner = null;
 
     /**
      * $metadata
@@ -58,25 +49,33 @@ class LeadCreatedEventData
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $metadata;
+
+    /**
+     *
+     * @var ?\Dub\Models\Components\Partner $partner
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Partner|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $metadata = null;
+    public ?Partner $partner = null;
 
     /**
      * @param  string  $eventName
-     * @param  Customer  $customer
-     * @param  LeadCreatedEventClick  $click
-     * @param  LeadCreatedEventLink  $link
-     * @param  ?Partner  $partner
+     * @param  \Dub\Models\Components\Customer  $customer
+     * @param  \Dub\Models\Components\LeadCreatedEventClick  $click
+     * @param  \Dub\Models\Components\LeadCreatedEventLink  $link
      * @param  ?array<string, mixed>  $metadata
+     * @param  ?\Dub\Models\Components\Partner  $partner
      * @phpstan-pure
      */
-    public function __construct(string $eventName, Customer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link, ?Partner $partner = null, ?array $metadata = null)
+    public function __construct(string $eventName, Customer $customer, LeadCreatedEventClick $click, LeadCreatedEventLink $link, ?array $metadata = null, ?Partner $partner = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;
         $this->click = $click;
         $this->link = $link;
-        $this->partner = $partner;
         $this->metadata = $metadata;
+        $this->partner = $partner;
     }
 }

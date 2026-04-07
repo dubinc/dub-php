@@ -35,7 +35,7 @@ class ListFoldersResponse
     /**
      * A list of folders
      *
-     * @var ?array<Components\FolderSchema> $folderSchemas
+     * @var ?array<\Dub\Models\Components\FolderSchema> $folderSchemas
      */
     public ?array $folderSchemas = null;
 
@@ -43,7 +43,7 @@ class ListFoldersResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\FolderSchema>  $folderSchemas
+     * @param  ?array<\Dub\Models\Components\FolderSchema>  $folderSchemas
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $folderSchemas = null)

@@ -13,7 +13,7 @@ class LeadEvent
 {
     /**
      *
-     * @var ListEventsResponseBodyEvent $event
+     * @var \Dub\Models\Operations\ListEventsResponseBodyEvent $event
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('event')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyEvent')]
@@ -42,7 +42,7 @@ class LeadEvent
 
     /**
      *
-     * @var ResponseBodyClick $click
+     * @var \Dub\Models\Operations\ResponseBodyClick $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ResponseBodyClick')]
@@ -50,7 +50,7 @@ class LeadEvent
 
     /**
      *
-     * @var ResponseBodyLink $link
+     * @var \Dub\Models\Operations\ResponseBodyLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ResponseBodyLink')]
@@ -58,7 +58,7 @@ class LeadEvent
 
     /**
      *
-     * @var ListEventsResponseBodyCustomer $customer
+     * @var \Dub\Models\Operations\ListEventsResponseBodyCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListEventsResponseBodyCustomer')]
@@ -191,13 +191,13 @@ class LeadEvent
     public mixed $metadata = null;
 
     /**
-     * @param  ListEventsResponseBodyEvent  $event
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyEvent  $event
      * @param  string  $timestamp
      * @param  string  $eventId
      * @param  string  $eventName
-     * @param  ResponseBodyClick  $click
-     * @param  ResponseBodyLink  $link
-     * @param  ListEventsResponseBodyCustomer  $customer
+     * @param  \Dub\Models\Operations\ResponseBodyClick  $click
+     * @param  \Dub\Models\Operations\ResponseBodyLink  $link
+     * @param  \Dub\Models\Operations\ListEventsResponseBodyCustomer  $customer
      * @param  string  $clickId
      * @param  string  $linkId
      * @param  string  $domain

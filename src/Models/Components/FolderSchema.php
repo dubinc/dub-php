@@ -29,7 +29,7 @@ class FolderSchema
 
     /**
      *
-     * @var Type $type
+     * @var \Dub\Models\Components\Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Type')]
@@ -62,7 +62,7 @@ class FolderSchema
     /**
      * The access level of the folder within the workspace.
      *
-     * @var ?AccessLevel $accessLevel
+     * @var ?\Dub\Models\Components\AccessLevel $accessLevel
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('accessLevel')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\AccessLevel|null')]
@@ -72,11 +72,11 @@ class FolderSchema
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  Type  $type
+     * @param  \Dub\Models\Components\Type  $type
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  ?string  $description
-     * @param  ?AccessLevel  $accessLevel
+     * @param  ?\Dub\Models\Components\AccessLevel  $accessLevel
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, Type $type, string $createdAt, string $updatedAt, ?string $description = null, ?AccessLevel $accessLevel = null)

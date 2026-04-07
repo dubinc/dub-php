@@ -35,7 +35,7 @@ class DeleteTagResponse
     /**
      * The deleted tag ID.
      *
-     * @var ?DeleteTagResponseBody $object
+     * @var ?\Dub\Models\Operations\DeleteTagResponseBody $object
      */
     public ?DeleteTagResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteTagResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteTagResponseBody  $object
+     * @param  ?\Dub\Models\Operations\DeleteTagResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteTagResponseBody $object = null)

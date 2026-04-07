@@ -21,7 +21,7 @@ class TrackSaleResponseBody
 
     /**
      *
-     * @var ?TrackSaleCustomer $customer
+     * @var ?\Dub\Models\Operations\TrackSaleCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleCustomer|null')]
@@ -29,7 +29,7 @@ class TrackSaleResponseBody
 
     /**
      *
-     * @var ?Sale $sale
+     * @var ?\Dub\Models\Operations\Sale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale|null')]
@@ -37,8 +37,8 @@ class TrackSaleResponseBody
 
     /**
      * @param  string  $eventName
-     * @param  ?TrackSaleCustomer  $customer
-     * @param  ?Sale  $sale
+     * @param  ?\Dub\Models\Operations\TrackSaleCustomer  $customer
+     * @param  ?\Dub\Models\Operations\Sale  $sale
      * @phpstan-pure
      */
     public function __construct(string $eventName, ?TrackSaleCustomer $customer = null, ?Sale $sale = null)

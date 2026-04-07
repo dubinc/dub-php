@@ -35,7 +35,7 @@ class UpsertPartnerLinkResponse
     /**
      * The upserted partner link
      *
-     * @var ?Components\LinkSchema $linkSchema
+     * @var ?\Dub\Models\Components\LinkSchema $linkSchema
      */
     public ?Components\LinkSchema $linkSchema = null;
 
@@ -43,7 +43,7 @@ class UpsertPartnerLinkResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\LinkSchema  $linkSchema
+     * @param  ?\Dub\Models\Components\LinkSchema  $linkSchema
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\LinkSchema $linkSchema = null)

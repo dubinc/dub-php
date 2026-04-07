@@ -35,7 +35,7 @@ class ApproveBountySubmissionResponse
     /**
      * The approved bounty submission.
      *
-     * @var ?ApproveBountySubmissionResponseBody $object
+     * @var ?\Dub\Models\Operations\ApproveBountySubmissionResponseBody $object
      */
     public ?ApproveBountySubmissionResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class ApproveBountySubmissionResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?ApproveBountySubmissionResponseBody  $object
+     * @param  ?\Dub\Models\Operations\ApproveBountySubmissionResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?ApproveBountySubmissionResponseBody $object = null)

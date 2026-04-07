@@ -14,14 +14,14 @@ class InternalServerError
 {
     /**
      *
-     * @var InternalServerErrorError $error
+     * @var \Dub\Models\Errors\InternalServerErrorError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InternalServerErrorError')]
     public InternalServerErrorError $error;
 
     /**
-     * @param  InternalServerErrorError  $error
+     * @param  \Dub\Models\Errors\InternalServerErrorError  $error
      * @phpstan-pure
      */
     public function __construct(InternalServerErrorError $error)

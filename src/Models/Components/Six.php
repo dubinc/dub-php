@@ -48,7 +48,7 @@ class Six
 
     /**
      *
-     * @var PartnerEnrolledEventFieldsDataReferralFormData6Type $type
+     * @var \Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData6Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData6Type')]
@@ -57,7 +57,7 @@ class Six
     /**
      * $options
      *
-     * @var array<FieldsOptions> $options
+     * @var array<\Dub\Models\Components\FieldsOptions> $options
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('options')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\FieldsOptions>')]
@@ -69,8 +69,8 @@ class Six
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  PartnerEnrolledEventFieldsDataReferralFormData6Type  $type
-     * @param  array<FieldsOptions>  $options
+     * @param  \Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData6Type  $type
+     * @param  array<\Dub\Models\Components\FieldsOptions>  $options
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, PartnerEnrolledEventFieldsDataReferralFormData6Type $type, array $options)

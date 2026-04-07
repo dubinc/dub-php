@@ -30,7 +30,7 @@ class PartnerApplicationSubmittedEventPartner
     /**
      * The status of the partner's enrollment in the program.
      *
-     * @var PartnerApplicationSubmittedEventStatus $status
+     * @var \Dub\Models\Components\PartnerApplicationSubmittedEventStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerApplicationSubmittedEventStatus')]
@@ -143,7 +143,7 @@ class PartnerApplicationSubmittedEventPartner
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  PartnerApplicationSubmittedEventStatus  $status
+     * @param  \Dub\Models\Components\PartnerApplicationSubmittedEventStatus  $status
      * @param  ?string  $companyName
      * @param  ?string  $email
      * @param  ?string  $image

@@ -21,14 +21,14 @@ class UpdateDomainRequest
 
     /**
      *
-     * @var ?UpdateDomainRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\UpdateDomainRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateDomainRequestBody $requestBody = null;
 
     /**
      * @param  string  $slug
-     * @param  ?UpdateDomainRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\UpdateDomainRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $slug, ?UpdateDomainRequestBody $requestBody = null)

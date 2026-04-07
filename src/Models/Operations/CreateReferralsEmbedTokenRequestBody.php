@@ -29,7 +29,7 @@ class CreateReferralsEmbedTokenRequestBody
 
     /**
      *
-     * @var ?Partner $partner
+     * @var ?\Dub\Models\Operations\Partner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Partner|null')]
@@ -39,7 +39,7 @@ class CreateReferralsEmbedTokenRequestBody
     /**
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
-     * @param  ?Partner  $partner
+     * @param  ?\Dub\Models\Operations\Partner  $partner
      * @phpstan-pure
      */
     public function __construct(?string $partnerId = null, ?string $tenantId = null, ?Partner $partner = null)

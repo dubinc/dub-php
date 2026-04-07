@@ -117,7 +117,7 @@ class GetCustomersResponseBody
 
     /**
      *
-     * @var ?GetCustomersLink $link
+     * @var ?\Dub\Models\Operations\GetCustomersLink $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomersLink|null')]
@@ -134,7 +134,7 @@ class GetCustomersResponseBody
 
     /**
      *
-     * @var ?GetCustomersPartner $partner
+     * @var ?\Dub\Models\Operations\GetCustomersPartner $partner
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('partner')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\GetCustomersPartner|null')]
@@ -143,7 +143,7 @@ class GetCustomersResponseBody
 
     /**
      *
-     * @var ?Discount $discount
+     * @var ?\Dub\Models\Operations\Discount $discount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discount')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Discount|null')]
@@ -163,10 +163,10 @@ class GetCustomersResponseBody
      * @param  ?float  $saleAmount
      * @param  ?string  $firstSaleAt
      * @param  ?string  $subscriptionCanceledAt
-     * @param  ?GetCustomersLink  $link
+     * @param  ?\Dub\Models\Operations\GetCustomersLink  $link
      * @param  ?string  $programId
-     * @param  ?GetCustomersPartner  $partner
-     * @param  ?Discount  $discount
+     * @param  ?\Dub\Models\Operations\GetCustomersPartner  $partner
+     * @param  ?\Dub\Models\Operations\Discount  $discount
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, string $externalId, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?string $firstSaleAt = null, ?string $subscriptionCanceledAt = null, ?GetCustomersLink $link = null, ?string $programId = null, ?GetCustomersPartner $partner = null, ?Discount $discount = null)

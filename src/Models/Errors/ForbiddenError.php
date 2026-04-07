@@ -14,7 +14,7 @@ class ForbiddenError
     /**
      * A short code indicating the error code returned.
      *
-     * @var ForbiddenCode $code
+     * @var \Dub\Models\Errors\ForbiddenCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\ForbiddenCode')]
@@ -38,7 +38,7 @@ class ForbiddenError
     public ?string $docUrl = null;
 
     /**
-     * @param  ForbiddenCode  $code
+     * @param  \Dub\Models\Errors\ForbiddenCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

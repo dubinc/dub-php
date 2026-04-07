@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\ClickEvent
+* @var \Dub\Models\Operations\ClickEvent
 */
 Operations\ClickEvent $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\ClickEvent $value = /* values here */
 
 ```php
 /**
-* @var Operations\LeadEvent
+* @var \Dub\Models\Operations\LeadEvent
 */
 Operations\LeadEvent $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Operations\LeadEvent $value = /* values here */
 
 ```php
 /**
-* @var Operations\SaleEvent
+* @var \Dub\Models\Operations\SaleEvent
 */
 Operations\SaleEvent $value = /* values here */
 ```

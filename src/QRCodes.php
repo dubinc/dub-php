@@ -49,8 +49,8 @@ class QRCodes
      *
      * Retrieve a QR code for a link.
      *
-     * @param  Operations\GetQRCodeRequest  $request
-     * @return Operations\GetQRCodeResponse
+     * @param  \Dub\Models\Operations\GetQRCodeRequest  $request
+     * @return \Dub\Models\Operations\GetQRCodeResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function get(Operations\GetQRCodeRequest $request, ?Options $options = null): Operations\GetQRCodeResponse

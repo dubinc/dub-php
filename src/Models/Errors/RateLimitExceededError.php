@@ -14,7 +14,7 @@ class RateLimitExceededError
     /**
      * A short code indicating the error code returned.
      *
-     * @var RateLimitExceededCode $code
+     * @var \Dub\Models\Errors\RateLimitExceededCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\RateLimitExceededCode')]
@@ -38,7 +38,7 @@ class RateLimitExceededError
     public ?string $docUrl = null;
 
     /**
-     * @param  RateLimitExceededCode  $code
+     * @param  \Dub\Models\Errors\RateLimitExceededCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

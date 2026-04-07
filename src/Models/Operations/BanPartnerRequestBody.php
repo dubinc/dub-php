@@ -13,7 +13,7 @@ class BanPartnerRequestBody
 {
     /**
      *
-     * @var Reason $reason
+     * @var \Dub\Models\Operations\Reason $reason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('reason')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Reason')]
@@ -38,7 +38,7 @@ class BanPartnerRequestBody
     public ?string $tenantId = null;
 
     /**
-     * @param  Reason  $reason
+     * @param  \Dub\Models\Operations\Reason  $reason
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @phpstan-pure

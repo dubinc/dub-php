@@ -13,7 +13,7 @@ class LinkClickedEventData
 {
     /**
      *
-     * @var Click $click
+     * @var \Dub\Models\Components\Click $click
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('click')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Click')]
@@ -21,15 +21,15 @@ class LinkClickedEventData
 
     /**
      *
-     * @var Link $link
+     * @var \Dub\Models\Components\Link $link
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('link')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\Link')]
     public Link $link;
 
     /**
-     * @param  Click  $click
-     * @param  Link  $link
+     * @param  \Dub\Models\Components\Click  $click
+     * @param  \Dub\Models\Components\Link  $link
      * @phpstan-pure
      */
     public function __construct(Click $click, Link $link)

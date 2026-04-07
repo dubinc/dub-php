@@ -35,7 +35,7 @@ class ListPayoutsResponse
     /**
      * The list of payouts.
      *
-     * @var ?array<ListPayoutsResponseBody> $responseBodies
+     * @var ?array<\Dub\Models\Operations\ListPayoutsResponseBody> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class ListPayoutsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<ListPayoutsResponseBody>  $responseBodies
+     * @param  ?array<\Dub\Models\Operations\ListPayoutsResponseBody>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

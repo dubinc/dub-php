@@ -21,14 +21,14 @@ class UpdateCommissionRequest
 
     /**
      *
-     * @var ?UpdateCommissionRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\UpdateCommissionRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateCommissionRequestBody $requestBody = null;
 
     /**
      * @param  string  $id
-     * @param  ?UpdateCommissionRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\UpdateCommissionRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $id, ?UpdateCommissionRequestBody $requestBody = null)

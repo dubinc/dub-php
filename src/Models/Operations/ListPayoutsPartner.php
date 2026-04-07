@@ -44,6 +44,15 @@ class ListPayoutsPartner
     public ?string $image;
 
     /**
+     * The partner's default payout method. Connect: Bank account payouts via Stripe Connect; Stablecoin: USDC payouts directly to a crypto wallet; PayPal: Payouts via PayPal
+     *
+     * @var ?\Dub\Models\Operations\ListPayoutsDefaultPayoutMethod $defaultPayoutMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('defaultPayoutMethod')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPayoutsDefaultPayoutMethod|null')]
+    public ?ListPayoutsDefaultPayoutMethod $defaultPayoutMethod;
+
+    /**
      * The date when the partner enabled payouts.
      *
      * @var ?string $payoutsEnabledAt
@@ -81,18 +90,20 @@ class ListPayoutsPartner
      * @param  string  $name
      * @param  ?string  $email
      * @param  ?string  $image
+     * @param  ?\Dub\Models\Operations\ListPayoutsDefaultPayoutMethod  $defaultPayoutMethod
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $country
      * @param  ?string  $tenantId
      * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $tenantId = null, ?string $groupId = null)
+    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?ListPayoutsDefaultPayoutMethod $defaultPayoutMethod = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $tenantId = null, ?string $groupId = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->email = $email;
         $this->image = $image;
+        $this->defaultPayoutMethod = $defaultPayoutMethod;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
         $this->country = $country;
         $this->tenantId = $tenantId;

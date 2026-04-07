@@ -342,7 +342,7 @@ class UpsertLinkRequestBody
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<UpsertLinkTestVariants> $testVariants
+     * @var ?array<\Dub\Models\Operations\UpsertLinkTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\UpsertLinkTestVariants>|null')]
@@ -414,7 +414,7 @@ class UpsertLinkRequestBody
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      * @param  ?array<string>  $webhookIds
-     * @param  ?array<UpsertLinkTestVariants>  $testVariants
+     * @param  ?array<\Dub\Models\Operations\UpsertLinkTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @param  ?string  $tagId

@@ -22,7 +22,7 @@ class ListBountySubmissionsRequest
     /**
      * The status of the submissions to list.
      *
-     * @var ?ListBountySubmissionsQueryParamStatus $status
+     * @var ?\Dub\Models\Operations\ListBountySubmissionsQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
     public ?ListBountySubmissionsQueryParamStatus $status = null;
@@ -44,9 +44,17 @@ class ListBountySubmissionsRequest
     public ?string $partnerId = null;
 
     /**
+     * The page number for pagination.
+     *
+     * @var ?float $page
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
+    public ?float $page = null;
+
+    /**
      * The field to sort the submissions by.
      *
-     * @var ?ListBountySubmissionsQueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\ListBountySubmissionsQueryParamSortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
     public ?ListBountySubmissionsQueryParamSortBy $sortBy = null;
@@ -54,18 +62,10 @@ class ListBountySubmissionsRequest
     /**
      * The order to sort the submissions by.
      *
-     * @var ?ListBountySubmissionsQueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\ListBountySubmissionsQueryParamSortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
     public ?ListBountySubmissionsQueryParamSortOrder $sortOrder = null;
-
-    /**
-     * The page number for pagination.
-     *
-     * @var ?float $page
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
 
     /**
      * The number of items per page.
@@ -77,24 +77,24 @@ class ListBountySubmissionsRequest
 
     /**
      * @param  string  $bountyId
-     * @param  ?ListBountySubmissionsQueryParamStatus  $status
+     * @param  ?\Dub\Models\Operations\ListBountySubmissionsQueryParamStatus  $status
      * @param  ?string  $groupId
      * @param  ?string  $partnerId
-     * @param  ?ListBountySubmissionsQueryParamSortBy  $sortBy
-     * @param  ?ListBountySubmissionsQueryParamSortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\ListBountySubmissionsQueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\ListBountySubmissionsQueryParamSortOrder  $sortOrder
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(string $bountyId, ?ListBountySubmissionsQueryParamStatus $status = null, ?string $groupId = null, ?string $partnerId = null, ?ListBountySubmissionsQueryParamSortBy $sortBy = ListBountySubmissionsQueryParamSortBy::CompletedAt, ?ListBountySubmissionsQueryParamSortOrder $sortOrder = ListBountySubmissionsQueryParamSortOrder::Asc, ?float $page = 1, ?float $pageSize = 100)
+    public function __construct(string $bountyId, ?ListBountySubmissionsQueryParamStatus $status = null, ?string $groupId = null, ?string $partnerId = null, ?float $page = null, ?ListBountySubmissionsQueryParamSortBy $sortBy = ListBountySubmissionsQueryParamSortBy::CompletedAt, ?ListBountySubmissionsQueryParamSortOrder $sortOrder = ListBountySubmissionsQueryParamSortOrder::Asc, ?float $pageSize = 100)
     {
         $this->bountyId = $bountyId;
         $this->status = $status;
         $this->groupId = $groupId;
         $this->partnerId = $partnerId;
+        $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;
-        $this->page = $page;
         $this->pageSize = $pageSize;
     }
 }

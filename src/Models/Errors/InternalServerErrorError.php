@@ -14,7 +14,7 @@ class InternalServerErrorError
     /**
      * A short code indicating the error code returned.
      *
-     * @var InternalServerErrorCode $code
+     * @var \Dub\Models\Errors\InternalServerErrorCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InternalServerErrorCode')]
@@ -38,7 +38,7 @@ class InternalServerErrorError
     public ?string $docUrl = null;
 
     /**
-     * @param  InternalServerErrorCode  $code
+     * @param  \Dub\Models\Errors\InternalServerErrorCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

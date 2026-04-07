@@ -14,7 +14,7 @@ class InviteExpiredError
     /**
      * A short code indicating the error code returned.
      *
-     * @var InviteExpiredCode $code
+     * @var \Dub\Models\Errors\InviteExpiredCode $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InviteExpiredCode')]
@@ -38,7 +38,7 @@ class InviteExpiredError
     public ?string $docUrl = null;
 
     /**
-     * @param  InviteExpiredCode  $code
+     * @param  \Dub\Models\Errors\InviteExpiredCode  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

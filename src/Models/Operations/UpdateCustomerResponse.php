@@ -35,7 +35,7 @@ class UpdateCustomerResponse
     /**
      * The customer was updated.
      *
-     * @var ?UpdateCustomerResponseBody $object
+     * @var ?\Dub\Models\Operations\UpdateCustomerResponseBody $object
      */
     public ?UpdateCustomerResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class UpdateCustomerResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?UpdateCustomerResponseBody  $object
+     * @param  ?\Dub\Models\Operations\UpdateCustomerResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?UpdateCustomerResponseBody $object = null)

@@ -35,7 +35,7 @@ class GetLinksResponse
     /**
      * A list of links
      *
-     * @var ?array<Components\LinkSchema> $linkSchemas
+     * @var ?array<\Dub\Models\Components\LinkSchema> $linkSchemas
      */
     public ?array $linkSchemas = null;
 
@@ -47,7 +47,7 @@ class GetLinksResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<Components\LinkSchema>  $linkSchemas
+     * @param  ?array<\Dub\Models\Components\LinkSchema>  $linkSchemas
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $linkSchemas = null)

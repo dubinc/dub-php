@@ -14,14 +14,14 @@ class InviteExpired
 {
     /**
      *
-     * @var InviteExpiredError $error
+     * @var \Dub\Models\Errors\InviteExpiredError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\InviteExpiredError')]
     public InviteExpiredError $error;
 
     /**
-     * @param  InviteExpiredError  $error
+     * @param  \Dub\Models\Errors\InviteExpiredError  $error
      * @phpstan-pure
      */
     public function __construct(InviteExpiredError $error)

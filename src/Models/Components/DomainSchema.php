@@ -78,7 +78,7 @@ class DomainSchema
     /**
      * The registered domain record.
      *
-     * @var ?RegisteredDomain $registeredDomain
+     * @var ?\Dub\Models\Components\RegisteredDomain $registeredDomain
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('registeredDomain')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\RegisteredDomain|null')]
@@ -141,7 +141,7 @@ class DomainSchema
      * @param  ?string  $expiredUrl
      * @param  ?string  $notFoundUrl
      * @param  ?string  $logo
-     * @param  ?RegisteredDomain  $registeredDomain
+     * @param  ?\Dub\Models\Components\RegisteredDomain  $registeredDomain
      * @param  ?string  $assetLinks
      * @param  ?string  $appleAppSiteAssociation
      * @phpstan-pure

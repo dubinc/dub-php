@@ -48,7 +48,7 @@ class Five
 
     /**
      *
-     * @var ListPartnersFieldsPartnersResponse200Type $type
+     * @var \Dub\Models\Operations\ListPartnersFieldsPartnersResponse200Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPartnersFieldsPartnersResponse200Type')]
@@ -60,7 +60,7 @@ class Five
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  ListPartnersFieldsPartnersResponse200Type  $type
+     * @param  \Dub\Models\Operations\ListPartnersFieldsPartnersResponse200Type  $type
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, ListPartnersFieldsPartnersResponse200Type $type)

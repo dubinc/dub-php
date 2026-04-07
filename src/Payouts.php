@@ -49,8 +49,8 @@ class Payouts
      *
      * Retrieve a list of payouts for your partner program.
      *
-     * @param  ?Operations\ListPayoutsRequest  $request
-     * @return Operations\ListPayoutsResponse
+     * @param  ?\Dub\Models\Operations\ListPayoutsRequest  $request
+     * @return \Dub\Models\Operations\ListPayoutsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
     public function list(?Operations\ListPayoutsRequest $request = null, ?Options $options = null): Operations\ListPayoutsResponse

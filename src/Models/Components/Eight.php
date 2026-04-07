@@ -48,7 +48,7 @@ class Eight
 
     /**
      *
-     * @var PartnerEnrolledEventFieldsDataReferralFormData8Type $type
+     * @var \Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData8Type $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData8Type')]
@@ -60,7 +60,7 @@ class Eight
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  PartnerEnrolledEventFieldsDataReferralFormData8Type  $type
+     * @param  \Dub\Models\Components\PartnerEnrolledEventFieldsDataReferralFormData8Type  $type
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, PartnerEnrolledEventFieldsDataReferralFormData8Type $type)

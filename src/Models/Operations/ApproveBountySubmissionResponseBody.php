@@ -39,7 +39,7 @@ class ApproveBountySubmissionResponseBody
     /**
      * The status of the submission
      *
-     * @var ApproveBountySubmissionStatus $status
+     * @var \Dub\Models\Operations\ApproveBountySubmissionStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ApproveBountySubmissionStatus')]
@@ -52,6 +52,14 @@ class ApproveBountySubmissionResponseBody
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
+
+    /**
+     * The period number for this submission (1-indexed)
+     *
+     * @var int $periodNumber
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('periodNumber')]
+    public int $periodNumber;
 
     /**
      * The description of the submission
@@ -73,7 +81,7 @@ class ApproveBountySubmissionResponseBody
     /**
      * The files uploaded for the submission
      *
-     * @var ?array<ApproveBountySubmissionFiles> $files
+     * @var ?array<\Dub\Models\Operations\ApproveBountySubmissionFiles> $files
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('files')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\ApproveBountySubmissionFiles>|null')]
@@ -86,6 +94,14 @@ class ApproveBountySubmissionResponseBody
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('performanceCount')]
     public ?float $performanceCount;
+
+    /**
+     * The social metric count (views or likes) for the social content
+     *
+     * @var ?int $socialMetricCount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('socialMetricCount')]
+    public ?int $socialMetricCount;
 
     /**
      * The date and time the submission was completed
@@ -120,35 +136,50 @@ class ApproveBountySubmissionResponseBody
     public ?string $rejectionNote;
 
     /**
+     * The date and time the submission's social metrics were last synced
+     *
+     * @var ?string $socialMetricsLastSyncedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('socialMetricsLastSyncedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $socialMetricsLastSyncedAt = null;
+
+    /**
      * @param  string  $id
      * @param  string  $bountyId
      * @param  string  $partnerId
-     * @param  ApproveBountySubmissionStatus  $status
+     * @param  \Dub\Models\Operations\ApproveBountySubmissionStatus  $status
      * @param  string  $createdAt
+     * @param  int  $periodNumber
      * @param  ?string  $description
      * @param  ?array<string>  $urls
-     * @param  ?array<ApproveBountySubmissionFiles>  $files
+     * @param  ?array<\Dub\Models\Operations\ApproveBountySubmissionFiles>  $files
      * @param  ?float  $performanceCount
+     * @param  ?int  $socialMetricCount
      * @param  ?string  $completedAt
      * @param  ?string  $reviewedAt
      * @param  ?string  $rejectionReason
      * @param  ?string  $rejectionNote
+     * @param  ?string  $socialMetricsLastSyncedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $bountyId, string $partnerId, ApproveBountySubmissionStatus $status, string $createdAt, ?string $description = null, ?array $urls = null, ?array $files = null, ?float $performanceCount = null, ?string $completedAt = null, ?string $reviewedAt = null, ?string $rejectionReason = null, ?string $rejectionNote = null)
+    public function __construct(string $id, string $bountyId, string $partnerId, ApproveBountySubmissionStatus $status, string $createdAt, int $periodNumber, ?string $description = null, ?array $urls = null, ?array $files = null, ?float $performanceCount = null, ?int $socialMetricCount = null, ?string $completedAt = null, ?string $reviewedAt = null, ?string $rejectionReason = null, ?string $rejectionNote = null, ?string $socialMetricsLastSyncedAt = null)
     {
         $this->id = $id;
         $this->bountyId = $bountyId;
         $this->partnerId = $partnerId;
         $this->status = $status;
         $this->createdAt = $createdAt;
+        $this->periodNumber = $periodNumber;
         $this->description = $description;
         $this->urls = $urls;
         $this->files = $files;
         $this->performanceCount = $performanceCount;
+        $this->socialMetricCount = $socialMetricCount;
         $this->completedAt = $completedAt;
         $this->reviewedAt = $reviewedAt;
         $this->rejectionReason = $rejectionReason;
         $this->rejectionNote = $rejectionNote;
+        $this->socialMetricsLastSyncedAt = $socialMetricsLastSyncedAt;
     }
 }

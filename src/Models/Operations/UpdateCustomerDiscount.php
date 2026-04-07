@@ -27,7 +27,7 @@ class UpdateCustomerDiscount
 
     /**
      *
-     * @var UpdateCustomerType $type
+     * @var \Dub\Models\Operations\UpdateCustomerType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCustomerType')]
@@ -73,7 +73,7 @@ class UpdateCustomerDiscount
     /**
      * @param  string  $id
      * @param  float  $amount
-     * @param  UpdateCustomerType  $type
+     * @param  \Dub\Models\Operations\UpdateCustomerType  $type
      * @param  ?float  $maxDuration
      * @param  ?string  $couponId
      * @param  ?string  $couponTestId

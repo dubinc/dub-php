@@ -14,14 +14,14 @@ class Conflict
 {
     /**
      *
-     * @var ConflictError $error
+     * @var \Dub\Models\Errors\ConflictError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\ConflictError')]
     public ConflictError $error;
 
     /**
-     * @param  ConflictError  $error
+     * @param  \Dub\Models\Errors\ConflictError  $error
      * @phpstan-pure
      */
     public function __construct(ConflictError $error)

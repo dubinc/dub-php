@@ -9,7 +9,7 @@ Partner analytics data
 
 ```php
 /**
-* @var Components\PartnerAnalyticsCount
+* @var \Dub\Models\Components\PartnerAnalyticsCount
 */
 Components\PartnerAnalyticsCount $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Components\PartnerAnalyticsCount $value = /* values here */
 
 ```php
 /**
-* @var array<Components\PartnerAnalyticsTimeseries>
+* @var array<\Dub\Models\Components\PartnerAnalyticsTimeseries>
 */
 array $value = /* values here */
 ```
@@ -27,7 +27,7 @@ array $value = /* values here */
 
 ```php
 /**
-* @var array<Components\PartnerAnalyticsTopLinks>
+* @var array<\Dub\Models\Components\PartnerAnalyticsTopLinks>
 */
 array $value = /* values here */
 ```

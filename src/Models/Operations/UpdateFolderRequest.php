@@ -21,14 +21,14 @@ class UpdateFolderRequest
 
     /**
      *
-     * @var ?UpdateFolderRequestBody $requestBody
+     * @var ?\Dub\Models\Operations\UpdateFolderRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?UpdateFolderRequestBody $requestBody = null;
 
     /**
      * @param  string  $id
-     * @param  ?UpdateFolderRequestBody  $requestBody
+     * @param  ?\Dub\Models\Operations\UpdateFolderRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $id, ?UpdateFolderRequestBody $requestBody = null)

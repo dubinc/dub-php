@@ -48,7 +48,7 @@ class Fields2
 
     /**
      *
-     * @var PartnerEnrolledEventFieldsType $type
+     * @var \Dub\Models\Components\PartnerEnrolledEventFieldsType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventFieldsType')]
@@ -56,7 +56,7 @@ class Fields2
 
     /**
      *
-     * @var ?FieldsConstraints $constraints
+     * @var ?\Dub\Models\Components\FieldsConstraints $constraints
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('constraints')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\FieldsConstraints|null')]
@@ -69,8 +69,8 @@ class Fields2
      * @param  bool  $required
      * @param  bool  $locked
      * @param  int  $position
-     * @param  PartnerEnrolledEventFieldsType  $type
-     * @param  ?FieldsConstraints  $constraints
+     * @param  \Dub\Models\Components\PartnerEnrolledEventFieldsType  $type
+     * @param  ?\Dub\Models\Components\FieldsConstraints  $constraints
      * @phpstan-pure
      */
     public function __construct(string $key, string $label, bool $required, bool $locked, int $position, PartnerEnrolledEventFieldsType $type, ?FieldsConstraints $constraints = null)

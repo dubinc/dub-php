@@ -35,7 +35,7 @@ class CheckDomainStatusResponse
     /**
      * The domain status was retrieved.
      *
-     * @var ?array<CheckDomainStatusResponseBody> $responseBodies
+     * @var ?array<\Dub\Models\Operations\CheckDomainStatusResponseBody> $responseBodies
      */
     public ?array $responseBodies = null;
 
@@ -43,7 +43,7 @@ class CheckDomainStatusResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?array<CheckDomainStatusResponseBody>  $responseBodies
+     * @param  ?array<\Dub\Models\Operations\CheckDomainStatusResponseBody>  $responseBodies
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?array $responseBodies = null)

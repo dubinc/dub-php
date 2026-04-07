@@ -14,7 +14,7 @@ class Error
     /**
      * A short code indicating the error code returned.
      *
-     * @var Code $code
+     * @var \Dub\Models\Errors\Code $code
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('code')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\Code')]
@@ -38,7 +38,7 @@ class Error
     public ?string $docUrl = null;
 
     /**
-     * @param  Code  $code
+     * @param  \Dub\Models\Errors\Code  $code
      * @param  string  $message
      * @param  ?string  $docUrl
      * @phpstan-pure

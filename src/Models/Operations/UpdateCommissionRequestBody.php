@@ -14,30 +14,59 @@ class UpdateCommissionRequestBody
     /**
      * The new absolute amount for the sale. Paid commissions cannot be updated.
      *
+     * @var ?float $saleAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
+
+    /**
+     * Modify the current sale amount: use positive values to increase the amount, negative values to decrease it. Takes precedence over `saleAmount`. Paid commissions cannot be updated.
+     *
+     * @var ?float $modifySaleAmount
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('modifySaleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $modifySaleAmount = null;
+
+    /**
+     * The new absolute earnings for the custom commission. Paid commissions cannot be updated.
+     *
+     * @var ?float $earnings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $earnings = null;
+
+    /**
+     * Useful for marking a commission as pending, refunded, duplicate, canceled, or fraudulent. Takes precedence over `saleAmount` and `modifySaleAmount`. When a commission is marked as pending, refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated.
+     *
+     * @var ?\Dub\Models\Operations\Status $status
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Status|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Status $status = null;
+
+    /**
+     * Deprecated. Use `saleAmount` instead.
+     *
      * @var ?float $amount
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $amount = null;
 
     /**
-     * Modify the current sale amount: use positive values to increase the amount, negative values to decrease it. Takes precedence over `amount`. Paid commissions cannot be updated.
+     * Deprecated. Use `modifySaleAmount` instead.
      *
      * @var ?float $modifyAmount
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('modifyAmount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $modifyAmount = null;
-
-    /**
-     * Useful for marking a commission as refunded, duplicate, canceled, or fraudulent. Takes precedence over `amount` and `modifyAmount`. When a commission is marked as refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated.
-     *
-     * @var ?Status $status
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Status|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?Status $status = null;
 
     /**
      * The currency of the sale amount to update. Accepts ISO 4217 currency codes.
@@ -49,17 +78,23 @@ class UpdateCommissionRequestBody
     public ?string $currency = null;
 
     /**
+     * @param  ?float  $saleAmount
+     * @param  ?float  $modifySaleAmount
+     * @param  ?float  $earnings
+     * @param  ?string  $currency
+     * @param  ?\Dub\Models\Operations\Status  $status
      * @param  ?float  $amount
      * @param  ?float  $modifyAmount
-     * @param  ?string  $currency
-     * @param  ?Status  $status
      * @phpstan-pure
      */
-    public function __construct(?float $amount = null, ?float $modifyAmount = null, ?Status $status = null, ?string $currency = 'usd')
+    public function __construct(?float $saleAmount = null, ?float $modifySaleAmount = null, ?float $earnings = null, ?Status $status = null, ?float $amount = null, ?float $modifyAmount = null, ?string $currency = 'usd')
     {
+        $this->saleAmount = $saleAmount;
+        $this->modifySaleAmount = $modifySaleAmount;
+        $this->earnings = $earnings;
+        $this->status = $status;
         $this->amount = $amount;
         $this->modifyAmount = $modifyAmount;
-        $this->status = $status;
         $this->currency = $currency;
     }
 }

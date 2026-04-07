@@ -14,14 +14,14 @@ class UnprocessableEntity
 {
     /**
      *
-     * @var UnprocessableEntityError $error
+     * @var \Dub\Models\Errors\UnprocessableEntityError $error
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('error')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Errors\UnprocessableEntityError')]
     public UnprocessableEntityError $error;
 
     /**
-     * @param  UnprocessableEntityError  $error
+     * @param  \Dub\Models\Errors\UnprocessableEntityError  $error
      * @phpstan-pure
      */
     public function __construct(UnprocessableEntityError $error)

@@ -21,9 +21,9 @@ class CreateTagRequestBody
     public ?string $name = null;
 
     /**
-     * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown.
+     * The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, brown, gray.
      *
-     * @var ?Color $color
+     * @var ?\Dub\Models\Operations\Color $color
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('color')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Color|null')]
@@ -42,7 +42,7 @@ class CreateTagRequestBody
 
     /**
      * @param  ?string  $name
-     * @param  ?Color  $color
+     * @param  ?\Dub\Models\Operations\Color  $color
      * @param  ?string  $tag
      * @phpstan-pure
      */

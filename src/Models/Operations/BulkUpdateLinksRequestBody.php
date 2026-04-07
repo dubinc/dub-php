@@ -13,7 +13,7 @@ class BulkUpdateLinksRequestBody
 {
     /**
      *
-     * @var Data $data
+     * @var \Dub\Models\Operations\Data $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Data')]
@@ -40,7 +40,7 @@ class BulkUpdateLinksRequestBody
     public ?array $externalIds = null;
 
     /**
-     * @param  Data  $data
+     * @param  \Dub\Models\Operations\Data  $data
      * @param  ?array<string>  $linkIds
      * @param  ?array<string>  $externalIds
      * @phpstan-pure

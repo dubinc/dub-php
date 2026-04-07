@@ -298,7 +298,7 @@ class Data
     /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
-     * @var ?array<BulkUpdateLinksTestVariants> $testVariants
+     * @var ?array<\Dub\Models\Operations\BulkUpdateLinksTestVariants> $testVariants
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('testVariants')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\BulkUpdateLinksTestVariants>|null')]
@@ -365,7 +365,7 @@ class Data
      * @param  ?string  $utmContent
      * @param  ?string  $ref
      * @param  ?array<string>  $webhookIds
-     * @param  ?array<BulkUpdateLinksTestVariants>  $testVariants
+     * @param  ?array<\Dub\Models\Operations\BulkUpdateLinksTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @param  ?string  $tagId

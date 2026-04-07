@@ -94,7 +94,7 @@ class RetrieveAnalyticsRequest
     /**
      * The interval to retrieve analytics for. If undefined, defaults to 24h.
      *
-     * @var ?Interval $interval
+     * @var ?\Dub\Models\Operations\Interval $interval
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=interval')]
     public ?Interval $interval = null;
@@ -254,7 +254,7 @@ class RetrieveAnalyticsRequest
     /**
      * Filter sales by type: 'new' for first-time purchases, 'recurring' for repeat purchases. If undefined, returns both.
      *
-     * @var ?SaleType $saleType
+     * @var ?\Dub\Models\Operations\SaleType $saleType
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=saleType')]
     public ?SaleType $saleType = null;
@@ -294,7 +294,7 @@ class RetrieveAnalyticsRequest
     /**
      * The type of event to retrieve analytics for. Defaults to `clicks`.
      *
-     * @var ?Event $event
+     * @var ?\Dub\Models\Operations\Event $event
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=event')]
     public ?Event $event = null;
@@ -302,7 +302,7 @@ class RetrieveAnalyticsRequest
     /**
      * The parameter to group the analytics data points by. Defaults to `count` if undefined.
      *
-     * @var ?QueryParamGroupBy $groupBy
+     * @var ?\Dub\Models\Operations\QueryParamGroupBy $groupBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupBy')]
     public ?QueryParamGroupBy $groupBy = null;
@@ -316,8 +316,8 @@ class RetrieveAnalyticsRequest
     public ?string $timezone = null;
 
     /**
-     * @param  ?Event  $event
-     * @param  ?QueryParamGroupBy  $groupBy
+     * @param  ?\Dub\Models\Operations\Event  $event
+     * @param  ?\Dub\Models\Operations\QueryParamGroupBy  $groupBy
      * @param  ?string  $domain
      * @param  ?string  $key
      * @param  ?string  $linkId
@@ -328,7 +328,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $groupId
      * @param  ?string  $partnerId
      * @param  ?string  $customerId
-     * @param  ?Interval  $interval
+     * @param  ?\Dub\Models\Operations\Interval  $interval
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
@@ -349,7 +349,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      * @param  ?bool  $root
-     * @param  ?SaleType  $saleType
+     * @param  ?\Dub\Models\Operations\SaleType  $saleType
      * @param  ?string  $query
      * @param  ?string  $programId
      * @param  ?string  $tagIds

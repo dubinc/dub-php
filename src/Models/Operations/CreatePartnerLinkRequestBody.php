@@ -23,7 +23,7 @@ class CreatePartnerLinkRequestBody
     /**
      * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
      *
-     * @var ?CreatePartnerLinkLinkProps $linkProps
+     * @var ?\Dub\Models\Operations\CreatePartnerLinkLinkProps $linkProps
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('linkProps')]
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerLinkLinkProps|null')]
@@ -68,7 +68,7 @@ class CreatePartnerLinkRequestBody
 
     /**
      * @param  ?string  $key
-     * @param  ?CreatePartnerLinkLinkProps  $linkProps
+     * @param  ?\Dub\Models\Operations\CreatePartnerLinkLinkProps  $linkProps
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $url

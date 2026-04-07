@@ -35,7 +35,7 @@ class RetrievePartnerAnalyticsResponse
     /**
      * Partner analytics data
      *
-     * @var Components\PartnerAnalyticsCount|array<Components\PartnerAnalyticsTimeseries>|array<Components\PartnerAnalyticsTopLinks>|null $oneOf
+     * @var \Dub\Models\Components\PartnerAnalyticsCount|array<\Dub\Models\Components\PartnerAnalyticsTimeseries>|array<\Dub\Models\Components\PartnerAnalyticsTopLinks>|null $oneOf
      */
     public Components\PartnerAnalyticsCount|array|null $oneOf = null;
 
@@ -43,7 +43,7 @@ class RetrievePartnerAnalyticsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  Components\PartnerAnalyticsCount|array<Components\PartnerAnalyticsTimeseries>|array<Components\PartnerAnalyticsTopLinks>|null  $oneOf
+     * @param  \Dub\Models\Components\PartnerAnalyticsCount|array<\Dub\Models\Components\PartnerAnalyticsTimeseries>|array<\Dub\Models\Components\PartnerAnalyticsTopLinks>|null  $oneOf
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, Components\PartnerAnalyticsCount|array|null $oneOf = null)
