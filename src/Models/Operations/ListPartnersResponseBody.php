@@ -133,6 +133,14 @@ class ListPartnersResponseBody
     public ?string $trustedAt;
 
     /**
+     * The date when the partner's identity was verified.
+     *
+     * @var ?string $identityVerifiedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('identityVerifiedAt')]
+    public ?string $identityVerifiedAt;
+
+    /**
      * The partner's unique ID within your database. Can be useful for associating the partner with a user in your database and retrieving/update their data in the future.
      *
      * @var ?string $tenantId
@@ -433,6 +441,7 @@ class ListPartnersResponseBody
      * @param  ?string  $stripeConnectId
      * @param  ?string  $payoutsEnabledAt
      * @param  ?string  $trustedAt
+     * @param  ?string  $identityVerifiedAt
      * @param  ?string  $tenantId
      * @param  ?array<\Dub\Models\Operations\Links>  $links
      * @param  ?float  $totalCommissions
@@ -467,7 +476,7 @@ class ListPartnersResponseBody
      * @param  ?string  $tiktok
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, ListPartnersStatus $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, ListPartnersStatus $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -484,6 +493,7 @@ class ListPartnersResponseBody
         $this->stripeConnectId = $stripeConnectId;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
         $this->trustedAt = $trustedAt;
+        $this->identityVerifiedAt = $identityVerifiedAt;
         $this->tenantId = $tenantId;
         $this->links = $links;
         $this->description = $description;

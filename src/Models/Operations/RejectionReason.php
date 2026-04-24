@@ -9,12 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The reason for rejecting the submission. */
+/** The reason for rejecting the partner application. This will be shared with the partner via email. */
 enum RejectionReason: string
 {
-    case InvalidProof = 'invalidProof';
-    case DuplicateSubmission = 'duplicateSubmission';
-    case OutOfTimeWindow = 'outOfTimeWindow';
-    case DidNotMeetCriteria = 'didNotMeetCriteria';
+    case NeedsMoreDetail = 'needsMoreDetail';
+    case DoesNotMeetRequirements = 'doesNotMeetRequirements';
+    case NotTheRightFit = 'notTheRightFit';
     case Other = 'other';
 }

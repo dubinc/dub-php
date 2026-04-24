@@ -12,6 +12,15 @@ namespace Dub\Models\Operations;
 class UpdateCommissionRequestBody
 {
     /**
+     * The new earnings amount for the commission. Paid commissions cannot be updated. If provided, will override the earnings calculated based on the sale amount and currency.
+     *
+     * @var ?float $earnings
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $earnings = null;
+
+    /**
      * The new absolute amount for the sale. Paid commissions cannot be updated.
      *
      * @var ?float $saleAmount
@@ -28,15 +37,6 @@ class UpdateCommissionRequestBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('modifySaleAmount')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?float $modifySaleAmount = null;
-
-    /**
-     * The new absolute earnings for the custom commission. Paid commissions cannot be updated.
-     *
-     * @var ?float $earnings
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('earnings')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $earnings = null;
 
     /**
      * Useful for marking a commission as pending, refunded, duplicate, canceled, or fraudulent. Takes precedence over `saleAmount` and `modifySaleAmount`. When a commission is marked as pending, refunded, duplicate, canceled, or fraudulent, it will be omitted from the payout, and the payout amount will be recalculated accordingly. Paid commissions cannot be updated.
@@ -78,20 +78,20 @@ class UpdateCommissionRequestBody
     public ?string $currency = null;
 
     /**
+     * @param  ?float  $earnings
      * @param  ?float  $saleAmount
      * @param  ?float  $modifySaleAmount
-     * @param  ?float  $earnings
      * @param  ?string  $currency
      * @param  ?\Dub\Models\Operations\Status  $status
      * @param  ?float  $amount
      * @param  ?float  $modifyAmount
      * @phpstan-pure
      */
-    public function __construct(?float $saleAmount = null, ?float $modifySaleAmount = null, ?float $earnings = null, ?Status $status = null, ?float $amount = null, ?float $modifyAmount = null, ?string $currency = 'usd')
+    public function __construct(?float $earnings = null, ?float $saleAmount = null, ?float $modifySaleAmount = null, ?Status $status = null, ?float $amount = null, ?float $modifyAmount = null, ?string $currency = 'usd')
     {
+        $this->earnings = $earnings;
         $this->saleAmount = $saleAmount;
         $this->modifySaleAmount = $modifySaleAmount;
-        $this->earnings = $earnings;
         $this->status = $status;
         $this->amount = $amount;
         $this->modifyAmount = $modifyAmount;

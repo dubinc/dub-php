@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
+/** The reason for banning the partner. */
 enum Reason: string
 {
     case TosViolation = 'tos_violation';
