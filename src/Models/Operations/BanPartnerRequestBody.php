@@ -12,6 +12,7 @@ namespace Dub\Models\Operations;
 class BanPartnerRequestBody
 {
     /**
+     * The reason for banning the partner.
      *
      * @var \Dub\Models\Operations\Reason $reason
      */

@@ -14,12 +14,12 @@ class RejectBountySubmissionRequestBody
     /**
      * The reason for rejecting the submission.
      *
-     * @var ?\Dub\Models\Operations\RejectionReason $rejectionReason
+     * @var ?\Dub\Models\Operations\RejectBountySubmissionRejectionReason $rejectionReason
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('rejectionReason')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\RejectionReason|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\RejectBountySubmissionRejectionReason|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?RejectionReason $rejectionReason = null;
+    public ?RejectBountySubmissionRejectionReason $rejectionReason = null;
 
     /**
      * The note for rejecting the submission.
@@ -31,11 +31,11 @@ class RejectBountySubmissionRequestBody
     public ?string $rejectionNote = null;
 
     /**
-     * @param  ?\Dub\Models\Operations\RejectionReason  $rejectionReason
+     * @param  ?\Dub\Models\Operations\RejectBountySubmissionRejectionReason  $rejectionReason
      * @param  ?string  $rejectionNote
      * @phpstan-pure
      */
-    public function __construct(?RejectionReason $rejectionReason = null, ?string $rejectionNote = null)
+    public function __construct(?RejectBountySubmissionRejectionReason $rejectionReason = null, ?string $rejectionNote = null)
     {
         $this->rejectionReason = $rejectionReason;
         $this->rejectionNote = $rejectionNote;

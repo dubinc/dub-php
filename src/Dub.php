@@ -36,6 +36,8 @@ class Dub
 
     public Partners $partners;
 
+    public PartnerApplications $partnerApplications;
+
     public Commissions $commissions;
 
     public Payouts $payouts;
@@ -71,6 +73,7 @@ class Dub
         $this->track = new Track($this->sdkConfiguration);
         $this->customers = new Customers($this->sdkConfiguration);
         $this->partners = new Partners($this->sdkConfiguration);
+        $this->partnerApplications = new PartnerApplications($this->sdkConfiguration);
         $this->commissions = new Commissions($this->sdkConfiguration);
         $this->payouts = new Payouts($this->sdkConfiguration);
         $this->embedTokens = new EmbedTokens($this->sdkConfiguration);

@@ -20,6 +20,15 @@ class ResponseBodySale
     public int $amount;
 
     /**
+     * The currency of the sale. Accepts ISO 4217 currency codes. Sales will be automatically converted and stored as USD at the latest exchange rates. Learn more: https://d.to/currency
+     *
+     * @var mixed $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\Type('mixed')]
+    public mixed $currency;
+
+    /**
      * The payment processor via which the sale was made.
      *
      * @var ?\Dub\Models\Operations\ResponseBodyPaymentProcessor $paymentProcessor
@@ -40,13 +49,15 @@ class ResponseBodySale
 
     /**
      * @param  int  $amount
+     * @param  mixed  $currency
      * @param  ?\Dub\Models\Operations\ResponseBodyPaymentProcessor  $paymentProcessor
      * @param  ?string  $invoiceId
      * @phpstan-pure
      */
-    public function __construct(int $amount, ?ResponseBodyPaymentProcessor $paymentProcessor = ResponseBodyPaymentProcessor::Custom, ?string $invoiceId = null)
+    public function __construct(int $amount, mixed $currency, ?ResponseBodyPaymentProcessor $paymentProcessor = ResponseBodyPaymentProcessor::Custom, ?string $invoiceId = null)
     {
         $this->amount = $amount;
+        $this->currency = $currency;
         $this->paymentProcessor = $paymentProcessor;
         $this->invoiceId = $invoiceId;
     }
