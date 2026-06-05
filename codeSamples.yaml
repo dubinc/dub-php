@@ -33,6 +33,12 @@ actions:
         - "lang": "php"
           "label": "listCommissions"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListCommissionsRequest(\n    endingBefore: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',\n    startingAfter: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',\n    page: 1,\n    pageSize: 50,\n);\n\n$responses = $sdk->commissions->list(\n    request: $request\n);\n\n\nforeach ($responses as $response) {\n    if ($response->statusCode === 200) {\n        // handle response\n    }\n}"
+  - target: $["paths"]["/commissions"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "createCommission"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->commissions->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/commissions/bulk"]["patch"]
     update:
       "x-codeSamples":
@@ -223,14 +229,14 @@ actions:
     update:
       "x-codeSamples":
         - "lang": "php"
-          "label": "approvePartner"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ApprovePartnerRequestBody(\n    partnerId: '<id>',\n);\n\n$response = $sdk->partnerApplications->approve(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "label": "approvePartnerApplication"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ApprovePartnerApplicationRequestBody(\n    partnerId: '<id>',\n);\n\n$response = $sdk->partnerApplications->approve(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/applications/reject"]["post"]
     update:
       "x-codeSamples":
         - "lang": "php"
-          "label": "rejectPartner"
-          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RejectPartnerRequestBody(\n    partnerId: '<id>',\n);\n\n$response = $sdk->partnerApplications->reject(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+          "label": "rejectPartnerApplication"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\RejectPartnerApplicationRequestBody(\n    partnerId: '<id>',\n);\n\n$response = $sdk->partnerApplications->reject(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/ban"]["post"]
     update:
       "x-codeSamples":
@@ -247,7 +253,7 @@ actions:
     update:
       "x-codeSamples":
         - "lang": "php"
-          "label": "retrieveLinks"
+          "label": "retrievePartnerLinks"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->partners->retrieveLinks(\n\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners/links"]["post"]
     update:

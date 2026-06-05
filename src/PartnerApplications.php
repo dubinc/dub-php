@@ -49,11 +49,11 @@ class PartnerApplications
      *
      * Approve a pending partner application to your program. The partner will be enrolled in the specified group and notified of the approval.
      *
-     * @param  \Dub\Models\Operations\ApprovePartnerRequestBody  $request
-     * @return \Dub\Models\Operations\ApprovePartnerResponse
+     * @param  \Dub\Models\Operations\ApprovePartnerApplicationRequestBody  $request
+     * @return \Dub\Models\Operations\ApprovePartnerApplicationResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function approve(Operations\ApprovePartnerRequestBody $request, ?Options $options = null): Operations\ApprovePartnerResponse
+    public function approve(Operations\ApprovePartnerApplicationRequestBody $request, ?Options $options = null): Operations\ApprovePartnerApplicationResponse
     {
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/partners/applications/approve');
@@ -67,7 +67,7 @@ class PartnerApplications
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'approvePartner', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'approvePartnerApplication', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -91,8 +91,8 @@ class PartnerApplications
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\ApprovePartnerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\ApprovePartnerResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\ApprovePartnerApplicationResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\ApprovePartnerApplicationResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
@@ -388,11 +388,11 @@ class PartnerApplications
      *
      * Reject a pending partner application to your program. The partner will be notified via email that their application was not approved.
      *
-     * @param  \Dub\Models\Operations\RejectPartnerRequestBody  $request
-     * @return \Dub\Models\Operations\RejectPartnerResponse
+     * @param  \Dub\Models\Operations\RejectPartnerApplicationRequestBody  $request
+     * @return \Dub\Models\Operations\RejectPartnerApplicationResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function reject(Operations\RejectPartnerRequestBody $request, ?Options $options = null): Operations\RejectPartnerResponse
+    public function reject(Operations\RejectPartnerApplicationRequestBody $request, ?Options $options = null): Operations\RejectPartnerApplicationResponse
     {
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/partners/applications/reject');
@@ -406,7 +406,7 @@ class PartnerApplications
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'rejectPartner', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'rejectPartnerApplication', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
         $httpRequest = Utils\Utils::removeHeaders($httpRequest);
@@ -430,8 +430,8 @@ class PartnerApplications
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\RejectPartnerResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\RejectPartnerResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Operations\RejectPartnerApplicationResponseBody', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\RejectPartnerApplicationResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,

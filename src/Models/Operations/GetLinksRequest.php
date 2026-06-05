@@ -116,30 +116,6 @@ class GetLinksRequest
     public ?bool $withTags = null;
 
     /**
-     * The field to sort the links by. The default is `createdAt`.
-     *
-     * @var ?\Dub\Models\Operations\SortBy $sortBy
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
-    public ?SortBy $sortBy = null;
-
-    /**
-     * The sort order. The default is `desc`.
-     *
-     * @var ?\Dub\Models\Operations\SortOrder $sortOrder
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
-    public ?SortOrder $sortOrder = null;
-
-    /**
-     * DEPRECATED. Use `sortBy` instead.
-     *
-     * @var ?\Dub\Models\Operations\Sort $sort
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sort')]
-    public ?Sort $sort = null;
-
-    /**
      * The number of items per page.
      *
      * @var ?float $pageSize
@@ -158,16 +134,13 @@ class GetLinksRequest
      * @param  ?string  $tenantId
      * @param  ?bool  $showArchived
      * @param  ?bool  $withTags
-     * @param  ?\Dub\Models\Operations\SortBy  $sortBy
-     * @param  ?\Dub\Models\Operations\SortOrder  $sortOrder
-     * @param  ?\Dub\Models\Operations\Sort  $sort
      * @param  ?string  $endingBefore
      * @param  ?string  $startingAfter
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?bool $showArchived = false, ?bool $withTags = false, ?SortBy $sortBy = SortBy::CreatedAt, ?SortOrder $sortOrder = SortOrder::Desc, ?Sort $sort = Sort::CreatedAt, ?float $pageSize = 100)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?bool $showArchived = false, ?bool $withTags = false, ?float $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;
@@ -182,9 +155,6 @@ class GetLinksRequest
         $this->page = $page;
         $this->showArchived = $showArchived;
         $this->withTags = $withTags;
-        $this->sortBy = $sortBy;
-        $this->sortOrder = $sortOrder;
-        $this->sort = $sort;
         $this->pageSize = $pageSize;
     }
 }

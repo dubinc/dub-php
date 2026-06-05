@@ -12,6 +12,7 @@ use Dub\Utils\SpeakeasyMetadata;
 class ListCommissionsRequest
 {
     /**
+     * Filter the list of commissions by type. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `sale`, `sale,lead`, `-click`.
      *
      * @var ?\Dub\Models\Operations\Type $type
      */
@@ -35,7 +36,7 @@ class ListCommissionsRequest
     public ?string $payoutId = null;
 
     /**
-     * Filter the list of commissions by the associated partner. When specified, takes precedence over `tenantId`.
+     * Filter the list of commissions by the associated partner. When specified, takes precedence over `tenantId`. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `partner_abc`, `partner_abc,partner_xyz`, `-partner_abc`.
      *
      * @var ?string $partnerId
      */
@@ -51,12 +52,20 @@ class ListCommissionsRequest
     public ?string $tenantId = null;
 
     /**
-     * Filter the list of commissions by the associated partner group.
+     * Filter the list of commissions by the associated partner group. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `group_abc`, `group_abc,group_xyz`, `-group_abc`.
      *
      * @var ?string $groupId
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
     public ?string $groupId = null;
+
+    /**
+     * Filter the list of commissions by the associated partner tag. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `ptag_abc`, `ptag_abc,ptag_xyz`, `-ptag_abc`.
+     *
+     * @var ?string $partnerTagId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerTagId')]
+    public ?string $partnerTagId = null;
 
     /**
      * Filter the list of commissions by the associated invoice. Since invoiceId is unique on a per-program basis, this will only return one commission per invoice.
@@ -160,6 +169,7 @@ class ListCommissionsRequest
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $groupId
+     * @param  ?string  $partnerTagId
      * @param  ?string  $invoiceId
      * @param  ?\Dub\Models\Operations\QueryParamStatus  $status
      * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamSortBy  $sortBy
@@ -174,7 +184,7 @@ class ListCommissionsRequest
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $partnerTagId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?float $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
@@ -182,6 +192,7 @@ class ListCommissionsRequest
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->groupId = $groupId;
+        $this->partnerTagId = $partnerTagId;
         $this->invoiceId = $invoiceId;
         $this->status = $status;
         $this->start = $start;

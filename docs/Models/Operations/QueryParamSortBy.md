@@ -1,10 +1,11 @@
 # QueryParamSortBy
 
-The field to sort the events by. The default is `timestamp`.
+The field to sort the tags by.
 
 
 ## Values
 
 | Name        | Value       |
 | ----------- | ----------- |
-| `Timestamp` | timestamp   |
+| `Name`      | name        |
+| `CreatedAt` | createdAt   |

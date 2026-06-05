@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** The sort order. The default is `desc`. */
+/** The order to sort the tags by. */
 enum QueryParamSortOrder: string
 {
     case Asc = 'asc';

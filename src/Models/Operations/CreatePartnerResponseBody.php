@@ -29,6 +29,15 @@ class CreatePartnerResponseBody
     public string $name;
 
     /**
+     * The partner's network status on Dub.
+     *
+     * @var \Dub\Models\Operations\CreatePartnerNetworkStatus $networkStatus
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('networkStatus')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\CreatePartnerNetworkStatus')]
+    public CreatePartnerNetworkStatus $networkStatus;
+
+    /**
      * The program's unique ID on Dub.
      *
      * @var string $programId
@@ -61,12 +70,12 @@ class CreatePartnerResponseBody
     public CreatePartnerStatus $status;
 
     /**
-     * If the partner profile type is a company, this is the partner's legal company name.
+     * The partner's unique username on Dub.
      *
-     * @var ?string $companyName
+     * @var ?string $username
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('companyName')]
-    public ?string $companyName;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('username')]
+    public ?string $username;
 
     /**
      * The partner's email address. Should be a unique value across Dub.
@@ -91,6 +100,14 @@ class CreatePartnerResponseBody
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
     public ?string $country;
+
+    /**
+     * If the partner profile type is a company, this is the partner's legal company name.
+     *
+     * @var ?string $companyName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('companyName')]
+    public ?string $companyName;
 
     /**
      * The partner's default payout method. Connect: Bank account payouts via Stripe Connect; Stablecoin: USDC payouts directly to a crypto wallet; PayPal: Payouts via PayPal
@@ -126,14 +143,6 @@ class CreatePartnerResponseBody
     public ?string $payoutsEnabledAt;
 
     /**
-     * The date when the partner received the trusted badge in the partner network.
-     *
-     * @var ?string $trustedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('trustedAt')]
-    public ?string $trustedAt;
-
-    /**
      * The date when the partner's identity was verified.
      *
      * @var ?string $identityVerifiedAt
@@ -157,6 +166,16 @@ class CreatePartnerResponseBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('links')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerLinks>|null')]
     public ?array $links;
+
+    /**
+     * The tags associated with the partner.
+     *
+     * @var ?array<\Dub\Models\Operations\CreatePartnerTags> $tags
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tags')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Operations\CreatePartnerTags>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tags = null;
 
     /**
      * A brief description of the partner and their background.
@@ -199,6 +218,14 @@ class CreatePartnerResponseBody
     #[\Speakeasy\Serializer\Annotation\SerializedName('saleRewardId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $saleRewardId = null;
+
+    /**
+     *
+     * @var ?string $referralRewardId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('referralRewardId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $referralRewardId = null;
 
     /**
      *
@@ -364,6 +391,16 @@ class CreatePartnerResponseBody
     public ?string $tiktok = null;
 
     /**
+     * DEPRECATED: Use `networkStatus` instead.
+     *
+     * @var ?string $trustedAt
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('trustedAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $trustedAt = null;
+
+    /**
      * The total commissions paid to the partner for their referrals
      *
      * @var ?float $totalCommissions
@@ -429,23 +466,25 @@ class CreatePartnerResponseBody
     /**
      * @param  string  $id
      * @param  string  $name
+     * @param  \Dub\Models\Operations\CreatePartnerNetworkStatus  $networkStatus
      * @param  string  $programId
      * @param  string  $partnerId
      * @param  string  $createdAt
      * @param  \Dub\Models\Operations\CreatePartnerStatus  $status
-     * @param  ?string  $companyName
+     * @param  ?string  $username
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $country
+     * @param  ?string  $companyName
      * @param  ?\Dub\Models\Operations\CreatePartnerDefaultPayoutMethod  $defaultPayoutMethod
      * @param  ?string  $paypalEmail
      * @param  ?string  $stripeConnectId
      * @param  ?string  $payoutsEnabledAt
-     * @param  ?string  $trustedAt
      * @param  ?string  $identityVerifiedAt
      * @param  ?string  $tenantId
      * @param  ?array<\Dub\Models\Operations\CreatePartnerLinks>  $links
      * @param  ?float  $totalCommissions
+     * @param  ?array<\Dub\Models\Operations\CreatePartnerTags>  $tags
      * @param  ?float  $totalClicks
      * @param  ?float  $totalLeads
      * @param  ?float  $totalConversions
@@ -457,6 +496,7 @@ class CreatePartnerResponseBody
      * @param  ?string  $clickRewardId
      * @param  ?string  $leadRewardId
      * @param  ?string  $saleRewardId
+     * @param  ?string  $referralRewardId
      * @param  ?string  $discountId
      * @param  ?string  $applicationId
      * @param  ?string  $bannedAt
@@ -475,33 +515,37 @@ class CreatePartnerResponseBody
      * @param  ?string  $linkedin
      * @param  ?string  $instagram
      * @param  ?string  $tiktok
+     * @param  ?string  $trustedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $programId, string $partnerId, string $createdAt, CreatePartnerStatus $status, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?CreatePartnerDefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $trustedAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?CreatePartnerBannedReason $bannedReason = null, ?CreatePartnerReferralFormData $referralFormData = null, ?CreatePartnerApplication $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, CreatePartnerNetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, CreatePartnerStatus $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?CreatePartnerDefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?CreatePartnerBannedReason $bannedReason = null, ?CreatePartnerReferralFormData $referralFormData = null, ?CreatePartnerApplication $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->networkStatus = $networkStatus;
         $this->programId = $programId;
         $this->partnerId = $partnerId;
         $this->createdAt = $createdAt;
         $this->status = $status;
-        $this->companyName = $companyName;
+        $this->username = $username;
         $this->email = $email;
         $this->image = $image;
         $this->country = $country;
+        $this->companyName = $companyName;
         $this->defaultPayoutMethod = $defaultPayoutMethod;
         $this->paypalEmail = $paypalEmail;
         $this->stripeConnectId = $stripeConnectId;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
-        $this->trustedAt = $trustedAt;
         $this->identityVerifiedAt = $identityVerifiedAt;
         $this->tenantId = $tenantId;
         $this->links = $links;
+        $this->tags = $tags;
         $this->description = $description;
         $this->groupId = $groupId;
         $this->clickRewardId = $clickRewardId;
         $this->leadRewardId = $leadRewardId;
         $this->saleRewardId = $saleRewardId;
+        $this->referralRewardId = $referralRewardId;
         $this->discountId = $discountId;
         $this->applicationId = $applicationId;
         $this->bannedAt = $bannedAt;
@@ -520,6 +564,7 @@ class CreatePartnerResponseBody
         $this->linkedin = $linkedin;
         $this->instagram = $instagram;
         $this->tiktok = $tiktok;
+        $this->trustedAt = $trustedAt;
         $this->totalCommissions = $totalCommissions;
         $this->totalClicks = $totalClicks;
         $this->totalLeads = $totalLeads;

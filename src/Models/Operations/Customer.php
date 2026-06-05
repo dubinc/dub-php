@@ -9,48 +9,77 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
+/** Customer - The full customer object to associate the commission with. Useful for creating the customer on demand. */
 class Customer
 {
     /**
+     * The customer's unique identifier your database. This is useful for associating subsequent conversion events from Dub's API to your internal systems.
      *
-     * @var ?string $name
+     * @var string $externalId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public ?string $name;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
+    public string $externalId;
 
     /**
+     * The customer's country in ISO 3166-1 alpha-2 format. Updating this field will only affect the customer's country in Dub's system (and has no effect on existing conversion events).
+     *
+     * @var string $country
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('country')]
+    public string $country;
+
+    /**
+     * The customer's email address.
      *
      * @var ?string $email
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('email')]
-    public ?string $email;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $email = null;
 
     /**
+     * The customer's name. If not provided, the email address will be used, and if email is not provided, a random name will be generated.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
+
+    /**
+     * The customer's avatar URL. If not provided, a random avatar will be generated.
      *
      * @var ?string $avatar
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('avatar')]
-    public ?string $avatar;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $avatar = null;
 
     /**
+     * The customer's Stripe customer ID. This is useful for attributing recurring sale events to the partner who referred the customer.
      *
-     * @var ?string $externalId
+     * @var ?string $stripeCustomerId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('externalId')]
-    public ?string $externalId;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeCustomerId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $stripeCustomerId = null;
 
     /**
-     * @param  ?string  $name
+     * @param  string  $externalId
+     * @param  string  $country
      * @param  ?string  $email
+     * @param  ?string  $name
      * @param  ?string  $avatar
-     * @param  ?string  $externalId
+     * @param  ?string  $stripeCustomerId
      * @phpstan-pure
      */
-    public function __construct(?string $name = null, ?string $email = null, ?string $avatar = null, ?string $externalId = null)
+    public function __construct(string $externalId, string $country, ?string $email = null, ?string $name = null, ?string $avatar = null, ?string $stripeCustomerId = null)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->avatar = $avatar;
         $this->externalId = $externalId;
+        $this->country = $country;
+        $this->email = $email;
+        $this->name = $name;
+        $this->avatar = $avatar;
+        $this->stripeCustomerId = $stripeCustomerId;
     }
 }

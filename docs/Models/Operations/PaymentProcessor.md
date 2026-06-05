@@ -11,5 +11,7 @@ The payment processor via which the sale was made.
 | `Shopify`    | shopify      |
 | `Polar`      | polar        |
 | `Paddle`     | paddle       |
+| `Apple`      | apple        |
 | `Revenuecat` | revenuecat   |
+| `Dub`        | dub          |
 | `Custom`     | custom       |

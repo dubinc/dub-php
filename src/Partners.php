@@ -869,31 +869,26 @@ class Partners
     }
 
     /**
-     * Retrieve a partner's links.
+     * Retrieve analytics for a partner
      *
-     * Retrieve a partner's links by their partner ID or tenant ID.
+     * Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
      *
-     * @param  ?string  $partnerId
-     * @param  ?string  $tenantId
-     * @return \Dub\Models\Operations\RetrieveLinksResponse
+     * @param  ?\Dub\Models\Operations\RetrievePartnerAnalyticsRequest  $request
+     * @return \Dub\Models\Operations\RetrievePartnerAnalyticsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function retrieveLinks(?string $partnerId = null, ?string $tenantId = null, ?Options $options = null): Operations\RetrieveLinksResponse
+    public function analytics(?Operations\RetrievePartnerAnalyticsRequest $request = null, ?Options $options = null): Operations\RetrievePartnerAnalyticsResponse
     {
-        $request = new Operations\RetrieveLinksRequest(
-            partnerId: $partnerId,
-            tenantId: $tenantId,
-        );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/partners/links');
+        $url = Utils\Utils::generateUrl($baseUrl, '/partners/analytics');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\RetrieveLinksRequest::class, $request, $urlOverride);
+        $qp = Utils\Utils::getQueryParams(Operations\RetrievePartnerAnalyticsRequest::class, $request, $urlOverride);
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'retrieveLinks', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'retrievePartnerAnalytics', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -918,12 +913,12 @@ class Partners
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Operations\RetrieveLinksResponseBody>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\RetrieveLinksResponse(
+                $obj = $serializer->deserialize($responseData, '\Dub\Models\Components\PartnerAnalyticsCount|array<\Dub\Models\Components\PartnerAnalyticsTimeseries>|array<\Dub\Models\Components\PartnerAnalyticsTopLinks>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\RetrievePartnerAnalyticsResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    responseBodies: $obj);
+                    oneOf: $obj);
 
                 return $response;
             } else {
@@ -1038,26 +1033,31 @@ class Partners
     }
 
     /**
-     * Retrieve analytics for a partner
+     * Retrieve a partner's links.
      *
-     * Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
+     * Retrieve a partner's links by their partner ID or tenant ID.
      *
-     * @param  ?\Dub\Models\Operations\RetrievePartnerAnalyticsRequest  $request
-     * @return \Dub\Models\Operations\RetrievePartnerAnalyticsResponse
+     * @param  ?string  $partnerId
+     * @param  ?string  $tenantId
+     * @return \Dub\Models\Operations\RetrievePartnerLinksResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function analytics(?Operations\RetrievePartnerAnalyticsRequest $request = null, ?Options $options = null): Operations\RetrievePartnerAnalyticsResponse
+    public function retrieveLinks(?string $partnerId = null, ?string $tenantId = null, ?Options $options = null): Operations\RetrievePartnerLinksResponse
     {
+        $request = new Operations\RetrievePartnerLinksRequest(
+            partnerId: $partnerId,
+            tenantId: $tenantId,
+        );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/partners/analytics');
+        $url = Utils\Utils::generateUrl($baseUrl, '/partners/links');
         $urlOverride = null;
         $httpOptions = ['http_errors' => false];
 
-        $qp = Utils\Utils::getQueryParams(Operations\RetrievePartnerAnalyticsRequest::class, $request, $urlOverride);
+        $qp = Utils\Utils::getQueryParams(Operations\RetrievePartnerLinksRequest::class, $request, $urlOverride);
         $httpOptions['headers']['Accept'] = 'application/json';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
-        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'retrievePartnerAnalytics', null, $this->sdkConfiguration->securitySource);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'retrievePartnerLinks', null, $this->sdkConfiguration->securitySource);
         $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
         $httpOptions['query'] = Utils\QueryParameters::standardizeQueryParams($httpRequest, $qp);
         $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
@@ -1082,12 +1082,12 @@ class Partners
 
                 $serializer = Utils\JSON::createSerializer();
                 $responseData = (string) $httpResponse->getBody();
-                $obj = $serializer->deserialize($responseData, '\Dub\Models\Components\PartnerAnalyticsCount|array<\Dub\Models\Components\PartnerAnalyticsTimeseries>|array<\Dub\Models\Components\PartnerAnalyticsTopLinks>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
-                $response = new Operations\RetrievePartnerAnalyticsResponse(
+                $obj = $serializer->deserialize($responseData, 'array<\Dub\Models\Operations\RetrievePartnerLinksResponseBody>', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\RetrievePartnerLinksResponse(
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    oneOf: $obj);
+                    responseBodies: $obj);
 
                 return $response;
             } else {

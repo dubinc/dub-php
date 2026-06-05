@@ -68,6 +68,14 @@ class ListEventsRequest
     public ?string $folderId = null;
 
     /**
+     * The partner tag ID(s) to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `ptag_123`, `ptag_123,ptag_456`, `-ptag_789`.
+     *
+     * @var ?string $partnerTagId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerTagId')]
+    public ?string $partnerTagId = null;
+
+    /**
      * The group ID to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `grp_123`, `grp_123,grp_456`, `-grp_789`.
      *
      * @var ?string $groupId
@@ -324,18 +332,18 @@ class ListEventsRequest
     /**
      * The sort order. The default is `desc`.
      *
-     * @var ?\Dub\Models\Operations\QueryParamSortOrder $sortOrder
+     * @var ?\Dub\Models\Operations\SortOrder $sortOrder
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortOrder')]
-    public ?QueryParamSortOrder $sortOrder = null;
+    public ?SortOrder $sortOrder = null;
 
     /**
      * The field to sort the events by. The default is `timestamp`.
      *
-     * @var ?\Dub\Models\Operations\QueryParamSortBy $sortBy
+     * @var ?\Dub\Models\Operations\SortBy $sortBy
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=sortBy')]
-    public ?QueryParamSortBy $sortBy = null;
+    public ?SortBy $sortBy = null;
 
     /**
      * DEPRECATED. Use `sortOrder` instead.
@@ -354,6 +362,7 @@ class ListEventsRequest
      * @param  ?string  $tenantId
      * @param  ?string  $tagId
      * @param  ?string  $folderId
+     * @param  ?string  $partnerTagId
      * @param  ?string  $groupId
      * @param  ?string  $partnerId
      * @param  ?string  $customerId
@@ -385,12 +394,12 @@ class ListEventsRequest
      * @param  ?bool  $qr
      * @param  ?float  $page
      * @param  ?float  $limit
-     * @param  ?\Dub\Models\Operations\QueryParamSortOrder  $sortOrder
-     * @param  ?\Dub\Models\Operations\QueryParamSortBy  $sortBy
+     * @param  ?\Dub\Models\Operations\SortOrder  $sortOrder
+     * @param  ?\Dub\Models\Operations\SortBy  $sortBy
      * @param  ?\Dub\Models\Operations\Order  $order
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?QueryParamSortOrder $sortOrder = QueryParamSortOrder::Desc, ?QueryParamSortBy $sortBy = QueryParamSortBy::Timestamp, ?Order $order = Order::Desc)
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $partnerTagId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?QueryParamInterval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?QueryParamSaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?QueryParamEvent $event = QueryParamEvent::Clicks, ?string $timezone = 'UTC', ?float $page = 1, ?float $limit = 100, ?SortOrder $sortOrder = SortOrder::Desc, ?SortBy $sortBy = SortBy::Timestamp, ?Order $order = Order::Desc)
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -399,6 +408,7 @@ class ListEventsRequest
         $this->tenantId = $tenantId;
         $this->tagId = $tagId;
         $this->folderId = $folderId;
+        $this->partnerTagId = $partnerTagId;
         $this->groupId = $groupId;
         $this->partnerId = $partnerId;
         $this->customerId = $customerId;
