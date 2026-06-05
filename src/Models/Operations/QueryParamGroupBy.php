@@ -33,6 +33,7 @@ enum QueryParamGroupBy: string
     case TopBaseUrls = 'top_base_urls';
     case TopPartners = 'top_partners';
     case TopGroups = 'top_groups';
+    case TopPartnerTags = 'top_partner_tags';
     case UtmSources = 'utm_sources';
     case UtmMediums = 'utm_mediums';
     case UtmCampaigns = 'utm_campaigns';

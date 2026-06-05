@@ -22,11 +22,11 @@ class TrackLeadResponseBody
 
     /**
      *
-     * @var \Dub\Models\Operations\Customer $customer
+     * @var \Dub\Models\Operations\TrackLeadCustomer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Customer')]
-    public Customer $customer;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackLeadCustomer')]
+    public TrackLeadCustomer $customer;
 
     /**
      *
@@ -38,11 +38,11 @@ class TrackLeadResponseBody
 
     /**
      * @param  \Dub\Models\Operations\Click  $click
-     * @param  \Dub\Models\Operations\Customer  $customer
+     * @param  \Dub\Models\Operations\TrackLeadCustomer  $customer
      * @param  ?\Dub\Models\Operations\Link  $link
      * @phpstan-pure
      */
-    public function __construct(Click $click, Customer $customer, ?Link $link = null)
+    public function __construct(Click $click, TrackLeadCustomer $customer, ?Link $link = null)
     {
         $this->click = $click;
         $this->customer = $customer;

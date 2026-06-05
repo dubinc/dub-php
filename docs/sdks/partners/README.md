@@ -160,7 +160,7 @@ Retrieve a partner's links by their partner ID or tenant ID.
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="retrieveLinks" method="get" path="/partners/links" -->
+<!-- UsageSnippet language="php" operationID="retrievePartnerLinks" method="get" path="/partners/links" -->
 ```php
 declare(strict_types=1);
 
@@ -194,7 +194,7 @@ if ($response->responseBodies !== null) {
 
 ### Response
 
-**[?Operations\RetrieveLinksResponse](../../Models/Operations/RetrieveLinksResponse.md)**
+**[?Operations\RetrievePartnerLinksResponse](../../Models/Operations/RetrievePartnerLinksResponse.md)**
 
 ### Errors
 

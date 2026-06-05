@@ -14,5 +14,6 @@ enum UpdateCommissionType: string
     case Click = 'click';
     case Lead = 'lead';
     case Sale = 'sale';
+    case Referral = 'referral';
     case Custom = 'custom';
 }

@@ -16,6 +16,8 @@ enum ResponseBodyPaymentProcessor: string
     case Shopify = 'shopify';
     case Polar = 'polar';
     case Paddle = 'paddle';
+    case Apple = 'apple';
     case Revenuecat = 'revenuecat';
+    case Dub = 'dub';
     case Custom = 'custom';
 }

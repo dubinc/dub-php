@@ -77,7 +77,7 @@ Approve a pending partner application to your program. The partner will be enrol
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="approvePartner" method="post" path="/partners/applications/approve" -->
+<!-- UsageSnippet language="php" operationID="approvePartnerApplication" method="post" path="/partners/applications/approve" -->
 ```php
 declare(strict_types=1);
 
@@ -92,7 +92,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\ApprovePartnerRequestBody(
+$request = new Operations\ApprovePartnerApplicationRequestBody(
     partnerId: '<id>',
 );
 
@@ -107,13 +107,13 @@ if ($response->object !== null) {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `$request`                                                                                   | [Operations\ApprovePartnerRequestBody](../../Models/Operations/ApprovePartnerRequestBody.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                         | [Operations\ApprovePartnerApplicationRequestBody](../../Models/Operations/ApprovePartnerApplicationRequestBody.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 ### Response
 
-**[?Operations\ApprovePartnerResponse](../../Models/Operations/ApprovePartnerResponse.md)**
+**[?Operations\ApprovePartnerApplicationResponse](../../Models/Operations/ApprovePartnerApplicationResponse.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ Reject a pending partner application to your program. The partner will be notifi
 
 ### Example Usage
 
-<!-- UsageSnippet language="php" operationID="rejectPartner" method="post" path="/partners/applications/reject" -->
+<!-- UsageSnippet language="php" operationID="rejectPartnerApplication" method="post" path="/partners/applications/reject" -->
 ```php
 declare(strict_types=1);
 
@@ -151,7 +151,7 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-$request = new Operations\RejectPartnerRequestBody(
+$request = new Operations\RejectPartnerApplicationRequestBody(
     partnerId: '<id>',
 );
 
@@ -166,13 +166,13 @@ if ($response->object !== null) {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `$request`                                                                                 | [Operations\RejectPartnerRequestBody](../../Models/Operations/RejectPartnerRequestBody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [Operations\RejectPartnerApplicationRequestBody](../../Models/Operations/RejectPartnerApplicationRequestBody.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 ### Response
 
-**[?Operations\RejectPartnerResponse](../../Models/Operations/RejectPartnerResponse.md)**
+**[?Operations\RejectPartnerApplicationResponse](../../Models/Operations/RejectPartnerApplicationResponse.md)**
 
 ### Errors
 

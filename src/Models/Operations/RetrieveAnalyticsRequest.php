@@ -68,6 +68,14 @@ class RetrieveAnalyticsRequest
     public ?string $folderId = null;
 
     /**
+     * The partner tag ID(s) to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `ptag_123`, `ptag_123,ptag_456`, `-ptag_789`.
+     *
+     * @var ?string $partnerTagId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerTagId')]
+    public ?string $partnerTagId = null;
+
+    /**
      * The group ID to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `grp_123`, `grp_123,grp_456`, `-grp_789`.
      *
      * @var ?string $groupId
@@ -325,6 +333,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $tenantId
      * @param  ?string  $tagId
      * @param  ?string  $folderId
+     * @param  ?string  $partnerTagId
      * @param  ?string  $groupId
      * @param  ?string  $partnerId
      * @param  ?string  $customerId
@@ -356,7 +365,7 @@ class RetrieveAnalyticsRequest
      * @param  ?bool  $qr
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $partnerTagId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -365,6 +374,7 @@ class RetrieveAnalyticsRequest
         $this->tenantId = $tenantId;
         $this->tagId = $tagId;
         $this->folderId = $folderId;
+        $this->partnerTagId = $partnerTagId;
         $this->groupId = $groupId;
         $this->partnerId = $partnerId;
         $this->customerId = $customerId;

@@ -20,14 +20,6 @@ class ListCommissionsCustomer
     public string $id;
 
     /**
-     * Name of the customer.
-     *
-     * @var string $name
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
-    public string $name;
-
-    /**
      * Unique identifier for the customer in the client's app.
      *
      * @var string $externalId
@@ -42,6 +34,15 @@ class ListCommissionsCustomer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('createdAt')]
     public string $createdAt;
+
+    /**
+     * Name of the customer.
+     *
+     * @var ?string $name
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('name')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $name = null;
 
     /**
      * Email of the customer.
@@ -117,9 +118,9 @@ class ListCommissionsCustomer
 
     /**
      * @param  string  $id
-     * @param  string  $name
      * @param  string  $externalId
      * @param  string  $createdAt
+     * @param  ?string  $name
      * @param  ?string  $email
      * @param  ?string  $avatar
      * @param  ?string  $stripeCustomerId
@@ -130,12 +131,12 @@ class ListCommissionsCustomer
      * @param  ?string  $subscriptionCanceledAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, string $externalId, string $createdAt, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?string $firstSaleAt = null, ?string $subscriptionCanceledAt = null)
+    public function __construct(string $id, string $externalId, string $createdAt, ?string $name = null, ?string $email = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $country = null, ?float $sales = null, ?float $saleAmount = null, ?string $firstSaleAt = null, ?string $subscriptionCanceledAt = null)
     {
         $this->id = $id;
-        $this->name = $name;
         $this->externalId = $externalId;
         $this->createdAt = $createdAt;
+        $this->name = $name;
         $this->email = $email;
         $this->avatar = $avatar;
         $this->stripeCustomerId = $stripeCustomerId;

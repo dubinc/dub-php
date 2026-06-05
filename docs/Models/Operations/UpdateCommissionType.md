@@ -3,9 +3,10 @@
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Click`  | click    |
-| `Lead`   | lead     |
-| `Sale`   | sale     |
-| `Custom` | custom   |
+| Name       | Value      |
+| ---------- | ---------- |
+| `Click`    | click      |
+| `Lead`     | lead       |
+| `Sale`     | sale       |
+| `Referral` | referral   |
+| `Custom`   | custom     |
