@@ -44,6 +44,14 @@ class ListPayoutsRequest
     public ?string $invoiceId = null;
 
     /**
+     * Filter the list of payouts by the associated partner group. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `group_abc`, `group_abc,group_xyz`, `-group_abc`.
+     *
+     * @var ?string $groupId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=groupId')]
+    public ?string $groupId = null;
+
+    /**
      * The page number for pagination.
      *
      * @var ?float $page
@@ -80,18 +88,20 @@ class ListPayoutsRequest
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $invoiceId
+     * @param  ?string  $groupId
      * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamSortBy  $sortBy
      * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamSortOrder  $sortOrder
      * @param  ?float  $page
      * @param  ?float  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?float $page = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?float $pageSize = 100)
+    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?string $groupId = null, ?float $page = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?float $pageSize = 100)
     {
         $this->status = $status;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->invoiceId = $invoiceId;
+        $this->groupId = $groupId;
         $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;

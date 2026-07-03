@@ -10,3 +10,4 @@ The partner's default payout method. Connect: Bank account payouts via Stripe Co
 | `Connect`    | connect      |
 | `Stablecoin` | stablecoin   |
 | `Paypal`     | paypal       |
+| `Tremendous` | tremendous   |

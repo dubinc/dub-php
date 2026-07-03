@@ -111,6 +111,14 @@ class ListEventsResponseBodyEventsClick
 
     /**
      *
+     * @var ?string $ua
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('ua')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $ua = null;
+
+    /**
+     *
      * @var ?string $trigger
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('trigger')]
@@ -132,10 +140,11 @@ class ListEventsResponseBodyEventsClick
      * @param  string  $refererUrl
      * @param  bool  $qr
      * @param  string  $ip
+     * @param  ?string  $ua
      * @param  ?string  $trigger
      * @phpstan-pure
      */
-    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, bool $qr, string $ip, ?string $trigger = null)
+    public function __construct(string $id, string $timestamp, string $url, string $country, string $city, string $region, string $continent, string $device, string $browser, string $os, string $referer, string $refererUrl, bool $qr, string $ip, ?string $ua = null, ?string $trigger = null)
     {
         $this->id = $id;
         $this->timestamp = $timestamp;
@@ -151,6 +160,7 @@ class ListEventsResponseBodyEventsClick
         $this->refererUrl = $refererUrl;
         $this->qr = $qr;
         $this->ip = $ip;
+        $this->ua = $ua;
         $this->trigger = $trigger;
     }
 }

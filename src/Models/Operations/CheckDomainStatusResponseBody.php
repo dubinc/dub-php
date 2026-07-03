@@ -28,14 +28,6 @@ class CheckDomainStatusResponseBody
     public bool $available;
 
     /**
-     * The price description.
-     *
-     * @var ?string $price
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('price')]
-    public ?string $price;
-
-    /**
      * Whether the domain is a premium domain.
      *
      * @var ?bool $premium
@@ -44,17 +36,37 @@ class CheckDomainStatusResponseBody
     public ?bool $premium;
 
     /**
+     * Price details for the domain. Will be null if the domain is not available.
+     *
+     * @var ?\Dub\Models\Operations\Prices $prices
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('prices')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Prices|null')]
+    public ?Prices $prices;
+
+    /**
+     * Deprecated: Use `prices` instead.
+     *
+     * @var ?string $price
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('price')]
+    public ?string $price;
+
+    /**
      * @param  string  $domain
      * @param  bool  $available
-     * @param  ?string  $price
      * @param  ?bool  $premium
+     * @param  ?\Dub\Models\Operations\Prices  $prices
+     * @param  ?string  $price
      * @phpstan-pure
      */
-    public function __construct(string $domain, bool $available, ?string $price = null, ?bool $premium = null)
+    public function __construct(string $domain, bool $available, ?bool $premium = null, ?Prices $prices = null, ?string $price = null)
     {
         $this->domain = $domain;
         $this->available = $available;
-        $this->price = $price;
         $this->premium = $premium;
+        $this->prices = $prices;
+        $this->price = $price;
     }
 }
