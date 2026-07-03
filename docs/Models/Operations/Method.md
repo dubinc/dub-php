@@ -8,3 +8,4 @@
 | `Connect`    | connect      |
 | `Stablecoin` | stablecoin   |
 | `Paypal`     | paypal       |
+| `Tremendous` | tremendous   |

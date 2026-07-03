@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
-/** The access level of the folder within the workspace. */
+/** The workspace-level access level settings for the folder. Default is `write` which allows full access to the folder for all team members. The other options are `read` (view-only access) and `null` (no access) and are only available on Business plans and above. */
 enum AccessLevel: string
 {
     case Write = 'write';

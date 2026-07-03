@@ -15,4 +15,5 @@ enum CreatePartnerDefaultPayoutMethod: string
     case Connect = 'connect';
     case Stablecoin = 'stablecoin';
     case Paypal = 'paypal';
+    case Tremendous = 'tremendous';
 }

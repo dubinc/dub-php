@@ -29,7 +29,7 @@ class CreateFolderRequestBody
     public ?string $description = null;
 
     /**
-     * The access level of the folder within the workspace.
+     * The workspace-level access level settings for the folder. Default is `write` which allows full access to the folder for all team members. The other options are `read` (view-only access) and `null` (no access) and are only available on Business plans and above.
      *
      * @var ?\Dub\Models\Operations\AccessLevel $accessLevel
      */
@@ -44,7 +44,7 @@ class CreateFolderRequestBody
      * @param  ?\Dub\Models\Operations\AccessLevel  $accessLevel
      * @phpstan-pure
      */
-    public function __construct(string $name, ?string $description = null, ?AccessLevel $accessLevel = null)
+    public function __construct(string $name, ?string $description = null, ?AccessLevel $accessLevel = AccessLevel::Write)
     {
         $this->name = $name;
         $this->description = $description;
