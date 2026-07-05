@@ -38,11 +38,11 @@ class TrackLeadRequestBody
     /**
      * The numerical value associated with this lead event (e.g., number of provisioned seats in a free trial). If defined as N, the lead event will be tracked N times.
      *
-     * @var ?float $eventQuantity
+     * @var ?int $eventQuantity
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('eventQuantity')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $eventQuantity = null;
+    public ?int $eventQuantity = null;
 
     /**
      * Additional metadata to be stored with the lead event. Max 10,000 characters.
@@ -99,11 +99,11 @@ class TrackLeadRequestBody
      * @param  ?string  $customerName
      * @param  ?string  $customerEmail
      * @param  ?string  $customerAvatar
-     * @param  ?float  $eventQuantity
+     * @param  ?int  $eventQuantity
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(string $clickId, string $eventName, string $customerExternalId, ?float $eventQuantity = null, ?array $metadata = null, ?Mode $mode = Mode::Async, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
+    public function __construct(string $clickId, string $eventName, string $customerExternalId, ?int $eventQuantity = null, ?array $metadata = null, ?Mode $mode = Mode::Async, ?string $customerName = null, ?string $customerEmail = null, ?string $customerAvatar = null)
     {
         $this->clickId = $clickId;
         $this->eventName = $eventName;

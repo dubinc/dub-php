@@ -330,16 +330,6 @@ class UpsertLinkRequestBody
     public ?string $ref = null;
 
     /**
-     * An array of webhook IDs to trigger when the link is clicked. These webhooks will receive click event data.
-     *
-     * @var ?array<string> $webhookIds
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?array $webhookIds = null;
-
-    /**
      * An array of A/B test URLs and the percentage of traffic to send to each URL.
      *
      * @var ?array<\Dub\Models\Operations\UpsertLinkTestVariants> $testVariants
@@ -378,6 +368,17 @@ class UpsertLinkRequestBody
     public ?string $tagId = null;
 
     /**
+     * Deprecated: You can now enable link.clicked webhooks for all links in a workspace or folder without passing this field manually. An array of webhook IDs to trigger when the link is clicked. These webhooks will receive click event data.
+     *
+     * @var ?array<string> $webhookIds
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $webhookIds = null;
+
+    /**
      * @param  string  $url
      * @param  ?string  $domain
      * @param  ?string  $key
@@ -413,14 +414,14 @@ class UpsertLinkRequestBody
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
      * @param  ?string  $ref
-     * @param  ?array<string>  $webhookIds
      * @param  ?array<\Dub\Models\Operations\UpsertLinkTestVariants>  $testVariants
      * @param  ?string  $testStartedAt
      * @param  ?string  $testCompletedAt
      * @param  ?string  $tagId
+     * @param  ?array<string>  $webhookIds
      * @phpstan-pure
      */
-    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?float $keyLength = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $webhookIds = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null)
+    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?float $keyLength = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null, ?array $webhookIds = null)
     {
         $this->url = $url;
         $this->domain = $domain;
@@ -457,10 +458,10 @@ class UpsertLinkRequestBody
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
         $this->ref = $ref;
-        $this->webhookIds = $webhookIds;
         $this->testVariants = $testVariants;
         $this->testStartedAt = $testStartedAt;
         $this->testCompletedAt = $testCompletedAt;
         $this->tagId = $tagId;
+        $this->webhookIds = $webhookIds;
     }
 }
