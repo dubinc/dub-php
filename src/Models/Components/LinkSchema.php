@@ -44,15 +44,6 @@ class LinkSchema
     public string $url;
 
     /**
-     * The IDs of the webhooks that the short link is associated with.
-     *
-     * @var array<string> $webhookIds
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
-    public array $webhookIds;
-
-    /**
      * The full URL of the short link, including the https protocol (e.g. `https://dub.sh/try`).
      *
      * @var string $shortLink
@@ -100,6 +91,16 @@ class LinkSchema
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('projectId')]
     public string $projectId;
+
+    /**
+     * Deprecated: You can now enable link.clicked webhooks for all links in a workspace or folder without passing this field manually. An array of webhook IDs to trigger when the link is clicked. These webhooks will receive click event data.
+     *
+     * @var array<string> $webhookIds
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('webhookIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
+    public array $webhookIds;
 
     /**
      * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
@@ -444,13 +445,13 @@ class LinkSchema
      * @param  string  $domain
      * @param  string  $key
      * @param  string  $url
-     * @param  array<string>  $webhookIds
      * @param  string  $shortLink
      * @param  string  $qrCode
      * @param  string  $workspaceId
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  string  $projectId
+     * @param  array<string>  $webhookIds
      * @param  ?bool  $trackConversion
      * @param  ?string  $externalId
      * @param  ?string  $tenantId
@@ -493,19 +494,19 @@ class LinkSchema
      * @param  ?string  $testCompletedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, array $webhookIds, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $disabledAt = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, array $webhookIds, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $disabledAt = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?bool $trackConversion = false, ?bool $archived = false, ?bool $proxy = false, ?bool $rewrite = false, ?bool $doIndex = false, ?bool $publicStats = false, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
         $this->key = $key;
         $this->url = $url;
-        $this->webhookIds = $webhookIds;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
         $this->workspaceId = $workspaceId;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
+        $this->webhookIds = $webhookIds;
         $this->externalId = $externalId;
         $this->tenantId = $tenantId;
         $this->programId = $programId;
