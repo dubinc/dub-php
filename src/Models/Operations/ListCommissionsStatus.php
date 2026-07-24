@@ -18,4 +18,5 @@ enum ListCommissionsStatus: string
     case Duplicate = 'duplicate';
     case Fraud = 'fraud';
     case Canceled = 'canceled';
+    case Hold = 'hold';
 }

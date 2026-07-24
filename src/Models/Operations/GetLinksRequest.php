@@ -94,10 +94,10 @@ class GetLinksRequest
     /**
      * DEPRECATED. Use `startingAfter` instead.
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     /**
      * Whether to include archived links in the response. Defaults to `false` if not provided.
@@ -118,10 +118,10 @@ class GetLinksRequest
     /**
      * The number of items per page.
      *
-     * @var ?float $pageSize
+     * @var ?int $pageSize
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?float $pageSize = null;
+    public ?int $pageSize = null;
 
     /**
      * @param  ?string  $domain
@@ -136,11 +136,11 @@ class GetLinksRequest
      * @param  ?bool  $withTags
      * @param  ?string  $endingBefore
      * @param  ?string  $startingAfter
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?bool $showArchived = false, ?bool $withTags = false, ?float $pageSize = 100)
+    public function __construct(?string $domain = null, ?string $tagId = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?string $folderId = null, ?string $search = null, ?string $userId = null, ?string $tenantId = null, ?string $endingBefore = null, ?string $startingAfter = null, ?int $page = null, ?bool $showArchived = false, ?bool $withTags = false, ?int $pageSize = 100)
     {
         $this->domain = $domain;
         $this->tagId = $tagId;

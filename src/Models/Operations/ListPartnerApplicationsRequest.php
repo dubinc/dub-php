@@ -30,27 +30,27 @@ class ListPartnerApplicationsRequest
     /**
      * The page number for pagination.
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     /**
      * The number of items per page.
      *
-     * @var ?float $pageSize
+     * @var ?int $pageSize
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?float $pageSize = null;
+    public ?int $pageSize = null;
 
     /**
      * @param  ?string  $country
      * @param  ?string  $groupId
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $country = null, ?string $groupId = null, ?float $page = null, ?float $pageSize = 100)
+    public function __construct(?string $country = null, ?string $groupId = null, ?int $page = null, ?int $pageSize = 100)
     {
         $this->country = $country;
         $this->groupId = $groupId;

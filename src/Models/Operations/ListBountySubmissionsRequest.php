@@ -46,10 +46,10 @@ class ListBountySubmissionsRequest
     /**
      * The page number for pagination.
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     /**
      * The field to sort the submissions by.
@@ -70,10 +70,10 @@ class ListBountySubmissionsRequest
     /**
      * The number of items per page.
      *
-     * @var ?float $pageSize
+     * @var ?int $pageSize
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?float $pageSize = null;
+    public ?int $pageSize = null;
 
     /**
      * @param  string  $bountyId
@@ -82,11 +82,11 @@ class ListBountySubmissionsRequest
      * @param  ?string  $partnerId
      * @param  ?\Dub\Models\Operations\ListBountySubmissionsQueryParamSortBy  $sortBy
      * @param  ?\Dub\Models\Operations\ListBountySubmissionsQueryParamSortOrder  $sortOrder
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(string $bountyId, ?ListBountySubmissionsQueryParamStatus $status = null, ?string $groupId = null, ?string $partnerId = null, ?float $page = null, ?ListBountySubmissionsQueryParamSortBy $sortBy = ListBountySubmissionsQueryParamSortBy::CompletedAt, ?ListBountySubmissionsQueryParamSortOrder $sortOrder = ListBountySubmissionsQueryParamSortOrder::Asc, ?float $pageSize = 100)
+    public function __construct(string $bountyId, ?ListBountySubmissionsQueryParamStatus $status = null, ?string $groupId = null, ?string $partnerId = null, ?int $page = null, ?ListBountySubmissionsQueryParamSortBy $sortBy = ListBountySubmissionsQueryParamSortBy::CompletedAt, ?ListBountySubmissionsQueryParamSortOrder $sortOrder = ListBountySubmissionsQueryParamSortOrder::Asc, ?int $pageSize = 100)
     {
         $this->bountyId = $bountyId;
         $this->status = $status;

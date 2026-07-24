@@ -22,26 +22,26 @@ class ListFoldersRequest
     /**
      * The page number for pagination.
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     /**
      * The number of items per page.
      *
-     * @var ?float $pageSize
+     * @var ?int $pageSize
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?float $pageSize = null;
+    public ?int $pageSize = null;
 
     /**
      * @param  ?string  $search
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $search = null, ?float $page = null, ?float $pageSize = 50)
+    public function __construct(?string $search = null, ?int $page = null, ?int $pageSize = 50)
     {
         $this->search = $search;
         $this->page = $page;

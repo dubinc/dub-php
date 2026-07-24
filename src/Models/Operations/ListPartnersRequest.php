@@ -52,7 +52,7 @@ class ListPartnersRequest
     public ?string $tenantId = null;
 
     /**
-     * A search query to filter partners by ID, name, email, or link.
+     * A search query to filter partners by ID, name, email, or company name.
      *
      * @var ?string $search
      */
@@ -62,10 +62,10 @@ class ListPartnersRequest
     /**
      * The page number for pagination.
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     /**
      * The field to sort the partners by. The default is `totalSaleAmount`.
@@ -86,10 +86,10 @@ class ListPartnersRequest
     /**
      * The number of items per page.
      *
-     * @var ?float $pageSize
+     * @var ?int $pageSize
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?float $pageSize = null;
+    public ?int $pageSize = null;
 
     /**
      * @param  ?string  $groupId
@@ -100,11 +100,11 @@ class ListPartnersRequest
      * @param  ?string  $email
      * @param  ?string  $tenantId
      * @param  ?string  $search
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $groupId = null, ?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?float $page = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?float $pageSize = 100)
+    public function __construct(?string $groupId = null, ?ListPartnersQueryParamStatus $status = null, ?string $country = null, ?string $email = null, ?string $tenantId = null, ?string $search = null, ?int $page = null, ?ListPartnersQueryParamSortBy $sortBy = ListPartnersQueryParamSortBy::TotalSaleAmount, ?ListPartnersQueryParamSortOrder $sortOrder = ListPartnersQueryParamSortOrder::Desc, ?int $pageSize = 100)
     {
         $this->groupId = $groupId;
         $this->status = $status;

@@ -547,12 +547,12 @@ class Domains
      *
      * @param  ?bool  $archived
      * @param  ?string  $search
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @return \Dub\Models\Operations\ListDomainsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    private function listIndividual(?bool $archived = null, ?string $search = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): Operations\ListDomainsResponse
+    private function listIndividual(?bool $archived = null, ?string $search = null, ?int $page = null, ?int $pageSize = null, ?Options $options = null): Operations\ListDomainsResponse
     {
         $request = new Operations\ListDomainsRequest(
             archived: $archived,
@@ -747,12 +747,12 @@ class Domains
      *
      * @param  ?bool  $archived
      * @param  ?string  $search
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @return \Generator<\Dub\Models\Operations\ListDomainsResponse>
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?bool $archived = null, ?string $search = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): \Generator
+    public function list(?bool $archived = null, ?string $search = null, ?int $page = null, ?int $pageSize = null, ?Options $options = null): \Generator
     {
         $res = $this->listIndividual($archived, $search, $page, $pageSize, $options);
         while ($res !== null) {
