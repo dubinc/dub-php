@@ -58,20 +58,6 @@ class SaleCreatedEventLink
 
     /**
      *
-     * @var string $expiresAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
-    public string $expiresAt;
-
-    /**
-     *
-     * @var string $disabledAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('disabledAt')]
-    public string $disabledAt;
-
-    /**
-     *
      * @var bool $proxy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('proxy')]
@@ -115,33 +101,12 @@ class SaleCreatedEventLink
     public string $qrCode;
 
     /**
-     *
-     * @var string $testStartedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('testStartedAt')]
-    public string $testStartedAt;
-
-    /**
-     *
-     * @var string $testCompletedAt
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('testCompletedAt')]
-    public string $testCompletedAt;
-
-    /**
      * The workspace ID of the short link.
      *
      * @var string $workspaceId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('workspaceId')]
     public string $workspaceId;
-
-    /**
-     *
-     * @var string $lastClicked
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
-    public string $lastClicked;
 
     /**
      *
@@ -210,10 +175,24 @@ class SaleCreatedEventLink
 
     /**
      *
+     * @var ?string $expiresAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiresAt')]
+    public ?string $expiresAt;
+
+    /**
+     *
      * @var ?string $expiredUrl
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('expiredUrl')]
     public ?string $expiredUrl;
+
+    /**
+     *
+     * @var ?string $disabledAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('disabledAt')]
+    public ?string $disabledAt;
 
     /**
      * The password required to access the destination URL of the short link.
@@ -347,10 +326,31 @@ class SaleCreatedEventLink
 
     /**
      *
+     * @var ?string $testStartedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testStartedAt')]
+    public ?string $testStartedAt;
+
+    /**
+     *
+     * @var ?string $testCompletedAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('testCompletedAt')]
+    public ?string $testCompletedAt;
+
+    /**
+     *
      * @var ?string $userId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('userId')]
     public ?string $userId;
+
+    /**
+     *
+     * @var ?string $lastClicked
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastClicked')]
+    public ?string $lastClicked;
 
     /**
      * Deprecated: Use `tags` instead. The unique ID of the tag assigned to the short link.
@@ -423,18 +423,13 @@ class SaleCreatedEventLink
      * @param  string  $url
      * @param  bool  $trackConversion
      * @param  bool  $archived
-     * @param  string  $expiresAt
-     * @param  string  $disabledAt
      * @param  bool  $proxy
      * @param  bool  $rewrite
      * @param  bool  $doIndex
      * @param  bool  $publicStats
      * @param  string  $shortLink
      * @param  string  $qrCode
-     * @param  string  $testStartedAt
-     * @param  string  $testCompletedAt
      * @param  string  $workspaceId
-     * @param  string  $lastClicked
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  string  $projectId
@@ -443,7 +438,9 @@ class SaleCreatedEventLink
      * @param  ?string  $tenantId
      * @param  ?string  $programId
      * @param  ?string  $partnerId
+     * @param  ?string  $expiresAt
      * @param  ?string  $expiredUrl
+     * @param  ?string  $disabledAt
      * @param  ?string  $password
      * @param  ?string  $title
      * @param  ?string  $description
@@ -460,17 +457,20 @@ class SaleCreatedEventLink
      * @param  ?string  $utmCampaign
      * @param  ?string  $utmTerm
      * @param  ?string  $utmContent
+     * @param  ?string  $testStartedAt
+     * @param  ?string  $testCompletedAt
      * @param  ?string  $userId
      * @param  ?float  $clicks
      * @param  ?float  $leads
      * @param  ?float  $conversions
      * @param  ?float  $sales
      * @param  ?float  $saleAmount
+     * @param  ?string  $lastClicked
      * @param  ?string  $tagId
      * @param  ?array<\Dub\Models\Components\SaleCreatedEventTestVariants>  $testVariants
      * @phpstan-pure
      */
-    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, string $expiresAt, string $disabledAt, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, string $shortLink, string $qrCode, string $testStartedAt, string $testCompletedAt, string $workspaceId, string $lastClicked, string $createdAt, string $updatedAt, string $projectId, array $webhookIds, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $userId = null, ?string $tagId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
+    public function __construct(string $id, string $domain, string $key, string $url, bool $trackConversion, bool $archived, bool $proxy, bool $rewrite, bool $doIndex, bool $publicStats, string $shortLink, string $qrCode, string $workspaceId, string $createdAt, string $updatedAt, string $projectId, array $webhookIds, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $disabledAt = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?array $tags = null, ?string $folderId = null, ?string $comments = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $userId = null, ?string $lastClicked = null, ?string $tagId = null, ?array $testVariants = null, ?float $clicks = 0, ?float $leads = 0, ?float $conversions = 0, ?float $sales = 0, ?float $saleAmount = 0)
     {
         $this->id = $id;
         $this->domain = $domain;
@@ -478,18 +478,13 @@ class SaleCreatedEventLink
         $this->url = $url;
         $this->trackConversion = $trackConversion;
         $this->archived = $archived;
-        $this->expiresAt = $expiresAt;
-        $this->disabledAt = $disabledAt;
         $this->proxy = $proxy;
         $this->rewrite = $rewrite;
         $this->doIndex = $doIndex;
         $this->publicStats = $publicStats;
         $this->shortLink = $shortLink;
         $this->qrCode = $qrCode;
-        $this->testStartedAt = $testStartedAt;
-        $this->testCompletedAt = $testCompletedAt;
         $this->workspaceId = $workspaceId;
-        $this->lastClicked = $lastClicked;
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->projectId = $projectId;
@@ -498,7 +493,9 @@ class SaleCreatedEventLink
         $this->tenantId = $tenantId;
         $this->programId = $programId;
         $this->partnerId = $partnerId;
+        $this->expiresAt = $expiresAt;
         $this->expiredUrl = $expiredUrl;
+        $this->disabledAt = $disabledAt;
         $this->password = $password;
         $this->title = $title;
         $this->description = $description;
@@ -515,7 +512,10 @@ class SaleCreatedEventLink
         $this->utmCampaign = $utmCampaign;
         $this->utmTerm = $utmTerm;
         $this->utmContent = $utmContent;
+        $this->testStartedAt = $testStartedAt;
+        $this->testCompletedAt = $testCompletedAt;
         $this->userId = $userId;
+        $this->lastClicked = $lastClicked;
         $this->tagId = $tagId;
         $this->testVariants = $testVariants;
         $this->clicks = $clicks;

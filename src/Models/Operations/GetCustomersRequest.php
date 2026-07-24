@@ -94,10 +94,10 @@ class GetCustomersRequest
     /**
      * DEPRECATED. Use `startingAfter` instead.
      *
-     * @var ?float $page
+     * @var ?int $page
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=page')]
-    public ?float $page = null;
+    public ?int $page = null;
 
     /**
      * The field to sort the customers by. The default is `createdAt`.
@@ -118,10 +118,10 @@ class GetCustomersRequest
     /**
      * The number of items per page.
      *
-     * @var ?float $pageSize
+     * @var ?int $pageSize
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=pageSize')]
-    public ?float $pageSize = null;
+    public ?int $pageSize = null;
 
     /**
      * @param  ?string  $email
@@ -136,11 +136,11 @@ class GetCustomersRequest
      * @param  ?\Dub\Models\Operations\GetCustomersQueryParamSortOrder  $sortOrder
      * @param  ?string  $endingBefore
      * @param  ?string  $startingAfter
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?string $country = null, ?string $linkId = null, ?string $programId = null, ?string $partnerId = null, ?bool $includeExpandedFields = null, ?string $endingBefore = null, ?string $startingAfter = null, ?float $page = null, ?GetCustomersQueryParamSortBy $sortBy = GetCustomersQueryParamSortBy::CreatedAt, ?GetCustomersQueryParamSortOrder $sortOrder = GetCustomersQueryParamSortOrder::Desc, ?float $pageSize = 100)
+    public function __construct(?string $email = null, ?string $externalId = null, ?string $search = null, ?string $country = null, ?string $linkId = null, ?string $programId = null, ?string $partnerId = null, ?bool $includeExpandedFields = null, ?string $endingBefore = null, ?string $startingAfter = null, ?int $page = null, ?GetCustomersQueryParamSortBy $sortBy = GetCustomersQueryParamSortBy::CreatedAt, ?GetCustomersQueryParamSortOrder $sortOrder = GetCustomersQueryParamSortOrder::Desc, ?int $pageSize = 100)
     {
         $this->email = $email;
         $this->externalId = $externalId;

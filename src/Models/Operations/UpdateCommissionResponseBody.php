@@ -102,6 +102,14 @@ class UpdateCommissionResponseBody
     public ?string $description;
 
     /**
+     * The date the commission was paid out to the partner. Null if not paid yet.
+     *
+     * @var ?string $paidAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paidAt')]
+    public ?string $paidAt;
+
+    /**
      * The user who created the manual commission.
      *
      * @var ?string $userId
@@ -132,11 +140,12 @@ class UpdateCommissionResponseBody
      * @param  ?\Dub\Models\Operations\UpdateCommissionType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
+     * @param  ?string  $paidAt
      * @param  ?string  $userId
      * @param  ?\Dub\Models\Operations\UpdateCommissionCustomer  $customer
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdateCommissionStatus $status, float $quantity, string $createdAt, string $updatedAt, UpdateCommissionPartner $partner, ?UpdateCommissionType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $userId = null, ?UpdateCommissionCustomer $customer = null)
+    public function __construct(string $id, float $amount, float $earnings, string $currency, UpdateCommissionStatus $status, float $quantity, string $createdAt, string $updatedAt, UpdateCommissionPartner $partner, ?UpdateCommissionType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $paidAt = null, ?string $userId = null, ?UpdateCommissionCustomer $customer = null)
     {
         $this->id = $id;
         $this->amount = $amount;
@@ -150,6 +159,7 @@ class UpdateCommissionResponseBody
         $this->type = $type;
         $this->invoiceId = $invoiceId;
         $this->description = $description;
+        $this->paidAt = $paidAt;
         $this->userId = $userId;
         $this->customer = $customer;
     }

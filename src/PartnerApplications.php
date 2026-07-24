@@ -217,12 +217,12 @@ class PartnerApplications
      *
      * @param  ?string  $country
      * @param  ?string  $groupId
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @return \Dub\Models\Operations\ListPartnerApplicationsResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?string $country = null, ?string $groupId = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): Operations\ListPartnerApplicationsResponse
+    public function list(?string $country = null, ?string $groupId = null, ?int $page = null, ?int $pageSize = null, ?Options $options = null): Operations\ListPartnerApplicationsResponse
     {
         $request = new Operations\ListPartnerApplicationsRequest(
             country: $country,

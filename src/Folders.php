@@ -379,12 +379,12 @@ class Folders
      * Retrieve a paginated list of folders for the authenticated workspace.
      *
      * @param  ?string  $search
-     * @param  ?float  $page
-     * @param  ?float  $pageSize
+     * @param  ?int  $page
+     * @param  ?int  $pageSize
      * @return \Dub\Models\Operations\ListFoldersResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?string $search = null, ?float $page = null, ?float $pageSize = null, ?Options $options = null): Operations\ListFoldersResponse
+    public function list(?string $search = null, ?int $page = null, ?int $pageSize = null, ?Options $options = null): Operations\ListFoldersResponse
     {
         $request = new Operations\ListFoldersRequest(
             search: $search,
