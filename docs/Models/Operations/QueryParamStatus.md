@@ -14,3 +14,4 @@ Filter the list of commissions by their corresponding status.
 | `Duplicate` | duplicate   |
 | `Fraud`     | fraud       |
 | `Canceled`  | canceled    |
+| `Hold`      | hold        |

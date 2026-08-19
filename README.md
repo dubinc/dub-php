@@ -207,6 +207,12 @@ foreach ($responses as $response) {
 * [delete](docs/sdks/customers/README.md#delete) - Delete a customer
 * [update](docs/sdks/customers/README.md#update) - Update a customer
 
+### [DiscountCodes](docs/sdks/discountcodes/README.md)
+
+* [list](docs/sdks/discountcodes/README.md#list) - List discount codes
+* [create](docs/sdks/discountcodes/README.md#create) - Create a discount code
+* [delete](docs/sdks/discountcodes/README.md#delete) - Delete a discount code
+
 ### [Domains](docs/sdks/domains/README.md)
 
 * [list](docs/sdks/domains/README.md#list) - List all domains

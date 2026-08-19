@@ -75,6 +75,24 @@ actions:
         - "lang": "php"
           "label": "updateCustomer"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\UpdateCustomerRequest(\n    id: '<id>',\n);\n\n$response = $sdk->customers->update(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/discount-codes"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "listDiscountCodes"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->discountCodes->list(\n    page: 1,\n    pageSize: 50\n\n);\n\nif ($response->discountCodeSchemas !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/discount-codes"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "createDiscountCode"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->discountCodes->create(\n    request: $request\n);\n\nif ($response->discountCodeSchema !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/discount-codes/{idOrCode}"]["delete"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "deleteDiscountCode"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->discountCodes->delete(\n    idOrCode: 'dcode_1JVR7XRCSR0EDBAF39FZ4PMYE'\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/domains"]["get"]
     update:
       "x-codeSamples":

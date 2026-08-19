@@ -68,3 +68,12 @@ Components\PartnerApplicationSubmittedEvent $value = /* values here */
 Components\CommissionCreatedEvent $value = /* values here */
 ```
 
+### `Components\DiscountCodeWebhookEvent`
+
+```php
+/**
+* @var \Dub\Models\Components\DiscountCodeWebhookEvent
+*/
+Components\DiscountCodeWebhookEvent $value = /* values here */
+```
+
