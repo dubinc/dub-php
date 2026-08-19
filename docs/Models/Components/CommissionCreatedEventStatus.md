@@ -12,3 +12,4 @@
 | `Duplicate` | duplicate   |
 | `Fraud`     | fraud       |
 | `Canceled`  | canceled    |
+| `Hold`      | hold        |
