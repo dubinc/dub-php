@@ -59,6 +59,15 @@ Components\PartnerEnrolledEvent $value = /* values here */
 Components\PartnerApplicationSubmittedEvent $value = /* values here */
 ```
 
+### `Components\PartnerMergedEvent`
+
+```php
+/**
+* @var \Dub\Models\Components\PartnerMergedEvent
+*/
+Components\PartnerMergedEvent $value = /* values here */
+```
+
 ### `Components\CommissionCreatedEvent`
 
 ```php
