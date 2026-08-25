@@ -22,6 +22,7 @@ class BulkUpdateCommissionsResponseBody
     public string $id;
 
     /**
+     * The current status of the commission.
      *
      * @var \Dub\Models\Operations\BulkUpdateCommissionsCommissionsStatus $status
      */

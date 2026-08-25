@@ -58,43 +58,66 @@ class RequestBody3
     public ?string $linkId = null;
 
     /**
-     * Required when `importStripeInvoices` is `false`. The sale amount in cents for the manual sale event. Ignored when importing from Stripe.
-     *
-     * @var ?float $saleAmount
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $saleAmount = null;
-
-    /**
      * Only used when `importStripeInvoices` is `false`. The date of the manual sale event. Defaults to the current date and time if not provided.
      *
+     * @var ?string $date
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $date = null;
+
+    /**
+     * The sale event object to associate the commission with.
+     *
+     * @var ?\Dub\Models\Operations\Sale $sale
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Sale $sale = null;
+
+    /**
+     * Deprecated: Use `date` instead.
+     *
      * @var ?string $saleEventDate
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('saleEventDate')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $saleEventDate = null;
 
     /**
-     * Only used when `importStripeInvoices` is `false`. An optional invoice ID to attach to the generated sale event and commission entry for deduplication.
+     * Deprecated: Use `sale.amount` instead.
+     *
+     * @var ?float $saleAmount
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('saleAmount')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $saleAmount = null;
+
+    /**
+     * Deprecated: Use `sale.invoiceId` instead.
      *
      * @var ?string $invoiceId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $invoiceId = null;
 
     /**
-     * Only used when `importStripeInvoices` is `false`. An optional product ID stored on the sale event metadata – will also impact commission earnings calculation (if a `Sale` `Product ID` modifier is set).
+     * Deprecated: Use `sale.metadata.productId` instead.
      *
      * @var ?string $productId
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('productId')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $productId = null;
 
     /**
-     * When `true`, import all unimported paid Stripe invoices for the customer and create a commission for each. When `false`, create a single manual sale event using `saleAmount`.
+     * When `true`, import all unimported paid Stripe invoices for the customer and create a commission for each. When `false`, create a single manual sale event using `sale.amount` (or deprecated `saleAmount`).
      *
      * @var ?bool $importStripeInvoices
      */
@@ -109,21 +132,25 @@ class RequestBody3
      * @param  ?\Dub\Models\Operations\RequestBodyCustomer  $customer
      * @param  ?string  $linkId
      * @param  ?bool  $importStripeInvoices
-     * @param  ?float  $saleAmount
+     * @param  ?string  $date
+     * @param  ?\Dub\Models\Operations\Sale  $sale
      * @param  ?string  $saleEventDate
+     * @param  ?float  $saleAmount
      * @param  ?string  $invoiceId
      * @param  ?string  $productId
      * @phpstan-pure
      */
-    public function __construct(CreateCommissionRequestBodyCommissionsType $type, string $partnerId, ?string $customerId = null, ?RequestBodyCustomer $customer = null, ?string $linkId = null, ?float $saleAmount = null, ?string $saleEventDate = null, ?string $invoiceId = null, ?string $productId = null, ?bool $importStripeInvoices = false)
+    public function __construct(CreateCommissionRequestBodyCommissionsType $type, string $partnerId, ?string $customerId = null, ?RequestBodyCustomer $customer = null, ?string $linkId = null, ?string $date = null, ?Sale $sale = null, ?string $saleEventDate = null, ?float $saleAmount = null, ?string $invoiceId = null, ?string $productId = null, ?bool $importStripeInvoices = false)
     {
         $this->type = $type;
         $this->partnerId = $partnerId;
         $this->customerId = $customerId;
         $this->customer = $customer;
         $this->linkId = $linkId;
-        $this->saleAmount = $saleAmount;
+        $this->date = $date;
+        $this->sale = $sale;
         $this->saleEventDate = $saleEventDate;
+        $this->saleAmount = $saleAmount;
         $this->invoiceId = $invoiceId;
         $this->productId = $productId;
         $this->importStripeInvoices = $importStripeInvoices;

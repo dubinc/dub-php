@@ -214,7 +214,7 @@ class Commissions
     /**
      * Create commission
      *
-     * Create one or more commissions (custom, lead or sale) for a partner. Custom commissions accept a negative `amount` to create a clawback; in that case `description` is required and may be a known clawback reason or any other string. Commission creation is processed asynchronously. Use the List Commissions endpoint or webhooks to be notified when the commission is created.
+     * Create one or more commissions (custom, lead or sale) for a partner. Custom commissions accept a negative `amount` to create a clawback. Commission creation is processed asynchronously – use the GET /commissions endpoint or webhooks to be notified when the commission is created.
      *
      * @param  \Dub\Models\Operations\RequestBody1|\Dub\Models\Operations\RequestBody2|\Dub\Models\Operations\RequestBody3|null  $request
      * @return \Dub\Models\Operations\CreateCommissionResponse

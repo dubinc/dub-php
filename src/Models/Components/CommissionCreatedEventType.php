@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
+/** The type of commission. Can be `click`, `lead`, `sale`, `referral`, or `custom`. */
 enum CommissionCreatedEventType: string
 {
     case Click = 'click';

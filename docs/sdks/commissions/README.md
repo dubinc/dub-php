@@ -76,7 +76,7 @@ foreach ($responses as $response) {
 
 ## create
 
-Create one or more commissions (custom, lead or sale) for a partner. Custom commissions accept a negative `amount` to create a clawback; in that case `description` is required and may be a known clawback reason or any other string. Commission creation is processed asynchronously. Use the List Commissions endpoint or webhooks to be notified when the commission is created.
+Create one or more commissions (custom, lead or sale) for a partner. Custom commissions accept a negative `amount` to create a clawback. Commission creation is processed asynchronously – use the GET /commissions endpoint or webhooks to be notified when the commission is created.
 
 ### Example Usage
 
@@ -87,6 +87,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
+use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -94,7 +95,13 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-
+$request = new Operations\RequestBody2(
+    type: Operations\CreateCommissionRequestBodyType::Lead,
+    partnerId: '<id>',
+    lead: new Operations\Lead(
+        eventName: 'Sign up',
+    ),
+);
 
 $response = $sdk->commissions->create(
     request: $request

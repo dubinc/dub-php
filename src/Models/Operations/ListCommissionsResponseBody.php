@@ -22,6 +22,16 @@ class ListCommissionsResponseBody
     public string $id;
 
     /**
+     * The type of commission. Can be `click`, `lead`, `sale`, `referral`, or `custom`.
+     *
+     * @var \Dub\Models\Operations\ListCommissionsType $type
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListCommissionsType')]
+    public ListCommissionsType $type;
+
+    /**
+     * The associated event amount in cents. For sale commissions, this is the sale amount.
      *
      * @var float $amount
      */
@@ -29,6 +39,7 @@ class ListCommissionsResponseBody
     public float $amount;
 
     /**
+     * The amount earned by the partner, in cents.
      *
      * @var float $earnings
      */
@@ -36,6 +47,7 @@ class ListCommissionsResponseBody
     public float $earnings;
 
     /**
+     * The currency of the commission, as an ISO 4217 currency code.
      *
      * @var string $currency
      */
@@ -43,6 +55,7 @@ class ListCommissionsResponseBody
     public string $currency;
 
     /**
+     * The current status of the commission.
      *
      * @var \Dub\Models\Operations\ListCommissionsStatus $status
      */
@@ -51,6 +64,7 @@ class ListCommissionsResponseBody
     public ListCommissionsStatus $status;
 
     /**
+     * The event quantity. Used for click and lead commissions; typically `1` for sale and custom commissions.
      *
      * @var float $quantity
      */
@@ -58,6 +72,7 @@ class ListCommissionsResponseBody
     public float $quantity;
 
     /**
+     * The date and time when the commission was created.
      *
      * @var string $createdAt
      */
@@ -65,6 +80,7 @@ class ListCommissionsResponseBody
     public string $createdAt;
 
     /**
+     * The date and time when the commission was last updated.
      *
      * @var string $updatedAt
      */
@@ -80,15 +96,7 @@ class ListCommissionsResponseBody
     public ListCommissionsPartner $partner;
 
     /**
-     *
-     * @var ?\Dub\Models\Operations\ListCommissionsType $type
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListCommissionsType|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ListCommissionsType $type = null;
-
-    /**
+     * The associated invoice ID. Only set for sale commissions.
      *
      * @var ?string $invoiceId
      */
@@ -96,11 +104,21 @@ class ListCommissionsResponseBody
     public ?string $invoiceId;
 
     /**
+     * An optional description of the commission.
      *
      * @var ?string $description
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('description')]
     public ?string $description;
+
+    /**
+     * User-provided metadata from the associated lead or sale event (`lead.metadata` / `sale.metadata`).
+     *
+     * @var ?array<string, mixed> $metadata
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
+    public ?array $metadata;
 
     /**
      * The date the commission was paid out to the partner. Null if not paid yet.
@@ -130,6 +148,7 @@ class ListCommissionsResponseBody
 
     /**
      * @param  string  $id
+     * @param  \Dub\Models\Operations\ListCommissionsType  $type
      * @param  float  $amount
      * @param  float  $earnings
      * @param  string  $currency
@@ -138,17 +157,18 @@ class ListCommissionsResponseBody
      * @param  string  $createdAt
      * @param  string  $updatedAt
      * @param  \Dub\Models\Operations\ListCommissionsPartner  $partner
-     * @param  ?\Dub\Models\Operations\ListCommissionsType  $type
      * @param  ?string  $invoiceId
      * @param  ?string  $description
+     * @param  ?array<string, mixed>  $metadata
      * @param  ?string  $paidAt
      * @param  ?string  $userId
      * @param  ?\Dub\Models\Operations\ListCommissionsCustomer  $customer
      * @phpstan-pure
      */
-    public function __construct(string $id, float $amount, float $earnings, string $currency, ListCommissionsStatus $status, float $quantity, string $createdAt, string $updatedAt, ListCommissionsPartner $partner, ?ListCommissionsType $type = null, ?string $invoiceId = null, ?string $description = null, ?string $paidAt = null, ?string $userId = null, ?ListCommissionsCustomer $customer = null)
+    public function __construct(string $id, ListCommissionsType $type, float $amount, float $earnings, string $currency, ListCommissionsStatus $status, float $quantity, string $createdAt, string $updatedAt, ListCommissionsPartner $partner, ?string $invoiceId = null, ?string $description = null, ?array $metadata = null, ?string $paidAt = null, ?string $userId = null, ?ListCommissionsCustomer $customer = null)
     {
         $this->id = $id;
+        $this->type = $type;
         $this->amount = $amount;
         $this->earnings = $earnings;
         $this->currency = $currency;
@@ -157,9 +177,9 @@ class ListCommissionsResponseBody
         $this->createdAt = $createdAt;
         $this->updatedAt = $updatedAt;
         $this->partner = $partner;
-        $this->type = $type;
         $this->invoiceId = $invoiceId;
         $this->description = $description;
+        $this->metadata = $metadata;
         $this->paidAt = $paidAt;
         $this->userId = $userId;
         $this->customer = $customer;

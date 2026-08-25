@@ -30,7 +30,7 @@ class RequestBody1
     public string $partnerId;
 
     /**
-     * The commission amount in cents. Use a negative amount to create a clawback.
+     * The commission earnings amount in cents. Use a negative amount to create a clawback.
      *
      * @var float $amount
      */
@@ -47,9 +47,7 @@ class RequestBody1
     public ?string $date = null;
 
     /**
-     * The description of the commission. Required for clawbacks (negative `amount`).
-     *
-     * May be a known clawback reason (`order_canceled`, `fraud`, `terms_violation`, `tracking_error`, `payment_failed`, `ineligible_partner`, `duplicate_commission`) or an arbitrary string (max 190 characters).
+     * The description of the commission. Required for clawbacks (negative `amount`). May be a known clawback reason (`order_canceled`, `fraud`, `terms_violation`, `tracking_error`, `payment_failed`, `ineligible_partner`, `duplicate_commission`) or an arbitrary string (max 190 characters).
      *
      * @var ?string $description
      */
