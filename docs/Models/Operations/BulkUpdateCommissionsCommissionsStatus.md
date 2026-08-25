@@ -1,5 +1,7 @@
 # BulkUpdateCommissionsCommissionsStatus
 
+The current status of the commission.
+
 
 ## Values
 

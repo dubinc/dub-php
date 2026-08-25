@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Dub\Models\Components;
 
 
+/** The current status of the commission. */
 enum CommissionCreatedEventStatus: string
 {
     case Pending = 'pending';

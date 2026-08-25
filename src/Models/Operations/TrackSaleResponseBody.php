@@ -31,19 +31,19 @@ class TrackSaleResponseBody
 
     /**
      *
-     * @var ?\Dub\Models\Operations\Sale $sale
+     * @var ?\Dub\Models\Operations\TrackSaleSale $sale
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('sale')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale|null')]
-    public ?Sale $sale;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\TrackSaleSale|null')]
+    public ?TrackSaleSale $sale;
 
     /**
      * @param  string  $eventName
      * @param  ?\Dub\Models\Operations\TrackSaleCustomer  $customer
-     * @param  ?\Dub\Models\Operations\Sale  $sale
+     * @param  ?\Dub\Models\Operations\TrackSaleSale  $sale
      * @phpstan-pure
      */
-    public function __construct(string $eventName, ?TrackSaleCustomer $customer = null, ?Sale $sale = null)
+    public function __construct(string $eventName, ?TrackSaleCustomer $customer = null, ?TrackSaleSale $sale = null)
     {
         $this->eventName = $eventName;
         $this->customer = $customer;

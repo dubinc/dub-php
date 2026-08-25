@@ -11,6 +11,7 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
+/** The type of commission. Can be `click`, `lead`, `sale`, `referral`, or `custom`. */
 enum UpdateCommissionType: string
 {
     case Click = 'click';

@@ -11,59 +11,81 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
+/** Sale - The sale event object to associate the commission with. */
 class Sale
 {
     /**
+     * The amount of the sale in cents (for all two-decimal currencies). If the sale is in a zero-decimal currency, pass the full integer value (e.g. `1580` JPY). Learn more: https://d.to/currency
      *
-     * @var float $amount
+     * @var ?float $amount
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('amount')]
-    public float $amount;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?float $amount = null;
 
     /**
-     *
-     * @var string $currency
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
-    public string $currency;
-
-    /**
-     *
-     * @var string $paymentProcessor
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
-    public string $paymentProcessor;
-
-    /**
-     *
-     * @var ?string $invoiceId
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
-    public ?string $invoiceId;
-
-    /**
-     * $metadata
+     * Additional metadata to be stored with the sale event. Max 10,000 characters when stringified.
      *
      * @var ?array<string, mixed> $metadata
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('metadata')]
     #[\Speakeasy\Serializer\Annotation\Type('array<string, mixed>|null')]
-    public ?array $metadata;
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $metadata = null;
 
     /**
-     * @param  float  $amount
-     * @param  string  $currency
-     * @param  string  $paymentProcessor
+     * The currency of the sale. Accepts ISO 4217 currency codes. Sales will be automatically converted and stored as USD at the latest exchange rates. Learn more: https://d.to/currency
+     *
+     * @var ?string $currency
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('currency')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $currency = null;
+
+    /**
+     * The name of the sale event. Recommended format: `Invoice paid` or `Subscription created`.
+     *
+     * @var ?string $eventName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('eventName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $eventName = null;
+
+    /**
+     * The payment processor via which the sale was made.
+     *
+     * @var ?\Dub\Models\Operations\RequestBodyPaymentProcessor $paymentProcessor
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentProcessor')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\RequestBodyPaymentProcessor|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?RequestBodyPaymentProcessor $paymentProcessor = null;
+
+    /**
+     * The invoice ID of the sale. Can be used as a idempotency key – only one sale event can be recorded for a given invoice ID.
+     *
+     * @var ?string $invoiceId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('invoiceId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $invoiceId = null;
+
+    /**
+     * @param  ?string  $currency
+     * @param  ?string  $eventName
+     * @param  ?\Dub\Models\Operations\RequestBodyPaymentProcessor  $paymentProcessor
+     * @param  ?float  $amount
      * @param  ?string  $invoiceId
      * @param  ?array<string, mixed>  $metadata
      * @phpstan-pure
      */
-    public function __construct(float $amount, string $currency, string $paymentProcessor, ?string $invoiceId = null, ?array $metadata = null)
+    public function __construct(?float $amount = null, ?array $metadata = null, ?string $currency = 'usd', ?string $eventName = 'Purchase', ?RequestBodyPaymentProcessor $paymentProcessor = RequestBodyPaymentProcessor::Custom, ?string $invoiceId = null)
     {
         $this->amount = $amount;
+        $this->metadata = $metadata;
         $this->currency = $currency;
+        $this->eventName = $eventName;
         $this->paymentProcessor = $paymentProcessor;
         $this->invoiceId = $invoiceId;
-        $this->metadata = $metadata;
     }
 }

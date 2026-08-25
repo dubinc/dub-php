@@ -60,16 +60,37 @@ class RequestBody2
     /**
      * The date and time of the lead event. If not provided, defaults to the current date and time.
      *
+     * @var ?string $date
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('date')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $date = null;
+
+    /**
+     * The lead event object to associate the commission with.
+     *
+     * @var ?\Dub\Models\Operations\Lead $lead
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lead')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Lead|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?Lead $lead = null;
+
+    /**
+     * Deprecated: Use `date` instead. The date and time of the lead event. If not provided, defaults to the current date and time.
+     *
      * @var ?string $leadEventDate
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('leadEventDate')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?string $leadEventDate = null;
 
     /**
-     * The name of the lead event. If not provided, defaults to 'Sign up'.
+     * Deprecated: Use `lead.eventName` instead. The name of the lead event. If not provided, defaults to 'Sign up'.
      *
      * @var ?string $leadEventName
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('leadEventName')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
@@ -81,17 +102,21 @@ class RequestBody2
      * @param  ?string  $customerId
      * @param  ?\Dub\Models\Operations\Customer  $customer
      * @param  ?string  $linkId
+     * @param  ?string  $date
+     * @param  ?\Dub\Models\Operations\Lead  $lead
      * @param  ?string  $leadEventDate
      * @param  ?string  $leadEventName
      * @phpstan-pure
      */
-    public function __construct(CreateCommissionRequestBodyType $type, string $partnerId, ?string $customerId = null, ?Customer $customer = null, ?string $linkId = null, ?string $leadEventDate = null, ?string $leadEventName = 'Sign up')
+    public function __construct(CreateCommissionRequestBodyType $type, string $partnerId, ?string $customerId = null, ?Customer $customer = null, ?string $linkId = null, ?string $date = null, ?Lead $lead = null, ?string $leadEventDate = null, ?string $leadEventName = 'Sign up')
     {
         $this->type = $type;
         $this->partnerId = $partnerId;
         $this->customerId = $customerId;
         $this->customer = $customer;
         $this->linkId = $linkId;
+        $this->date = $date;
+        $this->lead = $lead;
         $this->leadEventDate = $leadEventDate;
         $this->leadEventName = $leadEventName;
     }
