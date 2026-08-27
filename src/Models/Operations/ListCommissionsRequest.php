@@ -109,6 +109,14 @@ class ListCommissionsRequest
     public ?string $timezone = null;
 
     /**
+     * Filter by lead or sale event metadata. Top-level keys only. Compares string values only — numeric and boolean metadata values are not matched.
+     *
+     * @var ?string $query
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=query')]
+    public ?string $query = null;
+
+    /**
      * If specified, the query only searches for results before this cursor. Mutually exclusive with `startingAfter`.
      *
      * @var ?string $endingBefore
@@ -180,13 +188,14 @@ class ListCommissionsRequest
      * @param  ?string  $start
      * @param  ?string  $end
      * @param  ?string  $timezone
+     * @param  ?string  $query
      * @param  ?string  $endingBefore
      * @param  ?string  $startingAfter
      * @param  ?int  $page
      * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $partnerTagId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $endingBefore = null, ?string $startingAfter = null, ?int $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?int $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $partnerTagId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $query = null, ?string $endingBefore = null, ?string $startingAfter = null, ?int $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?int $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
@@ -200,6 +209,7 @@ class ListCommissionsRequest
         $this->start = $start;
         $this->end = $end;
         $this->timezone = $timezone;
+        $this->query = $query;
         $this->endingBefore = $endingBefore;
         $this->startingAfter = $startingAfter;
         $this->page = $page;

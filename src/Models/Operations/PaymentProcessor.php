@@ -20,6 +20,7 @@ enum PaymentProcessor: string
     case Paddle = 'paddle';
     case Apple = 'apple';
     case Revenuecat = 'revenuecat';
+    case Lemonsqueezy = 'lemonsqueezy';
     case Dub = 'dub';
     case Custom = 'custom';
 }

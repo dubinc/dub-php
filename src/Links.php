@@ -1099,7 +1099,7 @@ class Links
                 $sdk = $this;
 
                 $response->next = function () use ($sdk, $request, $responseData): ?Operations\GetLinksResponse {
-                    $page = $request != null ? $request->page : 0;
+                    $page = $request != null && $request->page != null ? $request->page : 1;
                     $nextPage = $page + 1;
                     if (! $responseData) {
                         return null;
@@ -1111,7 +1111,7 @@ class Links
                     if (count($results) === 0) {
                         return null;
                     }
-                    $limit = $request != null ? $request->pageSize : 0;
+                    $limit = $request != null && $request->pageSize != null ? $request->pageSize : 100;
                     if (count($results) < $limit) {
                         return null;
                     }
