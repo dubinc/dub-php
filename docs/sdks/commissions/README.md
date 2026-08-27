@@ -31,6 +31,7 @@ $sdk = Dub\Dub::builder()
     ->build();
 
 $request = new Operations\ListCommissionsRequest(
+    query: 'metadata[\'key\']=\'value\'',
     endingBefore: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',
     startingAfter: 'cm_1KAP4CGN2Z5TPYYQ1W4JEYD56',
     page: 1,

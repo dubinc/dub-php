@@ -458,6 +458,7 @@ class Commissions
                             start: $request != null ? $request->start : null,
                             end: $request != null ? $request->end : null,
                             timezone: $request != null ? $request->timezone : null,
+                            query: $request != null ? $request->query : null,
                             endingBefore: $request != null ? $request->endingBefore : null,
                             startingAfter: $nextCursor,
                             page: $request != null ? $request->page : null,
