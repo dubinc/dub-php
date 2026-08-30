@@ -14,7 +14,12 @@ use Dub\Utils\SpeakeasyMetadata;
 class ListCommissionsRequest
 {
     /**
-     * Filter the list of commissions by type. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `sale`, `sale,lead`, `-click`.
+     * Filter the list of commissions by type.
+     *
+     * Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples:
+     * - "sale"
+     * - "sale,lead"
+     * - "-click"
      *
      * @var ?\Dub\Models\Operations\Type $type
      */
@@ -38,7 +43,13 @@ class ListCommissionsRequest
     public ?string $payoutId = null;
 
     /**
-     * Filter the list of commissions by the associated partner. When specified, takes precedence over `tenantId`. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `partner_abc`, `partner_abc,partner_xyz`, `-partner_abc`.
+     * Filter the list of commissions by the associated partner. When specified, takes precedence over `tenantId`.
+     *
+     * Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`).
+     * Examples:
+     * - "partner_abc"
+     * - "partner_abc,partner_xyz"
+     * - "-partner_abc"
      *
      * @var ?string $partnerId
      */
@@ -54,7 +65,12 @@ class ListCommissionsRequest
     public ?string $tenantId = null;
 
     /**
-     * Filter the list of commissions by the associated partner group. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `group_abc`, `group_abc,group_xyz`, `-group_abc`.
+     * Filter the list of commissions by the associated partner group.
+     *
+     * Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples:
+     * - "group_abc"
+     * - "group_abc,group_xyz"
+     * - "-group_abc"
      *
      * @var ?string $groupId
      */
@@ -62,7 +78,13 @@ class ListCommissionsRequest
     public ?string $groupId = null;
 
     /**
-     * Filter the list of commissions by the associated partner tag. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `ptag_abc`, `ptag_abc,ptag_xyz`, `-ptag_abc`.
+     * Filter the list of commissions by the associated partner tag.
+     *
+     * Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`).
+     * Examples:
+     * - "ptag_abc"
+     * - "ptag_abc,ptag_xyz"
+     * - "-ptag_abc"
      *
      * @var ?string $partnerTagId
      */
@@ -110,6 +132,10 @@ class ListCommissionsRequest
 
     /**
      * Filter by lead or sale event metadata. Top-level keys only. Compares string values only — numeric and boolean metadata values are not matched.
+     *
+     * Examples:
+     * - "metadata['key']='value'"
+     * - "metadata['key']!='value'"
      *
      * @var ?string $query
      */

@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 7dc89d725e13a575f09e0bbe2c501f53
+  docChecksum: 052da4959733457f8d8107004470863b
   docVersion: 0.0.1
   speakeasyVersion: 1.796.2
   generationVersion: 2.933.0
-  releaseVersion: 0.15.17
-  configChecksum: ebb5d504f239bbe442530aa4801cc8fa
+  releaseVersion: 0.15.18
+  configChecksum: e0e6980181067ae8d3c7f8fb07c0751f
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php.git
   published: true
 persistentEdits:
-  generation_id: 502c3dab-8843-451e-8241-df9f584d5f0d
-  pristine_commit_hash: 4e4c476fea567f099d6525a54ad7b26101ca413e
-  pristine_tree_hash: 64b5c8408742ac7b9bf073d93ccc799a984d5f21
+  generation_id: 9e885c0f-fee0-426f-8152-9d9c810cfb34
+  pristine_commit_hash: 1c127d73a50a3227ccba34dd0836f75297ed28bf
+  pristine_tree_hash: 09cb10cfda3d3e902b582519dff7b53aa458bc3b
 features:
   php:
     constsAndDefaults: 0.2.2
@@ -1444,8 +1444,8 @@ trackedFiles:
     pristine_git_object: 1141749505ebc675867fa082f411db678b257b9c
   docs/Models/Operations/ListCommissionsRequest.md:
     id: 2e1a5c138650
-    last_write_checksum: sha1:0f846bd10c9b77f29f23c258f3ac96e12a3e4c71
-    pristine_git_object: 3e2ffe8721202b97ee46b16f3df3614b4343951d
+    last_write_checksum: sha1:8f50c64716109ee9b62d0868e9fa242551dec7dd
+    pristine_git_object: e1c2823d4e2352f322f1f2f2ad9d77e9635b4e09
   docs/Models/Operations/ListCommissionsResponse.md:
     id: bd9b4f236b7c
     last_write_checksum: sha1:307782ff0a1a3c87816d964e1d3abd922a21a696
@@ -1992,8 +1992,8 @@ trackedFiles:
     pristine_git_object: 46cb4a60c30bfecfed13840134f1c084837590cb
   docs/Models/Operations/Type.md:
     id: 7ed3ea2b9d4f
-    last_write_checksum: sha1:f97a8ca36dafb08c0b7fa31f1018aead7e8b0c6b
-    pristine_git_object: 7817f19f59f4282d3a7c1a8aa432766162a1d635
+    last_write_checksum: sha1:c2e04afe57899ac7e33b4479c59a11305c02604e
+    pristine_git_object: 02af4ba84ae67139cdcd2516ac729980a9c8a3a5
   docs/Models/Operations/UpdateCommissionCustomer.md:
     id: d11e0a21a994
     last_write_checksum: sha1:db094ad83752ee4b0d12c0de859b4b7f7393edf6
@@ -3708,8 +3708,8 @@ trackedFiles:
     pristine_git_object: e314bc05c98953fccd87935e643c0fdcf438f01a
   src/Models/Operations/ListCommissionsRequest.php:
     id: 233e187c846e
-    last_write_checksum: sha1:48b5d962bf01b41ebab60c0efc7b545d77a0d227
-    pristine_git_object: f96872dd3dbe529277b0f02974620dfe614e6c57
+    last_write_checksum: sha1:ae50f666e6229bc36dc9e9c46eb5541a4cd6251a
+    pristine_git_object: 73ac0b02caf041114b970fdd9c52801e1ba426b3
   src/Models/Operations/ListCommissionsResponse.php:
     id: cd86b4064e3d
     last_write_checksum: sha1:883073b4180dfc5b066dafa1024b7b35232ddc71
@@ -4224,8 +4224,8 @@ trackedFiles:
     pristine_git_object: d467fd434c2f61dd5aef4ef3b637d90fba64e6f9
   src/Models/Operations/Type.php:
     id: 1dd039f481cd
-    last_write_checksum: sha1:13727ad52f371bc08a277d7cc9b7c58c9526baf5
-    pristine_git_object: 3ef6201fd53cbb89ade83a300849a19f436b48a1
+    last_write_checksum: sha1:2e35a4aa26a762c85dfe2cc57ea2b4201766e771
+    pristine_git_object: eec3aa13d1047652e2b6a37079e853aed890ab24
   src/Models/Operations/UpdateCommissionCustomer.php:
     id: 314b22d3d020
     last_write_checksum: sha1:d5a48521dd6dca486a4d63fbfa2d48c540a8a23d
@@ -4400,8 +4400,8 @@ trackedFiles:
     pristine_git_object: b7cb27c7c3efc2145ba7247e29ce10f09845181f
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:a53b576ecebf8803df5b4da92ab5978cc1c39ab7
-    pristine_git_object: 907e095107b9d8a8d8c53991c4806949eba4e12d
+    last_write_checksum: sha1:df3c5edfdaff65a627b3747d1f2a291e951fc7ac
+    pristine_git_object: 315a834cead7d54e652f2ab34b3d08fd6227646e
   src/Tags.php:
     id: 946b9974d4d1
     last_write_checksum: sha1:d59a354b9fe40585287b70ec686220d9b515d672
@@ -6239,7 +6239,6 @@ examples:
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `dub->analytics->retrieve()`: \n  *  `request` **Changed**\n  *  `response.union(Array<AnalyticsEventNames>)` **Added** (Breaking ⚠️)\n* `dub->events->list()`: \n  *  `request->eventName` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
