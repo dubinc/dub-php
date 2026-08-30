@@ -11,7 +11,14 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** Filter the list of commissions by type. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `sale`, `sale,lead`, `-click`. */
+/**
+ * Filter the list of commissions by type.
+ *
+ * Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples:
+ * - "sale"
+ * - "sale,lead"
+ * - "-click"
+ */
 enum Type: string
 {
     case Click = 'click';
