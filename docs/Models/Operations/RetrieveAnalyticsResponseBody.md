@@ -99,6 +99,15 @@ array $value = /* values here */
 
 ```php
 /**
+* @var array<\Dub\Models\Components\AnalyticsEventNames>
+*/
+array $value = /* values here */
+```
+
+### `array`
+
+```php
+/**
 * @var array<\Dub\Models\Components\AnalyticsReferers>
 */
 array $value = /* values here */

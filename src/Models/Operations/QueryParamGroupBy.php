@@ -25,6 +25,7 @@ enum QueryParamGroupBy: string
     case Os = 'os';
     case Trigger = 'trigger';
     case Triggers = 'triggers';
+    case EventNames = 'event_names';
     case Referers = 'referers';
     case RefererUrls = 'referer_urls';
     case TopFolders = 'top_folders';

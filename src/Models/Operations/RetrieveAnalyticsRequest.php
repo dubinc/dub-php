@@ -190,6 +190,14 @@ class RetrieveAnalyticsRequest
     public ?string $trigger = null;
 
     /**
+     * The conversion event name to retrieve analytics for. Only available for lead and sale events. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `Sign up`, `Sign up,Purchase`, `-Sign up`.
+     *
+     * @var ?string $eventName
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=eventName')]
+    public ?string $eventName = null;
+
+    /**
      * The referer hostname to retrieve analytics for. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `google.com`, `google.com,twitter.com`, `-facebook.com`.
      *
      * @var ?string $referer
@@ -351,6 +359,7 @@ class RetrieveAnalyticsRequest
      * @param  ?string  $browser
      * @param  ?string  $os
      * @param  ?string  $trigger
+     * @param  ?string  $eventName
      * @param  ?string  $referer
      * @param  ?string  $refererUrl
      * @param  ?string  $url
@@ -367,7 +376,7 @@ class RetrieveAnalyticsRequest
      * @param  ?bool  $qr
      * @phpstan-pure
      */
-    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $partnerTagId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
+    public function __construct(?string $domain = null, ?string $key = null, ?string $linkId = null, ?string $externalId = null, ?string $tenantId = null, ?string $tagId = null, ?string $folderId = null, ?string $partnerTagId = null, ?string $groupId = null, ?string $partnerId = null, ?string $customerId = null, ?Interval $interval = null, ?string $start = null, ?string $end = null, ?string $country = null, ?string $city = null, ?string $region = null, ?string $continent = null, ?string $device = null, ?string $browser = null, ?string $os = null, ?string $trigger = null, ?string $eventName = null, ?string $referer = null, ?string $refererUrl = null, ?string $url = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?bool $root = null, ?SaleType $saleType = null, ?string $query = null, ?string $programId = null, ?string $tagIds = null, ?bool $qr = null, ?Event $event = Event::Clicks, ?QueryParamGroupBy $groupBy = QueryParamGroupBy::Count, ?string $timezone = 'UTC')
     {
         $this->domain = $domain;
         $this->key = $key;
@@ -391,6 +400,7 @@ class RetrieveAnalyticsRequest
         $this->browser = $browser;
         $this->os = $os;
         $this->trigger = $trigger;
+        $this->eventName = $eventName;
         $this->referer = $referer;
         $this->refererUrl = $refererUrl;
         $this->url = $url;

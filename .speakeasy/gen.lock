@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: c647693603977a0469863f2033c7dff0
+  docChecksum: 7dc89d725e13a575f09e0bbe2c501f53
   docVersion: 0.0.1
-  speakeasyVersion: 1.796.1
+  speakeasyVersion: 1.796.2
   generationVersion: 2.933.0
-  releaseVersion: 0.15.16
-  configChecksum: 24931bf50795f833e83993c74df4e8dc
+  releaseVersion: 0.15.17
+  configChecksum: ebb5d504f239bbe442530aa4801cc8fa
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php.git
   published: true
 persistentEdits:
-  generation_id: e449617a-59a4-414d-bf79-ebc106961528
-  pristine_commit_hash: 7f60cc0bb9f4eb7cbff40dce711fa2628f8a8531
-  pristine_tree_hash: 8e1f98188a2108922eef2aa8befbf1a20099980c
+  generation_id: 502c3dab-8843-451e-8241-df9f584d5f0d
+  pristine_commit_hash: 4e4c476fea567f099d6525a54ad7b26101ca413e
+  pristine_tree_hash: 64b5c8408742ac7b9bf073d93ccc799a984d5f21
 features:
   php:
     constsAndDefaults: 0.2.2
@@ -82,6 +82,10 @@ trackedFiles:
     id: 8e6e88a4c832
     last_write_checksum: sha1:54710da8d04ed5dc0b0b3c88f183e1616c1bf607
     pristine_git_object: 14db261ee709020b802fad491e6bbcee2105685c
+  docs/Models/Components/AnalyticsEventNames.md:
+    id: a46d61e20904
+    last_write_checksum: sha1:d192833a01df7e8e15920e35f39d8e731efd5f1b
+    pristine_git_object: 41fcfa3fb97b5944d944754d4bc9a29002ea373e
   docs/Models/Components/AnalyticsOS.md:
     id: f7cf12aab919
     last_write_checksum: sha1:fbd0dca2cabccbb7d5a2ae2f821755900511d56f
@@ -1476,8 +1480,8 @@ trackedFiles:
     pristine_git_object: d14ef85c50aab2dfd0b68c86edf8af977bae0db5
   docs/Models/Operations/ListEventsRequest.md:
     id: 8f1df99265a9
-    last_write_checksum: sha1:43663dc483b04fc53fce1ffc18d5e7ada6eb2f65
-    pristine_git_object: 7646f87611a80784dadd984f0fbb4d462b9d2855
+    last_write_checksum: sha1:30b3dc32f9f1e63f19a33c26884a74cbe4fd4294
+    pristine_git_object: b7774feb5f7fc5b33bc0c13e7e81ba63ed87fa87
   docs/Models/Operations/ListEventsResponse.md:
     id: 5f502bb8bfe8
     last_write_checksum: sha1:8461c0e260e99b7f0dae3d0f96f6e1b886b1ee83
@@ -1692,8 +1696,8 @@ trackedFiles:
     pristine_git_object: 744bbec20aa89ba2fb433ae2d09bb2d0066d01af
   docs/Models/Operations/QueryParamGroupBy.md:
     id: 48f243bcc7e6
-    last_write_checksum: sha1:5346d415336db365f6d1dbdb4445ab7cfaa5c028
-    pristine_git_object: 0c72ad5cd2dcc49a38c4dc81a7feb0dec6a570b0
+    last_write_checksum: sha1:5d9efc00ec003ce56dc1ec04ce8d2ea59297344c
+    pristine_git_object: 82e823319e2acd66325aa39e2e653f925514d4b5
   docs/Models/Operations/QueryParamInterval.md:
     id: 29dcecd7f3a6
     last_write_checksum: sha1:b97b5fc0549362537e423ead2e0c72f1e6a42162
@@ -1852,16 +1856,16 @@ trackedFiles:
     pristine_git_object: dfdd33bb0c1d333aedf060eebda433b810b0b396
   docs/Models/Operations/RetrieveAnalyticsRequest.md:
     id: ef3c1898fe54
-    last_write_checksum: sha1:78ebaa2a768dca3276d9ae68ebcc22cbc587b678
-    pristine_git_object: a73cd066d452665db347ceed7487df9bd96b7048
+    last_write_checksum: sha1:48d24c39ec5170e57f4670760a5d1e41bff954b1
+    pristine_git_object: b7c7f280d22f81a1fa6be857f8db7a8edd35be92
   docs/Models/Operations/RetrieveAnalyticsResponse.md:
     id: 819439c460dd
     last_write_checksum: sha1:2b3931ea0df525d2ca95ccc9e9ee7adc32191927
     pristine_git_object: 55af42a1f729de90811b266e6a46752429e2dd98
   docs/Models/Operations/RetrieveAnalyticsResponseBody.md:
     id: ef30d2701b72
-    last_write_checksum: sha1:db3333c919fbbac9bdcf96bb837c1d0aef44f1e3
-    pristine_git_object: ccd61b6b91a7af09ddd3b6a81cdb728a67c956f3
+    last_write_checksum: sha1:50431014abbda2300107992371976d0e5bfc6ee8
+    pristine_git_object: 4d17c0dc32f1c068b03faea6c3f588f2f736ae65
   docs/Models/Operations/RetrievePartnerAnalyticsQueryParamGroupBy.md:
     id: c5a857fc7132
     last_write_checksum: sha1:5eff0eaf812b6a6286861e2bfa30f8c2e5f1f135
@@ -2252,8 +2256,8 @@ trackedFiles:
     pristine_git_object: 3fcf779196b40cd7f0abfbbbe615d160e38cc048
   src/Analytics.php:
     id: 93ae161ff44e
-    last_write_checksum: sha1:e54b66f5c8fd1664b93700e3344d715482648ccf
-    pristine_git_object: 0643e1641a27d52d86bcc8ed3a412136263c82ff
+    last_write_checksum: sha1:1f8b31415fb0ba419f6323f13e6703957fa4feed
+    pristine_git_object: 90b389c1aee02672896fdb7e005cd39d92c823d6
   src/Bounties.php:
     id: 9a398d8184d4
     last_write_checksum: sha1:0286fa47412282a51c14bf61f47eb87b301f27ef
@@ -2390,6 +2394,10 @@ trackedFiles:
     id: 1c0567422283
     last_write_checksum: sha1:6f2ced08200a7197945b86eab19092eb0fabcaf1
     pristine_git_object: 9ce7edad5156f3a3788bcac56fd0093893c53c17
+  src/Models/Components/AnalyticsEventNames.php:
+    id: ded2623fa226
+    last_write_checksum: sha1:8418bc78f041a5acf5fd59cb66183281aa77f4f2
+    pristine_git_object: dce4f19607268542697583eb717eacc790a24bf2
   src/Models/Components/AnalyticsOS.php:
     id: 3aa9add9e998
     last_write_checksum: sha1:e18ee209eb772431dd91a13558229f307b270bc0
@@ -3736,8 +3744,8 @@ trackedFiles:
     pristine_git_object: 87d8999e58487c78b30da5e114195dd9a7df02fb
   src/Models/Operations/ListEventsRequest.php:
     id: de0185d53dd4
-    last_write_checksum: sha1:629be7debf58108e0bd04092ca1016b70ab0aa3e
-    pristine_git_object: 7388e837d635d49d6a32fee917dcc9d5bf07654a
+    last_write_checksum: sha1:74fc856afba0f2c26a8ac7b2307e4ec64dd7b1e2
+    pristine_git_object: 802b4f1d6600c431a1d9368150049569b74ddeb9
   src/Models/Operations/ListEventsResponse.php:
     id: 00711f456530
     last_write_checksum: sha1:ab3dfac5983c50143cfa5710a0d709a716c0e902
@@ -3948,8 +3956,8 @@ trackedFiles:
     pristine_git_object: ba0afa8889188893034c7b2241b29838c2454569
   src/Models/Operations/QueryParamGroupBy.php:
     id: 89340925bd47
-    last_write_checksum: sha1:35b0ba8d3681c582649e394805c83107e6513c48
-    pristine_git_object: 932faa0014d2d16923a422879bd189ec6db977d1
+    last_write_checksum: sha1:1ac9a03a076714039987e44cb0658161d95c1195
+    pristine_git_object: 920722797644df6ed4bac8af030f5374f4b9e683
   src/Models/Operations/QueryParamInterval.php:
     id: 05867df3ac72
     last_write_checksum: sha1:8ab31f84ee93cce52d4d989fea31b7d178f2b10c
@@ -4096,12 +4104,12 @@ trackedFiles:
     pristine_git_object: 153914ae10a1463784a2be285cf2178386fb2324
   src/Models/Operations/RetrieveAnalyticsRequest.php:
     id: 9f76e9868839
-    last_write_checksum: sha1:ab230abe35647bc1aa1fe593455a8664ecfeccdb
-    pristine_git_object: 4c89b2a2a7f07bf9348d4be98f349afa96a072be
+    last_write_checksum: sha1:cf29b09bd3ab0c5befcdf91182d2cda4827cc336
+    pristine_git_object: 7a52d804c6f70d68738b1259f7281cfa54ce91e7
   src/Models/Operations/RetrieveAnalyticsResponse.php:
     id: 8298765f83fd
-    last_write_checksum: sha1:69ce0e63600eb37ee894592049b7fbba6988a8f0
-    pristine_git_object: dc8ef5c5af062bf61359d4ce0e3ca80bef3826a4
+    last_write_checksum: sha1:96724e3ac89016d4360f438be349159423bc6bf2
+    pristine_git_object: 1ad3d3e50be59933a614032af41981a0949ba3bb
   src/Models/Operations/RetrievePartnerAnalyticsQueryParamGroupBy.php:
     id: 695cd4403984
     last_write_checksum: sha1:237c761d13ebcd8f436bd4f1a0f02e105d62ce49
@@ -4392,8 +4400,8 @@ trackedFiles:
     pristine_git_object: b7cb27c7c3efc2145ba7247e29ce10f09845181f
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:1add5af24856c4d1aeafcb218c990ce3903d9c41
-    pristine_git_object: 88dde74c965cb781a58454bb7a8dbbd47a5ac89e
+    last_write_checksum: sha1:a53b576ecebf8803df5b4da92ab5978cc1c39ab7
+    pristine_git_object: 907e095107b9d8a8d8c53991c4806949eba4e12d
   src/Tags.php:
     id: 946b9974d4d1
     last_write_checksum: sha1:d59a354b9fe40585287b70ec686220d9b515d672
@@ -6231,7 +6239,7 @@ examples:
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `dub->events->list()`:  `response.[]->union(SaleEvent)->sale->paymentProcessor->enum(lemonsqueezy)` **Added** (Breaking ⚠️)\n* `dub->track->sale()`: \n  *  `request->paymentProcessor->enum(lemonsqueezy)` **Added**\n* `dub->commissions->list()`: \n  *  `request->query` **Added**\n* `dub->commissions->create()`: \n  *  `request->union(3)->sale->paymentProcessor->enum(lemonsqueezy)` **Added**\n"
+releaseNotes: "## Php SDK Changes:\n* `dub->analytics->retrieve()`: \n  *  `request` **Changed**\n  *  `response.union(Array<AnalyticsEventNames>)` **Added** (Breaking ⚠️)\n* `dub->events->list()`: \n  *  `request->eventName` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
