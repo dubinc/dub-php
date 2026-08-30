@@ -18,6 +18,7 @@ The parameter to group the analytics data points by. Defaults to `count` if unde
 | `Os`             | os               |
 | `Trigger`        | trigger          |
 | `Triggers`       | triggers         |
+| `EventNames`     | event_names      |
 | `Referers`       | referers         |
 | `RefererUrls`    | referer_urls     |
 | `TopFolders`     | top_folders      |
