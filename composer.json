@@ -6,7 +6,7 @@
       "Dub\\": "src/"
     }
   },
-  "license": "AGPL-3.0-only",
+  "license": "MIT",
   "require": {
     "php": ">=8.2",
     "galbar/jsonpath": ">=3.0",
