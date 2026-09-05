@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 43187d3e-7c3c-4c11-b5d4-4b2334fb6d96
 management:
-  docChecksum: 4a5c88917edd89070470cd4cefad49fe
+  docChecksum: f8e3c84578ab84ff18212f403855edb3
   docVersion: 0.0.1
-  speakeasyVersion: 1.796.3
-  generationVersion: 2.934.1
-  releaseVersion: 0.15.19
-  configChecksum: 38a2e26cc9373514f1c7afd4b0e14c40
+  speakeasyVersion: 1.796.4
+  generationVersion: 2.935.1
+  releaseVersion: 0.15.20
+  configChecksum: 8b55b2126d2b1f72ceb2076badf2d9e8
   repoURL: https://github.com/dubinc/dub-php.git
   installationURL: https://github.com/dubinc/dub-php.git
   published: true
 persistentEdits:
-  generation_id: da53c3fd-0e58-4c73-8a91-197143f8f58b
-  pristine_commit_hash: 0c10c61413af346f14e3f2d1d18383b964cb10ed
-  pristine_tree_hash: d0c84a2dbfa78833d79556e6e50a4ad41d6c97bf
+  generation_id: cbe16db0-a6c9-4550-a735-b1c612c45a73
+  pristine_commit_hash: f945b82e9c65966b0bc8e86244f5bc48ad4052b0
+  pristine_tree_hash: c938d17fbd03ef077ba40e132816a8645892fbc7
 features:
   php:
     constsAndDefaults: 0.2.2
@@ -968,8 +968,8 @@ trackedFiles:
     pristine_git_object: f7c6179d4c8f54b609e038de0480857379e14240
   docs/Models/Operations/CreatePartnerLinkRequestBody.md:
     id: 16a341e41e5d
-    last_write_checksum: sha1:e462ca0c8772d8f69812a15756150679eac06b6c
-    pristine_git_object: 624816bbc523203f3269ac1b835eda7fe0300ad1
+    last_write_checksum: sha1:db942d7b66e33d46e229dc23efab047420ddf4e6
+    pristine_git_object: b5bb1d9d6dc8597bf33274d768ce6809f5ac4667
   docs/Models/Operations/CreatePartnerLinkResponse.md:
     id: 9c4d87f4a5b9
     last_write_checksum: sha1:d122c1ada5ede96d22646f17279bcf9b9f3001ac
@@ -2144,8 +2144,8 @@ trackedFiles:
     pristine_git_object: ee65af8af47c47bb56c23a6e7ee77ae6117c672c
   docs/Models/Operations/UpsertPartnerLinkRequestBody.md:
     id: 2ee729220e94
-    last_write_checksum: sha1:4d0a2f7c45ce4d00c3f504d12cd29605e05fc2c7
-    pristine_git_object: 0c83239848b53ed8d53f9de9f68f71b674113500
+    last_write_checksum: sha1:c55aa24bb738513768efc1150a100b009c11e349
+    pristine_git_object: fa7a602f1d26ba04d011ca204ed4794361817671
   docs/Models/Operations/UpsertPartnerLinkResponse.md:
     id: 1641259510ea
     last_write_checksum: sha1:dbd7d120b8f4fc35aefaf4d34dc7e9c900878050
@@ -3280,8 +3280,8 @@ trackedFiles:
     pristine_git_object: f8969522348d5d4c117a4daf9eda79d4e101c02e
   src/Models/Operations/CreatePartnerLinkRequestBody.php:
     id: 7e7b95b0ca5b
-    last_write_checksum: sha1:5f545bd1ff7c8d8c57155656b37b30bca3c36358
-    pristine_git_object: 2ee7888f1bc896546d5e18b08dd32e94cddb7acd
+    last_write_checksum: sha1:78b489b3e765d48757550ef7f327202dd8ddd63f
+    pristine_git_object: c3ba0c67ce2ad4d987da4c42e5a222372bbe25c0
   src/Models/Operations/CreatePartnerLinkResponse.php:
     id: 9cb9d7dd2b5a
     last_write_checksum: sha1:7d069b396bc81d359c45b362a76d0d59555d2ef4
@@ -4360,8 +4360,8 @@ trackedFiles:
     pristine_git_object: 5b2f354685044a0e9bac34a7310ef160794685e9
   src/Models/Operations/UpsertPartnerLinkRequestBody.php:
     id: 00327189c19b
-    last_write_checksum: sha1:e718843986195a43f22849e4a638364642826f92
-    pristine_git_object: a10d45777726dc5b0c7e08608f1c6be09c5e5d56
+    last_write_checksum: sha1:3d56f4857b7b5a1ce514b779d1235c8a54204ed4
+    pristine_git_object: 2e64d3bae2fb76bd13b4443e1fc5c0929308d88b
   src/Models/Operations/UpsertPartnerLinkResponse.php:
     id: e91115275a21
     last_write_checksum: sha1:6ff271308cb1a59c697ec76d7a60d5f5b00b8a85
@@ -4392,8 +4392,8 @@ trackedFiles:
     pristine_git_object: dd4f70b7212bebd94f22ce422bd25ea31b1fe9ec
   src/SDKConfiguration.php:
     id: 9d60ab0bec0b
-    last_write_checksum: sha1:c0ddd50dcd1636d6dde38ae9b5fcbd276cea49c7
-    pristine_git_object: f06726dd5300525a488f66e052552b8f6c16b2dd
+    last_write_checksum: sha1:540805ed41240dba5953ca78240342e26a26c47e
+    pristine_git_object: 6cfe59c811c7ae9b531013805b9d22795693ad0c
   src/Tags.php:
     id: 946b9974d4d1
     last_write_checksum: sha1:905c35ccca16baf435fedd69558083ffaba18f13
@@ -4408,8 +4408,8 @@ trackedFiles:
     pristine_git_object: 2c622857f8f0b9b5a10be3b84d086aa56e394f96
   src/Utils/BigIntHandler.php:
     id: 190c4d16fa85
-    last_write_checksum: sha1:fdf2b2348f1b315b9a3fa836cdee169d5ebbed6b
-    pristine_git_object: 8c8d3a12d8116bb170ed5893c643845682fc246f
+    last_write_checksum: sha1:dacaf52a88ad9c8a8efeb80209da99808bd169b8
+    pristine_git_object: 739c3dcc268a7192ef137c57509039e004a27b93
   src/Utils/DateHandler.php:
     id: 3223e13fd506
     last_write_checksum: sha1:0c9f14df8afbea19249680b9734ca0c4c21e9d3b
@@ -6231,7 +6231,6 @@ examples:
           application/json: {"error": {"code": "internal_server_error", "message": "The requested resource was not found.", "doc_url": "https://dub.co/docs/api-reference/errors#internal-server_error"}}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Php SDK Changes:\n* `dub->commissions->create()`: \n  *  `request->union(3)->discountCode` **Added**\n"
 generatedFiles:
   - .gitattributes
   - USAGE.md
