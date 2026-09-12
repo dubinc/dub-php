@@ -111,7 +111,7 @@ class UpdateCommissionResponseBody
     public ?string $description;
 
     /**
-     * User-provided metadata from the associated lead or sale event (`lead.metadata` / `sale.metadata`).
+     * Metadata from the associated lead or sale event (`lead.metadata` / `sale.metadata`), or from Stripe webhook metadata.
      *
      * @var ?array<string, mixed> $metadata
      */
