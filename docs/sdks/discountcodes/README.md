@@ -10,7 +10,7 @@
 
 ## list
 
-Retrieve a paginated list of discount codes for a partner / a given discount / the whole program.
+Retrieve a paginated list of discount codes in a program or filtered by partner, discount, or code.
 
 ### Example Usage
 
@@ -21,6 +21,7 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Dub;
+use Dub\Models\Operations;
 
 $sdk = Dub\Dub::builder()
     ->setSecurity(
@@ -28,12 +29,13 @@ $sdk = Dub\Dub::builder()
     )
     ->build();
 
-
+$request = new Operations\ListDiscountCodesRequest(
+    page: 1,
+    pageSize: 50,
+);
 
 $response = $sdk->discountCodes->list(
-    page: 1,
-    pageSize: 50
-
+    request: $request
 );
 
 if ($response->discountCodeSchemas !== null) {
@@ -43,12 +45,9 @@ if ($response->discountCodeSchemas !== null) {
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     | Example                                                                                                         |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `partnerId`                                                                                                     | *?string*                                                                                                       | :heavy_minus_sign:                                                                                              | The ID of the partner to retrieve discount codes for. If omitted, returns discount codes for the whole program. |                                                                                                                 |
-| `discountId`                                                                                                    | *?string*                                                                                                       | :heavy_minus_sign:                                                                                              | Filter discount codes by discount ID.                                                                           |                                                                                                                 |
-| `page`                                                                                                          | *?int*                                                                                                          | :heavy_minus_sign:                                                                                              | The page number for pagination. The first page is `1`.                                                          | 1                                                                                                               |
-| `pageSize`                                                                                                      | *?int*                                                                                                          | :heavy_minus_sign:                                                                                              | The number of items per page.                                                                                   | 50                                                                                                              |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `$request`                                                                                 | [Operations\ListDiscountCodesRequest](../../Models/Operations/ListDiscountCodesRequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 ### Response
 

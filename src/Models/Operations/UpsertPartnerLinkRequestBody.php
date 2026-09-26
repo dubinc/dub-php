@@ -12,7 +12,7 @@ namespace Dub\Models\Operations;
 class UpsertPartnerLinkRequestBody
 {
     /**
-     * The URL to upsert for. Will throw an error if the domain doesn't match the program's default URL domain.
+     * The URL to upsert for.
      *
      * @var string $url
      */

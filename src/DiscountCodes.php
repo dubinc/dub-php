@@ -376,23 +376,14 @@ class DiscountCodes
     /**
      * List discount codes
      *
-     * Retrieve a paginated list of discount codes for a partner / a given discount / the whole program.
+     * Retrieve a paginated list of discount codes in a program or filtered by partner, discount, or code.
      *
-     * @param  ?string  $partnerId
-     * @param  ?string  $discountId
-     * @param  ?int  $page
-     * @param  ?int  $pageSize
+     * @param  ?\Dub\Models\Operations\ListDiscountCodesRequest  $request
      * @return \Dub\Models\Operations\ListDiscountCodesResponse
      * @throws \Dub\Models\Errors\SDKException
      */
-    public function list(?string $partnerId = null, ?string $discountId = null, ?int $page = null, ?int $pageSize = null, ?Options $options = null): Operations\ListDiscountCodesResponse
+    public function list(?Operations\ListDiscountCodesRequest $request = null, ?Options $options = null): Operations\ListDiscountCodesResponse
     {
-        $request = new Operations\ListDiscountCodesRequest(
-            partnerId: $partnerId,
-            discountId: $discountId,
-            page: $page,
-            pageSize: $pageSize,
-        );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/discount-codes');
         $urlOverride = null;
