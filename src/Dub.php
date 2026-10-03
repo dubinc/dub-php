@@ -36,7 +36,7 @@ class Dub
 
     public Partners $partners;
 
-    public PartnerApplications $partnerApplications;
+    public ProgramApplications $programApplications;
 
     public DiscountCodes $discountCodes;
 
@@ -75,7 +75,7 @@ class Dub
         $this->track = new Track($this->sdkConfiguration);
         $this->customers = new Customers($this->sdkConfiguration);
         $this->partners = new Partners($this->sdkConfiguration);
-        $this->partnerApplications = new PartnerApplications($this->sdkConfiguration);
+        $this->programApplications = new ProgramApplications($this->sdkConfiguration);
         $this->discountCodes = new DiscountCodes($this->sdkConfiguration);
         $this->commissions = new Commissions($this->sdkConfiguration);
         $this->payouts = new Payouts($this->sdkConfiguration);

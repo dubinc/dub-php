@@ -444,6 +444,7 @@ class Commissions
                             type: $request != null ? $request->type : null,
                             customerId: $request != null ? $request->customerId : null,
                             payoutId: $request != null ? $request->payoutId : null,
+                            bountySubmissionId: $request != null ? $request->bountySubmissionId : null,
                             partnerId: $request != null ? $request->partnerId : null,
                             tenantId: $request != null ? $request->tenantId : null,
                             groupId: $request != null ? $request->groupId : null,

@@ -228,6 +228,14 @@ class PartnerEnrolledEventData
 
     /**
      *
+     * @var ?string $customRewardId
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customRewardId')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $customRewardId = null;
+
+    /**
+     *
      * @var ?string $discountId
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discountId')]
@@ -496,6 +504,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $leadRewardId
      * @param  ?string  $saleRewardId
      * @param  ?string  $referralRewardId
+     * @param  ?string  $customRewardId
      * @param  ?string  $discountId
      * @param  ?string  $applicationId
      * @param  ?string  $bannedAt
@@ -517,7 +526,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $trustedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, NetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, Status $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, NetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, Status $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $customRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -545,6 +554,7 @@ class PartnerEnrolledEventData
         $this->leadRewardId = $leadRewardId;
         $this->saleRewardId = $saleRewardId;
         $this->referralRewardId = $referralRewardId;
+        $this->customRewardId = $customRewardId;
         $this->discountId = $discountId;
         $this->applicationId = $applicationId;
         $this->bannedAt = $bannedAt;

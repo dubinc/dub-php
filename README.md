@@ -250,12 +250,6 @@ foreach ($responses as $response) {
 * [updateMany](docs/sdks/links/README.md#updatemany) - Bulk update links
 * [upsert](docs/sdks/links/README.md#upsert) - Upsert a link
 
-### [PartnerApplications](docs/sdks/partnerapplications/README.md)
-
-* [list](docs/sdks/partnerapplications/README.md#list) - List all pending partner applications
-* [approve](docs/sdks/partnerapplications/README.md#approve) - Approve a partner application
-* [reject](docs/sdks/partnerapplications/README.md#reject) - Reject a partner application
-
 ### [Partners](docs/sdks/partners/README.md)
 
 * [list](docs/sdks/partners/README.md#list) - List all partners
@@ -270,6 +264,12 @@ foreach ($responses as $response) {
 ### [Payouts](docs/sdks/payouts/README.md)
 
 * [list](docs/sdks/payouts/README.md#list) - List all payouts
+
+### [ProgramApplications](docs/sdks/programapplications/README.md)
+
+* [list](docs/sdks/programapplications/README.md#list) - List all program applications
+* [approve](docs/sdks/programapplications/README.md#approve) - Approve a partner application
+* [reject](docs/sdks/programapplications/README.md#reject) - Reject a partner application
 
 ### [QRCodes](docs/sdks/qrcodes/README.md)
 
