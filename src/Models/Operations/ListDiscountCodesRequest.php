@@ -28,6 +28,14 @@ class ListDiscountCodesRequest
     public ?string $discountId = null;
 
     /**
+     * Filter discount codes by the alphanumeric code (e.g. `PARTNER10OFF`).
+     *
+     * @var ?string $code
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=code')]
+    public ?string $code = null;
+
+    /**
      * The page number for pagination. The first page is `1`.
      *
      * @var ?int $page
@@ -46,14 +54,16 @@ class ListDiscountCodesRequest
     /**
      * @param  ?string  $partnerId
      * @param  ?string  $discountId
+     * @param  ?string  $code
      * @param  ?int  $page
      * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $partnerId = null, ?string $discountId = null, ?int $page = null, ?int $pageSize = 100)
+    public function __construct(?string $partnerId = null, ?string $discountId = null, ?string $code = null, ?int $page = null, ?int $pageSize = 100)
     {
         $this->partnerId = $partnerId;
         $this->discountId = $discountId;
+        $this->code = $code;
         $this->page = $page;
         $this->pageSize = $pageSize;
     }

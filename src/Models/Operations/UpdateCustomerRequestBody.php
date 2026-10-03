@@ -66,15 +66,25 @@ class UpdateCustomerRequestBody
     public ?string $stripeCustomerId = null;
 
     /**
+     * The date the customer canceled their subscription. Set to a timestamp to mark the subscription as canceled, or `null` to clear it (e.g. if they resubscribe).
+     *
+     * @var ?string $subscriptionCanceledAt
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptionCanceledAt')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $subscriptionCanceledAt = null;
+
+    /**
      * @param  ?string  $externalId
      * @param  ?string  $country
      * @param  ?string  $email
      * @param  ?string  $name
      * @param  ?string  $avatar
      * @param  ?string  $stripeCustomerId
+     * @param  ?string  $subscriptionCanceledAt
      * @phpstan-pure
      */
-    public function __construct(?string $externalId = null, ?string $country = null, ?string $email = null, ?string $name = null, ?string $avatar = null, ?string $stripeCustomerId = null)
+    public function __construct(?string $externalId = null, ?string $country = null, ?string $email = null, ?string $name = null, ?string $avatar = null, ?string $stripeCustomerId = null, ?string $subscriptionCanceledAt = null)
     {
         $this->externalId = $externalId;
         $this->country = $country;
@@ -82,5 +92,6 @@ class UpdateCustomerRequestBody
         $this->name = $name;
         $this->avatar = $avatar;
         $this->stripeCustomerId = $stripeCustomerId;
+        $this->subscriptionCanceledAt = $subscriptionCanceledAt;
     }
 }

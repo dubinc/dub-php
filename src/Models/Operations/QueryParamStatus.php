@@ -9,15 +9,10 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** Filter the list of commissions by their corresponding status. */
+/** Filter applications by status. One of `pending`, `approved`, or `rejected`. Defaults to `pending`. */
 enum QueryParamStatus: string
 {
     case Pending = 'pending';
-    case Processed = 'processed';
-    case Paid = 'paid';
-    case Refunded = 'refunded';
-    case Duplicate = 'duplicate';
-    case Fraud = 'fraud';
-    case Canceled = 'canceled';
-    case Hold = 'hold';
+    case Approved = 'approved';
+    case Rejected = 'rejected';
 }

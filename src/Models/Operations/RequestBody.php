@@ -131,7 +131,7 @@ class RequestBody
     public ?bool $publicStats = null;
 
     /**
-     * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
+     * The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace. Pass `null` or an empty string to remove it.
      *
      * @var ?string $externalId
      */
@@ -140,7 +140,7 @@ class RequestBody
     public ?string $externalId = null;
 
     /**
-     * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+     * The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant. Pass `null` or an empty string to remove it.
      *
      * @var ?string $tenantId
      */
