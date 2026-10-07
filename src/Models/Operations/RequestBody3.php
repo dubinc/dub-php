@@ -65,7 +65,17 @@ class RequestBody3
     public ?string $discountCode = null;
 
     /**
-     * Only used when `importStripeInvoices` is `false`. The date of the manual sale event. Defaults to the current date and time if not provided.
+     * Import paid Stripe invoices for the customer and create a commission for each. Pass `all` to import every unimported, paid invoice, or an array of Stripe invoice IDs to import only those invoices. Refunded invoices are not imported. When not provided, create a single manual sale event using `sale.amount`
+     *
+     * @var \Dub\Models\Operations\StripeInvoicesToImport1|array<string>|null $stripeInvoicesToImport
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('stripeInvoicesToImport')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\StripeInvoicesToImport1|array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public StripeInvoicesToImport1|array|null $stripeInvoicesToImport = null;
+
+    /**
+     * Only used when `stripeInvoicesToImport` is not provided. The date of the manual sale event. Defaults to the current date and time if not provided.
      *
      * @var ?string $date
      */
@@ -82,6 +92,16 @@ class RequestBody3
     #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\Sale|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?Sale $sale = null;
+
+    /**
+     * Deprecated: Use `stripeInvoicesToImport: all` instead.
+     *
+     * @var ?bool $importStripeInvoices
+     * @deprecated  field: This will be removed in a future release, please migrate away from it as soon as possible.
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('importStripeInvoices')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $importStripeInvoices = null;
 
     /**
      * Deprecated: Use `date` instead.
@@ -124,31 +144,23 @@ class RequestBody3
     public ?string $productId = null;
 
     /**
-     * When `true`, import all unimported paid Stripe invoices for the customer and create a commission for each. When `false`, create a single manual sale event using `sale.amount` (or deprecated `saleAmount`).
-     *
-     * @var ?bool $importStripeInvoices
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('importStripeInvoices')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?bool $importStripeInvoices = null;
-
-    /**
      * @param  \Dub\Models\Operations\CreateCommissionRequestBodyCommissionsType  $type
      * @param  string  $partnerId
      * @param  ?string  $customerId
      * @param  ?\Dub\Models\Operations\RequestBodyCustomer  $customer
      * @param  ?string  $linkId
      * @param  ?string  $discountCode
-     * @param  ?bool  $importStripeInvoices
+     * @param  \Dub\Models\Operations\StripeInvoicesToImport1|array<string>|null  $stripeInvoicesToImport
      * @param  ?string  $date
      * @param  ?\Dub\Models\Operations\Sale  $sale
+     * @param  ?bool  $importStripeInvoices
      * @param  ?string  $saleEventDate
      * @param  ?float  $saleAmount
      * @param  ?string  $invoiceId
      * @param  ?string  $productId
      * @phpstan-pure
      */
-    public function __construct(CreateCommissionRequestBodyCommissionsType $type, string $partnerId, ?string $customerId = null, ?RequestBodyCustomer $customer = null, ?string $linkId = null, ?string $discountCode = null, ?string $date = null, ?Sale $sale = null, ?string $saleEventDate = null, ?float $saleAmount = null, ?string $invoiceId = null, ?string $productId = null, ?bool $importStripeInvoices = false)
+    public function __construct(CreateCommissionRequestBodyCommissionsType $type, string $partnerId, ?string $customerId = null, ?RequestBodyCustomer $customer = null, ?string $linkId = null, ?string $discountCode = null, StripeInvoicesToImport1|array|null $stripeInvoicesToImport = null, ?string $date = null, ?Sale $sale = null, ?bool $importStripeInvoices = null, ?string $saleEventDate = null, ?float $saleAmount = null, ?string $invoiceId = null, ?string $productId = null)
     {
         $this->type = $type;
         $this->partnerId = $partnerId;
@@ -156,12 +168,13 @@ class RequestBody3
         $this->customer = $customer;
         $this->linkId = $linkId;
         $this->discountCode = $discountCode;
+        $this->stripeInvoicesToImport = $stripeInvoicesToImport;
         $this->date = $date;
         $this->sale = $sale;
+        $this->importStripeInvoices = $importStripeInvoices;
         $this->saleEventDate = $saleEventDate;
         $this->saleAmount = $saleAmount;
         $this->invoiceId = $invoiceId;
         $this->productId = $productId;
-        $this->importStripeInvoices = $importStripeInvoices;
     }
 }

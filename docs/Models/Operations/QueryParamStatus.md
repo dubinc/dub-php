@@ -1,17 +1,12 @@
 # QueryParamStatus
 
-Filter the list of commissions by their corresponding status.
+Filter applications by status. One of `pending`, `approved`, or `rejected`. Defaults to `pending`.
 
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Pending`   | pending     |
-| `Processed` | processed   |
-| `Paid`      | paid        |
-| `Refunded`  | refunded    |
-| `Duplicate` | duplicate   |
-| `Fraud`     | fraud       |
-| `Canceled`  | canceled    |
-| `Hold`      | hold        |
+| Name       | Value      |
+| ---------- | ---------- |
+| `Pending`  | pending    |
+| `Approved` | approved   |
+| `Rejected` | rejected   |

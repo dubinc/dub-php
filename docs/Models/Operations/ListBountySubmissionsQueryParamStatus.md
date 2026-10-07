@@ -5,9 +5,10 @@ The status of the submissions to list.
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Draft`     | draft       |
-| `Submitted` | submitted   |
-| `Approved`  | approved    |
-| `Rejected`  | rejected    |
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `Draft`             | draft               |
+| `Submitted`         | submitted           |
+| `Approved`          | approved            |
+| `Rejected`          | rejected            |
+| `PartiallyApproved` | partiallyApproved   |

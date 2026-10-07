@@ -50,13 +50,22 @@ Components\SaleCreatedEvent $value = /* values here */
 Components\PartnerEnrolledEvent $value = /* values here */
 ```
 
-### `Components\PartnerApplicationSubmittedEvent`
+### `Components\ProgramApplicationSubmittedEvent`
 
 ```php
 /**
-* @var \Dub\Models\Components\PartnerApplicationSubmittedEvent
+* @var \Dub\Models\Components\ProgramApplicationSubmittedEvent
 */
-Components\PartnerApplicationSubmittedEvent $value = /* values here */
+Components\ProgramApplicationSubmittedEvent $value = /* values here */
+```
+
+### `Components\ProgramApplicationCreatedEvent`
+
+```php
+/**
+* @var \Dub\Models\Components\ProgramApplicationCreatedEvent
+*/
+Components\ProgramApplicationCreatedEvent $value = /* values here */
 ```
 
 ### `Components\PartnerMergedEvent`

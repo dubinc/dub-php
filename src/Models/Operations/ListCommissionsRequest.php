@@ -41,6 +41,14 @@ class ListCommissionsRequest
     public ?string $payoutId = null;
 
     /**
+     * Filter the list of commissions by the associated bounty submission.
+     *
+     * @var ?string $bountySubmissionId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=bountySubmissionId')]
+    public ?string $bountySubmissionId = null;
+
+    /**
      * Filter the list of commissions by the associated partner. When specified, takes precedence over `tenantId`.
      *
      * Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`).
@@ -100,10 +108,10 @@ class ListCommissionsRequest
     /**
      * Filter the list of commissions by their corresponding status.
      *
-     * @var ?\Dub\Models\Operations\QueryParamStatus $status
+     * @var ?\Dub\Models\Operations\ListCommissionsQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
-    public ?QueryParamStatus $status = null;
+    public ?ListCommissionsQueryParamStatus $status = null;
 
     /**
      * The start date of the date range to filter the commissions by.
@@ -200,12 +208,13 @@ class ListCommissionsRequest
      * @param  ?\Dub\Models\Operations\Type  $type
      * @param  ?string  $customerId
      * @param  ?string  $payoutId
+     * @param  ?string  $bountySubmissionId
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @param  ?string  $groupId
      * @param  ?string  $partnerTagId
      * @param  ?string  $invoiceId
-     * @param  ?\Dub\Models\Operations\QueryParamStatus  $status
+     * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamStatus  $status
      * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamSortBy  $sortBy
      * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamSortOrder  $sortOrder
      * @param  ?\Dub\Models\Operations\ListCommissionsQueryParamInterval  $interval
@@ -219,11 +228,12 @@ class ListCommissionsRequest
      * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $partnerTagId = null, ?string $invoiceId = null, ?QueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $query = null, ?string $endingBefore = null, ?string $startingAfter = null, ?int $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?int $pageSize = 100)
+    public function __construct(?Type $type = null, ?string $customerId = null, ?string $payoutId = null, ?string $bountySubmissionId = null, ?string $partnerId = null, ?string $tenantId = null, ?string $groupId = null, ?string $partnerTagId = null, ?string $invoiceId = null, ?ListCommissionsQueryParamStatus $status = null, ?string $start = null, ?string $end = null, ?string $timezone = null, ?string $query = null, ?string $endingBefore = null, ?string $startingAfter = null, ?int $page = null, ?ListCommissionsQueryParamSortBy $sortBy = ListCommissionsQueryParamSortBy::CreatedAt, ?ListCommissionsQueryParamSortOrder $sortOrder = ListCommissionsQueryParamSortOrder::Desc, ?ListCommissionsQueryParamInterval $interval = ListCommissionsQueryParamInterval::All, ?int $pageSize = 100)
     {
         $this->type = $type;
         $this->customerId = $customerId;
         $this->payoutId = $payoutId;
+        $this->bountySubmissionId = $bountySubmissionId;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->groupId = $groupId;
