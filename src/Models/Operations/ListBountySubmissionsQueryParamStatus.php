@@ -16,4 +16,5 @@ enum ListBountySubmissionsQueryParamStatus: string
     case Submitted = 'submitted';
     case Approved = 'approved';
     case Rejected = 'rejected';
+    case PartiallyApproved = 'partiallyApproved';
 }

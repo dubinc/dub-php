@@ -144,6 +144,15 @@ class ListBountySubmissionsResponseBody
     public ?string $socialMetricsLastSyncedAt = null;
 
     /**
+     * The highest social metric milestone that has been approved and paid out for this submission
+     *
+     * @var ?int $approvedSocialMetricThreshold
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('approvedSocialMetricThreshold')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $approvedSocialMetricThreshold = null;
+
+    /**
      * @param  string  $id
      * @param  string  $bountyId
      * @param  string  $partnerId
@@ -160,9 +169,10 @@ class ListBountySubmissionsResponseBody
      * @param  ?string  $rejectionReason
      * @param  ?string  $rejectionNote
      * @param  ?string  $socialMetricsLastSyncedAt
+     * @param  ?int  $approvedSocialMetricThreshold
      * @phpstan-pure
      */
-    public function __construct(string $id, string $bountyId, string $partnerId, ListBountySubmissionsStatus $status, string $createdAt, int $periodNumber, ?string $description = null, ?array $urls = null, ?array $files = null, ?float $performanceCount = null, ?int $socialMetricCount = null, ?string $completedAt = null, ?string $reviewedAt = null, ?string $rejectionReason = null, ?string $rejectionNote = null, ?string $socialMetricsLastSyncedAt = null)
+    public function __construct(string $id, string $bountyId, string $partnerId, ListBountySubmissionsStatus $status, string $createdAt, int $periodNumber, ?string $description = null, ?array $urls = null, ?array $files = null, ?float $performanceCount = null, ?int $socialMetricCount = null, ?string $completedAt = null, ?string $reviewedAt = null, ?string $rejectionReason = null, ?string $rejectionNote = null, ?string $socialMetricsLastSyncedAt = null, ?int $approvedSocialMetricThreshold = null)
     {
         $this->id = $id;
         $this->bountyId = $bountyId;
@@ -180,5 +190,6 @@ class ListBountySubmissionsResponseBody
         $this->rejectionReason = $rejectionReason;
         $this->rejectionNote = $rejectionNote;
         $this->socialMetricsLastSyncedAt = $socialMetricsLastSyncedAt;
+        $this->approvedSocialMetricThreshold = $approvedSocialMetricThreshold;
     }
 }

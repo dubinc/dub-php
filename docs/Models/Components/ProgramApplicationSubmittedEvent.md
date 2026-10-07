@@ -1,0 +1,15 @@
+# ~~ProgramApplicationSubmittedEvent~~
+
+Deprecated: Use `program_application.created` instead. Triggered when a partner submits an application to join a program.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                 | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `event`                                                                                                              | [Components\ProgramApplicationSubmittedEventEvent](../../Models/Components/ProgramApplicationSubmittedEventEvent.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `createdAt`                                                                                                          | *string*                                                                                                             | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `data`                                                                                                               | [Components\ProgramApplicationSubmittedEventData](../../Models/Components/ProgramApplicationSubmittedEventData.md)   | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |

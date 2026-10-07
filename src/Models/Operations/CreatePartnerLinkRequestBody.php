@@ -49,7 +49,7 @@ class CreatePartnerLinkRequestBody
     public ?string $tenantId = null;
 
     /**
-     * The URL to shorten (if not provided, the program's default URL will be used). Will throw an error if the domain doesn't match the program's default URL domain.
+     * The URL to shorten (if not provided, the program's default URL will be used).
      *
      * @var ?string $url
      */
