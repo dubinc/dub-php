@@ -38,6 +38,26 @@ class Partner
     public ?string $groupId = null;
 
     /**
+     * The IDs of the partner tags to assign when creating the partner. Existing tags are kept. Takes priority over `tagNames` only when it contains at least one ID.
+     *
+     * @var ?array<string> $tagIds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tagIds = null;
+
+    /**
+     * The names of the partner tags to assign when creating the partner. Existing tags are kept. Ignored only when `tagIds` contains at least one ID.
+     *
+     * @var ?array<string> $tagNames
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagNames')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tagNames = null;
+
+    /**
      * Additional properties that you can pass to the partner's short link. Will be used to override the default link properties for this partner.
      *
      * @var ?\Dub\Models\Operations\CreateReferralsEmbedTokenLinkProps $linkProps
@@ -96,6 +116,8 @@ class Partner
      * @param  string  $email
      * @param  ?string  $tenantId
      * @param  ?string  $groupId
+     * @param  ?array<string>  $tagIds
+     * @param  ?array<string>  $tagNames
      * @param  ?\Dub\Models\Operations\CreateReferralsEmbedTokenLinkProps  $linkProps
      * @param  ?string  $name
      * @param  ?string  $username
@@ -104,11 +126,13 @@ class Partner
      * @param  ?string  $description
      * @phpstan-pure
      */
-    public function __construct(string $email, ?string $tenantId = null, ?string $groupId = null, ?CreateReferralsEmbedTokenLinkProps $linkProps = null, ?string $name = null, ?string $username = null, ?string $image = null, ?string $country = null, ?string $description = null)
+    public function __construct(string $email, ?string $tenantId = null, ?string $groupId = null, ?array $tagIds = null, ?array $tagNames = null, ?CreateReferralsEmbedTokenLinkProps $linkProps = null, ?string $name = null, ?string $username = null, ?string $image = null, ?string $country = null, ?string $description = null)
     {
         $this->email = $email;
         $this->tenantId = $tenantId;
         $this->groupId = $groupId;
+        $this->tagIds = $tagIds;
+        $this->tagNames = $tagNames;
         $this->linkProps = $linkProps;
         $this->name = $name;
         $this->username = $username;

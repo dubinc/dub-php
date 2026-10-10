@@ -271,15 +271,6 @@ class PartnerEnrolledEventData
     public ?BannedReason $bannedReason = null;
 
     /**
-     *
-     * @var ?\Dub\Models\Components\ReferralFormData $referralFormData
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('referralFormData')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\ReferralFormData|null')]
-    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?ReferralFormData $referralFormData = null;
-
-    /**
      * Linked program application, including review outcome when applicable.
      *
      * @var ?\Dub\Models\Components\Application $application
@@ -509,7 +500,6 @@ class PartnerEnrolledEventData
      * @param  ?string  $applicationId
      * @param  ?string  $bannedAt
      * @param  ?\Dub\Models\Components\BannedReason  $bannedReason
-     * @param  ?\Dub\Models\Components\ReferralFormData  $referralFormData
      * @param  ?\Dub\Models\Components\Application  $application
      * @param  ?float  $earningsPerClick
      * @param  ?float  $averageLifetimeValue
@@ -526,7 +516,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $trustedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, NetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, Status $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $customRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?ReferralFormData $referralFormData = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, NetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, Status $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $customRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -559,7 +549,6 @@ class PartnerEnrolledEventData
         $this->applicationId = $applicationId;
         $this->bannedAt = $bannedAt;
         $this->bannedReason = $bannedReason;
-        $this->referralFormData = $referralFormData;
         $this->application = $application;
         $this->earningsPerClick = $earningsPerClick;
         $this->averageLifetimeValue = $averageLifetimeValue;
