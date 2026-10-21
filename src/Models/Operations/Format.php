@@ -9,7 +9,9 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-enum FieldsType: string
+/** The format of the QR code. Defaults to `png` if not provided. */
+enum Format: string
 {
-    case Text = 'text';
+    case Png = 'png';
+    case Svg = 'svg';
 }

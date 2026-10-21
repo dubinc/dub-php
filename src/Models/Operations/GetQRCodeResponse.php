@@ -35,22 +35,31 @@ class GetQRCodeResponse
     /**
      * The QR code
      *
-     * @var ?string $res
+     * @var ?string $twoHundredImagePngRes
      */
-    public ?string $res = null;
+    public ?string $twoHundredImagePngRes = null;
+
+    /**
+     * The QR code
+     *
+     * @var ?string $twoHundredImageSvgPlusXmlRes
+     */
+    public ?string $twoHundredImageSvgPlusXmlRes = null;
 
     /**
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?string  $res
+     * @param  ?string  $twoHundredImagePngRes
+     * @param  ?string  $twoHundredImageSvgPlusXmlRes
      * @phpstan-pure
      */
-    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?string $res = null)
+    public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?string $twoHundredImagePngRes = null, ?string $twoHundredImageSvgPlusXmlRes = null)
     {
         $this->contentType = $contentType;
         $this->statusCode = $statusCode;
         $this->rawResponse = $rawResponse;
-        $this->res = $res;
+        $this->twoHundredImagePngRes = $twoHundredImagePngRes;
+        $this->twoHundredImageSvgPlusXmlRes = $twoHundredImageSvgPlusXmlRes;
     }
 }
