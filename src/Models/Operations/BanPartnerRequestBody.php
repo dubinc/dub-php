@@ -21,6 +21,24 @@ class BanPartnerRequestBody
     public Reason $reason;
 
     /**
+     * Whether to flag the partner for fraud review by the Dub team.
+     *
+     * @var ?bool $flagForFraud
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('flagForFraud')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $flagForFraud = null;
+
+    /**
+     * The reason for flagging the partner for fraud. Required when flagForFraud is true.
+     *
+     * @var ?string $flagForFraudReason
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('flagForFraudReason')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $flagForFraudReason = null;
+
+    /**
      * The ID of the partner to create a link for. Will take precedence over `tenantId` if provided.
      *
      * @var ?string $partnerId
@@ -40,13 +58,17 @@ class BanPartnerRequestBody
 
     /**
      * @param  \Dub\Models\Operations\Reason  $reason
+     * @param  ?bool  $flagForFraud
+     * @param  ?string  $flagForFraudReason
      * @param  ?string  $partnerId
      * @param  ?string  $tenantId
      * @phpstan-pure
      */
-    public function __construct(Reason $reason, ?string $partnerId = null, ?string $tenantId = null)
+    public function __construct(Reason $reason, ?bool $flagForFraud = null, ?string $flagForFraudReason = null, ?string $partnerId = null, ?string $tenantId = null)
     {
         $this->reason = $reason;
+        $this->flagForFraud = $flagForFraud;
+        $this->flagForFraudReason = $flagForFraudReason;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
     }
