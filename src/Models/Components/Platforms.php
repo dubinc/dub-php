@@ -34,15 +34,48 @@ class Platforms
     public ?string $verifiedAt;
 
     /**
+     * Subscribers or followers for social profiles, or domain rating for websites.
+     *
+     * @var ?int $subscribers
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('subscribers')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $subscribers = null;
+
+    /**
+     * Number of posts on the profile.
+     *
+     * @var ?int $posts
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('posts')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $posts = null;
+
+    /**
+     * Video views for YouTube, or impressions for other social profiles.
+     *
+     * @var ?int $views
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('views')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $views = null;
+
+    /**
      * @param  \Dub\Models\Components\ProgramApplicationCreatedEventType  $type
      * @param  string  $identifier
      * @param  ?string  $verifiedAt
+     * @param  ?int  $subscribers
+     * @param  ?int  $posts
+     * @param  ?int  $views
      * @phpstan-pure
      */
-    public function __construct(ProgramApplicationCreatedEventType $type, string $identifier, ?string $verifiedAt = null)
+    public function __construct(ProgramApplicationCreatedEventType $type, string $identifier, ?string $verifiedAt = null, ?int $subscribers = 0, ?int $posts = 0, ?int $views = 0)
     {
         $this->type = $type;
         $this->identifier = $identifier;
         $this->verifiedAt = $verifiedAt;
+        $this->subscribers = $subscribers;
+        $this->posts = $posts;
+        $this->views = $views;
     }
 }

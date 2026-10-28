@@ -29,13 +29,14 @@ $sdk = Dub\Dub::builder()
 
 $request = new Operations\GetQRCodeRequest(
     url: 'https://needy-newsstand.biz/',
+    bgColor: '#FFFFFF',
 );
 
 $response = $sdk->qrCodes->get(
     request: $request
 );
 
-if ($response->res !== null) {
+if ($response->twoHundredImagePngRes !== null) {
     // handle response
 }
 ```

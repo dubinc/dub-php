@@ -28,6 +28,14 @@ class GetQRCodeRequest
     public ?string $logo = null;
 
     /**
+     * The background color of the QR code in hex format. Defaults to `#ffffff` for `png`. When omitted for `svg`, the background is transparent.
+     *
+     * @var ?string $bgColor
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=bgColor')]
+    public ?string $bgColor = null;
+
+    /**
      * The size of the QR code in pixels. Defaults to `600` if not provided.
      *
      * @var ?float $size
@@ -50,14 +58,6 @@ class GetQRCodeRequest
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=fgColor')]
     public ?string $fgColor = null;
-
-    /**
-     * The background color of the QR code in hex format. Defaults to `#ffffff` if not provided.
-     *
-     * @var ?string $bgColor
-     */
-    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=bgColor')]
-    public ?string $bgColor = null;
 
     /**
      * Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.
@@ -84,6 +84,14 @@ class GetQRCodeRequest
     public ?bool $includeMargin = null;
 
     /**
+     * The format of the QR code. Defaults to `png` if not provided.
+     *
+     * @var ?\Dub\Models\Operations\Format $format
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=format')]
+    public ?Format $format = null;
+
+    /**
      * @param  string  $url
      * @param  ?string  $logo
      * @param  ?float  $size
@@ -93,18 +101,20 @@ class GetQRCodeRequest
      * @param  ?bool  $hideLogo
      * @param  ?float  $margin
      * @param  ?bool  $includeMargin
+     * @param  ?\Dub\Models\Operations\Format  $format
      * @phpstan-pure
      */
-    public function __construct(string $url, ?string $logo = null, ?float $size = 600, ?Level $level = Level::L, ?string $fgColor = '#000000', ?string $bgColor = '#FFFFFF', ?bool $hideLogo = false, ?float $margin = 2, ?bool $includeMargin = true)
+    public function __construct(string $url, ?string $logo = null, ?string $bgColor = null, ?float $size = 600, ?Level $level = Level::L, ?string $fgColor = '#000000', ?bool $hideLogo = false, ?float $margin = 2, ?bool $includeMargin = true, ?Format $format = Format::Png)
     {
         $this->url = $url;
         $this->logo = $logo;
+        $this->bgColor = $bgColor;
         $this->size = $size;
         $this->level = $level;
         $this->fgColor = $fgColor;
-        $this->bgColor = $bgColor;
         $this->hideLogo = $hideLogo;
         $this->margin = $margin;
         $this->includeMargin = $includeMargin;
+        $this->format = $format;
     }
 }

@@ -12,3 +12,4 @@ The status to apply to every commission in the batch.
 | `Duplicate` | duplicate   |
 | `Canceled`  | canceled    |
 | `Fraud`     | fraud       |
+| `Hold`      | hold        |

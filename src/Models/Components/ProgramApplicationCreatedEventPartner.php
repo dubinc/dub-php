@@ -167,7 +167,7 @@ class ProgramApplicationCreatedEventPartner
     public ?string $tiktok = null;
 
     /**
-     * The partner's website and social profiles, including when each was verified.
+     * The partner's website and social profiles, including when each was verified and audience stats (subscribers, views, and posts).
      *
      * @var ?array<\Dub\Models\Components\Platforms> $platforms
      */

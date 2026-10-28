@@ -29,6 +29,26 @@ class ApproveProgramApplicationRequestBody
     public ?string $applicationId = null;
 
     /**
+     * The IDs of the partner tags to assign as part of approval. Existing tags are kept. Takes priority over `tagNames` only when it contains at least one ID.
+     *
+     * @var ?array<string> $tagIds
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tagIds = null;
+
+    /**
+     * The names of the partner tags to assign as part of approval. Existing tags are kept. Ignored only when `tagIds` contains at least one ID.
+     *
+     * @var ?array<string> $tagNames
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('tagNames')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $tagNames = null;
+
+    /**
      * The ID of the group to assign the partner to. If not provided, the partner will be assigned to the group they applied to, or the program's default group if no application group is set.
      *
      * @var ?string $groupId
@@ -40,13 +60,17 @@ class ApproveProgramApplicationRequestBody
     /**
      * @param  string  $partnerId
      * @param  ?string  $applicationId
+     * @param  ?array<string>  $tagIds
+     * @param  ?array<string>  $tagNames
      * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $partnerId, ?string $applicationId = null, ?string $groupId = null)
+    public function __construct(string $partnerId, ?string $applicationId = null, ?array $tagIds = null, ?array $tagNames = null, ?string $groupId = null)
     {
         $this->partnerId = $partnerId;
         $this->applicationId = $applicationId;
+        $this->tagIds = $tagIds;
+        $this->tagNames = $tagNames;
         $this->groupId = $groupId;
     }
 }

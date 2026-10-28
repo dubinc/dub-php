@@ -28,6 +28,15 @@ class ListPayoutsPartner
     public string $name;
 
     /**
+     * The partner's network status on Dub.
+     *
+     * @var \Dub\Models\Operations\ListPayoutsNetworkStatus $networkStatus
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('networkStatus')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\ListPayoutsNetworkStatus')]
+    public ListPayoutsNetworkStatus $networkStatus;
+
+    /**
      * The partner's email address. Should be a unique value across Dub.
      *
      * @var ?string $email
@@ -88,6 +97,7 @@ class ListPayoutsPartner
     /**
      * @param  string  $id
      * @param  string  $name
+     * @param  \Dub\Models\Operations\ListPayoutsNetworkStatus  $networkStatus
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?\Dub\Models\Operations\ListPayoutsDefaultPayoutMethod  $defaultPayoutMethod
@@ -97,10 +107,11 @@ class ListPayoutsPartner
      * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?ListPayoutsDefaultPayoutMethod $defaultPayoutMethod = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $tenantId = null, ?string $groupId = null)
+    public function __construct(string $id, string $name, ListPayoutsNetworkStatus $networkStatus, ?string $email = null, ?string $image = null, ?ListPayoutsDefaultPayoutMethod $defaultPayoutMethod = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $tenantId = null, ?string $groupId = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->networkStatus = $networkStatus;
         $this->email = $email;
         $this->image = $image;
         $this->defaultPayoutMethod = $defaultPayoutMethod;
