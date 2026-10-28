@@ -17,4 +17,5 @@ enum CreatePartnerNetworkStatus: string
     case Approved = 'approved';
     case Rejected = 'rejected';
     case Trusted = 'trusted';
+    case Banned = 'banned';
 }

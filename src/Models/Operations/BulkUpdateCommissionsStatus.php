@@ -17,4 +17,5 @@ enum BulkUpdateCommissionsStatus: string
     case Duplicate = 'duplicate';
     case Canceled = 'canceled';
     case Fraud = 'fraud';
+    case Hold = 'hold';
 }

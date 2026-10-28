@@ -61,7 +61,7 @@ class QRCodes
         $httpOptions = ['http_errors' => false];
 
         $qp = Utils\Utils::getQueryParams(Operations\GetQRCodeRequest::class, $request, $urlOverride);
-        $httpOptions['headers']['Accept'] = 'image/png';
+        $httpOptions['headers']['Accept'] = 'image/png;q=1, image/svg+xml;q=0';
         $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         $httpRequest = new \GuzzleHttp\Psr7\Request('GET', $url);
         $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'getQRCode', null, $this->sdkConfiguration->securitySource);
@@ -93,7 +93,17 @@ class QRCodes
                     statusCode: $statusCode,
                     contentType: $contentType,
                     rawResponse: $httpResponse,
-                    res: $obj);
+                    twoHundredImagePngRes: $obj);
+            } elseif (Utils\Utils::matchContentType($contentType, 'image/svg+xml')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $obj = $httpResponse->getBody()->getContents();
+
+                return new Operations\GetQRCodeResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    twoHundredImageSvgPlusXmlRes: $obj);
             } else {
                 throw new \Dub\Models\Errors\SDKException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }

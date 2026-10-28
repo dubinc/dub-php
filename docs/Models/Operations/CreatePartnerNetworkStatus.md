@@ -12,3 +12,4 @@ The partner's network status on Dub.
 | `Approved`  | approved    |
 | `Rejected`  | rejected    |
 | `Trusted`   | trusted     |
+| `Banned`    | banned      |

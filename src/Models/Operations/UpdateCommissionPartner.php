@@ -28,6 +28,15 @@ class UpdateCommissionPartner
     public string $name;
 
     /**
+     * The partner's network status on Dub.
+     *
+     * @var \Dub\Models\Operations\UpdateCommissionNetworkStatus $networkStatus
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('networkStatus')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Operations\UpdateCommissionNetworkStatus')]
+    public UpdateCommissionNetworkStatus $networkStatus;
+
+    /**
      * The partner's email address. Should be a unique value across Dub.
      *
      * @var ?string $email
@@ -71,6 +80,7 @@ class UpdateCommissionPartner
     /**
      * @param  string  $id
      * @param  string  $name
+     * @param  \Dub\Models\Operations\UpdateCommissionNetworkStatus  $networkStatus
      * @param  ?string  $email
      * @param  ?string  $image
      * @param  ?string  $payoutsEnabledAt
@@ -78,10 +88,11 @@ class UpdateCommissionPartner
      * @param  ?string  $groupId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $groupId = null)
+    public function __construct(string $id, string $name, UpdateCommissionNetworkStatus $networkStatus, ?string $email = null, ?string $image = null, ?string $payoutsEnabledAt = null, ?string $country = null, ?string $groupId = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->networkStatus = $networkStatus;
         $this->email = $email;
         $this->image = $image;
         $this->payoutsEnabledAt = $payoutsEnabledAt;
