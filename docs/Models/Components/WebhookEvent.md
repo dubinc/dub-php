@@ -95,3 +95,12 @@ Components\CommissionCreatedEvent $value = /* values here */
 Components\DiscountCodeWebhookEvent $value = /* values here */
 ```
 
+### `Components\MessageReceivedEvent`
+
+```php
+/**
+* @var \Dub\Models\Components\MessageReceivedEvent
+*/
+Components\MessageReceivedEvent $value = /* values here */
+```
+

@@ -219,6 +219,18 @@ actions:
         - "lang": "php"
           "label": "updateLink"
           "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$requestBody = new Operations\\UpdateLinkRequestBody(\n    url: 'https://google.com',\n    externalId: '123456',\n    tagIds: [\n        'clux0rgak00011...',\n    ],\n    testVariants: [\n        new Operations\\UpdateLinkTestVariants(\n            url: 'https://example.com/variant-1',\n            percentage: 50,\n        ),\n        new Operations\\UpdateLinkTestVariants(\n            url: 'https://example.com/variant-2',\n            percentage: 50,\n        ),\n    ],\n);\n\n$response = $sdk->links->update(\n    linkId: '<id>',\n    requestBody: $requestBody\n\n);\n\nif ($response->linkSchema !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/messages"]["get"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "listMessages"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\nuse Dub\\Models\\Operations;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n$request = new Operations\\ListMessagesRequest(\n    endingBefore: 'msg_1KAP4CDPBSVMMBMH9XX3YZZ0Z',\n    startingAfter: 'msg_1KAP4CDPBSVMMBMH9XX3YZZ0Z',\n    pageSize: 50,\n);\n\n$response = $sdk->messages->list(\n    request: $request\n);\n\nif ($response->responseBodies !== null) {\n    // handle response\n}"
+  - target: $["paths"]["/messages"]["post"]
+    update:
+      "x-codeSamples":
+        - "lang": "php"
+          "label": "createMessage"
+          "source": "declare(strict_types=1);\n\nrequire 'vendor/autoload.php';\n\nuse Dub;\n\n$sdk = Dub\\Dub::builder()\n    ->setSecurity(\n        'DUB_API_KEY'\n    )\n    ->build();\n\n\n\n$response = $sdk->messages->create(\n    request: $request\n);\n\nif ($response->object !== null) {\n    // handle response\n}"
   - target: $["paths"]["/partners"]["get"]
     update:
       "x-codeSamples":
