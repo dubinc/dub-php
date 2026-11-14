@@ -50,6 +50,8 @@ class Dub
 
     public Bounties $bounties;
 
+    public Messages $messages;
+
     /**
      * Returns a new instance of the SDK builder used to configure and create the SDK instance.
      *
@@ -82,6 +84,7 @@ class Dub
         $this->embedTokens = new EmbedTokens($this->sdkConfiguration);
         $this->qrCodes = new QRCodes($this->sdkConfiguration);
         $this->bounties = new Bounties($this->sdkConfiguration);
+        $this->messages = new Messages($this->sdkConfiguration);
         $this->initHooks();
 
     }
