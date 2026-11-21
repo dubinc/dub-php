@@ -30,11 +30,11 @@ class PartnerEnrolledEventData
     /**
      * The partner's network status on Dub.
      *
-     * @var \Dub\Models\Components\NetworkStatus $networkStatus
+     * @var \Dub\Models\Components\PartnerEnrolledEventNetworkStatus $networkStatus
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('networkStatus')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\NetworkStatus')]
-    public NetworkStatus $networkStatus;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\PartnerEnrolledEventNetworkStatus')]
+    public PartnerEnrolledEventNetworkStatus $networkStatus;
 
     /**
      * The program's unique ID on Dub.
@@ -464,7 +464,7 @@ class PartnerEnrolledEventData
     /**
      * @param  string  $id
      * @param  string  $name
-     * @param  \Dub\Models\Components\NetworkStatus  $networkStatus
+     * @param  \Dub\Models\Components\PartnerEnrolledEventNetworkStatus  $networkStatus
      * @param  string  $programId
      * @param  string  $partnerId
      * @param  string  $createdAt
@@ -516,7 +516,7 @@ class PartnerEnrolledEventData
      * @param  ?string  $trustedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, string $name, NetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, Status $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $customRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
+    public function __construct(string $id, string $name, PartnerEnrolledEventNetworkStatus $networkStatus, string $programId, string $partnerId, string $createdAt, Status $status, ?string $username = null, ?string $email = null, ?string $image = null, ?string $country = null, ?string $companyName = null, ?DefaultPayoutMethod $defaultPayoutMethod = null, ?string $paypalEmail = null, ?string $stripeConnectId = null, ?string $payoutsEnabledAt = null, ?string $identityVerifiedAt = null, ?string $tenantId = null, ?array $links = null, ?array $tags = null, ?string $description = null, ?string $groupId = null, ?string $clickRewardId = null, ?string $leadRewardId = null, ?string $saleRewardId = null, ?string $referralRewardId = null, ?string $customRewardId = null, ?string $discountId = null, ?string $applicationId = null, ?string $bannedAt = null, ?BannedReason $bannedReason = null, ?Application $application = null, ?float $earningsPerClick = null, ?float $averageLifetimeValue = null, ?float $clickToLeadRate = null, ?float $clickToConversionRate = null, ?float $leadToConversionRate = null, ?float $returnOnAdSpend = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?string $trustedAt = null, ?float $totalCommissions = 0, ?float $totalClicks = 0, ?float $totalLeads = 0, ?float $totalConversions = 0, ?float $totalSales = 0, ?float $totalSaleAmount = 0, ?float $netRevenue = 0)
     {
         $this->id = $id;
         $this->name = $name;

@@ -52,6 +52,14 @@ class ListPayoutsRequest
     public ?string $groupId = null;
 
     /**
+     * Filter the list of payouts by the associated partner tag. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `ptag_abc`, `ptag_abc,ptag_xyz`, `-ptag_abc`.
+     *
+     * @var ?string $partnerTagId
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=partnerTagId')]
+    public ?string $partnerTagId = null;
+
+    /**
      * The page number for pagination. The first page is `1`.
      *
      * @var ?int $page
@@ -89,19 +97,21 @@ class ListPayoutsRequest
      * @param  ?string  $tenantId
      * @param  ?string  $invoiceId
      * @param  ?string  $groupId
+     * @param  ?string  $partnerTagId
      * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamSortBy  $sortBy
      * @param  ?\Dub\Models\Operations\ListPayoutsQueryParamSortOrder  $sortOrder
      * @param  ?int  $page
      * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?string $groupId = null, ?int $page = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?int $pageSize = 100)
+    public function __construct(?ListPayoutsQueryParamStatus $status = null, ?string $partnerId = null, ?string $tenantId = null, ?string $invoiceId = null, ?string $groupId = null, ?string $partnerTagId = null, ?int $page = null, ?ListPayoutsQueryParamSortBy $sortBy = ListPayoutsQueryParamSortBy::Amount, ?ListPayoutsQueryParamSortOrder $sortOrder = ListPayoutsQueryParamSortOrder::Desc, ?int $pageSize = 100)
     {
         $this->status = $status;
         $this->partnerId = $partnerId;
         $this->tenantId = $tenantId;
         $this->invoiceId = $invoiceId;
         $this->groupId = $groupId;
+        $this->partnerTagId = $partnerTagId;
         $this->page = $page;
         $this->sortBy = $sortBy;
         $this->sortOrder = $sortOrder;

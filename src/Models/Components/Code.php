@@ -23,4 +23,5 @@ enum Code: string
     case UnprocessableEntity = 'unprocessable_entity';
     case RateLimitExceeded = 'rate_limit_exceeded';
     case InternalServerError = 'internal_server_error';
+    case ServiceUnavailable = 'service_unavailable';
 }
