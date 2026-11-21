@@ -18,3 +18,4 @@ The error code.
 | `UnprocessableEntity` | unprocessable_entity  |
 | `RateLimitExceeded`   | rate_limit_exceeded   |
 | `InternalServerError` | internal_server_error |
+| `ServiceUnavailable`  | service_unavailable   |

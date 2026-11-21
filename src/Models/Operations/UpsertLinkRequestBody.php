@@ -40,11 +40,11 @@ class UpsertLinkRequestBody
     /**
      * The length of the short link slug. Defaults to 7 if not provided. When used with `prefix`, the total length of the key will be `prefix.length + keyLength`.
      *
-     * @var ?float $keyLength
+     * @var ?int $keyLength
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('keyLength')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?float $keyLength = null;
+    public ?int $keyLength = null;
 
     /**
      * The prefix of the short link slug for randomly-generated keys (e.g. if prefix is `/c/`, generated keys will be in the `/c/:key` format). Will be ignored if `key` is provided.
@@ -382,7 +382,7 @@ class UpsertLinkRequestBody
      * @param  string  $url
      * @param  ?string  $domain
      * @param  ?string  $key
-     * @param  ?float  $keyLength
+     * @param  ?int  $keyLength
      * @param  ?string  $prefix
      * @param  ?bool  $trackConversion
      * @param  ?bool  $archived
@@ -421,7 +421,7 @@ class UpsertLinkRequestBody
      * @param  ?array<string>  $webhookIds
      * @phpstan-pure
      */
-    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?float $keyLength = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null, ?array $webhookIds = null)
+    public function __construct(string $url, ?string $domain = null, ?string $key = null, ?int $keyLength = null, ?string $prefix = null, ?bool $trackConversion = null, ?bool $archived = null, string|array|null $tagIds = null, string|array|null $tagNames = null, ?bool $proxy = null, ?bool $rewrite = null, ?bool $doIndex = null, ?bool $publicStats = null, ?string $externalId = null, ?string $tenantId = null, ?string $programId = null, ?string $partnerId = null, ?string $folderId = null, ?string $comments = null, ?string $expiresAt = null, ?string $expiredUrl = null, ?string $password = null, ?string $title = null, ?string $description = null, ?string $image = null, ?string $video = null, ?string $ios = null, ?string $android = null, ?array $geo = null, ?string $utmSource = null, ?string $utmMedium = null, ?string $utmCampaign = null, ?string $utmTerm = null, ?string $utmContent = null, ?string $ref = null, ?array $testVariants = null, ?string $testStartedAt = null, ?string $testCompletedAt = null, ?string $tagId = null, ?array $webhookIds = null)
     {
         $this->url = $url;
         $this->domain = $domain;
