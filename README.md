@@ -250,6 +250,11 @@ foreach ($responses as $response) {
 * [updateMany](docs/sdks/links/README.md#updatemany) - Bulk update links
 * [upsert](docs/sdks/links/README.md#upsert) - Upsert a link
 
+### [Messages](docs/sdks/messages/README.md)
+
+* [list](docs/sdks/messages/README.md#list) - List all messages
+* [create](docs/sdks/messages/README.md#create) - Send a message to a partner
+
 ### [Partners](docs/sdks/partners/README.md)
 
 * [list](docs/sdks/partners/README.md#list) - List all partners
@@ -257,9 +262,12 @@ foreach ($responses as $response) {
 * [retrieveLinks](docs/sdks/partners/README.md#retrievelinks) - Retrieve a partner's links.
 * [createLink](docs/sdks/partners/README.md#createlink) - Create a link for a partner
 * [upsertLink](docs/sdks/partners/README.md#upsertlink) - Upsert a link for a partner
+* [listNetwork](docs/sdks/partners/README.md#listnetwork) - List all partners in the network
 * [analytics](docs/sdks/partners/README.md#analytics) - Retrieve analytics for a partner
 * [ban](docs/sdks/partners/README.md#ban) - Ban a partner
 * [deactivate](docs/sdks/partners/README.md#deactivate) - Deactivate a partner
+* [updateTags](docs/sdks/partners/README.md#updatetags) - Update the tags of partners
+* [updateGroup](docs/sdks/partners/README.md#updategroup) - Update the group of partners
 
 ### [Payouts](docs/sdks/payouts/README.md)
 

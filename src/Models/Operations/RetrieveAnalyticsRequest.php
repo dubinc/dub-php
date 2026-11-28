@@ -188,7 +188,7 @@ class RetrieveAnalyticsRequest
     public ?string $trigger = null;
 
     /**
-     * The conversion event name to retrieve analytics for. Only available for lead and sale events. Supports advanced filtering: single value, multiple values (comma-separated), or exclusion (prefix with `-`). Examples: `Sign up`, `Sign up,Purchase`, `-Sign up`.
+     * The conversion event name to retrieve analytics for. Only available for lead and sale events. Supports advanced filtering: single value, multiple values (comma-separated), exclusion (prefix with `-`), or case-insensitive substring match (prefix with `~`, combine with `-` to exclude). Examples: `Sign up`, `Sign up,Purchase`, `-Sign up`, `~deposit`, `-~test`.
      *
      * @var ?string $eventName
      */

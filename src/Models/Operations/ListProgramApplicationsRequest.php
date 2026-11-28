@@ -54,10 +54,10 @@ class ListProgramApplicationsRequest
     /**
      * Filter applications by status. One of `pending`, `approved`, or `rejected`. Defaults to `pending`.
      *
-     * @var ?\Dub\Models\Operations\QueryParamStatus $status
+     * @var ?\Dub\Models\Operations\ListProgramApplicationsQueryParamStatus $status
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=status')]
-    public ?QueryParamStatus $status = null;
+    public ?ListProgramApplicationsQueryParamStatus $status = null;
 
     /**
      * The number of items per page.
@@ -72,12 +72,12 @@ class ListProgramApplicationsRequest
      * @param  ?string  $groupId
      * @param  ?\Dub\Models\Operations\ListProgramApplicationsQueryParamSortOrder  $sortOrder
      * @param  ?string  $search
-     * @param  ?\Dub\Models\Operations\QueryParamStatus  $status
+     * @param  ?\Dub\Models\Operations\ListProgramApplicationsQueryParamStatus  $status
      * @param  ?int  $page
      * @param  ?int  $pageSize
      * @phpstan-pure
      */
-    public function __construct(?string $country = null, ?string $groupId = null, ?string $search = null, ?int $page = null, ?ListProgramApplicationsQueryParamSortOrder $sortOrder = ListProgramApplicationsQueryParamSortOrder::Desc, ?QueryParamStatus $status = QueryParamStatus::Pending, ?int $pageSize = 100)
+    public function __construct(?string $country = null, ?string $groupId = null, ?string $search = null, ?int $page = null, ?ListProgramApplicationsQueryParamSortOrder $sortOrder = ListProgramApplicationsQueryParamSortOrder::Desc, ?ListProgramApplicationsQueryParamStatus $status = ListProgramApplicationsQueryParamStatus::Pending, ?int $pageSize = 100)
     {
         $this->country = $country;
         $this->groupId = $groupId;

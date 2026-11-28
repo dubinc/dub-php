@@ -13,11 +13,11 @@ class Platforms
 {
     /**
      *
-     * @var \Dub\Models\Components\ProgramApplicationCreatedEventType $type
+     * @var \Dub\Models\Components\NetworkPartnerType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\ProgramApplicationCreatedEventType')]
-    public ProgramApplicationCreatedEventType $type;
+    #[\Speakeasy\Serializer\Annotation\Type('\Dub\Models\Components\NetworkPartnerType')]
+    public NetworkPartnerType $type;
 
     /**
      *
@@ -61,7 +61,7 @@ class Platforms
     public ?int $views = null;
 
     /**
-     * @param  \Dub\Models\Components\ProgramApplicationCreatedEventType  $type
+     * @param  \Dub\Models\Components\NetworkPartnerType  $type
      * @param  string  $identifier
      * @param  ?string  $verifiedAt
      * @param  ?int  $subscribers
@@ -69,7 +69,7 @@ class Platforms
      * @param  ?int  $views
      * @phpstan-pure
      */
-    public function __construct(ProgramApplicationCreatedEventType $type, string $identifier, ?string $verifiedAt = null, ?int $subscribers = 0, ?int $posts = 0, ?int $views = 0)
+    public function __construct(NetworkPartnerType $type, string $identifier, ?string $verifiedAt = null, ?int $subscribers = 0, ?int $posts = 0, ?int $views = 0)
     {
         $this->type = $type;
         $this->identifier = $identifier;
