@@ -28,7 +28,7 @@ class GetCustomersRequest
     public ?string $externalId = null;
 
     /**
-     * A search query to filter customers by email, name, or customer ID (`cus_...`). If `email` or `externalId` is provided, this will be ignored.
+     * A search query to filter customers by email, name, external ID, or customer ID. A query that equals a customer's `externalId` returns only that customer. Queries starting with `cus_` exact-match the customer's Dub ID or Stripe customer ID. If `email` or `externalId` is provided, this will be ignored.
      *
      * @var ?string $search
      */

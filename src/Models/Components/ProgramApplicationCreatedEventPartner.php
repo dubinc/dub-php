@@ -169,10 +169,10 @@ class ProgramApplicationCreatedEventPartner
     /**
      * The partner's website and social profiles, including when each was verified and audience stats (subscribers, views, and posts).
      *
-     * @var ?array<\Dub\Models\Components\Platforms> $platforms
+     * @var ?array<\Dub\Models\Components\ProgramApplicationCreatedEventPlatforms> $platforms
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('platforms')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\Platforms>|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Dub\Models\Components\ProgramApplicationCreatedEventPlatforms>|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
     public ?array $platforms = null;
 
@@ -195,7 +195,7 @@ class ProgramApplicationCreatedEventPartner
      * @param  ?string  $linkedin
      * @param  ?string  $instagram
      * @param  ?string  $tiktok
-     * @param  ?array<\Dub\Models\Components\Platforms>  $platforms
+     * @param  ?array<\Dub\Models\Components\ProgramApplicationCreatedEventPlatforms>  $platforms
      * @phpstan-pure
      */
     public function __construct(string $id, string $name, ProgramApplicationCreatedEventStatus $status, ProgramApplicationCreatedEventNetworkStatus $networkStatus, ?string $companyName = null, ?string $email = null, ?string $image = null, ?string $country = null, ?ProgramApplicationCreatedEventDefaultPayoutMethod $defaultPayoutMethod = null, ?string $payoutsEnabledAt = null, ?string $description = null, ?string $groupId = null, ?string $website = null, ?string $youtube = null, ?string $twitter = null, ?string $linkedin = null, ?string $instagram = null, ?string $tiktok = null, ?array $platforms = null)

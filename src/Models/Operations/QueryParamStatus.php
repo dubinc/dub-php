@@ -9,10 +9,11 @@ declare(strict_types=1);
 namespace Dub\Models\Operations;
 
 
-/** Filter applications by status. One of `pending`, `approved`, or `rejected`. Defaults to `pending`. */
+/** Filter the list of partners by their status for your program. `discover` returns the partners that are not in your program and that you have not ignored, ranked by relevance. */
 enum QueryParamStatus: string
 {
-    case Pending = 'pending';
-    case Approved = 'approved';
-    case Rejected = 'rejected';
+    case Discover = 'discover';
+    case Invited = 'invited';
+    case Recruited = 'recruited';
+    case Ignored = 'ignored';
 }

@@ -9,9 +9,12 @@
 * [retrieveLinks](#retrievelinks) - Retrieve a partner's links.
 * [createLink](#createlink) - Create a link for a partner
 * [upsertLink](#upsertlink) - Upsert a link for a partner
+* [listNetwork](#listnetwork) - List all partners in the network
 * [analytics](#analytics) - Retrieve analytics for a partner
 * [ban](#ban) - Ban a partner
 * [deactivate](#deactivate) - Deactivate a partner
+* [updateTags](#updatetags) - Update the tags of partners
+* [updateGroup](#updategroup) - Update the group of partners
 
 ## list
 
@@ -360,6 +363,66 @@ if ($response->linkSchema !== null) {
 | Errors\InternalServerError | 500                        | application/json           |
 | Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
 
+## listNetwork
+
+List the partners in the Dub partner network for your program. The partner network must be enabled for the program.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="listNetworkPartners" method="get" path="/partners/network" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\ListNetworkPartnersRequest(
+    page: 1,
+    pageSize: 50,
+);
+
+$response = $sdk->partners->listNetwork(
+    request: $request
+);
+
+if ($response->networkPartners !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `$request`                                                                                     | [Operations\ListNetworkPartnersRequest](../../Models/Operations/ListNetworkPartnersRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+
+### Response
+
+**[?Operations\ListNetworkPartnersResponse](../../Models/Operations/ListNetworkPartnersResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
 ## analytics
 
 Retrieve analytics for a partner within a program. The response type vary based on the `groupBy` query parameter.
@@ -516,6 +579,132 @@ if ($response->object !== null) {
 ### Response
 
 **[?Operations\DeactivatePartnerResponse](../../Models/Operations/DeactivatePartnerResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## updateTags
+
+Add and remove partner tags on up to 100 partners enrolled in your program. Tags that a partner already has are not added again, and tags a partner does not have are skipped on removal. The call fails without changes if any partner is not enrolled in your program or any tag is not in your program.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="updatePartnerTags" method="post" path="/partners/update-tags" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\UpdatePartnerTagsRequestBody(
+    partnerIds: [
+        'pn_1JRQ9DY1X0PDS2G0WGZ7EYTXD',
+    ],
+    addTagIds: [
+        'ptag_1JRQ9DY1X0PDS2G0WGZ7EYTXD',
+    ],
+);
+
+$response = $sdk->partners->updateTags(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                         | [Operations\UpdatePartnerTagsRequestBody](../../Models/Operations/UpdatePartnerTagsRequestBody.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+### Response
+
+**[?Operations\UpdatePartnerTagsResponse](../../Models/Operations/UpdatePartnerTagsResponse.md)**
+
+### Errors
+
+| Error Type                 | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| Errors\BadRequest          | 400                        | application/json           |
+| Errors\Unauthorized        | 401                        | application/json           |
+| Errors\Forbidden           | 403                        | application/json           |
+| Errors\NotFound            | 404                        | application/json           |
+| Errors\Conflict            | 409                        | application/json           |
+| Errors\InviteExpired       | 410                        | application/json           |
+| Errors\UnprocessableEntity | 422                        | application/json           |
+| Errors\RateLimitExceeded   | 429                        | application/json           |
+| Errors\InternalServerError | 500                        | application/json           |
+| Errors\SDKException        | 4XX, 5XX                   | \*/\*                      |
+
+## updateGroup
+
+Move up to 100 partners enrolled in your program into a group. They get the group's rewards and discount. Partners already in the group are skipped, unless `disableGroupMove` is set, in which case their setting is updated and they're counted. The call fails without changes if any partner is not enrolled in your program.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="updatePartnersGroup" method="post" path="/partners/update-group" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Dub;
+use Dub\Models\Operations;
+
+$sdk = Dub\Dub::builder()
+    ->setSecurity(
+        'DUB_API_KEY'
+    )
+    ->build();
+
+$request = new Operations\UpdatePartnersGroupRequestBody(
+    partnerIds: [
+        'pn_1JRQ9DY1X0PDS2G0WGZ7EYTXD',
+    ],
+    groupId: 'grp_1JRQ9DY1X0PDS2G0WGZ7EYTXD',
+);
+
+$response = $sdk->partners->updateGroup(
+    request: $request
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                             | [Operations\UpdatePartnersGroupRequestBody](../../Models/Operations/UpdatePartnersGroupRequestBody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+
+### Response
+
+**[?Operations\UpdatePartnersGroupResponse](../../Models/Operations/UpdatePartnersGroupResponse.md)**
 
 ### Errors
 
